@@ -1,0 +1,20 @@
+// _variables.scss
+
+// Type
+$font-sansserif: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+$font-serif: 'Lora', 'Georgia', 'Times New Roman', serif;
+
+// Colors
+$color-black:         #222;
+$color-white:         #fff;
+$color-grey:          #777;
+$color-grey-light:    lighten($color-grey, 10%);
+$color-grey-xlight:   lighten($color-grey, 20%);
+$color-grey-dark:     darken($color-grey, 10%);
+$color-grey-xdark:    darken($color-grey, 20%);
+
+// Margins & Paddings
+$space:               10px;
+$space-x:             20px;
+$space-xx:            40px;
+$space-xxx:           80px;

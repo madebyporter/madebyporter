@@ -1,0 +1,36 @@
+// _mixins.scss
+
+// Transitions
+@mixin transition($time:200ms,$type:all,$style:ease-in-out,$delay:0s){
+  -webkit-transition: $type $time $style $delay;
+  -moz-transition: $type $time $style $delay;
+  -o-transition: $type $time $style $delay;
+  transition: $type $time $style $delay;
+}
+
+// Horizontal Center
+@mixin horizontal-align($l:50%) {
+  left: $l;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+// Absolute Center
+@mixin absolute-center($y:50%,$x:50%) {
+  top: $y;
+  left: $x;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+// Rotate
+@mixin rotate($r) {
+  -webkit-transform: rotate($r);
+  -moz-transform: rotate($r);
+  -o-transform: rotate($r);
+  transform: rotate($r);
+}
