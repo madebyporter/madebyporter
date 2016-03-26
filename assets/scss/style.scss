@@ -5,3 +5,10 @@
 @import '_mixins';
 @import '_base';
 @import '_type';
+
+// Sound Styles
+  .type-sound {
+
+    background: url('../img/bg-sound-project-higher.png') no-repeat center top;
+    background-size: cover;
+  }

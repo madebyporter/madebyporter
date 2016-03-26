@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
 
+var mozjpeg = require('imagemin-mozjpeg');
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -60,6 +61,17 @@ module.exports = function (grunt) {
       },
     },
 
+    imagemin: { 
+      dist: {                         // Another target
+        files: [{
+          expand: true,                  // Enable dynamic expansion
+          cwd: 'assets/img',                   // Src matches are relative to this path
+          src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+          dest: '_build/assets/img'                  // Destination path prefix
+        }]
+      }
+    },
+
     watch: {
       css: {
         files: 'assets/**/*.scss',
@@ -74,7 +86,7 @@ module.exports = function (grunt) {
       },
       scripts: {
         files: 'assets/js/*.js',
-        tasks: ['concat', 'uglify'],
+        tasks: ['newer:concat', 'newer:uglify'],
       },
       options: {
         livereload: true,
@@ -89,8 +101,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-newer');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['copy', 'sass', 'concat', 'cssmin', 'uglify', 'slim', 'watch']);
+  grunt.registerTask('default', ['copy', 'sass', 'slim', 'cssmin', 'newer:uglify:dist', 'newer:imagemin:dist', 'newer:concat', 'watch']);
 };

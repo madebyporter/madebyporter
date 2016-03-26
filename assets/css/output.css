@@ -8872,13 +8872,16 @@ table {
 }
 
 body {
-  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  background: #1E1E22;
+  font-family: "Roboto Condensed", "Helvetica", "Arial", sans-serif;
   font-size: 1em;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  color: #fff;
   font-weight: 700;
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 h1 {
@@ -8903,6 +8906,11 @@ h5 {
 
 h6 {
   font-size: 0.8em;
+}
+
+.type-sound {
+  background: url("../img/bg-sound-project-higher.png") no-repeat center top;
+  background-size: cover;
 }
 
 /*# sourceMappingURL=style.css.map */

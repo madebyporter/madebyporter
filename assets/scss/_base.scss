@@ -1,6 +1,8 @@
 // _base.scss
 
-body {
-  font-family: $font-sansserif;
-  font-size: 1em;
-}
+// Start Generic Class
+  body {
+    background: $color-black;
+    font-family: $font-sansserif;
+    font-size: 1em;
+  }
