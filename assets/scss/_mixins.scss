@@ -1,36 +1,67 @@
 // _mixins.scss
 
+// Transform
+  @mixin transform($transforms) {
+       -moz-transform: $transforms;
+         -o-transform: $transforms;
+        -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+            transform: $transforms;
+  }
+
 // Transitions
-@mixin transition($time:200ms,$type:all,$style:ease-in-out,$delay:0s){
-  -webkit-transition: $type $time $style $delay;
-  -moz-transition: $type $time $style $delay;
-  -o-transition: $type $time $style $delay;
-  transition: $type $time $style $delay;
-}
-
-// Horizontal Center
-@mixin horizontal-align($l:50%) {
-  left: $l;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-// Absolute Center
-@mixin absolute-center($y:50%,$x:50%) {
-  top: $y;
-  left: $x;
-  -webkit-transform: translate(-50%,-50%);
-  -moz-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-}
+  @mixin transition($time: 350ms, $type:all, $style:cubic-bezier(.14, .62, .39, 1), $delay:0s) {
+    -webkit-transition: $type $time $style $delay;
+    -moz-transition: $type $time $style $delay;
+    -o-transition: $type $time $style $delay;
+    transition: $type $time $style $delay;
+  }
 
 // Rotate
-@mixin rotate($r) {
-  -webkit-transform: rotate($r);
-  -moz-transform: rotate($r);
-  -o-transform: rotate($r);
-  transform: rotate($r);
-}
+  @mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+  }
+
+// Scale
+  @mixin scale($scale) {
+     @include transform(scale($scale));
+  } 
+
+// Translate
+  @mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+  }
+
+// Skew
+  @mixin skew ($x, $y) {
+     @include transform(skew(#{$x}deg, #{$y}deg));
+  }
+
+// Horizontal Center
+  @mixin horizontal-center($x:-50%) {
+    left: 50%;
+    position: absolute;
+    @include translate($x,0);
+  }
+
+// Absolute Center
+  @mixin absolute-center($x:-50%,$y:-50%) {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    @include translate($x,$y);
+  }
+
+// Animations
+  @mixin animation($x) {
+    -webkit-animation: $x;
+    -moz-animation: $x;
+    -o-animation: $x;
+    animation: $x;
+  }
+
+// Text Hide
+  @mixin text-hide(){
+    overflow: hidden;
+    text-indent: -9999px;
+  }

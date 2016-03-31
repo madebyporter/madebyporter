@@ -4,21 +4,21 @@ html
     title MBP Boilerplate
     meta name="keywords" content="keywords"
     meta name="author" content="Made by Porter"
+    meta name="viewport" content="width=device-width, initial-scale=1"
 
-    link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'
+    link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'
     link href="assets/css/output.min.css" rel='stylesheet' type='text/css'
   body.type-sound
     main.site-wrapper
       header.header
+        span.header-logo
+          | Chris Porter
         .container-fluid
           .row
-            .col-xs-12.col-md-4
+            .col-xs-12.col-md-6.hidden-xs
               h2.header-page-title Higher
-                .sub Instrumental Album
-            .col-xs-12.col-md-4
-              span.header-logo
-                | Chris Porter
-            .col-xs-12.col-md-4
+              .sub-text Instrumental Album
+            .col-xs-12.col-md-6
               span.header-menu-trigger
                 | Back to Site Menu
               
@@ -26,9 +26,33 @@ html
       section.site-content
         .container
           .row
-            .col-xs-12
-              h2
-                | Section Header
+            .col-xs-9
+              .project-chapter
+                .project-header
+                  h2
+                    | Project Name
+                  .sub-text
+                    | Project Type
+                .project-content
+                  p
+                    | Ron Finley is a well known gangsta gardener, located in Los Angeles, CA. His goal is to bring communities of all colors together through urban farming.
+              .project-chapter
+                .project-header
+                  h2
+                    | Concept
+                  .sub-text
+                    | RonFinley.com
+                .project-content
+                  p
+                    | Ron's website was his first impression to the world and we needed to give it some TLC (tender loving care). 
+                  p
+                    | We had three main goals for Ron's website: (1) website redesign, (2) brand awareness, and (3) making the site mobile friendly.
+                  p
+                    | Ron's website was very outdated when we first saw it. It was an out of the box Wordpress theme. We wanted to step away from that and give it the loud energy that Ron embodies. So we choose some new colors that matched his brand.
+                  p
+                    | Selecting the color palette and look/feel helped us shape his brand's identity. Ron has a welcoming and loud personality and we wanted his brand to reflect that with a video header, images, and visuals.
+                  p
+                    | Lastly, his site was not very mobile friendly and we wanted to change that immediately.
 
       footer.site-footer
         .container

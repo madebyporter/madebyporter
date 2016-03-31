@@ -1,8 +1,79 @@
 // _base.scss
 
 // Start Generic Class
+  html {
+    height: 100%;
+    width: 100%;
+  }
   body {
     background: $color-black;
     font-family: $font-sansserif;
     font-size: 1em;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    &:before {
+      background: #171717;
+      bottom: 0;
+      content: "";
+      height: 100%;
+      left: 0;
+      opacity: 0.85;
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 100%;
+    } 
+  }
+
+  .site-wrapper {
+    height: 100%;
+    width: 100%;
+  }
+
+// Header Styles
+  .header {
+    height: 100px;
+    position: relative;
+    z-index: 1000;
+  }
+
+// Logo Styles
+  .header-logo {
+    background: url('../img/mbp-logo-emblem.svg') no-repeat;
+    display: block;
+    height: 48px;
+    left: 20px;
+    position: absolute;
+    top: 40px;
+    width: 48px;
+    @include text-hide();
+    @media (min-width: $mq-small) {
+
+    }
+  }
+
+// Menu Styles
+  .header-menu-trigger {
+    background: url('../img/header-icon-menu.svg') no-repeat;
+    cursor: pointer;
+    display: block;
+    height: 13px;
+    margin: 60px 0 0 0;
+    position: fixed;
+    right: 20px;
+    width: 20px;
+    @include text-hide();
+  }
+
+// Site Content Styles
+  .site-content {
+    padding: 40px 0 0 0;
+    position: relative;
+    z-index: 100;
+  }
+
+// Project Content Styles
+  .project-content {
+    padding: 20px 0;
   }

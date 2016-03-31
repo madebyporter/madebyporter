@@ -3,8 +3,7 @@
 h1, h2, h3, h4, h5, h6 {
   color: $color-white;
   font-weight: 700;
-  margin-bottom: $space-x; //20px
-  text-transform: uppercase;
+  margin-bottom: 5px;
 }
 
 h1 {
@@ -29,4 +28,19 @@ h5 {
 
 h6 {
   font-size: 0.8em;
+}
+
+p {
+  color: $color-grey;
+  font-size: 1.2em;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+.sub-text {
+  color: $color-grey;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }

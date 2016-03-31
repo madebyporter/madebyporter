@@ -5,13 +5,6 @@ var mozjpeg = require('imagemin-mozjpeg');
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    copy: {
-      dev: {
-        src: 'readme.txt',
-        dest: 'README.md'
-      }
-    },
-
     sass: {
       dist: {
         options: {
@@ -66,7 +59,7 @@ var mozjpeg = require('imagemin-mozjpeg');
         files: [{
           expand: true,                  // Enable dynamic expansion
           cwd: 'assets/img',                   // Src matches are relative to this path
-          src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+          src: ['**/*.{png,jpg,gif,svg}'],   // Actual patterns to match
           dest: '_build/assets/img'                  // Destination path prefix
         }]
       }
@@ -86,7 +79,11 @@ var mozjpeg = require('imagemin-mozjpeg');
       },
       scripts: {
         files: 'assets/js/*.js',
-        tasks: ['newer:concat', 'newer:uglify'],
+        tasks: ['concat'],
+      },
+      images: {
+        files: 'assets/img/*.{png,jpg,gif,svg}',
+        tasks: ['imagemin'],
       },
       options: {
         livereload: true,
@@ -100,11 +97,10 @@ var mozjpeg = require('imagemin-mozjpeg');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-newer');
 
   // Default task(s).
-  grunt.registerTask('default', ['copy', 'sass', 'slim', 'cssmin', 'newer:uglify:dist', 'newer:imagemin:dist', 'newer:concat', 'watch']);
+  grunt.registerTask('default', ['newer:imagemin', 'sass', 'slim', 'newer:cssmin', 'newer:concat', 'watch']);
 };

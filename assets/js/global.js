@@ -11,6 +11,6 @@ js.main = {
   },
 };
 
-$(document).ready(function () {
+doc.ready(function () {
   js.main.init();
 });

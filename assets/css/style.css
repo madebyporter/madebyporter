@@ -43,17 +43,82 @@ table {
   border-spacing: 0;
 }
 
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   background: #1E1E22;
-  font-family: "Roboto Condensed", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 1em;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+body:before {
+  background: #171717;
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.85;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.site-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  height: 100px;
+  position: relative;
+  z-index: 1000;
+}
+
+.header-logo {
+  background: url("../img/mbp-logo-emblem.svg") no-repeat;
+  display: block;
+  height: 48px;
+  left: 20px;
+  position: absolute;
+  top: 40px;
+  width: 48px;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+.header-menu-trigger {
+  background: url("../img/header-icon-menu.svg") no-repeat;
+  cursor: pointer;
+  display: block;
+  height: 13px;
+  margin: 60px 0 0 0;
+  position: fixed;
+  right: 20px;
+  width: 20px;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+.site-content {
+  padding: 40px 0 0 0;
+  position: relative;
+  z-index: 100;
+}
+
+.project-content {
+  padding: 20px 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #fff;
   font-weight: 700;
-  margin-bottom: 20px;
-  text-transform: uppercase;
+  margin-bottom: 5px;
 }
 
 h1 {
@@ -80,8 +145,23 @@ h6 {
   font-size: 0.8em;
 }
 
+p {
+  color: #D3D3D2;
+  font-size: 1.2em;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+.sub-text {
+  color: #D3D3D2;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .type-sound {
-  background: url("../img/bg-sound-project-higher.png") no-repeat center top;
+  background: url("../img/bg-sound-project-higher.png") no-repeat center top fixed;
   background-size: cover;
 }
 

@@ -1,20 +1,26 @@
 // _variables.scss
 
 // Type
-$font-sansserif: 'Roboto Condensed', 'Helvetica', 'Arial', sans-serif;
-$font-serif: 'Lora', 'Georgia', 'Times New Roman', serif;
+  $font-sansserif: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  $font-serif: 'Lora', 'Georgia', 'Times New Roman', serif;
 
 // Colors
-$color-black:         #1E1E22;
-$color-white:         #fff;
-$color-grey:          #777;
-$color-grey-light:    lighten($color-grey, 10%);
-$color-grey-xlight:   lighten($color-grey, 20%);
-$color-grey-dark:     darken($color-grey, 10%);
-$color-grey-xdark:    darken($color-grey, 20%);
+  $color-black:       #1E1E22;
+  $color-white:       #fff;
+  $color-grey:        #D3D3D2;
+  $color-grey-light:  lighten($color-grey, 10%);
+  $color-grey-xlight: lighten($color-grey, 20%);
+  $color-grey-dark:   darken($color-grey, 10%);
+  $color-grey-xdark:  darken($color-grey, 20%);
 
 // Margins & Paddings
-$space:               10px;
-$space-x:             20px;
-$space-xx:            40px;
-$space-xxx:           80px;
+  $space:             10px;
+  $space-x:           20px;
+  $space-xx:          40px;
+  $space-xxx:         80px;
+
+// Media Queries 
+  // @media (min-width: $mq-small) {}
+  $mq-small:          760px;
+  $mq-medium:         992px;
+  $mq-large:          1200px;

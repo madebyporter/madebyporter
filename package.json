@@ -14,6 +14,7 @@
     "grunt-slim": "^0.1.0"
   },
   "dependencies": {
-    "imagemin-mozjpeg": "^5.1.0"
+    "imagemin-mozjpeg": "^5.1.0",
+    "imagemin-svgo": "^4.2.1"
   }
 }
