@@ -43,6 +43,12 @@ table {
   border-spacing: 0;
 }
 
+@media (max-width: 321px) {
+  .hide-ip5 {
+    display: none !important;
+  }
+}
+
 html {
   height: 100%;
   width: 100%;
@@ -115,6 +121,10 @@ body:before {
   padding: 20px 0;
 }
 
+.site-footer {
+  display: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #fff;
   font-weight: 700;
@@ -161,8 +171,65 @@ p {
 }
 
 .type-sound {
-  background: url("../img/bg-sound-project-higher.png") no-repeat center top fixed;
+  background: url("../img/bg-sound-project-higher.png") no-repeat center fixed;
   background-size: cover;
+}
+
+.track-waveform {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.track-waveform img {
+  color: #B33B48;
+  width: 100%;
+}
+
+.mbp-player {
+  background: rgba(23, 23, 23, 0.7);
+  bottom: 0;
+  height: 55px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  width: 100%;
+}
+
+.mbp-player-tracking {
+  background: #402226;
+  height: 5px;
+  width: 100%;
+}
+
+.mbp-player-tracking-status {
+  background: #B33B48;
+  height: inherit;
+  width: 50%;
+}
+
+.mbp-player-controls {
+  padding: 15px 0;
+}
+
+.mbp-player-controls-buttons-ele {
+  cursor: pointer;
+  text-align: right;
+  width: 100%;
+}
+
+.mbp-player-song-current-icon {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.mbp-player-song-current-title {
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=style.css.map */

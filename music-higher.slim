@@ -1,0 +1,82 @@
+doctype html
+html
+  head
+    title MBP Boilerplate
+    meta name="keywords" content="keywords"
+    meta name="author" content="Made by Porter"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+
+    link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'
+    link href="assets/css/output.min.css" rel='stylesheet' type='text/css'
+  body.type-sound
+    main.site-wrapper
+      header.header
+        span.header-logo
+          | Chris Porter
+        .container-fluid
+          .row
+            .col-xs-12.col-md-6.hidden-xs
+              h2.header-page-title Higher
+              .sub-text Instrumental Album
+            .col-xs-12.col-md-6
+              span.header-menu-trigger
+                | Back to Site Menu
+      section.site-content
+        .container-fluid
+          .row
+            .col-xs-12
+              .project-chapter
+                .project-header
+                  h2
+                    | Higher
+                  .sub-text
+                    | Instrumental Album
+                .project-content
+                  .track-waveform
+                    img src="assets/img/img-waveform.png"
+      aside.mbp-player
+        .mbp-player-tracking
+          .mbp-player-tracking-status
+        .mbp-player-controls
+          .container-fluid
+            .row
+              .col-xs-6
+                .mbp-player-song-current
+                  .mbp-player-song-current-icon.hide-ip5
+                    img src="assets/img/icon-playing.svg" alt="Playing"
+                  .mbp-player-song-current-title
+                    | Vivid Intuition
+              .col-xs-6
+                .mbp-player-controls-buttons
+                  .container-fluid
+                    .row
+                      .col-xs-4
+                        .mbp-player-controls-buttons-ele.mbp-player-controls-buttons-prev
+                          img src="assets/img/icon-prev.svg" alt="Previous"
+                      .col-xs-4
+                        .mbp-player-controls-buttons-ele.mbp-player-controls-buttons-pause
+                          img src="assets/img/icon-pause.svg" alt="Pause"
+                      .col-xs-4
+                        .mbp-player-controls-buttons-ele.mbp-player-controls-buttons-next
+                          img src="assets/img/icon-next.svg" alt="Next"
+      aside.mbp-player-tracks
+        ul.mbp-player-tracks-list
+          
+      footer.site-footer
+        .container-fluid
+          .row
+            .col-xs-12
+              p
+                | Copyright &copy; 2015
+    script src="assets/js/output.min.js"
+
+    javascript:
+      var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-XXXXX-X']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();

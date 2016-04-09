@@ -13,6 +13,8 @@
   $color-grey-dark:   darken($color-grey, 10%);
   $color-grey-xdark:  darken($color-grey, 20%);
 
+  $color-red:         #B33B48;
+
 // Margins & Paddings
   $space:             10px;
   $space-x:           20px;
@@ -21,6 +23,15 @@
 
 // Media Queries 
   // @media (min-width: $mq-small) {}
-  $mq-small:          760px;
+  $mq-ip5:            321px;
+  $mq-ip6:            375px;
+  $mq-ip6p:           414px;
+  $mq-small:          768px;
   $mq-medium:         992px;
   $mq-large:          1200px;
+
+  .hide-ip5 {
+    @media (max-width: $mq-ip5) {
+      display: none !important;
+    }
+  }
