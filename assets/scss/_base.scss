@@ -24,11 +24,15 @@
       top: 0;
       width: 100%;
     } 
+    &.overflow {
+      overflow: hidden;
+    }
   }
 
   .site-wrapper {
     height: 100%;
     width: 100%;
+    @include transition;
   }
 
 // Header Styles
@@ -80,5 +84,9 @@
 
 // Site Footer
   .site-footer {
+    display: none;
+  }
+
+  .ui-loader {
     display: none;
   }

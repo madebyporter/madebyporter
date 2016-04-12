@@ -1,0 +1,30 @@
+// _animations.scss
+
+// Tap Pulse
+  @-webkit-keyframes tapPulse {
+    0% {
+      background: $color-grey;
+      @include scale(1);
+    }
+    50% {
+      background: $color-red;
+      @include scale(1.5);
+    }
+    100% {
+      @include scale(1);
+    }
+  }
+  @keyframes tapPulse {
+    0% {
+      background: $color-grey;
+      @include scale(1);
+    }
+    50% {
+      background: lighten($color-red,15%);
+      @include scale(2);
+    }
+    100% {
+      background: $color-red;
+      @include scale(1);
+    }
+  }

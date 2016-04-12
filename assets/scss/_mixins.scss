@@ -44,6 +44,13 @@
     @include translate($x,0);
   }
 
+  // Vertical Center
+    @mixin vertical-center($y:-50%) {
+      top: 50%;
+      position: absolute;
+      @include translate(0,$y);
+    }
+
 // Absolute Center
   @mixin absolute-center($x:-50%,$y:-50%) {
     left: 50%;
@@ -64,4 +71,12 @@
   @mixin text-hide(){
     overflow: hidden;
     text-indent: -9999px;
+  }
+
+// Animations
+  @mixin animations($name,$delay:0s,$duration:200ms,$timing:ease-in-out,$direction:normal){
+    -webkit-animation: $name $duration $timing $delay $direction;
+    -moz-animation:    $name $duration $timing $delay $direction;
+    -o-animation:      $name $duration $timing $delay $direction;
+    animation:         $name $duration $timing $delay $direction;
   }

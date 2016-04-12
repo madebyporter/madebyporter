@@ -22,8 +22,12 @@ var mozjpeg = require('imagemin-mozjpeg');
         dest: 'assets/css/output.css'
       },
       js: {
-        src: ['assets/vendor/js/*', 'assets/js/*'],
-        dest: 'assets/js/output.js'
+        src: ['assets/vendor/js/*', 'assets/js/raw/*'],
+        dest: 'assets/js/output.js',
+      },
+      js2: {
+        src: ['assets/vendor/js/*', 'assets/js/raw/*'],
+        dest: '_build/assets/js/output.js',
       }
     },
 
@@ -35,6 +39,14 @@ var mozjpeg = require('imagemin-mozjpeg');
     },
 
     uglify: {
+      dev: {
+        options: {
+          beautify: true
+        },
+        files: {
+          '_build/assets/js/output.min.js': ['assets/js/output.js']
+        },
+      },
       dist: {
         files: {
           '_build/assets/js/output.min.js': ['assets/js/output.js']
@@ -78,11 +90,11 @@ var mozjpeg = require('imagemin-mozjpeg');
         tasks: ['slim'],
       },
       scripts: {
-        files: 'assets/js/*.js',
+        files: 'assets/js/raw/*.js',
         tasks: ['concat'],
       },
       images: {
-        files: 'assets/img/*.{png,jpg,gif,svg}',
+        files: ['assets/img/*.{png,jpg,gif,svg}','assets/vendor/js/*'],
         tasks: ['imagemin'],
       },
       options: {
@@ -103,4 +115,5 @@ var mozjpeg = require('imagemin-mozjpeg');
 
   // Default task(s).
   grunt.registerTask('default', ['newer:imagemin', 'sass', 'slim', 'newer:cssmin', 'newer:concat', 'watch']);
+  grunt.registerTask('dev', ['newer:imagemin', 'sass', 'slim', 'newer:cssmin', 'newer:concat', 'watch']);
 };

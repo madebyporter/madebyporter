@@ -7,11 +7,13 @@
 // Colors
   $color-black:       #1E1E22;
   $color-white:       #fff;
-  $color-grey:        #D3D3D2;
-  $color-grey-light:  lighten($color-grey, 10%);
-  $color-grey-xlight: lighten($color-grey, 20%);
-  $color-grey-dark:   darken($color-grey, 10%);
-  $color-grey-xdark:  darken($color-grey, 20%);
+  $color-grey:        #575454;
+  $color-grey-l1:     lighten($color-grey, 5%);
+  $color-grey-l2:     lighten($color-grey, 15%);
+  $color-grey-l3:     lighten($color-grey, 25%);
+  $color-grey-d1:     darken($color-grey, 5%);
+  $color-grey-d2:     darken($color-grey, 15%);
+  $color-grey-d3:     darken($color-grey, 25%);
 
   $color-red:         #B33B48;
 
