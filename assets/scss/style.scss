@@ -145,3 +145,12 @@
       opacity: 0;
     }
   }
+  .mbp-player-icon {
+    display: block;
+    height: 18px;
+    width: 18px;
+  }
+  .mbp-player-icon-prev {background: url('../img/icon-prev.svg');}
+  .mbp-player-icon-next {background: url('../img/icon-next.svg');}
+  .mbp-player-icon-play {background: url('../img/icon-play.svg');}
+  .mbp-player-icon-pause {background: url('../img/icon-pause.svg');}

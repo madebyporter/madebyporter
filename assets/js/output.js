@@ -15758,6 +15758,7 @@ js.main = {
     // SC.get('/users/' + USER + '/playlists', function(playlists) {
     SC.get('/playlists/31545797').then(function(playlists){
       console.log(playlists.title);
+      var sound;
       $(playlists).each(function(index, playlist) {
         var $playlist = $('.mbp-player-tracks-list').eq(index);
 
@@ -15768,13 +15769,11 @@ js.main = {
         });
 
         var $track = $tracks.find('.track');
+        
         $track.on('tap',function(){
           var track_id = $(this).attr('data-id');
           var track_name = $(this).attr('data-name');
-
           console.log(track_id);
-
-          var sound;
 
           SC.stream('/tracks/' + track_id).then(function(sound){
             sound.play();
@@ -15791,13 +15790,6 @@ js.main = {
           $('.mbp-player-song-current-title').text(track_name);
         });
 
-        var track_id = $(this).attr('data-id');
-        SC.stream('/tracks/' + track_id).then(function(sound){
-          sound.play();
-          sound.on("state-change", function(state) {
-            console.log(state);
-          });
-        });
       });
     });
 
