@@ -11,29 +11,29 @@ html
   body.type-sound
     main.site-wrapper
       header.header
-        span.header-logo
-          | Chris Porter
         .container-fluid
           .row
-            .col-xs-12.col-md-6.hidden-xs
-              h2.header-page-title Higher
-              .sub-text Instrumental Album
-            .col-xs-12.col-md-6
+            .col-xs-4
+              span.header-logo
+                | Chris Porter
+            .col-xs-4
+              span.header-page-title Higher
+              .sub-text.hidden-xs Instrumental Album
+            .col-xs-4
               span.header-menu-trigger
-                | Back to Site Menu
+                | Site Menu
       section.site-content
         .container-fluid
           .row
             .col-xs-12
               .project-chapter
-                .project-header
+                .project-header.hidden-xs
                   h2
                     | Higher
                   .sub-text
                     | Instrumental Album
-                .project-content
-                  .track-waveform
-                    img src="assets/img/img-waveform.png"
+                .project-content.hidden-xs
+                  
       footer.site-footer
         .container-fluid
           .row
@@ -41,63 +41,8 @@ html
               p
                 | Copyright &copy; 2015
     div.site-aux
-      aside.mbp-player
-        .mbp-player-tracking
-          .mbp-player-tracking-status
-        .mbp-player-controls
-          .container-fluid
-            .row
-              .col-xs-6
-                .mbp-player-song-current
-                  .mbp-player-song-current-icon.hide-ip5
-                    img src="assets/img/icon-playing.svg" alt="Playing"
-                  .mbp-player-song-current-title
-                    | Vivid Intuition
-              .col-xs-6
-                .mbp-player-controls-buttons
-                  .container-fluid
-                    .row
-                      .col-xs-4
-                        .mbp-player-controls-buttons-ele.mbp-player-controls-buttons-prev data-control="prev"
-                          span.mbp-player-icon.mbp-player-icon-prev
-                      .col-xs-4
-                        .mbp-player-controls-buttons-ele.mbp-player-controls-buttons-pause data-control="init"
-                          span.mbp-player-icon.mbp-player-icon-play
-                      .col-xs-4
-                        .mbp-player-controls-buttons-ele.mbp-player-controls-buttons-next data-control="next"
-                          span.mbp-player-icon.mbp-player-icon-next
       aside.mbp-player-tracks
         ul.mbp-player-tracks-list
-          li#mbp-player-track-indicators.mbp-player-tracks-list-indicators
-            ol
-              li#track01.track
-                .indicator
-              li#track02.track
-                .indicator
-              li#track03.track
-                .indicator
-              li#track04.track
-                .indicator
-              li#track05.track
-                .indicator
-              li#track06.track
-                .indicator
-              li#track07.track
-                .indicator
-              li#track08.track
-                .indicator
-              li#track09.track
-                .indicator
-              li#track10.track
-                .indicator
-              li#track11.track
-                .indicator
-              li#track12.track
-                .indicator
-              li#track13.track
-                .indicator
-              li#track14.track
-                .indicator
           li#mbp-player-track-names.mbp-player-tracks-list-names
             .mbp-player-tracks-list-names-wrap
               ol.mbp-player-tracks-list-names-inner

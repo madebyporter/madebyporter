@@ -37,35 +37,36 @@
 
 // Header Styles
   .header {
-    height: 100px;
-    position: relative;
+    height: 48px;
+    margin: 20px 0;
+    position: fixed;
+    width: 100%;
     z-index: 1000;
   }
-
-// Logo Styles
   .header-logo {
     background: url('../img/mbp-logo-emblem.svg') no-repeat;
     display: block;
     height: 48px;
-    left: 20px;
-    position: absolute;
-    top: 40px;
     width: 48px;
     @include text-hide();
     @media (min-width: $mq-small) {
 
     }
   }
-
-// Menu Styles
+  .header-page-title {
+    display: block;
+    margin: 16px 0;
+    text-align: center;
+    width: 100%;
+    @extend .sub-text;
+  }
   .header-menu-trigger {
     background: url('../img/header-icon-menu.svg') no-repeat;
     cursor: pointer;
     display: block;
+    float: right;
     height: 13px;
-    margin: 60px 0 0 0;
-    position: fixed;
-    right: 20px;
+    margin: 17px 0;
     width: 20px;
     @include text-hide();
   }

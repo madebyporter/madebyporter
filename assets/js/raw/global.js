@@ -58,7 +58,7 @@ js.main = {
         // $playlist.append($('<li class="track"></li>').html('<div class="name">' + track.title + '</div>'));
         var $tracks = $playlist.find('.mbp-player-tracks-list-names-inner');
         $(playlist.tracks).each(function(i, track) {
-          $tracks.append($('<li data-id="' + track.id + '" data-name="' + track.title + '" class="track"></li>').html('<div class="name">' + track.title + '</div>'));
+          $tracks.append($('<li data-id="' + track.id + '" data-name="' + track.title + '" class="track"></li>').html('<div class="name">' + track.title + '</div><div class="controls"><div class="controls-ele controls-seek">Seek</div><div class="controls-ele controls-info">Info</div>'));
         });
 
         var $track = $tracks.find('.track');
@@ -75,7 +75,7 @@ js.main = {
             });
           });
 
-          $tracks.removeClass('playing');
+          $track.removeClass('playing');
           $(this).addClass('playing');
 
           closeTrackList();
