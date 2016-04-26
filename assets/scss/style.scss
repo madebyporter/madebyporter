@@ -99,16 +99,43 @@
       @include transition;
     }
     .controls-ele {
-      color: #4D191E;
+      color: $color-red-d3;
       height: 30px;
       letter-spacing: .08em;
       padding: 7px 0;
+      position: relative;
       text-align: center;
       text-transform: uppercase;
       width: 100%;
       &:first-child {
-        border-bottom: 1px solid #99323D;
+        border-bottom: 1px solid $color-red-d3;
       }
+    }
+    .controls-state div {
+      $s: 14px;
+      @include text-hide;
+      @include absolute-center;
+      background-color: $color-red-d3;
+      display: none;
+      height: $s;
+      mask-position: 50% 50%;
+      -webkit-mask-position: 50% 50%;
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+      mask-size: cover;
+      -webkit-mask-size: cover;
+      width: $s;
+      &.active {
+        display: block;
+      }
+    }
+    .controls-state-paused {
+      -webkit-mask-image: url(../img/icon-play.svg);
+      mask-image: url(../img/icon-play.svg);
+    }
+    .controls-state-playing {
+      -webkit-mask-image: url(../img/icon-pause.svg);
+      mask-image: url(../img/icon-pause.svg);
     }
   }
   .mbp-player-tracks-list-names-wrap {
@@ -125,9 +152,6 @@
     bottom: 0;
     position: absolute;
     width: 10000px;
-  }
-  .mbp-player-tracks-list-active {
-    
   }
   .mbp-player-icon {
     display: block;
