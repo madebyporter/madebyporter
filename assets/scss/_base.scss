@@ -7,23 +7,23 @@
   }
   body {
     background: $color-black;
-    font-family: $font-sansserif;
+    font-family: $font-reg;
     font-size: 1em;
     height: 100%;
     width: 100%;
     position: absolute;
-    &:before {
-      background: #171717;
-      bottom: 0;
-      content: "";
-      height: 100%;
-      left: 0;
-      opacity: 0.85;
-      position: fixed;
-      right: 0;
-      top: 0;
-      width: 100%;
-    } 
+    // &:before {
+    //   background: #171717;
+    //   bottom: 0;
+    //   content: "";
+    //   height: 100%;
+    //   left: 0;
+    //   opacity: 0.85;
+    //   position: fixed;
+    //   right: 0;
+    //   top: 0;
+    //   width: 100%;
+    // } 
     &.overflow {
       overflow: hidden;
     }
@@ -85,7 +85,14 @@
 
 // Site Footer
   .site-footer {
-    display: none;
+    &.site-section {
+      padding: 0 20px 20px;
+    }
+    @media (min-width: $mq-small) {
+      &.site-section {
+        padding: 0 20px 40px;
+      }
+    }
   }
 
   .ui-loader {

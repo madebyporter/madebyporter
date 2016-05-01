@@ -6,159 +6,225 @@
 @import '_base';
 @import '_type';
 @import '_animations';
-
-// Sound Styles
-  .type-sound {
-    background: url('../img/bg-sound-project-higher.png') no-repeat center fixed;
-    background-size: cover;
+@import '_sound';
+// @import '_design';
+.text-center {
+  text-align: center;
+}
+.inline-block {
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0;
   }
-  .track-waveform {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    img {
-      color: $color-red;
-      width: 100%;
+  @media (min-width: $mq-small) {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
     }
   }
-  .mbp-player {
-    background: rgba(23,23,23,0.7);
-    bottom: 0;
-    height: 55px;
-    left: 0;
-    opacity: 1;
-    position: fixed;
-    right: 0;
+}
+.bg-black {
+  background: $color-black;
+  & + .bg-red {
+    &:before {
+      background: url('../img/img-bg-triangles-black.png') no-repeat;
+      content: "";
+      position: absolute;
+      right: 4%;
+      top: -2px;
+      width: 62px;
+      height: 48px;
+      @media (min-width: $mq-small) {
+        right: 2.5%;
+      }
+    }
+  }
+}
+.bg-red {
+  background: $color-red;
+  & + .bg-black {
+    &:before {
+      background: url('../img/img-bg-triangles-red.png') no-repeat;
+      content: "";
+      position: absolute;
+      right: 4%;
+      top: -2px;
+      width: 62px;
+      height: 48px;
+      @media (min-width: $mq-small) {
+        right: 2.5%;
+      }
+    }
+  }
+}
+.site-header {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  @include transition;
+  &.site-section {
+    padding: 40px 0;
+    @media (min-width: $mq-small) {
+      padding: 40px 20px;
+    }
+  }
+  &:after {
+    @include transition;
+    @include vertical-center;
+    background: #333333;
+    content: "";
+    left: 100px;
+    position: absolute;
+    height: 1px;
     width: 100%;
-    @include transition($time: 1000ms);
+    @media (min-width: $mq-small) {
+      left: 120px;
+    }
   }
-  .mbp-player-tracking {
-    background: #402226;
-    height: 5px;
+}
+.site-header-logo {
+  @include text-hide;
+  background: url('../img/mbp-logo-emblem.svg') no-repeat center;
+  height: 50px;
+  width: 50px;
+}
+.site-section {
+  border-bottom: 1px solid #333;
+  padding: 40px 0 0;
+  position: relative;
+  &.no-border {
+    border: 0;
+  }
+  p:first-child {
+    padding-top: 35px;
+  }
+  h2 + p:first-child {
+    padding-top: 0;
+  }
+  @media (min-width: $mq-small) {
+    padding: 40px 20px;
+  }
+}
+.section-content {
+  margin: 0 0 40px 0;
+  p {
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+.work-setup-ele {
+  display: block;
+  margin: 0 0 40px 0;
+  padding-bottom: 50%;
+  position: relative;
+  width: 100%;
+}
+.work-setup-title {
+  bottom: 20px;
+  left: 20px;
+  position: absolute;
+  z-index: 10;
+  h3 {
+    margin: 0;
+  }
+}
+.work-setup-img {
+  background: $color-black;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  img {
+    opacity: 0.5;
     width: 100%;
   }
-  .mbp-player-tracking-status {
-    background: $color-red;
-    height: inherit;
-    width: 50%;
+}
+.section-content-checklist {
+  padding: 0 20px;
+  @media (min-width: $mq-small) {
+    padding: 0;
   }
-  .mbp-player-controls {
-    padding: 15px 0;
-  }
-  .mbp-player-controls-buttons-ele {
-    cursor: pointer;
-    text-align: right;
-    width: 100%;
-  }
-  .mbp-player-song-current-icon {
+}
+.section-content-checklist-ele {
+  margin: 0 0 20px 0;
+  .form-field-checkbox, .custom-checkbox, .form-field-label {
     display: inline-block;
-    padding-right: 10px;
+    vertical-align: middle;
   }
-  .mbp-player-song-current-title {
+  .form-field-checkbox {
+    // display: none;
+  }
+  .form-field-label {
+    padding-left: 10px;
+    width: 80%;
+  }
+}
+.form-field {
+  padding: 0 20px 20px;
+  @media (min-width: $mq-small) {
+    padding: 0 0 20px;
+  }
+  .form-field-label {
+    display: block;
+    margin: 0 0 10px 0;
+  }
+  .form-field-text {
+    background-image: linear-gradient(-180deg, #FFFFFF 0%, #F2F2F2 100%);
+    background-color: $color-white;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: inset 2px 2px 0 $color-grey-l3, inset -2px -2px 0 $color-grey-l3;
+    font-size: 1.0em;
+    padding: 10px 20px;
+    width: 100%;
+  }
+  .form-field-textarea {
+    background-image: linear-gradient(-180deg, #FFFFFF 0%, #F2F2F2 100%);
+    background-color: $color-white;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: inset 2px 2px 0 $color-grey-l3, inset -2px -2px 0 $color-grey-l3;
+    font-size: 1.0em;
+    min-height: 200px;
+    padding: 20px;
+    width: 100%;
+  }
+  .form-field-submit {
+    background: #F2A850;
+    border: 0;
+    border-radius: 100px;
+    box-shadow: inset 2px 2px 0 rgba(255,110,110,0.3), inset -2px -2px 0 rgba(255,110,110,0.3);
     color: $color-white;
-    display: inline-block;
-    font-size: 14px;
+    font-size: 1.2em;
     font-weight: 300;
-    letter-spacing: .08em;
+    letter-spacing: 0.04em;
+    padding: 10px 20px;
     text-transform: uppercase;
   }
-  .mbp-player-tracks-list-names {
-    .track {
-      display: inline-block;
-      padding: 0 20px;
-      width: 117px;
-      &.playing {
-        .controls {
-          @include translate(0,0);
-        }
-        .name {
-          @include transform(rotate(-90deg) translate(115%,-30%));
-          opacity: 1;
-          color: $color-red;
-        }
-      }
-    }
-    .name {
-      color: $color-white;
-      display: block;
-      font-weight: 300;
-      font-size: 3.0em;
-      line-height: 1;
-      opacity: .5;
-      @include transform(rotate(-90deg) translate(57%,-30%));
-      @include transition;
-      white-space: nowrap;
-      transform-origin: 100% 100%;
-    }
-    .controls {
-      background: $color-red;
-      height: 60px;
-      width: 100%;
-      @include translate(0,100%);
-      @include transition;
-    }
-    .controls-ele {
-      color: $color-red-d3;
-      height: 30px;
-      letter-spacing: .08em;
-      padding: 7px 0;
-      position: relative;
-      text-align: center;
-      text-transform: uppercase;
-      width: 100%;
-      &:first-child {
-        border-bottom: 1px solid $color-red-d3;
-      }
-    }
-    .controls-state div {
-      $s: 14px;
-      @include text-hide;
-      @include absolute-center;
-      background-color: $color-red-d3;
-      display: none;
-      height: $s;
-      mask-position: 50% 50%;
-      -webkit-mask-position: 50% 50%;
-      mask-repeat: no-repeat;
-      -webkit-mask-repeat: no-repeat;
-      mask-size: cover;
-      -webkit-mask-size: cover;
-      width: $s;
-      &.active {
-        display: block;
-      }
-    }
-    .controls-state-paused {
-      -webkit-mask-image: url(../img/icon-play.svg);
-      mask-image: url(../img/icon-play.svg);
-    }
-    .controls-state-playing {
-      -webkit-mask-image: url(../img/icon-pause.svg);
-      mask-image: url(../img/icon-pause.svg);
-    }
+}
+.custom-checkbox {
+  background: url('../img/img-checkbox-empty.svg') no-repeat left top;
+  background-size: contain;
+  height: 19px;
+  width: 21px;
+  &.checked {
+    background: url('../img/img-checkbox-checked.svg') no-repeat left top;
+    background-size: contain;
   }
-  .mbp-player-tracks-list-names-wrap {
-    bottom: 0;
-    left: 0;
-    top: 0;
-    right: 0;
-    position: fixed;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    z-index: 10000;
+  .form-field-checkbox {
+    display: none;
   }
-  .mbp-player-tracks-list-names-inner {
-    bottom: 0;
-    position: absolute;
-    width: 10000px;
+}
+.social-media-list {
+
+}
+.social-media-list-ele {
+  display: inline-block;
+  margin-right: 30px;
+  &:last-child {
+    margin-right: 0;
   }
-  .mbp-player-icon {
-    display: block;
-    height: 18px;
-    width: 18px;
-  }
-  .mbp-player-icon-prev {background: url('../img/icon-prev.svg');}
-  .mbp-player-icon-next {background: url('../img/icon-next.svg');}
-  .mbp-player-icon-play {background: url('../img/icon-play.svg');}
-  .mbp-player-icon-pause {background: url('../img/icon-pause.svg');}
+}

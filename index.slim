@@ -2,66 +2,197 @@ doctype html
 html
   head
     title MBP Boilerplate
+    meta charset="UTF-8"
     meta name="keywords" content="keywords"
     meta name="author" content="Made by Porter"
     meta name="viewport" content="width=device-width, initial-scale=1"
 
     link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'
     link href="assets/css/output.min.css" rel='stylesheet' type='text/css'
-  body.type-sound
+
+  body
     main.site-wrapper
-      header.header
-        span.header-logo
-          | Chris Porter
+      header.site-header.site-section.no-border.bg-black
         .container-fluid
           .row
-            .col-xs-12.col-md-6.hidden-xs
-              h2.header-page-title Higher
-              .sub-text Instrumental Album
-            .col-xs-12.col-md-6
-              span.header-menu-trigger
-                | Back to Site Menu
-              
-
-      section.site-content
-        .container
-          .row
-            .col-xs-9
-              .project-chapter
-                .project-header
-                  h2
-                    | Project Name
-                  .sub-text
-                    | Project Type
-                .project-content
-                  p
-                    | Ron Finley is a well known gangsta gardener, located in Los Angeles, CA. His goal is to bring communities of all colors together through urban farming.
-              .project-chapter
-                .project-header
-                  h2
-                    | Concept
-                  .sub-text
-                    | RonFinley.com
-                .project-content
-                  p
-                    | Ron's website was his first impression to the world and we needed to give it some TLC (tender loving care). 
-                  p
-                    | We had three main goals for Ron's website: (1) website redesign, (2) brand awareness, and (3) making the site mobile friendly.
-                  p
-                    | Ron's website was very outdated when we first saw it. It was an out of the box Wordpress theme. We wanted to step away from that and give it the loud energy that Ron embodies. So we choose some new colors that matched his brand.
-                  p
-                    | Selecting the color palette and look/feel helped us shape his brand's identity. Ron has a welcoming and loud personality and we wanted his brand to reflect that with a video header, images, and visuals.
-                  p
-                    | Lastly, his site was not very mobile friendly and we wanted to change that immediately.
-
-      footer.site-footer
-        .container
+            .col-xs-12
+              .site-header-logo
+                | Made by Porter
+      section.site-hero.site-section.no-border.bg-black
+        .container-fluid
           .row
             .col-xs-12
-              p
-                | Copyright &copy; 2015
-
-    script src="assets/js/output.min.js"
+              h1
+                | Innovation.<br />
+                | Unconventional. <br />
+                | Out of this World.
+      section.site-about.site-section.bg-black
+        .container-fluid
+          .row
+            .col-xs-12.col-md-4
+              .section-content
+                h2
+                  | Who am I?
+                p
+                  | I’m Chris Porter, a multi-disciplinary designer &amp; developer for start-ups, brands & individuals who want to create something that other’s are not doing.
+            .col-xs-12.col-sm-6.col-md-4
+              .section-content
+                h2
+                  | What Can I Do For You?
+                p
+                  | I love to design mobile apps that’s ahead of its time. Need a website that doesn’t look like a template? I got you. You need to stand out!
+                p
+                  | With 12 years of experience with design & development, you’ll receive a high-quality product that will talk your business to the next level.
+            .col-xs-12.col-sm-6.col-md-4
+              .section-content
+                h2
+                  | Why You Should Work With Me?
+                p
+                  | If you’re looking for a quick and dirty website to throw up on the internet, I’m the wrong guy for the job. 
+                p
+                  | I love to help those crazy brands that want to break the internet. We know Kim owns that title, but don’t you want to own that belt?
+      section.site-work.site-section.no-border.bg-black
+        .container-fluid
+          .row
+            .col-xs-12
+              .section-content
+                h2
+                  | Who Have I Worked With?
+                p
+                  | Here’s some of the brands I’ve worked with:
+          .row
+            .col-xs-12
+              .work-setup
+                .row
+                  .col-xs-12.col-sm-6.col-md-4
+                    a.work-setup-ele href=""
+                      .work-setup-title
+                        h3
+                          | Ron Finley
+                      .work-setup-img
+                        img src="assets/img/work-setup-img-ronfinley.png" alt="Ron Finley"
+                  .col-xs-12.col-sm-6.col-md-4
+                    a.work-setup-ele href=""
+                      .work-setup-title
+                        h3
+                          | Newscrack
+                      .work-setup-img
+                        img src="assets/img/work-setup-img-newscrack.png" alt="Newscrack"
+                  .col-xs-12.col-sm-6.col-md-4
+                    a.work-setup-ele href=""
+                      .work-setup-title
+                        h3
+                          | Jeanine Mckirnan
+                      .work-setup-img
+                        img src="assets/img/work-setup-img-jm.png" alt="Jeanine Mckirnan"
+                  .col-xs-12.col-sm-6.col-md-4
+                    a.work-setup-ele href=""
+                      .work-setup-title
+                        h3
+                          | Silicon Beach Talent
+                      .work-setup-img
+                        img src="assets/img/work-setup-img-sbt.png" alt="Silicon Beach Talent"
+                  .col-xs-12.col-sm-6.col-md-4
+                    a.work-setup-ele href=""
+                      .work-setup-title
+                        h3
+                          | Mercedeh Allen
+                      .work-setup-img
+                        img src="assets/img/work-setup-img-mallen.png" alt="Mercedeh Allen"
+                  .col-xs-12.col-sm-6.col-md-4
+                    a.work-setup-ele href=""
+                      .work-setup-title
+                        h3
+                          | Christal Ryles
+                      .work-setup-img
+                        img src="assets/img/work-setup-img-clr.png" alt="Christal Ryles"
+      section.site-contact.site-section.no-border.bg-red
+        form
+          .container-fluid
+            .row
+              .col-xs-12.col-md-4
+                .row
+                  .col-xs-12
+                    .section-content
+                      h2
+                        | Ready to Get Started?
+                      p
+                        | Looking to work with me? Well, lets make sure we’re the right fit:
+                      ul.section-content-checklist
+                        li.section-content-checklist-ele
+                          input.form-field-checkbox type="checkbox" name="req" id="req1"
+                          label.form-field-label for="req1" Your digital assets is very important to your business
+                        li.section-content-checklist-ele
+                          input.form-field-checkbox type="checkbox" name="req" id="req2"
+                          label.form-field-label for="req2" Your business has a budget of at least $5,000
+                        li.section-content-checklist-ele
+                          input.form-field-checkbox type="checkbox" name="req" id="req3"
+                          label.form-field-label for="req3" Your business believes design is very important
+                        li.section-content-checklist-ele
+                          input.form-field-checkbox type="checkbox" name="req" id="req4"
+                          label.form-field-label for="req4" You know that your users is the key to your success
+                        li.section-content-checklist-ele
+                          input.form-field-checkbox type="checkbox" name="req" id="req5"
+                          label.form-field-label for="req5" You’re done with the Wordpress templates, the Squarespace’s, and you want to shake up your industry!
+                  .col-xs-12
+                    .section-content
+                      p
+                        | Now you’re ready to take action.<br />Let me know what you need done:
+                      ul.section-content-checklist
+                        li.section-content-checklist-ele
+                          input.form-field-checkbox type="checkbox" name="service" id="service-website"
+                          label.form-field-label for="service-website" I need a website designed
+                        li.section-content-checklist-ele
+                          input.form-field-checkbox type="checkbox" name="service" id="service-app"
+                          label.form-field-label for="service-app" I need an app designed
+                        li.section-content-checklist-ele
+                          input.form-field-checkbox type="checkbox" name="service" id="service-consulting"
+                          label.form-field-label for="service-consulting" I need design consulting
+              .col-xs-12.col-md-4
+                .row
+                  .col-xs-12
+                    .section-content
+                      p
+                        | The rest is history. Supply your details and lets get ready to roll.
+                      .form-field
+                        label.form-field-label for="name" Name
+                        input.form-field-text type="text" name="name" id="name"
+                      .form-field
+                        label.form-field-label for="email" Email
+                        input.form-field-text type="email" name="email" id="email"
+                      .form-field
+                        label.form-field-label for="brief" Brief me on your project
+                        textarea.form-field-textarea type="text" name="name" id="name"
+                  .col-xs-12
+                    .section-content.text-center
+                      p.inline-block Now hit that submit
+                      .form-field.inline-block
+                        input.form-field-submit type="submit" name="submit" id="submit" value="Submit"
+      footer.site-footer.site-section.no-border.bg-black
+        .container-fluid
+          .row
+            .col-xs-12.col-md-4
+              .site-content
+                h2
+                  | Follow me around
+                ul.social-media-list
+                  li.social-media-list-ele
+                    a href="#"
+                      img src="assets/img/img-social-twitter.svg" alt="Twitter"
+                  li.social-media-list-ele
+                    a href="#"
+                      img src="assets/img/img-social-instagram.svg" alt="Instagram"
+                  li.social-media-list-ele
+                    a href="#"
+                      img src="assets/img/img-social-dribbble.svg" alt="Dribbble"
+                  li.social-media-list-ele
+                    a href="#"
+                      img src="assets/img/img-social-snapchat.svg" alt="Snapchat"
+            .col-xs-12.col-md-4
+              .site-content
+                h2
+                  | The end...for now
+    script src="assets/js/output.js"
 
     javascript:
       var _gaq = _gaq || [];

@@ -5,28 +5,14 @@ var js = js || {},
 js.main = {
   init: function () {
     this.linksExternal();
-    this.indicatorTrigger();
-    this.playerTrackTrigger();
     this.mbpPlayer();
+    this.customCheckbox();
   },
   linksExternal: function () {
     $("a[href^='http://']").attr("target", "_blank");
   },
-  indicatorTrigger: function () {
-    var indicator = $('.mbp-player-tracks-list-indicators .indicator');
-    indicator.on("tap",function(){
-      $('body').addClass('overflow');
-      $('.site-wrapper,.mbp-player').addClass('mbp-player-tracks-list-active');
-      indicator.removeClass('tapped active');
-      $(this).addClass('tapped active');
-      $('.mbp-player-tracks-list-names').addClass('active');
-    });
-  },
-  playerTrackTrigger: function () {
-    
-  },
-  mbpPlayer: function () {
 
+  mbpPlayer: function () {
     function closeTrackList(event){
       var track = $('.mbp-player-tracks-list-names .track');
       $('body').removeClass('overflow');
@@ -89,8 +75,22 @@ js.main = {
         });
       });
     });
-
   },
+
+  customCheckbox: function () {
+    var $checkBox = $('.form-field-checkbox');
+    var $ele = $('.section-content-checklist-ele');
+    $checkBox.each(function(){
+      $(this).wrap( "<div class='custom-checkbox'></div>" );
+    });
+    $('.section-content-checklist-ele').on('click', function(){
+      if ($(this).find($checkBox).is(':checked')) {
+        $(this).find('.custom-checkbox').addClass('checked');
+      } else {
+        $(this).find('.custom-checkbox').removeClass('checked');
+      }
+    });
+  }
 };
 
 doc.ready(function () {
