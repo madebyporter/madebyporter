@@ -264,10 +264,13 @@ js.main = {
     this.fadeInScroll();
   },
   fadeInScroll: function () {
+    setTimeout(function(){$('.showmeonload').addClass('showme'); },2500);
+
     $(window).scroll( function(){
       /* Check the location of each desired element */
       $('.hideme').each( function(i){
           
+          // var bottom_of_object = $(this).offset().top + $(this).outerHeight();
           var bottom_of_object = $(this).offset().top;
           var bottom_of_window = $(window).scrollTop() + $(window).height();
           
