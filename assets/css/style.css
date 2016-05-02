@@ -55,12 +55,48 @@ html {
 }
 
 body {
-  background: #1E1E22;
+  background: url("../img/bg-sound-project-higher.png") no-repeat center top #1E1E22;
+  background-size: cover;
   font-family: "DinPro-Regular";
   font-size: 1em;
   height: 100%;
   width: 100%;
   position: absolute;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body:before {
+  background: rgba(30, 30, 34, 0.5);
+  background: -webkit-linear-gradient(180deg, rgba(30, 30, 34, 0.5) 0%, #1E1E22 100%);
+  background: -moz-linear-gradient(180deg, rgba(30, 30, 34, 0.5) 0%, #1E1E22 100%);
+  background: -o-linear-gradient(180deg, rgba(30, 30, 34, 0.5) 0%, #1E1E22 100%);
+  background: linear-gradient(180deg, rgba(30, 30, 34, 0.5) 0%, #1E1E22 100%);
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+body:after {
+  background: #1E1E22;
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  -webkit-animation: bgFadeIn 5s 1 cubic-bezier(0.14, 0.62, 0.39, 1) forwards;
+  -moz-animation: bgFadeIn 5s 1 cubic-bezier(0.14, 0.62, 0.39, 1) forwards;
+  -o-animation: bgFadeIn 5s 1 cubic-bezier(0.14, 0.62, 0.39, 1) forwards;
+  animation: bgFadeIn 5s 1 cubic-bezier(0.14, 0.62, 0.39, 1) forwards;
+  opacity: 0;
 }
 body.overflow {
   overflow: hidden;
@@ -69,10 +105,8 @@ body.overflow {
 .site-wrapper {
   height: 100%;
   width: 100%;
-  -webkit-transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
-  -moz-transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
-  -o-transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
-  transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+  position: relative;
+  z-index: 10;
 }
 
 .header {
@@ -246,6 +280,28 @@ p {
     -ms-transform: scale(1);
     -webkit-transform: scale(1);
     transform: scale(1);
+  }
+}
+@-webkit-keyframes bgFadeIn {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes bgFadeIn {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 .type-sound {
@@ -455,6 +511,14 @@ p {
   background: url("../img/icon-pause.svg");
 }
 
+@media (min-width: 768px) {
+  .buckets-divider {
+    border-right: 1px solid #333;
+    min-height: 280px;
+    padding-right: 40px;
+  }
+}
+
 .text-center {
   text-align: center;
 }
@@ -492,6 +556,18 @@ p {
   .bg-black + .bg-red:before {
     right: 2.5%;
   }
+}
+
+.bg-black-50 {
+  background: rgba(30, 30, 34, 0.5);
+}
+
+.bg-black-gradient {
+  background: rgba(30, 30, 34, 0.5);
+  background: -webkit-linear-gradient(180deg, rgba(30, 30, 34, 0.5) 0%, #1E1E22 100%);
+  background: -moz-linear-gradient(180deg, rgba(30, 30, 34, 0.5) 0%, #1E1E22 100%);
+  background: -o-linear-gradient(180deg, rgba(30, 30, 34, 0.5) 0%, #1E1E22 100%);
+  background: linear-gradient(180deg, rgba(30, 30, 34, 0.5) 0%, #1E1E22 100%);
 }
 
 .bg-red {
@@ -592,6 +668,7 @@ p {
 .work-setup-ele {
   display: block;
   margin: 0 0 40px 0;
+  overflow: hidden;
   padding-bottom: 50%;
   position: relative;
   width: 100%;
@@ -631,12 +708,14 @@ p {
 .section-content-checklist-ele {
   margin: 0 0 20px 0;
 }
-.section-content-checklist-ele .form-field-checkbox, .section-content-checklist-ele .custom-checkbox, .section-content-checklist-ele .form-field-label {
+.section-content-checklist-ele .form-field-checkbox, .section-content-checklist-ele .custom-checkbox {
   display: inline-block;
-  vertical-align: middle;
+  margin-right: 10px;
+  vertical-align: text-bottom;
 }
 .section-content-checklist-ele .form-field-label {
-  padding-left: 10px;
+  display: inline-block;
+  vertical-align: text-bottom;
   width: 80%;
 }
 
@@ -660,7 +739,7 @@ p {
   box-shadow: inset 2px 2px 0 #E6E6E6, inset -2px -2px 0 #E6E6E6;
   font-size: 1.0em;
   padding: 10px 20px;
-  width: 100%;
+  width: 70%;
 }
 .form-field .form-field-textarea {
   background-image: linear-gradient(-180deg, #FFFFFF 0%, #F2F2F2 100%);
@@ -669,7 +748,7 @@ p {
   border-radius: 2px;
   box-shadow: inset 2px 2px 0 #E6E6E6, inset -2px -2px 0 #E6E6E6;
   font-size: 1.0em;
-  min-height: 200px;
+  min-height: 250px;
   padding: 20px;
   width: 100%;
 }
@@ -686,15 +765,60 @@ p {
   text-transform: uppercase;
 }
 
+.form-content {
+  -webkit-transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+  -moz-transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+  -o-transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+  transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+  opacity: 1;
+  height: 100%;
+}
+.form-content.form-sent {
+  height: 0px;
+  opacity: 0;
+}
+
+.form-message {
+  -webkit-transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+  -moz-transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+  -o-transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+  transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+  border-bottom: 0px solid #a03540;
+  color: #fff;
+  font-size: 1.4em;
+  line-height: 1.5;
+  padding: 0;
+  text-align: center;
+}
+.form-message.error {
+  border-bottom: 1px solid #a03540;
+  margin: 0 0 40px 0;
+  padding: 40px 20px;
+}
+.form-message.success {
+  padding: 200px 20px;
+}
+.form-message.success .form-message-content {
+  position: absolute;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 .custom-checkbox {
-  background: url("../img/img-checkbox-empty.svg") no-repeat left top;
-  background-size: contain;
+  background: url("../img/img-checkbox-empty.svg") no-repeat center;
+  background-size: cover;
   height: 19px;
-  width: 21px;
+  width: 19px;
 }
 .custom-checkbox.checked {
-  background: url("../img/img-checkbox-checked.svg") no-repeat left top;
-  background-size: contain;
+  background: url("../img/img-checkbox-checked.svg") no-repeat center;
+  background-size: cover;
 }
 .custom-checkbox .form-field-checkbox {
   display: none;

@@ -12,31 +12,31 @@ html
 
   body
     main.site-wrapper
-      header.site-header.site-section.no-border.bg-black
+      header.site-header.site-section.no-border.bg-black.bg-black-50
         .container-fluid
           .row
             .col-xs-12
               .site-header-logo
                 | Made by Porter
-      section.site-hero.site-section.no-border.bg-black
+      section.site-hero.site-section.no-border.bg-black.bg-black-50
         .container-fluid
           .row
             .col-xs-12
               h1
                 | Innovation.<br />
-                | Unconventional. <br />
+                | Unconventional.<br />
                 | Out of this World.
-      section.site-about.site-section.bg-black
+      section.site-about.site-section.bg-black.bg-black-50
         .container-fluid
           .row
             .col-xs-12.col-md-4
-              .section-content
+              .section-content.buckets-divider
                 h2
                   | Who am I?
                 p
                   | I’m Chris Porter, a multi-disciplinary designer &amp; developer for start-ups, brands & individuals who want to create something that other’s are not doing.
             .col-xs-12.col-sm-6.col-md-4
-              .section-content
+              .section-content.buckets-divider
                 h2
                   | What Can I Do For You?
                 p
@@ -51,7 +51,7 @@ html
                   | If you’re looking for a quick and dirty website to throw up on the internet, I’m the wrong guy for the job. 
                 p
                   | I love to help those crazy brands that want to break the internet. We know Kim owns that title, but don’t you want to own that belt?
-      section.site-work.site-section.no-border.bg-black
+      section.site-work.site-section.no-border.bg-black.bg-black-gradient
         .container-fluid
           .row
             .col-xs-12
@@ -107,62 +107,79 @@ html
                       .work-setup-img
                         img src="assets/img/work-setup-img-clr.png" alt="Christal Ryles"
       section.site-contact.site-section.no-border.bg-red
-        form
+        form id="contactForm" method="post" action="mailer.php"
           .container-fluid
             .row
-              .col-xs-12.col-md-4
+              .col-xs-12
+                #form-messages.form-message
+              .form-content.col-xs-12.col-md-4
                 .row
                   .col-xs-12
                     .section-content
                       h2
                         | Ready to Get Started?
                       p
-                        | Looking to work with me? Well, lets make sure we’re the right fit:
+                        | Lets make sure we’re the right fit before you continue:
                       ul.section-content-checklist
                         li.section-content-checklist-ele
-                          input.form-field-checkbox type="checkbox" name="req" id="req1"
                           label.form-field-label for="req1" Your digital assets is very important to your business
                         li.section-content-checklist-ele
-                          input.form-field-checkbox type="checkbox" name="req" id="req2"
                           label.form-field-label for="req2" Your business has a budget of at least $5,000
                         li.section-content-checklist-ele
-                          input.form-field-checkbox type="checkbox" name="req" id="req3"
                           label.form-field-label for="req3" Your business believes design is very important
                         li.section-content-checklist-ele
-                          input.form-field-checkbox type="checkbox" name="req" id="req4"
                           label.form-field-label for="req4" You know that your users is the key to your success
                         li.section-content-checklist-ele
-                          input.form-field-checkbox type="checkbox" name="req" id="req5"
                           label.form-field-label for="req5" You’re done with the Wordpress templates, the Squarespace’s, and you want to shake up your industry!
-                  .col-xs-12
-                    .section-content
-                      p
-                        | Now you’re ready to take action.<br />Let me know what you need done:
-                      ul.section-content-checklist
-                        li.section-content-checklist-ele
-                          input.form-field-checkbox type="checkbox" name="service" id="service-website"
-                          label.form-field-label for="service-website" I need a website designed
-                        li.section-content-checklist-ele
-                          input.form-field-checkbox type="checkbox" name="service" id="service-app"
-                          label.form-field-label for="service-app" I need an app designed
-                        li.section-content-checklist-ele
-                          input.form-field-checkbox type="checkbox" name="service" id="service-consulting"
-                          label.form-field-label for="service-consulting" I need design consulting
-              .col-xs-12.col-md-4
+              .form-content.col-xs-12.col-md-4
                 .row
                   .col-xs-12
-                    .section-content
-                      p
-                        | The rest is history. Supply your details and lets get ready to roll.
-                      .form-field
-                        label.form-field-label for="name" Name
-                        input.form-field-text type="text" name="name" id="name"
-                      .form-field
-                        label.form-field-label for="email" Email
-                        input.form-field-text type="email" name="email" id="email"
-                      .form-field
-                        label.form-field-label for="brief" Brief me on your project
-                        textarea.form-field-textarea type="text" name="name" id="name"
+                    p
+                      | The rest is history. Supply your details.
+                    .form-field
+                      label.form-field-label for="name" Name
+                      input.form-field-text type="text" name="name" id="name"
+                    .form-field
+                      label.form-field-label for="email" Email
+                      input.form-field-text type="email" name="email" id="email"
+                .row
+                  .col-xs-12
+                    p
+                      | Now you’re ready to take action. What's up?
+                    ul.section-content-checklist
+                      li.section-content-checklist-ele
+                        label.form-field-label for="service-website" 
+                          input.form-field-checkbox type="checkbox" name="service[website]" id="service-website" value="Website"
+                          | I need a website designed
+                      li.section-content-checklist-ele
+                        label.form-field-label for="service-app" 
+                          input.form-field-checkbox type="checkbox" name="service[app]" id="service-app" value="App Design"
+                          | I need an app designed
+                      li.section-content-checklist-ele
+                        label.form-field-label for="service-consulting" 
+                          input.form-field-checkbox type="checkbox" name="service[consulting]" id="service-consulting" value="Design Consulting"
+                          | I need Design Consulting
+                      li.section-content-checklist-ele
+                        label.form-field-label for="service-music" 
+                          input.form-field-checkbox type="checkbox" name="service[music]" id="service-music" value="Music"
+                          | Can I get some music?
+                      li.section-content-checklist-ele
+                        label.form-field-label for="service-general" 
+                          input.form-field-checkbox type="checkbox" name="service[general]" id="service-general" value="General"
+                          | Get something off my chest
+              .form-content.col-xs-12.col-md-4
+                .row
+                  .col-xs-12
+                    p
+                      | Brief me on your project
+                    .form-field
+                      label.form-field-label for="message" The Brief:
+                      textarea.form-field-textarea name="message" id="message"
+                    ul.section-content-checklist
+                      li.section-content-checklist-ele
+                        label.form-field-label for="subscribe" 
+                          input.form-field-checkbox type="checkbox" name="subscribe" id="subscribe" value="subscribed"
+                          | Subcribe to my ramblings
                   .col-xs-12
                     .section-content.text-center
                       p.inline-block Now hit that submit

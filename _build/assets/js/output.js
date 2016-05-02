@@ -259,11 +259,82 @@ js.main = {
     this.linksExternal();
     this.mbpPlayer();
     this.customCheckbox();
+    this.ajaxForm();
+  },
+  ajaxForm: function () {
+    // Get the form.
+    var form = $('#contactForm');
+
+    // Get the messages div.
+    var formMessages = $('#form-messages');
+
+    // Get the form content
+    var formContent = $('.form-content');
+
+    // Get form top
+    var offset = form.offset();
+
+    // Set up an event listener for the contact form.
+    $(form).submit(function(event) {
+      // Stop the browser from submitting the form.
+      event.preventDefault();
+
+      // Serialize the form data.
+      var formData = $(form).serialize();
+
+      function scrollTop(){
+        // Scroll to top to see error
+        $('html, body').animate({
+          scrollTop: form.offset().top - 150
+        }, 500);
+      }
+
+      // Submit the form using AJAX.
+      $.ajax({
+        type: 'POST',
+        url: $(form).attr('action'),
+        data: formData
+      }).done(function(response) {
+        // Make sure that the formMessages div has the 'success' class.
+        $(formMessages).removeClass('error');
+        $(formMessages).addClass('success');
+
+        // Set the message text.
+        $(formMessages).text(response);
+
+        // Scroll to top to see completion
+        scrollTop();
+
+        // Hide Form
+        $(formContent).addClass('form-sent');
+
+        // Clear the form.
+        $('#name').val('');
+        $('#email').val('');
+        $('#message').val('');
+        $('#subscribe').val('');
+        $('.form-field-checkbox').val('');
+
+      }).fail(function(data) {
+        // Make sure that the formMessages div has the 'error' class.
+        $(formMessages).removeClass('success');
+        $(formMessages).addClass('error');
+
+        // Scroll to top to see error
+        scrollTop();
+
+        // Set the message text.
+        if (data.responseText !== '') {
+            $(formMessages).html("<div class='form-message-content'>" + data.responseText + "</div>");
+        } else {
+            $(formMessages).text('Oops! An error occured and your message could not be sent.');
+        }
+      });
+    });
   },
   linksExternal: function () {
     $("a[href^='http://']").attr("target", "_blank");
   },
-
   mbpPlayer: function () {
     function closeTrackList(event){
       var track = $('.mbp-player-tracks-list-names .track');
@@ -335,7 +406,8 @@ js.main = {
     $checkBox.each(function(){
       $(this).wrap( "<div class='custom-checkbox'></div>" );
     });
-    $('.section-content-checklist-ele').on('click', function(){
+    $(doc).on('click', '.section-content-checklist-ele', function(){
+      event.stopPropagation();
       if ($(this).find($checkBox).is(':checked')) {
         $(this).find('.custom-checkbox').addClass('checked');
       } else {
