@@ -9,6 +9,22 @@ js.main = {
     this.customCheckbox();
     this.ajaxForm();
     this.gaTimeout();
+    this.fadeInScroll();
+  },
+  fadeInScroll: function () {
+    $(window).scroll( function(){
+      /* Check the location of each desired element */
+      $('.hideme').each( function(i){
+          
+          var bottom_of_object = $(this).offset().top;
+          var bottom_of_window = $(window).scrollTop() + $(window).height();
+          
+          /* If the object is completely visible in the window, fade it it */
+          if( bottom_of_window > bottom_of_object ){
+              $(this).addClass('showme');      
+          }  
+      }); 
+    });
   },
   gaTimeout: function () {
     setTimeout(function(){_gaq.push(['_trackEvent', 'Control', 'Bounce Rate', ''])},60000);
@@ -157,7 +173,6 @@ js.main = {
       });
     });
   },
-
   customCheckbox: function () {
     var $checkBox = $('.form-field-checkbox');
     var $ele = $('.section-content-checklist-ele');

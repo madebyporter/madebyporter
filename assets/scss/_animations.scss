@@ -29,26 +29,48 @@
     }
   }
 
-  // BG Fade In
-    @-webkit-keyframes bgFadeIn {
-      0% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
+// BG Fade In
+  @-webkit-keyframes bgFadeIn {
+    0% {
+      opacity: 1;
     }
-    @keyframes bgFadeIn {
-      0% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
+    50% {
+      opacity: 1;
     }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes bgFadeIn {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+// Fade In Up
+  @-webkit-keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      @include translate(0,100px);
+    }
+    100% {
+      opacity: 1;
+      @include translate(0,0);
+    }
+  }
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      @include translate(0,100px);
+    }
+    100% {
+      opacity: 1;
+      @include translate(0,0);
+    }
+  }
