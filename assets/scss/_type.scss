@@ -25,6 +25,13 @@ h1 {
   }
 }
 
+h1 + .sub {
+  color: $color-white;
+  font-size: 1.4em;
+  font-family: $font-reg;
+  line-height: 1.5;
+}
+
 h2 {
   color: $color-grey-l3;
   font-family: $font-reg;
@@ -47,6 +54,11 @@ p {
   line-height: 1.5;
   margin: 0 0 20px 0;
 }
+
+strong {
+  font-family: $font-bold;
+}
+
 .form-field-label {
   color: $color-white;
   font-size: 1.0em;

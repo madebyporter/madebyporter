@@ -132,6 +132,11 @@
     }
   }
 }
+.site-hero {
+  &.site-section {
+    padding: 100px 20px;
+  }
+}
 .work-setup-ele {
   display: block;
   margin: 0 0 40px 0;
@@ -159,6 +164,9 @@
     opacity: 0.5;
     width: 100%;
   }
+}
+.site-contact {
+  min-height: 650px;
 }
 .section-content-checklist {
   padding: 0 20px;

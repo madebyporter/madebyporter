@@ -260,6 +260,10 @@ js.main = {
     this.mbpPlayer();
     this.customCheckbox();
     this.ajaxForm();
+    this.gaTimeout();
+  },
+  gaTimeout: function () {
+    setTimeout(function(){_gaq.push(['_trackEvent', 'Control', 'Bounce Rate', ''])},60000);
   },
   ajaxForm: function () {
     // Get the form.
@@ -314,6 +318,12 @@ js.main = {
         $('#message').val('');
         $('#subscribe').val('');
         $('.form-field-checkbox').val('');
+
+        setTimeout(function() {
+          // Show Form
+          $(formContent).removeClass('form-sent');
+          $(formMessages).removeClass('success').empty();
+        }, 3000);
 
       }).fail(function(data) {
         // Make sure that the formMessages div has the 'error' class.

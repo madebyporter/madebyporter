@@ -8883,7 +8883,7 @@ html {
 }
 
 body {
-  background: url("../img/bg-sound-project-higher.png") no-repeat center top #1E1E22;
+  background: url("../img/bg-sound-project-higher-trans.png") no-repeat center top #1E1E22;
   background-size: cover;
   font-family: "DinPro-Regular";
   font-size: 1em;
@@ -8893,12 +8893,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+@media (min-width: 768px) {
+  body {
+    background: url("../img/bg-sound-project-higher-trans.png") no-repeat center top #1E1E22;
+    background-size: cover;
+  }
+}
 body:before {
   background: rgba(30, 30, 34, 0.5);
-  background: -webkit-linear-gradient(180deg, rgba(30, 30, 34, 0.5) 0%, #1E1E22 100%);
-  background: -moz-linear-gradient(180deg, rgba(30, 30, 34, 0.5) 0%, #1E1E22 100%);
-  background: -o-linear-gradient(180deg, rgba(30, 30, 34, 0.5) 0%, #1E1E22 100%);
-  background: linear-gradient(180deg, rgba(30, 30, 34, 0.5) 0%, #1E1E22 100%);
+  background: -webkit-linear-gradient(180deg, rgba(30, 30, 34, 0.2) 50%, #1E1E22 100%);
+  background: -moz-linear-gradient(180deg, rgba(30, 30, 34, 0.2) 50%, #1E1E22 100%);
+  background: -o-linear-gradient(180deg, rgba(30, 30, 34, 0.2) 50%, #1E1E22 100%);
+  background: linear-gradient(180deg, rgba(30, 30, 34, 0.2) 50%, #1E1E22 100%);
   bottom: 0;
   content: "";
   height: 100%;
@@ -9021,6 +9027,13 @@ h1 {
   }
 }
 
+h1 + .sub {
+  color: #fff;
+  font-size: 1.4em;
+  font-family: "DinPro-Regular";
+  line-height: 1.5;
+}
+
 h2 {
   color: #E6E6E6;
   font-family: "DinPro-Regular";
@@ -9041,6 +9054,10 @@ p {
   font-size: 1.2em;
   line-height: 1.5;
   margin: 0 0 20px 0;
+}
+
+strong {
+  font-family: "DinPro-Bold";
 }
 
 .form-field-label {
@@ -9493,6 +9510,10 @@ p {
   margin: 0;
 }
 
+.site-hero.site-section {
+  padding: 100px 20px;
+}
+
 .work-setup-ele {
   display: block;
   margin: 0 0 40px 0;
@@ -9522,6 +9543,10 @@ p {
 .work-setup-img img {
   opacity: 0.5;
   width: 100%;
+}
+
+.site-contact {
+  min-height: 650px;
 }
 
 .section-content-checklist {
