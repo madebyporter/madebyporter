@@ -55,7 +55,7 @@ html {
 }
 
 body {
-  background: url("../img/bg-sound-project-higher-trans.png") no-repeat center top #1E1E22;
+  background: url("../img/bg-sound-project-higher-trans.jpg") no-repeat center top #1E1E22;
   background-size: cover;
   font-family: "DinPro-Regular";
   font-size: 1em;
@@ -64,12 +64,6 @@ body {
   position: absolute;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-@media (min-width: 768px) {
-  body {
-    background: url("../img/bg-sound-project-higher-trans.png") no-repeat center top #1E1E22;
-    background-size: cover;
-  }
 }
 body:before {
   background: rgba(30, 30, 34, 0.5);
@@ -586,11 +580,11 @@ strong {
 }
 
 .fadeInUp {
-  -moz-transform: translate(0, 100px);
-  -o-transform: translate(0, 100px);
-  -ms-transform: translate(0, 100px);
-  -webkit-transform: translate(0, 100px);
-  transform: translate(0, 100px);
+  -moz-transform: translate(0, 500px);
+  -o-transform: translate(0, 500px);
+  -ms-transform: translate(0, 500px);
+  -webkit-transform: translate(0, 500px);
+  transform: translate(0, 500px);
   -webkit-animation: fadeInUp 1s cubic-bezier(0.14, 0.62, 0.39, 1) 0ms 1 forwards;
   -moz-animation: fadeInUp 1s cubic-bezier(0.14, 0.62, 0.39, 1) 0ms 1 forwards;
   -o-animation: fadeInUp 1s cubic-bezier(0.14, 0.62, 0.39, 1) 0ms 1 forwards;
@@ -778,7 +772,12 @@ strong {
   padding-right: 10px;
 }
 .site-hero.site-section {
-  padding: 100px 20px;
+  padding: 40px 0;
+}
+@media (min-width: 768px) {
+  .site-hero.site-section {
+    padding: 100px 20px;
+  }
 }
 
 .work-setup-ele {
@@ -826,7 +825,14 @@ strong {
 }
 
 .section-content-checklist-ele {
-  margin: 0 0 20px 0;
+  border-bottom: 1px solid #a03540;
+  margin: 0 0 10px 0;
+  padding: 0 0 10px 0;
+}
+.section-content-checklist-ele:last-child {
+  border-bottom: 0;
+  margin: 0;
+  padding: 0;
 }
 .section-content-checklist-ele .form-field-checkbox, .section-content-checklist-ele .custom-checkbox {
   display: inline-block;
@@ -859,7 +865,12 @@ strong {
   box-shadow: inset 2px 2px 0 #E6E6E6, inset -2px -2px 0 #E6E6E6;
   font-size: 1.0em;
   padding: 10px 20px;
-  width: 70%;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .form-field .form-field-text {
+    width: 70%;
+  }
 }
 .form-field .form-field-textarea {
   background-image: linear-gradient(-180deg, #FFFFFF 0%, #F2F2F2 100%);

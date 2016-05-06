@@ -20,7 +20,7 @@
 }
 
 .fadeInUp {
-  @include translate(0,100px);
+  @include translate(0,500px);
   @include animation(fadeInUp 1s $timing 0ms 1 forwards);
   display: inline-block;
   position: relative;
@@ -167,7 +167,10 @@
     padding-right: 10px;
   }
   &.site-section {
-    padding: 100px 20px;
+    padding: 40px 0;
+    @media (min-width: $mq-small) {
+      padding: 100px 20px;
+    }
   }
 }
 .work-setup-ele {
@@ -208,7 +211,14 @@
   }
 }
 .section-content-checklist-ele {
-  margin: 0 0 20px 0;
+  border-bottom: 1px solid $color-red-d1;
+  margin: 0 0 10px 0;
+  padding: 0 0 10px 0;
+  &:last-child {
+    border-bottom: 0;
+    margin: 0;
+    padding: 0;
+  }
   .form-field-checkbox, .custom-checkbox {
     display: inline-block;
     margin-right: 10px;
@@ -240,7 +250,10 @@
     box-shadow: inset 2px 2px 0 $color-grey-l3, inset -2px -2px 0 $color-grey-l3;
     font-size: 1.0em;
     padding: 10px 20px;
-    width: 70%;
+    width: 100%;
+    @media (min-width: $mq-small) {
+      width: 70%;
+    }
   }
   .form-field-textarea {
     background-image: linear-gradient(-180deg, #FFFFFF 0%, #F2F2F2 100%);

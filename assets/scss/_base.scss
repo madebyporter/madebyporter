@@ -6,7 +6,7 @@
     width: 100%;
   }
   body {
-    background: url('../img/bg-sound-project-higher-trans.png') no-repeat center top $color-black;
+    background: url('../img/bg-sound-project-higher-trans.jpg') no-repeat center top $color-black;
     background-size: cover;
     font-family: $font-reg;
     font-size: 1em;
@@ -16,10 +16,6 @@
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    @media (min-width: $mq-small) {
-      background: url('../img/bg-sound-project-higher-trans.png') no-repeat center top $color-black;
-      background-size: cover;
-    }
     &:before {
       background: $color-black-50;
       background: -webkit-linear-gradient(180deg, $color-black-20 50%, $color-black 100%);
