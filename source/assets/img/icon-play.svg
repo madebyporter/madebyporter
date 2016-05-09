@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7 (28169) - http://www.bohemiancoding.com/sketch -->
+    <title>play</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Mobile--3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPhone-6-Copy-15" transform="translate(-283.000000, -632.000000)" fill="#B33B48">
+            <g id="Player" transform="translate(0.000000, 610.000000)">
+                <g id="Group-10" transform="translate(224.000000, 21.000000)">
+                    <path d="M59.3750005,19.0012818 C59.4375006,19.0012818 59.4791674,18.9804485 59.5416675,18.9596151 L76.7916926,10.3346025 C76.9166928,10.2721025 77.0000262,10.1471023 77.0000262,10.0012687 C77.0000262,9.85543518 76.9166928,9.730435 76.7916926,9.66793491 L59.5416675,1.04292234 C59.4166673,0.980422251 59.2916671,0.980422251 59.1666669,1.06375571 C59.0625001,1.1262558 59,1.25125598 59,1.37625616 L59,18.6262813 C59,18.7512815 59.0625001,18.8762817 59.1666669,18.9387817 C59.229167,18.9804485 59.3125005,19.0012818 59.3750005,19.0012818 L59.3750005,19.0012818 Z" id="play"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

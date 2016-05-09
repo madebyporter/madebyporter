@@ -1,0 +1,196 @@
+// _sound.scss
+
+// Sound Styles
+  .sound-set {
+    $border-color: $color-grey-l4;
+
+    @include transition;
+    @include translate(0px, 0);
+    background: $color-white;
+    cursor: pointer;
+    margin: 0 0 10px 0;
+    padding: 20px;
+    &:hover {
+      @include translate(5px, 0);
+    }
+    [class^="container-"] {
+      border: 1px solid $border-color;
+    }
+    .sound-title, .sound-control-play, .sound-control-download {
+      display: block;
+      padding: 20px 0;
+    }
+    [class^="sound-control-"] {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+    .sound-title {
+      font-family: $font-bold;
+      text-transform: uppercase;
+    }
+    .sound-controls {
+      border-left: 1px solid $border-color;
+      &:after {
+        content: "";
+        background: $border-color;
+        height: 100%;
+        width: 1px;
+        @include absolute-center;
+      }
+    }
+  }
+  // .type-sound {
+  //   background: url('../img/bg-sound-project-higher.png') no-repeat center fixed;
+  //   background-size: cover;
+  // }
+  // .track-waveform {
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   width: 100%;
+  //   img {
+  //     color: $color-red;
+  //     width: 100%;
+  //   }
+  // }
+  // .mbp-player {
+  //   background: rgba(23,23,23,0.7);
+  //   bottom: 0;
+  //   height: 55px;
+  //   left: 0;
+  //   opacity: 1;
+  //   position: fixed;
+  //   right: 0;
+  //   width: 100%;
+  //   @include transition($time: 1000ms);
+  // }
+  // .mbp-player-tracking {
+  //   background: #402226;
+  //   height: 5px;
+  //   width: 100%;
+  // }
+  // .mbp-player-tracking-status {
+  //   background: $color-red;
+  //   height: inherit;
+  //   width: 50%;
+  // }
+  // .mbp-player-controls {
+  //   padding: 15px 0;
+  // }
+  // .mbp-player-controls-buttons-ele {
+  //   cursor: pointer;
+  //   text-align: right;
+  //   width: 100%;
+  // }
+  // .mbp-player-song-current-icon {
+  //   display: inline-block;
+  //   padding-right: 10px;
+  // }
+  // .mbp-player-song-current-title {
+  //   color: $color-white;
+  //   display: inline-block;
+  //   font-size: 14px;
+  //   font-weight: 300;
+  //   letter-spacing: .08em;
+  //   text-transform: uppercase;
+  // }
+  // .mbp-player-tracks-list-names {
+  //   .track {
+  //     display: inline-block;
+  //     padding: 0 20px;
+  //     width: 117px;
+  //     &.playing {
+  //       .controls {
+  //         @include translate(0,0);
+  //       }
+  //       .name {
+  //         @include transform(rotate(-90deg) translate(115%,-30%));
+  //         opacity: 1;
+  //         color: $color-red;
+  //       }
+  //     }
+  //   }
+  //   .name {
+  //     color: $color-white;
+  //     display: block;
+  //     font-weight: 300;
+  //     font-size: 3.0em;
+  //     line-height: 1;
+  //     opacity: .5;
+  //     @include transform(rotate(-90deg) translate(57%,-30%));
+  //     @include transition;
+  //     white-space: nowrap;
+  //     transform-origin: 100% 100%;
+  //   }
+  //   .controls {
+  //     background: $color-red;
+  //     height: 60px;
+  //     width: 100%;
+  //     @include translate(0,100%);
+  //     @include transition;
+  //   }
+  //   .controls-ele {
+  //     color: $color-red-d3;
+  //     height: 30px;
+  //     letter-spacing: .08em;
+  //     padding: 7px 0;
+  //     position: relative;
+  //     text-align: center;
+  //     text-transform: uppercase;
+  //     width: 100%;
+  //     &:first-child {
+  //       border-bottom: 1px solid $color-red-d3;
+  //     }
+  //   }
+  //   .controls-state div {
+  //     $s: 14px;
+  //     @include text-hide;
+  //     @include absolute-center;
+  //     background-color: $color-red-d3;
+  //     display: none;
+  //     height: $s;
+  //     mask-position: 50% 50%;
+  //     -webkit-mask-position: 50% 50%;
+  //     mask-repeat: no-repeat;
+  //     -webkit-mask-repeat: no-repeat;
+  //     mask-size: cover;
+  //     -webkit-mask-size: cover;
+  //     width: $s;
+  //     &.active {
+  //       display: block;
+  //     }
+  //   }
+  //   .controls-state-paused {
+  //     -webkit-mask-image: url(../img/icon-play.svg);
+  //     mask-image: url(../img/icon-play.svg);
+  //   }
+  //   .controls-state-playing {
+  //     -webkit-mask-image: url(../img/icon-pause.svg);
+  //     mask-image: url(../img/icon-pause.svg);
+  //   }
+  // }
+  // .mbp-player-tracks-list-names-wrap {
+  //   bottom: 0;
+  //   left: 0;
+  //   top: 0;
+  //   right: 0;
+  //   position: fixed;
+  //   overflow-x: scroll;
+  //   overflow-y: hidden;
+  //   z-index: 10000;
+  // }
+  // .mbp-player-tracks-list-names-inner {
+  //   bottom: 0;
+  //   position: absolute;
+  //   width: 10000px;
+  // }
+  // .mbp-player-icon {
+  //   display: block;
+  //   height: 18px;
+  //   width: 18px;
+  // }
+  // .mbp-player-icon-prev {background: url('../img/icon-prev.svg');}
+  // .mbp-player-icon-next {background: url('../img/icon-next.svg');}
+  // .mbp-player-icon-play {background: url('../img/icon-play.svg');}
+  // .mbp-player-icon-pause {background: url('../img/icon-pause.svg');}

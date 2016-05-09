@@ -1,0 +1,63 @@
+doctype html
+html
+  head
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+    meta charset="UTF-8"
+    meta name="keywords" content="made by porter, chris porter, designer, developer, ux, design, html, css, los angeles, cleveland"
+    meta name="description" content="I’m Chris Porter, a multi-disciplinary designer &amp; developer for start-ups, brands &amp; individuals who want to create something that other’s are not doing."
+    meta name="author" content="Made by Porter"
+    meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"
+
+    title = current_page.data.title || "Made by Porter - Home of Designer, Developer &amp; Musician, Chris Porter."
+
+    == stylesheet_link_tag :style
+    == javascript_include_tag "output"
+
+  body class="#{page_classes}"
+    main.site-wrapper
+      header.site-header.site-section.no-border.bg-black.bg-black-50
+        .container-fluid
+          .row
+            .col-xs-12
+              .site-header-logo
+                | Made by Porter
+      section.site-body
+        == yield
+      footer.site-footer.site-section.no-border.bg-black
+        .container-fluid
+          .row
+            .col-xs-12.col-md-4
+              .site-content.hideme
+                h2
+                  | Follow me around
+                ul.social-media-list
+                  li.social-media-list-ele
+                    a href="http://www.twitter.com/madebyporter"
+                      == image_tag 'img-social-twitter.svg'
+                  li.social-media-list-ele
+                    a href="http://www.instagram.com/portermade"
+                      == image_tag 'img-social-instagram.svg'
+                  li.social-media-list-ele
+                    a href="http://www.dribbble.com/madebyporter"
+                      == image_tag 'img-social-dribbble.svg'
+                  li.social-media-list-ele
+                    a href="http://www.snapchat.com/add/portermade"
+                      == image_tag 'img-social-snapchat.svg'
+            .col-xs-12.col-md-4
+              .site-content.hideme
+                h2
+                  | The end...for now
+
+    script src="//static.getclicky.com/js" type="text/javascript"
+    javascript:
+      try{ clicky.init(100949014); }catch(e){}
+    javascript:
+      var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-54767153-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();

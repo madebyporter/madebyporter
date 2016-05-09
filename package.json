@@ -10,6 +10,7 @@
     "grunt-contrib-sass": "^0.9.2",
     "grunt-contrib-uglify": "^0.9.2",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-middleman": "^0.2.0",
     "grunt-newer": "^1.1.2",
     "grunt-slim": "^0.1.0"
   },

@@ -1,0 +1,34 @@
+---
+title: Made by Porter - Music
+---
+
+section.site-hero.site-section.no-border.bg-black.bg-black-50
+  .container-fluid
+    .row
+      .col-xs-12
+        h1
+          span.fadeInUp Sounds 
+          span.fadeInUp for your 
+          span.fadeInUp projects
+          .sub.fadeInUp
+            | Download royalty free sounds, ready for your project.
+section.site-sounds.site-section.bg-black.bg-black-50
+  .container-fluid
+    .row
+      .col-xs-12.col-md-8
+        ul.sound-list
+          - data.soundlist.sound.each do |sound|
+            li.sound-set
+              .container-fluid
+                .row
+                  .sound-meta.col-xs-8.col-sm-9.col-md-10
+                    span.sound-title 
+                      = sound.name
+                  .sound-controls.col-xs-4.col-sm-3.col-md-2
+                    .row
+                      .col-xs-6
+                        span.sound-control-play data-url=sound.url data-name=sound.name
+                          i.fa.fa-play-circle
+                      .col-xs-6
+                        = link_to sound.url, class: 'sound-control-download' do
+                          i.fa.fa-download

@@ -5,36 +5,53 @@ var mozjpeg = require('imagemin-mozjpeg');
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    middleman: {
+      options: {
+        useBundle: true
+      },
+      server: {
+        options: {
+          command: "server",         
+          environment: "development",
+          port: 4567,
+          env: {}
+        }
+      },
+      build: {
+        options: {
+          command: "build",
+          glob: false,
+          clean: true,
+        }
+      }
+    },
+
     sass: {
       dist: {
         options: {
           style: 'expanded'
         },
         files: {
-          'assets/css/style.css': 'assets/scss/style.scss',
+          'build/assets/css/style.css': 'source/assets/scss/style.scss',
         }
       }
     },
 
     concat: {
-      css: {
-        src: ['assets/vendor/css/*', 'assets/css/style.css'],
-        dest: 'assets/css/output.css'
-      },
+      // css: {
+      //   src: ['source/assets/vendor/css/*', 'source/assets/css/style.css'],
+      //   dest: 'source/assets/css/output.css'
+      // },
       js: {
-        src: ['assets/vendor/js/*', 'assets/js/raw/*'],
-        dest: 'assets/js/output.js',
-      },
-      js2: {
-        src: ['assets/vendor/js/*', 'assets/js/raw/*'],
-        dest: '_build/assets/js/output.js',
+        src: ['source/assets/vendor/js/*', 'source/assets/js/_global.js'],
+        dest: 'source/assets/js/output.js',
       }
     },
 
     cssmin: {
       css: {
-        src: 'assets/css/output.css',
-        dest: '_build/assets/css/output.min.css'
+        src: 'source/assets/css/output.css',
+        dest: 'build/assets/css/output.min.css'
       }
     },
 
@@ -44,12 +61,12 @@ var mozjpeg = require('imagemin-mozjpeg');
           beautify: true
         },
         files: {
-          '_build/assets/js/output.min.js': ['assets/js/output.js']
+          'build/assets/js/output.min.js': ['source/assets/js/output.js']
         },
       },
       dist: {
         files: {
-          '_build/assets/js/output.min.js': ['assets/js/output.js']
+          'build/assets/js/output.min.js': ['source/assets/js/output.js']
         },
       }
     },
@@ -59,8 +76,8 @@ var mozjpeg = require('imagemin-mozjpeg');
         files: [{
           expand: true,
           cwd: '.',
-          src: ['**/*.slim'],
-          dest: '_build/',
+          src: ['source/*.slim'],
+          dest: 'build/',
           ext: '.html',
         }],
       },
@@ -70,40 +87,41 @@ var mozjpeg = require('imagemin-mozjpeg');
       dist: {                         // Another target
         files: [{
           expand: true,                  // Enable dynamic expansion
-          cwd: 'assets/img',                   // Src matches are relative to this path
+          cwd: 'source/assets/img',                   // Src matches are relative to this path
           src: ['**/*.{png,jpg,gif,svg}'],   // Actual patterns to match
-          dest: '_build/assets/img'                  // Destination path prefix
+          dest: 'build/assets/img'                  // Destination path prefix
         }]
       }
     },
 
     watch: {
-      css: {
-        files: 'assets/**/*.scss',
-        tasks: ['sass', 'concat', 'cssmin'],
-        options: {
-          livereload: true,
-        },
-      },
-      slim: {
-        files: ['**/*.slim'],
-        tasks: ['slim'],
-      },
+      // css: {
+      //   files: 'source/assets/**/*.scss',
+      //   tasks: ['sass', 'concat', 'cssmin'],
+      //   options: {
+      //     livereload: true,
+      //   },
+      // },
+      // slim: {
+      //   files: ['source/*.slim'],
+      //   tasks: ['slim'],
+      // },
       scripts: {
-        files: 'assets/js/raw/*.js',
+        files: ['source/assets/vendor/js/*', 'source/assets/js/_global.js'],
         tasks: ['concat'],
       },
-      images: {
-        files: ['assets/img/*.{png,jpg,gif,svg}','assets/vendor/js/*'],
-        tasks: ['imagemin'],
-      },
-      options: {
-        livereload: true,
-      },
+      // images: {
+      //   files: ['source/assets/img/*.{png,jpg,gif,svg}','source/assets/vendor/js/*'],
+      //   tasks: ['imagemin'],
+      // },
+      // options: {
+      //   livereload: true,
+      // },
     },
 
   });
 
+  grunt.loadNpmTasks('grunt-middleman');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-slim');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -114,6 +132,6 @@ var mozjpeg = require('imagemin-mozjpeg');
   grunt.loadNpmTasks('grunt-newer');
 
   // Default task(s).
-  grunt.registerTask('default', ['newer:imagemin', 'sass', 'slim', 'newer:cssmin', 'newer:concat', 'watch']);
-  grunt.registerTask('dev', ['newer:imagemin', 'sass', 'slim', 'newer:cssmin', 'newer:concat', 'watch']);
+  grunt.registerTask('default', ['middleman', 'newer:imagemin', 'sass', 'slim', 'newer:cssmin', 'newer:concat', 'watch']);
+  grunt.registerTask('dev', ['concat', 'middleman:server']);
 };
