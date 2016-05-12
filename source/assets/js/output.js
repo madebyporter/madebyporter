@@ -62,7 +62,7 @@ js.main = {
       var url = link.closest('.sound-set').attr('data-url');
 
       player.src = url;
-      $('.mbp-player-current').html(name);
+      $('.mbp-player-current .title').html(name);
       $('.mbp-player-download').find('a').attr("href", url);
       par = link.closest('.sound-set');
       par.addClass('active').siblings().removeClass('active');
