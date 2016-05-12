@@ -59,6 +59,13 @@
     @include translate($x,$y);
   }
 
+// Filters
+  @mixin filter($x) {
+    -webkit-filter: $x;
+    -moz-filter: $x;
+    -o-filter: $x;
+    filter: $x;
+  }
 // Animations
   @mixin animation($x) {
     -webkit-animation: $x;

@@ -74,3 +74,21 @@
       @include translate(0,0);
     }
   }
+
+// Lavalamp Logo
+  @-webkit-keyframes lavalamp {
+    0% {
+      @include filter(hue-rotate(0deg));
+    }
+    100% {
+      @include filter(hue-rotate(360deg));
+    }
+  }
+  @keyframes lavalamp {
+    0% {
+      @include filter(hue-rotate(0deg));
+    }
+    100% {
+      @include filter(hue-rotate(360deg));
+    }
+  }

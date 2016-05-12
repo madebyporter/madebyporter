@@ -1,5 +1,5 @@
 require 'slim'
-require 'yaml'
+require 'json'
 
 ###
 # Page options, layouts, aliases and proxies
@@ -44,11 +44,14 @@ end
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # Use relative URLs
-  # activate :relative_assets
+  activate :relative_assets
 end
+
+string = File.read('data/soundlist.json')
+json = JSON.parse(string)

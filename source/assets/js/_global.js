@@ -5,37 +5,59 @@ var js = js || {},
 js.main = {
   init: function () {
     this.linksExternal();
-    // this.mbpPlayer();
     this.customCheckbox();
     this.ajaxForm();
     this.gaTimeout();
     this.fadeInScroll();
-    this.playSound();
+    this.mbpPlayer();
   },
-  playSound: function () {
-    var sound = $('.sound-control-play');
-    $(sound).on('click', function(){
-      var url = $(this).attr("data-url");
-      var name = $(this).attr("data-name");
+  mbpPlayer: function () {
 
-      var audio = soundManager.createSound({
-        id: name,
-        url: url,
-        autoLoad: true,
-        autoPlay: false,
-        // onload: function() {
-        //   alert('The sound '+ name +' loaded!');
-        // },
-        volume: 50
+    var audio;
+    var playlist;
+    var tracks;
+    var current;
+
+    init();
+
+    function init(){
+      current = 0;
+      audio = $('audio');
+      playlist = $('.sound-list');
+      tracks = playlist.find('li');
+      len = tracks.length - 1;
+      audio[0].volume = 1;
+      // audio[0].play();
+      playlist.find('.sound-title').click(function(e){
+          e.preventDefault();
+          link = $(this);
+          current = link.parent().index();
+          run(link, audio[0]);
       });
-      if (audio.playState == 0) {
-        soundManager.play(name);
-      } else {
-        soundManager.togglePause(name);
-      }
-      
+      audio[0].addEventListener('ended',function(e){
+          current++;
+          if(current == len){
+              current = 0;
+              // audio[0].pause();
+              link = playlist.find('.sound-title')[0];
+          }else{
+              link = playlist.find('.sound-title')[current];    
+          }
+          run($(link),audio[0]);
+      });
+    }
+    function run(link, player){
+      var name = link.closest('.sound-set').attr('data-name');
+      var url = link.closest('.sound-set').attr('data-url');
 
-    });
+      player.src = url;
+      $('.mbp-player-current').html(name);
+      $('.mbp-player-download').find('a').attr("href", url);
+      par = link.closest('.sound-set');
+      par.addClass('active').siblings().removeClass('active');
+      audio[0].load();
+      audio[0].play();
+    }
   },
   fadeInScroll: function () {
     setTimeout(function(){$('.showmeonload').addClass('showme'); },2500);
@@ -137,70 +159,6 @@ js.main = {
   },
   linksExternal: function () {
     $("a[href^='http://']").attr("target", "_blank");
-  },
-  mbpPlayer: function () {
-    function closeTrackList(event){
-      var track = $('.mbp-player-tracks-list-names .track');
-      $('body').removeClass('overflow');
-      $('.site-wrapper,.mbp-player').removeClass('mbp-player-tracks-list-active');
-      $('.mbp-player-tracks-list-names').removeClass('active');
-    }
-
-    var api = '71a3575c851dae984aa4222250977ad1';
-    var redirect = 'http://localhost:8888/mbp/madebyporter/_build/music-higher.html';
-
-    SC.initialize({
-      client_id: api,
-      redirect_uri: redirect,
-    });
-
-    var track_objects = {};
-    SC.get('/playlists/31545797').then(function(playlists){
-      console.log(playlists.title);
-      $(playlists).each(function(index, playlist) {
-        var $playlist = $('.mbp-player-tracks-list').eq(index);
-        var $tracks = $playlist.find('.mbp-player-tracks-list-names-inner');
-        $(playlist.tracks).each(function(i, track) {
-          $tracks.append($('<li data-id="' + track.id + '" data-name="' + track.title + '" class="track"></li>').html('<div class="name">' + track.title + '</div><div class="controls"><div class="controls-ele controls-seek">Seek</div><div class="controls-ele controls-state"><div class="controls-state-playing">Playing</div><div class="controls-state-paused">Paused</div></div>'));
-        });
-
-        var $track = $tracks.find('.track');
-        var sound;
-        $track.on('tap',function(){
-          var track_id = $(this).attr('data-id');
-          var track_name = $(this).attr('data-name');
-          console.log(track_id);
-          currentSound = sound;
-          if( sound ) {
-            if(is_playing) {
-                currentSound.pause();
-                is_playing = false;
-                $('.controls-state div').removeClass('active');
-                $('.controls-state-paused').addClass('active');
-                $(this).removeClass('playing').addClass('paused');
-            } else {
-                currentSound.play();
-                is_playing = true;
-                $('.controls-state div').removeClass('active');
-                $('.controls-state-playing').addClass('active');
-                $(this).removeClass('paused').addClass('playing');
-            }
-          } else {
-            SC.stream('/tracks/' + track_id).then(function(obj){
-                sound = obj;
-                obj.play();
-                is_playing = true;
-                $('.controls-state div').removeClass('active');
-                $('.controls-state-playing').addClass('active');
-                return false;
-            });
-          }
-          $track.removeClass('playing');
-          $(this).addClass('playing');
-          
-        });
-      });
-    });
   },
   customCheckbox: function () {
     var $checkBox = $('.form-field-checkbox');

@@ -105,6 +105,28 @@
     }
   }
 }
+.bg-white {
+  background: $color-white;
+}
+
+.text-dark {
+  color: $color-black;
+  h1, h2, h3, h4, h5, h6 {
+    color: $color-black;
+  }
+  p, .sub {
+    color: $color-grey-d3;
+  }
+}
+
+.index {
+  .site-header {
+    @extend .no-border;
+    @extend .bg-black;
+    @extend .bg-black-50;
+  }
+}
+
 .site-header {
   overflow: hidden;
   position: relative;

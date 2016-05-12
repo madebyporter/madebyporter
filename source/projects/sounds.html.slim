@@ -2,7 +2,7 @@
 title: Made by Porter - Music
 ---
 
-section.site-hero.site-section.no-border.bg-black.bg-black-50
+section.site-hero.site-section.bg-white.no-border
   .container-fluid
     .row
       .col-xs-12
@@ -12,23 +12,30 @@ section.site-hero.site-section.no-border.bg-black.bg-black-50
           span.fadeInUp projects
           .sub.fadeInUp
             | Download royalty free sounds, ready for your project.
-section.site-sounds.site-section.bg-black.bg-black-50
+section.site-sounds.site-section
   .container-fluid
     .row
-      .col-xs-12.col-md-8
+      .col-xs-12.col-md-10
         ul.sound-list
           - data.soundlist.sound.each do |sound|
-            li.sound-set
+            li.sound-set data-url=sound.url data-name=sound.name
               .container-fluid
                 .row
-                  .sound-meta.col-xs-8.col-sm-9.col-md-10
+                  .sound-meta.col-xs-8.col-sm-11.col-md-11
                     span.sound-title 
                       = sound.name
-                  .sound-controls.col-xs-4.col-sm-3.col-md-2
+                  .sound-controls.col-xs-4.col-sm-1.col-md-1
                     .row
-                      .col-xs-6
-                        span.sound-control-play data-url=sound.url data-name=sound.name
-                          i.fa.fa-play-circle
-                      .col-xs-6
+                      / .col-xs-6
+                      /   span.sound-control-play
+                      .col-xs-12
                         = link_to sound.url, class: 'sound-control-download' do
-                          i.fa.fa-download
+                          i.fa.fa-angle-down
+
+.mbp-player
+  .mbp-player-current
+    | Holidead
+  audio id="audio" tabindex="0" controls="" type="audio/mpeg"
+    source type="audio/mp3" src="https://dl.dropboxusercontent.com/u/80054631/music/Holidead.mp3"
+  .mbp-player-download
+    a href="https://dl.dropboxusercontent.com/u/80054631/music/Holidead.mp3" Download
