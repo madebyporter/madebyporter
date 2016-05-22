@@ -38,6 +38,12 @@ js.main = {
       tracks = playlist.find('li');
       len = tracks.length - 1;
       audio[0].volume = 1;
+
+      play = $('#play');
+      pause = $('#pause');
+      mute = $('#mute');
+      muted = $('#muted');
+
       // audio[0].play();
       playlist.find('.sound-title').click(function(e){
           e.preventDefault();
@@ -68,7 +74,20 @@ js.main = {
       par.addClass('active').siblings().removeClass('active');
       audio[0].load();
       audio[0].play();
+
+      $('.mbp-player-button').replaceWith('<div class="mbp-player-button mbp-player-button-pause" id="pause"></div>');
+      $('.projects_sounds').addClass('mbp-player-active');
     }
+
+    play.on('click', function(){
+      audio[0].play();
+      $(this).replaceWith('<div class="mbp-player-button mbp-player-button-pause" id="pause"></div>');
+    });
+
+    pause.on('click', function(){
+      audio[0].pause();
+      $(this).replaceWith('<div class="mbp-player-button mbp-player-button-play" id="play"></div>');
+    });
   },
   fadeInScroll: function () {
     setTimeout(function(){$('.showmeonload').addClass('showme'); },2500);

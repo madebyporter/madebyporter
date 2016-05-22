@@ -92,3 +92,30 @@
       @include filter(hue-rotate(360deg));
     }
   }
+
+// Init Animations
+  .hideme {
+    @include transition($time: 600ms);
+    @include translate(0,50px);
+    opacity: 0;
+    &.showme {
+      @include translate(0,0px);
+      opacity: 1;
+    }
+  }
+
+  .fadeInUp {
+    @include translate(0,500px);
+    @include animation(fadeInUp 1s $timing 0ms 1 forwards);
+    display: inline-block;
+    position: relative;
+    &:nth-child(2){
+      @include animation(fadeInUp 1s $timing 500ms 1 forwards);
+    }
+    &:nth-child(3){
+      @include animation(fadeInUp 1s $timing 1000ms 1 forwards);
+    }
+    &:nth-child(4){
+      @include animation(fadeInUp 1s $timing 1500ms 1 forwards);
+    }
+  }

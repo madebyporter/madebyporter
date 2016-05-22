@@ -1,0 +1,36 @@
+// _design.scss
+
+// Work Index
+  .work-setup-ele {
+    display: block;
+    margin: 0 0 40px 0;
+    overflow: hidden;
+    padding-bottom: 50%;
+    position: relative;
+    width: 100%;
+  }
+  .work-setup-title {
+    bottom: 20px;
+    left: 20px;
+    position: absolute;
+    z-index: 10;
+    h3 {
+      margin: 0;
+    }
+  }
+  .work-setup-img {
+    background: $color-black;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    img {
+      opacity: 0.5;
+      width: 100%;
+    }
+  }
+
+// Work Contact
+  .site-contact {
+    min-height: 650px;
+  }

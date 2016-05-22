@@ -1,5 +1,13 @@
 { "sound": 
   [ 
+    {
+      "name": "The Bounce",
+      "url": "https://dl.dropboxusercontent.com/u/80054631/music/The%20Bounce.mp3"
+    },
+    {
+      "name": "Heaven",
+      "url": "https://dl.dropboxusercontent.com/u/80054631/music/Heaven.mp3"
+    },
     { 
       "name": "Holidead",
       "url": "https://dl.dropboxusercontent.com/u/80054631/music/Holidead.mp3" 

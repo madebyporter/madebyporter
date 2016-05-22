@@ -59,62 +59,348 @@
   }
 
 // Header Styles
-  .header {
-    height: 48px;
-    margin: 20px 0;
-    position: fixed;
+  .site-header {
+    overflow: hidden;
+    position: relative;
     width: 100%;
-    z-index: 1000;
+    @include transition;
+    &.site-section {
+      padding: 40px 0;
+      @media (min-width: $mq-small) {
+        padding: 40px 20px;
+      }
+    }
+    &:after {
+      @include transition;
+      @include vertical-center;
+      background: $color-black;
+      content: "";
+      left: 100px;
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      @media (min-width: $mq-small) {
+        left: 120px;
+      }
+    }
   }
-  .header-logo {
-    background: url('../img/mbp-logo-emblem.svg') no-repeat;
-    display: block;
-    height: 48px;
-    width: 48px;
-    @include text-hide();
+  .site-header-logo {
+    @include text-hide;
+    background: url('../img/mbp-logo-emblem.svg') no-repeat center;
+    height: 50px;
+    width: 50px;
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
   }
-  .header-page-title {
-    display: block;
-    margin: 16px 0;
-    text-align: center;
-    width: 100%;
-    @extend .sub-text;
-  }
-  .header-menu-trigger {
-    background: url('../img/header-icon-menu.svg') no-repeat;
-    cursor: pointer;
-    display: block;
+  .site-header-nav {
     float: right;
-    height: 13px;
-    margin: 17px 0;
-    width: 20px;
-    @include text-hide();
+    margin: 11px 0 0 0;
+    position: relative;
+    z-index: 100000;
+  }
+  .site-header-nav-link {
+    display: inline-block;
+    padding: 0 0 0 30px;
+    &:first-child {
+      padding-left: 0;
+    }
+    a {
+      color: $color-white;
+      font-size: 1.4em;
+      font-family: $font-bold;
+      position: relative;
+      text-decoration: none;
+      @include transition;
+      &:hover {
+        color: $color-red;
+      }
+    }
   }
 
 // Site Content Styles
-  .site-content {
-    padding: 40px 0 0 0;
+  .site-section {
+    border-bottom: 1px solid #333;
+    padding: 40px 0 0;
     position: relative;
-    z-index: 100;
+    &.no-border {
+      border: 0;
+    }
+    p:first-child {
+      padding-top: 35px;
+    }
+    h2 + p:first-child {
+      padding-top: 0;
+    }
+    @media (min-width: $mq-small) {
+      padding: 40px 20px;
+    }
+  }
+  .section-content {
+    margin: 0 0 40px 0;
+    p {
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  .site-hero {
+    h1 {
+      overflow: hidden;
+    }
+    span {
+      padding-right: 10px;
+    }
+    &.site-section {
+      padding: 40px 0;
+      @media (min-width: $mq-small) {
+        padding: 100px 20px;
+      }
+    }
+  }
+  .buckets-divider {
+    @media (min-width: $mq-small) {
+      border-right: 1px solid #333;
+      min-height: 280px;
+      padding-right: 40px;
+    }
+  }
+  .section-content-checklist {
+    padding: 0 20px;
+    @media (min-width: $mq-small) {
+      padding: 0;
+    }
+  }
+  .section-content-checklist-ele {
+    border-bottom: 1px solid $color-red-d1;
+    margin: 0 0 10px 0;
+    padding: 0 0 10px 0;
+    &:last-child {
+      border-bottom: 0;
+      margin: 0;
+      padding: 0;
+    }
+    .form-field-checkbox, .custom-checkbox {
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: text-bottom;
+    }
+    .form-field-checkbox {
+      // display: none;
+    }
+    .form-field-label {
+      display: inline-block;
+      vertical-align: text-bottom;
+      width: 80%;
+    }
   }
 
-// Project Content Styles
-  .project-content {
-    padding: 20px 0;
+// Form Elements
+  .form-field {
+    padding: 0 20px 20px;
+    @media (min-width: $mq-small) {
+      padding: 0 0 20px;
+    }
+    .form-field-label {
+      display: block;
+      margin: 0 0 10px 0;
+    }
+    .form-field-text {
+      background-image: linear-gradient(-180deg, #FFFFFF 0%, #F2F2F2 100%);
+      background-color: $color-white;
+      border: 0;
+      border-radius: 2px;
+      box-shadow: inset 2px 2px 0 $color-grey-l3, inset -2px -2px 0 $color-grey-l3;
+      font-size: 1.0em;
+      padding: 10px 20px;
+      width: 100%;
+      @media (min-width: $mq-small) {
+        width: 70%;
+      }
+    }
+    .form-field-textarea {
+      background-image: linear-gradient(-180deg, #FFFFFF 0%, #F2F2F2 100%);
+      background-color: $color-white;
+      border: 0;
+      border-radius: 2px;
+      box-shadow: inset 2px 2px 0 $color-grey-l3, inset -2px -2px 0 $color-grey-l3;
+      font-size: 1.0em;
+      min-height: 250px;
+      padding: 20px;
+      width: 100%;
+    }
+    .form-field-submit {
+      background: #F2A850;
+      border: 0;
+      border-radius: 100px;
+      box-shadow: inset 2px 2px 0 rgba(255,110,110,0.3), inset -2px -2px 0 rgba(255,110,110,0.3);
+      color: $color-white;
+      font-size: 1.2em;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      padding: 10px 20px;
+      text-transform: uppercase;
+    }
+  }
+  .form-content {
+    @include transition;
+    opacity: 1;
+    height: 100%;
+    &.form-sent {
+      height: 0px;
+      opacity: 0;
+    }
+  }
+  .form-message {
+    @include transition;
+    border-bottom: 0px solid $color-red-d1;
+    color: $color-white;
+    font-size: 1.4em;
+    line-height: 1.5;
+    padding: 0;
+    text-align: center;
+    &.error {
+      border-bottom: 1px solid $color-red-d1;
+      margin: 0 0 40px 0;
+      padding: 40px 20px;
+    }
+    &.success {
+      padding: 200px 20px;
+      .form-message-content {
+        position: absolute;
+        @include absolute-center;
+      }
+    }
+  }
+  .custom-checkbox {
+    background: url('../img/img-checkbox-empty.svg') no-repeat center;
+    background-size: cover;
+    height: 19px;
+    width: 19px;
+    &.checked {
+      background: url('../img/img-checkbox-checked.svg') no-repeat center;
+      background-size: cover;
+    }
+    .form-field-checkbox {
+      display: none;
+    }
+  }
+
+// Social Media
+  .social-media-list-ele {
+    display: inline-block;
+    margin-right: 30px;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
 // Site Footer
   .site-footer {
     &.site-section {
-      padding: 0 20px 20px;
+      padding: 40px 20px 20px;
+    }
+    .site-content {
+      padding-bottom: 40px;
     }
     @media (min-width: $mq-small) {
       &.site-section {
-        padding: 0 20px 40px;
+        padding: 40px 20px;
+      }
+      .site-content {
+        padding-bottom: 0;
       }
     }
   }
 
   .ui-loader {
     display: none;
+  }
+
+// Options
+  .text-center {
+    text-align: center;
+  }
+  .inline-block {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @media (min-width: $mq-small) {
+      display: inline-block;
+      margin-bottom: 0;
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .bg-black {
+    background: $color-black;
+    & + .bg-red {
+      &:before {
+        background: url('../img/img-bg-triangles-black.png') no-repeat;
+        content: "";
+        position: absolute;
+        right: 4%;
+        top: -2px;
+        width: 62px;
+        height: 48px;
+        @media (min-width: $mq-small) {
+          right: 2.5%;
+        }
+      }
+    }
+  }
+  .bg-black-50 {
+    background: $color-black-50;
+  }
+  .bg-black-gradient {
+    background: $color-black-50;
+    background: -webkit-linear-gradient(180deg, $color-black-50 0%, $color-black 100%);
+    background: -moz-linear-gradient(180deg, $color-black-50 0%, $color-black 100%);
+    background: -o-linear-gradient(180deg, $color-black-50 0%, $color-black 100%);
+    background: linear-gradient(180deg, $color-black-50 0%, $color-black 100%);
+  }
+  .bg-red {
+    background: $color-red;
+    & + .bg-black {
+      &:before {
+        background: url('../img/img-bg-triangles-red.png') no-repeat;
+        content: "";
+        position: absolute;
+        right: 4%;
+        top: -2px;
+        width: 62px;
+        height: 48px;
+        @media (min-width: $mq-small) {
+          right: 2.5%;
+        }
+      }
+    }
+  }
+  .bg-white {
+    background: $color-white;
+  }
+
+  .text-dark {
+    color: $color-black;
+    h1, h2, h3, h4, h5, h6 {
+      color: $color-black;
+    }
+    p, .sub {
+      color: $color-grey-d3;
+    }
+  }
+
+  .text-light {
+    color: $color-white;
+    h1, h2, h3, h4, h5, h6 {
+      color: $color-white;
+    }
+    p, .sub {
+      color: $color-grey-d3;
+    }
   }

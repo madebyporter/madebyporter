@@ -18,7 +18,7 @@ section.site-sounds.site-section
       .col-xs-12.col-md-10
         ul.sound-list
           - data.soundlist.sound.each do |sound|
-            li.sound-set data-url=sound.url data-name=sound.name
+            li.sound-set.hideme.showmeonload data-url=sound.url data-name=sound.name
               .container-fluid
                 .row
                   .sound-meta.col-xs-8.col-sm-11.col-md-11
@@ -35,13 +35,15 @@ section.site-sounds.site-section
 .mbp-player
   .container-fluid
     .row
-      .col-xs-6
-        audio id="audio" tabindex="0" controls="" type="audio/mpeg"
-          source type="audio/mp3" src="https://dl.dropboxusercontent.com/u/80054631/music/Holidead.mp3"
-      .col-xs-5
+      .col-xs-8.col-sm-4
         .mbp-player-current
           span.title Holidead
-      .col-xs-1
+      .col-xs-2.col-sm-4
+        .mbp-player-controller
+          #play.mbp-player-button.mbp-player-button-play
+        audio id="audio" tabindex="0" controls="" type="audio/mpeg" class="regular-player"
+          source type="audio/mp3" src="https://dl.dropboxusercontent.com/u/80054631/music/Holidead.mp3"
+      .col-xs-2.col-sm-4
         .mbp-player-download
           a.sound-control-download href="https://dl.dropboxusercontent.com/u/80054631/music/Holidead.mp3"
             i.fa.fa-angle-down
