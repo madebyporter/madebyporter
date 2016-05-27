@@ -991,9 +991,8 @@ strong {
 
 .work-setup-ele {
   display: block;
-  margin: 0 0 40px 0;
+  height: 100%;
   overflow: hidden;
-  padding-bottom: 50%;
   position: relative;
   width: 100%;
 }
@@ -1016,12 +1015,32 @@ strong {
   z-index: 1;
 }
 .work-setup-img img {
+  height: 100%;
   opacity: 0.5;
   width: 100%;
 }
 
+.work-row {
+  margin-bottom: 20px;
+}
+.work-row:last-child {
+  margin-bottom: 0;
+}
+
 .site-contact {
   min-height: 650px;
+}
+
+.work-height-1 {
+  height: 290px;
+  margin-bottom: 20px;
+}
+.work-height-1:last-child {
+  margin-bottom: 0px;
+}
+
+.work-height-2 {
+  height: 600px;
 }
 
 /*# sourceMappingURL=style.css.map */
