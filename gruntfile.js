@@ -129,6 +129,6 @@ var mozjpeg = require('imagemin-mozjpeg');
 
   // Default task(s).
   grunt.registerTask('default', ['middleman:build', 'newer:imagemin', 'sass', 'slim', 'newer:cssmin', 'newer:concat', 'watch']);
-  grunt.registerTask('dev', ['newer:imagemin', 'sass', 'newer:cssmin', 'newer:concat', 'watch']);
+  grunt.registerTask('dev', ['newer:imagemin', 'newer:concat:js', 'watch:scripts']);
   grunt.registerTask('server', ['middleman:server']);
 };

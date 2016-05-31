@@ -2,7 +2,7 @@
 title: Made by Porter - Home of Designer, Developer &amp; Musician, Chris Porter.
 ---
 
-section.site-hero.site-section.no-border.bg-black.bg-black-50
+section.site-hero.site-section.bg-black.bg-black-50
   .container-fluid
     .row
       .col-xs-12
@@ -16,7 +16,7 @@ section.site-work.site-section.bg-black.bg-black-50
   .container-fluid
     .row
       .col-xs-12
-        .section-content.hideme
+        .section-content.hideme.showmeonload
           h2
             | Who Have I Worked With?
           p
@@ -30,79 +30,107 @@ section.site-work.site-section.bg-black.bg-black-50
               ul.row
                 // col
                 li.col-xs-12.col-md-6
-                  .work-setup.work-height-2
-                    a.work-setup-ele.hideme href="http://www.ronfinley.com"
-                      .work-setup-title
-                        h3
+                  #work-ronfinley.work-setup.work-height-2
+                    .work-setup-ele.hideme.showmeonload
+                      .work-setup-text
+                        h3.work-setup-title
                           | Ron Finley
-                      .work-setup-img.push-right style="background-image: url('assets/img/work-setup-img-ronfinley-2.png')"
+                        span.work-setup-type
+                          | Website Redesign
+                        a.work-setup-action href="http://www.ronfinley.com"
+                          | View Site
+                      .work-setup-img
 
                 // col
                 li.col-xs-12.col-md-6
-                  .work-setup.work-height-1
-                    a.work-setup-ele.hideme href="http://music.madebyporter.com/album/higher"
-                      .work-setup-title
-                        h3
+                  #work-higher.work-setup.work-height-1
+                    .work-setup-ele.hideme.showmeonload
+                      .work-setup-text.pull-right.vert-center
+                        h3.work-setup-title
                           | Higher
-                      .work-setup-img.push-right style="background-image: url('assets/img/work-setup-img-higher-2.png')"
-                  .work-setup.work-height-1
-                    a.work-setup-ele.hideme href="http://beta.newscrack.com"
-                      .work-setup-title
-                        h3
+                        span.work-setup-type
+                          | Instrumental Album
+                        a.work-setup-action href="http://music.madebyporter.com/album/higher"
+                          | Play Music
+                      .work-setup-img
+                  #work-newscrack.work-setup.work-height-1
+                    .work-setup-ele.hideme
+                      .work-setup-text.pull-right.vert-center
+                        h3.work-setup-title
                           | Newscrack
-                      .work-setup-img.push-left style="background-image: url('assets/img/work-setup-img-newscrack-2.png')"
+                        span.work-setup-type
+                          | App Design
+                        a.work-setup-action href="http://beta.newscrack.com"
+                          | Try The Beta
+                      .work-setup-img
             // row
             li.col-xs-12.work-row
               ul.row
                 // col
                 li.col-xs-12
-                  .work-setup.work-height-1
-                    a.work-setup-ele.hideme href="http://www.siliconbeachtalent.com"
-                      .work-setup-title
-                        h3
+                  #work-sbt.work-setup.work-height-1
+                    .work-setup-ele.hideme
+                      .work-setup-text
+                        h3.work-setup-title
                           | Silicon Beach Talent
-                      .work-setup-img.push-center style="background-image: url('assets/img/work-setup-img-sbt-2.png')"
+                        span.work-setup-type
+                          | Website Redesign
+                        a.work-setup-action href="http://www.siliconbeachtalent.com"
+                          | View Site
+                      .work-setup-img
             // row
             li.col-xs-12.work-row
               ul.row
                 // col
-                li.col-xs-12.col-md-3.col-md-offset-5
-                  .work-setup.work-height-1
-                    a.work-setup-ele.hideme href="http://music.madebyporter.com/album/a-story-to-tell-freeway-nights"
-                      .work-setup-title
-                        h3
+                li.col-xs-12.col-md-4.col-md-offset-4
+                  #work-freewaynights.work-setup.work-height-1
+                    .work-setup-ele.hideme
+                      .work-setup-text
+                        h3.work-setup-title
                           | Freeway Nights
-                      .work-setup-img.push-left style="background-image: url('assets/img/work-setup-img-freewaynights-2.png')"
+                        span.work-setup-type
+                          | Instrumental Album
+                        a.work-setup-action href="http://music.madebyporter.com/album/a-story-to-tell-freeway-nights"
+                          | Play Music
+                      .work-setup-img
                 // col
                 li.col-xs-12.col-md-4
-                  .work-setup.work-height-1
-                    a.work-setup-ele.hideme href="http://www.jeaninemckirnan.com"
-                      .work-setup-title
-                        h3
+                  #work-jeaninemckirnan.work-setup.work-height-1
+                    .work-setup-ele.hideme
+                      .work-setup-text
+                        h3.work-setup-title
                           | Jeanine Mckirnan
-                      .work-setup-img.push-right style="background-image: url('assets/img/work-setup-img-jm-2.png')"
+                        span.work-setup-type
+                          | Website Design
+                        a.work-setup-action href="http://www.jeaninemckirnan.com"
+                          | View Site
+                      .work-setup-img
             // row
             li.col-xs-12.col-md-8.work-row
               ul.row
                 // col
                 li.col-xs-12
-                  .work-setup.work-height-1
-                    a.work-setup-ele.hideme href="http://www.itsmercedehallen.com"
-                      .work-setup-title
-                        h3
-                          | Mercedeh Allen
-                      .work-setup-img.push-right style="background-image: url('assets/img/work-setup-img-mallen-2.png')"
+                  #work-mercedehallen.work-setup.work-height-1
+                    .work-setup-ele.hideme
+                      .work-setup-text
+                        h3.work-setup-title
+                          | Mercedeh<br />Allen
+                        span.work-setup-type
+                          | Website Design
+                        a.work-setup-action href="http://www.itsmercedehallen.com"
+                          | View Site
+                      .work-setup-img
 section.site-about.site-section.no-border.bg-black.bg-black-gradient
   .container-fluid
     .row
       .col-xs-12.col-md-4
-        .section-content.buckets-divider.hideme.showmeonload
+        .section-content.buckets-divider.hideme
           h2
             | What Do I Do?
           p
             | I'm a designer of websites &amp; apps for the young and growing startup, the small business, the musician, the personalities. <strong>I tend to stick around long term</strong>, building your online home from scratch, &amp; improving your asset to make sure your business is a success.
       .col-xs-12.col-sm-6.col-md-4
-        .section-content.buckets-divider.hideme.showmeonload
+        .section-content.buckets-divider.hideme
           h2
             | What Can I Do For You?
           p
@@ -110,7 +138,7 @@ section.site-about.site-section.no-border.bg-black.bg-black-gradient
           p
             | With <strong>12 years of experience</strong> in the design & development industry, you’ll receive a high-quality product that will take your business to the next level.
       .col-xs-12.col-sm-6.col-md-4
-        .section-content.hideme.showmeonload
+        .section-content.hideme
           h2
             | Why You Should Work With Me?
           p

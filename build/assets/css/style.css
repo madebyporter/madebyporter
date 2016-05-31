@@ -546,8 +546,8 @@ h2 {
 }
 
 h3 {
-  font-family: "DinPro-Regular", "Roboto", "Helvetica", "Arial", sans-serif;
-  font-size: 1.2em;
+  font-family: "DinPro-Bold", "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 2.4em;
   letter-spacing: 0.04em;
 }
 
@@ -997,15 +997,25 @@ strong {
   width: 100%;
 }
 
-.work-setup-title {
-  display: none;
+.work-setup-text {
   bottom: 20px;
   left: 20px;
   position: absolute;
   z-index: 10;
 }
-.work-setup-title h3 {
+
+.work-setup-header {
+  display: block;
+  position: relative;
+}
+.work-setup-header:after {
+  background: #fff;
+  bottom: 20px;
+  content: "";
+  height: 5px;
+  width: 33px;
   margin: 0;
+  position: absolute;
 }
 
 .work-setup-img {
