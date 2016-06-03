@@ -39,8 +39,6 @@ js.main = {
       len = tracks.length - 1;
       audio[0].volume = 1;
 
-      play = $('#play');
-      pause = $('#pause');
       mute = $('#mute');
       muted = $('#muted');
 
@@ -55,12 +53,21 @@ js.main = {
           current++;
           if(current == len){
               current = 0;
-              // audio[0].pause();
+              audio[0].pause();
               link = playlist.find('.sound-title')[0];
           }else{
               link = playlist.find('.sound-title')[current];    
           }
           run($(link),audio[0]);
+      });
+      $(document).on('click', '#play', function(){
+        audio[0].play();
+        $(this).replaceWith('<div class="mbp-player-button mbp-player-button-pause" id="pause"></div>');
+      });
+
+      $(document).on('click', '#pause', function(){
+        audio[0].pause();
+        $(this).replaceWith('<div class="mbp-player-button mbp-player-button-play" id="play"></div>');
       });
     }
     function run(link, player){
@@ -79,15 +86,7 @@ js.main = {
       $('.projects_sounds').addClass('mbp-player-active');
     }
 
-    play.on('click', function(){
-      audio[0].play();
-      $(this).replaceWith('<div class="mbp-player-button mbp-player-button-pause" id="pause"></div>');
-    });
-
-    pause.on('click', function(){
-      audio[0].pause();
-      $(this).replaceWith('<div class="mbp-player-button mbp-player-button-play" id="play"></div>');
-    });
+    
   },
   fadeInScroll: function () {
     setTimeout(function(){$('.showmeonload').addClass('showme'); },2500);
