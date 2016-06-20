@@ -28,10 +28,10 @@ js.main = {
       len = tracks.length - 1;
       audio[0].volume = 1;
 
-      play = $('#play');
-      pause = $('#pause');
-      mute = $('#mute');
-      muted = $('#muted');
+      $play = $(document).find('#play');
+      $pause = $(document).find('#pause');
+      $mute = $('#mute');
+      $muted = $('#muted');
 
       // audio[0].play();
       playlist.find('.sound-title').click(function(e){
@@ -59,6 +59,7 @@ js.main = {
       player.src = url;
       $('.mbp-player-current .title').html(name);
       $('.mbp-player-download').find('a').attr("href", url);
+      $('.sound-control-download').attr("onclick", "ga('send', 'event', { eventCategory: 'download', eventAction: 'music', eventLabel: '"+name+"'});");
       par = link.closest('.sound-set');
       par.addClass('active').siblings().removeClass('active');
       audio[0].load();
@@ -68,12 +69,12 @@ js.main = {
       $('.projects_sounds').addClass('mbp-player-active');
     }
 
-    play.on('click', function(){
+    $(document).on('click', '#play', function(){
       audio[0].play();
       $(this).replaceWith('<div class="mbp-player-button mbp-player-button-pause" id="pause"></div>');
     });
 
-    pause.on('click', function(){
+    $(document).on('click', '#pause', function(){
       audio[0].pause();
       $(this).replaceWith('<div class="mbp-player-button mbp-player-button-play" id="play"></div>');
     });

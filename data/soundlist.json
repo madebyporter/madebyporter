@@ -1,24 +1,28 @@
 { "sound": 
   [ 
     {
-      "name": "The Bounce",
-      "url": "https://dl.dropboxusercontent.com/u/80054631/music/The%20Bounce.mp3"
+      "name": "Lucid Dreaming",
+      "url": "https://dl.dropboxusercontent.com/u/80054631/music/mbp/Lucid%20Dreaming.mp3"
     },
     {
-      "name": "Heaven",
-      "url": "https://dl.dropboxusercontent.com/u/80054631/music/Heaven.mp3"
+      "name": "Brown Liquor",
+      "url": "https://dl.dropboxusercontent.com/u/80054631/music/mbp/Brown%20Liqour.mp3"
     },
     { 
-      "name": "Holidead",
-      "url": "https://dl.dropboxusercontent.com/u/80054631/music/Holidead.mp3" 
+      "name": "The Bi-Polar Disorder",
+      "url": "https://dl.dropboxusercontent.com/u/80054631/music/mbp/The%20Bi-Polar%20Disorder.mp3" 
     },
     { 
-      "name": "Where Did It All Go",
-      "url": "https://dl.dropboxusercontent.com/u/80054631/music/Where%20Did%20It%20All%20Go_1.mp3" 
+      "name": "Astral Travel",
+      "url": "https://dl.dropboxusercontent.com/u/80054631/music/mbp/Astral%20Travel.mp3" 
     },
     { 
-      "name": "When We Ride",
-      "url": "https://dl.dropboxusercontent.com/u/80054631/music/When%20We%20Ride.mp3" 
-    } 
+      "name": "Beginnings",
+      "url": "https://dl.dropboxusercontent.com/u/80054631/music/mbp/The%20Beginnings.mp3" 
+    },
+    { 
+      "name": "Chillin So Wonderfully",
+      "url": "https://dl.dropboxusercontent.com/u/80054631/music/mbp/Chillin%20So%20Wonderfully.mp3" 
+    }
   ] 
 }
