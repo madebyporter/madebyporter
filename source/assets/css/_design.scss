@@ -1,32 +1,311 @@
 // _design.scss
 
 // Work Index
+  .work-row {
+    margin-bottom: 0;
+    @media (min-width: $mq-medium) {
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .work-setup {
+    height: 204px;
+    margin-bottom: 20px;
+    @media (min-width: $mq-small) {
+      height: 300px;
+    }
+    &.work-height-1 {
+      @media (min-width: $mq-medium) {
+        height: 285px;
+        margin-bottom: 30px;
+        &:last-child {
+          margin-bottom: 0px;
+        }
+      }
+    }
+    &.work-height-2 {
+      @media (min-width: $mq-medium) {
+        height: 600px;
+        .work-setup-title {
+          font-size: 4.0em;
+        }
+      }
+    }
+  }
   .work-setup-ele {
     display: block;
-    margin: 0 0 40px 0;
+    height: 100%;
     overflow: hidden;
-    padding-bottom: 50%;
     position: relative;
     width: 100%;
   }
-  .work-setup-title {
-    bottom: 20px;
-    left: 20px;
+  .work-setup-text {
+    padding: 0 10px;
     position: absolute;
+    right: 0px;
+    width: 50%;
     z-index: 10;
-    h3 {
+    @include vertical-center;
+    @media (min-width: $mq-small) {
+      padding: 0 20px;
+    }
+    @media (min-width: $mq-medium) {
+      bottom: 40px;
+      left: 40px;
+      right: auto;
+      top: auto;
+      width: 60%;
+      @include translate(0,0);
+      &.pull-center {
+        @include absolute-center;
+        bottom: auto;
+        text-align: center;
+        .work-setup-title:after {
+          @include horizontal-center;
+        }
+      }
+      &.pull-right {
+        left: auto;
+        right: 40px;
+      }
+      &.vert-center {
+        @include vertical-center;
+        bottom: auto;
+      }
+      &.size-large {
+        width: 60%;
+      }
+    }
+    @media (min-width: $mq-large) {
+      width: 50%;
+    }
+  }
+  .work-setup-title {
+    display: block;
+    font-size: 1.4em;
+    position: relative;
+    &:after {
+      background: $color-white;
+      bottom: -20px;
+      content: "";
+      height: 5px;
+      left: 2px;
       margin: 0;
+      position: absolute;
+      width: 33px;
+    }
+    @media (min-width: $mq-small) {
+      font-size: 1.8em;
+    }
+    @media (min-width: $mq-medium) {
+      font-size: 2.4em;
+    }
+  }
+  .work-setup-type {
+    color: $color-white;
+    display: block;
+    font-family: $font-reg;
+    margin: 30px 0 10px;
+    @media (min-width: $mq-medium) {
+      margin: 40px 0 20px;
+    }
+  }
+  .work-setup-action {
+    border: 5px solid $color-white;
+    border-radius: 20px;
+    color: $color-white;
+    display: inline-block;
+    font-family: $font-bold;
+    font-size: 0.7em;
+    line-height: 1;
+    padding: 5px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    @include transition;
+    @include scale(1);
+    &:hover {
+      background: $color-white;
+      color: $color-black;
+      text-decoration: none;
+      @include scale(1.1);
+    }
+    @media (min-width: $mq-small) {
+      font-size: 1.0em;
+    }
+    @media (min-width: $mq-medium) {
+      font-size: 1.2em;
     }
   }
   .work-setup-img {
-    background: $color-black;
+    background-color: $color-black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100%;
     position: absolute;
     width: 100%;
     z-index: 1;
+    @media (min-width: $mq-medium) {
+      &.push-left {
+        background-position: left;
+      }
+      &.push-center {
+        background-position: center;
+      }
+      &.push-right {
+        background-position: right;
+      }
+    }
     img {
-      opacity: 0.5;
       width: 100%;
+    }
+  }
+
+  #work-ronfinley {
+    &:hover {
+      .work-setup-img {
+        @media (min-width: $mq-medium) {
+          @include scale(1.1);
+        }
+      }
+      .work-setup-img:after {
+        @media (min-width: $mq-medium) {
+          @include transform(rotate(5deg) scale(1.3));
+        }
+      }
+    }
+    .work-setup-text {
+      @extend .pull-right;
+    }
+    .work-setup-img {
+      @extend .push-left;
+      background-image: url('../img/work-setup-img-ronfinley-small.png'); 
+      @media (min-width: $mq-medium) {
+        background-image: url('../img/work-setup-img-ronfinley-2.png');
+        @include transition;
+        @include scale(1);
+        position: relative;
+        &:after {
+          background: url('../img/work-setup-img-ronfinley-bg.svg') no-repeat bottom right;
+          content: "";
+          height: 100%;
+          right: 0;
+          opacity: 0.8;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          @include transition;
+          @include transform(rotate(0) scale(1));
+        }
+      }
+    }
+  }
+  #work-higher {
+    .work-setup-text {
+    }
+    .work-setup-img {
+      background-image: url('../img/work-setup-img-higher-small.png'); 
+      @media (min-width: $mq-medium) {
+        @extend .push-right;
+        background-image: url('../img/work-setup-img-higher-2.png');
+      }
+    }
+  }
+  #work-newscrack {
+    .work-setup-text {
+    }
+    .work-setup-img {
+      background-image: url('../img/work-setup-img-newscrack-small.png'); 
+      @media (min-width: $mq-medium) {
+        @extend .push-left;
+        background-image: url('../img/work-setup-img-newscrack-2.png');
+      }
+    }
+  }
+  #work-sbt {
+    .work-setup-text {
+      @media (min-width: $mq-medium) {
+        @extend .pull-center;
+      }
+    }
+    .work-setup-img {
+      background-image: url('../img/work-setup-img-sbt-small.png'); 
+      @media (min-width: $mq-medium) {
+        @extend .push-center;
+        background-image: url('../img/work-setup-img-sbt-2.png');
+      }
+    }
+  }
+  #work-freewaynights {
+    .work-setup-text {
+      @media (min-width: $mq-medium) {
+        @extend .pull-right;
+        @extend .vert-center;
+      }
+    }
+    .work-setup-img {
+      background-image: url('../img/work-setup-img-freewaynights-small.png'); 
+      @media (min-width: $mq-medium) {
+        @extend .push-left;
+        background-image: url('../img/work-setup-img-freewaynights-2.png');
+      }
+    }
+  }
+  #work-jeaninemckirnan {
+    .work-setup-text {
+      @media (min-width: $mq-medium) {
+        @extend .vert-center;
+      }
+    }
+    .work-setup-img {
+      background-image: url('../img/work-setup-img-jm-small.png'); 
+      @media (min-width: $mq-medium) {
+        @extend .push-right;
+        background-image: url('../img/work-setup-img-jm-2.png');
+      }
+    }
+  }
+  #work-mercedehallen {
+    &:hover {
+      .work-setup-img {
+        @media (min-width: $mq-medium) {
+          @include scale(1.1);
+        }
+      }
+      .work-setup-img:after {
+        @media (min-width: $mq-medium) {
+          @include transform(rotate(-5deg) scale(1.2));
+        }
+      }
+    }
+    .work-setup-text {
+      @media (min-width: $mq-medium) {
+        @extend .vert-center;
+      }
+    }
+    .work-setup-img {
+      background-image: url('../img/work-setup-img-mallen-small.png');  
+      @media (min-width: $mq-medium) {
+        @include scale(1);
+        @include transition;
+        @extend .push-center;
+        background-image: url('../img/work-setup-img-mallen-2.png');
+        position: relative;
+        &:after {
+          background: url('../img/work-setup-img-mallen-bg.svg') no-repeat;
+          content: "";
+          height: 100%;
+          left: 0;
+          opacity: 0.8;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          @include transition;
+          @include transform(rotate(0) scale(1));
+        }
+      }
     }
   }
 
@@ -34,3 +313,6 @@
   .site-contact {
     min-height: 650px;
   }
+
+// New Work CSS
+  

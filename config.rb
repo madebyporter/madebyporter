@@ -16,6 +16,9 @@ page '/*.yaml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+# Set slim-lang output style
+Slim::Engine.set_default_options :pretty => true
+
 # With alternative layout
 # page '/path/to/file.html', layout: :otherlayout
 
@@ -33,6 +36,7 @@ set :debug_assets, true
 configure :development do
   activate :livereload
 end
+
 
 # Methods defined in the helpers block are available in templates
 # helpers do

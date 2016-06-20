@@ -29,7 +29,7 @@ section.site-sounds.site-section
                       / .col-xs-6
                       /   span.sound-control-play
                       .col-xs-12
-                        = link_to sound.url, class: 'sound-control-download' do
+                        = link_to sound.url, class: 'sound-control-download', download: 'download', onclick: "ga('send', 'event', { eventCategory: 'download', eventAction: 'music', eventLabel: = sound.name})" do
                           i.fa.fa-angle-down
 
 .mbp-player
@@ -37,13 +37,13 @@ section.site-sounds.site-section
     .row
       .col-xs-8.col-sm-4
         .mbp-player-current
-          span.title Holidead
+          span.title Track Name
       .col-xs-2.col-sm-4
         .mbp-player-controller
           #play.mbp-player-button.mbp-player-button-play
         audio id="audio" tabindex="0" controls="" type="audio/mpeg" class="regular-player"
-          source type="audio/mp3" src="https://dl.dropboxusercontent.com/u/80054631/music/Holidead.mp3"
+          source type="audio/mp3" src="#"
       .col-xs-2.col-sm-4
         .mbp-player-download
-          a.sound-control-download href="https://dl.dropboxusercontent.com/u/80054631/music/Holidead.mp3"
+          a.sound-control-download href="#" download="download" onClick="ga('send', 'event', { eventCategory: 'download', eventAction: 'music', eventLabel: 'trackname'});"
             i.fa.fa-angle-down
