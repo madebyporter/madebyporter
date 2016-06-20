@@ -56,6 +56,7 @@ html
                   | The end...for now
 
     script src="//static.getclicky.com/js" type="text/javascript"
+
     javascript:
       try{ clicky.init(100949014); }catch(e){}
     javascript:
@@ -68,3 +69,8 @@ html
           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
+    javascript:
+      (function(h,e,a,t,m,p) {
+      m=e.createElement(a);m.async=!0;m.src=t;
+      p=e.getElementsByTagName(a)[0];p.parentNode.insertBefore(m,p);
+      })(window,document,'script','https://u.heatmap.it/log.js');
