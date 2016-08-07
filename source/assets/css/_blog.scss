@@ -1,0 +1,26 @@
+// _blog.scss
+  .blog {
+    @include theme-light;
+    p:first-child {
+      padding-top: 0;
+    }
+    p + h2 {
+      margin-top: 80px;
+    }
+    h2:first-child {
+      margin-top: 15px;
+    }
+  }
+  .site-blog-section {
+    p:first-child:first-letter {
+      color: #903;
+      float: left; 
+      font-size: 75px; 
+      line-height: 60px;
+      padding: 4px 8px 0 3px;
+    }
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }

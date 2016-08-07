@@ -118,4 +118,7 @@
     &:nth-child(4){
       @include animation(fadeInUp 1s $timing 1500ms 1 forwards);
     }
+    &:nth-child(5){
+      @include animation(fadeInUp 1s $timing 2000ms 1 forwards);
+    }
   }

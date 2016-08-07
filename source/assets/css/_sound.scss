@@ -1,14 +1,9 @@
 // _sound.scss
 
 // Sound Styles
-  .index {
-    .site-header {
-      @extend .no-border;
-      @extend .bg-black;
-      @extend .bg-black-50;
-    }
-  }
   .projects_sounds {
+    @include theme-light;
+
     &.mbp-player-active {
       .site-wrapper {
         margin-bottom: 80px;
@@ -20,31 +15,11 @@
     .site-wrapper {
       height: auto;
     }
-    .site-header {
-      @extend .bg-white;
-      @extend .no-border;
-    }
     .site-header-logo {
       @include animation(lavalamp 60s $timing 10s normal infinite forwards);
       &:hover {
         @include animation(lavalamp 400ms $timing 0s normal infinite forwards);
       }
-    }
-    .site-header-nav-link {
-      a {
-        color: $color-black;
-        @include transition;
-        &:hover {
-          color: $color-red;
-        }
-      }
-    }
-    .site-header:after {
-      background: $color-grey-l3;
-    }
-    .site-hero {
-      @extend .bg-white;
-      @extend .text-dark;
     }
   }
   .site-sounds {
@@ -56,12 +31,6 @@
   }
   .sound-set {
     $border-color: $color-grey-l4;
-    background: $color-white;
-    box-shadow: inset 0 0 0 $color-black;
-    cursor: pointer;
-    margin: 0 0 10px 0;
-    padding: 0px;
-    @include transition;
     &:hover {
       z-index: 100;
       .sound-title {

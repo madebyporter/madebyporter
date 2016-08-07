@@ -1,0 +1,24 @@
+== wrap_layout :layout do
+  section.site-blog.site-section
+    .container-fluid
+      .row
+        .col-sm-12         
+          article.site-blog-post
+            .row
+              .col-sm-3
+                header.site-blog-header
+                  h1
+                    = current_article.title
+              .col-sm-9
+                .site-blog-body
+                  section.site-blog-section
+                    .row
+                      .col-md-8
+                        = current_article.body
+      .row
+        .col-sm-12
+          .site-blog-article-pagination
+            - previous_article = current_article.previous_article
+            - if previous_article
+              = link_to previous_article.url do
+                = previous_article.title

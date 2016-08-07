@@ -87,3 +87,35 @@
     -o-animation:      $name $duration $timing $delay $direction;
     animation:         $name $duration $timing $delay $direction;
   }
+
+// Theme Light
+  @mixin theme-light {
+    .site-header {
+      @extend .bg-white;
+      @extend .no-border;
+      &:after {
+        background: $color-grey-l3;
+      }
+    }
+    .site-header-nav-link {
+      a {
+        color: $color-black;
+        @include transition;
+        &:hover {
+          color: $color-red;
+        }
+      }
+    }
+    .site-hero {
+      @extend .bg-white;
+      @extend .text-dark;
+    }
+    .site-body {
+      h1, h2, h3, h4, h5, h6 {
+        color: $color-black;
+      }
+      p {
+        color: $color-grey-d3;
+      }
+    }
+  }

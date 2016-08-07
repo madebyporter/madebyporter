@@ -28,6 +28,8 @@ html
                     == link_to 'Design', '/'
                   li.site-header-nav-link
                     == link_to 'Music', '/projects/sounds'
+                  li.site-header-nav-link
+                    == link_to 'Blog', '/blog'
       section.site-body
         == yield
       footer.site-footer.site-section.no-border.bg-black
@@ -54,11 +56,7 @@ html
               .site-content.hideme
                 h2
                   | The end...for now
-
-    script src="//static.getclicky.com/js" type="text/javascript"
-
-    javascript:
-      try{ clicky.init(100949014); }catch(e){}
+                  
     javascript:
       var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-54767153-1']);

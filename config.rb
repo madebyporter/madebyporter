@@ -32,6 +32,13 @@ set :debug_assets, true
 # Helpers
 ###
 
+activate :blog do |blog|
+  # set options on blog
+  blog.prefix = "blog"
+  blog.layout = "blog_layout"
+  blog.permalink = "{year}/{title}.html"
+end
+
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload

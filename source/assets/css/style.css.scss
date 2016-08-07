@@ -10,11 +10,4 @@
 @import 'animations';
 @import 'sound';
 @import 'design';
-
-.index {
-  .site-header {
-    @extend .no-border;
-    @extend .bg-black;
-    @extend .bg-black-50;
-  }
-}
+@import 'blog';
