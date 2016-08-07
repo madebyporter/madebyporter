@@ -24,3 +24,75 @@
       width: 100%;
     }
   }
+  .site-blog-pagination {
+    background: $color-black;
+    @include transition;
+    .site-blog-article-pagination {
+      min-height: 80vh;
+      .pagination-container {
+        @include vertical-center;
+      }
+      a {
+        color: $color-white;
+        font-family: $font-bold;
+        font-size: 4em;
+        position: relative;
+        @include transition;
+        left: 0px;
+        &:hover {
+          @include animation(lavalamp 400ms $timing 0s normal infinite forwards);
+          color: $color-red;
+          text-decoration: none;
+          left: 5px;
+        }
+        @media (min-width: $mq-small) {
+          font-size: 6em;
+        }
+      }
+      h1, p {
+        color: $color-grey-l3;
+        position: relative;
+        // left: 5px;
+        @include transition;
+      }
+      .newsletter-email {
+        background: $color-grey-l3;
+        color: $color-black;
+        display: block;
+        width: 100%;
+        border-radius: 2px;
+        box-shadow: inset 2px 2px 0 $color-grey-l3, inset -2px -2px 0 $color-grey-l3;
+        @include transition;
+        @media (min-width: $mq-small) {
+          display: inline-block;
+          vertical-align: top;
+          width: 59%;
+        }
+      }
+      .newsletter-submit {
+        background: $color-red;
+        color: $color-white;
+        border-radius: 51px;
+        display: block;
+        margin-top: 10px;
+        width: 100%;
+        @include transition;
+        @media (min-width: $mq-small) {
+          display: inline-block;
+          height: 51px;
+          margin-left: 10px;
+          margin-top: 0;
+          vertical-align: top;
+          width: 29%;
+        }
+        @media (min-width: $mq-medium) {
+          
+        }
+      }
+    }
+    .newsletter-container {
+      @include vertical-center;
+      width: 80%;
+    }
+  }
+  

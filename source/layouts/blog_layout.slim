@@ -1,24 +1,48 @@
 == wrap_layout :layout do
-  section.site-blog.site-section
+  section.site-blog.site-section.no-border
     .container-fluid
       .row
-        .col-sm-12         
+        .col-sm-10         
           article.site-blog-post
             .row
-              .col-sm-3
+              .col-md-4
                 header.site-blog-header
                   h1
                     = current_article.title
-              .col-sm-9
+              .col-md-8
                 .site-blog-body
                   section.site-blog-section
                     .row
-                      .col-md-8
+                      .col-md-10
                         = current_article.body
+  section.site-blog-pagination.site-section.no-border
+    .container-fluid
       .row
-        .col-sm-12
-          .site-blog-article-pagination
-            - previous_article = current_article.previous_article
-            - if previous_article
-              = link_to previous_article.url do
-                = previous_article.title
+        .col-sm-10
+          .row
+            .col-md-8.col-md-offset-4
+              .site-blog-article-pagination
+                - previous_article = current_article.previous_article
+                - if previous_article
+                  .pagination-container
+                    h1
+                      | Next up
+                    = link_to previous_article.url do
+                      = previous_article.title
+                - else
+                  .newsletter-container
+                    h1
+                      | I enjoy sharing my experiences with everyone. 
+                    p
+                      | Keep up with me for some thought provoking stuff.
+                    #mc_embed_signup
+                      form action="//madebyporter.us9.list-manage.com/subscribe/post?u=43c534416e476fa3af50b3e65&amp;id=2a32fa7a33" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate"
+                        #mc_embed_signup_scroll
+                        .mc-field-group
+                          input type="email" value="" name="EMAIL" class="required email newsletter-email" id="mce-EMAIL" placeholder="Email Address"
+                          input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-submit"
+                        #mce-responses.clear
+                          div class="response" id="mce-error-response" style="display:none"
+                          div class="response" id="mce-success-response" style="display:none"
+                        div style="position: absolute; left: -5000px;" aria-hidden="true"
+                          input type="text" name="b_43c534416e476fa3af50b3e65_2a32fa7a33" tabindex="-1" value=""

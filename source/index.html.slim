@@ -2,7 +2,7 @@
 title: Made by Porter - Home of Designer, Developer &amp; Musician, Chris Porter.
 ---
 
-section.site-hero.site-section.bg-black.bg-black-50
+section.site-hero.site-section.bg-black.bg-black-50.no-border
   .container-fluid
     .row
       .col-xs-12
@@ -15,14 +15,14 @@ section.site-hero.site-section.bg-black.bg-black-50
 section.site-work.site-section.bg-black.bg-black-50
   .container-fluid
     .row
-      .col-xs-12
+      .col-xs-10
         .section-content.hideme.showmeonload
           h2
             | Who Have I Worked With?
           p
             | Here’s some of the brands I’ve worked with:
     .row
-      .col-xs-12
+      .col-xs-10
         .work-container
           ul.row
             // row
@@ -123,108 +123,112 @@ section.site-work.site-section.bg-black.bg-black-50
 section.site-about.site-section.no-border.bg-black.bg-black-gradient
   .container-fluid
     .row
-      .col-xs-12.col-md-4
-        .section-content.buckets-divider.hideme
-          h2
-            | What Do I Do?
-          p
-            | I'm a designer of websites &amp; apps for the young and growing startup, the small business, the musician, the personalities. <strong>I tend to stick around long term</strong>, building your online home from scratch, &amp; improving your asset to make sure your business is a success.
-      .col-xs-12.col-sm-6.col-md-4
-        .section-content.buckets-divider.hideme
-          h2
-            | What Can I Do For You?
-          p
-            | I love to design websites &amp; mobile apps that’s ahead of its time. Need a website that doesn’t look like a template? I got you. You need to stand out!
-          p
-            | With <strong>12 years of experience</strong> in the design & development industry, you’ll receive a high-quality product that will take your business to the next level.
-      .col-xs-12.col-sm-6.col-md-4
-        .section-content.hideme
-          h2
-            | Why You Should Work With Me?
-          p
-            | If you’re looking for a quick &amp; dirty website to throw up on the internet, I’m the wrong guy for the job. 
-          p
-            | I love to help those crazy brands that want to break the internet. We know Kim owns that title, but don’t you want to own that belt?
+      .col-xs-10
+        .row
+          .col-xs-12.col-md-4
+            .section-content.buckets-divider.hideme
+              h2
+                | What Do I Do?
+              p
+                | I'm a designer of websites &amp; apps for the young and growing startup, the small business, the musician, the personalities. <strong>I tend to stick around long term</strong>, building your online home from scratch, &amp; improving your asset to make sure your business is a success.
+          .col-xs-12.col-sm-6.col-md-4
+            .section-content.buckets-divider.hideme
+              h2
+                | What Can I Do For You?
+              p
+                | I love to design websites &amp; mobile apps that’s ahead of its time. Need a website that doesn’t look like a template? I got you. You need to stand out!
+              p
+                | With <strong>12 years of experience</strong> in the design & development industry, you’ll receive a high-quality product that will take your business to the next level.
+          .col-xs-12.col-sm-6.col-md-4
+            .section-content.hideme
+              h2
+                | Why You Should Work With Me?
+              p
+                | If you’re looking for a quick &amp; dirty website to throw up on the internet, I’m the wrong guy for the job. 
+              p
+                | I love to help those crazy brands that want to break the internet. We know Kim owns that title, but don’t you want to own that belt?
 section.site-contact.site-section.no-border.bg-red
   form id="contactForm" method="post" action="mailer.php"
     .container-fluid
       .row
-        .col-xs-12
-          #form-messages.form-message
-        .form-content.col-xs-12.col-md-4
+        .col-xs-10
           .row
             .col-xs-12
-              .section-content.hideme
-                h2
-                  | Ready to Get Started?
-                p
-                  | Lets make sure we’re the right fit before you continue:
-                ul.section-content-checklist
-                  li.section-content-checklist-ele
-                    label.form-field-label for="req1" Your digital assets is very important to your business
-                  li.section-content-checklist-ele
-                    label.form-field-label for="req2" Building a website from scratch can be tough. With that in mind, I ask that a business have at least a <strong>$5,000</strong> budget ready, just incase.
-                  li.section-content-checklist-ele
-                    label.form-field-label for="req3" Your business believes design is very important
-                  li.section-content-checklist-ele
-                    label.form-field-label for="req4" You know that your users is the key to your success
-                  li.section-content-checklist-ele
-                    label.form-field-label for="req5" You’re done with the templates &amp; you want to shake up your industry!
-        .form-content.col-xs-12.col-md-4
-          .row
-            .col-xs-12
-              .hideme
-                p
-                  | The rest is history. Supply your details.
-                .form-field
-                  label.form-field-label for="name" Name
-                  input.form-field-text type="text" name="name" id="name" tabindex="1"
-                .form-field
-                  label.form-field-label for="email" Email
-                  input.form-field-text type="email" name="email" id="email" tabindex="2"
-          .row
-            .col-xs-12
-              .hideme
-                p
-                  | Now you’re ready to take action. What's up?
-                ul.section-content-checklist
-                  li.section-content-checklist-ele
-                    label.form-field-label for="service-website" 
-                      input.form-field-checkbox type="checkbox" name="service[website]" id="service-website" value="Website" tabindex="3"
-                      | I need a website designed
-                  li.section-content-checklist-ele
-                    label.form-field-label for="service-app" 
-                      input.form-field-checkbox type="checkbox" name="service[app]" id="service-app" value="App Design" tabindex="4"
-                      | I need an app designed
-                  li.section-content-checklist-ele
-                    label.form-field-label for="service-consulting" 
-                      input.form-field-checkbox type="checkbox" name="service[consulting]" id="service-consulting" value="Design Consulting" tabindex="5"
-                      | I need Design Consulting
-                  li.section-content-checklist-ele
-                    label.form-field-label for="service-music" 
-                      input.form-field-checkbox type="checkbox" name="service[music]" id="service-music" value="Music" tabindex="6"
-                      | Can I get some music?
-                  li.section-content-checklist-ele
-                    label.form-field-label for="service-general" 
-                      input.form-field-checkbox type="checkbox" name="service[general]" id="service-general" value="General" tabindex="7"
-                      | Get something off my chest
-        .form-content.col-xs-12.col-md-4
-          .row
-            .col-xs-12
-              .hideme
-                p
-                  | Brief me on your project
-                .form-field
-                  label.form-field-label for="message" Please tell me about your business and your needs for your project:
-                  textarea.form-field-textarea name="message" id="message" tabindex="8"
-                / ul.section-content-checklist
-                /   li.section-content-checklist-ele
-                /     label.form-field-label for="subscribe" 
-                /       input.form-field-checkbox type="checkbox" name="subscribe" id="subscribe" value="subscribed"
-                /       | Subcribe to my ramblings
-            .col-xs-12
-              .section-content.text-center
-                .hideme
-                  p.inline-block Now hit that submit
-                  .form-field.inline-block
-                    input.form-field-submit type="submit" name="submit" id="submit" value="Submit" tabindex="9"
+              #form-messages.form-message
+            .form-content.col-xs-12.col-md-4
+              .row
+                .col-xs-12
+                  .section-content.hideme
+                    h2
+                      | Ready to Get Started?
+                    p
+                      | Lets make sure we’re the right fit before you continue:
+                    ul.section-content-checklist
+                      li.section-content-checklist-ele
+                        label.form-field-label for="req1" Your digital assets is very important to your business
+                      li.section-content-checklist-ele
+                        label.form-field-label for="req2" Building a website from scratch can be tough. With that in mind, I ask that a business have at least a <strong>$5,000</strong> budget ready, just incase.
+                      li.section-content-checklist-ele
+                        label.form-field-label for="req3" Your business believes design is very important
+                      li.section-content-checklist-ele
+                        label.form-field-label for="req4" You know that your users is the key to your success
+                      li.section-content-checklist-ele
+                        label.form-field-label for="req5" You’re done with the templates &amp; you want to shake up your industry!
+            .form-content.col-xs-12.col-md-4
+              .row
+                .col-xs-12
+                  .hideme
+                    p
+                      | The rest is history. Supply your details.
+                    .form-field
+                      label.form-field-label for="name" Name
+                      input.form-field-text type="text" name="name" id="name" tabindex="1"
+                    .form-field
+                      label.form-field-label for="email" Email
+                      input.form-field-text type="email" name="email" id="email" tabindex="2"
+              .row
+                .col-xs-12
+                  .hideme
+                    p
+                      | Now you’re ready to take action. What's up?
+                    ul.section-content-checklist
+                      li.section-content-checklist-ele
+                        label.form-field-label for="service-website" 
+                          input.form-field-checkbox type="checkbox" name="service[website]" id="service-website" value="Website" tabindex="3"
+                          | I need a website designed
+                      li.section-content-checklist-ele
+                        label.form-field-label for="service-app" 
+                          input.form-field-checkbox type="checkbox" name="service[app]" id="service-app" value="App Design" tabindex="4"
+                          | I need an app designed
+                      li.section-content-checklist-ele
+                        label.form-field-label for="service-consulting" 
+                          input.form-field-checkbox type="checkbox" name="service[consulting]" id="service-consulting" value="Design Consulting" tabindex="5"
+                          | I need Design Consulting
+                      li.section-content-checklist-ele
+                        label.form-field-label for="service-music" 
+                          input.form-field-checkbox type="checkbox" name="service[music]" id="service-music" value="Music" tabindex="6"
+                          | Can I get some music?
+                      li.section-content-checklist-ele
+                        label.form-field-label for="service-general" 
+                          input.form-field-checkbox type="checkbox" name="service[general]" id="service-general" value="General" tabindex="7"
+                          | Get something off my chest
+            .form-content.col-xs-12.col-md-4
+              .row
+                .col-xs-12
+                  .hideme
+                    p
+                      | Brief me on your project
+                    .form-field
+                      label.form-field-label for="message" Please tell me about your business and your needs for your project:
+                      textarea.form-field-textarea name="message" id="message" tabindex="8"
+                    / ul.section-content-checklist
+                    /   li.section-content-checklist-ele
+                    /     label.form-field-label for="subscribe" 
+                    /       input.form-field-checkbox type="checkbox" name="subscribe" id="subscribe" value="subscribed"
+                    /       | Subcribe to my ramblings
+                .col-xs-12
+                  .section-content.text-center
+                    .hideme
+                      p.inline-block Now hit that submit
+                      .form-field.inline-block
+                        input.form-field-submit type="submit" name="submit" id="submit" value="Submit" tabindex="9"
