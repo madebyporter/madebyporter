@@ -12,16 +12,32 @@
     }
   }
   .site-blog-section {
-    p:first-child:first-letter {
-      color: #903;
-      float: left; 
-      font-size: 75px; 
-      line-height: 60px;
-      padding: 4px 8px 0 3px;
-    }
+    // p:nth-child(2):first-letter {
+    //   color: $color-black;
+    //   float: left; 
+    //   font-size: 40px;
+    //   font-family: $font-reg;
+    //   line-height: 60px;
+    //   padding: 0 8px 0 3px;
+    // }
     img {
       height: auto;
       width: 100%;
+    }
+    blockquote {
+      margin: 40px 0;
+      @media (min-width: $mq-large) {
+        position: relative;
+
+        p {
+          position: relative;
+          width: 150%;
+        }
+      }
+      p {
+        color: $color-red !important;
+        @include animation(lavalamp 20s $timing 0s normal infinite forwards);
+      }
     }
   }
   .site-blog-pagination {

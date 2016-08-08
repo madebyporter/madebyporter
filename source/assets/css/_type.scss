@@ -10,6 +10,11 @@
   src: url("../fonts/DINPro-Bold.otf") format("opentype");
 }
 
+/** Vollkorn **/
+@import 'https://fonts.googleapis.com/css?family=Vollkorn:400,700i';
+
+$font-secondary: 'Vollkorn', serif;
+
 h1, h2, h3, h4, h5, h6 {
   color: $color-white;
   margin: 0 0 20px;
@@ -58,7 +63,15 @@ p {
 strong {
   font-family: $font-bold;
 }
-
+blockquote { 
+  p {
+    font-family: $font-secondary;
+    font-size: 4.0em;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+}
 .form-field-label {
   color: $color-white;
   font-size: 1.0em;
