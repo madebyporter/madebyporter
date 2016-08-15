@@ -17,16 +17,16 @@ $font-secondary: 'Vollkorn', serif;
 
 h1, h2, h3, h4, h5, h6 {
   color: $color-white;
+  font-family: $font-bold;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
   margin: 0 0 20px;
 }
 
 h1 {
   font-size: 2.0em;
-  font-family: $font-bold;
-  line-height: 1.3;
   @media (min-width: $mq-small) {
-    font-size: 3.0em;
-    line-height: 1.3;
+    font-size: 2.7em;
   }
   .sub {
     color: $color-white;
@@ -39,16 +39,15 @@ h1 {
 
 h2 {
   color: $color-grey-l3;
-  font-family: $font-reg;
-  font-size: 1.0em;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: 2.1em;
 }
 
 h3 {
-  font-family: $font-bold;
-  font-size: 2.4em;
-  letter-spacing: 0.04em;
+  font-size: 1.8em;
+}
+
+h4 {
+  font-size: 1.4em;
 }
 
 p {

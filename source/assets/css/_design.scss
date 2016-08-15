@@ -358,6 +358,9 @@
 // Work Contact
   .site-contact {
     min-height: 650px;
+    p:first-child {
+      padding-top: 0;
+    }
   }
 
 // New Work CSS
