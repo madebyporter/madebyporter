@@ -1,32 +1,25 @@
 // _type.scss
 
-@font-face {
-  font-family: DinPro-Regular;
-  src: url("../fonts/DINPro-Regular.otf") format("opentype");
-}
-
-@font-face {
-  font-family: DinPro-Bold;
-  src: url("../fonts/DINPro-Bold.otf") format("opentype");
-}
-
-/** Vollkorn **/
-@import 'https://fonts.googleapis.com/css?family=Vollkorn:400,700i';
-
-$font-secondary: 'Vollkorn', serif;
-
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
   color: $color-white;
-  font-family: $font-bold;
-  letter-spacing: 0.04em;
+  font-family: $font-reg;
+  font-weight: 700;
   line-height: 1.2;
   margin: 0 0 20px;
+}
+
+h3, h4, h5, h6 {
+  color: $color-white;
+  font-family: $font-reg;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 10px;
 }
 
 h1 {
   font-size: 2.0em;
   @media (min-width: $mq-small) {
-    font-size: 2.7em;
+    font-size: 3.6rem;
   }
   .sub {
     color: $color-white;
@@ -38,42 +31,70 @@ h1 {
 }
 
 h2 {
-  color: $color-grey-l3;
-  font-size: 2.1em;
+  // color: $color-grey-l3;
+  font-size: 1.5em;
+  @media (min-width: $mq-small) {
+    font-size: 2.8rem;
+  }
 }
 
 h3 {
-  font-size: 1.8em;
+  font-size: 1.0em;
+  @media (min-width: $mq-small) {
+    font-size: 2.1rem;
+  }
 }
 
 h4 {
-  font-size: 1.4em;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  @media (min-width: $mq-small) {
+    font-size: 1.8rem;
+  }
 }
 
 p {
   color: $color-white;
   font-family: $font-reg;
-  font-size: 1.2em;
+  font-size: 1.8rem;
   // letter-spacing: 0.04em;
   line-height: 1.5;
   margin: 0 0 20px 0;
+
+  & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {
+    margin-top: 40px;
+  }
 }
 
-strong {
-  font-family: $font-bold;
-}
 blockquote { 
   p {
     font-family: $font-secondary;
-    font-size: 4.0em;
+    font-size: 4.0rem;
     font-style: italic;
     font-weight: 700;
     line-height: 1.1;
   }
 }
+
+ul {
+  list-style: disc;
+  margin: 0 0 0 20px;
+  li {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {
+    margin-top: 40px;
+  }
+}
+
 .form-field-label {
   color: $color-white;
-  font-size: 1.0em;
+  font-size: 1.4rem;
   font-weight: 300;
   letter-spacing: 0.04em;
   line-height: 1.5;
@@ -81,7 +102,7 @@ blockquote {
 
 .sub-text {
   color: $color-grey-l3;
-  font-size: 1.0em;
+  font-size: 1.4rem;
   font-weight: 300;
   letter-spacing: 0.08em;
   text-transform: uppercase;

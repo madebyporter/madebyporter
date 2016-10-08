@@ -111,8 +111,11 @@
       @extend .text-dark;
     }
     .site-body {
-      h1, h2, h3, h4, h5, h6 {
+      h1, h2, h3 {
         color: $color-black;
+      }
+      h4, h5, h6 {
+        color: $color-grey-l2;
       }
       p {
         color: $color-grey-d3;

@@ -1,9 +1,8 @@
 // _variables.scss
 
 // Type
-  $font-sansserif: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  $font-reg: 'DinPro-Regular', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  $font-bold: 'DinPro-Bold', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  $font-reg: "europa", "helvetica", "arial", sans-serif;
+  $font-secondary: 'Vollkorn', serif;
 
 // Colors
   $color-black:       #1E1E22;
@@ -11,7 +10,7 @@
   $color-grey:        #575454;
   $color-grey-l1:     lighten($color-grey, 5%);
   $color-grey-l2:     lighten($color-grey, 15%);
-  $color-grey-l3:     #E6E6E6;
+  $color-grey-l3:     lighten($color-grey, 25%);
   $color-grey-l4:     lighten($color-grey, 60%);
   $color-grey-d1:     darken($color-grey, 5%);
   $color-grey-d2:     darken($color-grey, 15%);

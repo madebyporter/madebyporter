@@ -1,17 +1,18 @@
 // _base.scss
 
 // Insert Fonts
-  
+  @import 'https://fonts.googleapis.com/css?family=Vollkorn:400i';
 
 // Start Generic Class
   html {
+    font-size: 62.5%;
     height: 100%;
     width: 100%;
   }
   body {
     background: $color-white;
     font-family: $font-reg;
-    font-size: 1em;
+    font-size: 1.4rem;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -82,7 +83,7 @@
     a {
       color: $color-white;
       font-size: 1.4em;
-      font-family: $font-bold;
+      font-weight: bold;
       position: relative;
       text-decoration: none;
       @include transition;
@@ -322,13 +323,13 @@
 // Newsletter
   .newsletter-email {
     border: 0;
-    font-family: $font-bold;
+    font-weight: bold;
     font-size: 1.5em;
     padding: 10px;
   }
   .newsletter-submit {
     border: 0;
-    font-family: $font-bold;
+    font-weight: bold;
     font-size: 1.2em;
     padding: 10px 20px;
     text-transform: uppercase;
@@ -417,5 +418,12 @@
     }
     p, .sub {
       color: $color-grey-d3;
+    }
+  }
+
+// Iframe Videos
+  iframe {
+    &.video {
+      margin: 0 0 10px 0;
     }
   }

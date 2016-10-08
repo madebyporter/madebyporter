@@ -4,9 +4,6 @@
     p:first-child {
       padding-top: 0;
     }
-    p + h2 {
-      margin-top: 80px;
-    }
     h2:first-child {
       margin-top: 15px;
     }
@@ -50,7 +47,7 @@
       }
       a {
         color: $color-white;
-        font-family: $font-bold;
+        font-weight: bold;
         font-size: 4em;
         position: relative;
         @include transition;
