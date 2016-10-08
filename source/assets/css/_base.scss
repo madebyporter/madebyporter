@@ -76,14 +76,14 @@
   }
   .site-header-nav-link {
     display: inline-block;
-    padding: 0 0 0 30px;
+    padding: 0 0 0 20px;
+    @media (min-width: $mq-small) {
+      padding: 0 0 0 30px;
+    }
     &:first-child {
       padding-left: 0;
     }
     a {
-      color: $color-white;
-      font-size: 1.4em;
-      font-weight: bold;
       position: relative;
       text-decoration: none;
       @include transition;
@@ -140,36 +140,37 @@
       padding-right: 40px;
     }
   }
-  .section-content-checklist {
+  ul.section-content-checklist {
     padding: 0 20px;
     @media (min-width: $mq-small) {
       padding: 0;
     }
-  }
-  .section-content-checklist-ele {
-    border-bottom: 1px solid $color-red-d1;
-    margin: 0 0 10px 0;
-    padding: 0 0 10px 0;
-    &:last-child {
-      border-bottom: 0;
-      margin: 0;
-      padding: 0;
-    }
-    .form-field-checkbox, .custom-checkbox {
-      display: inline-block;
-      margin-right: 10px;
-      vertical-align: text-bottom;
-    }
-    .form-field-checkbox {
-      // display: none;
-    }
-    .form-field-label {
-      display: inline-block;
-      vertical-align: text-bottom;
-      width: 80%;
-    }
-  }
 
+    li.section-content-checklist-ele {
+      border-bottom: 1px solid $color-red-d1;
+      margin: 0 0 10px 0;
+      padding: 0 0 10px 0;
+      &:last-child {
+        border-bottom: 0;
+        margin: 0;
+        padding: 0;
+      }
+      .form-field-checkbox, .custom-checkbox {
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: text-bottom;
+      }
+      .form-field-checkbox {
+        display: none;
+      }
+      .form-field-label {
+        display: inline-block;
+        vertical-align: text-bottom;
+        width: 80%;
+      }
+    }
+  }
+  
 // Form Elements
   .form-field {
     padding: 0 20px 20px;
@@ -185,7 +186,7 @@
       background-color: $color-white;
       border: 0;
       border-radius: 2px;
-      box-shadow: inset 2px 2px 0 $color-grey-l3, inset -2px -2px 0 $color-grey-l3;
+      box-shadow: inset 2px 2px 0 $color-grey-l4, inset -2px -2px 0 $color-grey-l4;
       font-size: 1.0em;
       padding: 10px 20px;
       width: 100%;
@@ -198,7 +199,7 @@
       background-color: $color-white;
       border: 0;
       border-radius: 2px;
-      box-shadow: inset 2px 2px 0 $color-grey-l3, inset -2px -2px 0 $color-grey-l3;
+      box-shadow: inset 2px 2px 0 $color-grey-l4, inset -2px -2px 0 $color-grey-l4;
       font-size: 1.0em;
       min-height: 250px;
       padding: 20px;

@@ -47,8 +47,14 @@
   }
 
 // Work Index
-  .work-row {
+  .work-container {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  li.work-row {
     margin-bottom: 0;
+    padding: 0;
     @media (min-width: $mq-medium) {
       margin-bottom: 30px;
       &:last-child {
@@ -58,7 +64,7 @@
   }
   .work-setup {
     height: 204px;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     @media (min-width: $mq-small) {
       height: 300px;
     }
@@ -114,7 +120,7 @@
       }
       &.pull-right {
         left: auto;
-        right: 40px;
+        right: 20px;
       }
       &.vert-center {
         @include vertical-center;
@@ -125,7 +131,7 @@
       }
     }
     @media (min-width: $mq-large) {
-      width: 50%;
+      width: 60%;
     }
   }
   .work-setup-title {
@@ -153,9 +159,10 @@
     color: $color-white;
     display: block;
     font-family: $font-reg;
+    font-size: 1.8rem;
     margin: 30px 0 10px;
     @media (min-width: $mq-medium) {
-      margin: 40px 0 20px;
+      margin: 40px 0 10px;
     }
   }
   .work-setup-action {
@@ -178,10 +185,10 @@
       @include scale(1.1);
     }
     @media (min-width: $mq-small) {
-      font-size: 1.0em;
+      font-size: 1.2em;
     }
     @media (min-width: $mq-medium) {
-      font-size: 1.2em;
+      font-size: 1.6rem;
     }
   }
   .work-setup-img {
