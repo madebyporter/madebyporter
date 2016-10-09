@@ -8,10 +8,19 @@ html
     meta name="author" content="Made by Porter"
     meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"
 
+    link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"
+    link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"
+    link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"
+    link rel="manifest" href="/manifest.json"
+    link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffffff"
+    meta name="theme-color" content="#ffffff"
+
     title = current_page.data.title || "Made by Porter - Home of Designer, Developer &amp; Musician, Chris Porter."
 
     == stylesheet_link_tag :style
     == javascript_include_tag "output"
+
+    link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css"
 
     script src="https://use.typekit.net/pdw4yep.js"
     javascript:
@@ -62,7 +71,10 @@ html
                   .site-content.hideme
                     h4
                       | The end...for now
-                  
+    
+    script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"
+    javascript:
+      hljs.initHighlightingOnLoad();
     javascript:
       var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-54767153-1']);

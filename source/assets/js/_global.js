@@ -4,12 +4,20 @@ var js = js || {},
 
 js.main = {
   init: function () {
+    this.codeHighlight();
     this.linksExternal();
     this.customCheckbox();
     this.ajaxForm();
     this.gaTimeout();
     this.fadeInScroll();
     this.mbpPlayer();
+  },
+  codeHighlight: function() {
+    $('pre code').each(function(i, block) {
+      hljs.configure({
+        languages: 'css'
+      });
+    });
   },
   mbpPlayer: function () {
 

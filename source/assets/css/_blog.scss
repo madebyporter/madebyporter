@@ -7,6 +7,44 @@
     h2:first-child {
       margin-top: 15px;
     }
+    .img-full {
+      position: absolute;
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    pre {
+      font-family: "Courier 10 Pitch", Courier, monospace; 
+      white-space: pre; 
+      white-space: pre-wrap; 
+      white-space: -moz-pre-wrap; 
+      white-space: -o-pre-wrap; 
+      height:1%;
+      width: auto;
+      display: block;
+      clear: both;
+      color: $color-white;
+      padding: 10px;
+      margin: 0 0 20px 0;
+      background: $color-black;
+      border: solid 1px #e1e1e1
+    } 
+    code, .hljs { 
+      background: transparent;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+      display: inline;
+      color: $color-white;
+    }
+    .hljs-string, .hljs-title, .hljs-number, .hljs-comment {
+      color: $color-red;
+    }
+    iframe {
+      width: 100%;
+      min-height: 350px;
+    }
   }
   .site-blog-section {
     // p:nth-child(2):first-letter {
@@ -63,18 +101,18 @@
         }
       }
       h1, p {
-        color: $color-grey-l3;
+        color: $color-grey-l4;
         position: relative;
         // left: 5px;
         @include transition;
       }
       .newsletter-email {
-        background: $color-grey-l3;
+        background: $color-grey-l4;
         color: $color-black;
         display: block;
         width: 100%;
         border-radius: 2px;
-        box-shadow: inset 2px 2px 0 $color-grey-l3, inset -2px -2px 0 $color-grey-l3;
+        box-shadow: inset 2px 2px 0 $color-grey-l4, inset -2px -2px 0 $color-grey-l4;
         @include transition;
         @media (min-width: $mq-small) {
           display: inline-block;

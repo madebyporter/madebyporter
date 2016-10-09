@@ -17,7 +17,7 @@ section.site-blog-index.site-section
   .container-fluid
     .row
       .col-xs-12.col-md-10
-        ul.blog-list.site-list
+        ul.blog-list.site-list.no-list
           - blog.articles[0...5].each do |article|
             li.blog-list-ele.hideme.showmeonload
               = link_to article.url do
