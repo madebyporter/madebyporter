@@ -16,7 +16,7 @@ section.site-sounds.site-section
   .container-fluid
     .row
       .col-xs-12.col-md-10
-        ul.sound-list
+        ul.sound-list.no-list
           - data.soundlist.sound.each do |sound|
             li.sound-set.hideme.showmeonload data-url=sound.url data-name=sound.name
               .container-fluid
