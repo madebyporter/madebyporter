@@ -124,7 +124,11 @@
       overflow: hidden;
     }
     span {
+      display: inline;
       padding-right: 10px;
+      @media (min-width: $mq-medium) {
+        display: inline-block;
+      }
     }
     &.site-section {
       padding: 40px 0;
