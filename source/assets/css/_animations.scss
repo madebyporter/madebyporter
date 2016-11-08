@@ -53,6 +53,24 @@
     }
   }
 
+// Photo Placeholder Pulse
+  @-webkit-keyframes ppPulse {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes ppPulse {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }    
+  }
+
 // Fade In Up
   @-webkit-keyframes fadeInUp {
     0% {
@@ -75,6 +93,24 @@
     }
   }
 
+  // Fade In
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
 // Lavalamp Logo
   @-webkit-keyframes lavalamp {
     0% {
@@ -94,15 +130,7 @@
   }
 
 // Init Animations
-  .hideme {
-    @include transition($time: 600ms);
-    @include translate(0,50px);
-    opacity: 0;
-    &.showme {
-      @include translate(0,0px);
-      opacity: 1;
-    }
-  }
+  
 
   .fadeInUp {
     @include translate(0,500px);
@@ -120,5 +148,25 @@
     }
     &:nth-child(5){
       @include animation(fadeInUp 1s $timing 2000ms 1 forwards);
+    }
+    &.hideme {
+      @include transition($time: 600ms);
+      @include translate(0,50px);
+      opacity: 0;
+      &.showme {
+        @include translate(0,0px);
+        opacity: 1;
+      }
+    }
+  }
+  .fadeIn {
+    position: relative;
+    &.hideme {
+      @include transition($time: 600ms);
+      opacity: 0;
+      &.showme {
+        @include animation(fadeIn 1s $timing 0ms 1 forwards);
+        opacity: 1;
+      }
     }
   }

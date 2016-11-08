@@ -28,7 +28,7 @@ html
 
   body class="#{page_classes}"
     main.site-wrapper
-      header.site-header.site-section
+      header.site-header.site-section.no-border
         .container-fluid
           .row
             .col-xs-3
@@ -41,6 +41,8 @@ html
                     == link_to 'Design', '/'
                   li.site-header-nav-link
                     == link_to 'Music', '/projects/sounds'
+                  li.site-header-nav-link
+                    == link_to 'Photos', '/projects/photos'
                   li.site-header-nav-link
                     == link_to 'Blog', '/blog'
       section.site-body

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="354px" height="352px" viewBox="0 0 354 352" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>mbp-logo-bw</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0.0628203661" y="0.166519718" width="176.097787" height="351.611644"></rect>
+        <rect id="path-3" x="0.311905314" y="0.0569672721" width="77.0669708" height="81.3435678"></rect>
+        <rect id="path-5" x="0.0628203661" y="0.0964061528" width="97.1066676" height="36.1715885"></rect>
+        <rect id="path-7" x="0.0399765966" y="0.0972825723" width="3.6791648" height="4.41364896"></rect>
+        <rect id="path-9" x="0.0399765966" y="0.0972825723" width="147.53956" height="161.661287"></rect>
+        <rect id="path-11" x="0.0316298347" y="0.0223486991" width="188.842414" height="80.9176279"></rect>
+        <rect id="path-13" x="0.0316298347" y="0.139350712" width="44.1829253" height="164.936905"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="mbp-logo-bw">
+            <g id="emblem" transform="translate(-0.050781, -0.050781)">
+                <g id="Group" transform="translate(0.157051, 0.052147)">
+                    <polygon id="Shape" fill="#999999" points="351.50411 351.777287 307.547426 263.630951 0.0628203661 351.777287"></polygon>
+                    <g opacity="0.699997" id="Clipped">
+                        <g>
+                            <g>
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <g id="Rectangle-path"></g>
+                                <polygon id="Shape" fill="#757575" mask="url(#mask-2)" points="0.0628203661 351.777287 176.160607 0.166957928 88.1119334 351.777287"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(0.000000, 223.364081)" opacity="0.699997" id="Clipped" fill="#BFBFBF">
+                        <g>
+                            <g>
+                                <polygon id="Shape" points="351.50411 128.413206 307.547426 40.2668698 0.0628203661 128.413206"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(131.790978, 0.000000)" opacity="0.699997" id="Clipped" fill="#E8E8E8">
+                        <g>
+                            <g transform="translate(0.000000, -0.000000)">
+                                <polygon id="Shape" points="44.3696292 0.166957928 0.184507369 88.3908576 219.713132 351.777287"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(274.125234, 270.375438)" opacity="0.699997" id="Clipped">
+                        <g>
+                            <g>
+                                <mask id="mask-4" fill="white">
+                                    <use xlink:href="#path-3"></use>
+                                </mask>
+                                <g id="Rectangle-path"></g>
+                                <polygon id="Shape" fill="#9E9E9E" mask="url(#mask-4)" points="9.63831351 0.0569672721 77.3788761 81.4018497 0.311905314 2.73442906"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(0.000000, 315.511045)" opacity="0.699997" id="Clipped">
+                        <g>
+                            <g>
+                                <mask id="mask-6" fill="white">
+                                    <use xlink:href="#path-5"></use>
+                                </mask>
+                                <g id="Rectangle-path"></g>
+                                <polygon id="Shape" fill="#575757" mask="url(#mask-6)" points="0.0628203661 36.2662418 94.9215732 9.07532465 97.169488 0.0964061528"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <polygon id="Shape" fill="#757575" points="148.753795 109.612043 176.160607 0.166957928 131.344646 89.6498343"></polygon>
+                    <g transform="translate(148.923805, 108.676027)" opacity="0.699997" id="Clipped">
+                        <g>
+                            <g>
+                                <mask id="mask-8" fill="white">
+                                    <use xlink:href="#path-7"></use>
+                                </mask>
+                                <g id="Rectangle-path"></g>
+                                <path d="M0.0399765966,0.0972825723 L3.7191414,4.51136974" id="Shape" fill="#D04553" mask="url(#mask-8)"></path>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(136.184010, 108.676027)" opacity="0.699997" id="Clipped">
+                        <g>
+                            <g transform="translate(0.000000, -0.000000)">
+                                <mask id="mask-10" fill="white">
+                                    <use xlink:href="#path-9"></use>
+                                </mask>
+                                <g id="Rectangle-path"></g>
+                                <polygon id="Shape" fill="#F3F3F3" mask="url(#mask-10)" points="12.7797711 0.0972825723 0.0399765966 50.972124 147.579537 161.756378"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(94.889504, 243.644641)" opacity="0.699997" id="Clipped">
+                        <g>
+                            <g>
+                                <mask id="mask-12" fill="white">
+                                    <use xlink:href="#path-11"></use>
+                                </mask>
+                                <g id="Rectangle-path"></g>
+                                <polygon id="Shape" fill="#BFBFBF" mask="url(#mask-12)" points="0.0316298347 80.9417294 153.225462 0.0227869088 188.874043 26.7877642"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(94.889504, 159.508362)" opacity="0.699997" id="Clipped">
+                        <g>
+                            <g>
+                                <mask id="mask-14" fill="white">
+                                    <use xlink:href="#path-13"></use>
+                                </mask>
+                                <g id="Rectangle-path"></g>
+                                <polygon id="Shape" fill="#999999" mask="url(#mask-14)" points="41.334483 0.139350712 44.2145552 141.738955 0.0316298347 165.078008"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

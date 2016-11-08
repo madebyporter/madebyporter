@@ -15,12 +15,20 @@ var js = js || {},
 
 js.main = {
   init: function () {
+    this.codeHighlight();
     this.linksExternal();
     this.customCheckbox();
     this.ajaxForm();
     this.gaTimeout();
     this.fadeInScroll();
     this.mbpPlayer();
+  },
+  codeHighlight: function() {
+    $('pre code').each(function(i, block) {
+      hljs.configure({
+        languages: 'css'
+      });
+    });
   },
   mbpPlayer: function () {
 
@@ -99,17 +107,25 @@ js.main = {
 
     $(window).scroll( function(){
       /* Check the location of each desired element */
-      $('.hideme').each( function(i){
-          
-          // var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-          var bottom_of_object = $(this).offset().top;
-          var bottom_of_window = $(window).scrollTop() + $(window).height();
-          
-          /* If the object is completely visible in the window, fade it it */
-          if( bottom_of_window > bottom_of_object ){
-              $(this).addClass('showme');      
-          }  
-      }); 
+      setTimeout(function(){
+
+        $('.hideme').each( function(i){
+            
+            // var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_object = $(this).offset().top;
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            // console.log(bottom_of_object);
+            // console.log(bottom_of_window);
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+              $(this).addClass('showme');
+            }  
+        }); 
+
+      }, 2000);
+
     });
   },
   gaTimeout: function () {
