@@ -20,6 +20,11 @@
   $color-red-d1:      darken($color-red, 5%);
   $color-red-d2:      darken($color-red, 15%);
   $color-red-d3:      darken($color-red, 25%);
+  $color-red-d4:      darken($color-red, 35%);
+  $color-red-l1:      lighten($color-red, 5%);
+  $color-red-l2:      lighten($color-red, 15%);
+  $color-red-l3:      lighten($color-red, 25%);
+  $color-red-l4:      lighten($color-red, 35%);
 
   $color-black-20:    rgba(30, 30, 34, .2);
   $color-black-50:    rgba(30, 30, 34, .5);

@@ -107,25 +107,22 @@ js.main = {
 
     $(window).scroll( function(){
       /* Check the location of each desired element */
-      setTimeout(function(){
+      $('.hideme').each( function(i){
+          
+          // var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+          var bottom_of_object = $(this).offset().top;
+          var bottom_of_window = $(window).scrollTop() + $(window).height();
 
-        $('.hideme').each( function(i){
-            
-            // var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-            var bottom_of_object = $(this).offset().top;
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-
-            // console.log(bottom_of_object);
-            // console.log(bottom_of_window);
-            
-            /* If the object is completely visible in the window, fade it it */
-            if( bottom_of_window > bottom_of_object ){
+          // console.log(bottom_of_object);
+          // console.log(bottom_of_window);
+          
+          /* If the object is completely visible in the window, fade it it */
+          if( bottom_of_window > bottom_of_object ){
+            setTimeout(function(){
               $(this).addClass('showme');
-            }  
-        }); 
-
-      }, 2000);
-
+            }, 20000000);
+          }  
+      }); 
     });
   },
   gaTimeout: function () {
@@ -209,6 +206,7 @@ js.main = {
     });
   },
   linksExternal: function () {
+    $("a[href^='https://']").attr("target", "_blank");
     $("a[href^='http://']").attr("target", "_blank");
   },
   customCheckbox: function () {

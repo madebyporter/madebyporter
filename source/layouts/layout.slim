@@ -18,13 +18,7 @@ html
     title = current_page.data.title || "Made by Porter - Home of Designer, Developer &amp; Musician, Chris Porter."
 
     == stylesheet_link_tag :style
-    == javascript_include_tag "output"
-
     link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css"
-
-    script src="https://use.typekit.net/pdw4yep.js"
-    javascript:
-      try{Typekit.load({ async: true });}catch(e){}
 
   body class="#{page_classes}"
     main.site-wrapper
@@ -45,6 +39,8 @@ html
                     == link_to 'Photos', 'photos'
                   li.site-header-nav-link
                     == link_to 'Blog', 'blog'
+                  li.site-header-nav-link
+                    == link_to 'Contact', 'contact'
       section.site-body
         == yield
       footer.site-footer.site-section.no-border.bg-black
@@ -74,6 +70,10 @@ html
                     h4
                       | The end...for now
     
+    == javascript_include_tag "output"
+    script src="https://use.typekit.net/pdw4yep.js"
+    javascript:
+      try{Typekit.load({ async: true });}catch(e){}
     script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"
     javascript:
       hljs.initHighlightingOnLoad();

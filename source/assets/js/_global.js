@@ -195,6 +195,7 @@ js.main = {
     });
   },
   linksExternal: function () {
+    $("a[href^='https://']").attr("target", "_blank");
     $("a[href^='http://']").attr("target", "_blank");
   },
   customCheckbox: function () {

@@ -151,9 +151,8 @@
     }
 
     li.section-content-checklist-ele {
-      border-bottom: 1px solid $color-red-d1;
-      margin: 0 0 10px 0;
-      padding: 0 0 10px 0;
+      margin: 0 0 20px 0;
+      padding: 0 0 20px 0;
       &:last-child {
         border-bottom: 0;
         margin: 0;
@@ -431,4 +430,18 @@
     &.video {
       margin: 0 0 10px 0;
     }
+  }
+
+// Contact Page
+  .contact_index {
+    @extend .theme-red;
+  }
+
+// FAQ Questions
+  .faq-question {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+  .faq-answer {
+
   }

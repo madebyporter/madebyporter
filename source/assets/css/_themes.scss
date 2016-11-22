@@ -1,0 +1,29 @@
+// _themes.scss
+
+.theme-red {
+  background: $color-red;
+  a {
+    color: $color-white;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .site-header-logo {
+    background: url(../img/mbp-logo-outlined.svg) no-repeat center;
+    background-size: cover;
+    -webkit-filter: invert(1);
+    -moz-filter: invert(1);
+    filter: invert(1);
+  }
+  .site-footer {
+    background: $color-red !important;
+  }
+  .faq-question {
+    color: $color-red-d3;
+  }
+  .faq-answer {
+    color: $color-red-l4;
+  }
+  .section-content-checklist-ele {
+    border-bottom: 1px solid $color-red-d2;
+  }
+}
