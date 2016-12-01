@@ -4,13 +4,34 @@ var js = js || {},
 
 js.main = {
   init: function () {
+    this.fadeInScroll();
     this.codeHighlight();
     this.linksExternal();
     this.customCheckbox();
     this.ajaxForm();
     this.gaTimeout();
-    this.fadeInScroll();
     this.mbpPlayer();
+    this.wpFAQ();
+  },
+  wpFAQ: function() {
+    function wpInit(){
+      var waypoint = new Waypoint({
+        element: document.getElementById('wp_FAQ'),
+        handler: function(direction) {
+          var form = document.getElementById('mbp_form');
+          if(direction==='down'){
+            form.classList.add('fixed');
+          } else if(direction==='up'){
+            form.classList.remove('fixed');
+          }
+        },
+        offset: 20
+      });
+    }
+    
+    if ($('body').hasClass('contact_index')){
+      wpInit();
+    }
   },
   codeHighlight: function() {
     $('pre code').each(function(i, block) {
@@ -26,8 +47,10 @@ js.main = {
     var tracks;
     var current;
 
-    init();
-
+    if ($('body').hasClass('sounds_index')){
+      init();
+    }
+    
     function init(){
       current = 0;
       audio = $('audio');
@@ -78,7 +101,7 @@ js.main = {
       audio[0].play();
 
       $('.mbp-player-button').replaceWith('<div class="mbp-player-button mbp-player-button-pause" id="pause"></div>');
-      $('.projects_sounds').addClass('mbp-player-active');
+      $('.sounds_index').addClass('mbp-player-active');
     }
 
     $(document).on('click', '#play', function(){
@@ -96,26 +119,24 @@ js.main = {
 
     $(window).scroll( function(){
       /* Check the location of each desired element */
-      $('.hideme').each( function(i){
-          
-          // var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-          var bottom_of_object = $(this).offset().top;
-          var bottom_of_window = $(window).scrollTop() + $(window).height();
-
-          // console.log(bottom_of_object);
-          // console.log(bottom_of_window);
-          
-          /* If the object is completely visible in the window, fade it it */
-          if( bottom_of_window > bottom_of_object ){
-            setTimeout(function(){
-              $(this).addClass('showme');
-            }, 20000000);
-          }  
+      $('.hideme').each( function(i){  
+        // var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+        var bottom_of_object = $(this).offset().top;
+        var bottom_of_window = $(window).scrollTop() + $(window).height();
+        
+        /* If the object is completely visible in the window, fade it it */
+        if( bottom_of_window > bottom_of_object ){
+          // setTimeout(function(){
+            $(this).addClass('showme');
+          // }, 200);
+        }  
       }); 
     });
   },
   gaTimeout: function () {
-    setTimeout(function(){_gaq.push(['_trackEvent', 'Control', 'Bounce Rate', ''])},60000);
+    setTimeout(function(){
+      _gaq.push(['_trackEvent', 'Control', 'Bounce Rate', '']);
+    },60000);
   },
   ajaxForm: function () {
     // Get the form.

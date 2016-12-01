@@ -31,6 +31,7 @@
   }
   .sound-set {
     $border-color: $color-grey-l4;
+    cursor: pointer;
     &:hover {
       z-index: 100;
       .sound-title {
@@ -54,11 +55,13 @@
   .sound-title, .sound-control-play, .sound-control-download {
     display: block;
     padding: 20px 0;
-    font-size: 3em;
+    font-size: 3.2rem;
   }
   .sound-title {
     font-family: $font-reg;
-    font-size: 3em;
+    font-weight: 700;
+    font-size: 3.2rem;
+
   }
   .sound-control-download {
     color: $color-red;

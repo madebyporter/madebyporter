@@ -62,6 +62,8 @@ configure :build do
 
   # Use relative URLs
   activate :relative_assets
+
+  ignore '*.php'
 end
 
 string = File.read('data/soundlist.json')

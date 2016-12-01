@@ -14,7 +14,7 @@ section.site-contact.site-section.no-border.bg-red
   form id="contactForm" method="post" action="mailer.php"
     .container-fluid
       .row
-        .col-xs-10
+        .col-xs-12.col-lg-10
           .row
             .col-xs-12
               #form-messages.form-message
@@ -22,70 +22,73 @@ section.site-contact.site-section.no-border.bg-red
               .row
                 .col-xs-12
                   .section-content.hideme
-                    h3
-                      | The Read Me:
-                    ul.section-content-checklist.no-list
-                      li.section-content-checklist-ele
-                        p.faq-question 
-                          | "Hi, Porter! I’m looking for a consultant to take a look at my website and give me some pointers on how to improve."
-                        p.faq-answer
-                          | If you need an extra pair of eyes or brains to look at your current website or app, I'm your guy. I love diving into a company's visual setup to figure out what makes your audience love you and how to make them love you even more. To spend some quality time with me, I charge $120/hour for consultations. If you have specific questions ready, we can keep it to half an hour.
-                      li.section-content-checklist-ele
-                        p.faq-question 
-                          | "Hey, Porter! I’m a student and need help on design/coding/tech. Are you taking any interns?"
-                        p.faq-answer 
-                          | Yes/No. I love to teach aspiring designers the do's and don'ts of design but my time is limited due to current projects. If you're really set on picking me to be your coach, I charge $60/hr for students.
-                      li.section-content-checklist-ele
-                        p.faq-question 
-                          | "Chris - I love your work and I am in desperate need of getting my website or app designed. How can I book you for my projects?"
-                        p.faq-answer 
-                          | I try to stay away from freelance projects, unless what your site is about is something I would love to use or support. If you are set on working with me, submit your RFP (Request for Proposal) here. Serious Inquiries only.
-                        p.faq-answer 
-                          | Tip: If this is your first website, I recommend trying <a href="https://www.squarespace.com">Squarespace</a> first. I'm not trying to shoo you away, but from experience, I realized that a lot of my previous customers who are first-time website owners want an out-of-the-box website. I love setting people up with their site, but a <a href="https://www.squarespace.com">Squarespace</a> is usually a solution that works well without the customization or extra $$$ for my services. My passion lies in creating custom websites and apps.
-                      li.section-content-checklist-ele
-                        p.faq-question 
-                          | "Yo Porter, I just came across your music and want to collaborate with you. How can we work on something to create some beautiful music?"
-                        p.faq-answer 
-                          | Music is pretty high up there with design and I love working with creative minds. If you’re a rapper/singer, please send me your latest tracks or demo. Full disclaimer, I don’t sell my beats for $20. To work together, I offer two options: (1) production partnership or (2) I’ll sell you an unexclusive beat for $150+.
-                      li.section-content-checklist-ele
-                        p.faq-question 
-                          | "Hey, Porter! I saw your photography work and I want you to shoot me, with your camera. How can I get you out here for a photo shoot?"
-                        p.faq-answer 
-                          | For photo work, I charge $100/hr. Please send me the topic of the shoot, your desired location, and any other information. If you have everything set up, we can always try to cram it in half an hour.
-                      li.section-content-checklist-ele
-                        p.faq-question 
-                          | "Damn, you're expensive. Why?"
-                        p.faq-answer 
-                          | Don't let the price tag scare you away from working with me. My prices are set at these price points because I bring 10+ years of expertise and knowledge to my work. Time is a valuable commodity to me and I want to work with people who value my work and time. Nothing against you. I'm sure you're an awesome person, but C.R.E.A.M. - Porter
+                    #wp_FAQ
+                      h3
+                        | The Read Me:
+                      ul.section-content-checklist.no-list
+                        li.section-content-checklist-ele
+                          p.faq-question 
+                            | "Hi, Porter! I’m looking for a consultant to take a look at my website and give me some pointers on how to improve."
+                          p.faq-answer
+                            | If you need an extra pair of eyes or brains to look at your current website or app, I'm your guy. I love diving into a company's visual setup to figure out what makes your audience love you and how to make them love you even more. To spend some quality time with me, I charge $120/hour for consultations. If you have specific questions ready, we can keep it to half an hour.
+                        li.section-content-checklist-ele
+                          p.faq-question 
+                            | "Hey, Porter! I’m a student and need help on design/coding/tech. Are you taking any interns?"
+                          p.faq-answer 
+                            | Yes/No. I love to teach aspiring designers the do's and don'ts of design but my time is limited due to current projects. If you're really set on picking me to be your coach, I charge $60/hr for students.
+                        li.section-content-checklist-ele
+                          p.faq-question 
+                            | "Chris - I love your work and I am in desperate need of getting my website or app designed. How can I book you for my projects?"
+                          p.faq-answer 
+                            | I try to stay away from freelance projects, unless what your site is about is something I would love to use or support. If you are set on working with me, submit your RFP (Request for Proposal) here. Serious Inquiries only.
+                          p.faq-answer 
+                            | Tip: If this is your first website, I recommend trying <a href="https://www.squarespace.com">Squarespace</a> first. I'm not trying to shoo you away, but from experience, I realized that a lot of my previous customers who are first-time website owners want an out-of-the-box website. I love setting people up with their site, but a <a href="https://www.squarespace.com">Squarespace</a> is usually a solution that works well without the customization or extra $$$ for my services. My passion lies in creating custom websites and apps.
+                        li.section-content-checklist-ele
+                          p.faq-question 
+                            | "Yo Porter, I just came across your music and want to collaborate with you. How can we work on something to create some beautiful music?"
+                          p.faq-answer 
+                            | Music is pretty high up there with design and I love working with creative minds. If you’re a rapper/singer, please send me your latest tracks or demo. Full disclaimer, I don’t sell my beats for $20. To work together, I offer two options: (1) production partnership or (2) I’ll sell you an unexclusive beat for $150+.
+                        li.section-content-checklist-ele
+                          p.faq-question 
+                            | "Hey, Porter! I saw your photography work and I want you to shoot me, with your camera. How can I get you out here for a photo shoot?"
+                          p.faq-answer 
+                            | For photo work, I charge $100/hr. Please send me the topic of the shoot, your desired location, and any other information. If you have everything set up, we can always try to cram it in half an hour.
+                        li.section-content-checklist-ele
+                          p.faq-question 
+                            | "Damn, you're expensive. Why?"
+                          p.faq-answer 
+                            | Don't let the price tag scare you away from working with me. My prices are set at these price points because I bring 10+ years of expertise and knowledge to my work. Time is a valuable commodity to me and I want to work with people who value my work and time. Nothing against you. I'm sure you're an awesome person, but C.R.E.A.M. - Porter
 
             .form-content.col-xs-12.col-md-4.col-md-offset-1
               .row
-                .col-xs-12
-                  .hideme
-                    h3
-                      | Who Are You?
-                    .form-field
-                      label.form-field-label for="name" Name
-                      input.form-field-text type="text" name="name" id="name" tabindex="1"
-                    .form-field
-                      label.form-field-label for="email" Email
-                      input.form-field-text type="email" name="email" id="email" tabindex="2"
-              .row
-                .col-xs-12
-                  .hideme
-                    h3
-                      | What You Have to Say?
-                    .form-field
-                      label.form-field-label for="message" Put your message in the box below.
-                      textarea.form-field-textarea name="message" id="message" tabindex="8"
-                    / ul.section-content-checklist
-                    /   li.section-content-checklist-ele
-                    /     label.form-field-label for="subscribe" 
-                    /       input.form-field-checkbox type="checkbox" name="subscribe" id="subscribe" value="subscribed"
-                    /       | Subcribe to my ramblings
-                .col-xs-12
-                  .section-content.text-center
-                    .hideme
-                      p.inline-block Now hit that submit
-                      .form-field.inline-block
-                        input.form-field-submit type="submit" name="submit" id="submit" value="Submit" tabindex="9"
+                .col-xs-12.col-sm-8.col-md-12
+                  #mbp_form.form-container
+                    .row
+                      .col-xs-12
+                        .hideme
+                          h3
+                            | Who Are You?
+                          .form-field
+                            label.form-field-label for="name" Name
+                            input.form-field-text type="text" name="name" id="name" tabindex="1"
+                          .form-field
+                            label.form-field-label for="email" Email
+                            input.form-field-text type="email" name="email" id="email" tabindex="2"
+                    .row
+                      .col-xs-12
+                        .hideme
+                          h3
+                            | What You Have to Say?
+                          .form-field
+                            label.form-field-label for="message" Put your message in the box below.
+                            textarea.form-field-textarea name="message" id="message" tabindex="8"
+                          / ul.section-content-checklist
+                          /   li.section-content-checklist-ele
+                          /     label.form-field-label for="subscribe" 
+                          /       input.form-field-checkbox type="checkbox" name="subscribe" id="subscribe" value="subscribed"
+                          /       | Subcribe to my ramblings
+                      .col-xs-12
+                        .section-content
+                          .hideme
+                            .form-field.inline-block
+                              input.form-field-submit type="submit" name="submit" id="submit" value="Submit" tabindex="9"

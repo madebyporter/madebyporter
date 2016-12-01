@@ -26,4 +26,9 @@
   .section-content-checklist-ele {
     border-bottom: 1px solid $color-red-d2;
   }
+  .site-header-nav-link a {
+    &:hover {
+      color: $color-red-d3;
+    }
+  }
 }

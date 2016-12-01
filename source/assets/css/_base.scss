@@ -62,21 +62,35 @@
     background: url('../img/mbp-logo-emblem.svg') no-repeat center;
     height: 50px;
     width: 50px;
+    margin: 0 auto 20px;
+    @media (min-width: $mq-small) {
+      margin: 0;
+    }
     a {
       display: block;
       height: 100%;
       width: 100%;
     }
   }
+
+// Nav
   .site-header-nav {
     float: right;
     margin: 11px 0 0 0;
     position: relative;
+    width: 100%;
     z-index: 100000;
+    @media (min-width: $mq-small) {
+      width: auto;
+    }
+  }
+  .site-header-nav-list {
+    margin: 0;
+    list-style: none;
+    @include flexbox();
+    justify-content: space-between;
   }
   .site-header-nav-link {
-    display: inline-block;
-    padding: 0 0 0 20px;
     @media (min-width: $mq-small) {
       padding: 0 0 0 30px;
     }
@@ -125,7 +139,7 @@
     }
     span {
       display: inline;
-      padding-right: 10px;
+      padding-right: 20px;
       @media (min-width: $mq-medium) {
         display: inline-block;
       }
@@ -315,7 +329,8 @@
       color: $color-black;
       display: block;
       font-family: $font-reg;
-      font-size: 3em;
+      font-size: 3.2rem;
+      font-weight: 700;
       padding: 20px 0;
       &:hover {
         color: $color-red;
@@ -435,6 +450,20 @@
 // Contact Page
   .contact_index {
     @extend .theme-red;
+
+    .form-container {
+      z-index: 1000;
+      &.fixed {
+        @media (min-width: $mq-medium) {
+          position: fixed;
+          top: 20px;
+          width: 347px;
+        }
+        @media (min-width: $mq-large) {
+          width: 355px;
+        }
+      }
+    }
   }
 
 // FAQ Questions
