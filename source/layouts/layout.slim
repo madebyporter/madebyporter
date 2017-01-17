@@ -22,17 +22,19 @@ html
 
   body class="#{page_classes}"
     main.site-wrapper
-      header.site-header.site-section.no-border
+      header.site-header
         .container-fluid
           .row
-            .col-xs-12.col-sm-3
+            .col.col-xs-12.col-sm-6
               .site-header-logo
                 == link_to 'Made by Porter', '/'
-            .col-xs-12.col-sm-9
+            .col.col-xs-12.col-sm-6
               nav.site-header-nav
                 ul.site-header-nav-list
                   li.site-header-nav-link
-                    == link_to 'Design', '/'
+                    == link_to 'Home', '/'
+                  li.site-header-nav-link
+                    == link_to 'Design', '/design'
                   li.site-header-nav-link
                     == link_to 'Music', '/sounds'
                   li.site-header-nav-link

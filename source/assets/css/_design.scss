@@ -1,5 +1,5 @@
 // _design.scss
-  .index {
+  .design {
     background: url('../img/bg-sound-project-higher-trans.jpg') no-repeat center top $color-black;
     background-size: cover;
     font-family: $font-reg;
@@ -40,7 +40,7 @@
       opacity: 0;
     }
     .site-header {
-      @extend .no-border;
+      // @extend .no-border;
       @extend .bg-black;
       @extend .bg-black-50;
     }

@@ -4,32 +4,36 @@
     h1, h2, h3, h4, h5, h6 {
       color: $color-white;
       font-family: $font-reg;
-      font-weight: 700;
       line-height: 1.2;
       margin: 0 0 10px;
     }
 
     h1 {
       font-size: 2.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
       @media (min-width: $mq-small) {
-        font-size: 6.4rem;
+        font-size: 4.8rem;
       }
       .sub {
-        color: $color-white;
-        display: block;
-        font-size: 2.1rem;
         font-family: $font-reg;
+        font-size: 1.2rem;
         font-weight: 400;
-        line-height: 1.5;
-        margin-top: 20px;
+        letter-spacing: 0.5rem;
+        line-height: 1;
+        text-align: center;
+        text-transform: uppercase;
+        @media (min-width: $mq-small) {
+          font-size: 1.4rem;
+        }
       }
     }
 
     h2 {
       // color: $color-grey-l3;
-      font-size: 2.1rem;
+      font-size: 2.8rem;
       @media (min-width: $mq-small) {
-        font-size: 2.8rem;
+        font-size: 3.6rem;
       }
     }
 
@@ -117,6 +121,10 @@
         padding: 0;
         list-style: none;
       }
+    }
+
+    strong {
+      font-weight: 700;
     }
 
   // Nav Links

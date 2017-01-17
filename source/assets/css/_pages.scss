@@ -1,0 +1,186 @@
+// _pages.scss
+
+// Homepage
+  .index {
+    background: url('../img/bg-home-hero-porter.jpg') no-repeat center top $color-black;
+    background-size: cover;
+    font-family: $font-reg;
+    font-size: 1em;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &:before {
+      background: $color-black-50;
+      background: -webkit-linear-gradient(180deg, rgba(0,0,0,0) 50%, $color-black 100%);
+      background: -moz-linear-gradient(180deg, rgba(0,0,0,0) 50%, $color-black 100%);
+      background: -o-linear-gradient(180deg, rgba(0,0,0,0) 50%, $color-black 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0) 50%, $color-black 100%);
+      bottom: 0;
+      content: "";
+      height: 100%;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    } 
+    &:after {
+      background: $color-black;
+      bottom: 0;
+      content: "";
+      height: 100%;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+      @include animation(bgFadeIn 5s 1 cubic-bezier(.14, .62, .39, 1) forwards);
+      opacity: 0;
+    }
+
+    .site-hero {
+      min-height: 532px;
+      @media (min-width: $mq-small) {
+        min-height: 742px;
+      }
+    }
+    .site-hero-text {
+      text-align: center;
+      @include absolute-center;
+      width: 100%;
+      @media (min-width: $mq-small) {
+        width: auto;
+      }
+      h1 {
+        line-height: 0.8;
+      }
+      .word {
+        color: #E4E4E6;
+        display: inline-block;
+        letter-spacing: 1rem;
+        vertical-align: middle;
+        font-size: 2.1rem;
+        @media (min-width: $mq-small) {
+          font-size: 4.8rem;
+        }
+      }
+      .by {
+        color: #919199;
+        font-size: 1.2rem;
+        padding: 0 5px;
+        @media (min-width: $mq-small) {
+          font-size: 3.6rem;
+          padding: 0 20px;
+        }
+      }
+      .sub {
+        color: #919199;
+      }
+    }
+    .site-hero-help {
+      color: #919199;
+      font-family: $font-reg;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.5rem;
+      text-transform: uppercase;
+      text-align: center;
+      bottom: 80px;
+      width: 90%;
+      @include horizontal-center;
+    }
+
+    .site-home {
+      min-height: 742px;
+    }
+    .site-home-text {
+      width: 300px;
+      @include vertical-center;
+    }
+    .site-home-text-left {
+      @extend .site-home-text;
+      left: 80px;
+      @media (max-width: $mq-small) {
+        @include absolute-center;
+      }
+    }
+    .site-home-text-right {
+      @extend .site-home-text;
+      right: 15%;
+      @media (max-width: $mq-small) {
+        @include absolute-center;
+      }
+    }
+    .site-home-header {
+      margin: 0 0 20px 0;
+    }
+    .site-home-cta {
+      border-left: 5px solid $color-red;
+      padding-left: 5px;
+      @include transition($type:border);
+      a {
+        color: $color-white;
+        font-family: $font-reg;
+        font-size: 1.8rem;
+        text-decoration: none;
+      }
+      &:hover {
+        border-left: 10px solid $color-red;
+      }
+    }
+
+    .site-home-about {
+      background: url('../img/img-home-losangeles.jpg') no-repeat right center;
+    }
+    .site-home-design {
+      background: url('../img/img-home-rf.png') no-repeat 35% 95%,
+                  url('../img/img-home-sbt-mobile.png') no-repeat -550px center;
+      @media (min-width: $mq-small) {
+        background: url('../img/img-home-rf.png') no-repeat 35% 95%,
+                    url('../img/img-home-sbt.png') no-repeat -550px center;
+      }
+      @media (min-width: $mq-medium) {
+        background: url('../img/img-home-rf.png') no-repeat 40% 95%,
+                    url('../img/img-home-sbt.png') no-repeat -400px center;
+      }
+      @media (min-width: $mq-large) {
+        background: url('../img/img-home-rf.png') no-repeat 60% 95%,
+                    url('../img/img-home-sbt.png') no-repeat 0 center;
+      }
+    }
+    .site-home-music {
+      background: url('../img/img-home-daw.png') no-repeat center;
+    }
+    .site-home-photo {
+      background: $color-grey-l4;
+      color: $color-black;
+      padding: 120px 20px;
+      text-align: center;
+      .site-home-header {
+        color: $color-black;
+        @include font-size(7.2);
+      }
+    }
+    .site-section-nav-list {
+      @include flexbox();
+      justify-content: space-around;
+      list-style: none;
+      margin: 0 auto;
+      padding: 0;
+      text-align: center;
+      width: 50%;
+    }
+    .site-section-nav-ele {
+      a {
+        color: $color-red;
+        @include font-size(1.8);
+        font-weight: 700;
+        letter-spacing: .03em;
+        text-transform: uppercase;
+      }
+    }
+  }

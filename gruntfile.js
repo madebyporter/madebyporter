@@ -98,9 +98,6 @@ var mozjpeg = require('imagemin-mozjpeg');
       css: {
         files: 'source/assets/**/*.scss',
         tasks: ['sass', 'concat', 'cssmin'],
-        options: {
-          livereload: true,
-        },
       },
       scripts: {
         files: ['source/assets/vendor/js/*', 'source/assets/js/_global.js'],
@@ -129,6 +126,6 @@ var mozjpeg = require('imagemin-mozjpeg');
 
   // Default task(s).
   grunt.registerTask('default', ['middleman:build', 'newer:imagemin', 'sass', 'slim', 'newer:cssmin', 'newer:concat', 'watch']);
-  grunt.registerTask('dev', ['newer:imagemin', 'newer:concat:js', 'watch:scripts']);
+  grunt.registerTask('dev', ['newer:watch']);
   grunt.registerTask('server', ['middleman:server']);
 };
