@@ -30,6 +30,34 @@ js.main = {
     this.gaTimeout();
     this.mbpPlayer();
     this.wpFAQ();
+    this.ig();
+  },
+  ig: function () {
+    // jQuery.fn.spectragram.accessData = {
+    //   accessToken: '1641373830.59f90b2.8291f13bf0ec4dd086efaffdf6f6377a',
+    //   clientID: '59f90b2f53034d33a7ee3f08b6ba8870'
+    // };
+
+    // $('.photo-gallery').spectragram('getUserFeed',{
+    //   query: 'madebyporter',
+    //   max: 7,
+    //   wrapEachWith: '<li class="photo-gallery-ele"></li>'
+    // });
+    var $gal = $(".photo-gallery");
+    $(".photo-gallery").on('willLoadInstagram', function(event, options) {
+      console.log(options);
+    });
+    $(".photo-gallery").on('didLoadInstagram', function(event, response) {
+      console.log(response);
+    });
+    $(".photo-gallery").instagram({
+      userId: '1641373830',
+      clientId: '59f90b2f53034d33a7ee3f08b6ba8870',
+      accessToken: '1641373830.59f90b2.8291f13bf0ec4dd086efaffdf6f6377a',
+      image_size:'standard_resolution',
+      count: 7,
+
+    });
   },
   wpFAQ: function() {
     function wpInit(){

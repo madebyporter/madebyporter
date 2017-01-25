@@ -1,6 +1,7 @@
 ---
 title: The Musings of Bojack Horseman
 date: 2016-10-07 16:05 UTC
+thumbnail_image: assets/img/img-home-blog-bojack.png
 tags:
 ---
 I went back to the basics with this recent build I submitted to the 10k Apart web challenge: I built a <10KB website and to take it a step further, I tried to build it in less than 12 hours. One of my good friends was visiting LA and brought the contest to my attention. We decided to do a collaboration, where I would work on the design and development and she did the assist with the content and layout.

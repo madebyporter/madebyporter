@@ -292,6 +292,19 @@
     }
   }
 
+// Article List w/ Photo
+  .article-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .article-list-ele {
+    margin: 0 0 20px 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
 // Site Footer
   .site-footer {
     &.site-section {
@@ -299,6 +312,10 @@
     }
     .site-content {
       padding-bottom: 40px;
+    }
+    .site-footer-social {
+      padding: 40px 0 20px;
+      text-align: center;
     }
     @media (min-width: $mq-small) {
       &.site-section {
