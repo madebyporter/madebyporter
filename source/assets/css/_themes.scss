@@ -1,37 +1,72 @@
 // _themes.scss
 
-.theme-red {
-  background: $color-red;
-  a {
-    color: $color-white;
-    font-weight: 700;
-    &:hover {
-      color: darken($color-white,10%);
+// Theme Dark
+  .theme-black {
+    background: $color-black;
+    a {
+      color: $color-white;
+      font-weight: 700;
+      &:hover {
+        color: darken($color-white,10%);
+      }
     }
-  }
-  .site-hero-text {
-    h1, h2, h3, .word, {
+    .site-hero-text {
+      h1, h2, h3, .word, {
+        color: $color-white;
+      }
+      .connector, .sub {
+        color: $color-grey-l3;
+      }
+    }
+    .faq-question {
       color: $color-white;
     }
-    .connector, .sub {
-      color: $color-grey-l4;
+    .faq-answer {
+      color: $color-white;
+    }
+    .section-content-checklist-ele {
+      border-bottom: 1px solid $color-white;
+    }
+    .site-header-nav-link a {
+      &:hover {
+        color: darken($color-white,10%);
+      }
     }
   }
-  .faq-question {
-    color: $color-red-d3;
-  }
-  .faq-answer {
-    color: $color-red-l4;
-  }
-  .section-content-checklist-ele {
-    border-bottom: 1px solid $color-red-d2;
-  }
-  .site-header-nav-link a {
-    &:hover {
-      color: darken($color-white,10%);
+
+// Theme Red
+  .theme-red {
+    background: $color-red;
+    a {
+      color: $color-white;
+      font-weight: 700;
+      &:hover {
+        color: darken($color-white,10%);
+      }
+    }
+    .site-hero-text {
+      h1, h2, h3, .word, {
+        color: $color-white;
+      }
+      .connector, .sub {
+        color: $color-grey-l4;
+      }
+    }
+    .faq-question {
+      color: $color-red-d3;
+    }
+    .faq-answer {
+      color: $color-red-l4;
+    }
+    .section-content-checklist-ele {
+      border-bottom: 1px solid $color-red-d2;
+    }
+    .site-header-nav-link a {
+      &:hover {
+        color: darken($color-white,10%);
+      }
     }
   }
-}
 
 // Theme Light
   .theme-white {

@@ -963,8 +963,11 @@
   }
 
 // Contact {
-  .contact_index {
-    @extend .theme-red;
+  .contact {
+    @extend .theme-black;
+    .site-contact {
+      padding: 0;
+    }
     .form-container {
       z-index: 1000;
       &.fixed {

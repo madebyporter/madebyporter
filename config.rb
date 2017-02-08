@@ -28,6 +28,10 @@ Slim::Engine.set_default_options :pretty => true
 
 activate :directory_indexes
 set :debug_assets, true
+
+# Contact Layout
+page "/contact/*", :layout => "contact_layout"
+
 ###
 # Helpers
 ###
