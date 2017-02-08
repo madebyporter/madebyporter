@@ -26,8 +26,9 @@ html
         .container-fluid
           .row
             .col.col-xs-12.col-sm-6
-              .site-header-logo
-                == link_to 'Made by Porter', '/'
+              .site-header-logo-container
+                .site-header-logo
+                  == link_to 'Made by Porter', '/'
             .col.col-xs-12.col-sm-6
               nav.site-header-nav
                 ul.site-header-nav-list
@@ -45,85 +46,91 @@ html
                     == link_to 'Contact', '/contact'
       section.site-body
         == yield
-      footer.site-footer.site-section.no-border.bg-black
-        .container-fluid
-          .row
-            .col-xs-12.col-md-8
-              ul.article-list
-                - blog.articles[0...3].each do |article|
-                  li.article-list-ele
-                    .row
-                      .col-xs-12.col-md-3
-                        img src="#{article.data.thumbnail_image}" alt="#{article.title}"
-                      .col-xs-12.col-md-7
-                        h2 = article.title
-                        = link_to 'Read More', article.url
-            .col-xs-12.col-md-4
-              .price-menu
+      footer#footer.site-footer.site-section.no-border.bg-black
+        .site-section-inner
+          .container-fluid
+            .row
+              .col-xs-12.col-sm-12.col-md-8
                 h2
-                  | The Menu
-                h3
-                  | Megabytes
-                ul.price-menu-list
-                  li.price-menu-ele
-                    h4.price-menu-item
-                      | Product Design
-                    .price-menu-price
-                      | Get quoted
-                  li.price-menu-ele
-                    h4.price-menu-item
-                      | Websites
-                    .price-menu-price
-                      | Get quoted
-                  li.price-menu-ele
-                    h4.price-menu-item
-                      | Custom Music
-                    .price-menu-price
-                      | Get quoted
-                h3
-                  | Microbytes
-                ul.price-menu-list
-                  li.price-menu-ele
-                    h4.price-menu-item
-                      | Landing Page
-                    .price-menu-price
-                      | $1,000
-                  li.price-menu-ele
-                    h4.price-menu-item
-                      | Email Template
-                    .price-menu-price
-                      | $250
-                  li.price-menu-ele
-                    h4.price-menu-item
-                      | Non-exclusive Music
-                    .price-menu-price
-                      | $150
-                  li.price-menu-ele
-                    h4.price-menu-item
-                      | Photography
-                    .price-menu-price
-                      | $100/shoot
-                .price-menu-links
-                  == link_to 'Contact Me', '/contact'
-                      
-          .row
-            .col-xs-12
-              .site-footer-social.hideme
-                h4
-                  | Follow me around
-                ul.social-media-list.no-list
-                  li.social-media-list-ele
-                    a href="http://www.twitter.com/madebyporter"
-                      == image_tag 'img-social-twitter.svg'
-                  li.social-media-list-ele
-                    a href="http://www.instagram.com/portermade"
-                      == image_tag 'img-social-instagram.svg'
-                  li.social-media-list-ele
-                    a href="http://www.dribbble.com/madebyporter"
-                      == image_tag 'img-social-dribbble.svg'
-                  li.social-media-list-ele
-                    a href="http://www.snapchat.com/add/portermade"
-                      == image_tag 'img-social-snapchat.svg'
+                  | Latest Journal Entries
+                ul.article-list
+                  - blog.articles[0...3].each do |article|
+                    li.article-list-ele
+                      .row
+                        .col-xs-12.col-md-3
+                          .article-list-img
+                            = link_to article.url do
+                              = image_tag article.data.thumbnail_image
+                        .col-xs-12.col-md-7
+                          .article-list-meta
+                            h3 = article.title
+                            .article-list-cta = link_to 'Read More', article.url
+              .col-xs-12.col-sm-12.col-md-4
+                .price-menu
+                  h2
+                    | The Menu
+                  h3.price-menu-subheader
+                    | Megabytes
+                  ul.price-menu-list
+                    li.price-menu-ele
+                      h4.price-menu-item
+                        | Product Design
+                      a.price-menu-price href="#"
+                        | Get quoted
+                    li.price-menu-ele
+                      h4.price-menu-item
+                        | Websites
+                      a.price-menu-price href="#"
+                        | Get quoted
+                    li.price-menu-ele
+                      h4.price-menu-item
+                        | Custom Music
+                      a.price-menu-price href="#"
+                        | Get quoted
+                  h3.price-menu-subheader
+                    | Microbytes
+                  ul.price-menu-list
+                    li.price-menu-ele
+                      h4.price-menu-item
+                        | Landing Page
+                      a.price-menu-price href="#"
+                        | $1,000
+                    li.price-menu-ele
+                      h4.price-menu-item
+                        | Email Template
+                      a.price-menu-price href="#"
+                        | $250
+                    li.price-menu-ele
+                      h4.price-menu-item
+                        | Non-exclusive Music
+                      a.price-menu-price href="#"
+                        | $150
+                    li.price-menu-ele
+                      h4.price-menu-item
+                        | Photography
+                      a.price-menu-price href="#"
+                        | $100/shoot
+                  .price-menu-links
+                    == link_to 'Contact Me', '/contact'
+                        
+            .row
+              .col-xs-12
+                .site-footer-social.hideme
+                  h4.site-footer-social-header
+                    | Follow me around
+                  ul.social-media-list.no-list
+                    li.social-media-list-ele
+                      a href="http://www.twitter.com/madebyporter"
+                        == image_tag 'img-social-twitter.svg'
+                    li.social-media-list-ele
+                      a href="http://www.instagram.com/portermade"
+                        == image_tag 'img-social-instagram.svg'
+                    li.social-media-list-ele
+                      a href="http://www.dribbble.com/madebyporter"
+                        == image_tag 'img-social-dribbble.svg'
+                    li.social-media-list-ele
+                      a href="http://www.snapchat.com/add/portermade"
+                        == image_tag 'img-social-snapchat.svg'
     
     == javascript_include_tag "output"
     script src="https://use.typekit.net/pdw4yep.js"

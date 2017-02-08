@@ -4,67 +4,64 @@
     h1, h2, h3, h4, h5, h6 {
       color: $color-white;
       font-family: $font-reg;
-      line-height: 1.2;
       margin: 0 0 10px;
     }
 
     h1 {
-      font-size: 2.8rem;
+      @include font-size(44);
       font-weight: 700;
       text-transform: uppercase;
       @media (min-width: $mq-small) {
-        font-size: 4.8rem;
+        @include font-size(48);
+        line-height: 4.2rem;
       }
       .sub {
         font-family: $font-reg;
-        font-size: 1.2rem;
+        @include font-size(12);
         font-weight: 400;
         letter-spacing: 0.5rem;
-        line-height: 1;
         text-align: center;
         text-transform: uppercase;
         @media (min-width: $mq-small) {
-          font-size: 1.4rem;
+          @include font-size(14);
         }
       }
     }
 
     h2 {
-      // color: $color-grey-l3;
-      font-size: 2.8rem;
+      @include font-size(32);
       @media (min-width: $mq-small) {
-        font-size: 3.6rem;
+        @include font-size(36);
       }
     }
 
     h3 {
-      font-size: 1.8rem;
+      @include font-size(24);
       @media (min-width: $mq-small) {
-        font-size: 2.1rem;
+        @include font-size(28);
       }
     }
 
     h4 {
-      font-size: 1.2rem;
-      text-transform: uppercase;
+      @include font-size(14);
       @media (min-width: $mq-small) {
-        font-size: 1.8rem;
+        @include font-size(18);
       }
     }
 
     h5 {
-      font-size: 0.8rem;
+      @include font-size(10);
       text-transform: uppercase;
       @media (min-width: $mq-small) {
-        font-size: 1.4rem;
+        @include font-size(14);
       }
     }
 
     h6 {
-      font-size: 0.6rem;
+      @include font-size(8);
       text-transform: uppercase;
       @media (min-width: $mq-small) {
-        font-size: 1.0rem;
+        @include font-size(10);
       }
     }
 
@@ -72,8 +69,7 @@
     p {
       color: $color-white;
       font-family: $font-reg;
-      font-size: 1.8rem;
-      // letter-spacing: 0.04em;
+      @include font-size(18);
       line-height: 1.5;
       margin: 0 0 20px 0;
 
@@ -86,10 +82,9 @@
     blockquote { 
       p {
         font-family: $font-secondary;
-        font-size: 4.0rem;
+        @include font-size(40);
         font-style: italic;
         font-weight: 700;
-        line-height: 1.1;
       }
     }
 
@@ -98,7 +93,7 @@
       list-style: disc;
       margin: 0 0 20px 20px;
       li {
-        font-size: 1.8rem;
+        @include font-size(18);
         line-height: 1.5;
         margin-bottom: 10px;
         &:last-child {
@@ -130,7 +125,7 @@
   // Nav Links
     .site-header-nav-link a {
       color: $color-white;
-      font-size: 1.6rem;
+      @include font-size(16);
       font-weight: bold;
       @media (min-width: $mq-small) {
         font-size: 1.8rem;
@@ -140,14 +135,13 @@
   // Forms
     .form-field-label {
       color: $color-white;
-      font-size: 1.8rem;
+      @include font-size(16);
       font-weight: 300;
-      line-height: 1.5;
     }
 
     .sub-text {
       color: $color-grey-l3;
-      font-size: 1.4rem;
+      @include font-size(14);
       font-weight: 300;
       letter-spacing: 0.08em;
       text-transform: uppercase;

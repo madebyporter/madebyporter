@@ -5,17 +5,17 @@
   a {
     color: $color-white;
     font-weight: 700;
-    text-decoration: underline;
+    &:hover {
+      color: darken($color-white,10%);
+    }
   }
-  .site-header-logo {
-    background: url(../img/mbp-logo-outlined.svg) no-repeat center;
-    background-size: cover;
-    -webkit-filter: invert(1);
-    -moz-filter: invert(1);
-    filter: invert(1);
-  }
-  .site-footer {
-    background: $color-red !important;
+  .site-hero-text {
+    h1, h2, h3, .word, {
+      color: $color-white;
+    }
+    .connector, .sub {
+      color: $color-grey-l4;
+    }
   }
   .faq-question {
     color: $color-red-d3;
@@ -28,7 +28,60 @@
   }
   .site-header-nav-link a {
     &:hover {
-      color: $color-red-d3;
+      color: darken($color-white,10%);
     }
   }
 }
+
+// Theme Light
+  .theme-white {
+    .site-header {
+      @extend .bg-white;
+      @extend .no-border;
+      border-bottom: 1px solid $color-grey-l4;
+      &:after {
+        background: $color-grey-l3;
+      }
+    }
+    .site-header-nav-list {
+      border-top: 1px solid $color-grey-l4;
+      @media (min-width: $mq-small) {
+        border-top: 0 solid $color-grey-l4;
+        border-left: 1px solid $color-grey-l4;
+      }
+    }
+    .site-header-nav-link {
+      border-bottom: 1px solid $color-grey-l4;
+      border-right: 1px solid $color-grey-l4;
+      a {
+        color: $color-black;
+        @include transition;
+        &:hover {
+          color: $color-red;
+        }
+      }
+    }
+    .site-hero {
+      @extend .bg-white;
+      @extend .text-dark;
+    }
+    .site-hero-text {
+      h1, h2, h3, .word, {
+        color: $color-black;
+      }
+      .connector, .sub {
+        color: $color-grey-l2;
+      }
+    }
+    .site-body {
+      h1, h2, h3 {
+        color: $color-black;
+      }
+      h4, h5, h6 {
+        color: $color-grey-l2;
+      }
+      p, .form-field-label {
+        color: $color-grey-d3;
+      }
+    }
+  }

@@ -3,21 +3,23 @@ title: Made by Porter - Blog Archives
 ---
 
 section.site-hero.site-section.bg-white.no-border
-  .container-fluid
-    .row
-      .col-xs-12
-        h1
-          span.fadeInUp Shower
-          span.fadeInUp Thoughts
-          .sub.fadeInUp
-            | Some of my ramblings. Take what you need and apply to your own life.
+  .site-hero-text
+      h1
+        span.fadeInUp 
+          span.word.space The
+          span.word Journal
+        span.sub.fadeInUp
+          | I'll come up with a cooler name later. Just read, learn &amp; get inspired.
 section.site-blog-index.site-section
   .container-fluid
     .row
-      .col-xs-12.col-md-10
+      .col-xs-12.col-md-12
         ul.blog-list.site-list.no-list
           - blog.articles[0...5].each do |article|
             li.blog-list-ele.hideme.showmeonload
-              = link_to article.url do
-                = article.title
+              .blog-list-image
+                = image_tag article.data.thumbnail_image
+              .blog-list-link
+                = link_to article.url do
+                  = article.title
           

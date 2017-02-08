@@ -7,7 +7,7 @@ section.site-hero.site-section
     h1
       span.fadeInUp 
         span.word Made
-        span.word.by by
+        span.word.connector by
         span.word Porter
       
       span.fadeInUp
@@ -17,36 +17,40 @@ section.site-hero.site-section
     span.fadeInUp Keep Scrolling
 
 section.site-home.site-home-about.site-section
-  .site-home-text-left
-    h2.site-home-header
-      | I'm <strong>Chris Porter</strong>, a creative based in <strong>Los Angeles</strong>
-    .site-home-cta
-      == link_to 'Learn more about me', '/about'
+  .site-section-inner
+    .site-home-text-left
+      h3.site-home-header
+        | I'm <strong>Chris Porter</strong>, a creative based in <strong>Los Angeles</strong>
+      .site-home-cta
+        == link_to 'Learn more about me', '/about'
 section.site-home.site-home-design.site-section
-  .site-home-text-right
-    h2.site-home-header
-      | Creating websites since 2001.
-    .site-home-cta
-      == link_to 'Check out my design &amp; code.', '/design'
+  .site-section-inner
+    .site-home-text-right
+      h3.site-home-header
+        | Creating websites since 2001.
+      .site-home-cta
+        == link_to 'Check out my design &amp; code.', '/design'
 section.site-home.site-home-music.site-section
-  .site-home-text-left
-    h2.site-home-header
-      | Also, I partake in music creation.
-    .site-home-cta
-      == link_to 'Listen to &amp; download some music.', '/sounds'
+  .site-section-inner
+    .site-home-text-left
+      h3.site-home-header
+        | Also, I partake in music creation.
+      .site-home-cta
+        == link_to 'Listen to &amp; download some music.', '/sounds'
 section.site-home.site-home-photo.site-section
-  h2.site-home-header
-    | The Visual Log  
-  nav.site-section-nav
-    ul.site-section-nav-list
-      li.site-section-nav-ele
-        == link_to 'Download Photos', '/photos'
-      li.site-section-nav-ele
-        == link_to 'Follow on the Gram', 'http://www.instagram.com/madebyporter'
-  ul.photo-gallery
-  nav.site-section-nav
-    ul.site-section-nav-list
-      li.site-section-nav-ele
-        == link_to 'Download Photos', '/photos'
-      li.site-section-nav-ele
-        == link_to 'Follow on the Gram', 'http://www.instagram.com/madebyporter'
+  .site-section-inner
+    h2.site-home-header
+      | The Visual Log  
+    nav.site-section-nav
+      ul.site-section-nav-list
+        li.site-section-nav-ele
+          == link_to 'Download Photos', '/photos'
+        li.site-section-nav-ele
+          == link_to 'Follow on the Gram', 'http://www.instagram.com/madebyporter'
+    ul.photo-gallery
+    nav.site-section-nav
+      ul.site-section-nav-list
+        li.site-section-nav-ele
+          == link_to 'Download Photos', '/photos'
+        li.site-section-nav-ele
+          == link_to 'Follow on the Gram', 'http://www.instagram.com/madebyporter'

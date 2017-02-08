@@ -12,7 +12,8 @@
   body {
     background: $color-white;
     font-family: $font-reg;
-    font-size: 1.4rem;
+    @include font-size(16);
+    line-height: 1.2;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -31,6 +32,13 @@
     z-index: 10;
   }
 
+  .site-section-inner {
+    margin: 0 auto;
+    max-width: 1440px;
+    min-height: inherit;
+    position: relative;
+  }
+
 // Header Styles
   .site-header {
     overflow: hidden;
@@ -43,23 +51,28 @@
       }
     }
   }
-  .site-header-logo {
+  .site-header-logo-container {
     border-bottom: 1px solid rgba(255,255,255,0.3);
+    height: 90px;
+    position: relative;
     width: 100%;
     @media (min-width: $mq-small) {
       border-bottom: 0;
-      margin: 32px 20px;
+      height: 114px;
+    }
+  }
+  .site-header-logo {
+    @include absolute-center;
+    @media (min-width: $mq-small) {
+      left: 20px;
+      @include vertical-center;
     }
     a {
       background: url('../img/mbp-logo-emblem.svg') no-repeat center;
       height: 50px;
       width: 50px;
       display: block;
-      margin: 20px auto;
       @include text-hide;
-      @media (min-width: $mq-small) {
-        margin: 0;
-      }
     }
   }
 
@@ -95,38 +108,6 @@
       padding: 15px 20px;
     }
   }
-  // .site-header-nav {
-  //   float: right;
-  //   margin: 11px 0 0 0;
-  //   position: relative;
-  //   width: 100%;
-  //   z-index: 100000;
-  //   @media (min-width: $mq-small) {
-  //     width: auto;
-  //   }
-  // }
-  // .site-header-nav-list {
-  //   margin: 0;
-  //   list-style: none;
-  //   @include flexbox();
-  //   justify-content: space-between;
-  // }
-  // .site-header-nav-link {
-  //   @media (min-width: $mq-small) {
-  //     padding: 0 0 0 30px;
-  //   }
-  //   &:first-child {
-  //     padding-left: 0;
-  //   }
-  //   a {
-  //     position: relative;
-  //     text-decoration: none;
-  //     @include transition;
-  //     &:hover {
-  //       color: $color-red;
-  //     }
-  //   }
-  // }
 
 // Site Content Styles
   .site-section {
@@ -143,7 +124,7 @@
       padding-top: 0;
     }
     @media (min-width: $mq-small) {
-      padding: 40px 20px;
+      padding: 40px 0;
     }
   }
   .section-content {
@@ -152,6 +133,53 @@
       &:last-child {
         margin: 0;
       }
+    }
+  }
+  .site-hero {
+    &.index {
+      min-height: 532px;
+      @media (min-width: $mq-small) {
+        min-height: 742px;
+      }
+    }
+    &.sub {
+      min-height: 80px;
+      @media (min-width: $mq-small) {
+        min-height: 320px;
+      }
+    }
+  }
+  .site-hero-text {
+    text-align: center;
+    @include absolute-center;
+    width: 100%;
+    h1 {
+      // line-height: 0.8;
+    }
+    .word {
+      color: #E4E4E6;
+      display: inline-block;
+      letter-spacing: 1rem;
+      vertical-align: middle;
+      @include font-size(21);
+      @media (min-width: $mq-small) {
+        @include font-size(48);
+      }
+    }
+    .connector {
+      color: #919199;
+      @include font-size(12);
+      padding: 0 5px;
+      @media (min-width: $mq-small) {
+        @include font-size(36);
+        padding: 0 20px;
+      }
+    }
+    .space {
+      padding-right: 20px;
+    }
+    .sub {
+      color: #919199;
     }
   }
 
@@ -191,7 +219,56 @@
       }
     }
   }
-  
+
+// CTA Styles
+  .cta-bar {
+    color: $color-white;
+    font-family: $font-reg;
+    @include font-size(18);
+    text-decoration: none;
+    border-left: 5px solid $color-red;
+    padding-left: 5px;
+    @include transition($type:border);
+    &:hover {
+      border-left: 10px solid $color-red;
+    }
+  }
+
+  .cta-text {
+    color: $color-red;
+    @include font-size(14);
+    font-weight: 700;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+  }
+
+  .cta-pill {
+    border: 5px solid $color-white;
+    border-radius: 20px;
+    color: $color-white;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 0.7em;
+    line-height: 1;
+    padding: 5px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    @include transition;
+    @include scale(1);
+    &:hover {
+      background: $color-white;
+      color: $color-black;
+      text-decoration: none;
+      @include scale(1.1);
+    }
+    @media (min-width: $mq-small) {
+      font-size: 1.2em;
+    }
+    @media (min-width: $mq-medium) {
+      font-size: 1.6rem;
+    }
+  }
+
 // Form Elements
   .form-field {
     padding: 0 20px 20px;
@@ -208,7 +285,7 @@
       border: 0;
       border-radius: 2px;
       box-shadow: inset 2px 2px 0 $color-grey-l4, inset -2px -2px 0 $color-grey-l4;
-      font-size: 1.0em;
+      @include font-size(12);
       padding: 10px 20px;
       width: 100%;
       @media (min-width: $mq-small) {
@@ -221,7 +298,7 @@
       border: 0;
       border-radius: 2px;
       box-shadow: inset 2px 2px 0 $color-grey-l4, inset -2px -2px 0 $color-grey-l4;
-      font-size: 1.0em;
+      @include font-size(12);
       min-height: 250px;
       padding: 20px;
       width: 100%;
@@ -232,7 +309,7 @@
       border-radius: 100px;
       box-shadow: inset 2px 2px 0 rgba(255,110,110,0.3), inset -2px -2px 0 rgba(255,110,110,0.3);
       color: $color-white;
-      font-size: 1.2em;
+      @include font-size(14);
       font-weight: 300;
       letter-spacing: 0.04em;
       padding: 10px 20px;
@@ -252,8 +329,7 @@
     @include transition;
     border-bottom: 0px solid $color-red-d1;
     color: $color-white;
-    font-size: 1.4em;
-    line-height: 1.5;
+    @include font-size(14);
     padding: 0;
     text-align: center;
     &.error {
@@ -294,14 +370,68 @@
 
 // Article List w/ Photo
   .article-list {
+    @include flexbox;
+    @include flex-wrap(wrap);
     list-style: none;
-    margin: 0;
+    margin: 0 0 40px 0;
     padding: 0;
+    width: 100%;
+    @media (min-width: $mq-small) {
+      justify-content: space-between;
+    }
   }
   .article-list-ele {
-    margin: 0 0 20px 0;
+    margin: 0 0 40px 0;
+    width: 100%;
+    @media (min-width: $mq-small) {
+      width: 48%;
+    }
+    @media (min-width: $mq-medium) {
+      width: 100%;
+    }
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+  .article-list-cta {
+    a {
+      @extend .cta-bar;
+    }
+  }
+  .article-list-img {
+    a {
+      display: block;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .article-list-meta {
+    @media (min-width: $mq-large) {
+      padding: 20px 0 0 0;
+    }
+  }
+
+// Price Menu
+  .price-menu-subheader {
+    color: $color-grey-l3;
+  }
+  .price-menu-list {
+    @include nolist;
+  }
+  .price-menu-ele {
+    @include flexbox;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-grey-d2;
+  }
+  .price-menu-price {
+    @extend .cta-text;
+  }
+  .price-menu-links {
+    padding: 20px 0;
+    text-align: center;
+    a {
+      @extend .cta-text;
     }
   }
 
@@ -309,21 +439,23 @@
   .site-footer {
     &.site-section {
       padding: 40px 0 20px;
+      @media (min-width: $mq-medium) {
+        padding: 120px 20px 20px;
+      }
     }
     .site-content {
       padding-bottom: 40px;
+      @media (min-width: $mq-small) {
+        padding-bottom: 0;
+      }
     }
     .site-footer-social {
       padding: 40px 0 20px;
       text-align: center;
     }
-    @media (min-width: $mq-small) {
-      &.site-section {
-        padding: 40px 20px;
-      }
-      .site-content {
-        padding-bottom: 0;
-      }
+    .site-footer-social-header {
+      letter-spacing: .1rem;
+      text-transform: uppercase;
     }
   }
 
@@ -350,7 +482,7 @@
       color: $color-black;
       display: block;
       font-family: $font-reg;
-      font-size: 3.2rem;
+      @include font-size(32);
       font-weight: 700;
       padding: 20px 0;
       &:hover {
@@ -364,13 +496,14 @@
   .newsletter-email {
     border: 0;
     font-weight: bold;
-    font-size: 1.5em;
-    padding: 10px;
+    @include font-size(16);
+    padding: 16px 10px;
   }
   .newsletter-submit {
     border: 0;
     font-weight: bold;
-    font-size: 1.2em;
+    @include font-size(16);
+    letter-spacing: .1rem;
     padding: 10px 20px;
     text-transform: uppercase;
   }
@@ -466,32 +599,4 @@
     &.video {
       margin: 0 0 10px 0;
     }
-  }
-
-// Contact Page
-  .contact_index {
-    @extend .theme-red;
-
-    .form-container {
-      z-index: 1000;
-      &.fixed {
-        @media (min-width: $mq-medium) {
-          position: fixed;
-          top: 20px;
-          width: 347px;
-        }
-        @media (min-width: $mq-large) {
-          width: 355px;
-        }
-      }
-    }
-  }
-
-// FAQ Questions
-  .faq-question {
-    font-size: 2.4rem;
-    font-weight: 700;
-  }
-  .faq-answer {
-
   }

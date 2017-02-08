@@ -15,7 +15,11 @@
     -ms-flex:  $values;
     flex:  $values;
   }
-
+  @mixin flex-wrap($values) {
+    -ms-flex-wrap: $values;
+    -webkit-flex-wrap: $values;
+    flex-wrap: $values;
+  }
   @mixin order($val) {
     -webkit-box-ordinal-group: $val;  
     -moz-box-ordinal-group: $val;     
@@ -25,9 +29,9 @@
   }
 
 // Font Size REM
-  @mixin font-size($sizeValue: 1.6) {
-    font-size: ($sizeValue * 10) + px;
-    font-size: $sizeValue + rem;
+  @mixin font-size($sizeValue: 16) {
+    font-size: $sizeValue + px;
+    font-size: ($sizeValue / 10) + rem;
   }
   
 // Transform
@@ -118,37 +122,9 @@
     animation:         $name $duration $timing $delay $direction;
   }
 
-// Theme Light
-  @mixin theme-light {
-    .site-header {
-      @extend .bg-white;
-      @extend .no-border;
-      &:after {
-        background: $color-grey-l3;
-      }
-    }
-    .site-header-nav-link {
-      a {
-        color: $color-black;
-        @include transition;
-        &:hover {
-          color: $color-red;
-        }
-      }
-    }
-    .site-hero {
-      @extend .bg-white;
-      @extend .text-dark;
-    }
-    .site-body {
-      h1, h2, h3 {
-        color: $color-black;
-      }
-      h4, h5, h6 {
-        color: $color-grey-l2;
-      }
-      p, .form-field-label {
-        color: $color-grey-d3;
-      }
-    }
+// No List
+  @mixin nolist {
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }

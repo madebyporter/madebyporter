@@ -60,8 +60,9 @@ configure :build do
   # Minify Javascript on build
   activate :minify_javascript
 
-  # Use relative URLs
+  set :relative_links, true
   activate :relative_assets
+  set :strip_index_file, true
 
   ignore '*.php'
 end

@@ -133,21 +133,22 @@
   
 
   .fadeInUp {
+    opacity: 0;
     @include translate(0,500px);
     @include animation(fadeInUp 1s $timing 0ms 1 forwards);
-    display: inline-block;
+    display: block;
     position: relative;
     &:nth-child(2){
-      @include animation(fadeInUp 1s $timing 500ms 1 forwards);
+      @include animation(fadeInUp 1.5s $timing 500ms 1 forwards);
     }
     &:nth-child(3){
-      @include animation(fadeInUp 1s $timing 1000ms 1 forwards);
+      @include animation(fadeInUp 1.7s $timing 1000ms 1 forwards);
     }
     &:nth-child(4){
-      @include animation(fadeInUp 1s $timing 1500ms 1 forwards);
+      @include animation(fadeInUp 1.9s $timing 1500ms 1 forwards);
     }
     &:nth-child(5){
-      @include animation(fadeInUp 1s $timing 2000ms 1 forwards);
+      @include animation(fadeInUp 2.1s $timing 2000ms 1 forwards);
     }
     &.hideme {
       @include transition($time: 600ms);
@@ -157,6 +158,9 @@
         @include translate(0,0px);
         opacity: 1;
       }
+    }
+    .word {
+      display: inline-block;
     }
   }
   .fadeIn {
