@@ -70,6 +70,20 @@
 
 // Theme Light
   .theme-white {
+    background: $color-white;
+    color: $color-black;
+    h1, h2, h3 {
+      color: $color-black;
+    }
+    h4, h5, h6 {
+      color: $color-grey-l2;
+    }
+    p, .form-field-label {
+      color: $color-grey-d3;
+    }
+    a {
+      color: $color-red;
+    }
     .site-header {
       @extend .bg-white;
       @extend .no-border;
@@ -108,15 +122,5 @@
         color: $color-grey-l2;
       }
     }
-    .site-body {
-      h1, h2, h3 {
-        color: $color-black;
-      }
-      h4, h5, h6 {
-        color: $color-grey-l2;
-      }
-      p, .form-field-label {
-        color: $color-grey-d3;
-      }
-    }
+    
   }

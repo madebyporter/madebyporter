@@ -13,9 +13,18 @@ js.main = {
     this.mbpPlayer();
     this.wpFAQ();
     this.ig();
+    this.crumbsDD();
   },
 
   // Keep this shit in ABC Order
+
+  crumbsDD: function () {
+    var dd = $('.crumbs-dd');
+
+    dd.on('click', function(){
+      $(this).toggleClass('active');
+    });
+  },
   ajaxForm: function () {
     // Get the form.
     var form = $('#contactForm');
