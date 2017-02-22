@@ -15,7 +15,7 @@ html
     link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#ffffff"
     meta name="theme-color" content="#ffffff"
 
-    title = current_page.data.title || "Made by Porter - designer, developer, musician &amp; photographer."
+    title="Made by Porter - #{current_page.data.title}"
 
     == stylesheet_link_tag :style
     link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css"
@@ -35,7 +35,7 @@ html
                   li.site-header-nav-link
                     == link_to 'Home', '/'
                   li.site-header-nav-link
-                    == link_to 'Design', '/design'
+                    == link_to 'Design &amp; Code', '/design'
                   li.site-header-nav-link
                     == link_to 'Music', '/sounds'
                   li.site-header-nav-link
@@ -50,68 +50,70 @@ html
         .site-section-inner
           .container-fluid
             .row
-              .col-xs-12.col-sm-12.col-md-8
-                h2
-                  | Latest Journal Entries
-                ul.article-list
-                  - blog.articles[0...3].each do |article|
-                    li.article-list-ele
-                      .row
-                        .col-xs-12.col-md-3
-                          .article-list-img
-                            = link_to article.url do
-                              = image_tag article.data.thumbnail_image
-                        .col-xs-12.col-md-7
-                          .article-list-meta
-                            h3 = article.title
-                            .article-list-cta = link_to 'Read More', article.url
-              .col-xs-12.col-sm-12.col-md-4
-                .price-menu
-                  h2
-                    | The Menu
-                  h3.price-menu-subheader
-                    | Megabytes
-                  ul.price-menu-list
-                    li.price-menu-ele
-                      h4.price-menu-item
-                        | Product Design
-                      a.price-menu-price href="#"
-                        | Get quoted
-                    li.price-menu-ele
-                      h4.price-menu-item
-                        | Websites
-                      a.price-menu-price href="#"
-                        | Get quoted
-                    li.price-menu-ele
-                      h4.price-menu-item
-                        | Custom Music
-                      a.price-menu-price href="#"
-                        | Get quoted
-                  h3.price-menu-subheader
-                    | Microbytes
-                  ul.price-menu-list
-                    li.price-menu-ele
-                      h4.price-menu-item
-                        | Landing Page
-                      a.price-menu-price href="#"
-                        | $1,000
-                    li.price-menu-ele
-                      h4.price-menu-item
-                        | Email Template
-                      a.price-menu-price href="#"
-                        | $250
-                    li.price-menu-ele
-                      h4.price-menu-item
-                        | Non-exclusive Music
-                      a.price-menu-price href="#"
-                        | $150
-                    li.price-menu-ele
-                      h4.price-menu-item
-                        | Photography
-                      a.price-menu-price href="#"
-                        | $100/shoot
-                  .price-menu-links
-                    == link_to 'Contact Me', '/contact'
+              .col-xs-12.col-lg-10.col-lg-offset-1
+                .row
+                  .col-xs-12.col-sm-12.col-md-8
+                    h2
+                      | Latest Journal Entries
+                    ul.article-list
+                      - blog.articles[0...3].each do |article|
+                        li.article-list-ele
+                          .row
+                            .col-xs-12.col-md-3
+                              .article-list-img
+                                = link_to article.url do
+                                  = image_tag article.data.thumbnail_image
+                            .col-xs-12.col-md-7
+                              .article-list-meta
+                                h3 = article.title
+                                .article-list-cta = link_to 'Read More', article.url
+                  .col-xs-12.col-sm-12.col-md-4
+                    / .price-menu
+                    /   h2
+                    /     | The Menu
+                    /   h3.price-menu-subheader
+                    /     | Megabytes
+                    /   ul.price-menu-list
+                    /     li.price-menu-ele
+                    /       h4.price-menu-item
+                    /         | Product Design
+                    /       a.price-menu-price href="#"
+                    /         | Get quoted
+                    /     li.price-menu-ele
+                    /       h4.price-menu-item
+                    /         | Websites
+                    /       a.price-menu-price href="#"
+                    /         | Get quoted
+                    /     li.price-menu-ele
+                    /       h4.price-menu-item
+                    /         | Custom Music
+                    /       a.price-menu-price href="#"
+                    /         | Get quoted
+                    /   h3.price-menu-subheader
+                    /     | Microbytes
+                    /   ul.price-menu-list
+                    /     li.price-menu-ele
+                    /       h4.price-menu-item
+                    /         | Landing Page
+                    /       a.price-menu-price href="#"
+                    /         | $1,000
+                    /     li.price-menu-ele
+                    /       h4.price-menu-item
+                    /         | Email Template
+                    /       a.price-menu-price href="#"
+                    /         | $250
+                    /     li.price-menu-ele
+                    /       h4.price-menu-item
+                    /         | Non-exclusive Music
+                    /       a.price-menu-price href="#"
+                    /         | $150
+                    /     li.price-menu-ele
+                    /       h4.price-menu-item
+                    /         | Photography
+                    /       a.price-menu-price href="#"
+                    /         | $100/shoot
+                    /   .price-menu-links
+                    /     == link_to 'Contact Me', '/contact'
                         
             .row
               .col-xs-12

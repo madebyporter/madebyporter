@@ -952,11 +952,6 @@ ul.section-content-checklist li.section-content-checklist-ele .form-field-label 
   padding: 10px 20px;
   width: 100%;
 }
-@media (min-width: 768px) {
-  .form-field .form-field-text {
-    width: 70%;
-  }
-}
 .form-field .form-field-textarea {
   background-image: linear-gradient(-180deg, #FFFFFF 0%, #F2F2F2 100%);
   background-color: #fff;
@@ -1115,6 +1110,7 @@ ul.section-content-checklist li.section-content-checklist-ele .form-field-label 
 .block-menu .block-menu-ele {
   border-bottom: 1px solid #302e2e;
   height: auto;
+  flex-grow: 1;
   width: 100%;
 }
 .block-menu .block-menu-ele:last-child {
@@ -1349,7 +1345,7 @@ ul.section-content-checklist li.section-content-checklist-ele .form-field-label 
 }
 @media (min-width: 992px) {
   .site-footer.site-section {
-    padding: 120px 20px 20px;
+    padding: 120px 0 20px;
   }
 }
 .site-footer .site-content {
@@ -2667,6 +2663,9 @@ iframe.video {
   font-size: 24px;
   font-size: 2.4rem;
   font-weight: 700;
+}
+.contact .contact-header {
+  margin: 0 0 40px 0;
 }
 
 .styleguide .styleguide-setup {

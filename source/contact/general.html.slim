@@ -1,99 +1,50 @@
 ---
-title: Made by Porter - General Inquiries
+title: General Inquiry
+form_type: general
 ---
 
 section.site-contact-sub.site-section.no-border
-  form id="contactForm" method="post" action="mailer.php"
-    .container-fluid
-      .row
-        .col-xs-12.col-lg-10.col-lg-offset-1
-          .row
-            .col-xs-12
-              #form-messages.form-message
-          .row
-            .form-content.col-xs-12.col-md-6
+  .container-fluid
+    .row
+      .col-xs-12.col-lg-10.col-lg-offset-1 
+        .row
+          .form-content.col-xs-12.col-md-6
+            .section-content.hideme
+              ul.crumbs.crumbs-contact
+                li.crumbs-ele
+                  = link_to 'Contact', '/contact'
+                li.crumbs-ele.crumbs-dd
+                  span.active-page
+                    = current_page.data.title
+                  == partial "formmenu"
               .section-content.hideme
-                ul.crumbs.crumbs-contact
-                  li.crumbs-ele
-                    = link_to 'Contact', '/contact'
-                  li.crumbs-ele.crumbs-dd
-                    span.active-page One Page Website
-                    ul.crumbs-dd-container
-                      li.crumbs-dd-ele
-                        = link_to 'General', '/general.html'
-                      li.crumbs-dd-ele
-                        = link_to 'Digital Product', '/digital-product.html'
-                      li.crumbs-dd-ele
-                        = link_to 'Online Presence', '/online-presence.html'
-                      li.crumbs-dd-ele
-                        = link_to 'Full Site', '/full-site.html'
-                      li.crumbs-dd-ele
-                        = link_to 'One Page Site', '/one-page-site.html'
-                      li.crumbs-dd-ele
-                        = link_to 'Email Template', '/email-template.html'
-                      li.crumbs-dd-ele
-                        = link_to 'Photography', '/photography.html'
-                .section-content.hideme
-                  header.contact-header
-                    h2
-                      | The One Page Site
-                    .sub
-                      | aka "The Landing Page", "One-Pager"
-                  p
-                    | If your business is just starting out or your campaign needs that special, stand-out page, The One Page Site can meets your needs and your budget.
-                  h3
-                    | Starting at $1,000
-                  h4
-                    | The Website That Converts
-                  p
-                    | Your website is the online presence for your business. Making sure this thing can pull in business once people are on it is the key.
-                  h4
-                    | The Attention Grabber
-                  p
-                    | Templates you find online all look the same. Stand out from the crowd with a beautifully designed site that wows.
-                  h4
-                    | Our Process
-                  ul.number-list
-                    li.number-list-ele
-                      | We meet and we get to business. Lets talk about your needs, your deadlines, your content &amp; your design direction.
-                    li.number-list-ele
-                      | After we defined our strategy, we get to work. We’ll build out your site. All we ask for is your feedback.
-                    li.number-list-ele
-                      | Once completed, we’ll hand over the fully coded website or upload it to your server.
-                  h4
-                    | Ready to Get Started?
-                  p
-                    | Fill out the form to your right and I’ll get back to shortly!
-            .form-content.col-xs-12.col-md-6
-              .row
-                .col-xs-12.col-sm-8.col-md-12
+                header.contact-header
+                  h2
+                    = current_page.data.title
+                  .sub
+                    | Just want to say hi
+                p
+                  | For informal inquries such as:
+                ul.number-list
+                  li.number-list-ele
+                    | Connect with me for coffee or food.
+                  li.number-list-ele
+                    | College student in the need of help.
+                  li.number-list-ele
+                    | Connect with me for food or coffee.
+                  li.number-list-ele
+                    | Ask me a question.
+                  li.number-list-ele
+                    | Food.
+                  li.number-list-ele
+                    | Left your hoodie in my car and you don't have my number.
+                  li.number-list-ele
+                    | Coffee.
+          .form-content.col-xs-12.col-md-6
+            .row
+              .col-xs-12.col-sm-8.col-md-12
+                form id="contactForm" method="post" action="mailer.php"
+                  #form-messages.form-message
                   #mbp_form.form-container
-                    .row
-                      .col-xs-12
-                        .hideme
-                          h3
-                            | Who Are You?
-                          .form-field
-                            label.form-field-label for="name" Name
-                            input.form-field-text type="text" name="name" id="name" tabindex="1"
-                          .form-field
-                            label.form-field-label for="email" Email
-                            input.form-field-text type="email" name="email" id="email" tabindex="2"
-                    .row
-                      .col-xs-12
-                        .hideme
-                          h3
-                            | What You Have to Say?
-                          .form-field
-                            label.form-field-label for="message" Put your message in the box below.
-                            textarea.form-field-textarea name="message" id="message" tabindex="8"
-                          / ul.section-content-checklist
-                          /   li.section-content-checklist-ele
-                          /     label.form-field-label for="subscribe" 
-                          /       input.form-field-checkbox type="checkbox" name="subscribe" id="subscribe" value="subscribed"
-                          /       | Subcribe to my ramblings
-                      .col-xs-12
-                        .section-content
-                          .hideme
-                            .form-field.inline-block
-                              input.form-field-submit type="submit" name="submit" id="submit" value="Submit" tabindex="9"
+                    input type="hidden" id="type" name="type" value=current_page.data.form_type
+                    == partial "form"
