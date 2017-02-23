@@ -112,7 +112,7 @@
 // Site Content Styles
   .site-section {
     border-bottom: 1px solid #333;
-    // padding: 40px 0 0;
+    padding: 40px 0 0;
     position: relative;
     &.no-border {
       border: 0;
@@ -479,6 +479,30 @@
       color: $color-grey-l3;
     }
   }
+
+// Number List
+ul.number-list {
+  counter-reset: number-list-counter;
+  @include nolist;
+  li.number-list-ele {
+    border-left: 1px solid $color-grey-l4;
+    margin: 0 0 40px 40px;
+    padding-left: 10px;
+    position: relative;
+    &:before {
+      content: counter(number-list-counter);
+      counter-increment: number-list-counter;
+      left: -35px;
+      @include font-size(36);
+      font-weight: 700;
+      position: absolute;
+      @include vertical-center;
+    }
+  }
+  h5 {
+    margin: 0;
+  }
+}
 
 // Price Menu
   .price-menu-subheader {

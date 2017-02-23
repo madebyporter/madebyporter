@@ -735,6 +735,7 @@ body.overflow {
 
 .site-section {
   border-bottom: 1px solid #333;
+  padding: 40px 0 0;
   position: relative;
 }
 .site-section.no-border, .theme-white .site-section.site-header, .sounds .site-section.site-header, .photos .site-section.site-header, .blog .site-section.site-header, .contact .site-contact-sub .site-section.site-header, .styleguide .site-section.site-header {
@@ -1191,6 +1192,42 @@ ul.section-content-checklist li.section-content-checklist-ele .form-field-label 
   font-size: 12px;
   font-size: 1.2rem;
   color: #979393;
+}
+
+ul.number-list {
+  counter-reset: number-list-counter;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul.number-list li {
+  margin: 0;
+  padding: 0;
+}
+ul.number-list li.number-list-ele {
+  border-left: 1px solid #efeeee;
+  margin: 0 0 40px 40px;
+  padding-left: 10px;
+  position: relative;
+}
+ul.number-list li.number-list-ele:before {
+  content: counter(number-list-counter);
+  counter-increment: number-list-counter;
+  left: -35px;
+  font-size: 36px;
+  font-size: 3.6rem;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  position: absolute;
+  -moz-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+ul.number-list h5 {
+  margin: 0;
 }
 
 .price-menu-subheader {
@@ -2627,23 +2664,11 @@ iframe.video {
   .contact .form-container.fixed {
     position: fixed;
     top: 20px;
-    width: 347px;
-  }
-}
-@media (min-width: 1200px) {
-  .contact .form-container.fixed {
-    width: 355px;
   }
 }
 @media (min-width: 992px) {
   .contact .form-container.bottom {
     position: absolute;
-    bottom: 20px;
-  }
-}
-@media (min-width: 1200px) {
-  .contact .form-container.bottom {
-    bottom: 20px;
   }
 }
 .contact .crumbs-contact {

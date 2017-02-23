@@ -977,19 +977,11 @@
         @media (min-width: $mq-medium) {
           position: fixed;
           top: 20px;
-          width: 347px;
-        }
-        @media (min-width: $mq-large) {
-          width: 355px;
         }
       }
       &.bottom {
         @media (min-width: $mq-medium) {
           position: absolute;
-          bottom: 20px;
-        }
-        @media (min-width: $mq-large) {
-          bottom: 20px;
         }
       }
     }

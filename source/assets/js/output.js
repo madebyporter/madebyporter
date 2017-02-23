@@ -29,7 +29,7 @@ js.main = {
     this.ajaxForm();
     this.gaTimeout();
     this.mbpPlayer();
-    this.wpFAQ();
+    this.wpContact();
     this.ig();
     this.crumbsDD();
   },
@@ -272,37 +272,59 @@ js.main = {
       $(this).replaceWith('<div class="mbp-player-button mbp-player-button-play" id="play"></div>');
     });
   },
-  wpFAQ: function() {
+  wpContact: function() {
     function wpInit(){
       var waypoint = new Waypoint({
-        element: document.getElementById('wp_FAQ'),
+        element: document.getElementById('site-contact'),
         handler: function(direction) {
           var form = document.getElementById('mbp_form');
+          var form_width = form.offsetWidth;
           if(direction==='down'){
             form.classList.add('fixed');
+            form.style.width = form_width + 'px';
+            form.style.top = "20px";
           } else if(direction==='up'){
             form.classList.remove('fixed');
+            form.style.top = "auto";
           }
         },
         offset: 20
       });
     }
-    function wpFooter(){
+    function wpFooter(){   
       var waypoint = new Waypoint({
         element: document.getElementById('footer'),
         handler: function(direction) {
+          function offset(el) {
+              var rect = el.getBoundingClientRect(),
+              scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+              scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+              return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
+          }
+
+          var footer = document.getElementById('footer');
+          var footer_offset = offset(footer);
+          var footer_height = footer.offsetHeight;
           var form = document.getElementById('mbp_form');
+          var form_height = form.offsetHeight;
+
           if(direction==='down'){
+            form.classList.remove('fixed');
             form.classList.add('bottom');
+            var top_pos = footer_offset.top - footer_height - 266;
+            form.style.top = top_pos + "px";
           } else if(direction==='up'){
+            // form.style.top = 'auto';
             form.classList.remove('bottom');
+            form.classList.add('fixed');
+            form.style.top = "20px";
           }
         },
-        offset: 650
+        offset: 600
       });
     }
 
-    if ($('body').hasClass('contact_index')){
+    if ($('body').hasClass('contact')){
       wpInit(); wpFooter();
     }
   },
