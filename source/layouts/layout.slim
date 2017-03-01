@@ -35,7 +35,7 @@ html
                   li.site-header-nav-link
                     == link_to 'Home', '/'
                   li.site-header-nav-link
-                    == link_to 'Design &amp; Code', '/design/'
+                    == link_to 'Design<span class="hidden-xs hidden-sm"> &amp; Code</span>', '/design/'
                   li.site-header-nav-link
                     == link_to 'Music', '/sounds/'
                   li.site-header-nav-link
@@ -68,52 +68,24 @@ html
                                 h3 = article.title
                                 .article-list-cta = link_to 'Read More', article.url
                   .col-xs-12.col-sm-12.col-md-4
-                    / .price-menu
-                    /   h2
-                    /     | The Menu
-                    /   h3.price-menu-subheader
-                    /     | Megabytes
-                    /   ul.price-menu-list
-                    /     li.price-menu-ele
-                    /       h4.price-menu-item
-                    /         | Product Design
-                    /       a.price-menu-price href="#"
-                    /         | Get quoted
-                    /     li.price-menu-ele
-                    /       h4.price-menu-item
-                    /         | Websites
-                    /       a.price-menu-price href="#"
-                    /         | Get quoted
-                    /     li.price-menu-ele
-                    /       h4.price-menu-item
-                    /         | Custom Music
-                    /       a.price-menu-price href="#"
-                    /         | Get quoted
-                    /   h3.price-menu-subheader
-                    /     | Microbytes
-                    /   ul.price-menu-list
-                    /     li.price-menu-ele
-                    /       h4.price-menu-item
-                    /         | Landing Page
-                    /       a.price-menu-price href="#"
-                    /         | $1,000
-                    /     li.price-menu-ele
-                    /       h4.price-menu-item
-                    /         | Email Template
-                    /       a.price-menu-price href="#"
-                    /         | $250
-                    /     li.price-menu-ele
-                    /       h4.price-menu-item
-                    /         | Non-exclusive Music
-                    /       a.price-menu-price href="#"
-                    /         | $150
-                    /     li.price-menu-ele
-                    /       h4.price-menu-item
-                    /         | Photography
-                    /       a.price-menu-price href="#"
-                    /         | $100/shoot
-                    /   .price-menu-links
-                    /     == link_to 'Contact Me', '/contact'
+                    .newsletter-container
+                      h2
+                        = current_page.data.nl_header
+                      p
+                        = current_page.data.nl_p
+                      #mc_embed_signup
+                        form action="//madebyporter.us9.list-manage.com/subscribe/post?u=43c534416e476fa3af50b3e65&amp;id=2a32fa7a33" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate"
+                          #mc_embed_signup_scroll
+                          .mc-field-group
+                            input type="text" value="" name="FNAME" class="required email newsletter-name" id="mce-FNAME" placeholder="First Name"
+                            input type="email" value="" name="EMAIL" class="required email newsletter-email" id="mce-EMAIL" placeholder="Email Address"
+                            input type="text" value="#{current_page.data.interest}" name="INTEREST" class="hidden" id="mce-INTEREST"
+                            input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-submit"
+                          #mce-responses.clear
+                            div class="response" id="mce-error-response" style="display:none"
+                            div class="response" id="mce-success-response" style="display:none"
+                          div style="position: absolute; left: -5000px;" aria-hidden="true"
+                            input type="text" name="b_43c534416e476fa3af50b3e65_2a32fa7a33" tabindex="-1" value=""
                         
             .row
               .col-xs-12

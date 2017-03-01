@@ -10,10 +10,11 @@
     h1 {
       @include font-size(44);
       font-weight: 700;
+      line-height: 0.5;
       text-transform: uppercase;
       @media (min-width: $mq-small) {
         @include font-size(48);
-        line-height: 4.2rem;
+        line-height: 1;
       }
       .sub {
         @extend .caps-reg;

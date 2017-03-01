@@ -93,26 +93,82 @@
         @extend .cta-bar;
       }
     }
+    .site-home-figure {
+      position: absolute;
+    }
     .site-home-about {
       .site-section-inner {
         background: url('../img/img-home-losangeles.jpg') no-repeat right center;
       }
     }
     .site-home-design {
+      $sbt-h: 565px;
+      $sbt-w: 1062px;
+      $rf-h: 243px;
+      $rf-w: 140px;
       .site-section-inner {
-        background: url('../img/img-home-rf.png') no-repeat 35% 95%,
-                    url('../img/img-home-sbt-mobile.png') no-repeat -550px center;
+        position: relative;
+      }
+      .site-home-figure-set {
+        height: $sbt-h;
+        width: 100%;
+        @include vertical-center;
+      }
+      .site-home-figure-design-sbt {
+        background: url('../img/img-home-sbt-mobile.png') no-repeat right center;
+        background-size: cover;
+        height: $sbt-h;
+        width: 100%;
+        right: 50%;
+        z-index: 10;
+        figcaption {
+          display: none;
+        }
         @media (min-width: $mq-small) {
-          background: url('../img/img-home-rf.png') no-repeat 35% 95%,
-                      url('../img/img-home-sbt.png') no-repeat -550px center;
+          background: url('../img/img-home-sbt.png') no-repeat right center;
+          width: $sbt-w;
+          @include horizontal-center(-107%);
         }
         @media (min-width: $mq-medium) {
-          background: url('../img/img-home-rf.png') no-repeat 40% 95%,
-                      url('../img/img-home-sbt.png') no-repeat -400px center;
+          background: url('../img/img-home-sbt.png') no-repeat right center;
+          @include horizontal-center(-95%);
+        }
+
+        @media (min-width: $mq-large) {
+          background: url('../img/img-home-sbt.png') no-repeat right center;
+          @include horizontal-center(-75%);
+        }
+        @media (min-width: $mq-xl) {
+          background: url('../img/img-home-sbt.png') no-repeat right center;
+          
+        }
+      }
+      .site-home-figure-design-rf {
+        background: url('../img/img-home-rf.png') no-repeat left center;
+        height: $rf-h;
+        width: $rf-w;
+        z-index: 100;
+        @include horizontal-center;
+        top: $sbt-h - $rf-h;
+        figcaption {
+          display: none;
+        }
+        @media (min-width: $mq-small) {
+          @include horizontal-center(-100%);
+        }
+        @media (min-width: $mq-medium) {
+          @include horizontal-center(-15%);
         }
         @media (min-width: $mq-large) {
-          background: url('../img/img-home-rf.png') no-repeat 60% 95%,
-                      url('../img/img-home-sbt.png') no-repeat 0 center;
+          @include horizontal-center(150%);
+        }
+      }
+      .site-home-text-right {
+        @include absolute-center(-50%,-120%);
+        z-index: 1000;
+        @media (min-width: $mq-small) {
+          left: auto;
+          right: -3%;
         }
       }
     }

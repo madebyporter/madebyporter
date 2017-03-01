@@ -36,6 +36,7 @@
     margin: 0 auto;
     max-width: 1440px;
     min-height: inherit;
+    overflow: visible;
     position: relative;
   }
 
@@ -548,6 +549,11 @@ ul.number-list {
         .crumbs-dd-container {
           display: block;
         }
+        &:after {
+          content: "";
+          background: url('../img/icon-triangle-down-white.png') no-repeat;
+          background-size: 70%;
+        }
       }
       &:after {
         content: "";
@@ -627,6 +633,9 @@ ul.number-list {
 
 // Site Footer
   .site-footer {
+    h1, h2, h3, h4, h5, h6, p {
+      color: $color-white;
+    }
     &.site-section {
       padding: 40px 0 20px;
       @media (min-width: $mq-medium) {
@@ -646,6 +655,19 @@ ul.number-list {
     .site-footer-social-header {
       letter-spacing: .1rem;
       text-transform: uppercase;
+    }
+    .newsletter-container {
+      background: $color-red;
+      padding: 40px;
+    }
+    .newsletter-email {
+      margin: 10px 0 0 0;
+      width: 100%;
+    }
+    .newsletter-submit {
+      background: $color-black;
+      color: $color-white;
+      margin: 10px 0 0 0;
     }
   }
 
@@ -683,7 +705,7 @@ ul.number-list {
   }
 
 // Newsletter
-  .newsletter-email {
+  .newsletter-email, .newsletter-name {
     border: 0;
     font-weight: bold;
     @include font-size(16);
