@@ -56,20 +56,21 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   font-family: "europa", "helvetica", "arial", sans-serif;
   margin: 0 0 10px;
+  line-height: 1.2;
 }
 
 h1 {
   font-size: 44px;
   font-size: 4.4rem;
   font-weight: 700;
-  line-height: 0.5;
   text-transform: uppercase;
+  line-height: 0.5;
 }
 @media (min-width: 768px) {
   h1 {
     font-size: 48px;
     font-size: 4.8rem;
-    line-height: 1;
+    line-height: 0.8;
   }
 }
 h1 .sub {
@@ -600,6 +601,11 @@ strong {
 .theme-white .site-hero-text .connector, .sounds .site-hero-text .connector, .photos .site-hero-text .connector, .blog .site-hero-text .connector, .contact .site-contact-sub .site-hero-text .connector, .styleguide .site-hero-text .connector, .theme-white .site-hero-text .sub, .sounds .site-hero-text .sub, .photos .site-hero-text .sub, .blog .site-hero-text .sub, .contact .site-contact-sub .site-hero-text .sub, .styleguide .site-hero-text .sub {
   color: #7e7a7a;
 }
+.theme-white .site-header-logo a, .sounds .site-header-logo a, .photos .site-header-logo a, .blog .site-header-logo a, .contact .site-contact-sub .site-header-logo a, .styleguide .site-header-logo a {
+  -webkit-filter: invert(0);
+  -moz-filter: invert(0);
+  filter: invert(0);
+}
 
 html {
   font-size: 62.5%;
@@ -687,12 +693,31 @@ body.overflow {
   }
 }
 .site-header-logo a {
-  background: url("../img/mbp-logo-emblem.svg") no-repeat center;
+  background: url("../img/mbp-logo-outlined.svg") no-repeat center;
+  background-size: cover;
+  -webkit-filter: invert(1);
+  -moz-filter: invert(1);
+  filter: invert(1);
   height: 50px;
   width: 50px;
   display: block;
   overflow: hidden;
   text-indent: -9999px;
+  -webkit-transition: all 100ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+  -moz-transition: all 100ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+  -o-transition: all 100ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+  transition: all 100ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+}
+.site-header-logo a:hover {
+  background: url("../img/mbp-logo-emblem.svg") no-repeat center;
+  background-size: contain;
+  -webkit-filter: invert(0);
+  -moz-filter: invert(0);
+  filter: invert(0);
+  -webkit-animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
+  -moz-animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
+  -o-animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
+  animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
 }
 
 .site-header {
@@ -767,7 +792,7 @@ body.overflow {
 }
 @media (min-width: 768px) {
   .site-hero.index, .index .site-hero {
-    min-height: 742px;
+    min-height: 572px;
   }
 }
 .site-hero.sub, .design .site-hero, .sounds .site-hero, .photos .site-hero, .blog .site-hero, .contact .site-hero {
@@ -890,7 +915,7 @@ ul.section-content-checklist li.section-content-checklist-ele .form-field-label 
   text-transform: uppercase;
 }
 
-.cta-pill, .design .work-container .work-setup-action {
+.cta-pill, .form-field .form-field-submit, .design .work-container .work-setup-action {
   border: 5px solid #fff;
   border-radius: 20px;
   color: #fff;
@@ -911,7 +936,7 @@ ul.section-content-checklist li.section-content-checklist-ele .form-field-label 
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-.cta-pill:hover, .design .work-container .work-setup-action:hover {
+.cta-pill:hover, .form-field .form-field-submit:hover, .design .work-container .work-setup-action:hover {
   background: #fff;
   color: #1D1D21;
   text-decoration: none;
@@ -922,12 +947,12 @@ ul.section-content-checklist li.section-content-checklist-ele .form-field-label 
   transform: scale(1.1);
 }
 @media (min-width: 768px) {
-  .cta-pill, .design .work-container .work-setup-action {
+  .cta-pill, .form-field .form-field-submit, .design .work-container .work-setup-action {
     font-size: 1.2em;
   }
 }
 @media (min-width: 992px) {
-  .cta-pill, .design .work-container .work-setup-action {
+  .cta-pill, .form-field .form-field-submit, .design .work-container .work-setup-action {
     font-size: 1.6rem;
   }
 }
@@ -950,9 +975,9 @@ ul.section-content-checklist li.section-content-checklist-ele .form-field-label 
   border: 0;
   border-radius: 2px;
   box-shadow: inset 2px 2px 0 #efeeee, inset -2px -2px 0 #efeeee;
-  font-size: 12px;
-  font-size: 1.2rem;
-  padding: 10px 20px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  padding: 10px 15px;
   width: 100%;
 }
 .form-field .form-field-textarea {
@@ -961,24 +986,24 @@ ul.section-content-checklist li.section-content-checklist-ele .form-field-label 
   border: 0;
   border-radius: 2px;
   box-shadow: inset 2px 2px 0 #efeeee, inset -2px -2px 0 #efeeee;
-  font-size: 12px;
-  font-size: 1.2rem;
+  font-size: 16px;
+  font-size: 1.6rem;
   min-height: 250px;
-  padding: 20px;
+  padding: 10px 15px;
   width: 100%;
 }
 .form-field .form-field-submit {
-  background: #F2A850;
-  border: 0;
-  border-radius: 100px;
-  box-shadow: inset 2px 2px 0 rgba(255, 110, 110, 0.3), inset -2px -2px 0 rgba(255, 110, 110, 0.3);
+  background: transparent;
+  border-color: #1D1D21;
+  color: #1D1D21;
+}
+.form-field .form-field-submit:hover {
+  background: #B33B48;
   color: #fff;
-  font-size: 14px;
-  font-size: 1.4rem;
-  font-weight: 300;
-  letter-spacing: 0.04em;
-  padding: 10px 20px;
-  text-transform: uppercase;
+  -webkit-animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
+  -moz-animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
+  -o-animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
+  animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
 }
 
 .form-content {
@@ -999,31 +1024,22 @@ ul.section-content-checklist li.section-content-checklist-ele .form-field-label 
   -moz-transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
   -o-transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
   transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
-  border-bottom: 0px solid #a03540;
-  color: #fff;
+  border-bottom: 0;
+  color: #1D1D21;
   font-size: 14px;
   font-size: 1.4rem;
   padding: 0;
   text-align: center;
 }
 .form-message.error {
-  border-bottom: 1px solid #a03540;
+  border-bottom: 1px solid #efeeee;
   margin: 0 0 40px 0;
-  padding: 40px 20px;
+  padding: 20px;
 }
 .form-message.success {
-  padding: 200px 20px;
-}
-.form-message.success .form-message-content {
-  position: absolute;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  padding: 20px;
+  margin: 0 0 40px 0;
+  border-bottom: 1px solid #efeeee;
 }
 
 .custom-checkbox {
@@ -1898,6 +1914,8 @@ iframe.video {
   height: 320px;
   width: 320px;
   margin: 0 0 60px 0;
+  position: relative;
+  overflow: hidden;
 }
 @media (min-width: 1200px) {
   .index .photo-gallery-ele {
@@ -1912,8 +1930,16 @@ iframe.video {
   }
 }
 .index .photo-gallery-ele img {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   height: 100%;
-  width: 100%;
+  width: auto;
 }
 
 .design {
@@ -1978,10 +2004,16 @@ iframe.video {
 }
 .design .work-container .work-setup {
   height: 204px;
+  margin-bottom: 20px;
 }
 @media (min-width: 768px) {
   .design .work-container .work-setup {
     height: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .design .work-container .work-setup {
+    margin-bottom: 0;
   }
 }
 @media (min-width: 992px) {
@@ -2310,18 +2342,6 @@ iframe.video {
 .sounds .site-wrapper {
   height: auto;
 }
-.sounds .site-header-logo {
-  -webkit-animation: lavalamp 60s cubic-bezier(0.14, 0.62, 0.39, 1) 10s normal infinite forwards;
-  -moz-animation: lavalamp 60s cubic-bezier(0.14, 0.62, 0.39, 1) 10s normal infinite forwards;
-  -o-animation: lavalamp 60s cubic-bezier(0.14, 0.62, 0.39, 1) 10s normal infinite forwards;
-  animation: lavalamp 60s cubic-bezier(0.14, 0.62, 0.39, 1) 10s normal infinite forwards;
-}
-.sounds .site-header-logo:hover {
-  -webkit-animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
-  -moz-animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
-  -o-animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
-  animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
-}
 .sounds .site-sounds {
   background: #fff;
   padding-bottom: 0;
@@ -2352,17 +2372,27 @@ iframe.video {
 .sounds .sound-set [class^="sound-control-"] {
   display: block;
   text-align: center;
-  width: 100%;
+  width: 60%;
+  float: right;
+}
+@media (min-width: 768px) {
+  .sounds .sound-set [class^="sound-control-"] {
+    width: 100%;
+  }
 }
 .sounds .sound-title, .sounds .sound-control-play, .sounds .sound-control-download {
   display: block;
   padding: 20px 0;
-  font-size: 3.2rem;
+  font-size: 1.8rem;
+}
+@media (min-width: 768px) {
+  .sounds .sound-title, .sounds .sound-control-play, .sounds .sound-control-download {
+    font-size: 3.2rem;
+  }
 }
 .sounds .sound-title {
   font-family: "europa", "helvetica", "arial", sans-serif;
   font-weight: 700;
-  font-size: 3.2rem;
 }
 .sounds .sound-control-download {
   color: #B33B48;
@@ -2500,18 +2530,6 @@ iframe.video {
 .photos .site-wrapper {
   height: auto;
 }
-.photos .site-header-logo {
-  -webkit-animation: lavalamp 60s cubic-bezier(0.14, 0.62, 0.39, 1) 10s normal infinite forwards;
-  -moz-animation: lavalamp 60s cubic-bezier(0.14, 0.62, 0.39, 1) 10s normal infinite forwards;
-  -o-animation: lavalamp 60s cubic-bezier(0.14, 0.62, 0.39, 1) 10s normal infinite forwards;
-  animation: lavalamp 60s cubic-bezier(0.14, 0.62, 0.39, 1) 10s normal infinite forwards;
-}
-.photos .site-header-logo:hover {
-  -webkit-animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
-  -moz-animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
-  -o-animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
-  animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
-}
 .photos .site-photos {
   background: #fff;
 }
@@ -2558,6 +2576,43 @@ iframe.video {
     height: auto;
     width: 100%;
   }
+}
+.photos .photo-ele a {
+  display: block;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+.photos .photo-ele a:before {
+  position: absolute;
+  content: "";
+  background: #B33B48;
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+  -moz-transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+  -o-transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+  transition: all 350ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s;
+}
+.photos .photo-ele a:hover:before {
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+  -webkit-animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
+  -moz-animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
+  -o-animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
+  animation: lavalamp 400ms cubic-bezier(0.14, 0.62, 0.39, 1) 0s normal infinite forwards;
 }
 @media (min-width: 992px) {
   .photos .photo-ele-x1 {
@@ -2815,13 +2870,6 @@ iframe.video {
 }
 .contact .crumbs-contact {
   margin: 0 0 20px 0;
-}
-.contact .site-header-logo a {
-  background: url(../img/mbp-logo-outlined.svg) no-repeat center;
-  background-size: cover;
-  -webkit-filter: invert(1);
-  -moz-filter: invert(1);
-  filter: invert(1);
 }
 .contact .site-section p:first-child {
   padding-top: 0;

@@ -5,16 +5,17 @@
       color: $color-white;
       font-family: $font-reg;
       margin: 0 0 10px;
+      line-height: 1.2;
     }
 
     h1 {
       @include font-size(44);
       font-weight: 700;
-      line-height: 0.5;
       text-transform: uppercase;
+      line-height: 0.5;
       @media (min-width: $mq-small) {
         @include font-size(48);
-        line-height: 1;
+        line-height: 0.8;
       }
       .sub {
         @extend .caps-reg;

@@ -69,11 +69,24 @@
       @include vertical-center;
     }
     a {
-      background: url('../img/mbp-logo-emblem.svg') no-repeat center;
+      background: url('../img/mbp-logo-outlined.svg') no-repeat center;
+      background-size: cover;
+      -webkit-filter: invert(1);
+      -moz-filter: invert(1);
+      filter: invert(1);
       height: 50px;
       width: 50px;
       display: block;
       @include text-hide;
+      @include transition($time:100ms);
+      &:hover {
+        background: url('../img/mbp-logo-emblem.svg') no-repeat center;
+        background-size: contain;
+        -webkit-filter: invert(0);
+        -moz-filter: invert(0);
+        filter: invert(0);
+        @include animation(lavalamp 400ms $timing 0s normal infinite forwards);
+      }
     }
   }
 
@@ -140,7 +153,7 @@
     &.index {
       min-height: 532px;
       @media (min-width: $mq-small) {
-        min-height: 742px;
+        min-height: 572px;
       }
     }
     &.sub {
@@ -286,12 +299,9 @@
       border: 0;
       border-radius: 2px;
       box-shadow: inset 2px 2px 0 $color-grey-l4, inset -2px -2px 0 $color-grey-l4;
-      @include font-size(12);
-      padding: 10px 20px;
+      @include font-size(16);
+      padding: 10px 15px;
       width: 100%;
-      // @media (min-width: $mq-small) {
-      //   width: 70%;
-      // }
     }
     .form-field-textarea {
       background-image: linear-gradient(-180deg, #FFFFFF 0%, #F2F2F2 100%);
@@ -299,22 +309,21 @@
       border: 0;
       border-radius: 2px;
       box-shadow: inset 2px 2px 0 $color-grey-l4, inset -2px -2px 0 $color-grey-l4;
-      @include font-size(12);
+      @include font-size(16);
       min-height: 250px;
-      padding: 20px;
+      padding: 10px 15px;
       width: 100%;
     }
     .form-field-submit {
-      background: #F2A850;
-      border: 0;
-      border-radius: 100px;
-      box-shadow: inset 2px 2px 0 rgba(255,110,110,0.3), inset -2px -2px 0 rgba(255,110,110,0.3);
-      color: $color-white;
-      @include font-size(14);
-      font-weight: 300;
-      letter-spacing: 0.04em;
-      padding: 10px 20px;
-      text-transform: uppercase;
+      @extend .cta-pill;
+      background: transparent;
+      border-color: $color-black;
+      color: $color-black;
+      &:hover {
+        background: $color-red;
+        color: $color-white;
+        @include animation(lavalamp 400ms $timing 0s normal infinite forwards);
+      }
     }
   }
   .form-content {
@@ -328,22 +337,20 @@
   }
   .form-message {
     @include transition;
-    border-bottom: 0px solid $color-red-d1;
-    color: $color-white;
+    border-bottom: 0;
+    color: $color-black;
     @include font-size(14);
     padding: 0;
     text-align: center;
     &.error {
-      border-bottom: 1px solid $color-red-d1;
+      border-bottom: 1px solid $color-grey-l4;
       margin: 0 0 40px 0;
-      padding: 40px 20px;
+      padding: 20px;
     }
     &.success {
-      padding: 200px 20px;
-      .form-message-content {
-        position: absolute;
-        @include absolute-center;
-      }
+      padding: 20px;
+      margin: 0 0 40px 0;
+      border-bottom: 1px solid $color-grey-l4;
     }
   }
   .custom-checkbox {

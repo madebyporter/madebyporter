@@ -122,5 +122,11 @@
         color: $color-grey-l2;
       }
     }
-    
+    .site-header-logo {
+      a {
+        -webkit-filter: invert(0);
+        -moz-filter: invert(0);
+        filter: invert(0);
+      } 
+    }
   }

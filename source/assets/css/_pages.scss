@@ -228,6 +228,8 @@
       height: 320px;
       width: 320px;
       margin: 0 0 60px 0;
+      position: relative;
+      overflow: hidden;
       @media (min-width: $mq-large) {
         height: 400px;
         width: 400px;
@@ -239,8 +241,9 @@
         }
       }
       img {
+        @include absolute-center;
         height: 100%;
-        width: 100%;
+        width: auto;
       }
     }
   }
@@ -311,9 +314,12 @@
         }
         .work-setup {
           height: 204px;
-          // margin-bottom: 20px;
+          margin-bottom: 20px;
           @media (min-width: $mq-small) {
             height: 300px;
+          }
+          @media (min-width: $mq-medium) {
+            margin-bottom: 0;
           }
           &.work-height-1 {
             @media (min-width: $mq-medium) {
@@ -608,13 +614,6 @@
     .site-wrapper {
       height: auto;
     }
-    .site-header-logo {
-      @include animation(lavalamp 60s $timing 10s normal infinite forwards);
-      &:hover {
-        @include animation(lavalamp 400ms $timing 0s normal infinite forwards);
-      }
-    }
-
     .site-sounds {
       background: $color-white;
       padding-bottom: 0;
@@ -649,19 +648,24 @@
       [class^="sound-control-"] {
         display: block;
         text-align: center;
-        width: 100%;
+        width: 60%;
+        float: right;
+        @media (min-width: $mq-small) {
+          width: 100%;
+        }
       }
     }
     .sound-title, .sound-control-play, .sound-control-download {
       display: block;
       padding: 20px 0;
-      font-size: 3.2rem;
+      font-size: 1.8rem;
+      @media (min-width: $mq-small) {
+        font-size: 3.2rem;
+      }
     }
     .sound-title {
       font-family: $font-reg;
       font-weight: 700;
-      font-size: 3.2rem;
-
     }
     .sound-control-download {
       color: $color-red;
@@ -757,7 +761,7 @@
 // Photos
   .photos {
     @extend .theme-white;
-
+    
     .site-hero {
       @extend .site-hero.sub;
     }
@@ -772,12 +776,6 @@
     }
     .site-wrapper {
       height: auto;
-    }
-    .site-header-logo {
-      @include animation(lavalamp 60s $timing 10s normal infinite forwards);
-      &:hover {
-        @include animation(lavalamp 400ms $timing 0s normal infinite forwards);
-      }
     }
 
     .site-photos {
@@ -812,6 +810,31 @@
         @media (min-width: $mq-medium) {
           height: auto;
           width: 100%;
+        }
+      }
+      a {
+        display: block;
+        height: 100%;
+        position: relative;
+        width: 100%;
+        &:before {
+          position: absolute;
+          content: "";
+          background: $color-red;
+          height: 20px;
+          width: 20px;
+          border-radius: 20px;
+          bottom: 20px;
+          right: 20px;
+          z-index: 10000;
+          @include scale(1);
+          @include transition;
+        }
+        &:hover {
+          &:before {
+            @include scale(1.5);
+            @include animation(lavalamp 400ms $timing 0s normal infinite forwards);
+          }
         }
       }
     }
@@ -1046,15 +1069,6 @@
     }
     .site-hero {
       @extend .site-hero.sub;
-    }
-    .site-header-logo {
-      a {
-        background: url(../img/mbp-logo-outlined.svg) no-repeat center;
-        background-size: cover;
-        -webkit-filter: invert(1);
-        -moz-filter: invert(1);
-        filter: invert(1);
-      } 
     }
     .site-section p:first-child {
       padding-top: 0;

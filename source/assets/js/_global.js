@@ -6,7 +6,6 @@ js.main = {
   init: function () {
     this.fadeInScroll();
     this.codeHighlight();
-    this.linksExternal();
     this.customCheckbox();
     this.ajaxForm();
     this.gaTimeout();
@@ -14,17 +13,11 @@ js.main = {
     this.wpContact();
     this.ig();
     this.crumbsDD();
+    this.linksExternal();
   },
 
   // Keep this shit in ABC Order
 
-  crumbsDD: function () {
-    var dd = $('.crumbs-dd');
-
-    dd.on('click', function(){
-      $(this).toggleClass('active');
-    });
-  },
   ajaxForm: function () {
     // Get the form.
     var form = $('#contactForm');
@@ -109,6 +102,13 @@ js.main = {
       });
     });
   },
+  crumbsDD: function () {
+    var dd = $('.crumbs-dd');
+
+    dd.on('click', function(){
+      $(this).toggleClass('active');
+    });
+  },
   customCheckbox: function () {
     var $checkBox = $('.form-field-checkbox');
     var $ele = $('.section-content-checklist-ele');
@@ -152,7 +152,7 @@ js.main = {
     var gal = $(".photo-gallery"),
         token = '1641373830.59f90b2.8291f13bf0ec4dd086efaffdf6f6377a', // learn how to obtain it below
         userid = 1641373830, // User ID - get it in source HTML of your Instagram profile or look at the next example :)
-        hashtag='porterphotos',
+        hashtag='madebyporterphotos',
         x = x,
         num_photos = 7; // how much photos do you want to get
      
@@ -164,7 +164,7 @@ js.main = {
       success: function(data){
         console.log(data);
         for( x in data.data ){
-          gal.append('<li class="photo-gallery-ele"><a href="'+data.data[x].link+'"><img src="'+data.data[x].images.standard_resolution.url+'"></a></li>'); 
+          gal.append('<li class="photo-gallery-ele"><a href="'+data.data[x].link+'" target="_blank"><img src="'+data.data[x].images.standard_resolution.url+'"></a></li>'); 
           // data.data[x].images.low_resolution.url - URL of image, 306х306
           // data.data[x].images.thumbnail.url - URL of image 150х150
           // data.data[x].images.standard_resolution.url - URL of image 612х612
@@ -177,8 +177,19 @@ js.main = {
     });
   },
   linksExternal: function () {
-    $("a[href^='https://']").attr("target", "_blank");
-    $("a[href^='http://']").attr("target", "_blank");
+    $('a').each(function() {
+       var a = new RegExp('/' + window.location.host + '/');
+       if(!a.test(this.href)) {
+           $(this).click(function(event) {
+               event.preventDefault();
+               event.stopPropagation();
+               window.open(this.href, '_blank');
+           });
+       }
+    });
+    $('.newWindow').click(function(){
+      window.open($(this).attr('href')); return false;
+    });
   },
   mbpPlayer: function () {
 
