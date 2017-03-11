@@ -47,8 +47,9 @@ section#site-contact.site-contact-sub.site-section.no-border
           .form-content.col-xs-12.col-md-6
             .row
               .col-xs-12.col-sm-8.col-md-12
-                form id="contactForm" method="post" action="../../mailer.php"
+                form id="contactForm" method="post" action="" target="no-target"
                   #mbp_form.form-container
                     #form-messages.form-message
                     input type="hidden" id="type" name="type" value=current_page.data.form_type
                     == partial "form"
+                iframe src="#" id="no-target" name="no-target" style="visibility:hidden"

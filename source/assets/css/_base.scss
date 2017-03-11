@@ -23,6 +23,25 @@
     &.overflow {
       overflow: hidden;
     }
+    &:before {
+      background: $color-black;
+      bottom: 0;
+      content: "";
+      height: 100%;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 10000;
+      opacity: 1;
+      @include animation(pageEnter 2s $timing 0ms normal 1 forwards);
+    }
+    &.page-leave {
+      &:before {
+        @include animation(pageLeave 1s $timing 0ms normal 1 forwards);
+      }
+    }
   }
 
   .site-wrapper {
@@ -151,9 +170,9 @@
   }
   .site-hero {
     &.index {
-      min-height: 532px;
+      min-height: 632px;
       @media (min-width: $mq-small) {
-        min-height: 572px;
+        min-height: 672px;
       }
     }
     &.sub {
@@ -285,7 +304,7 @@
 
 // Form Elements
   .form-field {
-    padding: 0 20px 20px;
+    padding: 0 0 20px;
     @media (min-width: $mq-small) {
       padding: 0 0 20px;
     }

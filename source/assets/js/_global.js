@@ -1,16 +1,19 @@
 var js = js || {},
   body = $('body'),
-  doc = $(document);
+  doc = $(document),
+  win = $(window);
 
 js.main = {
   init: function () {
+    this.linkDelay();
     this.fadeInScroll();
     this.codeHighlight();
     this.customCheckbox();
-    this.ajaxForm();
+    this.formSubmit();
+    // this.ajaxForm();
     this.gaTimeout();
     this.mbpPlayer();
-    this.wpContact();
+    // this.wpContact();
     this.ig();
     this.crumbsDD();
     this.linksExternal();
@@ -143,6 +146,33 @@ js.main = {
       }); 
     });
   },
+  formSubmit: function () {
+    $('#contactForm').one('submit',function(){
+      var idType = "entry.141953512";
+      var inputType = encodeURIComponent($('#type').val());
+      var idFname = "entry.84634872";
+      var inputFname = encodeURIComponent($('#fname').val());
+      var idLname = "entry.228472619";
+      var inputLname = encodeURIComponent($('#lname').val());
+      var idEmail = "entry.2042919330";
+      var inputEmail = encodeURIComponent($('#email').val());
+      var idMessage = "entry.797106235";
+      var inputMessage = encodeURIComponent($('#message').val());
+      var baseURL = 'https://docs.google.com/a/madebyporter.com/forms/d/e/1FAIpQLSerG3d7wwjIHr7LL6LfcKj2XyDGbEG1T3TS_9r2LmvtHajeAw/formResponse?';
+      var submitRef = '&submit=Submit';
+      var submitURL = (
+                        baseURL +
+                        idType + "=" + inputType + "&" +
+                        idFname + "=" + inputFname + "&" +
+                        idLname + "=" + inputLname + "&" +
+                        idEmail + "=" + inputEmail + "&" +
+                        idMessage + "=" + inputMessage +
+                        submitRef);
+      console.log(submitURL);
+      $(this)[0].action=submitURL;
+      $('#form-messages').addClass('success').text('Thanks for your submission. I will get back to you within 24 hours!');
+    });
+  },
   gaTimeout: function () {
     setTimeout(function(){
       _gaq.push(['_trackEvent', 'Control', 'Bounce Rate', '']);
@@ -162,7 +192,7 @@ js.main = {
       type: 'GET',
       data: {access_token: token, count: num_photos},
       success: function(data){
-        console.log(data);
+        // console.log(data);
         for( x in data.data ){
           gal.append('<li class="photo-gallery-ele"><a href="'+data.data[x].link+'" target="_blank"><img src="'+data.data[x].images.standard_resolution.url+'"></a></li>'); 
           // data.data[x].images.low_resolution.url - URL of image, 306х306
@@ -172,8 +202,20 @@ js.main = {
         }
       },
       error: function(data){
-        console.log(data); // send the error notifications to console
+        console.log(data); 
       }
+    });
+  },
+  linkDelay: function () {
+    $('a').click(function (e) {
+      e.preventDefault();                   // prevent default anchor behavior
+      var goTo = this.getAttribute("href"); // store anchor href
+
+        $('body').addClass('page-leave');
+
+        setTimeout(function(){
+        window.location = goTo;
+      }, 1000);       
     });
   },
   linksExternal: function () {
@@ -274,7 +316,10 @@ js.main = {
           var form_width = form.offsetWidth;
           if(direction==='down'){
             form.classList.add('fixed');
-            form.style.width = form_width + 'px';
+            form.style.width = '100%';
+            if (window.matchMedia('(min-width: 992px)').matches) {
+              form.style.width = form_width + 'px';
+            }
             form.style.top = "20px";
           } else if(direction==='up'){
             form.classList.remove('fixed');
@@ -289,10 +334,10 @@ js.main = {
         element: document.getElementById('footer'),
         handler: function(direction) {
           function offset(el) {
-              var rect = el.getBoundingClientRect(),
-              scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-              scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-              return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
+            var rect = el.getBoundingClientRect(),
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
           }
 
           var footer = document.getElementById('footer');
@@ -320,9 +365,13 @@ js.main = {
     if ($('body').hasClass('contact')){
       wpInit(); wpFooter();
     }
+    win.resize(function () {
+      js.main.wpContact();
+    });
   },
 };
 
 doc.ready(function () {
   js.main.init();
 });
+

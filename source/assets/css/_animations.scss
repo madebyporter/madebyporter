@@ -33,25 +33,85 @@
   @-webkit-keyframes bgFadeIn {
     0% {
       opacity: 1;
+      z-index: 1000;
     }
     50% {
       opacity: 1;
     }
     100% {
       opacity: 0;
+      z-index: -1;
     }
   }
   @keyframes bgFadeIn {
     0% {
       opacity: 1;
+      z-index: 1000;
     }
     50% {
       opacity: 1;
     }
     100% {
       opacity: 0;
+      z-index: -1;
     }
   }
+
+// Page Enter
+  @-webkit-keyframes pageEnter {
+    0% {
+      opacity: 1;
+      z-index: 10000;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+  @keyframes pageEnter {
+    0% {
+      opacity: 1;
+      z-index: 10000;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+
+  // Page Leave
+    @-webkit-keyframes pageLeave {
+      0% {
+        opacity: 0;
+        z-index: -1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+        z-index: 10000;
+      }
+    }
+    @keyframes pageLeave {
+      0% {
+        opacity: 0;
+        z-index: -1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+        z-index: 10000;
+      }
+    }
 
 // Photo Placeholder Pulse
   @-webkit-keyframes ppPulse {

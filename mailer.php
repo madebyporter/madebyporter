@@ -1,5 +1,6 @@
 <?php
   // include_once 'MailChimp.php';
+    ini_set('display_errors', '1');
 
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -24,13 +25,13 @@
         $recipient = "general@madebyporter.com";
 
         // Set the email subject.
-        $subject = "A $service Inquiry from $name";
+        $subject = "A $type Inquiry from $name";
 
         // Build the email content.
         $email_content = "Type: $type\n\n";
         $email_content = "Name: $name\n\n";
-        $email_content .= "Email: $email\n\n";
-        $email_content .= "Message:\n$message\n\n";
+        $email_content = "Email: $email\n\n";
+        $email_content = "Message:\n$message\n\n";
 
         // Build the email headers.
         $email_headers = "From: $name <$email>";

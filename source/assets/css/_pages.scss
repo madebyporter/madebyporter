@@ -2,7 +2,10 @@
 
 // Homepage
   .index {
-    background: url('../img/bg-home-hero-porter.jpg') no-repeat center top $color-black;
+    @include retina-background-image("../img/bg-home-hero-porter", "png", cover, auto);
+    background-color: $color-black;
+    background-position: center top;
+    background-repeat: no-repeat;
     background-size: cover;
     font-family: $font-reg;
     height: 100%;
@@ -10,36 +13,20 @@
     position: absolute;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    &:before {
-      background: $color-black-50;
-      background: -webkit-linear-gradient(180deg, rgba(0,0,0,0) 50%, $color-black 100%);
-      background: -moz-linear-gradient(180deg, rgba(0,0,0,0) 50%, $color-black 100%);
-      background: -o-linear-gradient(180deg, rgba(0,0,0,0) 50%, $color-black 100%);
-      background: linear-gradient(180deg, rgba(0,0,0,0) 50%, $color-black 100%);
-      bottom: 0;
-      content: "";
-      height: 100%;
-      left: 0;
-      position: fixed;
-      right: 0;
-      top: 0;
-      width: 100%;
-      z-index: 1;
-    } 
-    &:after {
-      background: $color-black;
-      bottom: 0;
-      content: "";
-      height: 100%;
-      left: 0;
-      position: fixed;
-      right: 0;
-      top: 0;
-      width: 100%;
-      z-index: 2;
-      @include animation(bgFadeIn 5s 1 cubic-bezier(.14, .62, .39, 1) forwards);
-      opacity: 0;
-    }
+    // &:after {
+    //   background: $color-black;
+    //   bottom: 0;
+    //   content: "";
+    //   height: 100%;
+    //   left: 0;
+    //   position: fixed;
+    //   right: 0;
+    //   top: 0;
+    //   width: 100%;
+    //   z-index: 2;
+    //   @include animation(bgFadeIn 2s $timing 2s 1 forwards);
+    //   opacity: 1;
+    // }
 
     .site-hero {
       @extend .site-hero.index;
@@ -259,36 +246,6 @@
     position: absolute;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    &:before {
-      background: $color-black-50;
-      background: -webkit-linear-gradient(180deg, $color-black-20 50%, $color-black 100%);
-      background: -moz-linear-gradient(180deg, $color-black-20 50%, $color-black 100%);
-      background: -o-linear-gradient(180deg, $color-black-20 50%, $color-black 100%);
-      background: linear-gradient(180deg, $color-black-20 50%, $color-black 100%);
-      bottom: 0;
-      content: "";
-      height: 100%;
-      left: 0;
-      position: fixed;
-      right: 0;
-      top: 0;
-      width: 100%;
-      z-index: 1;
-    } 
-    &:after {
-      background: $color-black;
-      bottom: 0;
-      content: "";
-      height: 100%;
-      left: 0;
-      position: fixed;
-      right: 0;
-      top: 0;
-      width: 100%;
-      z-index: 2;
-      @include animation(bgFadeIn 5s 1 cubic-bezier(.14, .62, .39, 1) forwards);
-      opacity: 0;
-    }
     .site-header {
       // @extend .no-border;
       @extend .bg-black;

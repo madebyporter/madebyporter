@@ -1,5 +1,16 @@
 // _mixins.scss
 
+// Retina
+  @mixin retina-background-image($file, $type, $width, $height) {
+    background-image: url($file + '.' + $type);
+    @media #{$retina} {
+      background-image: url($file + '@2x.' + $type);
+      background-size: $width $height;
+    }
+  }
+  /* Usage: @include retina-background-image("images/video", "png", 50%, 50%); */
+
+
 // Flexbox
   @mixin flexbox() {
     display: -webkit-box;

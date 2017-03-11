@@ -52,6 +52,7 @@ table {
   }
 }
 
+/* Usage: @include retina-background-image("images/video", "png", 50%, 50%); */
 h1, h2, h3, h4, h5, h6 {
   color: #fff;
   font-family: "europa", "helvetica", "arial", sans-serif;
@@ -297,23 +298,79 @@ strong {
 @-webkit-keyframes bgFadeIn {
   0% {
     opacity: 1;
+    z-index: 1000;
   }
   50% {
     opacity: 1;
   }
   100% {
     opacity: 0;
+    z-index: -1;
   }
 }
 @keyframes bgFadeIn {
   0% {
     opacity: 1;
+    z-index: 1000;
   }
   50% {
     opacity: 1;
   }
   100% {
     opacity: 0;
+    z-index: -1;
+  }
+}
+@-webkit-keyframes pageEnter {
+  0% {
+    opacity: 1;
+    z-index: 10000;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes pageEnter {
+  0% {
+    opacity: 1;
+    z-index: 10000;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@-webkit-keyframes pageLeave {
+  0% {
+    opacity: 0;
+    z-index: -1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    z-index: 10000;
+  }
+}
+@keyframes pageLeave {
+  0% {
+    opacity: 0;
+    z-index: -1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    z-index: 10000;
   }
 }
 @-webkit-keyframes ppPulse {
@@ -628,6 +685,29 @@ body {
 body.overflow {
   overflow: hidden;
 }
+body:before {
+  background: #1D1D21;
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  opacity: 1;
+  -webkit-animation: pageEnter 2s cubic-bezier(0.14, 0.62, 0.39, 1) 0ms normal 1 forwards;
+  -moz-animation: pageEnter 2s cubic-bezier(0.14, 0.62, 0.39, 1) 0ms normal 1 forwards;
+  -o-animation: pageEnter 2s cubic-bezier(0.14, 0.62, 0.39, 1) 0ms normal 1 forwards;
+  animation: pageEnter 2s cubic-bezier(0.14, 0.62, 0.39, 1) 0ms normal 1 forwards;
+}
+body.page-leave:before {
+  -webkit-animation: pageLeave 1s cubic-bezier(0.14, 0.62, 0.39, 1) 0ms normal 1 forwards;
+  -moz-animation: pageLeave 1s cubic-bezier(0.14, 0.62, 0.39, 1) 0ms normal 1 forwards;
+  -o-animation: pageLeave 1s cubic-bezier(0.14, 0.62, 0.39, 1) 0ms normal 1 forwards;
+  animation: pageLeave 1s cubic-bezier(0.14, 0.62, 0.39, 1) 0ms normal 1 forwards;
+}
 
 .site-wrapper {
   height: 100%;
@@ -788,11 +868,11 @@ body.overflow {
 }
 
 .site-hero.index, .index .site-hero {
-  min-height: 532px;
+  min-height: 632px;
 }
 @media (min-width: 768px) {
   .site-hero.index, .index .site-hero {
-    min-height: 572px;
+    min-height: 672px;
   }
 }
 .site-hero.sub, .design .site-hero, .sounds .site-hero, .photos .site-hero, .blog .site-hero, .contact .site-hero {
@@ -958,7 +1038,7 @@ ul.section-content-checklist li.section-content-checklist-ele .form-field-label 
 }
 
 .form-field {
-  padding: 0 20px 20px;
+  padding: 0 0 20px;
 }
 @media (min-width: 768px) {
   .form-field {
@@ -1587,7 +1667,10 @@ iframe.video {
 }
 
 .index {
-  background: url("../img/bg-home-hero-porter.jpg") no-repeat center top #1D1D21;
+  background-image: url("../img/bg-home-hero-porter.png");
+  background-color: #1D1D21;
+  background-position: center top;
+  background-repeat: no-repeat;
   background-size: cover;
   font-family: "europa", "helvetica", "arial", sans-serif;
   height: 100%;
@@ -1596,38 +1679,11 @@ iframe.video {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.index:before {
-  background: rgba(30, 30, 34, 0.5);
-  background: -webkit-linear-gradient(180deg, transparent 50%, #1D1D21 100%);
-  background: -moz-linear-gradient(180deg, transparent 50%, #1D1D21 100%);
-  background: -o-linear-gradient(180deg, transparent 50%, #1D1D21 100%);
-  background: linear-gradient(180deg, transparent 50%, #1D1D21 100%);
-  bottom: 0;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-.index:after {
-  background: #1D1D21;
-  bottom: 0;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 100%;
-  z-index: 2;
-  -webkit-animation: bgFadeIn 5s 1 cubic-bezier(0.14, 0.62, 0.39, 1) forwards;
-  -moz-animation: bgFadeIn 5s 1 cubic-bezier(0.14, 0.62, 0.39, 1) forwards;
-  -o-animation: bgFadeIn 5s 1 cubic-bezier(0.14, 0.62, 0.39, 1) forwards;
-  animation: bgFadeIn 5s 1 cubic-bezier(0.14, 0.62, 0.39, 1) forwards;
-  opacity: 0;
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .index {
+    background-image: url("../img/bg-home-hero-porter@2x.png");
+    background-size: cover auto;
+  }
 }
 .index .site-hero-help {
   color: #919199;
@@ -1952,39 +2008,6 @@ iframe.video {
   position: absolute;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-.design:before {
-  background: rgba(30, 30, 34, 0.5);
-  background: -webkit-linear-gradient(180deg, rgba(30, 30, 34, 0.2) 50%, #1D1D21 100%);
-  background: -moz-linear-gradient(180deg, rgba(30, 30, 34, 0.2) 50%, #1D1D21 100%);
-  background: -o-linear-gradient(180deg, rgba(30, 30, 34, 0.2) 50%, #1D1D21 100%);
-  background: linear-gradient(180deg, rgba(30, 30, 34, 0.2) 50%, #1D1D21 100%);
-  bottom: 0;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-.design:after {
-  background: #1D1D21;
-  bottom: 0;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 100%;
-  z-index: 2;
-  -webkit-animation: bgFadeIn 5s 1 cubic-bezier(0.14, 0.62, 0.39, 1) forwards;
-  -moz-animation: bgFadeIn 5s 1 cubic-bezier(0.14, 0.62, 0.39, 1) forwards;
-  -o-animation: bgFadeIn 5s 1 cubic-bezier(0.14, 0.62, 0.39, 1) forwards;
-  animation: bgFadeIn 5s 1 cubic-bezier(0.14, 0.62, 0.39, 1) forwards;
-  opacity: 0;
 }
 .design .work-container {
   margin-left: -15px;
