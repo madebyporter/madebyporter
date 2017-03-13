@@ -2120,7 +2120,7 @@ iframe.video {
     left: auto;
     right: 20px;
   }
-  .design .work-container .work-setup-text.vert-center, .design .work-container #work-freewaynights .work-setup-text, .design .work-container #work-jeaninemckirnan .work-setup-text, .design .work-container #work-mercedehallen .work-setup-text {
+  .design .work-container .work-setup-text.vert-center, .design .work-container #work-squrlfitness .work-setup-text, .design .work-container #work-freewaynights .work-setup-text, .design .work-container #work-jeaninemckirnan .work-setup-text, .design .work-container #work-mercedehallen .work-setup-text {
     top: 50%;
     position: absolute;
     -moz-transform: translate(0, -50%);
@@ -2188,7 +2188,7 @@ iframe.video {
   z-index: 1;
 }
 @media (min-width: 992px) {
-  .design .work-container .work-setup-img.push-left, .design .work-container #work-ronfinley .work-setup-img, .design .work-container #work-newscrack .work-setup-img, .design .work-container #work-freewaynights .work-setup-img {
+  .design .work-container .work-setup-img.push-left, .design .work-container #work-ronfinley .work-setup-img, .design .work-container #work-newscrack .work-setup-img, .design .work-container #work-squrlfitness .work-setup-img, .design .work-container #work-freewaynights .work-setup-img {
     background-position: left;
   }
   .design .work-container .work-setup-img.push-center, .design .work-container #work-sbt .work-setup-img, .design .work-container #work-mercedehallen .work-setup-img {
@@ -2280,6 +2280,21 @@ iframe.video {
     background-image: url("../img/work-setup-img-sbt-2.png");
   }
 }
+.design .work-container #work-squrlfitness .work-setup-img {
+  background-image: url("../img/work-setup-img-squrl-small.png");
+}
+@media (min-width: 992px) {
+  .design .work-container #work-squrlfitness .work-setup-img {
+    background-image: url("../img/work-setup-img-squrl.png");
+  }
+}
+@media only screen and (min-width: 992px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 992px) and (min--moz-device-pixel-ratio: 2), only screen and (min-width: 992px) and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-width: 992px) and (min-device-pixel-ratio: 2), only screen and (min-width: 992px) and (min-resolution: 192dpi), only screen and (min-width: 992px) and (min-resolution: 2dppx) {
+  .design .work-container #work-squrlfitness .work-setup-img {
+    background-image: url("../img/work-setup-img-squrl@2x.png");
+    background-size: cover auto;
+  }
+}
+
 .design .work-container #work-freewaynights .work-setup-img {
   background-image: url("../img/work-setup-img-freewaynights-small.png");
 }
@@ -2876,6 +2891,12 @@ iframe.video {
 
 .contact .site-contact {
   padding: 0;
+}
+.contact .googleformframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
 }
 .contact .form-container {
   z-index: 1000;

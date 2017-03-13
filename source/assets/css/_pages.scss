@@ -479,6 +479,20 @@
             }
           }
         }
+        #work-squrlfitness {
+          .work-setup-text {
+            @media (min-width: $mq-medium) {
+              @extend .vert-center;
+            }
+          }
+          .work-setup-img {
+            background-image: url('../img/work-setup-img-squrl-small.png'); 
+            @media (min-width: $mq-medium) {
+              @extend .push-left;
+              @include retina-background-image("../img/work-setup-img-squrl", "png", cover, auto);
+            }
+          }
+        }
         #work-freewaynights {
           .work-setup-text {
             @media (min-width: $mq-medium) {
@@ -1006,6 +1020,12 @@
     }
     .site-contact-sub {
       @extend .theme-white;
+    }
+    .googleformframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
     }
     .form-container {
       z-index: 1000;

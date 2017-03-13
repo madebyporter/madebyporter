@@ -10,10 +10,8 @@ js.main = {
     this.codeHighlight();
     this.customCheckbox();
     this.formSubmit();
-    // this.ajaxForm();
     this.gaTimeout();
     this.mbpPlayer();
-    // this.wpContact();
     this.ig();
     this.crumbsDD();
     this.linksExternal();
@@ -207,7 +205,17 @@ js.main = {
     });
   },
   linkDelay: function () {
-    $('a').click(function (e) {
+    $.expr[':'].external = function (a) {
+        var PATTERN_FOR_EXTERNAL_URLS = /^(\w+:)?\/\//;
+        var href = $(a).attr('href');
+        return href !== undefined && href.search(PATTERN_FOR_EXTERNAL_URLS) !== -1;
+    };
+
+    $.expr[':'].internal = function (a) {
+        return $(a).attr('href') !== undefined && !$.expr[':'].external(a);
+    };
+
+    $('a:internal').click(function (e) {
       e.preventDefault();                   // prevent default anchor behavior
       var goTo = this.getAttribute("href"); // store anchor href
 
@@ -219,7 +227,17 @@ js.main = {
     });
   },
   linksExternal: function () {
-    $('a').each(function() {
+    $.expr[':'].external = function (a) {
+        var PATTERN_FOR_EXTERNAL_URLS = /^(\w+:)?\/\//;
+        var href = $(a).attr('href');
+        return href !== undefined && href.search(PATTERN_FOR_EXTERNAL_URLS) !== -1;
+    };
+
+    $.expr[':'].internal = function (a) {
+        return $(a).attr('href') !== undefined && !$.expr[':'].external(a);
+    };
+
+    $('a:external').each(function() {
        var a = new RegExp('/' + window.location.host + '/');
        if(!a.test(this.href)) {
            $(this).click(function(event) {
