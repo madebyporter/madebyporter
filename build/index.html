@@ -13,7 +13,7 @@
     <link href="/favicon/manifest.json" rel="manifest" />
     <link color="#ffffff" href="favicon/safari-pinned-tab.svg" rel="mask-icon" />
     <meta content="#ffffff" name="theme-color" />
-    <title>Made by Porter - Designer x Develoepr x Musician x Photographer</title><link href="assets/css/style.css" rel="stylesheet" />
+    <title>Made by Porter - Designer x Developer x Musician x Photographer</title><link href="assets/css/style.css" rel="stylesheet" />
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css" rel="stylesheet" />
   </head>
   <body class="index">
@@ -70,11 +70,8 @@
           <div class="site-section-inner">
             <div class="site-home-text-left">
               <h3 class="site-home-header">
-                I'm <strong>Chris Porter</strong>, a creative based in <strong>Los Angeles</strong>
+                I'm <strong>Chris Porter</strong>, a creative from Cleveland, based in <strong>Los Angeles</strong>.
               </h3>
-              <div class="site-home-cta">
-                <a href="/about">Learn more about me</a>
-              </div>
             </div>
           </div>
         </section>
@@ -90,7 +87,7 @@
             </div>
             <div class="site-home-text-right">
               <h3 class="site-home-header">
-                Creating websites since 2001.
+                Startups &amp; small business come to me to help design their websites and apps.
               </h3>
               <div class="site-home-cta">
                 <a href="/design">Check out my design &amp; code.</a>
@@ -102,7 +99,7 @@
           <div class="site-section-inner">
             <div class="site-home-text-left">
               <h3 class="site-home-header">
-                Also, I partake in music creation.
+                I make music for creatives as well. Chill, listen &amp; create.
               </h3>
               <div class="site-home-cta">
                 <a href="/sounds">Listen to &amp; download some music.</a>
@@ -248,13 +245,16 @@
                       <a href="http://www.twitter.com/madebyporter"><img src="assets/img/img-social-twitter.svg" /></a>
                     </li>
                     <li class="social-media-list-ele">
-                      <a href="http://www.instagram.com/portermade"><img src="assets/img/img-social-instagram.svg" /></a>
+                      <a href="http://www.instagram.com/madebyporter"><img src="assets/img/img-social-instagram.svg" /></a>
                     </li>
                     <li class="social-media-list-ele">
                       <a href="http://www.dribbble.com/madebyporter"><img src="assets/img/img-social-dribbble.svg" /></a>
                     </li>
                     <li class="social-media-list-ele">
                       <a href="http://www.snapchat.com/add/portermade"><img src="assets/img/img-social-snapchat.svg" /></a>
+                    </li>
+                    <li class="social-media-list-ele">
+                      <a href="http://www.soundcloud.com/madebyporter"><img src="assets/img/img-social-soundcloud.svg" /></a>
                     </li>
                   </ul>
                 </div>
@@ -266,29 +266,43 @@
     </main><script src="assets/js/output.js"></script>
     <script src="https://use.typekit.net/pdw4yep.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-instagram/0.3.1/instagram.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
     <script>
       try{Typekit.load({ async: true });}catch(e){}
     </script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
     <script>
       hljs.initHighlightingOnLoad();
     </script>
     <script>
-      var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-54767153-1']);
-        _gaq.push(['_trackPageview']);
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+      ga('create', 'UA-54767153-1', 'auto');
+      ga('send', 'pageview');
     </script>
     <script>
-      (function(h,e,a,t,m,p) {
-      m=e.createElement(a);m.async=!0;m.src=t;
-      p=e.getElementsByTagName(a)[0];p.parentNode.insertBefore(m,p);
-      })(window,document,'script','https://u.heatmap.it/log.js');
+      !function() {
+        var t;
+        if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+        t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+        t.factory = function(e) {
+          return function() {
+            var n;
+            return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+          };
+        }, t.methods.forEach(function(e) {
+          t[e] = t.factory(e);
+        }), t.load = function(t) {
+          var e, n, o, i;
+          e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+          o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+          n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+        });
+      }();
+      drift.SNIPPET_VERSION = '0.3.1';
+      drift.load('te4tdzbmect5');
     </script>
   </body>
 </html>

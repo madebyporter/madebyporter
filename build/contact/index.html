@@ -68,7 +68,7 @@
           <section class="site-contact site-section">
             <ul class="block-menu contact-block-menu">
               <li class="block-menu-ele">
-                <a href="digital-consulting">
+                <a href="/contact/digital-consulting">
                       <div class="block-menu-content">
                         <div class="block-menu-title">
                           Digital
@@ -79,7 +79,7 @@
                       </div></a>
               </li>
               <li class="block-menu-ele">
-                <a href="photo-shoot">
+                <a href="/contact/photo-shoot">
                       <div class="block-menu-content">
                         <div class="block-menu-title">
                           Photo
@@ -90,7 +90,7 @@
                       </div></a>
               </li>
               <li class="block-menu-ele">
-                <a href="music-production">
+                <a href="/contact/music-production">
                       <div class="block-menu-content">
                         <div class="block-menu-title">
                           Music
@@ -101,7 +101,7 @@
                       </div></a>
               </li>
               <li class="block-menu-ele">
-                <a href="general">
+                <a href="/contact/general">
                       <div class="block-menu-content">
                         <div class="block-menu-title">
                           General
@@ -224,13 +224,16 @@
                       <a href="http://www.twitter.com/madebyporter"><img src="../assets/img/img-social-twitter.svg" /></a>
                     </li>
                     <li class="social-media-list-ele">
-                      <a href="http://www.instagram.com/portermade"><img src="../assets/img/img-social-instagram.svg" /></a>
+                      <a href="http://www.instagram.com/madebyporter"><img src="../assets/img/img-social-instagram.svg" /></a>
                     </li>
                     <li class="social-media-list-ele">
                       <a href="http://www.dribbble.com/madebyporter"><img src="../assets/img/img-social-dribbble.svg" /></a>
                     </li>
                     <li class="social-media-list-ele">
                       <a href="http://www.snapchat.com/add/portermade"><img src="../assets/img/img-social-snapchat.svg" /></a>
+                    </li>
+                    <li class="social-media-list-ele">
+                      <a href="http://www.soundcloud.com/madebyporter"><img src="../assets/img/img-social-soundcloud.svg" /></a>
                     </li>
                   </ul>
                 </div>
@@ -242,29 +245,43 @@
     </main><script src="../assets/js/output.js"></script>
     <script src="https://use.typekit.net/pdw4yep.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-instagram/0.3.1/instagram.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
     <script>
       try{Typekit.load({ async: true });}catch(e){}
     </script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
     <script>
       hljs.initHighlightingOnLoad();
     </script>
     <script>
-      var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-54767153-1']);
-        _gaq.push(['_trackPageview']);
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+      ga('create', 'UA-54767153-1', 'auto');
+      ga('send', 'pageview');
     </script>
     <script>
-      (function(h,e,a,t,m,p) {
-      m=e.createElement(a);m.async=!0;m.src=t;
-      p=e.getElementsByTagName(a)[0];p.parentNode.insertBefore(m,p);
-      })(window,document,'script','https://u.heatmap.it/log.js');
+      !function() {
+        var t;
+        if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+        t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+        t.factory = function(e) {
+          return function() {
+            var n;
+            return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+          };
+        }, t.methods.forEach(function(e) {
+          t[e] = t.factory(e);
+        }), t.load = function(t) {
+          var e, n, o, i;
+          e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+          o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+          n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+        });
+      }();
+      drift.SNIPPET_VERSION = '0.3.1';
+      drift.load('te4tdzbmect5');
     </script>
   </body>
 </html>

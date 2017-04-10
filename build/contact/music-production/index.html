@@ -76,16 +76,16 @@
                 <li class="crumbs-ele crumbs-dd">
                   <span class="active-page">Music Production</span><ul class="crumbs-dd-container">
                     <li class="crumbs-dd-ele">
-                      <a href="../digital-consulting">Digital Consulting</a>
+                      <a href="/contact/digital-consulting">Digital Consulting</a>
                     </li>
                     <li class="crumbs-dd-ele">
-                      <a href="../photo-shoot">Photo Shoots</a>
+                      <a href="/contact/photo-shoot">Photo Shoots</a>
                     </li>
                     <li class="crumbs-dd-ele">
-                      <a href="../music-production">Music Production</a>
+                      <a href="/contact/music-production">Music Production</a>
                     </li>
                     <li class="crumbs-dd-ele">
-                      <a href="../general">General Inquiries</a>
+                      <a href="/contact/general">General Inquiries</a>
                     </li>
                   </ul>
                 </li>
@@ -150,13 +150,13 @@
   <div class="col-xs-12">
     <div class="hideme">
       <div class="form-field">
-        <label class="form-field-label" for="fname">First Name</label><input class="form-field-text" id="fname" name="fname" tabindex="1" type="text" />
+        <label class="form-field-label" for="fname">First Name</label><input class="form-field-text" id="fname" name="fname" type="text" />
       </div>
       <div class="form-field">
-        <label class="form-field-label" for="lname">Last Name</label><input class="form-field-text" id="lname" name="lname" tabindex="2" type="text" />
+        <label class="form-field-label" for="lname">Last Name</label><input class="form-field-text" id="lname" name="lname" type="text" />
       </div>
       <div class="form-field">
-        <label class="form-field-label" for="email">Email</label><input class="form-field-text" id="email" name="email" tabindex="3" type="email" />
+        <label class="form-field-label" for="email">Email</label><input class="form-field-text" id="email" name="email" type="email" />
       </div>
     </div>
   </div>
@@ -165,7 +165,7 @@
   <div class="col-xs-12">
     <div class="hideme">
       <div class="form-field">
-        <label class="form-field-label" for="message">How Can I Help You?</label><textarea class="form-field-textarea" id="message" name="message" tabindex="8"></textarea>
+        <label class="form-field-label" for="message">How Can I Help You?</label><textarea class="form-field-textarea" id="message" name="message"></textarea>
       </div>
     </div>
   </div>
@@ -179,9 +179,9 @@
     </div>
   </div>
 </div>
+<iframe class="googleformframe" id="no-target" name="no-target" src="#"></iframe>
                   </div>
                 </form>
-                <iframe id="no-target" name="no-target" src="#" style="visibility:hidden"></iframe>
               </div>
             </div>
           </div>
@@ -301,13 +301,16 @@
                       <a href="http://www.twitter.com/madebyporter"><img src="../../assets/img/img-social-twitter.svg" /></a>
                     </li>
                     <li class="social-media-list-ele">
-                      <a href="http://www.instagram.com/portermade"><img src="../../assets/img/img-social-instagram.svg" /></a>
+                      <a href="http://www.instagram.com/madebyporter"><img src="../../assets/img/img-social-instagram.svg" /></a>
                     </li>
                     <li class="social-media-list-ele">
                       <a href="http://www.dribbble.com/madebyporter"><img src="../../assets/img/img-social-dribbble.svg" /></a>
                     </li>
                     <li class="social-media-list-ele">
                       <a href="http://www.snapchat.com/add/portermade"><img src="../../assets/img/img-social-snapchat.svg" /></a>
+                    </li>
+                    <li class="social-media-list-ele">
+                      <a href="http://www.soundcloud.com/madebyporter"><img src="../../assets/img/img-social-soundcloud.svg" /></a>
                     </li>
                   </ul>
                 </div>
@@ -319,29 +322,43 @@
     </main><script src="../../assets/js/output.js"></script>
     <script src="https://use.typekit.net/pdw4yep.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-instagram/0.3.1/instagram.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
     <script>
       try{Typekit.load({ async: true });}catch(e){}
     </script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
     <script>
       hljs.initHighlightingOnLoad();
     </script>
     <script>
-      var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-54767153-1']);
-        _gaq.push(['_trackPageview']);
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+      ga('create', 'UA-54767153-1', 'auto');
+      ga('send', 'pageview');
     </script>
     <script>
-      (function(h,e,a,t,m,p) {
-      m=e.createElement(a);m.async=!0;m.src=t;
-      p=e.getElementsByTagName(a)[0];p.parentNode.insertBefore(m,p);
-      })(window,document,'script','https://u.heatmap.it/log.js');
+      !function() {
+        var t;
+        if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+        t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+        t.factory = function(e) {
+          return function() {
+            var n;
+            return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+          };
+        }, t.methods.forEach(function(e) {
+          t[e] = t.factory(e);
+        }), t.load = function(t) {
+          var e, n, o, i;
+          e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+          o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+          n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+        });
+      }();
+      drift.SNIPPET_VERSION = '0.3.1';
+      drift.load('te4tdzbmect5');
     </script>
   </body>
 </html>
