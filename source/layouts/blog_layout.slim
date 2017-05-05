@@ -2,25 +2,17 @@
   section.site-blog.site-section.no-border
     .container-fluid
       .row
-        .col-sm-10         
+        .col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3.col-lg-6.col-lg-offset-3 
+          header.site-blog-header
+            h1 = current_article.title
           article.site-blog-post
-            .row
-              .col-md-4
-                header.site-blog-header
-                  h1
-                    = current_article.title
-              .col-md-8
-                .site-blog-body
-                  section.site-blog-section
-                    .row
-                      .col-md-10
-                        = current_article.body
+            = current_article.body
   section.site-blog-pagination.site-section.no-border
     .container-fluid
       .row
-        .col-sm-10
+        .col-sm-12
           .row
-            .col-md-8.col-md-offset-4
+            .col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3.col-lg-6.col-lg-offset-3 
               .site-blog-article-pagination
                 - previous_article = current_article.previous_article
                 - if previous_article

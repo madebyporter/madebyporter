@@ -907,15 +907,25 @@
       min-height: 350px;
     }
     .site-blog-post {
-      padding-top: 80px;
-      @media (min-width: $mq-medium) {
-        padding-top: 0;
+      h2 {
+        font-weight: 700;
+      }
+      p {
+        @include font-size(24);
+      }
+      img {
+        width: 100%;
       }
     }
     .site-blog-header {
+      margin: 12rem 0 12rem 0;
+      text-align: center;
       h1 {
         line-height: 1.2;
         text-transform: none;
+        @media (min-width: $mq-medium) {
+          @include font-size(82);
+        }
       }
     }
     .site-blog-section {
@@ -961,7 +971,13 @@
             left: 5px;
           }
           @media (min-width: $mq-small) {
-            font-size: 6em;
+            @include font-size(48);
+          }
+          @media (min-width: $mq-medium) {
+            @include font-size(64);
+          }
+          @media (min-width: $mq-large) {
+            @include font-size(81ins);
           }
         }
         h2, p {
