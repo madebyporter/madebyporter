@@ -912,6 +912,7 @@
       }
       p {
         @include font-size(24);
+        line-height: 1.7;
       }
       img {
         width: 100%;

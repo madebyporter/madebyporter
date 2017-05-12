@@ -110,7 +110,7 @@
       list-style: disc;
       margin: 0 0 20px 20px;
       li {
-        @include font-size(18);
+        @include font-size(21);
         line-height: 1.5;
         margin-bottom: 10px;
         &:last-child {
@@ -118,7 +118,7 @@
         }
       }
       & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {
-        margin-top: 40px;
+        margin-top: 6rem;
       }
     }
     .no-list {
