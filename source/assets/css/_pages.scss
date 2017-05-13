@@ -568,7 +568,7 @@
 
 // Sounds
   .sounds {
-    @extend .theme-white;
+    @extend .theme-black;
 
     .site-hero {
       @extend .site-hero.sub;
@@ -585,10 +585,54 @@
     .site-wrapper {
       height: auto;
     }
-    .site-sounds {
-      background: $color-white;
-      padding-bottom: 0;
+
+    .sounds-block {
+      margin-bottom: 2rem;
+      @media (min-width: $mq-small) {
+        margin-bottom: 0;
+      }
+      &.large {
+        .sounds-meta-cta {
+          @media (min-width: $mq-medium) {
+            margin: 1.1rem 0;
+          }
+        }
+        .sounds-meta-title {
+          @include font-size(32);
+        }
+      }
     }
+    .sounds-cover {
+      background: #42424C;
+      padding: 2rem;
+    }
+    .sounds-cover-img {
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      height: auto;
+      width: 100%;
+    }
+    .sounds-meta {
+      background: $color-white;
+      padding: 3rem 2rem;
+    }
+    .sounds-meta-title {
+      color: $color-black;
+      font-weight: 700;
+      margin: 0;
+      padding: 0;
+    }
+    .sounds-meta-cta {
+      display: inline-block;
+      left: -.3rem;
+      margin: 1rem 0 0;
+      position: relative;
+      @media (min-width: $mq-medium) {
+        float: right;
+        left: 0;
+        margin: .5rem 0;
+      }
+    }
+
     .sound-list {
       margin-left: -15px;
       margin-right: -15px;

@@ -300,6 +300,11 @@
     @media (min-width: $mq-medium) {
       font-size: 1.6rem;
     }
+    &.cta-red {
+      background: $color-red;
+      border-color: transparent;
+      color: $color-white;
+    }
   }
 
 // Form Elements

@@ -5,45 +5,85 @@ nl_header: Get updated on when I have new music for you!
 nl_p: Music updates straight to your email.
 ---
 
-section.site-hero.site-section.bg-white.no-border
+section.site-hero.site-section.bg-black.no-border
   .site-hero-text
     h1
       span.fadeInUp 
         span.word The Music
       span.fadeInUp
         span.sub Music I've made throughout my life
-section.site-sounds.site-section
+section.site-sounds.site-section.bg-black.no-border
   .container-fluid
     .row
-      .col-xs-12.col-md-12
-        ul.sound-list.no-list
-          - data.soundlist.sound.each do |sound|
-            li.sound-set.hideme.showmeonload data-url=sound.url data-name=sound.name
-              .container-fluid
+      .col-xs-12.col-md-10.col-md-offset-1
+        .row
+          .col-xs-12.col-sm-6
+            .sounds-block.large
+              .sounds-cover
+                == image_tag "sounds-cover-thescore.png", alt: "The Score", class: "sounds-cover-img"
+              .sounds-meta
                 .row
-                  .sound-meta.col-xs-8.col-sm-11.col-lg-9.col-lg-offset-1
-                    span.sound-title 
-                      = sound.name
-                  .sound-controls.col-xs-4.col-sm-1.col-lg-1
-                    .row
-                      / .col-xs-6
-                      /   span.sound-control-play
-                      .col-xs-12
-                        = link_to sound.url, class: 'sound-control-download', download: 'download', onclick: "ga('send', 'event', { eventCategory: 'download', eventAction: 'music', eventLabel: = sound.name})" do
-                          i.fa.fa-angle-down
-
-.mbp-player
+                  .col-xs-12.col-md-7
+                    h4.sounds-meta-title
+                      | The Score
+                    span.sounds-meta-year
+                      | 2017
+                  .col-xs-12.col-md-5
+                    a.cta-pill.cta-red.sounds-meta-cta href="sounds/the-score.html" Listen
+          .col-xs-12.col-sm-6
+            .sounds-block.large
+              .sounds-cover
+                == image_tag "sounds-cover-higher.png", alt: "Higher", class: "sounds-cover-img"
+              .sounds-meta
+                .row
+                  .col-xs-12.col-md-7
+                    h4.sounds-meta-title
+                      | Higher
+                    span.sounds-meta-year
+                      | 2016
+                  .col-xs-12.col-md-5
+                    a.cta-pill.cta-red.sounds-meta-cta href="sounds/higher.html" Listen
+section.site-sounds.site-section.bg-black.no-border
   .container-fluid
     .row
-      .col-xs-8.col-sm-4
-        .mbp-player-current
-          span.title Track Name
-      .col-xs-2.col-sm-4
-        .mbp-player-controller
-          #play.mbp-player-button.mbp-player-button-play
-        audio id="audio" tabindex="0" controls="" type="audio/mpeg" class="regular-player"
-          source type="audio/mp3" src="#"
-      .col-xs-2.col-sm-4
-        .mbp-player-download
-          a.sound-control-download href="#" download="download" onClick="ga('send', 'event', { eventCategory: 'download', eventAction: 'music', eventLabel: 'trackname'});"
-            i.fa.fa-angle-down
+      .col-xs-12.col-md-10.col-md-offset-1
+        .row
+          .col-xs-12.col-sm-4
+            .sounds-block
+              .sounds-cover
+                == image_tag "sounds-cover-freewaynights.png", alt: "Freeway Nights", class: "sounds-cover-img"
+              .sounds-meta
+                .row
+                  .col-xs-12.col-md-7
+                    h4.sounds-meta-title
+                      | Freeway Nights
+                    span.sounds-meta-year
+                      | 2014
+                  .col-xs-12.col-md-5
+                    a.cta-pill.cta-red.sounds-meta-cta href="sounds/freeway-nights.html" Listen
+          .col-xs-12.col-sm-4
+            .sounds-block
+              .sounds-cover
+                == image_tag "sounds-cover-genius.png", alt: "Genius", class: "sounds-cover-img"
+              .sounds-meta
+                .row
+                  .col-xs-12.col-md-7
+                    h4.sounds-meta-title
+                      | Genius
+                    span.sounds-meta-year
+                      | 2011
+                  .col-xs-12.col-md-5
+                    a.cta-pill.cta-red.sounds-meta-cta href="sounds/genius.html" Listen
+          .col-xs-12.col-sm-4
+            .sounds-block
+              .sounds-cover
+                == image_tag "sounds-cover-coffeeandreefer.png", alt: "Coffee and Reefer", class: "sounds-cover-img"
+              .sounds-meta
+                .row
+                  .col-xs-12.col-md-7
+                    h4.sounds-meta-title
+                      | Coffee and Reefer
+                    span.sounds-meta-year
+                      | 2010
+                  .col-xs-12.col-md-5
+                    a.cta-pill.cta-red.sounds-meta-cta href="sounds/coffee-and-reefer.html" Listen
