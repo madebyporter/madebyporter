@@ -22,31 +22,31 @@ html
 
   body class="#{page_classes}"
     main.site-wrapper
-      header.site-header
+      header.site-masthead
         .container-fluid
           .row
             .col.col-xs-12.col-sm-6
-              .site-header-logo-container
-                .site-header-logo
+              .site-masthead-logo-container
+                .site-masthead-logo
                   == link_to 'Made by Porter', '/'
             .col.col-xs-12.col-sm-6
-              nav.site-header-nav
-                ul.site-header-nav-list
-                  li.site-header-nav-link
+              nav.site-masthead-nav
+                ul.site-masthead-nav-list
+                  li.site-masthead-nav-link
                     == link_to 'Home', '/'
-                  li.site-header-nav-link
+                  li.site-masthead-nav-link
                     == link_to 'Design<span class="hidden-xs hidden-sm"> &amp; Code</span>', '/design/'
-                  li.site-header-nav-link
-                    == link_to 'Music', '/sounds/'
-                  li.site-header-nav-link
+                  li.site-masthead-nav-link
+                    == link_to 'Sounds', '/sounds/'
+                  li.site-masthead-nav-link
                     == link_to 'Photos', '/photos/'
-                  li.site-header-nav-link
+                  li.site-masthead-nav-link
                     == link_to 'Blog', '/blog/'
-                  li.site-header-nav-link
+                  li.site-masthead-nav-link
                     == link_to 'Contact', '/contact/'
       section.site-body
         == yield
-      footer#footer.site-footer.site-section.no-border.bg-black
+      footer#footer.site-footer
         .site-section-inner
           .container-fluid
             .row
@@ -63,13 +63,13 @@ html
                               .article-list-img
                                 = link_to article.url do
                                   = image_tag article.data.thumbnail_image
-                            .col-xs-12.col-md-7
+                            .col-xs-12.col-md-6
                               .article-list-meta
                                 h3 = article.title
                                 .article-list-cta = link_to 'Read More', article.url
                   .col-xs-12.col-sm-12.col-md-4
                     .newsletter-container
-                      h2
+                      h3
                         = current_page.data.nl_header
                       p
                         = current_page.data.nl_p
@@ -90,7 +90,7 @@ html
             .row
               .col-xs-12
                 .site-footer-social.hideme
-                  h4.site-footer-social-header
+                  h4.site-footer-social-masthead
                     | Follow me around
                   ul.social-media-list.no-list
                     li.social-media-list-ele

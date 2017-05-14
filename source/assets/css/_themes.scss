@@ -1,22 +1,76 @@
 // _themes.scss
 
-// Theme Dark
-  .theme-black {
+// Theme Background
+  .theme-background {
     background: $color-black;
-    a {
+
+    .site-masthead, .site-hero, .site-section {
+      background: $color-black-50;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       color: $color-white;
+    }
+
+    .site-header {
+      h1, h2, h3, h4, h5, h6 {
+        color: $color-white;
+      }
+      p {
+        color: $color-grey-l4;
+      }
+    }
+    a {
+      color: $color-red;
       font-weight: 700;
+      &:hover {
+        color: $color-red-l1;
+      }
+    }
+    .crumbs {
+      color: $color-white;
+    }
+    .section-content-checklist-ele {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .site-masthead-nav-link a {
+      color: $color-white;
       &:hover {
         color: darken($color-white,10%);
       }
     }
-    .site-hero-text {
-      h1, h2, h3, .word, {
+  }
+
+// Theme Black
+  .theme-black {
+    background: $color-black;
+
+    .site-masthead, .site-hero, .site-section {
+      background: $color-black-50;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: $color-white;
+    }
+
+    .site-header {
+      h1, h2, h3, h4, h5, h6 {
         color: $color-white;
       }
-      .connector, .sub {
+      p {
         color: $color-grey-l3;
       }
+    }
+
+    p {
+      color: $color-grey-l3;
+    }
+
+    a {
+      color: $color-red;
+      font-weight: 700;
+      &:hover {
+        color: lighten($color-red,10%);
+      }
+    }
+    .crumbs {
+      color: $color-white;
     }
     .faq-question {
       color: $color-white;
@@ -27,7 +81,8 @@
     .section-content-checklist-ele {
       border-bottom: 1px solid $color-white;
     }
-    .site-header-nav-link a {
+    .site-masthead-nav-link a {
+      color: $color-white;
       &:hover {
         color: darken($color-white,10%);
       }
@@ -61,7 +116,7 @@
     .section-content-checklist-ele {
       border-bottom: 1px solid $color-red-d2;
     }
-    .site-header-nav-link a {
+    .site-masthead-nav-link a {
       &:hover {
         color: darken($color-white,10%);
       }
@@ -72,34 +127,36 @@
   .theme-white {
     background: $color-white;
     color: $color-black;
-    h1, h2, h3 {
+
+    .site-masthead, .site-hero, .site-section {
+      background: $color-white;
+      border-bottom: 1px solid $color-grey-l4;
       color: $color-black;
     }
-    h4, h5, h6 {
-      color: $color-grey-l2;
+
+    h1, h2, h3, h4, h5, h6 {
+      color: $color-black;
     }
-    p, .form-field-label {
+    p, ul, li, div, .form-field-label {
       color: $color-grey-d3;
     }
     a {
       color: $color-red;
     }
-    .site-header {
-      @extend .bg-white;
-      @extend .no-border;
-      border-bottom: 1px solid $color-grey-l4;
+
+    .site-masthead {
       &:after {
         background: $color-grey-l3;
       }
     }
-    .site-header-nav-list {
+    .site-masthead-nav-list {
       border-top: 1px solid $color-grey-l4;
       @media (min-width: $mq-small) {
         border-top: 0 solid $color-grey-l4;
         border-left: 1px solid $color-grey-l4;
       }
     }
-    .site-header-nav-link {
+    .site-masthead-nav-link {
       border-bottom: 1px solid $color-grey-l4;
       border-right: 1px solid $color-grey-l4;
       a {
@@ -122,7 +179,7 @@
         color: $color-grey-l2;
       }
     }
-    .site-header-logo {
+    .site-masthead-logo {
       a {
         -webkit-filter: invert(0);
         -moz-filter: invert(0);

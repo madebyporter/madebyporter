@@ -12,14 +12,15 @@
   body {
     background: $color-white;
     font-family: $font-reg;
-    @include font-size(16);
-    line-height: 1.2;
+    @include font-size(18);
+    line-height: 1.5;
     height: 100%;
     width: 100%;
     position: absolute;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
     &.overflow {
       overflow: hidden;
     }
@@ -44,6 +45,187 @@
     }
   }
 
+  // Paragraphs
+    p, ul, li, div {
+      font-family: $font-reg;
+      @include font-size(18);
+
+      & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {
+        margin-top: 2rem;
+      }
+    }
+    
+    p {
+      margin-bottom: 1rem;
+    }
+
+  // Headers
+    h1, h2, h3, h4, h5, h6 {
+      display: block;
+      font-family: $font-reg;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 2rem;
+    }
+
+    h1 {
+      @include font-size(48);
+      @media (min-width: $mq-small) {
+        @include font-size(82);
+      }
+    }
+
+    h2 {
+      @include font-size(32);
+      @media (min-width: $mq-small) {
+        @include font-size(48);
+      }
+    }
+
+    h3 {
+      @include font-size(24);
+      @media (min-width: $mq-small) {
+        @include font-size(28);
+      }
+    }
+
+    h4 {
+      @include font-size(14);
+      @media (min-width: $mq-small) {
+        @include font-size(18);
+      }
+    }
+
+    h5 {
+      @include font-size(10);
+      @media (min-width: $mq-small) {
+        @include font-size(14);
+      }
+    }
+
+    h6 {
+      @include font-size(8);
+      @media (min-width: $mq-small) {
+        @include font-size(10);
+      }
+    }
+
+    .inline-sub {
+      display: inline-block;
+      font-weight: 300;
+      opacity: .7;
+    }
+
+  // Site Headers
+    .site-header {
+      margin: 0 0 4rem 0;
+      p {
+        // @extend .caps-reg;
+        @include font-size(18);
+        letter-spacing: .02rem;
+        margin: 2rem 0 0 0;
+        @media (min-width: $mq-small) {
+          @include font-size(24);
+        }
+      }
+    }
+    .site-header-center {
+      text-align: center;
+    }
+
+  // Type Sets
+    .caps-light {
+      font-weight: 300;
+      letter-spacing: .2rem;
+      text-transform: uppercase;
+    }
+    .caps-reg {
+      font-weight: 400;
+      letter-spacing: .2rem;
+      text-transform: uppercase;
+    }
+    .caps-bold {
+      font-weight: 700;
+      letter-spacing: .2rem;
+      text-transform: uppercase;
+    }
+
+  // Figures
+    .site-figure {
+      margin: 0 0 2rem 0;
+      img {
+        width: 100%;
+      }
+    }
+
+  // Blockquotes
+    blockquote { 
+      p {
+        font-family: $font-secondary;
+        @include font-size(40);
+        font-style: italic;
+        font-weight: 700;
+      }
+    }
+
+  // Lists
+    ul {
+      list-style: disc;
+      margin: 0 0 20px 20px;
+      li {
+        // @include font-size(24);
+        margin-bottom: 10px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {
+        margin-top: 6rem;
+      }
+    }
+    .no-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        margin-bottom: 0;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+  // Nav Links
+    .site-header-nav-link a {
+      color: $color-white;
+      @include font-size(16);
+      font-weight: bold;
+      @media (min-width: $mq-small) {
+        font-size: 1.8rem;
+      }
+    }
+
+  // Forms
+    .form-field-label {
+      color: $color-white;
+      @include font-size(16);
+      font-weight: 300;
+    }
+
+    .sub-text {
+      color: $color-grey-l3;
+      @include font-size(14);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
   .site-wrapper {
     height: 100%;
     width: 100%;
@@ -59,8 +241,9 @@
     position: relative;
   }
 
-// Header Styles
-  .site-header {
+// Masthead Styles
+  .site-masthead {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -70,8 +253,15 @@
       @media (min-width: $mq-small) {
       }
     }
+    * {
+      margin-bottom: 0;
+      
+    }
+    .col {
+      padding: 0;
+    }
   }
-  .site-header-logo-container {
+  .site-masthead-logo-container {
     border-bottom: 1px solid rgba(255,255,255,0.1);
     height: 90px;
     position: relative;
@@ -81,7 +271,7 @@
       height: 114px;
     }
   }
-  .site-header-logo {
+  .site-masthead-logo {
     @include absolute-center;
     @media (min-width: $mq-small) {
       left: 20px;
@@ -109,14 +299,9 @@
     }
   }
 
+
 // Nav
-  .site-header {
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    .col {
-      padding: 0;
-    }
-  }
-  .site-header-nav-list {
+  .site-masthead-nav-list {
     @include flexbox;
     flex-wrap: wrap;
     list-style: none;
@@ -125,7 +310,7 @@
       border-left: 1px solid rgba(255,255,255,0.1);
     }
   }
-  .site-header-nav-link {
+  .site-masthead-nav-link {
     border-bottom: 1px solid rgba(255,255,255,0.1);
     border-right: 1px solid rgba(255,255,255,0.1);
     margin: 0;
@@ -138,15 +323,30 @@
     }
     a {
       display: block;
+      @include font-size(18);
+      font-weight: 700;
       padding: 15px 20px;
+    }
+  }
+
+// Site Header Styles
+  .site-header {
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0 0 1rem 0;
+    }
+    p {
+      margin: 0 0 1rem 0;
     }
   }
 
 // Site Content Styles
   .site-section {
     border-bottom: 1px solid #333;
-    padding: 40px 0 0;
+    padding: 4rem 0;
     position: relative;
+    @media (min-width: $mq-small) {
+      padding: 8rem 0;
+    }
     &.no-border {
       border: 0;
     }
@@ -155,9 +355,6 @@
     }
     h2 + p:first-child {
       padding-top: 0;
-    }
-    @media (min-width: $mq-small) {
-      padding: 40px 0;
     }
   }
   .section-content {
@@ -176,9 +373,9 @@
       }
     }
     &.sub {
-      min-height: 160px;
+      min-height: 300px;
       @media (min-width: $mq-small) {
-        min-height: 320px;
+        min-height: 500px;
       }
     }
   }
@@ -186,34 +383,6 @@
     text-align: center;
     @include absolute-center;
     width: 100%;
-    h1 {
-      // line-height: 0.8;
-    }
-    .word {
-      color: #E4E4E6;
-      display: inline-block;
-      letter-spacing: 1rem;
-      vertical-align: middle;
-      @include font-size(21);
-      @media (min-width: $mq-small) {
-        @include font-size(48);
-      }
-    }
-    .connector {
-      color: #919199;
-      @include font-size(12);
-      padding: 0 5px;
-      @media (min-width: $mq-small) {
-        @include font-size(36);
-        padding: 0 20px;
-      }
-    }
-    .space {
-      padding-right: 20px;
-    }
-    .sub {
-      color: #919199;
-    }
   }
 
   .buckets-divider {
@@ -304,6 +473,10 @@
       background: $color-red;
       border-color: transparent;
       color: $color-white;
+      &:hover {
+        background: $color-red-l1;
+        color: $color-white;
+      }
     }
   }
 
@@ -340,14 +513,7 @@
     }
     .form-field-submit {
       @extend .cta-pill;
-      background: transparent;
-      border-color: $color-black;
-      color: $color-black;
-      &:hover {
-        background: $color-red;
-        color: $color-white;
-        @include animation(lavalamp 400ms $timing 0s normal infinite forwards);
-      }
+      @extend .cta-red;
     }
   }
   .form-content {
@@ -427,7 +593,8 @@
   }
   .article-list-cta {
     a {
-      @extend .cta-bar;
+      @extend .cta-pill;
+      @extend .cta-red;
     }
   }
   .article-list-img {
@@ -567,6 +734,12 @@ ul.number-list {
   }
 
 // Crumbs
+  .breadcrumbs {
+    margin: 2rem 0;
+    & + section {
+      padding-top: 0;
+    }
+  }
   .crumbs {
     @include nolist;
     @include flexbox;
@@ -631,7 +804,7 @@ ul.number-list {
           background: url('../img/icon-triangle-right-grey.png') no-repeat;
           background-size: contain;
           height: 7px;
-          right: 3px;
+          right: 8px;
           top: 0;
           width: 10px;
           @include vertical-center;
@@ -664,17 +837,22 @@ ul.number-list {
 
 // Site Footer
   .site-footer {
+    background: $color-black;
+    border: 0;
+    padding: 4rem 0;
+
     h1, h2, h3, h4, h5, h6, p {
       color: $color-white;
     }
+
     &.site-section {
-      padding: 40px 0 20px;
+      padding: 4rem 0 2rem;
       @media (min-width: $mq-medium) {
-        padding: 120px 0 20px;
+        padding: 8rem 0 2rem;
       }
     }
     .site-content {
-      padding-bottom: 40px;
+      padding-bottom: 2rem;
       @media (min-width: $mq-small) {
         padding-bottom: 0;
       }
@@ -714,11 +892,17 @@ ul.number-list {
       border-bottom: 1px solid $border-color;
       box-shadow: inset 0 0 0 $color-black;
       cursor: pointer;
-      margin: 0 0 10px 0;
-      padding: 0px;
+      margin: 0 0 2rem 0;
+      padding: 0 0 2rem 0;
       @include transition;
-      [class^="container-"] {
-        // border: 1px solid $border-color;
+      @media (min-width: $mq-small) {
+        margin: 0 0 4rem 0;
+        padding: 0 0 4rem 0;
+      }
+      &:last-child {
+        border-bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
       }
     }
     a {

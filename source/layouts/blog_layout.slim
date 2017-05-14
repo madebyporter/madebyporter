@@ -1,10 +1,15 @@
 == wrap_layout :layout do
+  section.site-hero.sub.site-section.no-border
+    header.site-header.site-hero-text
+      .container
+        .row
+          .col-xs-12.col-md-10.col-md-offset-1
+            h1
+              = current_article.title
   section.site-blog.site-section.no-border
     .container-fluid
       .row
         .col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3.col-lg-6.col-lg-offset-3 
-          header.site-blog-header
-            h1 = current_article.title
           article.site-blog-post
             = current_article.body
   section.site-blog-pagination.site-section.no-border
@@ -17,7 +22,7 @@
                 - previous_article = current_article.previous_article
                 - if previous_article
                   .pagination-container
-                    h2
+                    h3
                       | Next up
                     = link_to previous_article.url do
                       = previous_article.title

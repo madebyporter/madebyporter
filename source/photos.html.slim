@@ -5,72 +5,74 @@ nl_header: Get my photos in your inbox!
 nl_p: Occasional photos in your email is always a good thing.
 ---
 
-section.site-hero.site-section.bg-white.no-border
-  .site-hero-text
-    h1
-      span.fadeInUp 
-        span.word.space The
-        span.word.space Visual
-        span.word Log
-      span.fadeInUp
-        span.sub I take photos for you to use.
+section.site-hero.site-section
+  .site-header.site-hero-text
+    .container-fluid
+      .row
+        .col-xs-12.col-md-10.col-md-offset-1
+          h1
+            | Photos
+          p
+            | Taken with my Fujifilm XE-1.
 section.site-photos.site-section.no-border
   .container-fluid
     .row
-      .col-xs-12.col-md-8
-        .photo-ele.photo-ele-x2
-          == link_to "/assets/img/photos/mbp-photos-ferriswheel-full.jpg", class:"newWindow" do
-            == image_tag "photos/mbp-photos-ferriswheel.jpg", alt: "Ferris Wheel", class: "hideme fadeIn"
-      .col-xs-12.col-md-4
-        .photo-ele.photo-ele-x1
-          == link_to "/assets/img/photos/mbp-photos-streetlamp-full.jpg", class:"newWindow" do
-            == image_tag "photos/mbp-photos-streetlamp.jpg", alt:"Street Lamp", class: "hideme fadeIn"
-        .photo-ele.photo-ele-x1
-          == link_to "/assets/img/photos/mbp-photos-veniceskatepark-full.jpg", class:"newWindow" do
-            == image_tag "photos/mbp-photos-veniceskatepark.jpg", alt:"Venice Skate Park", class: "hideme fadeIn"
-    .row
-      .col-xs-12
-        .photo-ele.photo-ele-x3
-          == link_to "/assets/img/photos/mbp-photos-pinkfloral-full.jpg", class:"newWindow" do
-            == image_tag "photos/mbp-photos-pinkfloral.jpg", alt:"Pink Floral", class: "hideme fadeIn" 
-    .row
-      .col-xs-12
-        .photo-ele.photo-ele-x3
-          == link_to "/assets/img/photos/mbp-photos-califloral-full.jpg", class:"newWindow" do
-            == image_tag "photos/mbp-photos-califloral.jpg", alt: "Cali Floral", class: "hideme fadeIn"
-    .row
-      .col-xs-12.col-md-4
-        .photo-ele.photo-ele-x1
-          == link_to "/assets/img/photos/mbp-photos-calisigns-full.jpg", class:"newWindow" do
-            == image_tag "photos/mbp-photos-calisigns.jpg", alt: "Cali Signs", class: "hideme fadeIn"
-      .col-xs-12.col-md-4
-        .photo-ele.photo-ele-x1
-          == link_to "/assets/img/photos/mbp-photos-vintageregister-full.jpg", class:"newWindow" do
-            == image_tag "photos/mbp-photos-vintageregister.jpg", alt:"Vintage Register", class: "hideme fadeIn"
-      .col-xs-12.col-md-4
-        .photo-ele.photo-ele-x1
-          == link_to "/assets/img/photos/mbp-photos-flowers2-full.jpg", class:"newWindow" do
-            == image_tag "photos/mbp-photos-flowers2.jpg", alt: "Flowers 2", class: "hideme fadeIn"    
-    .row
-      .col-xs-12.col-md-8
-        .photo-ele.photo-ele-x2
-          img.hideme.fadeIn src="/assets/img/photos/mbp-photos-jessicavessica-halloween-1.jpg" alt="Jess Halloween 1"
+      .col-xs-12.col-md-10.col-md-offset-1
         .row
-          .col-xs-12.col-md-6
+          .col-xs-12.col-md-8
+            .photo-ele.photo-ele-x2
+              == link_to "/assets/img/photos/mbp-photos-ferriswheel-full.jpg", class:"newWindow" do
+                == image_tag "photos/mbp-photos-ferriswheel.jpg", alt: "Ferris Wheel", class: "hideme fadeIn"
+          .col-xs-12.col-md-4
             .photo-ele.photo-ele-x1
-              == link_to "/assets/img/photos/mbp-photos-beachsunset-full.jpg", class:"newWindow" do
-                == image_tag "photos/mbp-photos-beachsunset.jpg", alt:"Beach Sunset", class: "hideme fadeIn"
-          .col-xs-12.col-md-6
+              == link_to "/assets/img/photos/mbp-photos-streetlamp-full.jpg", class:"newWindow" do
+                == image_tag "photos/mbp-photos-streetlamp.jpg", alt:"Street Lamp", class: "hideme fadeIn"
             .photo-ele.photo-ele-x1
-              == link_to "/assets/img/photos/mbp-photos-ocean-full.jpg", class:"newWindow" do
-                == image_tag "photos/mbp-photos-ocean.jpg", alt: "The Ocean", class: "hideme fadeIn"
-      .col-xs-12.col-md-4
-        .photo-ele.photo-ele-x1
-          == link_to "/assets/img/photos/mbp-photos-flower-full.jpg", class:"newWindow" do
-            == image_tag "photos/mbp-photos-flower.jpg", alt:"Flower", class: "hideme fadeIn"
-        .photo-ele.photo-ele-x1
-          == link_to "/assets/img/photos/mbp-photos-water-full.jpg", class:"newWindow" do
-            == image_tag "photos/mbp-photos-water.jpg", alt:"Water", class: "hideme fadeIn"
-        .photo-ele.photo-ele-x1
-          img.hideme.fadeIn src="/assets/img/photos/mbp-photos-jessicavessica-halloween-2.jpg" alt="Jess Halloween 2"
-          
+              == link_to "/assets/img/photos/mbp-photos-veniceskatepark-full.jpg", class:"newWindow" do
+                == image_tag "photos/mbp-photos-veniceskatepark.jpg", alt:"Venice Skate Park", class: "hideme fadeIn"
+        .row
+          .col-xs-12
+            .photo-ele.photo-ele-x3
+              == link_to "/assets/img/photos/mbp-photos-pinkfloral-full.jpg", class:"newWindow" do
+                == image_tag "photos/mbp-photos-pinkfloral.jpg", alt:"Pink Floral", class: "hideme fadeIn" 
+        .row
+          .col-xs-12
+            .photo-ele.photo-ele-x3
+              == link_to "/assets/img/photos/mbp-photos-califloral-full.jpg", class:"newWindow" do
+                == image_tag "photos/mbp-photos-califloral.jpg", alt: "Cali Floral", class: "hideme fadeIn"
+        .row
+          .col-xs-12.col-md-4
+            .photo-ele.photo-ele-x1
+              == link_to "/assets/img/photos/mbp-photos-calisigns-full.jpg", class:"newWindow" do
+                == image_tag "photos/mbp-photos-calisigns.jpg", alt: "Cali Signs", class: "hideme fadeIn"
+          .col-xs-12.col-md-4
+            .photo-ele.photo-ele-x1
+              == link_to "/assets/img/photos/mbp-photos-vintageregister-full.jpg", class:"newWindow" do
+                == image_tag "photos/mbp-photos-vintageregister.jpg", alt:"Vintage Register", class: "hideme fadeIn"
+          .col-xs-12.col-md-4
+            .photo-ele.photo-ele-x1
+              == link_to "/assets/img/photos/mbp-photos-flowers2-full.jpg", class:"newWindow" do
+                == image_tag "photos/mbp-photos-flowers2.jpg", alt: "Flowers 2", class: "hideme fadeIn"    
+        .row
+          .col-xs-12.col-md-8
+            .photo-ele.photo-ele-x2
+              img.hideme.fadeIn src="/assets/img/photos/mbp-photos-jessicavessica-halloween-1.jpg" alt="Jess Halloween 1"
+            .row
+              .col-xs-12.col-md-6
+                .photo-ele.photo-ele-x1
+                  == link_to "/assets/img/photos/mbp-photos-beachsunset-full.jpg", class:"newWindow" do
+                    == image_tag "photos/mbp-photos-beachsunset.jpg", alt:"Beach Sunset", class: "hideme fadeIn"
+              .col-xs-12.col-md-6
+                .photo-ele.photo-ele-x1
+                  == link_to "/assets/img/photos/mbp-photos-ocean-full.jpg", class:"newWindow" do
+                    == image_tag "photos/mbp-photos-ocean.jpg", alt: "The Ocean", class: "hideme fadeIn"
+          .col-xs-12.col-md-4
+            .photo-ele.photo-ele-x1
+              == link_to "/assets/img/photos/mbp-photos-flower-full.jpg", class:"newWindow" do
+                == image_tag "photos/mbp-photos-flower.jpg", alt:"Flower", class: "hideme fadeIn"
+            .photo-ele.photo-ele-x1
+              == link_to "/assets/img/photos/mbp-photos-water-full.jpg", class:"newWindow" do
+                == image_tag "photos/mbp-photos-water.jpg", alt:"Water", class: "hideme fadeIn"
+            .photo-ele.photo-ele-x1
+              img.hideme.fadeIn src="/assets/img/photos/mbp-photos-jessicavessica-halloween-2.jpg" alt="Jess Halloween 2"
+              

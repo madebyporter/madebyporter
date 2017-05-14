@@ -29,6 +29,9 @@ Slim::Engine.set_default_options :pretty => true
 activate :directory_indexes
 set :debug_assets, true
 
+# Sounds Layout
+page "/sounds/*", :layout => "sounds_layout"
+
 # Contact Layout
 page "/contact/*", :layout => "contact_layout"
 

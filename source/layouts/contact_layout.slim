@@ -1,12 +1,12 @@
 == wrap_layout :layout do 
   .contact
     section.site-hero.sub.site-section
-      .site-hero-text
-          h1
-            span.fadeInUp 
-              span.word Ready
-              span.word.connector to
-              span.word Work?
-            span.fadeInUp
-              span.sub I'm #{current_page.data.availability} for #{current_page.data.title}
+      .site-header.site-hero-text
+      	.container-fluid
+      	  .row
+      	    .col-xs-12.col-md-10.col-md-offset-1
+			        h1
+			          | Contact Me
+			        p 
+			          | I'm #{current_page.data.availability} for #{current_page.data.title}
     == yield

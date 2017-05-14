@@ -5,14 +5,15 @@ nl_header: Reading should be informative.
 nl_p: Get notified when I have something new for you.
 ---
 
-section.site-hero.site-section.bg-white.no-border
-  .site-hero-text
-      h1
-        span.fadeInUp 
-          span.word.space The
-          span.word Journal
-        span.fadeInUp
-          span.sub I'll come up with a cooler name later. Just read, learn &amp; get inspired.
+section.site-hero.sub.site-section
+  .site-header.site-hero-text
+    .container-fluid
+      .row
+        .col-xs-12.col-md-10.col-md-offset-1
+          h1
+            | Blog
+          p
+            | I like to speculate and talk about the future of creativity, design, tech &amp; music.
 section.site-blog-index.site-section
   .container-fluid
     .row
@@ -24,5 +25,6 @@ section.site-blog-index.site-section
                 = image_tag article.data.thumbnail_image
               .blog-list-link
                 = link_to article.url do
-                  = article.title
+                  h2
+                    = article.title
           
