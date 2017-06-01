@@ -15,6 +15,7 @@ js.main = {
     this.ig();
     this.crumbsDD();
     this.linksExternal();
+    this.fbPixel();
   },
 
   // Keep this shit in ABC Order
@@ -123,6 +124,14 @@ js.main = {
       } else {
         $(this).find('.custom-checkbox').removeClass('checked');
       }
+    });
+  },
+  fbPixel: function () {
+    $( '.newsletter-submit' ).click(function() {
+      fbq('track', 'Lead', {
+        value: 10.00,
+        currency: 'USD'
+      });
     });
   },
   fadeInScroll: function () {
