@@ -384,7 +384,14 @@
     @include absolute-center;
     width: 100%;
   }
-
+  .hero-cta {
+    margin: 2rem 0 0 0;
+    position: relative;
+    a {
+      @extend .cta-pill;
+      @extend .cta-red;
+    }
+  }
   .buckets-divider {
     @media (min-width: $mq-small) {
       border-right: 1px solid #333;
