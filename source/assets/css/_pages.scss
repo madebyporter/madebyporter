@@ -867,11 +867,9 @@
 // Blog
   .blog {
     @extend .theme-white;
-
     .site-hero {
       @extend .site-hero.sub;
     }
-
     .blog-list-ele {
       // margin-bottom: 20px;
       overflow: hidden;
@@ -946,7 +944,8 @@
     }
     .site-blog-post {
       p:first-child {
-        @include font-size(24);
+        @include font-size(28);
+        font-weight: 700;
       }
       img {
         width: 100%;
@@ -988,7 +987,7 @@
         a {
           color: $color-red;
           font-weight: bold;
-          font-size: 4em;
+          @include font-size(48);
           position: relative;
           @include transition;
           left: 0px;
