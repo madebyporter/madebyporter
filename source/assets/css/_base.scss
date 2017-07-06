@@ -48,7 +48,7 @@
   // Paragraphs
     p, ul, li, div {
       font-family: $font-reg;
-      @include font-size(18);
+      @include font-size(21);
 
       & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {
         margin-top: 2rem;
@@ -375,7 +375,7 @@
     &.sub {
       min-height: 300px;
       @media (min-width: $mq-small) {
-        min-height: 500px;
+        min-height: 450px;
       }
     }
   }
@@ -384,7 +384,14 @@
     @include absolute-center;
     width: 100%;
   }
-
+  .hero-cta {
+    margin: 2rem 0 0 0;
+    position: relative;
+    a {
+      @extend .cta-pill;
+      @extend .cta-red;
+    }
+  }
   .buckets-divider {
     @media (min-width: $mq-small) {
       border-right: 1px solid #333;
