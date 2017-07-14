@@ -15,6 +15,7 @@
     "grunt-slim": "^0.1.0"
   },
   "dependencies": {
+    "dropbox": "^2.5.4",
     "imagemin": "^4.0.0",
     "imagemin-mozjpeg": "^5.1.0",
     "imagemin-svgo": "^4.2.1"

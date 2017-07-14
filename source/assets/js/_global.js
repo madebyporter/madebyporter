@@ -11,10 +11,11 @@ js.main = {
     this.customCheckbox();
     this.formSubmit();
     this.gaTimeout();
-    this.mbpPlayer();
+    // this.mbpPlayer();
     this.ig();
     this.crumbsDD();
     this.linksExternal();
+    this.soundLibrary();
   },
 
   // Keep this shit in ABC Order
@@ -324,6 +325,100 @@ js.main = {
       audio[0].pause();
       $(this).replaceWith('<div class="mbp-player-button mbp-player-button-play" id="play"></div>');
     });
+  },
+  soundLibrary: function () {
+    var dbx = new Dropbox({ accessToken: 'N-g23ovvhLQAAAAAAACYx1-nxB2mgRwZmNQ-nLLuouH4mtTlwzmZw9DSjES0ImmM' });
+    dbx.filesListFolder({path: '/Public/music/mbp'})
+      .then(function(response) {
+        // console.log(response);
+        var files = response.entries;
+        var list = document.getElementById('list');
+        var ol = document.createElement('ol');
+        
+        files.forEach( function(files) {
+          var li = document.createElement('li');
+          var div = document.createElement('div');
+          var a = document.createElement('a');
+          var song = files.name;
+          div.innerHTML = song;
+          div.className += "sound-title";
+          li.appendChild(div);
+          li.className += "sound-set";
+          list.appendChild(li);
+        });
+        $('.sound-title').each(function() {
+          var $this = $(this);
+          $this.html($this.text().replace(/\b.mp3\b/g, ''));
+        });
+        mbpPlayer();
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    function mbpPlayer(){
+      var audio;
+      var playlist;
+      var tracks;
+      var current;
+      var volume;
+      init();
+      function init(){
+        current = 0;
+        audio = $('audio');
+        playlist = $('.sound-list');
+        tracks = playlist.find('li');
+        len = tracks.length - 1;
+        audio[0].volume = 1;
+
+        play = $('#play');
+        pause = $('#pause');
+        mute = $('#mute');
+        muted = $('#muted');
+
+        playlist.find('.sound-title').click(function(e){
+            e.preventDefault();
+            link = $(this);
+            current = link.parent().index();
+            run(link, audio[0]);
+        });
+        audio[0].addEventListener('ended',function(e){
+            current++;
+            if(current == len){
+                current = 0;
+                // audio[0].pause();
+                link = playlist.find('.sound-title')[0];
+            }else{
+                link = playlist.find('.sound-title')[current];    
+            }
+            run($(link),audio[0]);
+        });
+      }
+      function run(link, player){
+        // var name = link.closest('.sound-set').attr('data-name');
+        var src = 'https://dl.dropboxusercontent.com/u/80054631/music/mbp/';
+        var title = link.html();
+        var url = src + title + '.mp3';
+        player.src = url;
+        // $('.mbp-player-current .title').html(name);
+        // $('.mbp-player-download').find('a').attr("href", url);
+        par = link.closest('.sound-set');
+        par.addClass('active').siblings().removeClass('active');
+        audio[0].load();
+        audio[0].play();
+
+        $('#play').replaceWith('<div id="pause" class="button-pause">Pause</div>');
+        $('.controls').addClass('active');
+      }
+      $(document).on('click', '#play', function(){
+        audio[0].play();
+        $(this).replaceWith('<div id="pause" class="button-pause">Pause</div>');
+      });
+
+      $(document).on('click', '#pause', function(){
+        audio[0].pause();
+        $(this).replaceWith('<div id="play" class="button-play">Play</div>');
+      });
+    }
   },
   wpContact: function() {
     function wpInit(){
