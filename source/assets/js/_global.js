@@ -188,7 +188,7 @@ js.main = {
   },
   ig: function () {
     var gal = $(".photo-gallery"),
-        token = '1641373830.59f90b2.8291f13bf0ec4dd086efaffdf6f6377a', // learn how to obtain it below
+        token = '1641373830.ba4c844.7dd5ff18873547268c03867d51b11b75', // learn how to obtain it below
         userid = 1641373830, // User ID - get it in source HTML of your Instagram profile or look at the next example :)
         hashtag='madebyporterphotos',
         x = x,
@@ -200,7 +200,7 @@ js.main = {
       type: 'GET',
       data: {access_token: token, count: num_photos},
       success: function(data){
-        // console.log(data);
+        console.log(data);
         for( x in data.data ){
           gal.append('<li class="photo-gallery-ele"><a href="'+data.data[x].link+'" target="_blank"><img src="'+data.data[x].images.standard_resolution.url+'"></a></li>'); 
           // data.data[x].images.low_resolution.url - URL of image, 306х306
