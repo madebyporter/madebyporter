@@ -750,6 +750,10 @@ ul.number-list {
   .crumbs {
     @include nolist;
     @include flexbox;
+    justify-content: center;
+    @media (min-width: $mq-small) {
+      justify-content: flex-start;
+    }
     .crumbs-dd {
       cursor: pointer;
       position: relative;
@@ -816,6 +820,9 @@ ul.number-list {
           width: 10px;
           @include vertical-center;
         }
+      }
+      &:last-child {
+        padding-right: 0;
       }
     }
     .crumbs-dd-ele {

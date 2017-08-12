@@ -349,12 +349,36 @@ js.main = {
           var div = document.createElement('div');
           var a = document.createElement('a');
           var song = files.name;
+          var date = files.client_modified;
           div.innerHTML = song;
           div.className += "sound-title";
           li.appendChild(div);
+          li.dataset.date = date;
+          li.dataset.name = song;
           li.className += "sound-set";
           list.appendChild(li);
         });
+
+        // Sorting
+        var $songs = $('.sound-list'),
+          $songsli = $songs.children('li');
+
+        $songsli.sort(function(a,b){
+          var an = a.getAttribute('data-date'),
+            bn = b.getAttribute('data-date');
+
+          if(an > bn) {
+            return -1;
+          }
+          if(an < bn) {
+            return 1;
+          }
+          return 0;
+        });
+
+        $songsli.detach().appendTo($songs);
+
+        // Remove MP3 tag
         $('.sound-title').each(function() {
           var $this = $(this);
           $this.html($this.text().replace(/\b.mp3\b/g, ''));
