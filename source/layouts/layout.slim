@@ -67,22 +67,22 @@ html
             .row
               .col-xs-12.col-lg-10.col-lg-offset-1
                 .row
-                  .col-xs-12.col-sm-12.col-md-8
+                  .col-xs-12.col-sm-8.col-sm-offset-2.col-md-8
                     h2
                       | Latest Journal Entries
                     ul.article-list
                       - blog.articles[0...3].each do |article|
                         li.article-list-ele
                           .row
-                            .col-xs-12.col-md-3
+                            .col-xs-12.col-sm-3.col-md-3
                               .article-list-img
                                 = link_to article.url do
                                   = image_tag article.data.thumbnail_image
-                            .col-xs-12.col-md-6
+                            .col-xs-12.col-sm-6.col-md-6
                               .article-list-meta
                                 h3 = article.title
                                 .article-list-cta = link_to 'Read More', article.url
-                  .col-xs-12.col-sm-12.col-md-4
+                  .col-xs-12.col-sm-8.col-sm-offset-2.col-md-4
                     .newsletter-container
                       h3
                         = current_page.data.nl_header

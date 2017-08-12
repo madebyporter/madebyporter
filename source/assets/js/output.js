@@ -366,7 +366,7 @@ js.main = {
     var dbx = new Dropbox({ accessToken: 'N-g23ovvhLQAAAAAAACYx1-nxB2mgRwZmNQ-nLLuouH4mtTlwzmZw9DSjES0ImmM' });
     dbx.filesListFolder({path: '/Public/music/mbp'})
       .then(function(response) {
-        // console.log(response);
+        console.log(response);
         var files = response.entries;
         var list = document.getElementById('list');
         var ol = document.createElement('ol');
