@@ -337,7 +337,7 @@ js.main = {
   },
   soundLibrary: function () {
     var dbx = new Dropbox({ accessToken: 'N-g23ovvhLQAAAAAAACYx1-nxB2mgRwZmNQ-nLLuouH4mtTlwzmZw9DSjES0ImmM' });
-    dbx.filesListFolder({path: '/Public/music/mbp'})
+    dbx.filesListFolder({path: '/Music/mbp'})
       .then(function(response) {
         console.log(response);
         var files = response.entries;
@@ -428,7 +428,7 @@ js.main = {
       }
       function run(link, player){
         // var name = link.closest('.sound-set').attr('data-name');
-        var src = 'https://dl.dropboxusercontent.com/u/80054631/music/mbp/';
+        var src = 'https://dl.dropboxusercontent.com/content_link/';
         var title = link.html();
         var url = src + title + '.mp3';
         player.src = url;
