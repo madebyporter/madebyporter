@@ -32,135 +32,239 @@ var js = js || {},
 
 js.main = {
   init: function () {
-    this.linkDelay();
+    this.caseCarousel();
     this.fadeInScroll();
-    this.codeHighlight();
-    this.customCheckbox();
-    this.formSubmit();
-    this.gaTimeout();
-    // this.mbpPlayer();
-    this.ig();
-    this.crumbsDD();
     this.linksExternal();
-    this.fbPixel();
-    this.soundLibrary();
   },
 
   // Keep this shit in ABC Order
 
-  ajaxForm: function () {
-    // Get the form.
-    var form = $('#contactForm');
+  caseCarousel: function() {
+    var SETTINGS = {
+        navBarTravelling: false,
+        navBarTravelDirection: "",
+       navBarTravelDistance: 400
+    };
 
-    // Get the messages div.
-    var formMessages = $('#form-messages');
+    document.documentElement.classList.remove("no-js");
+    document.documentElement.classList.add("js");
 
-    // Get the form content
-    var formContent = $('.form-content');
+    // Out advancer buttons
+    var pnAdvancerLeft = document.getElementById("pnAdvancerLeft");
+    var pnAdvancerRight = document.getElementById("pnAdvancerRight");
+    // the indicator
+    var pnIndicator = document.getElementById("pnIndicator");
 
-    // Get form top
-    var offset = form.offset();
+    var pnProductNav = document.getElementById("caseStudiesWrap");
+    var pnProductNavContents = document.getElementById("caseStudiesContents");
 
-    // Set up an event listener for the contact form.
-    $(form).submit(function(event) {
-      // Stop the browser from submitting the form.
-      event.preventDefault();
+    pnProductNav.setAttribute("data-overflowing", determineOverflow(pnProductNavContents, pnProductNav));
 
-      // Serialize the form data.
-      var formData = $(form).serialize();
+    // Handle the scroll of the horizontal container
+    var last_known_scroll_position = 0;
+    var ticking = false;
 
-      function scrollTop(){
-        // Scroll to top to see error
-        $('html, body').animate({
-          scrollTop: form.offset().top - 150
-        }, 500);
-      }
+    function doSomething(scroll_pos) {
+        pnProductNav.setAttribute("data-overflowing", determineOverflow(pnProductNavContents, pnProductNav));
+    }
 
-      // Submit the form using AJAX.
-      $.ajax({
-        type: 'POST',
-        url: $(form).attr('action'),
-        data: formData
-      }).done(function(response) {
-        // Make sure that the formMessages div has the 'success' class.
-        $(formMessages).removeClass('error');
-        $(formMessages).addClass('success');
-
-        // Set the message text.
-        $(formMessages).text(response);
-
-        // Scroll to top to see completion
-        scrollTop();
-
-        // Hide Form
-        $(formContent).addClass('form-sent');
-
-        // Clear the form.
-        $('#name').val('');
-        $('#email').val('');
-        $('#message').val('');
-        $('#subscribe').val('');
-        $('.form-field-checkbox').val('');
-
-        setTimeout(function() {
-          // Show Form
-          $(formContent).removeClass('form-sent');
-          $(formMessages).removeClass('success').empty();
-        }, 3000);
-
-      }).fail(function(data) {
-        // Make sure that the formMessages div has the 'error' class.
-        $(formMessages).removeClass('success');
-        $(formMessages).addClass('error');
-
-        // Scroll to top to see error
-        scrollTop();
-
-        // Set the message text.
-        if (data.responseText !== '') {
-            $(formMessages).html("<div class='form-message-content'>" + data.responseText + "</div>");
-        } else {
-            $(formMessages).text('Oops! An error occured and your message could not be sent.');
+    pnProductNav.addEventListener("scroll", function() {
+        last_known_scroll_position = window.scrollY;
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                doSomething(last_known_scroll_position);
+                ticking = false;
+            });
         }
-      });
+        ticking = true;
     });
-  },
-  codeHighlight: function() {
-    $('pre code').each(function(i, block) {
-      hljs.configure({
-        languages: 'css'
-      });
-    });
-  },
-  crumbsDD: function () {
-    var dd = $('.crumbs-dd');
 
-    dd.on('click', function(){
-      $(this).toggleClass('active');
+
+    pnAdvancerLeft.addEventListener("click", function() {
+      // If in the middle of a move return
+        if (SETTINGS.navBarTravelling === true) {
+            return;
+        }
+        // If we have content overflowing both sides or on the left
+        if (determineOverflow(pnProductNavContents, pnProductNav) === "left" || determineOverflow(pnProductNavContents, pnProductNav) === "both") {
+            // Find how far this panel has been scrolled
+            var availableScrollLeft = pnProductNav.scrollLeft;
+            // If the space available is less than two lots of our desired distance, just move the whole amount
+            // otherwise, move by the amount in the settings
+            if (availableScrollLeft < SETTINGS.navBarTravelDistance * 2) {
+                pnProductNavContents.style.transform = "translateX(" + availableScrollLeft + "px)";
+            } else {
+                pnProductNavContents.style.transform = "translateX(" + SETTINGS.navBarTravelDistance + "px)";
+            }
+            // We do want a transition (this is set in CSS) when moving so remove the class that would prevent that
+            pnProductNavContents.classList.remove("pn-ProductNav_Contents-no-transition");
+            // Update our settings
+            SETTINGS.navBarTravelDirection = "left";
+            SETTINGS.navBarTravelling = true;
+        }
+        // Now update the attribute in the DOM
+        pnProductNav.setAttribute("data-overflowing", determineOverflow(pnProductNavContents, pnProductNav));
     });
-  },
-  customCheckbox: function () {
-    var $checkBox = $('.form-field-checkbox');
-    var $ele = $('.section-content-checklist-ele');
-    $checkBox.each(function(){
-      $(this).wrap( "<div class='custom-checkbox'></div>" );
+
+    pnAdvancerRight.addEventListener("click", function() {
+        // If in the middle of a move return
+        if (SETTINGS.navBarTravelling === true) {
+            return;
+        }
+        // If we have content overflowing both sides or on the right
+        if (determineOverflow(pnProductNavContents, pnProductNav) === "right" || determineOverflow(pnProductNavContents, pnProductNav) === "both") {
+            // Get the right edge of the container and content
+            var navBarRightEdge = pnProductNavContents.getBoundingClientRect().right;
+            var navBarScrollerRightEdge = pnProductNav.getBoundingClientRect().right;
+            // Now we know how much space we have available to scroll
+            var availableScrollRight = Math.floor(navBarRightEdge - navBarScrollerRightEdge);
+            // If the space available is less than two lots of our desired distance, just move the whole amount
+            // otherwise, move by the amount in the settings
+            if (availableScrollRight < SETTINGS.navBarTravelDistance * 2) {
+                pnProductNavContents.style.transform = "translateX(-" + availableScrollRight + "px)";
+            } else {
+                pnProductNavContents.style.transform = "translateX(-" + SETTINGS.navBarTravelDistance + "px)";
+            }
+            // We do want a transition (this is set in CSS) when moving so remove the class that would prevent that
+            pnProductNavContents.classList.remove("pn-ProductNav_Contents-no-transition");
+            // Update our settings
+            SETTINGS.navBarTravelDirection = "right";
+            SETTINGS.navBarTravelling = true;
+        }
+        // Now update the attribute in the DOM
+        pnProductNav.setAttribute("data-overflowing", determineOverflow(pnProductNavContents, pnProductNav));
     });
-    $(doc).on('click', '.section-content-checklist-ele', function(){
-      event.stopPropagation();
-      if ($(this).find($checkBox).is(':checked')) {
-        $(this).find('.custom-checkbox').addClass('checked');
-      } else {
-        $(this).find('.custom-checkbox').removeClass('checked');
-      }
-    });
-  },
-  fbPixel: function () {
-    $( '.newsletter-submit' ).click(function() {
-      fbq('track', 'Lead', {
-        value: 10.00,
-        currency: 'USD'
-      });
-    });
+
+    pnProductNavContents.addEventListener(
+        "transitionend",
+        function() {
+            // get the value of the transform, apply that to the current scroll position (so get the scroll pos first) and then remove the transform
+            var styleOfTransform = window.getComputedStyle(pnProductNavContents, null);
+            var tr = styleOfTransform.getPropertyValue("-webkit-transform") || styleOfTransform.getPropertyValue("transform");
+            // If there is no transition we want to default to 0 and not null
+            var amount = Math.abs(parseInt(tr.split(",")[4]) || 0);
+            pnProductNavContents.style.transform = "none";
+            pnProductNavContents.classList.add("pn-ProductNav_Contents-no-transition");
+            // Now lets set the scroll position
+            if (SETTINGS.navBarTravelDirection === "left") {
+                pnProductNav.scrollLeft = pnProductNav.scrollLeft - amount;
+            } else {
+                pnProductNav.scrollLeft = pnProductNav.scrollLeft + amount;
+            }
+            SETTINGS.navBarTravelling = false;
+        },
+        false
+    );
+
+    function determineOverflow(content, container) {
+        var containerMetrics = container.getBoundingClientRect();
+        var containerMetricsRight = Math.floor(containerMetrics.right);
+        var containerMetricsLeft = Math.floor(containerMetrics.left);
+        var contentMetrics = content.getBoundingClientRect();
+        var contentMetricsRight = Math.floor(contentMetrics.right);
+        var contentMetricsLeft = Math.floor(contentMetrics.left);
+       if (containerMetricsLeft > contentMetricsLeft && containerMetricsRight < contentMetricsRight) {
+            return "both";
+        } else if (contentMetricsLeft < containerMetricsLeft) {
+            return "left";
+        } else if (contentMetricsRight > containerMetricsRight) {
+            return "right";
+        } else {
+            return "none";
+        }
+    }
+
+    /**
+     * @fileoverview dragscroll - scroll area by dragging
+     * @version 0.0.8
+     * 
+     * @license MIT, see https://github.com/asvd/dragscroll
+     * @copyright 2015 asvd <heliosframework@gmail.com> 
+     */
+
+
+    (function (root, factory) {
+        if (typeof define === 'function' && define.amd) {
+            define(['exports'], factory);
+        } else if (typeof exports !== 'undefined') {
+            factory(exports);
+        } else {
+            factory((root.dragscroll = {}));
+        }
+    }(this, function (exports) {
+        var _window = window;
+        var _document = document;
+        var mousemove = 'mousemove';
+        var mouseup = 'mouseup';
+        var mousedown = 'mousedown';
+        var EventListener = 'EventListener';
+        var addEventListener = 'add'+EventListener;
+        var removeEventListener = 'remove'+EventListener;
+        var newScrollX, newScrollY;
+
+        var dragged = [];
+        var reset = function(i, el) {
+            for (i = 0; i < dragged.length;) {
+                el = dragged[i++];
+                el = el.container || el;
+                el[removeEventListener](mousedown, el.md, 0);
+                _window[removeEventListener](mouseup, el.mu, 0);
+                _window[removeEventListener](mousemove, el.mm, 0);
+            }
+
+            // cloning into array since HTMLCollection is updated dynamically
+            dragged = [].slice.call(_document.getElementsByClassName('dragscroll'));
+            for (i = 0; i < dragged.length;) {
+                (function(el, lastClientX, lastClientY, pushed, scroller, cont){
+                    (cont = el.container || el)[addEventListener](
+                        mousedown,
+                        cont.md = function(e) {
+                            if (!el.hasAttribute('nochilddrag') ||
+                                _document.elementFromPoint(
+                                    e.pageX, e.pageY
+                                ) == cont
+                            ) {
+                                pushed = 1;
+                                lastClientX = e.clientX;
+                                lastClientY = e.clientY;
+
+                                e.preventDefault();
+                            }
+                        }, 0
+                    );
+
+                    _window[addEventListener](
+                        mouseup, cont.mu = function() {pushed = 0;}, 0
+                    );
+
+                    _window[addEventListener](
+                        mousemove,
+                        cont.mm = function(e) {
+                            if (pushed) {
+                                (scroller = el.scroller||el).scrollLeft -=
+                                    newScrollX = (- lastClientX + (lastClientX=e.clientX));
+                                scroller.scrollTop -=
+                                    newScrollY = (- lastClientY + (lastClientY=e.clientY));
+                                if (el == _document.body) {
+                                    (scroller = _document.documentElement).scrollLeft -= newScrollX;
+                                    scroller.scrollTop -= newScrollY;
+                                }
+                            }
+                        }, 0
+                    );
+                 })(dragged[i++]);
+            }
+        };
+
+          
+        if (_document.readyState == 'complete') {
+            reset();
+        } else {
+            _window[addEventListener]('load', reset, 0);
+        }
+
+        exports.reset = reset;
+    }));
   },
   fadeInScroll: function () {
     setTimeout(function(){$('.showmeonload').addClass('showme'); },2500);
@@ -179,88 +283,6 @@ js.main = {
           // }, 200);
         }  
       }); 
-    });
-  },
-  formSubmit: function () {
-    $('#contactForm').one('submit',function(){
-      var idType = "entry.141953512";
-      var inputType = encodeURIComponent($('#type').val());
-      var idFname = "entry.84634872";
-      var inputFname = encodeURIComponent($('#fname').val());
-      var idLname = "entry.228472619";
-      var inputLname = encodeURIComponent($('#lname').val());
-      var idEmail = "entry.2042919330";
-      var inputEmail = encodeURIComponent($('#email').val());
-      var idMessage = "entry.797106235";
-      var inputMessage = encodeURIComponent($('#message').val());
-      var baseURL = 'https://docs.google.com/a/madebyporter.com/forms/d/e/1FAIpQLSerG3d7wwjIHr7LL6LfcKj2XyDGbEG1T3TS_9r2LmvtHajeAw/formResponse?';
-      var submitRef = '&submit=Submit';
-      var submitURL = (
-                        baseURL +
-                        idType + "=" + inputType + "&" +
-                        idFname + "=" + inputFname + "&" +
-                        idLname + "=" + inputLname + "&" +
-                        idEmail + "=" + inputEmail + "&" +
-                        idMessage + "=" + inputMessage +
-                        submitRef);
-      console.log(submitURL);
-      $(this)[0].action=submitURL;
-      $('#form-messages').addClass('success').text('Thanks for your submission. I will get back to you within 24 hours!');
-    });
-  },
-  gaTimeout: function () {
-    setTimeout(function(){
-      _gaq.push(['_trackEvent', 'Control', 'Bounce Rate', '']);
-    },60000);
-  },
-  ig: function () {
-    var gal = $(".photo-gallery"),
-        token = '1641373830.ba4c844.7dd5ff18873547268c03867d51b11b75', // learn how to obtain it below
-        userid = 1641373830, // User ID - get it in source HTML of your Instagram profile or look at the next example :)
-        hashtag='madebyporterphotos',
-        x = x,
-        num_photos = 7; // how much photos do you want to get
-     
-    $.ajax({
-      url: 'https://api.instagram.com/v1/tags/' + hashtag + '/media/recent',
-      dataType: 'jsonp',
-      type: 'GET',
-      data: {access_token: token, count: num_photos},
-      success: function(data){
-        console.log(data);
-        for( x in data.data ){
-          gal.append('<li class="photo-gallery-ele"><a href="'+data.data[x].link+'" target="_blank"><img src="'+data.data[x].images.standard_resolution.url+'"></a></li>'); 
-          // data.data[x].images.low_resolution.url - URL of image, 306х306
-          // data.data[x].images.thumbnail.url - URL of image 150х150
-          // data.data[x].images.standard_resolution.url - URL of image 612х612
-          // data.data[x].link - Instagram post URL 
-        }
-      },
-      error: function(data){
-        console.log(data); 
-      }
-    });
-  },
-  linkDelay: function () {
-    $.expr[':'].external = function (a) {
-        var PATTERN_FOR_EXTERNAL_URLS = /^(\w+:)?\/\//;
-        var href = $(a).attr('href');
-        return href !== undefined && href.search(PATTERN_FOR_EXTERNAL_URLS) !== -1;
-    };
-
-    $.expr[':'].internal = function (a) {
-        return $(a).attr('href') !== undefined && !$.expr[':'].external(a);
-    };
-
-    $('a:internal').click(function (e) {
-      e.preventDefault();                   // prevent default anchor behavior
-      var goTo = this.getAttribute("href"); // store anchor href
-
-        $('body').addClass('page-leave');
-
-        setTimeout(function(){
-        window.location = goTo;
-      }, 1000);       
     });
   },
   linksExternal: function () {
@@ -288,260 +310,7 @@ js.main = {
       window.open($(this).attr('href')); return false;
     });
   },
-  mbpPlayer: function () {
 
-    var audio;
-    var playlist;
-    var tracks;
-    var current;
-
-    if ($('body').hasClass('sounds_index')){
-      init();
-    }
-    
-    function init(){
-      current = 0;
-      audio = $('audio');
-      playlist = $('.sound-list');
-      tracks = playlist.find('li');
-      len = tracks.length - 1;
-      audio[0].volume = 1;
-
-      // audio[0].play();
-      playlist.find('.sound-title').click(function(e){
-          e.preventDefault();
-          link = $(this);
-          current = link.parent().index();
-          run(link, audio[0]);
-      });
-      audio[0].addEventListener('ended',function(e){
-          current++;
-          if(current == len){
-              current = 0;
-              audio[0].pause();
-              link = playlist.find('.sound-title')[0];
-          }else{
-              link = playlist.find('.sound-title')[current];    
-          }
-          run($(link),audio[0]);
-      });
-      $(document).on('click', '#play', function(){
-        audio[0].play();
-        $(this).replaceWith('<div class="mbp-player-button mbp-player-button-pause" id="pause"></div>');
-      });
-
-      $(document).on('click', '#pause', function(){
-        audio[0].pause();
-        $(this).replaceWith('<div class="mbp-player-button mbp-player-button-play" id="play"></div>');
-      });
-    }
-    function run(link, player){
-      var name = link.closest('.sound-set').attr('data-name');
-      var url = link.closest('.sound-set').attr('data-url');
-
-      player.src = url;
-      $('.mbp-player-current .title').html(name);
-      $('.mbp-player-download').find('a').attr("href", url);
-      $('.sound-control-download').attr("onclick", "ga('send', 'event', { eventCategory: 'download', eventAction: 'music', eventLabel: '"+name+"'});");
-      par = link.closest('.sound-set');
-      par.addClass('active').siblings().removeClass('active');
-      audio[0].load();
-      audio[0].play();
-
-      $('.mbp-player-button').replaceWith('<div class="mbp-player-button mbp-player-button-pause" id="pause"></div>');
-      $('.sounds_index').addClass('mbp-player-active');
-    }
-
-    $(document).on('click', '#play', function(){
-      audio[0].play();
-      $(this).replaceWith('<div class="mbp-player-button mbp-player-button-pause" id="pause"></div>');
-    });
-
-    $(document).on('click', '#pause', function(){
-      audio[0].pause();
-      $(this).replaceWith('<div class="mbp-player-button mbp-player-button-play" id="play"></div>');
-    });
-  },
-  soundLibrary: function () {
-    var dbx = new Dropbox({ accessToken: 'N-g23ovvhLQAAAAAAACYx1-nxB2mgRwZmNQ-nLLuouH4mtTlwzmZw9DSjES0ImmM' });
-    dbx.filesListFolder({path: '/Music/mbp'})
-      .then(function(response) {
-        console.log(response);
-        var files = response.entries;
-        var list = document.getElementById('list');
-        var ol = document.createElement('ol');
-        
-        files.forEach( function(files) {
-          var li = document.createElement('li');
-          var div = document.createElement('div');
-          var a = document.createElement('a');
-          var song = files.name;
-          var date = files.client_modified;
-          div.innerHTML = song;
-          div.className += "sound-title";
-          li.appendChild(div);
-          li.dataset.date = date;
-          li.dataset.name = song;
-          li.className += "sound-set";
-          list.appendChild(li);
-        });
-
-        // Sorting
-        var $songs = $('.sound-list'),
-          $songsli = $songs.children('li');
-
-        $songsli.sort(function(a,b){
-          var an = a.getAttribute('data-date'),
-            bn = b.getAttribute('data-date');
-
-          if(an > bn) {
-            return -1;
-          }
-          if(an < bn) {
-            return 1;
-          }
-          return 0;
-        });
-
-        $songsli.detach().appendTo($songs);
-
-        // Remove MP3 tag
-        $('.sound-title').each(function() {
-          var $this = $(this);
-          $this.html($this.text().replace(/\b.mp3\b/g, ''));
-        });
-        mbpPlayer();
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-    function mbpPlayer(){
-      var audio;
-      var playlist;
-      var tracks;
-      var current;
-      var volume;
-      init();
-      function init(){
-        current = 0;
-        audio = $('audio');
-        playlist = $('.sound-list');
-        tracks = playlist.find('li');
-        len = tracks.length - 1;
-        audio[0].volume = 1;
-
-        play = $('#play');
-        pause = $('#pause');
-        mute = $('#mute');
-        muted = $('#muted');
-
-        playlist.find('.sound-title').click(function(e){
-            e.preventDefault();
-            link = $(this);
-            current = link.parent().index();
-            run(link, audio[0]);
-        });
-        audio[0].addEventListener('ended',function(e){
-            current++;
-            if(current == len){
-                current = 0;
-                // audio[0].pause();
-                link = playlist.find('.sound-title')[0];
-            }else{
-                link = playlist.find('.sound-title')[current];    
-            }
-            run($(link),audio[0]);
-        });
-      }
-      function run(link, player){
-        // var name = link.closest('.sound-set').attr('data-name');
-        var src = 'https://dl.dropboxusercontent.com/content_link/';
-        var title = link.html();
-        var url = src + title + '.mp3';
-        player.src = url;
-        // $('.mbp-player-current .title').html(name);
-        // $('.mbp-player-download').find('a').attr("href", url);
-        par = link.closest('.sound-set');
-        par.addClass('active').siblings().removeClass('active');
-        audio[0].load();
-        audio[0].play();
-
-        $('#play').replaceWith('<div id="pause" class="button-pause">Pause</div>');
-        $('.controls').addClass('active');
-      }
-      $(document).on('click', '#play', function(){
-        audio[0].play();
-        $(this).replaceWith('<div id="pause" class="button-pause">Pause</div>');
-      });
-
-      $(document).on('click', '#pause', function(){
-        audio[0].pause();
-        $(this).replaceWith('<div id="play" class="button-play">Play</div>');
-      });
-    }
-  },
-  wpContact: function() {
-    function wpInit(){
-      var waypoint = new Waypoint({
-        element: document.getElementById('site-contact'),
-        handler: function(direction) {
-          var form = document.getElementById('mbp_form');
-          var form_width = form.offsetWidth;
-          if(direction==='down'){
-            form.classList.add('fixed');
-            form.style.width = '100%';
-            if (window.matchMedia('(min-width: 992px)').matches) {
-              form.style.width = form_width + 'px';
-            }
-            form.style.top = "20px";
-          } else if(direction==='up'){
-            form.classList.remove('fixed');
-            form.style.top = "auto";
-          }
-        },
-        offset: 20
-      });
-    }
-    function wpFooter(){   
-      var waypoint = new Waypoint({
-        element: document.getElementById('footer'),
-        handler: function(direction) {
-          function offset(el) {
-            var rect = el.getBoundingClientRect(),
-            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
-          }
-
-          var footer = document.getElementById('footer');
-          var footer_offset = offset(footer);
-          var footer_height = footer.offsetHeight;
-          var form = document.getElementById('mbp_form');
-          var form_height = form.offsetHeight;
-
-          if(direction==='down'){
-            form.classList.remove('fixed');
-            form.classList.add('bottom');
-            var top_pos = footer_offset.top - footer_height - 266;
-            form.style.top = top_pos + "px";
-          } else if(direction==='up'){
-            // form.style.top = 'auto';
-            form.classList.remove('bottom');
-            form.classList.add('fixed');
-            form.style.top = "20px";
-          }
-        },
-        offset: 600
-      });
-    }
-
-    if ($('body').hasClass('contact')){
-      wpInit(); wpFooter();
-    }
-    win.resize(function () {
-      js.main.wpContact();
-    });
-  },
 };
 
 doc.ready(function () {

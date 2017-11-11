@@ -1,0 +1,163 @@
+doctype html
+html
+  head
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+    meta charset="UTF-8"
+    meta name="keywords" content="made by porter, chris porter, designer, developer, ux, design, html, css, los angeles, cleveland"
+    meta name="description" content="Made by Porter, digital space for Chris Porter: designer, developer, musician &amp; photographer."
+    meta name="author" content="Made by Porter"
+    meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"
+
+    link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"
+    link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32"
+    link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16"
+    link rel="manifest" href="/favicon/manifest.json"
+    link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#ffffff"
+    meta name="theme-color" content="#ffffff"
+
+    title="Made by Porter - #{current_page.data.title}"
+
+    == stylesheet_link_tag :style
+    link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css"
+
+    <!-- Facebook Pixel Code -->
+    javascript:
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '853009594821892'); // Insert your pixel ID here.
+      fbq('track', 'PageView');
+
+    noscript
+      img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=853009594821892&ev=PageView&noscript=1"
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+
+  body class="#{page_classes}"
+    main.site-wrapper
+      header.site-masthead
+        .container-fluid
+          .row
+            .col.col-xs-12.col-sm-6
+              .site-masthead-logo-container
+                .site-masthead-logo
+                  == link_to 'Made by Porter', '/'
+            .col.col-xs-12.col-sm-6
+              nav.site-masthead-nav
+                ul.site-masthead-nav-list
+                  li.site-masthead-nav-link
+                    == link_to 'Home', '/'
+                  li.site-masthead-nav-link
+                    == link_to 'Design<span class="hidden-xs hidden-sm"> &amp; Code</span>', '/design/'
+                  li.site-masthead-nav-link
+                    == link_to 'Sounds', '/sounds/'
+                  li.site-masthead-nav-link
+                    == link_to 'Photos', '/photos/'
+                  li.site-masthead-nav-link
+                    == link_to 'Blog', '/blog/'
+                  li.site-masthead-nav-link
+                    == link_to 'Contact', '/contact/'
+      section.site-body
+        == yield
+      footer#footer.site-footer
+        .site-section-inner
+          .container-fluid
+            .row
+              .col-xs-12.col-lg-10.col-lg-offset-1
+                .row
+                  .col-xs-12.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-0
+                    h2
+                      | Latest Journal Entries
+                    ul.article-list
+                      - blog.articles[0...3].each do |article|
+                        li.article-list-ele
+                          .row
+                            .col-xs-4.col-sm-3.col-md-3
+                              .article-list-img
+                                = link_to article.url do
+                                  = image_tag article.data.thumbnail_image
+                            .col-xs-8.col-sm-9.col-md-9
+                              .article-list-meta
+                                h3 = article.title
+                                .article-list-cta = link_to 'Read More', article.url
+                  .col-xs-12.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0
+                    .newsletter-container
+                      h3
+                        = current_page.data.nl_header
+                      p
+                        = current_page.data.nl_p
+                      #mc_embed_signup
+                        form action="//madebyporter.us9.list-manage.com/subscribe/post?u=43c534416e476fa3af50b3e65&amp;id=2a32fa7a33" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate"
+                          #mc_embed_signup_scroll
+                          .mc-field-group
+                            input type="text" value="" name="FNAME" class="required email newsletter-name" id="mce-FNAME" placeholder="First Name"
+                            input type="email" value="" name="EMAIL" class="required email newsletter-email" id="mce-EMAIL" placeholder="Email Address"
+                            input type="text" value="#{current_page.data.interest}" name="INTEREST" class="hidden" id="mce-INTEREST"
+                            input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-submit"
+                          #mce-responses.clear
+                            div class="response" id="mce-error-response" style="display:none"
+                            div class="response" id="mce-success-response" style="display:none"
+                          div style="position: absolute; left: -5000px;" aria-hidden="true"
+                            input type="text" name="b_43c534416e476fa3af50b3e65_2a32fa7a33" tabindex="-1" value=""
+                        
+            .row
+              .col-xs-12
+                .site-footer-social.hideme
+                  h4.site-footer-social-masthead
+                    | Follow me around
+                  ul.social-media-list.no-list
+                    li.social-media-list-ele
+                      a href="http://www.twitter.com/madebyporter"
+                        == image_tag 'img-social-twitter.svg'
+                    li.social-media-list-ele
+                      a href="http://www.instagram.com/madebyporter"
+                        == image_tag 'img-social-instagram.svg'
+                    li.social-media-list-ele
+                      a href="http://www.dribbble.com/madebyporter"
+                        == image_tag 'img-social-dribbble.svg'
+                    li.social-media-list-ele
+                      a href="http://www.snapchat.com/add/portermade"
+                        == image_tag 'img-social-snapchat.svg'
+                    li.social-media-list-ele
+                      a href="http://www.soundcloud.com/madebyporter"
+                        == image_tag 'img-social-soundcloud.svg'
+    
+    == javascript_include_tag "output"
+    script src="https://use.typekit.net/pdw4yep.js"
+    script src="//cdnjs.cloudflare.com/ajax/libs/jquery-instagram/0.3.1/instagram.min.js"
+    script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"
+    javascript:
+      try{Typekit.load({ async: true });}catch(e){}
+    javascript:
+      hljs.initHighlightingOnLoad();
+    javascript:
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-54767153-1', 'auto');
+      ga('send', 'pageview');
+    javascript:
+      !function() {
+        var t;
+        if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+        t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+        t.factory = function(e) {
+          return function() {
+            var n;
+            return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+          };
+        }, t.methods.forEach(function(e) {
+          t[e] = t.factory(e);
+        }), t.load = function(t) {
+          var e, n, o, i;
+          e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+          o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+          n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+        });
+      }();
+      drift.SNIPPET_VERSION = '0.3.1';
+      drift.load('te4tdzbmect5');
