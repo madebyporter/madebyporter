@@ -22,13 +22,28 @@ html
 
   body class="#{page_classes}"
     main.site-wrap
+      nav.site-nav
+        ul.site-nav--list
+          li.site-nav--element
+            a.site-nav--link href="#"
+              | Cases
+          li.site-nav--element.site-nav--active
+            a.site-nav--link href="#"
+              | Mission
+          li.site-nav--element
+            a.site-nav--link href="#"
+              | Lab
+          li.site-nav--element
+            a.site-nav--link href="#"
+              | Collab   
       section#masthead.site-block.site-block--small-height.site-block--max-width
         .container-fluid
           .row
             .col-6
-              a href="#" Logo
+              .masthead-logo
+                == link_to 'Made by Porter', '/'
             .col-6
-              a.pull-right href="#" Work With Me
+              a.pull-right.comp-btn.comp-btn-red href="#" Work With Me
       section#hero.site-block.site-block--small-height.site-block--max-width
         .container-fluid
           .row
@@ -36,30 +51,18 @@ html
               h1
                 | Workin' &amp; Chillin'
               p.paragraph-large
-                | Chris Porter is an independent creative, building for passion &amp; startups.
+                | Chris Porter is an independent creative, building for passion projects &amp; startups.
       section#cases.site-block.site-block--full-width
         .site-block.site-block--max-width.site-block--small-height
           .container-fluid
             .row
               .col-12
-                nav.site-nav
-                  ul.site-nav--list
-                    li.site-nav--element
-                      a.site-nav--link href="#"
-                        | Mission
-                    li.site-nav--element
-                      a.site-nav--link href="#"
-                        | Work
-                    li.site-nav--element
-                      a.site-nav--link href="#"
-                        | Collab
-                    li.site-nav--element
-                      a.site-nav--link href="#"
-                        | Case Studies
+                h2
+                  | Case Studies
         #caseStudies.case-studies
-          #pnAdvancerLeft.case-studies--advancer.case-studies--advancer-left
+          #caseAdvancerLeft.case-studies--advancer.case-studies--advancer-left
             | Left
-          #pnAdvancerRight.case-studies--advancer.case-studies--advancer-right
+          #caseAdvancerRight.case-studies--advancer.case-studies--advancer-right
             | Right
           div#caseStudiesWrap.case-studies--wrap
             ul#caseStudiesContents.case-studies--contents
@@ -68,25 +71,84 @@ html
               li.case-studies--block
               li.case-studies--block
               li.case-studies--block
-      section.site-block.site-block--max-width
-        .container-fluid
-          .row
-            .col-12
-              nav.site-nav
-                ul.site-nav--list
-                  li.site-nav--element
-                    a.site-nav--link href="#"
-                      | Mission
-                  li.site-nav--element
-                    a.site-nav--link href="#"
-                      | Work
-                  li.site-nav--element
-                    a.site-nav--link href="#"
-                      | Collab
-                  li.site-nav--element
-                    a.site-nav--link href="#"
-                      | Case Studies
-      
+              li.case-studies--block
+              li.case-studies--block
+              li.case-studies--block
+              li.case-studies--block
+              li.case-studies--block
+      section#mission.site-block.site-block--full-width.style-mission
+        .site-block.site-block--max-width.site-block--small-height
+          .container-fluid
+            .row
+              .col-12
+                h2
+                  | Mission
+            .row
+              .col-md-6
+                p
+                  | <span class="sub-title">Work Smarter, Not Harder.</span>
+                p
+                  | This was my dad's favorite quote when I was younger. He always emphasized the importance of having an effective yet efficient workflow.
+
+                p
+                  | Today, that is the blood that runs through my veins. My passion is to help brands and people improve their businesses and lives by providing better design, visuals and multimedia.
+
+                h3
+                  | Here's my deep dives:
+                ul.comp-list
+                  li
+                    | Native App Design
+                  li
+                    | Web App Design
+                  li
+                    | Marketing Website Design
+                  li
+                    | HTML &amp; CSS Development
+
+                h3
+                  | What I do from time to time:
+                ul.comp-list
+                  li
+                    | Identity Branding
+                  li
+                    | Print Design
+                  li
+                    | Music Production
+                  li
+                    | Photography
+
+      section#lab.site-block.site-block--full-width.style-lab
+        .site-block.site-block--max-width.site-block--small-height
+          .container-fluid
+            .row
+              .col-12
+                h2
+                  | Lab
+            .row
+              .col-md-6
+                p
+                  | <span class="sub-title">Want to know what I'm working on?</span>
+                p
+                  | Here's my latest design work from <a href="http://www.dribbble.com/madebyporter">Dribbble</a>.
+            .row
+              .col-md-12
+                div.js-grid.my-shuffle
+      section#lab.site-block.site-block--full-width.style-collab
+        .site-block.site-block--max-width.site-block--small-height
+          .container-fluid
+            .row
+              .col-12
+                h2
+                  | Collab
+            .row
+              .col-md-6
+                p
+                  | <span class="sub-title">Want to work together on something cool?</span>
+                p
+                  | I'm booked for the rest of the year, however, I am open to future projects starting as early as February 2018. Get in touch.
+                p
+                  a.comp-btn.comp-btn-red href="#" Work With Me
+                
     
     == javascript_include_tag "output"
     // Typekit

@@ -18,7 +18,10 @@
         margin-top: 2rem;
       }
       @media (min-width: $mq-small) {
-        @include font-size(48);
+        @include font-size(24);
+        .paragraph-large {
+          @include font-size(36);
+        }
       }
     }
     
@@ -91,6 +94,10 @@
           @include font-size(24);
         }
       }
+    }
+    .sub-title {
+      color: $color-white;
+      font-weight: 700;
     }
 
   // Type Sets

@@ -13,7 +13,7 @@
     background: $color-black;
     height: 100%;
     width: 100%;
-    padding: $space-2 0;
+    padding: $space-3 0;
     position: absolute;
 
     -webkit-font-smoothing: antialiased;
@@ -67,7 +67,7 @@
     }
     .site-block {
       margin: 0 auto $space-4 auto;
-      min-height: 45vh;
+      min-height: 50vh;
       position: relative;
     }
     .site-block--full-width {
@@ -111,7 +111,6 @@
     .case-studies--contents {
       @extend .no-list;
       @include flexbox;
-      width: 420px * 5;
       padding: 0 0 0 5%;
       position: absolute;
       transition: transform .2s ease-in-out;
@@ -134,10 +133,14 @@
     }
     .case-studies--advancer-left {
       left: 0;
-      padding-left: 15%;
+      padding-left: 10%;
       [data-overflowing="both"] ~ &,
       [data-overflowing="left"] ~ & {
         opacity: 1;
+      }
+
+      @media (min-width: $mq-small) {
+        padding-left: 15%;
       }
     }
     .case-studies--advancer-right {
@@ -149,25 +152,134 @@
         opacity: 1;
       }
     }
-    .site-nav--list {
-      @include flexbox;
-      @extend .no-list;
+    .masthead-logo {
+      background: url('../img/mbp-logo-outlined.svg') no-repeat center;
+      background-size: cover;
+      height: 66px;
+      width: 66px;
+      @include filter(invert(1));
+      @include text-hide;
+    }
+    .site-nav {
+      @include vertical-center;
       display: none;
+      position: fixed;
+      z-index: 1000;
       @media (min-width: $mq-small) {
         display: block;
       }
     }
+    .site-nav--list {
+      @extend .no-list;
+      @media (min-width: $mq-small) {
+        @include rotate(-90);
+        @include flexbox;
+        left: -160px;
+        position: relative;
+      }
+    }
     .site-nav--element {
-      margin: 0 1rem 0 0;
+      margin: 0 $space-3 0 0;
+      padding: 0;
       &:last-child {
         margin-right: 0;
       }
     }
     .site-nav--link {
+      color: $color-grey-d1;
       @include font-size(24);
       font-weight: 700;
+      text-decoration: none;
+      &:hover {
+        color: $color-grey-l1;
+      }
+    }
+    .site-nav--active {
+      .site-nav--link {
+        color: $color-white;
+        // @include font-size(36);
+      }
     }
     .pn-ProductNav_Contents-no-transition {
       transition: none;
+    }
+    .style-mission {
+      background: transparent;
+      background-size: 30%;
+      @media (min-width: $mq-small) {
+        background: url('../img/mbp-home-wireframelayout.svg') no-repeat right top;
+      }
+    }
+    .my-shuffle {
+      position: relative;
+      overflow: hidden;
+      height: auto !important;
+      .column {
+        position: relative;
+        float: left;
+        min-height: 1px;
+        width: 50%;
+        padding-left: 4px;
+        padding-right: 4px;
+        /* Space between tiles */
+        margin-top: 8px;
+        @media (min-width: $mq-small) {
+          width: 25%;
+        }
+      }
+      .aspect {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+        overflow: hidden;
+      }
+
+      .aspect__inner {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      .aspect--16x9 {
+        padding-bottom: 56.25%;
+      }
+
+      .aspect--9x80 {
+        padding-bottom: calc(112.5% + 8px);
+      }
+
+      .aspect--32x9 {
+        padding-bottom: calc(28.125% - 3px);
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        
+        max-width: none;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .comp-list {
+      color: $color-grey-l3;
+      margin: 0 0 0 30px;
+    }
+    .comp-btn {
+      display: inline-block;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      @include transition;
+      &.comp-btn-red {
+        background: $color-red;
+        color: $color-white;
+        &:hover {
+          background: $color-red-l1;
+        }
+      }
     }
     
