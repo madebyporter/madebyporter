@@ -78,7 +78,7 @@
       max-width: 1600px;
       width: 100%;
       @media (min-width: $mq-small) {
-        width: 80%;
+        width: 85%;
       }
     }
     .site-block--small-height {
@@ -88,9 +88,7 @@
     .case-studies {
       // @extend .no-list;
       height: 234px;
-      position: absolute;
       width: 100%;
-      bottom: 0;
     }
     .case-studies--wrap {
       overflow-x: auto;
@@ -115,7 +113,7 @@
       position: absolute;
       transition: transform .2s ease-in-out;
       @media (min-width: $mq-small) {
-        padding: 0 0 0 10.8%;
+        padding: 0 0 0 8.5%;
       }
     }
     .case-studies--block {
@@ -140,7 +138,7 @@
       }
 
       @media (min-width: $mq-small) {
-        padding-left: 15%;
+        padding-left: 12%;
       }
     }
     .case-studies--advancer-right {
@@ -270,6 +268,7 @@
     }
     .comp-btn {
       display: inline-block;
+      @include font-size(16);
       font-weight: 700;
       padding: 1rem 2rem;
       text-decoration: none;
@@ -288,12 +287,12 @@
     .comp-block--vert-2 {
       @include flexbox;
       flex-wrap: wrap;
-      height: 250px;
+      height: auto;
       width: 100%;
       @include scale(1);
       @include transition;
       &:hover {
-        @include scale(1.05);
+        @include scale(1.02);
         .comp-block--top {
           background: $color-grey-d3;
           width: 70%;
@@ -301,8 +300,14 @@
         .comp-block--bottom {
           background: $color-grey-d2;
         }
-        .comp-block--header-text {
+        .comp-block--header-text-large {
           @include translate($space-1,0);
+        }
+        .comp-block--content-media {
+          // @include scale(1.05);
+          img {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+          }
         }
       }
       .comp-block--part {
@@ -311,27 +316,83 @@
         position: relative;
         width: 100%;
       }
-      .comp-block--header {
-        bottom: 0;
-        position: absolute;
-      }
-      .comp-block--header-text {
+      .comp-block--header-text-large {
         @include font-size(48);
         font-weight: 300;
+        margin: 0;
         @include transition;
+        @include translate(0,0);
+      }
+      .comp-block--header-text-small {
+        @include font-size(24);
+        font-weight: 300;
+        margin: 0;
         @include translate(0,0);
       }
       .comp-block--top {
         background: $color-grey-d4;
         display: inline-block;
-        height: 5%;
+        height: 40px;
         padding: $space-2 $space-2;
         width: 50%;
         @include transition;
+        .comp-block--header {
+          bottom: 0;
+          position: absolute;
+        }
       }
       .comp-block--bottom {
         background: $color-grey-d3;
-        height: 95%;
+        height: auto;
+        padding: 0;
         @include transition;
+      }
+      .comp-block--content {
+        height: auto;
+        margin: 0;
+        width: 100%;
+      }
+      .comp-block--content-media {
+        margin: 0;
+        width: 100%;
+        @include scale(1);
+        @include transition;
+        img {
+          box-shadow: 0 2px 4px rgba(0,0,0,0);
+          width: 100%;
+          @include transition;
+        }
+      }
+      .comp-block--content-text {
+        // background: $color-white;
+        margin: 0;
+        padding: $space-1 $space-2 $space-2 $space-2;
+        a {
+          color: $color-white;
+          font-weight: 700;
+          padding: 0 0 0 $space-1;
+          position: relative;
+          text-decoration: none;
+          @include font-size(16);
+          &:before {
+            background: $color-black;
+            content: "";
+            height: 20px;
+            left: -20px;
+            opacity: 0.5;
+            position: absolute;
+            width: 20px;
+            @include vertical-center;
+          }
+        }
+      }
+    }
+    .push-up--2 {
+      position: relative;
+      top: -2rem;
+    }
+    .style-masthead {
+      .comp-btn {
+        margin: $space-1 0;
       }
     }

@@ -9,17 +9,16 @@
   }
 
   // Paragraphs
-    p, ul, li, div {
+    p, ul, li {
       font-family: $font-reg;
       @include font-size(24);
-      margin: 0 0 20px 0;
-
+      margin-bottom: $space-1;
       & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {
-        margin-top: 2rem;
+        margin-top: $space-1;
       }
       @media (min-width: $mq-small) {
         @include font-size(24);
-        .paragraph-large {
+        &.paragraph-large {
           @include font-size(36);
         }
       }
@@ -137,9 +136,6 @@
         &:last-child {
           margin-bottom: 0;
         }
-      }
-      & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {
-        margin-top: 6rem;
       }
     }
     .no-list {
