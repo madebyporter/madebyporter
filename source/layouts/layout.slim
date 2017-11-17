@@ -121,18 +121,41 @@ html
         .site-block.site-block--max-width.site-block--small-height
           .container-fluid
             .row
-              .col-12
+              .col-xs-12.col-sm-4.col-lg-12
                 h2
                   | Lab
-            .row
-              .col-md-6
-                p
-                  | <span class="sub-title">Want to know what I'm working on?</span>
-                p
-                  | Here's my latest design work from <a href="http://www.dribbble.com/madebyporter">Dribbble</a>.
-            .row
-              .col-md-12
-                div.js-grid.my-shuffle
+              .col-xs-12.col-sm-8.col-lg-12
+                .row
+                  .col-sm-12.col-lg-4
+                    .comp-block.comp-block--vert-2
+                      .comp-block--part.comp-block--top
+                        header.comp-block--header
+                          h3.comp-block--header-text
+                            | Design
+                      .comp-block--part.comp-block--bottom
+                  .col-sm-12.col-lg-4
+                    .comp-block.comp-block--vert-2
+                      .comp-block--part.comp-block--top
+                        header.comp-block--header
+                          h3.comp-block--header-text
+                            | Beats
+                      .comp-block--part.comp-block--bottom
+                  .col-sm-12.col-lg-4
+                    .comp-block.comp-block--vert-2
+                      .comp-block--part.comp-block--top
+                        header.comp-block--header
+                          h3.comp-block--header-text
+                            | Photos
+                      .comp-block--part.comp-block--bottom
+            / .row
+            /   .col-md-6
+            /     p
+            /       | <span class="sub-title">Want to know what I'm working on?</span>
+            /     p
+            /       | Here's my latest design work from <a href="http://www.dribbble.com/madebyporter">Dribbble</a>.
+            / .row
+            /   .col-md-12
+            /     div.js-grid.my-shuffle
       section#lab.site-block.site-block--full-width.style-collab
         .site-block.site-block--max-width.site-block--small-height
           .container-fluid

@@ -282,4 +282,56 @@
         }
       }
     }
-    
+    .comp-block {
+      margin: $space-3 0;
+    }
+    .comp-block--vert-2 {
+      @include flexbox;
+      flex-wrap: wrap;
+      height: 250px;
+      width: 100%;
+      @include scale(1);
+      @include transition;
+      &:hover {
+        @include scale(1.05);
+        .comp-block--top {
+          background: $color-grey-d3;
+          width: 70%;
+        }
+        .comp-block--bottom {
+          background: $color-grey-d2;
+        }
+        .comp-block--header-text {
+          @include translate($space-1,0);
+        }
+      }
+      .comp-block--part {
+        margin: 0;
+        padding: $space-2;
+        position: relative;
+        width: 100%;
+      }
+      .comp-block--header {
+        bottom: 0;
+        position: absolute;
+      }
+      .comp-block--header-text {
+        @include font-size(48);
+        font-weight: 300;
+        @include transition;
+        @include translate(0,0);
+      }
+      .comp-block--top {
+        background: $color-grey-d4;
+        display: inline-block;
+        height: 5%;
+        padding: $space-2 $space-2;
+        width: 50%;
+        @include transition;
+      }
+      .comp-block--bottom {
+        background: $color-grey-d3;
+        height: 95%;
+        @include transition;
+      }
+    }
