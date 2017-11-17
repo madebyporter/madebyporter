@@ -82,12 +82,16 @@
       }
     }
     .site-block--small-height {
+      min-height: 72px;
+    }
+    .site-block--no-height {
       margin-bottom: 0;
       min-height: 72px;
     }
     .case-studies {
       // @extend .no-list;
       height: 234px;
+      position: relative;
       width: 100%;
     }
     .case-studies--wrap {

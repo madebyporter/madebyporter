@@ -5,65 +5,139 @@ nl_header: Learn how to create an online presence that works!
 nl_p: Get tips on how to better position yourself when it comes to your online presence.
 ---
 
-section.site-hero.index.site-section.no-border
-  .site-header.site-hero-text
+section#hero.site-block.site-block--small-height.site-block--max-width
+  .container-fluid
+    .row
+      .col-12
+        h1
+          | Workin' &amp; Chillin'
+        p.paragraph-large
+          | Chris Porter is an independent creative, building for passion projects &amp; startups.
+section#cases.site-block.site-block--full-width
+  .site-block.site-block--max-width.site-block--no-height
     .container-fluid
       .row
-        .col-xs-12.col-md-10.col-md-offset-1
-          h1
-            | Made by Porter
+        .col-12
+          h2
+            | Case Studies
+  #caseStudies.case-studies
+    #caseAdvancerLeft.case-studies--advancer.case-studies--advancer-left
+      | Left
+    #caseAdvancerRight.case-studies--advancer.case-studies--advancer-right
+      | Right
+    div#caseStudiesWrap.case-studies--wrap
+      ul#caseStudiesContents.case-studies--contents
+        li.case-studies--block
+        li.case-studies--block
+        li.case-studies--block
+        li.case-studies--block
+        li.case-studies--block
+        li.case-studies--block
+        li.case-studies--block
+        li.case-studies--block
+        li.case-studies--block
+        li.case-studies--block
+section#mission.site-block.site-block--full-width.style-mission
+  .site-block.site-block--max-width.site-block--small-height
+    .container-fluid
+      .row
+        .col-12
+          h2
+            | Mission
+      .row
+        .col-md-6
           p
-            | I help brands with the design of their next website or mobile app.
-          .hero-cta
-            == link_to 'View my Work', '/design/'
+            | <span class="sub-title">Work Smarter, Not Harder.</span>
+          p
+            | This was my dad's favorite quote when I was younger. He always emphasized the importance of having an effective yet efficient workflow.
 
-  .site-hero-help
-    span.fadeInUp Keep Scrolling
+          p
+            | Today, that is the blood that runs through my veins. My passion is to help brands and people improve their businesses and lives by providing better design, visuals and multimedia.
 
-section.site-home.site-home-about.site-section.no-border
-  .site-section-inner
-    .site-home-text-left
-      h3.site-home-header
-        | I'm <strong>Chris Porter</strong>, a creative from Cleveland, based in <strong>Los Angeles</strong>.
-      / .site-home-cta
-      /   == link_to 'Learn more about me', '/about'
-section.site-home.site-home-design.site-section.no-border
-  .site-section-inner
-    .site-home-figure-set
-      figure.site-home-figure.site-home-figure-design-sbt
-        figcaption
-          span Silicon Beach Talent
-          == link_to 'http://www.siliconbeachtalent.com', 'http://www.siliconbeachtalent.com'
-      figure.site-home-figure.site-home-figure-design-rf
-        figcaption
-          span Ron Finley
-          == link_to 'http://www.ronfinley.com', 'http://www.ronfinley.com'
-    .site-home-text-right
-      h3.site-home-header
-        | Startups &amp; small business come to me to help design their websites and apps.
-      .site-home-cta
-        == link_to 'Check out my design &amp; code.', '/design'
-section.site-home.site-home-music.site-section.no-border
-  .site-section-inner
-    .site-home-text-left
-      h3.site-home-header
-        | I make music for creatives as well. Chill, listen &amp; create.
-      .site-home-cta
-        == link_to 'Listen to &amp; download some music.', '/sounds'
-section.site-home.site-home-photo.site-section
-  .site-section-inner
-    h2.site-home-header
-      | The Visual Log  
-    nav.site-section-nav
-      ul.site-section-nav-list
-        li.site-section-nav-ele
-          == link_to 'Download Photos', '/photos'
-        li.site-section-nav-ele
-          == link_to 'Follow on the Gram', 'http://www.instagram.com/madebyporter'
-    ul.photo-gallery
-    nav.site-section-nav
-      ul.site-section-nav-list
-        li.site-section-nav-ele
-          == link_to 'Download Photos', '/photos'
-        li.site-section-nav-ele
-          == link_to 'Follow on the Gram', 'http://www.instagram.com/madebyporter'
+          h3
+            | Here's my deep dives:
+          ul.comp-list
+            li
+              | Native App Design
+            li
+              | Web App Design
+            li
+              | Marketing Website Design
+            li
+              | HTML &amp; CSS Development
+
+          h3
+            | What I do from time to time:
+          ul.comp-list
+            li
+              | Identity Branding
+            li
+              | Print Design
+            li
+              | Music Production
+            li
+              | Photography
+
+section#lab.site-block.site-block--full-width.style-lab
+  .site-block.site-block--max-width.site-block--small-height
+    .container-fluid
+      .row
+        .col-xs-12.col-sm-4.col-lg-12
+          h2
+            | Lab
+        .col-xs-12.col-sm-8.col-lg-12
+          .row
+            .col-sm-12.col-lg-4
+              .comp-block.comp-block--vert-2
+                .comp-block--part.comp-block--top
+                  header.comp-block--header
+                    h3.comp-block--header-text-large
+                      | Design
+                .comp-block--part.comp-block--bottom
+                  .comp-block--content
+                    .comp-block--content-media
+                      img src="https://cdn.dribbble.com/users/12718/screenshots/3010022/paystr-cards-dribbble.jpg" alt="Dribbble"
+                    .comp-block--content-text
+                      header.comp-block--header
+                        h4.comp-block--header-text-small
+                          | Paystr Business Cards
+                      a href="#" View more on Dribbble
+            .col-sm-12.col-lg-4
+              .comp-block.comp-block--vert-2.push-up--2
+                .comp-block--part.comp-block--top
+                  header.comp-block--header
+                    h3.comp-block--header-text-large
+                      | Beats
+                .comp-block--part.comp-block--bottom
+                  .comp-block--content
+                    .comp-block--content-media
+                      <iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322503491&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+                    .comp-block--content-text
+                      header.comp-block--header
+                        h4.comp-block--header-text-small
+                          | Everything
+                      a href="#" Listen to more on Soundcloud
+            .col-sm-12.col-lg-4
+              .comp-block.comp-block--vert-2
+                .comp-block--part.comp-block--top
+                  header.comp-block--header
+                    h3.comp-block--header-text-large
+                      | Photos
+                .comp-block--part.comp-block--bottom
+                  .comp-block--content
+                    .comp-block--content-media
+                      img src="https://scontent-lax3-2.cdninstagram.com/t51.2885-15/e35/23507514_165526230709252_3348232692939358208_n.jpg" alt="IG"
+                    .comp-block--content-text
+                      header.comp-block--header
+                        h4.comp-block--header-text-small
+                          | Tomato Taillight
+                      a href="#" View more on Instagram
+      / .row
+      /   .col-md-6
+      /     p
+      /       | <span class="sub-title">Want to know what I'm working on?</span>
+      /     p
+      /       | Here's my latest design work from <a href="http://www.dribbble.com/madebyporter">Dribbble</a>.
+      / .row
+      /   .col-md-12
+      /     div.js-grid.my-shuffle
