@@ -166,6 +166,7 @@
       @include vertical-center;
       display: none;
       position: fixed;
+      width: 400px;
       z-index: 1000;
       @media (min-width: $mq-small) {
         display: block;
@@ -176,6 +177,7 @@
       @media (min-width: $mq-small) {
         @include rotate(-90);
         @include flexbox;
+        justify-content: center;
         left: -160px;
         position: relative;
       }
@@ -282,6 +284,13 @@
         color: $color-white;
         &:hover {
           background: $color-red-l1;
+        }
+      }
+      &.comp-btn-grey {
+        background: $color-grey-d1;
+        color: $color-white;
+        &:hover {
+          background: $color-grey;
         }
       }
     }
@@ -398,5 +407,75 @@
     .style-masthead {
       .comp-btn {
         margin: $space-1 0;
+      }
+    }
+    ul.comp-music {
+      @include nolist;
+    }
+    li.comp-music--track {
+      background: $color-grey-d4;
+      padding: $space-2;
+      width: 100%;
+      @include transition;
+      &:hover {
+        background: $color-grey-d3;
+        span.comp-music--control {
+          color: $color-white;
+        }
+        span.comp-music--meta {
+          color: $color-white;
+        }
+      }
+    }
+    span.comp-music--control {
+      @include flexbox;
+      align-items: center;
+      color: $color-grey-l1;
+      cursor: pointer;
+      height: 44px;
+      @include scale(1);
+      @include transition($delay:200ms);
+      &:hover {
+        @include scale(1.01);
+      }
+    }
+    span.comp-music--meta {
+      color: $color-grey-l3;
+      @include transition($delay:200ms);
+    }
+    span.comp-music--meta-name {
+      @include flexbox;
+      align-items: center;
+      min-height: 44px;
+    }
+    .comp-nav-sort {
+      @include flexbox;
+      @include font-size(24);
+      margin: $space-2 0;
+      @media (min-width: $mq-large) {
+        float: right;
+      }
+    }
+    .comp-nav-sort--label {
+      color: $color-grey-l1;
+    }
+    .comp-nav-sort--list {
+      @include nolist;
+      @include flexbox;
+    }
+    .comp-nav-sort--ele {
+      @include font-size(24);
+      color: $color-grey-d2;
+      cursor: pointer;
+      font-weight: 700;
+      margin: 0 0 0 $space-2;
+      &:hover {
+        color: $color-grey-d1;
+      }
+    }
+    .comp-nav-sort--ele-active {
+      color: $color-grey-l3;
+      &:hover {
+        color: $color-grey-l3;
       }
     }

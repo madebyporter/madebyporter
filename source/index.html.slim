@@ -1,9 +1,21 @@
 ---
 title: Designer x Developer x Musician x Photographer
-interest: Design
-nl_header: Learn how to create an online presence that works!
-nl_p: Get tips on how to better position yourself when it comes to your online presence.
 ---
+
+nav.site-nav
+  ul.site-nav--list
+    li.site-nav--element
+      a.site-nav--link href="#"
+        | Cases
+    li.site-nav--element.site-nav--active
+      a.site-nav--link href="#"
+        | Mission
+    li.site-nav--element
+      a.site-nav--link href="#"
+        | Lab
+    li.site-nav--element
+      a.site-nav--link href="#"
+        | Collab  
 
 section#hero.site-block.site-block--small-height.site-block--max-width
   .container-fluid
@@ -116,7 +128,7 @@ section#lab.site-block.site-block--full-width.style-lab
                       header.comp-block--header
                         h4.comp-block--header-text-small
                           | Everything
-                      a href="#" Listen to more on Soundcloud
+                      == link_to 'Listen and Download Beats', '/music'
             .col-sm-12.col-lg-4
               .comp-block.comp-block--vert-2
                 .comp-block--part.comp-block--top
