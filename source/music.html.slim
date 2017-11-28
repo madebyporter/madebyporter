@@ -38,7 +38,13 @@ section#cases.site-block.site-block--full-width
                   | Dark
       .row
         .col-12
-          ul.comp-music
+          ol#list.sound-list
+          audio id="audio" tabindex="0" controls="" type="audio/mpeg" class="regular-player"
+            source type="audio/mp3" src="https://dl.dropboxusercontent.com/s/uiaa3klf5f4qkbv/16-Cosmic%20Darkness.mp3?dl=0"
+          aside.controls
+            #play.button-play Play
+
+          ul#mbpMusic.comp-music
             li.comp-music--track
               .row
                 .col-2.col-lg-1
@@ -48,7 +54,7 @@ section#cases.site-block.site-block--full-width
                   span.comp-music--meta.comp-music--meta-name
                     | To The Bank
                 .col-2.col-lg-3
-                  a.comp-btn.comp-btn-grey.comp-music--action.pull-right href="#"
+                  a.comp-btn.comp-btn-grey.comp-music--action.pull-right href="https://www.dropbox.com/s/ohy334sjubhd0qc/To%20The%20Bank.mp3?dl=0"
                     i class="fa fa-download" aria-hidden="true"
             li.comp-music--track
               .row
