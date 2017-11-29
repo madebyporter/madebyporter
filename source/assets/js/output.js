@@ -41,11 +41,11 @@ var js = js || {},
 
 js.main = {
   init: function () {
-    // this.caseCarousel();
+    this.caseCarousel();
     // this.dribbble();
     this.fadeInScroll();
     this.linksExternal();
-    this.soundLibrary();
+    // this.soundLibrary();
   },
 
   // Keep this shit in ABC Order
@@ -460,7 +460,7 @@ js.main = {
           $(this).replaceWith('<div id="play" class="button-play">Play</div>');
         });
       }
-    },
+  },
 };
 
 doc.ready(function () {

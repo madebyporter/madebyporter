@@ -209,10 +209,10 @@
     }
     .style-mission {
       background: transparent;
-      background-size: 30%;
-      @media (min-width: $mq-small) {
-        background: url('../img/mbp-home-wireframelayout.svg') no-repeat right top;
-      }
+      // background-size: 30%;
+      // @media (min-width: $mq-small) {
+      //   background: url('../img/mbp-home-wireframelayout.svg') no-repeat right top;
+      // }
     }
     .my-shuffle {
       position: relative;
@@ -270,7 +270,10 @@
     }
     .comp-list {
       color: $color-grey-l3;
-      margin: 0 0 0 30px;
+      margin: 0 0 $space-3 $space-2;
+    }
+    ol.comp-list {
+      list-style: decimal;
     }
     .comp-btn {
       display: inline-block;
