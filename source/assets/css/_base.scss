@@ -66,7 +66,7 @@
       width: 100%;
     }
     .site-block {
-      margin: 0 auto $space-4 auto;
+      margin: 0 auto $space-5 auto;
       min-height: 50vh;
       position: relative;
     }
@@ -177,13 +177,14 @@
       @media (min-width: $mq-small) {
         @include rotate(-90);
         @include flexbox;
+        flex-direction: row-reverse;
         justify-content: center;
         left: -160px;
         position: relative;
       }
     }
     .site-nav--element {
-      margin: 0 $space-3 0 0;
+      margin: 0 0 0 $space-3;
       padding: 0;
       &:last-child {
         margin-right: 0;
@@ -194,15 +195,13 @@
       @include font-size(24);
       font-weight: 700;
       text-decoration: none;
+      @include transition;
       &:hover {
         color: $color-grey-l1;
       }
     }
     .site-nav--active {
-      .site-nav--link {
-        color: $color-white;
-        // @include font-size(36);
-      }
+      color: $color-white;
     }
     .pn-ProductNav_Contents-no-transition {
       transition: none;
@@ -308,7 +307,7 @@
       @include scale(1);
       @include transition;
       &:hover {
-        @include scale(1.02);
+        // @include scale(1.02);
         .comp-block--top {
           background: $color-grey-d3;
           width: 70%;
@@ -323,6 +322,14 @@
           // @include scale(1.05);
           img {
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+          }
+        }
+        .comp-block--content-link {
+          padding: 0 0 0 $space-2;
+          &:before {
+            background: $color-red;
+            opacity: 1;
+            width: 3rem;
           }
         }
       }
@@ -383,23 +390,25 @@
         // background: $color-white;
         margin: 0;
         padding: $space-1 $space-2 $space-2 $space-2;
-        a {
-          color: $color-white;
-          font-weight: 700;
-          padding: 0 0 0 $space-1;
-          position: relative;
-          text-decoration: none;
-          @include font-size(16);
-          &:before {
-            background: $color-black;
-            content: "";
-            height: 20px;
-            left: -20px;
-            opacity: 0.5;
-            position: absolute;
-            width: 20px;
-            @include vertical-center;
-          }
+      }
+      .comp-block--content-link {
+        color: $color-white;
+        font-weight: 700;
+        padding: 0 0 0 $space-1;
+        position: relative;
+        text-decoration: none;
+        @include font-size(16);
+        @include transition;
+        &:before {
+          background: $color-black;
+          content: "";
+          height: 20px;
+          left: -20px;
+          opacity: 0.5;
+          position: absolute;
+          width: 2rem;
+          @include vertical-center;
+          @include transition;
         }
       }
     }
@@ -407,10 +416,17 @@
       position: relative;
       top: -2rem;
     }
+    .push-up--3 {
+      position: relative;
+      top: -3rem;
+    }
     .style-masthead {
       .comp-btn {
         margin: $space-1 0;
       }
+    }
+    #instagram a:nth-child(2){
+      display: none;
     }
     ul.comp-music {
       @include nolist;

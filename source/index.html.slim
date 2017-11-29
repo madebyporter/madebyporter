@@ -5,16 +5,16 @@ title: Designer x Developer x Musician x Photographer
 nav.site-nav
   ul.site-nav--list
     li.site-nav--element
-      a.site-nav--link href="#"
+      a.site-nav--link href="#cases"
         | Cases
-    li.site-nav--element.site-nav--active
-      a.site-nav--link href="#"
+    li.site-nav--element
+      a.site-nav--link href="#mission"
         | Mission
     li.site-nav--element
-      a.site-nav--link href="#"
+      a.site-nav--link href="#lab"
         | Lab
     li.site-nav--element
-      a.site-nav--link href="#"
+      a.site-nav--link href="#collab"
         | Collab  
 
 section#hero.site-block.site-block--small-height.site-block--max-width
@@ -127,15 +127,29 @@ section#lab.site-block.site-block--full-width.style-lab
                       | Design
                 .comp-block--part.comp-block--bottom
                   .comp-block--content
-                    .comp-block--content-media
-                      img src="https://cdn.dribbble.com/users/12718/screenshots/3010022/paystr-cards-dribbble.jpg" alt="Dribbble"
+                    #dribbble.comp-block--content-media
+                      / img src="https://cdn.dribbble.com/users/12718/screenshots/3010022/paystr-cards-dribbble.jpg" alt="Dribbble"
                     .comp-block--content-text
                       header.comp-block--header
                         h4.comp-block--header-text-small
-                          | Paystr Business Cards
-                      a href="#" View more on Dribbble
+                          | On Dribbble
+                      a.comp-block--content-link href="https://www.dribbble.com/madebyporter" View more
             .col-sm-12.col-lg-4
-              .comp-block.comp-block--vert-2.push-up--2
+              .comp-block.comp-block--vert-2.push-up--3
+                .comp-block--part.comp-block--top
+                  header.comp-block--header
+                    h3.comp-block--header-text-large
+                      | Photos
+                .comp-block--part.comp-block--bottom
+                  .comp-block--content
+                    #instagram.comp-block--content-media
+                    .comp-block--content-text
+                      header.comp-block--header
+                        h4.comp-block--header-text-small
+                          | On Instagram
+                      a.comp-block--content-link href="https://www.instagram.com/madebyporter" View more
+            .col-sm-12.col-lg-4
+              .comp-block.comp-block--vert-2
                 .comp-block--part.comp-block--top
                   header.comp-block--header
                     h3.comp-block--header-text-large
@@ -143,27 +157,13 @@ section#lab.site-block.site-block--full-width.style-lab
                 .comp-block--part.comp-block--bottom
                   .comp-block--content
                     .comp-block--content-media
-                      <iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322503491&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+                      <iframe width="100%" height="310" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/4074711&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false&amp;show_playcount=false"></iframe>
                     .comp-block--content-text
                       header.comp-block--header
                         h4.comp-block--header-text-small
-                          | Everything
-                      == link_to 'Listen and Download Beats', '/music'
-            .col-sm-12.col-lg-4
-              .comp-block.comp-block--vert-2
-                .comp-block--part.comp-block--top
-                  header.comp-block--header
-                    h3.comp-block--header-text-large
-                      | Photos
-                .comp-block--part.comp-block--bottom
-                  .comp-block--content
-                    .comp-block--content-media
-                      img src="https://scontent-lax3-2.cdninstagram.com/t51.2885-15/e35/23507514_165526230709252_3348232692939358208_n.jpg" alt="IG"
-                    .comp-block--content-text
-                      header.comp-block--header
-                        h4.comp-block--header-text-small
-                          | Tomato Taillight
-                      a href="#" View more on Instagram
+                          | On Soundcloud
+                      a.comp-block--content-link href="https://www.soundcloud.com/madebyporter" View more
+            
       / .row
       /   .col-md-6
       /     p
