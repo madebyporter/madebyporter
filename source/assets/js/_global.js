@@ -20,7 +20,7 @@ js.main = {
 	    var SETTINGS = {
 	        navBarTravelling: false,
 	        navBarTravelDirection: "",
-	        navBarTravelDistance: 400
+	        navBarTravelDistance: 320
 	    };
 
 	    document.documentElement.classList.remove("no-js");
@@ -153,9 +153,9 @@ js.main = {
 	        /**
 	         * @fileoverview dragscroll - scroll area by dragging
 	         * @version 0.0.8
-	         * 
+	         *
 	         * @license MIT, see https://github.com/asvd/dragscroll
-	         * @copyright 2015 asvd <heliosframework@gmail.com> 
+	         * @copyright 2015 asvd <heliosframework@gmail.com>
 	         */
 
 
@@ -232,7 +232,7 @@ js.main = {
 	                }
 	            };
 
-	              
+
 	            if (_document.readyState == 'complete') {
 	                reset();
 	            } else {
@@ -264,18 +264,18 @@ js.main = {
 
     $(window).scroll( function(){
       /* Check the location of each desired element */
-      $('.hideme').each( function(i){  
+      $('.hideme').each( function(i){
         // var bottom_of_object = $(this).offset().top + $(this).outerHeight();
         var bottom_of_object = $(this).offset().top;
         var bottom_of_window = $(window).scrollTop() + $(window).height();
-        
+
         /* If the object is completely visible in the window, fade it it */
         if( bottom_of_window > bottom_of_object ){
           // setTimeout(function(){
             $(this).addClass('showme');
           // }, 200);
-        }  
-      }); 
+        }
+      });
     });
   },
   instagram: function () {
@@ -359,7 +359,7 @@ js.main = {
       //     var files = response.entries;
       //     var list = document.getElementById('list');
       //     var ol = document.createElement('ol');
-          
+
       //     files.forEach( function(files) {
       //       var li = document.createElement('li');
       //       var div = document.createElement('div');
@@ -437,7 +437,7 @@ js.main = {
                   // audio[0].pause();
                   link = playlist.find('.sound-title')[0];
               }else{
-                  link = playlist.find('.sound-title')[current];    
+                  link = playlist.find('.sound-title')[current];
               }
               run($(link),audio[0]);
           });
@@ -474,4 +474,3 @@ js.main = {
 doc.ready(function () {
   js.main.init();
 });
-

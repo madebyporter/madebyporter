@@ -1,0 +1,41 @@
+---
+proj:
+- name: Gigmor.com
+  desc: A place for musicians to find gigs and venues to find musicians. Our goal
+    was to redesign the product to improve user experience and some fresh paint.
+  role: 'Designers: Chris Porter f/ <a href="https://www.maryy.co">Mary Cho</a>'
+  url: http://www.gigmor.com
+  cta: Launch Site
+  work:
+  - item:
+      img: projects/gigmor-001.png
+      alt: Gigmor Homepage Desktop &amp; Mobile
+  - item:
+      img: projects/gigmor-002.png
+      alt: Gigmor Homepage Desktop &amp; Mobile
+  - item:
+      img: projects/gigmor-003.png
+      alt: Gigmor Homepage Desktop &amp; Mobile
+  - item:
+      img: projects/gigmor-004.png
+      alt: Gigmor Homepage Desktop &amp; Mobile
+
+- name: Hyrecar.com
+  desc: People renting cars to other people to generate income through Uber and Lyft. The goal here was to improve the user experience.
+  role: 'Designers: Chris Porter f/ Vanessa Ganaden &amp; <a href="https://www.maryy.co">Mary Cho</a>'
+  url: http://www.hyrecar.com
+  cta: Launch Site
+  work:
+  - item:
+      img: projects/hyrecar-001.png
+      alt: Hyrecar Mobile Screens
+
+- name: I Fly You Buy
+  desc: A mobile solution to simplify the group purchasing experience. With the help of SSFN Collective, we’ve help build the brand and experience for the app.
+  role: 'Designers: Chris Porter f/ <a href="https://www.itsmejose.com">Jose Espinoza</a>'
+  url:
+  cta:
+  work:
+  - item:
+      img: projects/ifyb-001.png
+      alt: IFYB Mobile Screens

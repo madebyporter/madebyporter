@@ -54,6 +54,14 @@
         font-weight: 700;
       }
     }
+    a {
+      color: $color-red;
+      font-weight: 700;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+    }
 
   // Site
     .pull-right {
@@ -66,9 +74,12 @@
       width: 100%;
     }
     .site-block {
-      margin: 0 auto $space-5 auto;
+      margin: 0 auto $space-2 auto;
       min-height: 50vh;
       position: relative;
+      @media (min-width: $mq-small) {
+        margin: 0 auto $space-5 auto;
+      }
     }
     .site-block--full-width {
       max-width: 100%;
@@ -88,21 +99,34 @@
       margin-bottom: 0;
       min-height: 72px;
     }
+
+    $caseHeight: 630px;
+    $caseWidth: 840px;
+
+    $caseHeightMobile: $caseHeight/4;
+    $caseWidthMobile: $caseWidth/4;
+
     .case-studies {
       // @extend .no-list;
-      height: 234px;
+      height: $caseHeightMobile;
       position: relative;
       width: 100%;
+      @media (min-width: $mq-small) {
+        height: $caseHeight;
+      }
     }
     .case-studies--wrap {
       overflow-x: auto;
       overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
       white-space: nowrap;
-      height: 234px;
+      height: $caseHeightMobile;
       width: 100%;
       font-size: 0;
       position: absolute;
+      @media (min-width: $mq-small) {
+        height: $caseHeight;
+      }
       .js & {
           -ms-overflow-style: -ms-autohiding-scrollbar;
           &::-webkit-scrollbar {
@@ -122,16 +146,32 @@
     }
     .case-studies--block {
       background: #3E3E47;
-      height: 234px;
+      height: $caseHeightMobile;
       margin: 0 1rem 0 0;
-      width: 400px;
+      width: $caseWidthMobile;
+      @media (min-width: $mq-small) {
+        height: $caseHeight;
+        margin: 0 1rem 0 0;
+        width: $caseWidth;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .case-studies--block-featured {
+      height: $caseHeight * 1.5;
+      width: $caseWidth * 1.5;
     }
     .case-studies--advancer {
       color: #fff;
       @include font-size(14);
       position: absolute;
       z-index: 100;
+      display: none;
       @include vertical-center;
+      @media (min-width: $mq-small) {
+        display: block;
+      }
     }
     .case-studies--advancer-left {
       left: 0;
@@ -261,7 +301,7 @@
       img {
         display: block;
         width: 100%;
-        
+
         max-width: none;
         height: 100%;
         object-fit: cover;
@@ -497,4 +537,20 @@
       &:hover {
         color: $color-grey-l3;
       }
+    }
+    .site-journal-entry {
+      margin: 0 0 8rem 0;
+    }
+    .journal-entry--cta {
+      @include font-size(24);
+      margin: 0 0 $space-2 0;
+    }
+    .meta-data {
+      color: $color-grey-l2;
+      list-style: none;
+      margin: 0 0 $space-2;
+      padding: 0;
+    }
+    .meta-data-el {
+      @include font-size(18);
     }
