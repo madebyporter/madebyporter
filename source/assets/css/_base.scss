@@ -112,64 +112,75 @@
     $caseHeightMobile: $caseHeight/4;
     $caseWidthMobile: $caseWidth/4;
 
+    //
+    // .case-studies {
+    //   // @extend .no-list;
+    //   height: $caseHeightMobile;
+    //   position: relative;
+    //   width: 100%;
+    //   @media (min-width: $mq-small) {
+    //     height: $caseHeight;
+    //   }
+    // }
+    // .case-studies--wrap {
+    //   overflow-x: auto;
+    //   overflow-y: hidden;
+    //   -webkit-overflow-scrolling: touch;
+    //   white-space: nowrap;
+    //   height: $caseHeightMobile;
+    //   width: 100%;
+    //   font-size: 0;
+    //   position: absolute;
+    //   @media (min-width: $mq-small) {
+    //     height: $caseHeight;
+    //   }
+    //   .js & {
+    //       -ms-overflow-style: -ms-autohiding-scrollbar;
+    //       &::-webkit-scrollbar {
+    //           display: none;
+    //       }
+    //   }
+    // }
+    // .case-studies--contents {
+    //   @extend .no-list;
+    //   @include flexbox;
+    //   padding: 0 0 0 5%;
+    //   position: absolute;
+    //   transition: transform .2s ease-in-out;
+    //   @media (min-width: $mq-small) {
+    //     padding: 0 0 0 8.5%;
+    //   }
+    // }
     .case-studies {
-      // @extend .no-list;
-      height: $caseHeightMobile;
       position: relative;
-      width: 100%;
-      @media (min-width: $mq-small) {
-        height: $caseHeight;
-      }
-    }
-    .case-studies--wrap {
-      overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
-      white-space: nowrap;
-      height: $caseHeightMobile;
-      width: 100%;
-      font-size: 0;
-      position: absolute;
-      @media (min-width: $mq-small) {
-        height: $caseHeight;
-      }
-      .js & {
-          -ms-overflow-style: -ms-autohiding-scrollbar;
-          &::-webkit-scrollbar {
-              display: none;
-          }
-      }
-    }
-    .case-studies--contents {
-      @extend .no-list;
-      @include flexbox;
-      padding: 0 0 0 5%;
-      position: absolute;
-      transition: transform .2s ease-in-out;
-      @media (min-width: $mq-small) {
-        padding: 0 0 0 8.5%;
-      }
     }
     .case-studies--block {
       background: #3E3E47;
       height: $caseHeightMobile;
+      opacity: 0.1;
       margin: 0 1rem 0 0;
       width: $caseWidthMobile;
+      @include transition;
       @media (min-width: $mq-small) {
         height: $caseHeight;
         margin: 0 1rem 0 0;
         width: $caseWidth;
       }
+      &.slick-center {
+        opacity: 1;
+      }
       img {
         width: 100%;
       }
     }
-    .case-studies--block-featured {
-      height: $caseHeight * 1.5;
-      width: $caseWidth * 1.5;
-    }
-    .case-studies--advancer {
+    // .case-studies--block-featured {
+    //   height: $caseHeight * 1.5;
+    //   width: $caseWidth * 1.5;
+    // }
+
+    .case-studies--advancer,.slick-arrow {
       background: $color-white;
+      border: 0;
       box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
       color: $color-black;
       cursor: pointer;
@@ -190,7 +201,7 @@
         @include transition;
       }
     }
-    .case-studies--advancer-left {
+    .case-studies--advancer-left, .slick-prev {
       // padding-left: 10%;
       [data-overflowing="both"] ~ &,
       [data-overflowing="left"] ~ & {
@@ -205,7 +216,7 @@
         left: 8%;
       }
     }
-    .case-studies--advancer-right {
+    .case-studies--advancer-right, .slick-next {
       right: 0;
       text-align: right;
       [data-overflowing="both"]  ~ &,
