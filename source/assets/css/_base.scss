@@ -23,7 +23,7 @@
       overflow: hidden;
     }
     &:before {
-      background: $color-black;
+      background: $color-red;
       bottom: 0;
       content: "";
       height: 100%;
@@ -32,13 +32,13 @@
       right: 0;
       top: 0;
       width: 100%;
-      z-index: 10000;
+      z-index: 100;
       opacity: 1;
-      @include animation(pageEnter 2s $timing 0ms normal 1 forwards);
+      @include animation(pageEnter 100ms $timing 0ms normal 1 forwards);
     }
     &.page-leave {
       &:before {
-        @include animation(pageLeave 1s $timing 0ms normal 1 forwards);
+        @include animation(pageLeave 100ms $timing 0ms normal 1 forwards);
       }
     }
   }
@@ -50,8 +50,12 @@
 
     p {
       color: $color-grey-l3;
+      @include font-size(24);
       &.paragraph-large {
         font-weight: 700;
+      }
+      &.paragraph-small {
+        @include font-size(20);
       }
     }
     a {
@@ -72,11 +76,13 @@
       margin: 0 auto;
       position: relative;
       width: 100%;
+      @include animations(loaderMain,$delay:700ms,$duration:1100ms,$iteration:1,$timing:$timing,$direction:normal,$fillmode:forwards);
     }
     .site-block {
       margin: 0 auto $space-2 auto;
       min-height: 50vh;
       position: relative;
+      z-index: 100;
       @media (min-width: $mq-small) {
         margin: 0 auto $space-5 auto;
       }
@@ -163,44 +169,67 @@
       width: $caseWidth * 1.5;
     }
     .case-studies--advancer {
-      color: #fff;
-      @include font-size(14);
+      background: $color-white;
+      box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
+      color: $color-black;
+      cursor: pointer;
+      height: 80px;
       position: absolute;
-      z-index: 100;
+      text-align: center;
+      width: 80px;
+      z-index: 10000;
       display: none;
       @include vertical-center;
+      @include transition;
       @media (min-width: $mq-small) {
         display: block;
       }
+      i {
+        @include absolute-center;
+        @include font-size(24);
+        @include transition;
+      }
     }
     .case-studies--advancer-left {
-      left: 0;
-      padding-left: 10%;
+      // padding-left: 10%;
       [data-overflowing="both"] ~ &,
       [data-overflowing="left"] ~ & {
         opacity: 1;
       }
-
+      &:hover {
+        i {
+          margin-left: -.5rem;
+        }
+      }
       @media (min-width: $mq-small) {
-        padding-left: 12%;
+        left: 8%;
       }
     }
     .case-studies--advancer-right {
       right: 0;
-      padding-right: 2.5%;
       text-align: right;
       [data-overflowing="both"]  ~ &,
       [data-overflowing="right"] ~ & {
         opacity: 1;
       }
+      &:hover {
+        i {
+          margin-left: .5rem;
+        }
+      }
     }
     .masthead-logo {
-      background: url('../img/mbp-logo-outlined.svg') no-repeat center;
+      background: url('../img/mbp-logo.svg') no-repeat center;
       background-size: cover;
       height: 66px;
       width: 66px;
-      @include filter(invert(1));
+      cursor: pointer;
+      display: block;
+      // @include filter(invert(1));
       @include text-hide;
+      &:hover {
+        @include animations(lavalamp,$delay:200ms,$duration:2000ms,$iteration:infinite,$timing:$timing,$direction:normal);
+      }
     }
     .site-nav {
       @include vertical-center;
@@ -242,6 +271,7 @@
     }
     .site-nav--active {
       color: $color-white;
+      text-shadow: 0 2px 2px rgba(0,0,0,0.4);
     }
     .pn-ProductNav_Contents-no-transition {
       transition: none;
@@ -553,4 +583,34 @@
     }
     .meta-data-el {
       @include font-size(18);
+    }
+
+    .loader {
+      background: $color-red;
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      overflow: hidden;
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 10000;
+      @include animations(loader,$delay:900ms,$duration:2000ms,$iteration:1,$timing:$timing,$direction:normal,$fillmode:forwards);
+    }
+    .loader-logo {
+      @include absolute-center;
+      width: 200px;
+    }
+    .loader-logo--shape-1 {
+      opacity: 0;
+      @include animations(fadeInOut,$delay:200ms,$duration:800ms,$iteration:infinite,$timing:$timing,$direction:normal);
+    }
+    .loader-logo--shape-2 {
+      opacity: 0;
+      @include animations(fadeInOut,$delay:400ms,$duration:800ms,$iteration:infinite,$timing:$timing,$direction:normal);
+    }
+    .loader-logo--shape-3 {
+      opacity: 0;
+      @include animations(fadeInOut,$delay:800ms,$duration:800ms,$iteration:infinite,$timing:$timing,$direction:normal);
     }

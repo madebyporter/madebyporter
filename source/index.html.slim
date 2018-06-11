@@ -1,5 +1,5 @@
 ---
-title: Designer x Developer x Musician x Photographer
+title: A Designer That Codes
 ---
 
 nav.site-nav
@@ -11,8 +11,8 @@ nav.site-nav
       a.site-nav--link href="#mission"
         | Mission
     li.site-nav--element
-      a.site-nav--link href="#collab"
-        | Collab
+      a.site-nav--link href="#contact"
+        | Contact
 
 section#hero.site-block.site-block--small-height.site-block--max-width
   .container-fluid
@@ -21,7 +21,7 @@ section#hero.site-block.site-block--small-height.site-block--max-width
         h1
           | Workin' &amp; Chillin'
         p.paragraph-large
-          | Chris Porter is an independent creative, helping personal brands &amp; startups take their vision to the next level.
+          | Chris Porter is an independent creative, helping personal brands &amp; startups take their vision to the next level. Check out my <a href="#stories">work</a>.
 section#stories.site-block.site-stories.site-block--full-width
   .site-block.site-block--max-width.site-block--no-height
     .container-fluid
@@ -46,9 +46,9 @@ section#stories.site-block.site-stories.site-block--full-width
                 = link_to proj.cta, proj.url
       .case-studies
         #caseAdvancerLeft.case-studies--advancer.case-studies--advancer-left
-          | Left
+          i class="far fa-angle-left"
         #caseAdvancerRight.case-studies--advancer.case-studies--advancer-right
-          | Right
+          i class="far fa-angle-right"
         - if proj.work
           div#caseStudiesWrap.case-studies--wrap
             ul#caseStudiesContents.case-studies--contents
@@ -89,7 +89,7 @@ section#mission.site-block.site-block--full-width.style-mission
           p.small
             | Something that I love to do is help upcoming creatives take their skills to the next level. If you're looking to become a better designer, developer, help on your portfolio or just need a stern talking to, please, just shoot me an email.
           p.small
-            strong Avg Rate: $120/hr/session
+            strong Avg Rate: $50/hr
         .col-md-5
           h4
             | Music Production
@@ -114,3 +114,18 @@ section#mission.site-block.site-block--full-width.style-mission
           /     | Create music for your project
           /   li
           /     | Photography for your brand
+section#contact.site-block.site-block--full-width.style-collab
+  .site-block.site-block--max-width.site-block--small-height
+    .container-fluid
+      .row
+        .col-12
+          h2
+  					| Get in Contact
+      .row
+        .col-md-6
+          p
+            | <span class="sub-title">Want to work together on something cool?</span>
+          p
+            | I'm booked for the rest of the year, however, I am open to future projects starting as early as February 2018. Get in touch.
+          p
+            == link_to 'Get in Contact', 'contact', class: "comp-btn comp-btn-red"

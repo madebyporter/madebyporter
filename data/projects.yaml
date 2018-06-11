@@ -29,6 +29,12 @@ proj:
   - item:
       img: projects/hyrecar-001.png
       alt: Hyrecar Mobile Screens
+  - item:
+      img: projects/hyrecar-002.png
+      alt: Hyrecar Car Detail &amp; Booking
+  - item:
+      img: projects/hyrecar-003.png
+      alt: Hyrecar Mobile Screens
 
 - name: I Fly You Buy
   desc: A mobile solution to simplify the group purchasing experience. With the help of SSFN Collective, we’ve help build the brand and experience for the app.
@@ -39,3 +45,22 @@ proj:
   - item:
       img: projects/ifyb-001.png
       alt: IFYB Mobile Screens
+
+- name: LiveRaise
+  desc: A live video platform for influencers, LiveRaise needed to improve their user interface. Together, the client and I worked together to make it easier for people to share their life. We also updated their logo to reflect those updates.
+  role: 'Designers: Chris Porter'
+  url:
+  cta:
+  work:
+  - item:
+      img: projects/liveraise-001.png
+      alt: LiveRaise
+  - item:
+      img: projects/liveraise-002.png
+      alt: LiveRaise
+  - item:
+      img: projects/liveraise-003.png
+      alt: LiveRaise
+  - item:
+      img: projects/liveraise-004.png
+      alt: LiveRaise

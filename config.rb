@@ -30,10 +30,10 @@ activate :directory_indexes
 set :debug_assets, true
 
 # Sounds Layout
-page "/sounds/*", :layout => "sounds_layout"
+# page "/sounds/*", :layout => "sounds_layout"
 
 # Contact Layout
-page "/contact/*", :layout => "contact_layout"
+# page "/contact/*", :layout => "contact_layout"
 
 ###
 # Helpers
@@ -74,5 +74,5 @@ configure :build do
   ignore '*.php'
 end
 
-string = File.read('data/soundlist.json')
-json = JSON.parse(string)
+# string = File.read('data/soundlist.json')
+# json = JSON.parse(string)

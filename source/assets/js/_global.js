@@ -1,17 +1,10 @@
-var js = js || {},
-  body = $('body'),
-  doc = $(document),
-  win = $(window);
+var js = js || {}, body = $('body'), doc = $(document), win = $(window);
 
 js.main = {
   init: function () {
     this.caseCarousel();
-    this.dribbble();
-    this.fadeInScroll();
-    this.instagram();
     this.linksExternal();
     this.navWaypoints();
-    // this.soundLibrary();
   },
 
   // Keep this shit in ABC Order
@@ -242,54 +235,6 @@ js.main = {
 	            exports.reset = reset;
 	        }));
   },
-  dribbble: function() {
-	    // NOTE: Don't use this token, replace it with your own client access token.
-	    $.jribbble.setToken('1feaf019add4f362a26c928aa84c7152436760bd92702f1a49122b73c5693996');
-
-	    $.jribbble.users('madebyporter').shots({per_page: 1}).then(function(shots) {
-	      var img = [], title = [];
-	      shots.forEach(function(shot) {
-	        img.push('<figure class="shots--shot" data-groups="["dribbble"]">');
-	        img.push('<a href="' + shot.html_url + '" target="_blank">');
-	        img.push('<img src="' + shot.images.hidpi + '">');
-	        img.push('</a></figure>');
-	        title.push(shot.title);
-	      });
-	      $('#dribbble').html(img.join(''));
-	      $('#dribbble_title').html(title.join(''));
-	    });
-  },
-  fadeInScroll: function () {
-    setTimeout(function(){$('.showmeonload').addClass('showme'); },2500);
-
-    $(window).scroll( function(){
-      /* Check the location of each desired element */
-      $('.hideme').each( function(i){
-        // var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-        var bottom_of_object = $(this).offset().top;
-        var bottom_of_window = $(window).scrollTop() + $(window).height();
-
-        /* If the object is completely visible in the window, fade it it */
-        if( bottom_of_window > bottom_of_object ){
-          // setTimeout(function(){
-            $(this).addClass('showme');
-          // }, 200);
-        }
-      });
-    });
-  },
-  instagram: function () {
-  	var userFeed = new Instafeed({
-      clientId: '1056b90c3d6645818867bd16797bf935',
-      accessToken: '1641373830.1677ed0.61c4840628b24a20a1998e14f95750d4',
-      target: 'instagram',
-      get: 'user',
-      userId: '1641373830',
-      limit: '1',
-      resolution: 'standard_resolution',
-    });
-    userFeed.run();
-  },
   linksExternal: function () {
     $.expr[':'].external = function (a) {
         var PATTERN_FOR_EXTERNAL_URLS = /^(\w+:)?\/\//;
@@ -350,124 +295,6 @@ js.main = {
 				}, {
 				 offset: function() {  return -$(this).height() + 100; }
 			});
-  },
-  soundLibrary: function () {
-      // var dbx = new Dropbox({ accessToken: 'N-g23ovvhLQAAAAAAACYx1-nxB2mgRwZmNQ-nLLuouH4mtTlwzmZw9DSjES0ImmM' });
-      // dbx.filesListFolder({path: '/Music/mbp'})
-      //   .then(function(response) {
-      //     console.log(response);
-      //     var files = response.entries;
-      //     var list = document.getElementById('list');
-      //     var ol = document.createElement('ol');
-
-      //     files.forEach( function(files) {
-      //       var li = document.createElement('li');
-      //       var div = document.createElement('div');
-      //       var a = document.createElement('a');
-      //       var song = files.name;
-      //       var date = files.client_modified;
-      //       div.innerHTML = song;
-      //       div.className += "sound-title";
-      //       li.appendChild(div);
-      //       li.dataset.date = date;
-      //       li.dataset.name = song;
-      //       li.className += "sound-set";
-      //       list.appendChild(li);
-      //     });
-
-      //     // Sorting
-      //     var $songs = $('.sound-list'),
-      //       $songsli = $songs.children('li');
-
-      //     $songsli.sort(function(a,b){
-      //       var an = a.getAttribute('data-date'),
-      //         bn = b.getAttribute('data-date');
-
-      //       if(an > bn) {
-      //         return -1;
-      //       }
-      //       if(an < bn) {
-      //         return 1;
-      //       }
-      //       return 0;
-      //     });
-
-      //     $songsli.detach().appendTo($songs);
-
-      //     // Remove MP3 tag
-      //     $('.sound-title').each(function() {
-      //       var $this = $(this);
-      //       $this.html($this.text().replace(/\b.mp3\b/g, ''));
-      //     });
-      //     mbpPlayer();
-      //   })
-      //   .catch(function(error) {
-      //     console.log(error);
-      //   });
-      function mbpPlayer(){
-        var audio;
-        var playlist;
-        var tracks;
-        var current;
-        var volume;
-        init();
-        function init(){
-          current = 0;
-          audio = $('audio');
-          playlist = $('.sound-list');
-          tracks = playlist.find('li');
-          len = tracks.length - 1;
-          audio[0].volume = 1;
-
-          play = $('#play');
-          pause = $('#pause');
-          mute = $('#mute');
-          muted = $('#muted');
-
-          playlist.find('.sound-title').click(function(e){
-              e.preventDefault();
-              link = $(this);
-              current = link.parent().index();
-              run(link, audio[0]);
-          });
-          audio[0].addEventListener('ended',function(e){
-              current++;
-              if(current == len){
-                  current = 0;
-                  // audio[0].pause();
-                  link = playlist.find('.sound-title')[0];
-              }else{
-                  link = playlist.find('.sound-title')[current];
-              }
-              run($(link),audio[0]);
-          });
-        }
-        function run(link, player){
-          // var name = link.closest('.sound-set').attr('data-name');
-          var src = 'https://dl.dropboxusercontent.com/content_link/';
-          var title = link.html();
-          var url = src + title + '.mp3';
-          player.src = url;
-          // $('.mbp-player-current .title').html(name);
-          // $('.mbp-player-download').find('a').attr("href", url);
-          par = link.closest('.sound-set');
-          par.addClass('active').siblings().removeClass('active');
-          audio[0].load();
-          audio[0].play();
-
-          $('#play').replaceWith('<div id="pause" class="button-pause">Pause</div>');
-          $('.controls').addClass('active');
-        }
-        $(document).on('click', '#play', function(){
-          audio[0].play();
-          $(this).replaceWith('<div id="pause" class="button-pause">Pause</div>');
-        });
-
-        $(document).on('click', '#pause', function(){
-          audio[0].pause();
-          $(this).replaceWith('<div id="play" class="button-play">Play</div>');
-        });
-      }
   },
 };
 
