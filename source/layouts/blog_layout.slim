@@ -1,15 +1,20 @@
 == wrap_layout :layout do
-  section.site-hero.sub.site-section.no-border
+  nav.site-nav
+    ul.site-nav--list
+      li.site-nav--element
+        == link_to 'Back Home', '/', class: "site-nav--link"
+
+  section.site-hero.sub.site-section.site-block.no-border
     header.site-header.site-hero-text
-      .container
+      .container-fluid
         .row
-          .col-xs-12.col-md-10.col-md-offset-1
+          .col-sm-8.offset-sm-2.col-md-8.offset-md-2.col-lg-10.offset-lg-1
             h1
               = current_article.title
   section.site-blog.site-section.no-border
     .container-fluid
       .row
-        .col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.col-lg-6.col-lg-offset-3 
+        .col-sm-8.offset-sm-2.col-md-8.offset-md-2.col-lg-6.offset-lg-3
           article.site-blog-post
             = current_article.body
   section.site-blog-pagination.site-section.no-border
@@ -17,7 +22,7 @@
       .row
         .col-sm-12
           .row
-            .col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3.col-lg-6.col-lg-offset-3 
+            .col-sm-8.offset-sm-2.col-md-6.offset-md-3.col-lg-6.offset-lg-3
               .site-blog-article-pagination
                 - previous_article = current_article.previous_article
                 - if previous_article
@@ -26,20 +31,20 @@
                       | Next up
                     = link_to previous_article.url do
                       = previous_article.title
-                - else
-                  .newsletter-container
-                    h1
-                      | That's all of it. 
-                    p
-                      | Get notified when I finally put something up.
-                    #mc_embed_signup
-                      form action="//madebyporter.us9.list-manage.com/subscribe/post?u=43c534416e476fa3af50b3e65&amp;id=2a32fa7a33" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate"
-                        #mc_embed_signup_scroll
-                        .mc-field-group
-                          input type="email" value="" name="EMAIL" class="required email newsletter-email" id="mce-EMAIL" placeholder="Email Address"
-                          input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-submit"
-                        #mce-responses.clear
-                          div class="response" id="mce-error-response" style="display:none"
-                          div class="response" id="mce-success-response" style="display:none"
-                        div style="position: absolute; left: -5000px;" aria-hidden="true"
-                          input type="text" name="b_43c534416e476fa3af50b3e65_2a32fa7a33" tabindex="-1" value=""
+                / - else
+                /   .newsletter-container
+                /     h1
+                /       | That's all of it.
+                /     p
+                /       | Get notified when I finally put something up.
+                /     #mc_embed_signup
+                /       form action="//madebyporter.us9.list-manage.com/subscribe/post?u=43c534416e476fa3af50b3e65&amp;id=2a32fa7a33" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate"
+                /         #mc_embed_signup_scroll
+                /         .mc-field-group
+                /           input type="email" value="" name="EMAIL" class="required email newsletter-email" id="mce-EMAIL" placeholder="Email Address"
+                /           input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-submit"
+                /         #mce-responses.clear
+                /           div class="response" id="mce-error-response" style="display:none"
+                /           div class="response" id="mce-success-response" style="display:none"
+                /         div style="position: absolute; left: -5000px;" aria-hidden="true"
+                /           input type="text" name="b_43c534416e476fa3af50b3e65_2a32fa7a33" tabindex="-1" value=""

@@ -1,15 +1,19 @@
 ---
 title: A Designer That Codes
+description: Made by Porter, a designer specializing in digital products and the web.
 ---
 
 nav.site-nav
   ul.site-nav--list
     li.site-nav--element
-      a.site-nav--link href="#stories"
-        | Stories
+      a.site-nav--link href="#work"
+        | Work
     li.site-nav--element
       a.site-nav--link href="#mission"
         | Mission
+    li.site-nav--element
+      a.site-nav--link href="#stories"
+        | Stories
     li.site-nav--element
       a.site-nav--link href="#contact"
         | Contact
@@ -27,106 +31,116 @@ section#hero.site-block.site-block--small-height.site-block--max-width
           | I'm currently building a studio collective called <a href="http://www.ssfn.io">SSFN</a>, where we bring freelancers together to solve the world's problems usng design &amp; tech.
         p
           | I'm also learning Vue.JS, Motion Design & 3D UI Design for AR/VR. Why don't you follow my <a href="#stories">journey</a>.
-section#stories.site-block.site-stories.site-block--full-width
+section#work.site-block.site-stories.site-block--full-width data-aos="fade-in"
   .site-block.site-block--max-width.site-block--no-height
     .container-fluid
       .row
         .col-12
-          h2 Stories
+          h2 Work
 
   - data.projects.proj.each do |proj|
-    .site-journal-entry
+    .site-journal-entry class="site-journal-entry--#{proj.shortname}"
       .site-block.site-block--max-width.site-block--no-height
         .container-fluid
           .row
             .col-12.col-lg-8
-              h3
+              h3.site-journal-entry--headline data-aos="fade-in"
                 = proj.name
-              p
+              p.site-journal-entry--desc data-aos="fade-in"
                 = proj.desc
-              ul.meta-data
-                li.meta-data-el
+              ul.meta-data.site-journal-entry--data
+                li.meta-data-el data-aos="fade-in"
                   = proj.role
-              .journal-entry--cta
-                = link_to proj.cta, proj.url
+                li.meta-data-el data-aos="fade-in"
+                  span Date:&nbsp;
+                  = proj.date
+              - if proj.cta
+                .journal-entry--cta data-aos="fade-in"
+                  = link_to proj.cta, proj.url
       .case-studies
-        / #caseAdvancerLeft.case-studies--advancer.case-studies--advancer-left
-        /   i class="far fa-angle-left"
-        / #caseAdvancerRight.case-studies--advancer.case-studies--advancer-right
-        /   i class="far fa-angle-right"
         - if proj.work
-          / div#caseStudiesWrap.case-studies--wrap
-          div#caseStudiesContents.case-studies--contents
+          .case-studies--contents data-aos="fade-in"
             - proj.work.each do|work|
-              div.case-studies--block
-                == image_tag work.item.img, alt: work.item.alt, class: "hideme fadeIn"
+              .case-studies--block
+                img.lazy src="assets/img/projects/#{work.item.img}.webp" data-src="assets/img/projects/#{work.item.img}.webp" data-srcset="assets/img/projects/#{work.item.img}.webp 1x, assets/img/projects/#{work.item.img}-md.webp 800w, assets/img/projects/#{work.item.img}-sm.webp 500w" alt="#{work.item.alt}"
+
 section#mission.site-block.site-block--full-width.style-mission
   .site-block.site-block--max-width.site-block--small-height
     .container-fluid
+      .row data-aos="fade-in"
+        .col-12
+          .row
+            .col-12
+              h2
+                | Mission
+          .row
+            .col-md-8
+              h3
+                | Work Smarter, Not Harder.
+              p
+                | This was my dad's favorite quote when I was younger. He always emphasized the importance of having an effective yet efficient workflow.
+
+              p
+                | Today, that is the blood that runs through my veins. My goal is to help build better systems for small to medium sized businesses. That can be a better design, user interface or front-end system.
       .row
         .col-12
-          h2
-            | Mission
-      .row
-        .col-md-8
-          h3
-            | Work Smarter, Not Harder.
-          p
-            | This was my dad's favorite quote when I was younger. He always emphasized the importance of having an effective yet efficient workflow.
+          .row
+            .col-md-12 data-aos="fade-in"
+              h3
+                | How I Help The World
+          .row
+            .col-md-5 data-aos="fade-in"
+              h4
+                | Design &amp; Code
+              p.small
+                | Since 2004, I'm still ready to help startups and small businesses with their brand. If you need to build something new or redesign something that's not working, I'm here to help design that website, mobile app, or identity.
 
-          p
-            | Today, that is the blood that runs through my veins. My goal is to help build better systems for small to medium sized businesses. That can be a better design, user interface or front-end system.
-      .row
-        .col-md-12
-          h3
-            | How I Can Help
-      .row
-        .col-md-5
-          h4
-            | Design &amp; Code
-          p.small
-            | Since 2004, I'm still ready to help startups and small businesses with their brand. If you need to build something new or redesign something that's not working, I'm here to help design that website, mobile app, or identity.
-          p.small
-            strong Avg Rate: $80/hr
-        .col-md-5.offset-md-1
-          h4
-            | Mentoring
-          p.small
-            | Something that I love to do is help upcoming creatives take their skills to the next level. If you're looking to become a better designer, developer, help on your portfolio or just need a stern talking to, please, just shoot me an email.
-          p.small
-            strong Avg Rate: $50/hr
-        .col-md-5
-          h4
-            | Music Production
-          p.small
-            | Something I do from time to time is create beats and music for artists, filmmakers &amp; brands. My strength lays in hip-hop &amp; electronic, but I love to go outside the box. Music can be all original or contain samples if you're down to clear it.
-          p.small
-            strong Avg Rate: $60/non-exclusive; $200/exclusive
-        .col-md-5.offset-md-1
-          h4
-            | Photography
-          p.small
-            | With my FujiFilm XE-1, I've been able to help create direction for personal brands using beautiful photography. On location or in a studio, we can create something special for your website or social media marketing.
-          p.small
-            strong Avg Rate: $80/hr
+            .col-md-5.offset-md-1 data-aos="fade-in"
+              h4
+                | Mentoring
+              p.small
+                | Something that I love to do is help upcoming creatives take their skills to the next level. If you're looking to become a better designer, developer, help on your portfolio or just need a stern talking to, please, just shoot me an email.
 
-          / ul.comp-list
-          /   li
-          /     | Design Consulting
-          /   li
-          /     | Design &amp; Front-End Mentoring
-          /   li
-          /     | Create music for your project
-          /   li
-          /     | Photography for your brand
-section#contact.site-block.site-block--full-width.style-collab
+            .col-md-5 data-aos="fade-in"
+              h4
+                | Music Production
+              p.small
+                | Something I do from time to time is create beats and music for artists, filmmakers &amp; brands. My strength lays in hip-hop &amp; electronic, but I love to go outside the box. Music can be all original or contain samples if you're down to clear it.
+
+            .col-md-5.offset-md-1 data-aos="fade-in"
+              h4
+                | Photography
+              p.small
+                | With my FujiFilm XE-1, I've been able to help create direction for personal brands using beautiful photography. On location or in a studio, we can create something special for your website or social media marketing.
+
+section#stories.site-block.site-block--full-width.style-stories
   .site-block.site-block--max-width.site-block--small-height
     .container-fluid
+      .row data-aos="fade-in"
+        .col-12
+          h2
+  					| Stories
       .row
+        .col-12
+          ul.blog-list.site-list.no-list
+            - blog.articles[0...5].each do |article|
+              li.blog-list-ele data-aos="fade-in"
+                = link_to article.url do
+                  .blog-list-inner
+                    .blog-list-content
+                      .blog-list-tag
+                        = article.data.tags
+                      h3.blog-list-title
+                        = article.title
+
+section#contact.site-block.site-block--full-width.style-contact
+  .site-block.site-block--max-width.site-block--small-height
+    .container-fluid
+      .row data-aos="fade-in"
         .col-12
           h2
   					| Get in Contact
-      .row
+      .row data-aos="fade-in"
         .col-md-6
           p
             | <span class="sub-title">Want to work together on something cool?</span>

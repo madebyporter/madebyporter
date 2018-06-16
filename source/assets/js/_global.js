@@ -2,12 +2,29 @@ var js = js || {}, body = $('body'), doc = $(document), win = $(window);
 
 js.main = {
   init: function () {
+    this.lazyLoad();
     this.linksExternal();
     this.navWaypoints();
     this.slick();
+    this.aos();
   },
 
   // Keep this shit in ABC Order
+  aos: function () {
+    AOS.init({
+      offset: 50,
+      duration: 600,
+      easing: 'ease-in-out-quad',
+      delay: 400,
+    });
+  },
+  lazyLoad: function () {
+    document.addEventListener("DOMContentLoaded", function() {
+      yall({
+        observeChanges: true
+      });
+    });
+  },
   linksExternal: function () {
     $.expr[':'].external = function (a) {
         var PATTERN_FOR_EXTERNAL_URLS = /^(\w+:)?\/\//;
@@ -44,7 +61,7 @@ js.main = {
   	}
 
   	$('.site-nav--list a').on('click',function(e){
-  	  e.preventDefault();
+  	  // e.preventDefault();
   	  $('html,body').animate({scrollTop:getRelatedContent(this).offset().top - 20})
   	});
 
@@ -70,7 +87,8 @@ js.main = {
 			});
   },
   slick: function() {
-    $('.case-studies--contents').slick({
+    function createSlick(){
+      $(".case-studies--contents").not('.slick-initialized').slick({
       infinite: true,
       arrows: true,
       slidesToShow: 1,
@@ -85,11 +103,14 @@ js.main = {
             arrows: false,
             centerMode: true,
             centerPadding: '40px',
-            slidesToShow: 2
+            slidesToShow: 1
           }
         },
       ]
     });
+    }
+    createSlick();
+    win.on('resize', createSlick);
   }
 };
 

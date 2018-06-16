@@ -51,7 +51,6 @@ configure :development do
   activate :livereload
 end
 
-
 # Methods defined in the helpers block are available in templates
 # helpers do
 #   def some_helper
@@ -61,6 +60,15 @@ end
 
 # Build-specific configuration
 configure :build do
+  # Hash
+  # activate :asset_hash
+
+  # Optimize Images
+  activate :imageoptim
+
+  # Minify HTML
+  activate :minify_html
+
   # Minify CSS on build
   activate :minify_css
 

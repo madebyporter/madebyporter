@@ -1,12 +1,21 @@
 doctype html
-html
+html lang="en"
   head
-    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+
+    title="Made by Porter - #{current_page.data.title}"
+
+    meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
     meta charset="UTF-8"
-    meta name="keywords" content="made by porter, chris porter, designer, developer, ux, design, html, css, los angeles, cleveland"
-    meta name="description" content="Made by Porter, digital space for Chris Porter: designer, developer, musician &amp; photographer."
+
+    meta name="keywords" content="made by porter, chris porter, designer, developer, product design, ux, design, html, css, los angeles, cleveland"
+    meta name="description" content="#{current_page.data.description}"
     meta name="author" content="Made by Porter"
-    meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"
+
+    meta property="og:title" content="Made by Porter - #{current_page.data.title}"
+    meta property="og:description" content="#{current_page.data.description}"
+    meta property="og:image" content=""
+
+    meta content="width=device-width,initial-scale=1.0" name="viewport"
 
     link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"
     link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32"
@@ -15,10 +24,7 @@ html
     link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#ffffff"
     meta name="theme-color" content="#ffffff"
 
-    title="Made by Porter - #{current_page.data.title}"
-
-    == stylesheet_link_tag "bootstrap.css", "fontawesome-all.min.css", "slick.css", "style"
-    == javascript_include_tag  "output"
+    == stylesheet_link_tag "style"
 
   body class="#{page_classes}"
     .loader
@@ -26,22 +32,26 @@ html
         g#UI fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"
           g#Desktop-HD fill="#1D1D21" fill-rule="nonzero" transform="translate(-691.000000, -482.000000)"
             g#mbp-logo transform="translate(691.000000, 482.000000)"
-              polygon#Shape.loader-logo--shape-1 points=("51.8898149 41.108656 0.0558096366 60 57.3859358 60")
-              polygon#Shape.loader-logo--shape-2 points=("28.994103 0.692545942 26.5658254 60 0.708840707 60")
-              polygon#Shape.loader-logo--shape-3 points=("18.2940985 23.1256868 57.7644072 60 29.2702161 0.189890806")
+              polygon#shape_a.loader-logo--shape-1 points=("51.8898149 41.108656 0.0558096366 60 57.3859358 60")
+              polygon#shape_b.loader-logo--shape-2 points=("28.994103 0.692545942 26.5658254 60 0.708840707 60")
+              polygon#shape_c.loader-logo--shape-3 points=("18.2940985 23.1256868 57.7644072 60 29.2702161 0.189890806")
 
     main.site-wrap
-      section#masthead.site-block.site-block--small-height.site-block--max-width.style-masthead
+      #masthead.site-block.site-block--small-height.site-block--max-width.style-masthead
         .container-fluid
           .row
             .col-6
               == link_to 'Made by Porter', '/', class: "masthead-logo"
             .col-6
-              == link_to 'Get in Contact', 'contact', class: "pull-right comp-btn comp-btn-red"
+              == link_to 'Get in Contact', '/contact', class: "pull-right comp-btn comp-btn-red"
 
       == yield
-
-    == javascript_include_tag "output"
+      footer.site-footer.site-block.site-block--no-height.site-block--max-width
+        .container-fluid
+          .row
+            .col-12
+              span &copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> Made by Porter. All rights reserved.
+    == javascript_include_tag "output", :cache => true, :async => true
 
 		// Typekit
     script src="https://use.typekit.net/pdw4yep.js"

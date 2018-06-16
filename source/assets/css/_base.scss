@@ -1,8 +1,5 @@
 // _base.scss
 
-// Insert Fonts
-  @import 'https://fonts.googleapis.com/css?family=Vollkorn:400i';
-
 // Start Generic Class
   html {
     font-size: 62.5%;
@@ -79,12 +76,12 @@
       @include animations(loaderMain,$delay:700ms,$duration:1100ms,$iteration:1,$timing:$timing,$direction:normal,$fillmode:forwards);
     }
     .site-block {
-      margin: 0 auto $space-2 auto;
-      min-height: 50vh;
+      margin: 0 auto $space-4 auto;
       position: relative;
       z-index: 100;
       @media (min-width: $mq-small) {
         margin: 0 auto $space-5 auto;
+        min-height: 50vh;
       }
     }
     .site-block--full-width {
@@ -109,74 +106,36 @@
     $caseHeight: 630px;
     $caseWidth: 840px;
 
-    $caseHeightMobile: $caseHeight/4;
-    $caseWidthMobile: $caseWidth/4;
+    $caseHeightMobile: $caseHeight/3;
+    $caseWidthMobile: $caseWidth/3;
 
-    //
-    // .case-studies {
-    //   // @extend .no-list;
-    //   height: $caseHeightMobile;
-    //   position: relative;
-    //   width: 100%;
-    //   @media (min-width: $mq-small) {
-    //     height: $caseHeight;
-    //   }
-    // }
-    // .case-studies--wrap {
-    //   overflow-x: auto;
-    //   overflow-y: hidden;
-    //   -webkit-overflow-scrolling: touch;
-    //   white-space: nowrap;
-    //   height: $caseHeightMobile;
-    //   width: 100%;
-    //   font-size: 0;
-    //   position: absolute;
-    //   @media (min-width: $mq-small) {
-    //     height: $caseHeight;
-    //   }
-    //   .js & {
-    //       -ms-overflow-style: -ms-autohiding-scrollbar;
-    //       &::-webkit-scrollbar {
-    //           display: none;
-    //       }
-    //   }
-    // }
-    // .case-studies--contents {
-    //   @extend .no-list;
-    //   @include flexbox;
-    //   padding: 0 0 0 5%;
-    //   position: absolute;
-    //   transition: transform .2s ease-in-out;
-    //   @media (min-width: $mq-small) {
-    //     padding: 0 0 0 8.5%;
-    //   }
-    // }
     .case-studies {
       position: relative;
     }
     .case-studies--block {
-      background: #3E3E47;
-      height: $caseHeightMobile;
-      opacity: 0.1;
       margin: 0 1rem 0 0;
-      width: $caseWidthMobile;
       @include transition;
       @media (min-width: $mq-small) {
-        height: $caseHeight;
         margin: 0 1rem 0 0;
-        width: $caseWidth;
-      }
-      &.slick-center {
-        opacity: 1;
       }
       img {
-        width: 100%;
+        height: $caseHeightMobile;
+        width: $caseWidthMobile;
+        @include transition;
+        @media (min-width: $mq-small) {
+          height: $caseHeight;
+          width: $caseWidth;
+        }
       }
     }
-    // .case-studies--block-featured {
-    //   height: $caseHeight * 1.5;
-    //   width: $caseWidth * 1.5;
-    // }
+    .slick-slide.slick-current img {
+      opacity: 1;
+      @include scale(1);
+    }
+    .slick-slide img {
+      opacity: 0.5;
+      @include scale(0.8);
+    }
 
     .case-studies--advancer,.slick-arrow {
       background: $color-white;
@@ -229,6 +188,72 @@
         }
       }
     }
+
+    .blog-list {
+      @include flexbox;
+      @include flex-wrap(wrap);
+      justify-content: space-between;
+    }
+    .blog-list-ele {
+      margin: 0 0 $space-2 0;
+      overflow: hidden;
+      padding: $space-1;
+      position: relative;
+      width: 100%;
+      @include transition;
+      @media (min-width: $mq-small) {
+        width: 25%;
+      }
+      &:before {
+        background: $color-red;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+        @include translate(800px,0);
+        @include transition;
+      }
+      &:hover {
+        &:before, .blog-list-inner:before {
+          @include translate(0,0);
+        }
+      }
+    }
+    .blog-list-inner {
+      background: $color-grey-d4;
+      height: auto;
+      overflow: hidden;
+      padding: $space-3 $space-2;
+      position: relative;
+      @media (min-width: $mq-small) {
+        height: 350px;
+      }
+      &:before {
+        background: $color-red;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+        @include translate(-400px,0);
+        @include transition;
+      }
+    }
+    .blog-list-content {
+      position: relative;
+      z-index: 10;
+    }
+    .blog-list-tag {
+      color: rgba(255,255,255,0.3);
+      @include font-size(16);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
     .masthead-logo {
       background: url('../img/mbp-logo.svg') no-repeat center;
       background-size: cover;
@@ -243,23 +268,23 @@
       }
     }
     .site-nav {
-      @include vertical-center;
       display: none;
-      position: fixed;
-      width: 400px;
-      z-index: 1000;
       @media (min-width: $mq-small) {
         display: block;
+        left: 10px;
+        position: fixed;
+        top: 50%;
+        @include transform(rotate(-90deg) translate(-50%,0));
+        transform-origin: left top;
+        z-index: 1000;
       }
     }
     .site-nav--list {
       @extend .no-list;
       @media (min-width: $mq-small) {
-        @include rotate(-90);
         @include flexbox;
         flex-direction: row-reverse;
         justify-content: center;
-        left: -160px;
         position: relative;
       }
     }
@@ -271,6 +296,7 @@
       }
     }
     .site-nav--link {
+      background: transparent;
       color: $color-grey-d1;
       @include font-size(24);
       font-weight: 700;
@@ -377,6 +403,8 @@
         }
       }
     }
+
+
     .comp-block {
       margin: $space-3 0;
     }
@@ -580,7 +608,23 @@
       }
     }
     .site-journal-entry {
-      margin: 0 0 8rem 0;
+      // background: $color-grey;
+      margin: 0;
+      padding: $space-5 0 0;
+      &:nth-child(2) {
+        padding: 0;
+      }
+    }
+    .site-journal-entry--headline {
+      @media (min-width: $mq-large) {
+        @include font-size(64);
+      }
+    }
+    .site-journal-entry--desc {
+      color: rgba(255,255,255,0.8);
+    }
+    .site-journal-entry--data li {
+      color: rgba(255,255,255,0.6);
     }
     .journal-entry--cta {
       @include font-size(24);
@@ -591,9 +635,20 @@
       list-style: none;
       margin: 0 0 $space-2;
       padding: 0;
+      @include flexbox;
+      @include flex-wrap(wrap);
     }
     .meta-data-el {
       @include font-size(18);
+      margin: 0 $space-1 0 0;
+      &:after {
+        content:"/";
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
     }
 
     .loader {
@@ -624,4 +679,36 @@
     .loader-logo--shape-3 {
       opacity: 0;
       @include animations(fadeInOut,$delay:800ms,$duration:800ms,$iteration:infinite,$timing:$timing,$direction:normal);
+    }
+
+    .site-blog-article-pagination {
+      padding: $space-4 0;
+      a {
+        @include font-size(24);
+      }
+    }
+
+    .site-blog-post {
+      ul {
+        color: $color-grey-l2;
+      }
+      img {
+        width: 100%;
+      }
+    }
+
+    pre {
+      background: $color-grey-d4;
+      box-shadow: inset 10px 0 0 $color-grey-d3;
+      overflow-x: scroll;
+      padding: $space-2;
+      code {
+        color: $color-grey-l2;
+        @include font-size(18);
+      }
+    }
+
+    .site-footer {
+      color: $color-grey-l2;
+      @include font-size(16);
     }

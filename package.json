@@ -15,6 +15,7 @@
     "grunt-slim": "^0.1.0"
   },
   "dependencies": {
+    "aos": "^2.3.0",
     "dropbox": "^4.0.5",
     "imagemin": "^5.3.1",
     "imagemin-mozjpeg": "^7.0.0",
