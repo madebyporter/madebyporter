@@ -1,13 +1,13 @@
 ---
 title: Porter's Essential Apps for Doing Business
 date: 2016-12-09 21:48 UTC
-tags: apps, business, creativity, design, freelance
-thumbnail_image: assets/img/img-home-blog-businessapps.png
+tags: business
+thumbnail_image: img-home-blog-businessapps.png
 nl_header: Reading should be informative.
 nl_p: Get notified when I have something new for you.
 ---
 
-When you're freelancing, consulting or running a small business, you have to be about that business. Making sure your business is making money and not losing money is number 1. That's how you keep the business up. To make money, you have to have customers and treating those customers well. To have customers you have to go out in the world and get them. A lot to manage, huh? 
+When you're freelancing, consulting or running a small business, you have to be about that business. Making sure your business is making money and not losing money is number 1. That's how you keep the business up. To make money, you have to have customers and treating those customers well. To have customers you have to go out in the world and get them. A lot to manage, huh?
 
 With all that in mind, you have to stay organized as hell or shit is going to fall apart, quick! Here's what I do. I use different tools to handle all that. So below, I listed all those tools below. Try that shit out and see if it works for you. If not, Google the titles like "Time Management App" and find an alternative. [Product Hunt](https://www.producthunt.com/) also works for looking for some good apps to use. Here we go:
 

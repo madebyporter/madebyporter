@@ -30,10 +30,10 @@ activate :directory_indexes
 set :debug_assets, true
 
 # Sounds Layout
-page "/sounds/*", :layout => "sounds_layout"
+# page "/sounds/*", :layout => "sounds_layout"
 
 # Contact Layout
-page "/contact/*", :layout => "contact_layout"
+# page "/contact/*", :layout => "contact_layout"
 
 ###
 # Helpers
@@ -51,7 +51,6 @@ configure :development do
   activate :livereload
 end
 
-
 # Methods defined in the helpers block are available in templates
 # helpers do
 #   def some_helper
@@ -61,6 +60,15 @@ end
 
 # Build-specific configuration
 configure :build do
+  # Hash
+  # activate :asset_hash
+
+  # Optimize Images
+  activate :imageoptim
+
+  # Minify HTML
+  activate :minify_html
+
   # Minify CSS on build
   activate :minify_css
 
@@ -74,5 +82,5 @@ configure :build do
   ignore '*.php'
 end
 
-string = File.read('data/soundlist.json')
-json = JSON.parse(string)
+# string = File.read('data/soundlist.json')
+# json = JSON.parse(string)

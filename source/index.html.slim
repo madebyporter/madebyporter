@@ -1,69 +1,153 @@
 ---
-title: Designer x Developer x Musician x Photographer
-interest: Design
-nl_header: Learn how to create an online presence that works!
-nl_p: Get tips on how to better position yourself when it comes to your online presence.
+title: A Designer That Codes
+description: Made by Porter, a designer specializing in digital products and the web.
 ---
 
-section.site-hero.index.site-section.no-border
-  .site-header.site-hero-text
+nav.site-nav
+  ul.site-nav--list
+    li.site-nav--element
+      a.site-nav--link href="#work"
+        | Work
+    li.site-nav--element
+      a.site-nav--link href="#mission"
+        | Mission
+    li.site-nav--element
+      a.site-nav--link href="#stories"
+        | Stories
+    li.site-nav--element
+      a.site-nav--link href="#contact"
+        | Contact
+
+section#hero.site-block.site-block--small-height.site-block--max-width
+  .container-fluid
+    .row
+      .col-12
+        h1
+          | Explore New Ideas
+      .col-12
+        p.paragraph-large
+          | I'm Chris Porter and I dabble in Product Design and Music Production.
+        p
+          | I'm currently building a studio collective called <a href="http://www.ssfn.io">SSFN</a>, where we bring freelancers together to solve the world's problems usng design &amp; tech.
+        p
+          | I'm also learning Vue.JS, Motion Design & 3D UI Design for AR/VR. Why don't you follow my <a href="#stories">journey</a>.
+section#work.site-block.site-stories.site-block--full-width data-aos="fade-in"
+  .site-block.site-block--max-width.site-block--no-height
     .container-fluid
       .row
-        .col-xs-12.col-md-10.col-md-offset-1
-          h1
-            | Made by Porter
+        .col-12
+          h2 Work
+
+  - data.projects.proj.each do |proj|
+    .site-journal-entry class="site-journal-entry--#{proj.shortname}"
+      .site-block.site-block--max-width.site-block--no-height
+        .container-fluid
+          .row
+            .col-12.col-lg-8
+              h3.site-journal-entry--headline data-aos="fade-in"
+                = proj.name
+              p.site-journal-entry--desc data-aos="fade-in"
+                = proj.desc
+              ul.meta-data.site-journal-entry--data
+                li.meta-data-el data-aos="fade-in"
+                  = proj.role
+                li.meta-data-el data-aos="fade-in"
+                  span Date:&nbsp;
+                  = proj.date
+              - if proj.cta
+                .journal-entry--cta data-aos="fade-in"
+                  = link_to proj.cta, proj.url
+      .case-studies
+        - if proj.work
+          .case-studies--contents data-aos="fade-in"
+            - proj.work.each do|work|
+              .case-studies--block
+                picture.lazy
+                  source srcset="assets/img/projects/#{work.item.img}.webp" type="image/webp" data-src="assets/img/projects/#{work.item.img}.webp" data-srcset="assets/img/projects/#{work.item.img}.webp 1x, assets/img/projects/#{work.item.img}-md.webp 800w, assets/img/projects/#{work.item.img}-sm.webp 500w"
+                  source srcset="assets/img/projects/#{work.item.img}.jpg" type="image/jpeg" data-src="assets/img/projects/#{work.item.img}.webp" data-srcset="assets/img/projects/#{work.item.img}.webp 1x, assets/img/projects/#{work.item.img}-md.webp 800w, assets/img/projects/#{work.item.img}-sm.webp 500w"
+                  img src="assets/img/projects/#{work.item.img}.jpg" data-src="assets/img/projects/#{work.item.img}.jpg" data-srcset="assets/img/projects/#{work.item.img}.jpg 1x, assets/img/projects/#{work.item.img}-md.webp 800w, assets/img/projects/#{work.item.img}-sm.jpg 500w" alt="#{work.item.alt}"
+
+section#mission.site-block.site-block--full-width.style-mission
+  .site-block.site-block--max-width.site-block--small-height
+    .container-fluid
+      .row data-aos="fade-in"
+        .col-12
+          .row
+            .col-12
+              h2
+                | Mission
+          .row
+            .col-md-8
+              h3
+                | Work Smarter, Not Harder.
+              p
+                | This was my dad's favorite quote when I was younger. He always emphasized the importance of having an effective yet efficient workflow.
+
+              p
+                | Today, that is the blood that runs through my veins. My goal is to help build better systems for small to medium sized businesses. That can be a better design, user interface or front-end system.
+      .row
+        .col-12
+          .row
+            .col-md-12 data-aos="fade-in"
+              h3
+                | How I Help The World
+          .row
+            .col-md-5 data-aos="fade-in"
+              h4
+                | Design &amp; Code
+              p.small
+                | Since 2004, I'm still ready to help startups and small businesses with their brand. If you need to build something new or redesign something that's not working, I'm here to help design that website, mobile app, or identity.
+
+            .col-md-5.offset-md-1 data-aos="fade-in"
+              h4
+                | Mentoring
+              p.small
+                | Something that I love to do is help upcoming creatives take their skills to the next level. If you're looking to become a better designer, developer, help on your portfolio or just need a stern talking to, please, just shoot me an email.
+
+            .col-md-5 data-aos="fade-in"
+              h4
+                | Music Production
+              p.small
+                | Something I do from time to time is create beats and music for artists, filmmakers &amp; brands. My strength lays in hip-hop &amp; electronic, but I love to go outside the box. Music can be all original or contain samples if you're down to clear it.
+
+            .col-md-5.offset-md-1 data-aos="fade-in"
+              h4
+                | Photography
+              p.small
+                | With my FujiFilm XE-1, I've been able to help create direction for personal brands using beautiful photography. On location or in a studio, we can create something special for your website or social media marketing.
+
+section#stories.site-block.site-block--full-width.style-stories
+  .site-block.site-block--max-width.site-block--small-height
+    .container-fluid
+      .row data-aos="fade-in"
+        .col-12
+          h2
+  					| Stories
+      .row
+        .col-12
+          ul.blog-list.site-list.no-list
+            - blog.articles[0...5].each do |article|
+              li.blog-list-ele data-aos="fade-in"
+                = link_to article.url do
+                  .blog-list-inner
+                    .blog-list-content
+                      .blog-list-tag
+                        = article.data.tags
+                      h3.blog-list-title
+                        = article.title
+
+section#contact.site-block.site-block--full-width.style-contact
+  .site-block.site-block--max-width.site-block--small-height
+    .container-fluid
+      .row data-aos="fade-in"
+        .col-12
+          h2
+  					| Get in Contact
+      .row data-aos="fade-in"
+        .col-md-6
           p
-            | I help brands with the design of their next website or mobile app.
-          .hero-cta
-            == link_to 'View my Work', '/design/'
-
-  .site-hero-help
-    span.fadeInUp Keep Scrolling
-
-section.site-home.site-home-about.site-section.no-border
-  .site-section-inner
-    .site-home-text-left
-      h3.site-home-header
-        | I'm <strong>Chris Porter</strong>, a creative from Cleveland, based in <strong>Los Angeles</strong>.
-      / .site-home-cta
-      /   == link_to 'Learn more about me', '/about'
-section.site-home.site-home-design.site-section.no-border
-  .site-section-inner
-    .site-home-figure-set
-      figure.site-home-figure.site-home-figure-design-sbt
-        figcaption
-          span Silicon Beach Talent
-          == link_to 'http://www.siliconbeachtalent.com', 'http://www.siliconbeachtalent.com'
-      figure.site-home-figure.site-home-figure-design-rf
-        figcaption
-          span Ron Finley
-          == link_to 'http://www.ronfinley.com', 'http://www.ronfinley.com'
-    .site-home-text-right
-      h3.site-home-header
-        | Startups &amp; small business come to me to help design their websites and apps.
-      .site-home-cta
-        == link_to 'Check out my design &amp; code.', '/design'
-section.site-home.site-home-music.site-section.no-border
-  .site-section-inner
-    .site-home-text-left
-      h3.site-home-header
-        | I make music for creatives as well. Chill, listen &amp; create.
-      .site-home-cta
-        == link_to 'Listen to &amp; download some music.', '/sounds'
-section.site-home.site-home-photo.site-section
-  .site-section-inner
-    h2.site-home-header
-      | The Visual Log  
-    nav.site-section-nav
-      ul.site-section-nav-list
-        li.site-section-nav-ele
-          == link_to 'Download Photos', '/photos'
-        li.site-section-nav-ele
-          == link_to 'Follow on the Gram', 'http://www.instagram.com/madebyporter'
-    ul.photo-gallery
-    nav.site-section-nav
-      ul.site-section-nav-list
-        li.site-section-nav-ele
-          == link_to 'Download Photos', '/photos'
-        li.site-section-nav-ele
-          == link_to 'Follow on the Gram', 'http://www.instagram.com/madebyporter'
+            | <span class="sub-title">Want to work together on something cool?</span>
+          p
+            | I'm booked for the rest of the year, however, I am open to future projects starting as early as February 2018. Get in touch.
+          p
+            == link_to 'Get in Contact', 'contact', class: "comp-btn comp-btn-red"

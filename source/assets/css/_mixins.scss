@@ -32,10 +32,10 @@
     flex-wrap: $values;
   }
   @mixin order($val) {
-    -webkit-box-ordinal-group: $val;  
-    -moz-box-ordinal-group: $val;     
-    -ms-flex-order: $val;     
-    -webkit-order: $val;  
+    -webkit-box-ordinal-group: $val;
+    -moz-box-ordinal-group: $val;
+    -ms-flex-order: $val;
+    -webkit-order: $val;
     order: $val;
   }
 
@@ -44,7 +44,7 @@
     font-size: $sizeValue + px;
     font-size: ($sizeValue / 10) + rem;
   }
-  
+
 // Transform
   @mixin transform($transforms) {
        -moz-transform: $transforms;
@@ -70,7 +70,7 @@
 // Scale
   @mixin scale($scale) {
      @include transform(scale($scale));
-  } 
+  }
 
 // Translate
   @mixin translate ($x, $y) {
@@ -126,11 +126,11 @@
   }
 
 // Animations
-  @mixin animations($name,$delay:0s,$duration:200ms,$timing:ease-in-out,$direction:normal){
-    -webkit-animation: $name $duration $timing $delay $direction;
-    -moz-animation:    $name $duration $timing $delay $direction;
-    -o-animation:      $name $duration $timing $delay $direction;
-    animation:         $name $duration $timing $delay $direction;
+  @mixin animations($name,$delay:0s,$duration:200ms,$iteration:1,$timing:ease-in-out,$direction:normal,$fillmode:none){
+    -webkit-animation: $name $duration $timing $iteration $delay $direction $fillmode;
+    -moz-animation:    $name $duration $timing $iteration $delay $direction $fillmode;
+    -o-animation:      $name $duration $timing $iteration $delay $direction $fillmode;
+    animation:         $name $duration $timing $iteration $delay $direction $fillmode;
   }
 
 // No List
@@ -138,8 +138,4 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    li {
-      margin: 0;
-      padding: 0;
-    }
   }

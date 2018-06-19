@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="58px" height="60px" viewBox="0 0 58 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>mbp-logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Blog-Copy-8" transform="translate(-41.000000, -41.000000)" fill-rule="nonzero">
+            <g id="mbp-logo" transform="translate(41.000000, 41.000000)">
+                <g id="Logo">
+                    <polygon id="Shape" fill="#99323E" opacity="0.5" points="51.8898149 41.108656 0.0558096366 60 57.3859358 60"></polygon>
+                    <polygon id="Shape" fill="#762630" opacity="0.7" points="28.994103 0.692545942 26.5658254 60 0.708840707 60"></polygon>
+                    <polygon id="Shape" fill="#E84C5C" opacity="0.9" points="18.2940985 23.1256868 57.7644072 60 29.2702161 0.189890806"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

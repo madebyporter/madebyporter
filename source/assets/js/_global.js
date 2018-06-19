@@ -1,239 +1,28 @@
-var js = js || {},
-  body = $('body'),
-  doc = $(document),
-  win = $(window);
+var js = js || {}, body = $('body'), doc = $(document), win = $(window);
 
 js.main = {
   init: function () {
-    this.linkDelay();
-    this.fadeInScroll();
-    this.codeHighlight();
-    this.customCheckbox();
-    this.formSubmit();
-    this.gaTimeout();
-    // this.mbpPlayer();
-    this.ig();
-    this.crumbsDD();
+    this.lazyLoad();
     this.linksExternal();
-    this.fbPixel();
-    this.soundLibrary();
+    this.navWaypoints();
+    this.slick();
+    this.aos();
   },
 
   // Keep this shit in ABC Order
-
-  ajaxForm: function () {
-    // Get the form.
-    var form = $('#contactForm');
-
-    // Get the messages div.
-    var formMessages = $('#form-messages');
-
-    // Get the form content
-    var formContent = $('.form-content');
-
-    // Get form top
-    var offset = form.offset();
-
-    // Set up an event listener for the contact form.
-    $(form).submit(function(event) {
-      // Stop the browser from submitting the form.
-      event.preventDefault();
-
-      // Serialize the form data.
-      var formData = $(form).serialize();
-
-      function scrollTop(){
-        // Scroll to top to see error
-        $('html, body').animate({
-          scrollTop: form.offset().top - 150
-        }, 500);
-      }
-
-      // Submit the form using AJAX.
-      $.ajax({
-        type: 'POST',
-        url: $(form).attr('action'),
-        data: formData
-      }).done(function(response) {
-        // Make sure that the formMessages div has the 'success' class.
-        $(formMessages).removeClass('error');
-        $(formMessages).addClass('success');
-
-        // Set the message text.
-        $(formMessages).text(response);
-
-        // Scroll to top to see completion
-        scrollTop();
-
-        // Hide Form
-        $(formContent).addClass('form-sent');
-
-        // Clear the form.
-        $('#name').val('');
-        $('#email').val('');
-        $('#message').val('');
-        $('#subscribe').val('');
-        $('.form-field-checkbox').val('');
-
-        setTimeout(function() {
-          // Show Form
-          $(formContent).removeClass('form-sent');
-          $(formMessages).removeClass('success').empty();
-        }, 3000);
-
-      }).fail(function(data) {
-        // Make sure that the formMessages div has the 'error' class.
-        $(formMessages).removeClass('success');
-        $(formMessages).addClass('error');
-
-        // Scroll to top to see error
-        scrollTop();
-
-        // Set the message text.
-        if (data.responseText !== '') {
-            $(formMessages).html("<div class='form-message-content'>" + data.responseText + "</div>");
-        } else {
-            $(formMessages).text('Oops! An error occured and your message could not be sent.');
-        }
+  aos: function () {
+    AOS.init({
+      offset: 50,
+      duration: 600,
+      easing: 'ease-in-out-quad',
+      delay: 400,
+    });
+  },
+  lazyLoad: function () {
+    document.addEventListener("DOMContentLoaded", function() {
+      yall({
+        observeChanges: true
       });
-    });
-  },
-  codeHighlight: function() {
-    $('pre code').each(function(i, block) {
-      hljs.configure({
-        languages: 'css'
-      });
-    });
-  },
-  crumbsDD: function () {
-    var dd = $('.crumbs-dd');
-
-    dd.on('click', function(){
-      $(this).toggleClass('active');
-    });
-  },
-  customCheckbox: function () {
-    var $checkBox = $('.form-field-checkbox');
-    var $ele = $('.section-content-checklist-ele');
-    $checkBox.each(function(){
-      $(this).wrap( "<div class='custom-checkbox'></div>" );
-    });
-    $(doc).on('click', '.section-content-checklist-ele', function(){
-      event.stopPropagation();
-      if ($(this).find($checkBox).is(':checked')) {
-        $(this).find('.custom-checkbox').addClass('checked');
-      } else {
-        $(this).find('.custom-checkbox').removeClass('checked');
-      }
-    });
-  },
-  fbPixel: function () {
-    $( '.newsletter-submit' ).click(function() {
-      fbq('track', 'Lead', {
-        value: 10.00,
-        currency: 'USD'
-      });
-    });
-  },
-  fadeInScroll: function () {
-    setTimeout(function(){$('.showmeonload').addClass('showme'); },2500);
-
-    $(window).scroll( function(){
-      /* Check the location of each desired element */
-      $('.hideme').each( function(i){  
-        // var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-        var bottom_of_object = $(this).offset().top;
-        var bottom_of_window = $(window).scrollTop() + $(window).height();
-        
-        /* If the object is completely visible in the window, fade it it */
-        if( bottom_of_window > bottom_of_object ){
-          // setTimeout(function(){
-            $(this).addClass('showme');
-          // }, 200);
-        }  
-      }); 
-    });
-  },
-  formSubmit: function () {
-    $('#contactForm').one('submit',function(){
-      var idType = "entry.141953512";
-      var inputType = encodeURIComponent($('#type').val());
-      var idFname = "entry.84634872";
-      var inputFname = encodeURIComponent($('#fname').val());
-      var idLname = "entry.228472619";
-      var inputLname = encodeURIComponent($('#lname').val());
-      var idEmail = "entry.2042919330";
-      var inputEmail = encodeURIComponent($('#email').val());
-      var idMessage = "entry.797106235";
-      var inputMessage = encodeURIComponent($('#message').val());
-      var baseURL = 'https://docs.google.com/a/madebyporter.com/forms/d/e/1FAIpQLSerG3d7wwjIHr7LL6LfcKj2XyDGbEG1T3TS_9r2LmvtHajeAw/formResponse?';
-      var submitRef = '&submit=Submit';
-      var submitURL = (
-                        baseURL +
-                        idType + "=" + inputType + "&" +
-                        idFname + "=" + inputFname + "&" +
-                        idLname + "=" + inputLname + "&" +
-                        idEmail + "=" + inputEmail + "&" +
-                        idMessage + "=" + inputMessage +
-                        submitRef);
-      console.log(submitURL);
-      $(this)[0].action=submitURL;
-      $('#form-messages').addClass('success').text('Thanks for your submission. I will get back to you within 24 hours!');
-    });
-  },
-  gaTimeout: function () {
-    setTimeout(function(){
-      _gaq.push(['_trackEvent', 'Control', 'Bounce Rate', '']);
-    },60000);
-  },
-  ig: function () {
-    var gal = $(".photo-gallery"),
-        token = '1641373830.ba4c844.7dd5ff18873547268c03867d51b11b75', // learn how to obtain it below
-        userid = 1641373830, // User ID - get it in source HTML of your Instagram profile or look at the next example :)
-        hashtag='madebyporterphotos',
-        x = x,
-        num_photos = 7; // how much photos do you want to get
-     
-    $.ajax({
-      url: 'https://api.instagram.com/v1/tags/' + hashtag + '/media/recent',
-      dataType: 'jsonp',
-      type: 'GET',
-      data: {access_token: token, count: num_photos},
-      success: function(data){
-        console.log(data);
-        for( x in data.data ){
-          gal.append('<li class="photo-gallery-ele"><a href="'+data.data[x].link+'" target="_blank"><img src="'+data.data[x].images.standard_resolution.url+'"></a></li>'); 
-          // data.data[x].images.low_resolution.url - URL of image, 306х306
-          // data.data[x].images.thumbnail.url - URL of image 150х150
-          // data.data[x].images.standard_resolution.url - URL of image 612х612
-          // data.data[x].link - Instagram post URL 
-        }
-      },
-      error: function(data){
-        console.log(data); 
-      }
-    });
-  },
-  linkDelay: function () {
-    $.expr[':'].external = function (a) {
-        var PATTERN_FOR_EXTERNAL_URLS = /^(\w+:)?\/\//;
-        var href = $(a).attr('href');
-        return href !== undefined && href.search(PATTERN_FOR_EXTERNAL_URLS) !== -1;
-    };
-
-    $.expr[':'].internal = function (a) {
-        return $(a).attr('href') !== undefined && !$.expr[':'].external(a);
-    };
-
-    $('a:internal').click(function (e) {
-      e.preventDefault();                   // prevent default anchor behavior
-      var goTo = this.getAttribute("href"); // store anchor href
-
-        $('body').addClass('page-leave');
-
-        setTimeout(function(){
-        window.location = goTo;
-      }, 1000);       
     });
   },
   linksExternal: function () {
@@ -261,263 +50,70 @@ js.main = {
       window.open($(this).attr('href')); return false;
     });
   },
-  mbpPlayer: function () {
+  navWaypoints: function() {
+  	// Get section or article by href
+  	function getRelatedContent(el){
+  	  return $($(el).attr('href'));
+  	}
+  	// Get link by section or article id
+  	function getRelatedNavigation(el){
+  	  return $('.site-nav--list a[href=#'+$(el).attr('id')+']');
+  	}
 
-    var audio;
-    var playlist;
-    var tracks;
-    var current;
+  	$('.site-nav--list a').on('click',function(e){
+  	  // e.preventDefault();
+  	  $('html,body').animate({scrollTop:getRelatedContent(this).offset().top - 20})
+  	});
 
-    if ($('body').hasClass('sounds_index')){
-      init();
-    }
-    
-    function init(){
-      current = 0;
-      audio = $('audio');
-      playlist = $('.sound-list');
-      tracks = playlist.find('li');
-      len = tracks.length - 1;
-      audio[0].volume = 1;
+  	var wpDefaults={
+  	  context: window,
+  	  continuous: true,
+  	  enabled: true,
+  	  horizontal: false,
+  	  offset: 0,
+  	  triggerOnce: false
+  	};
 
-      // audio[0].play();
-      playlist.find('.sound-title').click(function(e){
-          e.preventDefault();
-          link = $(this);
-          current = link.parent().index();
-          run(link, audio[0]);
-      });
-      audio[0].addEventListener('ended',function(e){
-          current++;
-          if(current == len){
-              current = 0;
-              audio[0].pause();
-              link = playlist.find('.sound-title')[0];
-          }else{
-              link = playlist.find('.sound-title')[current];    
-          }
-          run($(link),audio[0]);
-      });
-      $(document).on('click', '#play', function(){
-        audio[0].play();
-        $(this).replaceWith('<div class="mbp-player-button mbp-player-button-pause" id="pause"></div>');
-      });
-
-      $(document).on('click', '#pause', function(){
-        audio[0].pause();
-        $(this).replaceWith('<div class="mbp-player-button mbp-player-button-play" id="play"></div>');
-      });
-    }
-    function run(link, player){
-      var name = link.closest('.sound-set').attr('data-name');
-      var url = link.closest('.sound-set').attr('data-url');
-
-      player.src = url;
-      $('.mbp-player-current .title').html(name);
-      $('.mbp-player-download').find('a').attr("href", url);
-      $('.sound-control-download').attr("onclick", "ga('send', 'event', { eventCategory: 'download', eventAction: 'music', eventLabel: '"+name+"'});");
-      par = link.closest('.sound-set');
-      par.addClass('active').siblings().removeClass('active');
-      audio[0].load();
-      audio[0].play();
-
-      $('.mbp-player-button').replaceWith('<div class="mbp-player-button mbp-player-button-pause" id="pause"></div>');
-      $('.sounds_index').addClass('mbp-player-active');
-    }
-
-    $(document).on('click', '#play', function(){
-      audio[0].play();
-      $(this).replaceWith('<div class="mbp-player-button mbp-player-button-pause" id="pause"></div>');
-    });
-
-    $(document).on('click', '#pause', function(){
-      audio[0].pause();
-      $(this).replaceWith('<div class="mbp-player-button mbp-player-button-play" id="play"></div>');
-    });
+  	var waypoints = $('.site-block')
+  		.waypoint(function(direction) {
+				 getRelatedNavigation(this).toggleClass('site-nav--active', direction === 'down');
+				}, {
+				 offset: '100%'
+				})
+				.waypoint(function(direction) {
+				 getRelatedNavigation(this).toggleClass('site-nav--active', direction === 'up');
+				}, {
+				 offset: function() {  return -$(this).height() + 100; }
+			});
   },
-  soundLibrary: function () {
-    var dbx = new Dropbox({ accessToken: 'N-g23ovvhLQAAAAAAACYx1-nxB2mgRwZmNQ-nLLuouH4mtTlwzmZw9DSjES0ImmM' });
-    dbx.filesListFolder({path: '/Music/mbp'})
-      .then(function(response) {
-        console.log(response);
-        var files = response.entries;
-        var list = document.getElementById('list');
-        var ol = document.createElement('ol');
-        
-        files.forEach( function(files) {
-          var li = document.createElement('li');
-          var div = document.createElement('div');
-          var a = document.createElement('a');
-          var song = files.name;
-          var date = files.client_modified;
-          div.innerHTML = song;
-          div.className += "sound-title";
-          li.appendChild(div);
-          li.dataset.date = date;
-          li.dataset.name = song;
-          li.className += "sound-set";
-          list.appendChild(li);
-        });
-
-        // Sorting
-        var $songs = $('.sound-list'),
-          $songsli = $songs.children('li');
-
-        $songsli.sort(function(a,b){
-          var an = a.getAttribute('data-date'),
-            bn = b.getAttribute('data-date');
-
-          if(an > bn) {
-            return -1;
-          }
-          if(an < bn) {
-            return 1;
-          }
-          return 0;
-        });
-
-        $songsli.detach().appendTo($songs);
-
-        // Remove MP3 tag
-        $('.sound-title').each(function() {
-          var $this = $(this);
-          $this.html($this.text().replace(/\b.mp3\b/g, ''));
-        });
-        mbpPlayer();
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-    function mbpPlayer(){
-      var audio;
-      var playlist;
-      var tracks;
-      var current;
-      var volume;
-      init();
-      function init(){
-        current = 0;
-        audio = $('audio');
-        playlist = $('.sound-list');
-        tracks = playlist.find('li');
-        len = tracks.length - 1;
-        audio[0].volume = 1;
-
-        play = $('#play');
-        pause = $('#pause');
-        mute = $('#mute');
-        muted = $('#muted');
-
-        playlist.find('.sound-title').click(function(e){
-            e.preventDefault();
-            link = $(this);
-            current = link.parent().index();
-            run(link, audio[0]);
-        });
-        audio[0].addEventListener('ended',function(e){
-            current++;
-            if(current == len){
-                current = 0;
-                // audio[0].pause();
-                link = playlist.find('.sound-title')[0];
-            }else{
-                link = playlist.find('.sound-title')[current];    
-            }
-            run($(link),audio[0]);
-        });
-      }
-      function run(link, player){
-        // var name = link.closest('.sound-set').attr('data-name');
-        var src = 'https://dl.dropboxusercontent.com/content_link/';
-        var title = link.html();
-        var url = src + title + '.mp3';
-        player.src = url;
-        // $('.mbp-player-current .title').html(name);
-        // $('.mbp-player-download').find('a').attr("href", url);
-        par = link.closest('.sound-set');
-        par.addClass('active').siblings().removeClass('active');
-        audio[0].load();
-        audio[0].play();
-
-        $('#play').replaceWith('<div id="pause" class="button-pause">Pause</div>');
-        $('.controls').addClass('active');
-      }
-      $(document).on('click', '#play', function(){
-        audio[0].play();
-        $(this).replaceWith('<div id="pause" class="button-pause">Pause</div>');
-      });
-
-      $(document).on('click', '#pause', function(){
-        audio[0].pause();
-        $(this).replaceWith('<div id="play" class="button-play">Play</div>');
-      });
-    }
-  },
-  wpContact: function() {
-    function wpInit(){
-      var waypoint = new Waypoint({
-        element: document.getElementById('site-contact'),
-        handler: function(direction) {
-          var form = document.getElementById('mbp_form');
-          var form_width = form.offsetWidth;
-          if(direction==='down'){
-            form.classList.add('fixed');
-            form.style.width = '100%';
-            if (window.matchMedia('(min-width: 992px)').matches) {
-              form.style.width = form_width + 'px';
-            }
-            form.style.top = "20px";
-          } else if(direction==='up'){
-            form.classList.remove('fixed');
-            form.style.top = "auto";
+  slick: function() {
+    function createSlick(){
+      $(".case-studies--contents").not('.slick-initialized').slick({
+      infinite: true,
+      arrows: true,
+      slidesToShow: 1,
+      centerMode: true,
+      variableWidth: true,
+      prevArrow: '<div class="case-studies--advancer case-studies--advancer-left"><i class="far fa-angle-left"></div>',
+      nextArrow: '<div class="case-studies--advancer case-studies--advancer-right"><i class="far fa-angle-right"></div>',
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
           }
         },
-        offset: 20
-      });
-    }
-    function wpFooter(){   
-      var waypoint = new Waypoint({
-        element: document.getElementById('footer'),
-        handler: function(direction) {
-          function offset(el) {
-            var rect = el.getBoundingClientRect(),
-            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
-          }
-
-          var footer = document.getElementById('footer');
-          var footer_offset = offset(footer);
-          var footer_height = footer.offsetHeight;
-          var form = document.getElementById('mbp_form');
-          var form_height = form.offsetHeight;
-
-          if(direction==='down'){
-            form.classList.remove('fixed');
-            form.classList.add('bottom');
-            var top_pos = footer_offset.top - footer_height - 266;
-            form.style.top = top_pos + "px";
-          } else if(direction==='up'){
-            // form.style.top = 'auto';
-            form.classList.remove('bottom');
-            form.classList.add('fixed');
-            form.style.top = "20px";
-          }
-        },
-        offset: 600
-      });
-    }
-
-    if ($('body').hasClass('contact')){
-      wpInit(); wpFooter();
-    }
-    win.resize(function () {
-      js.main.wpContact();
+      ]
     });
-  },
+    }
+    createSlick();
+    win.on('resize', createSlick);
+  }
 };
 
 doc.ready(function () {
   js.main.init();
 });
-

@@ -1,8 +1,8 @@
 ---
 title: The Musings of Bojack Horseman
 date: 2016-10-07 16:05 UTC
-thumbnail_image: assets/img/img-home-blog-bojack.png
-tags:
+thumbnail_image: img-home-blog-bojack.png
+tags: coding
 ---
 I went back to the basics with this recent build I submitted to the 10k Apart web challenge: I built a <10KB website and to take it a step further, I tried to build it in less than 12 hours. One of my good friends was visiting LA and brought the contest to my attention. We decided to do a collaboration, where I would work on the design and development and she did the assist with the content and layout.
 
@@ -232,7 +232,7 @@ We decided to create the website from start to finish, check out how much we wer
     rotatequote();
 
 ### Keep a Sleek Design
-The best answer to this is compromise. Our website idea was minimal but we wanted to do a lot to make up for it design-wise. 
+The best answer to this is compromise. Our website idea was minimal but we wanted to do a lot to make up for it design-wise.
 
 #### Character Background Design:
 With the original design, we wanted to have BoJack’s eyes and diamond and place a tiled background for his color vs. using a plain brown. It didn’t work out with the size restrictions so we had to forego the background and instead we added his nose to show you it was him. To limit the number of images, we added a simple code to invert the eye image. This took some strategic thinking to make it work and it did!
@@ -246,14 +246,14 @@ After multiple changes, testing the file size, and picking quotes, we were able 
 I would love to come back to this project and develop it some more, i.e. making it more mobile friendly.
 
 ## Final Product:
-![Bojack Website](assets/img/bojack-screen.jpg)
+![Bojack Website](assets/img/blog/bojack-screen.jpg)
 
 ### Toolkit:
 - [Codepen](https://codepen.io/)
 - [Sublime Text](https://www.sublimetext.com/)
 - [Photoshop](https://www.adobe.com/products/photoshop.html)
 - [Pingdom Website Speed Test](https://tools.pingdom.com/)
-  
+
 ### External Links:  
 - [The Musings of Bojack Horseman](https://a-k-apart.com/gallery/The-Musings-of-Bojack-Horseman-10k-Apart-Edition)  
 - [Bojack Horseman on Netflix](https://www.netflix.com/title/70300800)

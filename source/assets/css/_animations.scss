@@ -1,5 +1,50 @@
 // _animations.scss
 
+// Loader
+  @keyframes loader {
+  0% {
+    height: 100%;
+    display: block;
+    z-index: 100;
+  }
+  90% {
+    height: 0%;
+  }
+  100% {
+    display: none;
+    z-index: -1;
+    @include translate(0,-1000px);
+  }
+}
+@keyframes loaderMain {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes loaderMastLogo {
+  0% {
+    @include translate(-1000px,0);
+  }
+  100% {
+    @include translate(0,0);
+  }
+}
+
+// Fade In Out
+  @keyframes fadeInOut {
+    0%, 60%, 100% {
+      opacity: 0.05;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
 // Tap Pulse
   @-webkit-keyframes tapPulse {
     0% {
@@ -128,30 +173,8 @@
     }
     100% {
       opacity: 0;
-    }    
+    }
   }
-
-// Fade In Up
-  // @-webkit-keyframes fadeInUp {
-  //   0% {
-  //     opacity: 0;
-  //     @include translate(0,100px);
-  //   }
-  //   100% {
-  //     opacity: 1;
-  //     @include translate(0,0);
-  //   }
-  // }
-  // @keyframes fadeInUp {
-  //   0% {
-  //     opacity: 0;
-  //     @include translate(0,100px);
-  //   }
-  //   100% {
-  //     opacity: 1;
-  //     @include translate(0,0);
-  //   }
-  // }
 
   // Fade In
     @-webkit-keyframes fadeIn {
@@ -188,49 +211,3 @@
       @include filter(hue-rotate(360deg));
     }
   }
-
-// Init Animations
-  
-
-  // .fadeInUp {
-  //   opacity: 0;
-  //   @include translate(0,500px);
-  //   @include animation(fadeInUp 1s $timing 0ms 1 forwards);
-  //   display: block;
-  //   position: relative;
-  //   &:nth-child(2){
-  //     @include animation(fadeInUp 1.5s $timing 500ms 1 forwards);
-  //   }
-  //   &:nth-child(3){
-  //     @include animation(fadeInUp 1.7s $timing 1000ms 1 forwards);
-  //   }
-  //   &:nth-child(4){
-  //     @include animation(fadeInUp 1.9s $timing 1500ms 1 forwards);
-  //   }
-  //   &:nth-child(5){
-  //     @include animation(fadeInUp 2.1s $timing 2000ms 1 forwards);
-  //   }
-  //   &.hideme {
-  //     @include transition($time: 600ms);
-  //     @include translate(0,50px);
-  //     opacity: 0;
-  //     &.showme {
-  //       @include translate(0,0px);
-  //       opacity: 1;
-  //     }
-  //   }
-  //   .word {
-  //     display: inline-block;
-  //   }
-  // }
-  // .fadeIn {
-  //   position: relative;
-  //   &.hideme {
-  //     @include transition($time: 600ms);
-  //     opacity: 0;
-  //     &.showme {
-  //       @include animation(fadeIn 1s $timing 0ms 1 forwards);
-  //       opacity: 1;
-  //     }
-  //   }
-  // }

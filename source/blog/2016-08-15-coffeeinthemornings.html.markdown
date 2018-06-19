@@ -1,8 +1,8 @@
 ---
 title: Coffee In The Mornings
 date: 2016-08-15 00:15 UTC
-tags:
-thumbnail_image: assets/img/img-home-blog-coffee.png
+tags: productivity
+thumbnail_image: img-home-blog-coffee.png
 ---
 
 ## Why doing the most important things in the morning gives you that incredible boost for the rest of the day?
