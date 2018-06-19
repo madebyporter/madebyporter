@@ -13,9 +13,9 @@ js.main = {
   aos: function () {
     AOS.init({
       offset: 50,
-      duration: 600,
+      duration: 400,
       easing: 'ease-in-out-quad',
-      delay: 400,
+      delay: 300,
     });
   },
   lazyLoad: function () {
