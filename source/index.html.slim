@@ -62,7 +62,10 @@ section#work.site-block.site-stories.site-block--full-width data-aos="fade-in"
           .case-studies--contents data-aos="fade-in"
             - proj.work.each do|work|
               .case-studies--block
-                img.lazy src="assets/img/projects/#{work.item.img}.webp" data-src="assets/img/projects/#{work.item.img}.webp" data-srcset="assets/img/projects/#{work.item.img}.webp 1x, assets/img/projects/#{work.item.img}-md.webp 800w, assets/img/projects/#{work.item.img}-sm.webp 500w" alt="#{work.item.alt}"
+                picture.lazy
+                  source srcset="assets/img/projects/#{work.item.img}.webp" type="image/webp" data-src="assets/img/projects/#{work.item.img}.webp" data-srcset="assets/img/projects/#{work.item.img}.webp 1x, assets/img/projects/#{work.item.img}-md.webp 800w, assets/img/projects/#{work.item.img}-sm.webp 500w"
+                  source srcset="assets/img/projects/#{work.item.img}.jpg" type="image/jpeg" data-src="assets/img/projects/#{work.item.img}.webp" data-srcset="assets/img/projects/#{work.item.img}.webp 1x, assets/img/projects/#{work.item.img}-md.webp 800w, assets/img/projects/#{work.item.img}-sm.webp 500w"
+                  img src="assets/img/projects/#{work.item.img}.jpg" data-src="assets/img/projects/#{work.item.img}.jpg" data-srcset="assets/img/projects/#{work.item.img}.jpg 1x, assets/img/projects/#{work.item.img}-md.webp 800w, assets/img/projects/#{work.item.img}-sm.jpg 500w" alt="#{work.item.alt}"
 
 section#mission.site-block.site-block--full-width.style-mission
   .site-block.site-block--max-width.site-block--small-height
