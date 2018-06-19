@@ -4,12 +4,12 @@
       li.site-nav--element
         == link_to 'Back Home', '/', class: "site-nav--link"
 
-  section.site-hero.sub.site-section.site-block.no-border
+  section.site-hero.sub.site-section.site-block.site-block--bottom-2.no-border
     header.site-header.site-hero-text
       .container-fluid
         .row
-          .col-sm-8.offset-sm-2.col-md-8.offset-md-2.col-lg-10.offset-lg-1
-            h1
+          .col-sm-8.offset-sm-2
+            h1.site-blog-title
               = current_article.title
   section.site-blog.site-section.no-border
     .container-fluid

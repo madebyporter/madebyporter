@@ -127,7 +127,7 @@ section#stories.site-block.site-block--full-width.style-stories
         .col-12
           ul.blog-list.site-list.no-list
             - blog.articles[0...5].each do |article|
-              li.blog-list-ele data-aos="fade-in"
+              li.blog-list-ele class="#{article.data.type}" data-aos="fade-in"
                 = link_to article.url do
                   .blog-list-inner
                     .blog-list-content

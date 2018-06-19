@@ -11,9 +11,8 @@ When you're freelancing, consulting or running a small business, you have to be 
 
 With all that in mind, you have to stay organized as hell or shit is going to fall apart, quick! Here's what I do. I use different tools to handle all that. So below, I listed all those tools below. Try that shit out and see if it works for you. If not, Google the titles like "Time Management App" and find an alternative. [Product Hunt](https://www.producthunt.com/) also works for looking for some good apps to use. Here we go:
 
-![Harvest](assets/img/blog/apps-logo-harvest.jpg)
-
 ## Time Management & Invoicing: Harvest
+![Harvest](assets/img/blog/apps-logo-harvest.jpg)
 Pricing: $0/$12/$49/$99 per month  
 [https://www.getharvest.com/](https://www.getharvest.com/)
 
@@ -22,9 +21,8 @@ Pricing: $0/$12/$49/$99 per month
 - Evidence of time spent for clients. Clients will always be suspect of the time you spend working. That's why they rather have you work at their office. Sending these will help ease the pain.
 - Send invoices to my clients and connect my [Paypal](https://www.paypal.com) and [Stripe](https://www.stripe.com) accounts so clients can easily pay their balance.
 
-![Asana](assets/img/blog/apps-logo-asana.jpg)
-
 ## Project Management (team): Asana
+![Asana](assets/img/blog/apps-logo-asana.jpg)
 Pricing: $0/$8.33 per month  
 [https://www.asana.com/](https://www.asana.com/)
 
@@ -33,9 +31,8 @@ Pricing: $0/$8.33 per month
 - Assign tasks to my assistant and any sub-contractors that don’t mind using Asana
 - Keep up with milestones, deadlines, etc.
 
-![Spark](assets/img/blog/apps-logo-spark.jpg)
-
 ## Email: Spark
+![Spark](assets/img/blog/apps-logo-spark.jpg)
 Pricing: $0
 [https://sparkmailapp.com/](https://sparkmailapp.com/)
 
@@ -44,9 +41,8 @@ Pricing: $0
 - Good with the [Getting Things Done](https://www.wikiwand.com/en/Getting_Things_Done) methodology
 - Organizes important unread mail first, notifications/newsletters last
 
-![Wunderlist](assets/img/blog/apps-logo-wunderlist.jpg)
-
 ## Task Management (independent): Wunderlist
+![Wunderlist](assets/img/blog/apps-logo-wunderlist.jpg)
 Pricing: $0/$4.99 per month
 [https://wunderlist.com/](https://wunderlist.com/)
 
@@ -54,9 +50,8 @@ Pricing: $0/$4.99 per month
 - My main [Getting Things Done](https://www.wikiwand.com/en/Getting_Things_Done) center
 - Organize all my work and personal projects here
 
-![Slack](assets/img/blog/apps-logo-slack.jpg)
-
 ## Team Communication: Slack
+![Slack](assets/img/blog/apps-logo-slack.jpg)
 Pricing: $0/$6.67/$12.50 per month
 [https://slack.com/](https://slack.com/)
 
@@ -64,9 +59,8 @@ Pricing: $0/$6.67/$12.50 per month
 - How I talk to the people I collaborate on projects with
 - Many integrations to extend Slack such as Asana or Wunderlist notifications
 
-![Enpass](assets/img/blog/apps-logo-enpass.jpg)
-
 ## Password Manager: Enpass
+![Enpass](assets/img/blog/apps-logo-enpass.jpg)
 Pricing: $0/$9.99 per month
 [https://enpass.io](https://enpass.io)
 
@@ -74,9 +68,8 @@ Pricing: $0/$9.99 per month
 - Easy to use password manager
 - Has browser extension to quickly find passwords for sites
 
-![Dropbox](assets/img/blog/apps-logo-dropbox.jpg)
-
 ## Storage & Backup: Dropbox
+![Dropbox](assets/img/blog/apps-logo-dropbox.jpg)
 Pricing: $0/$9.99 per month
 [https://dropbox.com](https://dropbox.com)
 
@@ -85,9 +78,8 @@ Pricing: $0/$9.99 per month
 - My dropbox is saved on an external drive
 - That dropbox is uploaded once a year to a server and another hard drive
 
-![Google Drive](assets/img/blog/apps-logo-googledrive.jpg)
-
 ## Doc Suite: Google Drive
+![Google Drive](assets/img/blog/apps-logo-googledrive.jpg)
 Pricing: $0/$9.99 per month
 [https://drive.google.com](https://drive.google.com)
 
@@ -96,9 +88,8 @@ Pricing: $0/$9.99 per month
 - Its online, easy to use, fast to load, cleaner experience
 - Sharing is the big thing here as many people can work on the same document at the same time
 
-![Fantastical](assets/img/blog/apps-logo-fantastical.jpg)
-
 ## Calendar: Fantastical
+![Fantastical](assets/img/blog/apps-logo-fantastical.jpg)
 Pricing: $0/$9.99/$39.99
 [https://flexibits.com/fantastical](https://flexibits.com/fantastical)
 
@@ -107,9 +98,8 @@ Pricing: $0/$9.99/$39.99
 - Add new events with real language such as “Meeting tomorrow with Arthur at 9am”
 - Would use the full size app but it’s too expensive
 
-![Ecfio Pro](assets/img/blog/apps-logo-ecfiopro.jpg)
-
 ## Financials: Ecfio Pro
+![Ecfio Pro](assets/img/blog/apps-logo-ecfiopro.jpg)
 Pricing: $10
 [http://ecfiopro.com/](http://ecfiopro.com/)
 
@@ -117,10 +107,8 @@ Pricing: $10
 - Helps manage my production efficiency using data I’ve inputted from my bank statements and timesheets
 - Find out how much I really need to charge based on my expenses and time
 
-
-![Google Contacts](assets/img/blog/apps-logo-googlecontacts.jpg)
-
 ## CRM: Google Contacts
+![Google Contacts](assets/img/blog/apps-logo-googlecontacts.jpg)
 Pricing: $0/$5 per user per month
 [http://contacts.google.com/](http://contacts.google.com/)
 
