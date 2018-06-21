@@ -115,6 +115,18 @@ section#mission.site-block.site-block--full-width.style-mission
                 | Photography
               p.small
                 | With my FujiFilm XE-1, I've been able to help create direction for personal brands using beautiful photography. On location or in a studio, we can create something special for your website or social media marketing.
+      .row
+        .col-12
+          .row
+            .col-md-12 data-aos="fade-in"
+              h3
+                | Who I Helped
+          .row
+            .col-md-12 data-aos="fade-in"
+              ul.site-clients-list
+                - data.clients.list.each do |client|
+                  li.site-clients-ele
+                      img.site-clients-img src="assets/img/clients/logo-proof-#{client.shortname}.png" alt="#{client.client}"
 
 section#stories.site-block.site-block--full-width.style-stories
   .site-block.site-block--max-width.site-block--small-height

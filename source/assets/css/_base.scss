@@ -740,3 +740,47 @@
       color: $color-grey-l2;
       @include font-size(16);
     }
+
+    .site-clients-list {
+      @include flexbox;
+      @include flex-wrap(wrap);
+      list-style: none;
+      justify-content: center;
+      margin: 0;
+    }
+    .site-clients-ele {
+      background: $color-grey-d4;
+      height: 100px;
+      padding: $space-2;
+      object-fit: contain;
+      text-align: center;
+      @include flexbox;
+      align-items: center;
+      justify-content: center;
+      margin: $space-1 $space-2;
+      margin-left: 0;
+      width: 42.5%;
+      @media (min-width: $mq-medium) {
+        margin: $space-1 $space-2;
+        margin-left: 0;
+        height: 150px;
+        width: 30.3%;
+      }
+      @media (min-width: $mq-large) {
+        margin: $space-1 $space-2;
+        margin-left: 0;
+        width: 23.2%;
+      }
+      &:hover {
+        .site-clients-img {
+          filter: grayscale(0%);
+        }
+      }
+    }
+    .site-clients-img {
+      filter: grayscale(100%);
+      @include transition;
+      @media (min-width: $mq-medium) {
+        width: auto;
+      }
+    }
