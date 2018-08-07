@@ -25,7 +25,8 @@ html lang="en"
     meta name="theme-color" content="#ffffff"
 
     == stylesheet_link_tag "style"
-
+    == javascript_include_tag "output", :cache => true, :async => true
+    
   body class="#{page_classes}"
     .loader
       svg.loader-logo height="60px" version="1.1" viewbox=("0 0 58 60") width="58px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -51,7 +52,6 @@ html lang="en"
           .row
             .col-12
               span &copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> Made by Porter. All rights reserved.
-    == javascript_include_tag "output", :cache => true, :async => true
 
 		// Typekit
     script src="https://use.typekit.net/pdw4yep.js"
