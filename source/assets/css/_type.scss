@@ -8,29 +8,41 @@
     }
   }
 
+  // Links
+    a {
+      color: $color-red;
+      font-weight: 700;
+      text-decoration: none;
+      &:hover {
+        color: $color-red-light;
+        text-decoration: none;
+      }
+    }
+
   // Paragraphs
     p, ul, li {
       font-family: $font-reg;
       @include font-size(24);
       margin-bottom: $space-2;
-
-      @media (min-width: $mq-small) {
-        @include font-size(24);
-        &.paragraph-large {
-          @include font-size(36);
-        }
-      }
-
       &.small {
         @include font-size(18);
       }
+      &.large {
+        @include font-size(36);
+      }
+      // @media (min-width: $mq-small) {
+      //   @include font-size(24);
+      //   &.large {
+      //     @include font-size(36);
+      //   }
+      // }
 
       & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {
         margin-top: $space-1;
       }
 
     }
-    
+
   // Headers
     h1, h2, h3, h4, h5, h6 {
       display: block;
@@ -42,17 +54,14 @@
 
     h1 {
       @include font-size(48);
-      font-weight: 700;
       line-height: 1.1;
-      // text-transform: uppercase;
       @media (min-width: $mq-small) {
-        @include font-size(128);
+        @include font-size(72);
       }
     }
 
     h2 {
       @include font-size(32);
-      font-weight: 700;
       @media (min-width: $mq-small) {
         @include font-size(48);
       }
@@ -74,7 +83,6 @@
 
     h5 {
       @include font-size(14);
-      text-transform: uppercase;
       @media (min-width: $mq-small) {
         @include font-size(18);
       }
@@ -82,9 +90,14 @@
 
     h6 {
       @include font-size(10);
-      text-transform: uppercase;
       @media (min-width: $mq-small) {
         @include font-size(14);
+      }
+    }
+    .headline {
+      @include font-size(48);
+      @media (min-width: $mq-small) {
+        @include font-size(128);
       }
     }
 
@@ -124,7 +137,7 @@
     }
 
   // Blockquotes
-    blockquote { 
+    blockquote {
       p {
         font-family: $font-secondary;
         @include font-size(40);

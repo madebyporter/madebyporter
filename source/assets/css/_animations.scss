@@ -1,7 +1,7 @@
 // _animations.scss
 
 // Loader
-  @keyframes loader {
+@keyframes loader {
   0% {
     height: 100%;
     display: block;
@@ -10,10 +10,13 @@
   90% {
     height: 0%;
   }
-  100% {
+  95% {
     display: none;
     z-index: -1;
     @include translate(0,-1000px);
+  }
+  100% {
+    @include translate(0,-10000px);
   }
 }
 @keyframes loaderMain {

@@ -8,26 +8,16 @@
 
 // Colors
   $color-black:       #1D1D21;
+  $color-coal:        #28282e;
   $color-white:       #fff;
+
   $color-grey:        #6F6F80;
-  $color-grey-l1:     lighten($color-grey, 5%);
-  $color-grey-l2:     lighten($color-grey, 15%);
-  $color-grey-l3:     lighten($color-grey, 25%);
-  $color-grey-l4:     lighten($color-grey, 60%);
-  $color-grey-d1:     darken($color-grey, 5%);
-  $color-grey-d2:     darken($color-grey, 15%);
-  $color-grey-d3:     darken($color-grey, 25%);
-  $color-grey-d4:     darken($color-grey, 30%);
+  $color-grey-light:  #A4A4B3;
+  $color-grey-dark:   #3F3F4D;
 
   $color-red:         #E84C5C;
-  $color-red-d1:      darken($color-red, 5%);
-  $color-red-d2:      darken($color-red, 15%);
-  $color-red-d3:      darken($color-red, 25%);
-  $color-red-d4:      darken($color-red, 35%);
-  $color-red-l1:      lighten($color-red, 5%);
-  $color-red-l2:      lighten($color-red, 15%);
-  $color-red-l3:      lighten($color-red, 25%);
-  $color-red-l4:      lighten($color-red, 35%);
+  $color-red-light:   #FF6E7C;
+  $color-red-dark:    #CF303F;
 
   $color-black-20:    rgba(30, 30, 34, .2);
   $color-black-50:    rgba(30, 30, 34, .5);

@@ -44,24 +44,11 @@
     h1, h2, h3, h4, h5, h6 {
       color: $color-white;
     }
-
     p {
-      color: $color-grey-l3;
-      @include font-size(24);
-      &.paragraph-large {
-        font-weight: 700;
-      }
-      &.paragraph-small {
-        @include font-size(20);
-      }
+      color: $color-grey-light;
     }
     a {
       color: $color-red;
-      font-weight: 700;
-      text-decoration: none;
-      &:hover {
-        text-decoration: none;
-      }
     }
 
   // Site
@@ -83,6 +70,9 @@
         margin: 0 auto $space-5 auto;
         min-height: 50vh;
       }
+    }
+    .site-block-row {
+      margin-bottom: $space-4;
     }
     .site-block--full-width {
       max-width: 100%;
@@ -245,7 +235,7 @@
       }
     }
     .blog-list-inner {
-      background: $color-grey-d4;
+      background: $color-coal;
       height: auto;
       overflow: hidden;
       padding: $space-3 $space-2;
@@ -319,13 +309,13 @@
     }
     .site-nav--link {
       background: transparent;
-      color: $color-grey-d1;
+      color: $color-grey;
       @include font-size(24);
       font-weight: 700;
       text-decoration: none;
       @include transition;
       &:hover {
-        color: $color-grey-l1;
+        color: $color-grey-light;
       }
     }
     .site-nav--active {
@@ -397,7 +387,7 @@
       }
     }
     .comp-list {
-      color: $color-grey-l3;
+      color: $color-grey-light;
       margin: 0 0 $space-3 $space-2;
     }
     ol.comp-list {
@@ -414,11 +404,11 @@
         background: $color-red;
         color: $color-white;
         &:hover {
-          background: $color-red-l1;
+          background: $color-red-light;
         }
       }
       &.comp-btn-grey {
-        background: $color-grey-d1;
+        background: $color-grey-dark;
         color: $color-white;
         &:hover {
           background: $color-grey;
@@ -440,11 +430,11 @@
       &:hover {
         // @include scale(1.02);
         .comp-block--top {
-          background: $color-grey-d3;
+          background: $color-grey-dark;
           width: 70%;
         }
         .comp-block--bottom {
-          background: $color-grey-d2;
+          background: $color-grey-dark;
         }
         .comp-block--header-text-large {
           @include translate($space-1,0);
@@ -484,7 +474,7 @@
         @include translate(0,0);
       }
       .comp-block--top {
-        background: $color-grey-d4;
+        background: $color-grey-dark;
         display: inline-block;
         height: 40px;
         padding: $space-2 $space-2;
@@ -496,7 +486,7 @@
         }
       }
       .comp-block--bottom {
-        background: $color-grey-d3;
+        background: $color-grey-dark;
         height: auto;
         padding: 0;
         @include transition;
@@ -563,12 +553,12 @@
       @include nolist;
     }
     li.comp-music--track {
-      background: $color-grey-d4;
+      background: $color-grey-dark;
       padding: $space-2;
       width: 100%;
       @include transition;
       &:hover {
-        background: $color-grey-d3;
+        background: $color-grey-dark;
         span.comp-music--control {
           color: $color-white;
         }
@@ -580,7 +570,7 @@
     span.comp-music--control {
       @include flexbox;
       align-items: center;
-      color: $color-grey-l1;
+      color: $color-grey-light;
       cursor: pointer;
       height: 44px;
       @include scale(1);
@@ -590,7 +580,7 @@
       }
     }
     span.comp-music--meta {
-      color: $color-grey-l3;
+      color: $color-grey-light;
       @include transition($delay:200ms);
     }
     span.comp-music--meta-name {
@@ -607,7 +597,7 @@
       }
     }
     .comp-nav-sort--label {
-      color: $color-grey-l1;
+      color: $color-grey-light;
     }
     .comp-nav-sort--list {
       @include nolist;
@@ -615,18 +605,18 @@
     }
     .comp-nav-sort--ele {
       @include font-size(24);
-      color: $color-grey-d2;
+      color: $color-grey-dark;
       cursor: pointer;
       font-weight: 700;
       margin: 0 0 0 $space-2;
       &:hover {
-        color: $color-grey-d1;
+        color: $color-grey-dark;
       }
     }
     .comp-nav-sort--ele-active {
-      color: $color-grey-l3;
+      color: $color-grey-light;
       &:hover {
-        color: $color-grey-l3;
+        color: $color-grey-light;
       }
     }
     .site-journal-entry {
@@ -642,18 +632,12 @@
         @include font-size(64);
       }
     }
-    .site-journal-entry--desc {
-      color: rgba(255,255,255,0.8);
-    }
-    .site-journal-entry--data li {
-      color: rgba(255,255,255,0.6);
-    }
     .journal-entry--cta {
       @include font-size(24);
       margin: 0 0 $space-2 0;
     }
     .meta-data {
-      color: $color-grey-l2;
+      color: $color-grey-light;
       list-style: none;
       margin: 0 0 $space-2;
       padding: 0;
@@ -715,7 +699,7 @@
     }
     .site-blog-post {
       ul {
-        color: $color-grey-l2;
+        color: $color-grey-light;
       }
       img {
         width: 100%;
@@ -726,18 +710,18 @@
     }
 
     pre {
-      background: $color-grey-d4;
-      box-shadow: inset 10px 0 0 $color-grey-d3;
+      background: $color-grey-dark;
+      box-shadow: inset 10px 0 0 $color-grey-dark;
       overflow-x: scroll;
       padding: $space-2;
       code {
-        color: $color-grey-l2;
+        color: $color-grey-light;
         @include font-size(18);
       }
     }
 
     .site-footer {
-      color: $color-grey-l2;
+      color: $color-grey-light;
       @include font-size(16);
     }
 
@@ -749,7 +733,7 @@
       margin: 0;
     }
     .site-clients-ele {
-      background: $color-grey-d4;
+      background: $color-coal;
       height: 100px;
       padding: $space-2;
       object-fit: contain;
