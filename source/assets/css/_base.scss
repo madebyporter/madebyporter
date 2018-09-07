@@ -19,20 +19,20 @@
     &.overflow {
       overflow: hidden;
     }
-    &:before {
-      background: $color-red;
-      bottom: 0;
-      content: "";
-      height: 100%;
-      left: 0;
-      position: fixed;
-      right: 0;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      opacity: 1;
-      @include animation(pageEnter 100ms $timing 0ms normal 1 forwards);
-    }
+    // &:before {
+    //   background: $color-red;
+    //   bottom: 0;
+    //   content: "";
+    //   height: 100%;
+    //   left: 0;
+    //   position: fixed;
+    //   right: 0;
+    //   top: 0;
+    //   width: 100%;
+    //   z-index: 100;
+    //   opacity: 1;
+    //   @include animation(pageEnter 100ms $timing 0ms normal 1 forwards);
+    // }
     &.page-leave {
       &:before {
         @include animation(pageLeave 100ms $timing 0ms normal 1 forwards);
@@ -60,7 +60,7 @@
       margin: 0 auto;
       position: relative;
       width: 100%;
-      @include animations(loaderMain,$delay:700ms,$duration:1100ms,$iteration:1,$timing:$timing,$direction:normal,$fillmode:forwards);
+      // @include animations(loaderMain,$delay:700ms,$duration:1100ms,$iteration:1,$timing:$timing,$direction:normal,$fillmode:forwards);
     }
     .site-block {
       margin: 0 auto $space-4 auto;

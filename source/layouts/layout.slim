@@ -26,16 +26,8 @@ html lang="en"
 
     == stylesheet_link_tag "style"
     == javascript_include_tag "output", :cache => true, :async => true
-    
+
   body class="#{page_classes}"
-    .loader
-      svg.loader-logo height="60px" version="1.1" viewbox=("0 0 58 60") width="58px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        g#UI fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"
-          g#Desktop-HD fill="#1D1D21" fill-rule="nonzero" transform="translate(-691.000000, -482.000000)"
-            g#mbp-logo transform="translate(691.000000, 482.000000)"
-              polygon#shape_a.loader-logo--shape-1 points=("51.8898149 41.108656 0.0558096366 60 57.3859358 60")
-              polygon#shape_b.loader-logo--shape-2 points=("28.994103 0.692545942 26.5658254 60 0.708840707 60")
-              polygon#shape_c.loader-logo--shape-3 points=("18.2940985 23.1256868 57.7644072 60 29.2702161 0.189890806")
 
     main.site-wrap
       #masthead.site-block.site-block--small-height.site-block--max-width.style-masthead
@@ -52,7 +44,6 @@ html lang="en"
           .row
             .col-12
               span &copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> Made by Porter. All rights reserved.
-
 		// Typekit
     script src="https://use.typekit.net/pdw4yep.js"
     javascript:
