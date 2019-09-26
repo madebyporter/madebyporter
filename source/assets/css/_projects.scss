@@ -1,0 +1,40 @@
+// Projects Base
+  .card-project {
+    @include flexbox;
+    @include flex-wrap(wrap);
+    padding: $space-2;
+    height: 420px;
+    width: 100%;
+  }
+  .card-project-info {
+    height: 20%;
+    width: 100%;
+  }
+    .card-project-info--title {
+      @extend .t-16;
+      margin: 0;
+    }
+    .card-project-info--desc {
+      color: rgba(255,255,255,0.6);
+      @extend .t-16;
+      margin: 0;
+    }
+  .card-project-logo {
+    height: 60%;
+    width: 100%;
+    @include flexbox;
+    align-items: center;
+    justify-content: center;
+  }
+    .card-project-logo--img {
+      width: 40%;
+    }
+  .card-project-action {
+    height: 20%;
+    width: 100%;
+  }
+
+// Project Stylings
+  .card-project--ssfn {
+    background: #F64256;
+  }

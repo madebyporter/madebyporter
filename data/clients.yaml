@@ -1,13 +1,9 @@
 ---
 list:
-- client: Aziza Work Group
-  shortname: aziza
 - client: Buzzhoney
   shortname: buzzhoney
 - client: Foundation Transportation
   shortname: fdtps
-- client: Giant Eagle
-  shortname: gianteagle
 - client: Gigmor.com
   shortname: gigmor
 - client: Hyrecar
@@ -16,8 +12,6 @@ list:
   shortname: jayeneutron
 - client: LiveRaise
   shortname: liveraise
-- client: Paystr
-  shortname: paystr
 - client: Ron Finley
   shortname: ronfinley
 - client: Silicon Beach Talent
@@ -26,7 +20,3 @@ list:
   shortname: squrl
 - client: Steele Hungry
   shortname: steelehungry
-- client: UPMC
-  shortname: upmc
-- client: Zanzibar Restaurant
-  shortname: zanzibar

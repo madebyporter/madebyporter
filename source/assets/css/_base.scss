@@ -66,7 +66,7 @@
       margin: 0 auto $space-4 auto;
       position: relative;
       z-index: 100;
-      @media (min-width: $mq-small) {
+      @media (min-width: $mq-tablet) {
         margin: 0 auto $space-5 auto;
         min-height: 50vh;
       }
@@ -81,7 +81,7 @@
     .site-block--max-width {
       max-width: 1600px;
       width: 100%;
-      @media (min-width: $mq-small) {
+      @media (min-width: $mq-tablet) {
         width: 85%;
       }
     }
@@ -96,13 +96,16 @@
       margin-bottom: 0;
     }
     .site-block--bottom-1 {
-      margin-bottom: $space-2;
+      margin-bottom: $space-1;
     }
     .site-block--bottom-2 {
       margin-bottom: $space-2;
     }
+    .site-block--bottom-3 {
+      margin-bottom: $space-3;
+    }
     .site-block--bottom-4 {
-      margin-bottom: $space-2;
+      margin-bottom: $space-4;
     }
 
     $caseHeight: 630px;
@@ -117,14 +120,14 @@
     .case-studies--block {
       margin: 0 1rem 0 0;
       @include transition;
-      @media (min-width: $mq-small) {
+      @media (min-width: $mq-tablet) {
         margin: 0 1rem 0 0;
       }
       img {
         height: $caseHeightMobile;
         width: $caseWidthMobile;
         @include transition;
-        @media (min-width: $mq-small) {
+        @media (min-width: $mq-tablet) {
           height: $caseHeight;
           width: $caseWidth;
         }
@@ -153,7 +156,7 @@
       display: none;
       @include vertical-center;
       @include transition;
-      @media (min-width: $mq-small) {
+      @media (min-width: $mq-tablet) {
         display: block;
       }
       i {
@@ -173,7 +176,7 @@
           margin-left: -.5rem;
         }
       }
-      @media (min-width: $mq-small) {
+      @media (min-width: $mq-tablet) {
         left: 8%;
       }
     }
@@ -204,10 +207,10 @@
       position: relative;
       width: 100%;
       @include transition;
-      @media (min-width: $mq-small) {
+      @media (min-width: $mq-tablet) {
         width: 50%;
       }
-      @media (min-width: $mq-medium) {
+      @media (min-width: $mq-laptop) {
         width: 25%;
       }
       &:before {
@@ -229,7 +232,7 @@
       }
       &.lead {
         width: 100%;
-        @media (min-width: $mq-medium) {
+        @media (min-width: $mq-laptop) {
           width: 50%;
         }
       }
@@ -240,7 +243,7 @@
       overflow: hidden;
       padding: $space-3 $space-2;
       position: relative;
-      @media (min-width: $mq-small) {
+      @media (min-width: $mq-tablet) {
         height: 350px;
       }
       &:before {
@@ -281,7 +284,7 @@
     }
     .site-nav {
       display: none;
-      @media (min-width: $mq-small) {
+      @media (min-width: $mq-tablet) {
         display: block;
         left: 10px;
         position: fixed;
@@ -293,7 +296,7 @@
     }
     .site-nav--list {
       @extend .no-list;
-      @media (min-width: $mq-small) {
+      @media (min-width: $mq-tablet) {
         @include flexbox;
         flex-direction: row-reverse;
         justify-content: center;
@@ -328,7 +331,7 @@
     .style-mission {
       background: transparent;
       // background-size: 30%;
-      // @media (min-width: $mq-small) {
+      // @media (min-width: $mq-tablet) {
       //   background: url('../img/mbp-home-wireframelayout.svg') no-repeat right top;
       // }
     }
@@ -345,7 +348,7 @@
         padding-right: 4px;
         /* Space between tiles */
         margin-top: 8px;
-        @media (min-width: $mq-small) {
+        @media (min-width: $mq-tablet) {
           width: 25%;
         }
       }
@@ -398,25 +401,25 @@
       @include font-size(16);
       font-weight: 700;
       padding: 1rem 2rem;
+      text-align: center;
       text-decoration: none;
       @include transition;
-      &.comp-btn-red {
-        background: $color-red;
+    }
+    .comp-btn-red {
+      background: $color-red;
+      color: $color-white;
+      &:hover {
+        background: $color-red-light;
         color: $color-white;
-        &:hover {
-          background: $color-red-light;
-        }
-      }
-      &.comp-btn-grey {
-        background: $color-grey-dark;
-        color: $color-white;
-        &:hover {
-          background: $color-grey;
-        }
       }
     }
-
-
+    .comp-btn-grey {
+      background: $color-grey-dark;
+      color: $color-white;
+      &:hover {
+        background: $color-grey;
+      }
+    }
     .comp-block {
       margin: $space-3 0;
     }
@@ -543,7 +546,7 @@
     }
     .style-masthead {
       .comp-btn {
-        margin: $space-1 0;
+        // margin: $space-1 0;
       }
     }
     #instagram a:nth-child(2){
@@ -592,7 +595,7 @@
       @include flexbox;
       @include font-size(24);
       margin: $space-2 0;
-      @media (min-width: $mq-large) {
+      @media (min-width: $mq-desktop) {
         float: right;
       }
     }
@@ -628,7 +631,7 @@
       }
     }
     .site-journal-entry--headline {
-      @media (min-width: $mq-large) {
+      @media (min-width: $mq-desktop) {
         @include font-size(64);
       }
     }
@@ -744,13 +747,13 @@
       margin: $space-1 $space-2;
       margin-left: 0;
       width: 42.5%;
-      @media (min-width: $mq-medium) {
+      @media (min-width: $mq-laptop) {
         margin: $space-1 $space-2;
         margin-left: 0;
         height: 150px;
         width: 30.3%;
       }
-      @media (min-width: $mq-large) {
+      @media (min-width: $mq-desktop) {
         margin: $space-1 $space-2;
         margin-left: 0;
         width: 23.2%;
@@ -764,7 +767,64 @@
     .site-clients-img {
       filter: grayscale(100%);
       @include transition;
-      @media (min-width: $mq-medium) {
+      @media (min-width: $mq-laptop) {
         width: auto;
+      }
+    }
+
+    .music_index {
+      @extend .theme-red;
+    }
+
+    // Subscription Box
+
+    .sub-box {
+      border: 4px solid $color-black;
+      border-left: 0;
+      border-right: 0;
+      padding: $space-2 0;
+      @include flexbox;
+      @include flex-wrap(wrap);
+      width: 100%;
+      @media (min-width: $mq-laptop) {
+        @include flex-wrap(nowrap);
+      }
+    }
+    .sub-box-input {
+      border: 0;
+      @include font-size(24);
+      font-weight: 700;
+      height: 72px;
+      outline: none;
+      padding: $space-2 $space-2;
+      width: 100%;
+    }
+    .sub-box-submit {
+      border: 0;
+      cursor: pointer;
+      @extend .comp-btn;
+      @include font-size(24);
+      height: 72px;
+      outline: none;
+      padding: $space-2 $space-2;
+      width: 100%;
+      @media (min-width: $mq-laptop) {
+        width: 20%;
+      }
+    }
+
+    .ordered-list {
+      list-style: none;
+      counter-reset: my-awesome-counter;
+
+      li {
+        counter-increment: my-awesome-counter;
+        &:before {
+          content: "Step " counter(my-awesome-counter) ". ";
+          display: block;
+          font-weight: 700;
+          position: relative;
+          width: 100%;
+        }
       }
     }

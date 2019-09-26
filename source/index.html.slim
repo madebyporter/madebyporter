@@ -36,36 +36,37 @@ section#projects.site-block.site-stories.site-block--full-width
     .container-fluid
       .row
         .col-12
-          h2 Projects
+          h2 Projects &amp; Ventures
+      .row
+        .col-12.col-md-4
+          .card-project.card-project--ssfn
+            .card-project-info
+              h3.card-project-info--title 
+                | SSFN
+              p.card-project-info--desc 
+                | Venture Agency
+            .card-project-logo
+              = image_tag "projects/logos-ssfn.png", :alt => "SSFN", :class => "card-project-logo--img"
+            ul.card-project-action
+              li.card-project-action--ele
+                == link_to 'Visit Site', 'https://www.ssfn.io', class: "card-project-action--link"
+              li.card-project-action--ele
+                | Chapter Coming Soon
+        .col-12.col-md-4
+          .card-project
+            .card-project-info
+              h3.card-project-info--title 
+                | The Beatbox Club
+              p.card-project-info--desc 
+                | Music Maker Collective
+            ul.card-project-action
+              li.card-project-action--ele
+                == link_to 'Visit Site', 'https://www.thebeatboxclub.com', class: "card-project-action--link"
+              li.card-project-action--ele
+                | Chapter Coming Soon
 
-  - data.projects.proj.each do |proj|
-    .site-journal-entry class="site-journal-entry--#{proj.shortname}"
-      .site-block.site-block--max-width.site-block--no-height
-        .container-fluid
-          .row
-            .col-12.col-lg-8
-              h3.site-journal-entry--headline
-                = proj.name
-              p.site-journal-entry--desc
-                = proj.desc
-              ul.meta-data.site-journal-entry--data
-                li.meta-data-el
-                  = proj.role
-                li.meta-data-el
-                  span Date:&nbsp;
-                  = proj.date
-              - if proj.cta
-                .journal-entry--cta
-                  = link_to proj.cta, proj.url
-      .case-studies
-        - if proj.work
-          .case-studies--contents
-            - proj.work.each do|work|
-              .case-studies--block
-                picture.lazy
-                  source srcset="assets/img/projects/#{work.item.img}.webp" type="image/webp" data-src="assets/img/projects/#{work.item.img}.webp" data-srcset="assets/img/projects/#{work.item.img}.webp 1x, assets/img/projects/#{work.item.img}-md.webp 800w, assets/img/projects/#{work.item.img}-sm.webp 500w"
-                  source srcset="assets/img/projects/#{work.item.img}.jpg" type="image/jpeg" data-src="assets/img/projects/#{work.item.img}.webp" data-srcset="assets/img/projects/#{work.item.img}.webp 1x, assets/img/projects/#{work.item.img}-md.webp 800w, assets/img/projects/#{work.item.img}-sm.webp 500w"
-                  img src="assets/img/projects/#{work.item.img}.jpg" data-src="assets/img/projects/#{work.item.img}.jpg" data-srcset="assets/img/projects/#{work.item.img}.jpg 1x, assets/img/projects/#{work.item.img}-md.webp 800w, assets/img/projects/#{work.item.img}-sm.jpg 500w" alt="#{work.item.alt}"
+            
+  
 
 section#mission.site-block.site-block--full-width.style-mission
   .site-block.site-block--max-width.site-block--small-height
@@ -76,48 +77,6 @@ section#mission.site-block.site-block--full-width.style-mission
             .col-12
               h2
                 | Mission
-          .row
-            .col-12
-              h3
-                | The Roadmap
-              .row
-                .col-md-6
-                  .row
-                    .col-md-2
-                      h4
-                        | 2018
-                    .col-md-10
-                      h5
-                        | Launch Versa
-                      p.small
-                        | Launch Versa, as a curated list of resources for creative industries.
-                      h5
-                        | Made by Porter Brand
-                      p.small
-                        | Continue building the Made by Porter Brand through Design, Music, Photography &amp; Tech
-                      h5
-                        | Sync Licensing
-                      p.small
-                        | Launch a music licensing service for creatives.
-
-                .col-md-6
-                  .row
-                    .col-md-2
-                      h4
-                        | 2019
-                    .col-md-10
-                      h5
-                        | Grow SSFN Collective
-                      p.small
-                        | Grow SSFN Collective to 20 members.
-                      h5
-                        | Automate SSFN
-                      p.small
-                        | Create an app that automates the project collaboration process for SSFN Collective
-                      h5
-                        | Develop a Community for Versa
-                      p.small
-                        | Build a mentoring community for Versa to help entrepreneurs and creatives.
       .site-block-row.row
         .col-12
           .row
@@ -133,9 +92,9 @@ section#mission.site-block.site-block--full-width.style-mission
 
             .col-md-5.offset-md-1
               h4
-                | Mentoring
+                | Business Technology
               p.small
-                | Something that I love to do is help upcoming creatives take their skills to the next level. If you're looking to become a better designer, developer, help on your portfolio or just need a stern talking to, please, just shoot me an email.
+                | Helping people organize their business has always been something I look forward to. From the basics of helping people buy their first laptop to getting them hipped to Notion, I enjoy helping people get their business started on the tech end. 
 
             .col-md-5
               h4
@@ -159,7 +118,7 @@ section#mission.site-block.site-block--full-width.style-mission
               ul.site-clients-list
                 - data.clients.list.each do |client|
                   li.site-clients-ele
-                      img.site-clients-img src="assets/img/clients/logo-proof-#{client.shortname}.png" alt="#{client.client}"
+                    img.site-clients-img src="assets/img/clients/logo-proof-#{client.shortname}.png" alt="#{client.client}"
 
 section#stories.site-block.site-block--full-width.style-stories
   .site-block.site-block--max-width.site-block--small-height
