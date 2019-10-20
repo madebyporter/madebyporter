@@ -1,7 +1,14 @@
 // Projects Base
+  .card-system {
+    margin: $space-2 0;
+    @media (min-width: $mq-laptop) {
+      margin: 0;
+    }
+  }
   .card-project {
     @include flexbox;
     @include flex-wrap(wrap);
+    margin: 0 0 $space-3 0;
     padding: $space-2;
     height: 420px;
     width: 100%;
@@ -10,15 +17,15 @@
     height: 20%;
     width: 100%;
   }
-    .card-project-info--title {
-      @extend .t-16;
-      margin: 0;
-    }
-    .card-project-info--desc {
-      color: rgba(255,255,255,0.6);
-      @extend .t-16;
-      margin: 0;
-    }
+  .card-project-info--title {
+    @extend .t-18;
+    margin: 0;
+  }
+  .card-project-info--desc {
+    color: rgba(255,255,255,0.6);
+    @extend .t-16;
+    margin: 0;
+  }
   .card-project-logo {
     height: 60%;
     width: 100%;
@@ -26,15 +33,189 @@
     align-items: center;
     justify-content: center;
   }
-    .card-project-logo--img {
-      width: 40%;
+  .card-project-logo--img {
+    max-width: 150px;
+    width: 50%;
+    @media (min-width: $mq-tablet) {
+      min-width: 150px;
+      max-width: 200px;
     }
+    @media (min-width: $mq-laptop) {
+      min-width: 150px;
+      max-width: none;
+    }
+  }
   .card-project-action {
     height: 20%;
     width: 100%;
+    @include flexbox;
+    @include nolist;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .card-project-action--ele {
+    @extend .t-14;
+    margin: 0;
+    padding: 0 $space-1;
+    white-space: nowrap;
+  }
+  .card-project-action--link {
+    border-bottom: 2px solid rgba(0,0,0,0.6);
+    color: rgba(0,0,0,0.6);
+    font-weight: 700;
+    &:hover {
+      border-bottom: 2px solid rgba(0,0,0,1);
+      color: rgba(0,0,0,1);
+    }
   }
 
 // Project Stylings
   .card-project--ssfn {
     background: #F64256;
+  }
+  .card-project--bbx {
+    background: #EFCB83;
+    .card-project-info--title, .card-project-action--ele {
+      color: darken(#BF891D, 20%);
+    }
+    .card-project-info--desc {
+      color: darken(#BF891D, 10%);
+    }
+    .card-project-action--link {
+      border-color: $color-red;
+    }
+  }
+  .card-project--forcesunite {
+    background: #fff;
+    .card-project-info--title, .card-project-action--link {
+      color: #000;
+    }
+    .card-project-info--desc {
+      color: rgba(0,0,0,0.4);
+    }
+  }
+  .card-project--versa {
+    background: #007BFF;
+    .card-project-info--desc, .card-project-action--ele {
+      color: rgba(255,255,255,0.8);
+    }
+    .card-project-action--link {
+      color: $color-white;
+      border-color: $color-white;
+      &:hover {
+        color: #B2D7FF;
+        border-color: #B2D7FF;
+      }
+    }
+  }
+  .card-project--myfdtps {
+    $c: #6FB3EB;
+    background: #222A36;
+    .card-project-info--desc {
+      color: $c;
+    }
+    .card-project-action--ele {
+      color: $c;
+    }
+    .card-project-action--link {
+      border-color: $c;
+      color: $c;
+      &:hover {
+        color: darken($c,10%);
+        border-color: darken($c,10%);
+      }
+    }
+  }
+  .card-project--sensory {
+    $c: #BF891D;
+    background: url('../img/projects/bg-sensory.jpg') no-repeat center;
+    .card-project-info--desc {
+      color: $c;
+    }
+    .card-project-action--ele {
+      color: $c;
+    }
+    .card-project-action--link {
+      border-color: $c;
+      color: $c;
+      &:hover {
+        color: lighten($c,10%);
+        border-color: lighten($c,10%);
+      }
+    }
+  }
+  .card-project--hyrecar {
+    background: #FC6349;
+  }
+  .card-project--gigmor {
+    background: #E34B2A;
+  }
+  .card-project--sbt {
+    $c: #FFF;
+    background: #2D5BA7;
+    .card-project-action--ele {
+      color: $c;
+    }
+    .card-project-action--link {
+      border-color: $c;
+      color: $c;
+      &:hover {
+        color: lighten($c,10%);
+        border-color: lighten($c,10%);
+      }
+    }
+  }
+  .card-project--ronfinley {
+    $c: #5C5B19;
+    background: #DBD83C;
+    .card-project-info--desc {
+      color: $c;
+    }
+    .card-project-action--ele {
+      color: $c;
+    }
+    .card-project-action--link {
+      border-color: $c;
+      color: $c;
+      &:hover {
+        color: darken($c,10%);
+        border-color: darken($c,10%);
+      }
+    }
+  }
+  .card-project--newscrack {
+    $c: #FFF;
+    background: #475C7A;
+    .card-project-info--desc {
+      color: #A4A4B3;
+    }
+    .card-project-action--ele {
+      color: $c;
+    }
+    .card-project-action--link {
+      border-color: $c;
+      color: $c;
+      &:hover {
+        color: darken($c,10%);
+        border-color: darken($c,10%);
+      }
+    }
+  }
+  .card-project--buzzhoney {
+    $c: #FFF;
+    background: #1A1204;
+    .card-project-info--desc {
+      color: #A4A4B3;
+    }
+    .card-project-action--ele {
+      color: $c;
+    }
+    .card-project-action--link {
+      border-color: $c;
+      color: $c;
+      &:hover {
+        color: darken($c,10%);
+        border-color: darken($c,10%);
+      }
+    }
   }

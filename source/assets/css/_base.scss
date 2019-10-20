@@ -10,45 +10,19 @@
     background: $color-black;
     height: 100%;
     width: 100%;
-    padding: $space-3 0;
     position: absolute;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
     &.overflow {
       overflow: hidden;
-    }
-    // &:before {
-    //   background: $color-red;
-    //   bottom: 0;
-    //   content: "";
-    //   height: 100%;
-    //   left: 0;
-    //   position: fixed;
-    //   right: 0;
-    //   top: 0;
-    //   width: 100%;
-    //   z-index: 100;
-    //   opacity: 1;
-    //   @include animation(pageEnter 100ms $timing 0ms normal 1 forwards);
-    // }
-    &.page-leave {
-      &:before {
-        @include animation(pageLeave 100ms $timing 0ms normal 1 forwards);
-      }
     }
   }
 
   // Theme
-    h1, h2, h3, h4, h5, h6 {
-      color: $color-white;
-    }
-    p {
-      color: $color-grey-light;
-    }
-    a {
-      color: $color-red;
+    // Home
+    .index {
+      @extend .theme-black;
     }
 
   // Site
@@ -62,213 +36,38 @@
       width: 100%;
       // @include animations(loaderMain,$delay:700ms,$duration:1100ms,$iteration:1,$timing:$timing,$direction:normal,$fillmode:forwards);
     }
+    
     .site-block {
-      margin: 0 auto $space-4 auto;
-      position: relative;
-      z-index: 100;
+      margin: 0;
+      padding: $space-3;
       @media (min-width: $mq-tablet) {
-        margin: 0 auto $space-5 auto;
-        min-height: 50vh;
-      }
-    }
-    .site-block-row {
-      margin-bottom: $space-4;
-    }
-    .site-block--full-width {
-      max-width: 100%;
-      width: 100%;
-    }
-    .site-block--max-width {
-      max-width: 1600px;
-      width: 100%;
-      @media (min-width: $mq-tablet) {
-        width: 85%;
-      }
-    }
-    .site-block--small-height {
-      min-height: 72px;
-    }
-    .site-block--no-height, .site-block--bottom-0 {
-      margin-bottom: 0;
-      min-height: 72px;
-    }
-    .site-block--bottom-0 {
-      margin-bottom: 0;
-    }
-    .site-block--bottom-1 {
-      margin-bottom: $space-1;
-    }
-    .site-block--bottom-2 {
-      margin-bottom: $space-2;
-    }
-    .site-block--bottom-3 {
-      margin-bottom: $space-3;
-    }
-    .site-block--bottom-4 {
-      margin-bottom: $space-4;
-    }
-
-    $caseHeight: 630px;
-    $caseWidth: 840px;
-
-    $caseHeightMobile: $caseHeight/3;
-    $caseWidthMobile: $caseWidth/3;
-
-    .case-studies {
-      position: relative;
-    }
-    .case-studies--block {
-      margin: 0 1rem 0 0;
-      @include transition;
-      @media (min-width: $mq-tablet) {
-        margin: 0 1rem 0 0;
-      }
-      img {
-        height: $caseHeightMobile;
-        width: $caseWidthMobile;
-        @include transition;
-        @media (min-width: $mq-tablet) {
-          height: $caseHeight;
-          width: $caseWidth;
-        }
-      }
-    }
-    .slick-slide.slick-current img {
-      opacity: 1;
-      @include scale(1);
-    }
-    .slick-slide img {
-      opacity: 0.5;
-      @include scale(0.8);
-    }
-
-    .case-studies--advancer,.slick-arrow {
-      background: $color-white;
-      border: 0;
-      box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
-      color: $color-black;
-      cursor: pointer;
-      height: 80px;
-      position: absolute;
-      text-align: center;
-      width: 80px;
-      z-index: 10000;
-      display: none;
-      @include vertical-center;
-      @include transition;
-      @media (min-width: $mq-tablet) {
-        display: block;
-      }
-      i {
-        @include absolute-center;
-        @include font-size(24);
-        @include transition;
-      }
-    }
-    .case-studies--advancer-left, .slick-prev {
-      // padding-left: 10%;
-      [data-overflowing="both"] ~ &,
-      [data-overflowing="left"] ~ & {
-        opacity: 1;
-      }
-      &:hover {
-        i {
-          margin-left: -.5rem;
-        }
-      }
-      @media (min-width: $mq-tablet) {
-        left: 8%;
-      }
-    }
-    .case-studies--advancer-right, .slick-next {
-      right: 0;
-      text-align: right;
-      [data-overflowing="both"]  ~ &,
-      [data-overflowing="right"] ~ & {
-        opacity: 1;
-      }
-      &:hover {
-        i {
-          margin-left: .5rem;
-        }
-      }
-    }
-
-    .blog-list {
-      @include flexbox;
-      @include flex-wrap(wrap);
-      // justify-content: space-between;
-    }
-    .blog-list-ele {
-      flex-grow: 2;
-      margin: 0 0 $space-2 0;
-      overflow: hidden;
-      padding: $space-1;
-      position: relative;
-      width: 100%;
-      @include transition;
-      @media (min-width: $mq-tablet) {
-        width: 50%;
+        margin: 0;
+        padding: $space-3 $space-3;
       }
       @media (min-width: $mq-laptop) {
-        width: 25%;
-      }
-      &:before {
-        background: $color-red;
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 0;
-        @include translate(105%,0);
-        @include transition;
-      }
-      &:hover {
-        &:before, .blog-list-inner:before {
-          @include translate(0,0);
-        }
-      }
-      &.lead {
-        width: 100%;
-        @media (min-width: $mq-laptop) {
-          width: 50%;
-        }
+        margin: 0;
+        padding: $space-3 $space-4;
       }
     }
-    .blog-list-inner {
-      background: $color-coal;
-      height: auto;
-      overflow: hidden;
-      padding: $space-3 $space-2;
-      position: relative;
-      @media (min-width: $mq-tablet) {
-        height: 350px;
-      }
-      &:before {
-        background: $color-red;
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 0;
-        @include translate(-105%,0);
-        @include transition;
+
+    .site-block-header {
+      margin: 0 0 $space-2;
+      p {
+        margin-bottom: $space-1;
       }
     }
-    .blog-list-content {
-      position: relative;
-      z-index: 10;
+    
+    .site-nav-trigger {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      float: right;
     }
-    .blog-list-tag {
-      color: rgba(255,255,255,0.3);
-      @include font-size(16);
-      font-weight: 700;
-      text-transform: uppercase;
+    
+    .container-wrap {
+      padding: 0 $space-2;
     }
+
     .masthead-logo {
       background: url('../img/mbp-logo.svg') no-repeat center;
       background-size: cover;
@@ -282,52 +81,7 @@
         @include animations(lavalamp,$delay:200ms,$duration:2000ms,$iteration:infinite,$timing:$timing,$direction:normal);
       }
     }
-    .site-nav {
-      display: none;
-      @media (min-width: $mq-tablet) {
-        display: block;
-        left: 10px;
-        position: fixed;
-        top: 50%;
-        @include transform(rotate(-90deg) translate(-50%,0));
-        transform-origin: left top;
-        z-index: 1000;
-      }
-    }
-    .site-nav--list {
-      @extend .no-list;
-      @media (min-width: $mq-tablet) {
-        @include flexbox;
-        flex-direction: row-reverse;
-        justify-content: center;
-        position: relative;
-      }
-    }
-    .site-nav--element {
-      margin: 0 0 0 $space-3;
-      padding: 0;
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-    .site-nav--link {
-      background: transparent;
-      color: $color-grey;
-      @include font-size(24);
-      font-weight: 700;
-      text-decoration: none;
-      @include transition;
-      &:hover {
-        color: $color-grey-light;
-      }
-    }
-    .site-nav--active {
-      color: $color-white;
-      text-shadow: 0 2px 2px rgba(0,0,0,0.4);
-    }
-    .pn-ProductNav_Contents-no-transition {
-      transition: none;
-    }
+
     .style-mission {
       background: transparent;
       // background-size: 30%;
@@ -395,30 +149,6 @@
     }
     ol.comp-list {
       list-style: decimal;
-    }
-    .comp-btn {
-      display: inline-block;
-      @include font-size(16);
-      font-weight: 700;
-      padding: 1rem 2rem;
-      text-align: center;
-      text-decoration: none;
-      @include transition;
-    }
-    .comp-btn-red {
-      background: $color-red;
-      color: $color-white;
-      &:hover {
-        background: $color-red-light;
-        color: $color-white;
-      }
-    }
-    .comp-btn-grey {
-      background: $color-grey-dark;
-      color: $color-white;
-      &:hover {
-        background: $color-grey;
-      }
     }
     .comp-block {
       margin: $space-3 0;
@@ -723,41 +453,29 @@
       }
     }
 
-    .site-footer {
-      color: $color-grey-light;
-      @include font-size(16);
+    .site-contact {
+      padding-top: $space-5;
+      padding-bottom: $space-5;
+    }
+    .site-contact, .site-footer {
+      border-top: 1px solid $color-grey-dark;
     }
 
     .site-clients-list {
-      @include flexbox;
-      @include flex-wrap(wrap);
       list-style: none;
-      justify-content: center;
       margin: 0;
     }
     .site-clients-ele {
       background: $color-coal;
-      height: 100px;
       padding: $space-2;
       object-fit: contain;
       text-align: center;
       @include flexbox;
       align-items: center;
       justify-content: center;
-      margin: $space-1 $space-2;
-      margin-left: 0;
-      width: 42.5%;
-      @media (min-width: $mq-laptop) {
-        margin: $space-1 $space-2;
-        margin-left: 0;
-        height: 150px;
-        width: 30.3%;
-      }
-      @media (min-width: $mq-desktop) {
-        margin: $space-1 $space-2;
-        margin-left: 0;
-        width: 23.2%;
-      }
+      height: 150px;
+      margin-bottom: 1px;
+      margin-right: 1px;
       &:hover {
         .site-clients-img {
           filter: grayscale(0%);
@@ -767,6 +485,8 @@
     .site-clients-img {
       filter: grayscale(100%);
       @include transition;
+      width: 100%;
+      max-width: 100px;
       @media (min-width: $mq-laptop) {
         width: auto;
       }

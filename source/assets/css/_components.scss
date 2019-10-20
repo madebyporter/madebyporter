@@ -1,0 +1,86 @@
+// Components
+
+  // Buttons
+    a.comp-btn {
+      display: inline-block;
+      @include font-size(16);
+      font-weight: 700;
+      padding: 1rem 2rem;
+      text-align: center;
+      text-decoration: none;
+      @include transition;
+    }
+    a.comp-btn-red {
+      background: $color-red;
+      color: $color-white !important;
+      &:hover {
+        background: $color-red-light;
+        color: $color-white;
+      }
+    }
+    a.comp-btn-grey {
+      background: $color-grey-dark;
+      color: $color-white !important;
+      &:hover {
+        background: $color-grey;
+      }
+    }
+    
+  // Lists
+    .list-bordered {
+      list-style: none;
+      margin: $space-2 0;
+      li {
+        border-bottom: 1px solid $color-grey-dark;
+        margin: 0 0 $space-1;
+        padding: 0 0 $space-1;
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+  
+  // Blog Index
+    .blog-list-ele {
+      background: $color-coal;
+      height: 250px;
+      margin-right: 1px;
+      margin-bottom: 1px;
+      overflow: hidden;
+      position: relative;
+      width: auto;
+      @include transition;
+      &:before {
+        background: $color-red;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+        @include translate(105%,0);
+        @include transition($time: 100ms);
+      }
+      &:hover {
+        &:before, .blog-list-inner:before {
+          @include translate(0,0);
+        }
+      }
+    }
+    .blog-list-link {
+      display: block;
+      height: 100%;
+      padding: $space-3;
+      width: 100%;
+    }
+    .blog-list-content {
+      position: relative;
+      z-index: 10;
+    }
+    .blog-list-tag {
+      color: rgba(255,255,255,0.3);
+      @include font-size(16);
+      font-weight: 700;
+      text-transform: uppercase;
+    }

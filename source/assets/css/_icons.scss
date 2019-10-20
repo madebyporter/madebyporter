@@ -1,0 +1,40 @@
+// Icons
+  .icon-bars {
+    align-items: center;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 30px;
+    span {
+      background: $color-white;
+      height: 4px;
+      width: 30px;
+    }
+    &:before {
+      background: $color-white;
+      content: "";
+      height: 4px;
+      width: 30px;
+      position: absolute;
+      top: 0;
+    }
+    &:after {
+      background: $color-white;
+      content: "";
+      height: 4px;
+      width: 30px;
+      position: absolute;
+      bottom: 0px;
+    }
+    &:hover {
+      &:before {
+        opacity: 0.5;
+      }
+      &:after {
+        opacity: 0.5;
+      }
+    }
+  }

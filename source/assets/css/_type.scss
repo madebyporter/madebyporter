@@ -9,6 +9,12 @@
   }
 
   // Type System
+    .t-120 {
+      @include font-size(64);
+      @media (min-width: $mq-tablet) {
+        @include font-size(120);
+      }
+    }
     .t-96 {
       @include font-size(64);
       @media (min-width: $mq-tablet) {
@@ -26,123 +32,138 @@
       @media (min-width: $mq-tablet) {
         @include font-size(64);
       }
-      @media (min-width: $mq-laptop) {
-        @include font-size(64);
-      }
-      @media (min-width: $mq-desktop) {
-        @include font-size(72);
-      }
-      @media (min-width: $mq-wide) {
-        @include font-size(96);
-      }
+      // @media (min-width: $mq-laptop) {
+      //   @include font-size(64);
+      // }
+      // @media (min-width: $mq-desktop) {
+      //   @include font-size(72);
+      // }
+      // @media (min-width: $mq-wide) {
+      //   @include font-size(96);
+      // }
     }
     .t-48 {
       @include font-size(36);
       @media (min-width: $mq-tablet) {
         @include font-size(48);
       }
-      @media (min-width: $mq-laptop) {
-        @include font-size(56);
-      }
-      @media (min-width: $mq-wide) {
-        @include font-size(64);
-      }
+      // @media (min-width: $mq-laptop) {
+      //   @include font-size(56);
+      // }
+      // @media (min-width: $mq-desktop) {
+      //   @include font-size(64);
+      // }
+      // @media (min-width: $mq-wide) {
+      //   @include font-size(72);
+      // }
     }
     .t-36 {
-      @include font-size(28);
+      @include font-size(32);
       @media (min-width: $mq-tablet) {
         @include font-size(36);
       }
-      @media (min-width: $mq-laptop) {
-        @include font-size(48);
+      // @media (min-width: $mq-laptop) {
+      //   @include font-size(48);
+      // }
+      // @media (min-width: $mq-wide) {
+      //   @include font-size(56);
+      // }
+    }
+    .t-32 {
+      @include font-size(28);
+      @media (min-width: $mq-tablet) {
+        @include font-size(32);
       }
-      @media (min-width: $mq-wide) {
-        @include font-size(56);
-      }
+      // @media (min-width: $mq-laptop) {
+      //   @include font-size(36);
+      // }
+      // @media (min-width: $mq-wide) {
+      //   @include font-size(48);
+      // }
     }
     .t-28 {
       @include font-size(24);
       @media (min-width: $mq-tablet) {
         @include font-size(28);
       }
-      @media (min-width: $mq-laptop) {
-        @include font-size(36);
-      }
-      @media (min-width: $mq-wide) {
-        @include font-size(48);
-      }
+      // @media (min-width: $mq-laptop) {
+      //   @include font-size(36);
+      // }
+      // @media (min-width: $mq-wide) {
+      //   @include font-size(48);
+      // }
     }
     .t-24 {
       @include font-size(18);
       @media (min-width: $mq-tablet) {
         @include font-size(24);
       }
-      @media (min-width: $mq-laptop) {
-        @include font-size(28);
-      }
-      @media (min-width: $mq-wide) {
-        @include font-size(36);
-      }
+      // @media (min-width: $mq-laptop) {
+      //   @include font-size(28);
+      // }
+      // @media (min-width: $mq-wide) {
+      //   @include font-size(36);
+      // }
     }
     .t-18 {
       @include font-size(16);
       @media (min-width: $mq-tablet) {
         @include font-size(18);
       }
-      @media (min-width: $mq-laptop) {
-        @include font-size(24);
-      }
-      @media (min-width: $mq-wide) {
-        @include font-size(28);
-      }
+      // @media (min-width: $mq-laptop) {
+      //   @include font-size(24);
+      // }
+      // @media (min-width: $mq-wide) {
+      //   @include font-size(28);
+      // }
     }
     .t-16 {
       @include font-size(14);
       @media (min-width: $mq-tablet) {
         @include font-size(16);
       }
-      @media (min-width: $mq-laptop) {
-        @include font-size(18);
-      }
-      @media (min-width: $mq-wide) {
-        @include font-size(24);
-      }
+      // @media (min-width: $mq-laptop) {
+      //   @include font-size(18);
+      // }
+      // @media (min-width: $mq-wide) {
+      //   @include font-size(24);
+      // }
     }
     .t-14 {
       @include font-size(14);
       @media (min-width: $mq-tablet) {
         @include font-size(14);
       }
-      @media (min-width: $mq-laptop) {
-        @include font-size(16);
-      }
-      @media (min-width: $mq-wide) {
-        @include font-size(18);
-      }
+      // @media (min-width: $mq-laptop) {
+      //   @include font-size(16);
+      // }
+      // @media (min-width: $mq-wide) {
+      //   @include font-size(18);
+      // }
     }
     .t-12 {
       @include font-size(10);
       @media (min-width: $mq-tablet) {
         @include font-size(12);
       }
-      @media (min-width: $mq-laptop) {
-        @include font-size(14);
-      }
-      @media (min-width: $mq-wide) {
-        @include font-size(16);
-      }
+      // @media (min-width: $mq-laptop) {
+      //   @include font-size(14);
+      // }
+      // @media (min-width: $mq-wide) {
+      //   @include font-size(16);
+      // }
     }
     .t-10 {
       @include font-size(8);
       @media (min-width: $mq-tablet) {
         @include font-size(10);
       }
-      @media (min-width: $mq-laptop) {
-        @include font-size(12);
-      }
-      @media (min-width: $mq-wide) {
-        @include font-size(14);
-      }
+      // @media (min-width: $mq-laptop) {
+      //   @include font-size(12);
+      // }
+      // @media (min-width: $mq-wide) {
+      //   @include font-size(14);
+      // }
     }
     .t-light {
       font-weight: 300;
@@ -171,26 +192,21 @@
   // Paragraphs
     p, ul, li {
       font-family: $font-reg;
-      @extend .t-18;
-      line-height: 1.4;
+      @extend .t-16;
+      line-height: 1.5;
       margin-bottom: $space-2;
-      &.small {
-        @extend .t-16;
-      }
-      &.large {
-        @extend .t-24;
-      }
-      // @media (min-width: $mq-tablet) {
-      //   @include font-size(24);
-      //   &.large {
-      //     @include font-size(36);
-      //   }
-      // }
 
       & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {
         margin-top: $space-1;
       }
 
+    }
+
+    .small {
+      @extend .t-12;
+    }
+    .large {
+      @extend .t-24;
     }
 
   // Headers
@@ -199,12 +215,15 @@
       font-family: $font-reg;
       font-weight: 700;
       margin: 0 0 $space-1;
-      line-height: 1.3;
+      line-height: 1.1;
     }
 
+    .headline {
+      @extend .t-96;
+    }
+    
     h1 {
-      line-height: 1.1;
-      @extend .t-72;
+      @extend .t-64;
     }
 
     h2 {
@@ -223,13 +242,7 @@
       @extend .t-18;
     }
 
-    h6 {
-      @extend .t-14;
-    }
-
-    .headline {
-      @extend .t-96;
-    }
+    
 
   // Site Headers
     .site-header {
@@ -326,4 +339,10 @@
       font-weight: 300;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+    }
+
+  // Disabled
+    .disabled {
+      cursor: not-allowed;
+      opacity: 0.3;
     }

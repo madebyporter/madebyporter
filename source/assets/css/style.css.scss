@@ -2,13 +2,15 @@
 
 @import '../vendor/css/bootstrap';
 @import '../vendor/css/fontawesome';
-@import '../vendor/css/slick';
-@import '../vendor/css/aos';
+// @import '../vendor/css/slick';
+// @import '../vendor/css/aos';
 @import 'reset';
 @import 'variables';
 @import 'mixins';
 @import 'animations';
 @import 'type';
+@import 'components';
+@import 'icons';
 @import 'themes';
 @import 'base';
 @import 'projects';

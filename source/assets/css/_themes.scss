@@ -42,26 +42,19 @@
 // Theme Black
   .theme-black {
     background: $color-black;
-
+    
     .site-masthead, .site-hero, .site-section {
       background: $color-black-50;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       color: $color-white;
     }
 
-    .site-header {
-      h1, h2, h3, h4, h5, h6 {
-        color: $color-white;
-      }
-      p {
-        color: $color-grey;
-      }
+    h1, h2, h3, h4, h5, h6 {
+      color: $color-white;
     }
-
-    p {
-      color: $color-grey;
+    p, li {
+      color: $color-grey-light;
     }
-
     a {
       color: $color-red;
       font-weight: 700;

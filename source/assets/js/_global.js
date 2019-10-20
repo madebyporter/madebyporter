@@ -5,8 +5,8 @@ js.main = {
     this.lazyLoad();
     this.linksExternal();
     this.navWaypoints();
-    this.slick();
-    this.aos();
+    // this.slick();
+    // this.aos();
   },
 
   // Keep this shit in ABC Order
