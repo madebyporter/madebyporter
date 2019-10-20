@@ -21,7 +21,7 @@
 
   // Theme
     // Home
-    .index {
+    .index, .projects, .about, .journal, .contact {
       @extend .theme-black;
     }
 
@@ -82,13 +82,19 @@
       }
     }
 
-    .style-mission {
-      background: transparent;
-      // background-size: 30%;
-      // @media (min-width: $mq-tablet) {
-      //   background: url('../img/mbp-home-wireframelayout.svg') no-repeat right top;
-      // }
+    .site-nav {
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+      .site-nav-link {
+        @extend .t-18;
+        font-weight: 500;
+        margin-right: $space-2;
+        color: $color-grey;
+      }
     }
+    
+
     .my-shuffle {
       position: relative;
       overflow: hidden;
@@ -546,5 +552,86 @@
           position: relative;
           width: 100%;
         }
+      }
+    }
+  // About Timeline
+    .about-timeline-block {
+      border-bottom: 1px dashed $color-coal;
+      &:nth-child(even){
+        background: rgba(0,0,0,0.1);
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+    .about-timeline-date {
+      color: $color-grey;
+      @extend .t-18;
+      line-height: 1.1;
+      padding: $space-3 0 0 0;
+
+      .about-timeline-year, .about-timeline-qtr {
+        display: block;
+        text-align: right;
+        width: 100%;
+      }
+      .about-timeline-year {
+        font-weight: 700;
+      }
+      .about-timeline-qtr {
+        @extend .t-48;
+        color: $color-grey-light;
+        font-weight: 300;
+      }
+    }
+    .about-timeline-content {
+      position: relative;
+      @media (min-width: $mq-laptop) {
+        border-left: 1px solid $color-grey-dark;
+        padding: $space-3 0 $space-3 $space-3;
+      }
+      &:hover {
+        &:before {
+          background: $color-red;
+        }
+      }
+      p:last-child {
+        margin: 0;
+      }
+    }
+    .about-timeline-content::before {
+      content: "";
+      background: $color-grey-light;
+      border-radius: 10px;
+      height: 10px;
+      left: -5px;
+      top: 0;
+      position: absolute;
+      width: 10px;
+      @include vertical-center;
+    }
+    .about-timeline-year-select {
+      height: 100%;
+      @include vertical-center;
+      @include nolist;
+      @include flexbox;
+      align-items: center;
+      align-content: center;
+      vertical-align: center;
+      @include flex-wrap(wrap);
+      padding: 0 $space-2 0 0;
+      position: fixed;
+      right: 0;
+      text-align: right;
+      width: 80px;
+      .about-timeline-year-select-ele {
+        @extend .t-12;
+        line-height: 1;
+        margin: 5px 0;
+        width: 100%;
+      }
+      .about-timeline-year-select-link {
+        color: $color-grey;
+        font-weight: 300;
       }
     }

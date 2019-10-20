@@ -19,12 +19,12 @@ section#hero.site-block
 section#projects.site-block
   .container-fluid
     .row
-      .col-12.col-xl-4
+      .col-12.col-xl-3
         header.site-block-header
           h2 Current Projects
           p.large Dig into the current client projects &amp; independent ventures.
           == link_to 'View All Projects', '/projects', class: "large"
-      .col-12.col-xl-8
+      .col-12.col-xl-8.offset-xl-1
         .card-system
           .row
             .col-12.col-md-6
@@ -87,13 +87,13 @@ section#projects.site-block
 section#projects.site-block
   .container-fluid
     .row
-      .col-12.col-xl-4
+      .col-12.col-xl-3
         header.site-block-header
           h2 Mission
           p.large Striving to be useful, to improve systems &amp; provide value to the world.
           == link_to 'Digest the Mission', '/mission', class: "large"
           
-      .col-12.col-xl-8
+      .col-12.col-xl-8.offset-xl-1
         .row
           .col-12.col-md-6
             h4
@@ -128,13 +128,13 @@ section#projects.site-block
 section#stories.site-block.style-stories
   .container-fluid
     .row
-      .col-12.col-xl-4
+      .col-12.col-xl-3
         header.site-block-header
           h2 Journal
           p.large Celebrating the W's. Learning from the L's.
           == link_to 'Read the Journal', '/journal', class: "large"
           
-      .col-12.col-xl-8
+      .col-12.col-xl-8.offset-xl-1
         .blog-list
           .row.no-gutters
             - blog.articles[0...5].each do |article|
