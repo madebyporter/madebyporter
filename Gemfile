@@ -12,7 +12,7 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw]
 
 # Middleman Gems
 gem "middleman", git: "https://github.com/middleman/middleman.git", ref: "8e6aba9"
-# gem 'middleman-livereload'
+gem 'middleman-livereload'
 gem "middleman-blog"
 gem "middleman-imageoptim", :git => "https://github.com/plasticine/middleman-imageoptim", :branch => "master"
 gem 'middleman-minify-html'

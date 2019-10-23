@@ -2,9 +2,10 @@ var js = js || {}, body = $('body'), doc = $(document), win = $(window);
 
 js.main = {
   init: function () {
-    this.lazyLoad();
-    this.linksExternal();
-    this.navWaypoints();
+    // this.lazyLoad();
+    // this.linksExternal();
+    // this.navWaypoints();
+    this.mobileMenu();
     // this.slick();
     // this.aos();
   },
@@ -48,6 +49,16 @@ js.main = {
     });
     $('.newWindow').click(function(){
       window.open($(this).attr('href')); return false;
+    });
+  },
+  mobileMenu: function() {
+    $('#functionMenuTrigger').on("click", function(){
+      console.log('hello');
+      if($('body').hasClass('menuOpen')){
+        $('body').removeClass('menuOpen');
+      } else {
+        $('body').addClass('menuOpen');
+      }
     });
   },
   navWaypoints: function() {

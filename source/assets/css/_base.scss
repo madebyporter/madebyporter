@@ -26,6 +26,14 @@
     }
 
   // Site
+    .menuOpen {
+      overflow: hidden;
+      .site-nav {
+        @media (max-width: $mq-laptop) {
+          @include translate(-100%,0);
+        }
+      }
+    }
     .pull-right {
       float: right;
     }
@@ -57,13 +65,6 @@
       }
     }
     
-    .site-nav-trigger {
-      align-items: center;
-      display: flex;
-      height: 100%;
-      float: right;
-    }
-    
     .container-wrap {
       padding: 0 $space-2;
     }
@@ -82,15 +83,53 @@
       }
     }
 
-    .site-nav {
+    .site-nav-trigger {
       align-items: center;
-      justify-content: flex-end;
+      display: flex;
       height: 100%;
+      float: right;
+      position: relative;
+      z-index: 1000000;
+    }
+    .site-nav {
+      @include flexbox;
+      @include flex-wrap(wrap);
+      align-items: center;
+      background: $color-black;
+      height: 100%;
+      left: 100%;
+      padding: $space-3;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100000;
+      @include translate(0,0);
+      @include transition;
+      @media (min-width: $mq-laptop) {  
+        justify-content: flex-end;
+        left: auto;
+        padding: 0;
+        position: static;
+        top: auto;
+        width: auto;
+        z-index: 1;
+        @include translate(0,0);
+      }
       .site-nav-link {
-        @extend .t-18;
-        font-weight: 500;
-        margin-right: $space-2;
+        @include font-size(36);
+        align-items: center;
+        @include flexbox;
         color: $color-grey;
+        font-weight: 700;
+        height: 20%;
+        width: 100%;
+        @media (min-width: $mq-laptop) {
+          font-weight: 500;
+          height: auto;
+          margin-right: $space-2;
+          @include font-size(18);
+          width: auto;
+        }
       }
     }
     
@@ -609,6 +648,9 @@
       position: absolute;
       width: 10px;
       @include vertical-center;
+    }
+    .about-timeline-content-img {
+      width: 100%;
     }
     .about-timeline-year-select {
       height: 100%;
