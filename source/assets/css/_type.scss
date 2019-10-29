@@ -205,8 +205,14 @@
     .small {
       @extend .t-12;
     }
+    .normal {
+      @extend .t-16;
+    }
     .large {
       @extend .t-24;
+    }
+    .mixed-size {
+      line-height: 1.2;
     }
 
   // Headers
@@ -294,8 +300,6 @@
       list-style: disc;
       margin: 0 0 20px 20px;
       li {
-        // @include font-size(24);
-        margin-bottom: 10px;
         &:last-child {
           margin-bottom: 0;
         }

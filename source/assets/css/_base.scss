@@ -5,13 +5,13 @@
     font-size: 62.5%;
     height: 100%;
     width: 100%;
+    scroll-behavior: smooth;
   }
   body {
     background: $color-black;
     height: 100%;
     width: 100%;
     position: absolute;
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     &.overflow {
@@ -21,11 +21,15 @@
 
   // Theme
     // Home
-    .index, .projects, .about, .journal, .contact {
+    .index, .projects, .mission, .about, .journal, .blog, .contact {
       @extend .theme-black;
     }
 
   // Site
+    .no-margin {
+      margin: 0;
+    }
+
     .menuOpen {
       overflow: hidden;
       .site-nav {
@@ -60,6 +64,9 @@
 
     .site-block-header {
       margin: 0 0 $space-2;
+      @media (min-width: $mq-tablet) {
+        margin: 0 0 $space-3;
+      }
       p {
         margin-bottom: $space-1;
       }
@@ -133,7 +140,6 @@
       }
     }
     
-
     .my-shuffle {
       position: relative;
       overflow: hidden;
@@ -466,7 +472,7 @@
     }
 
     .site-blog-article-pagination {
-      padding: $space-4 0;
+      padding: 0 0 $space-4 0;
       a {
         @include font-size(24);
       }
@@ -482,7 +488,10 @@
       img {
         width: 100%;
       }
-      p + h2, ul+ h2 {
+      p {
+        @extend .large;
+      }
+      p + h2, ul + h2, blockquote + h2 {
         margin-top: $space-4;
       }
     }
@@ -501,7 +510,17 @@
     .site-contact {
       padding-top: $space-5;
       padding-bottom: $space-5;
+      .site-block-header {
+        margin: 0 0 $space-4 0;
+        @media (min-width: $mq-desktop) {
+          margin-bottom: 0;
+        }
+      }
+      .site-contact-ele .col-12:last-child .site-block-header {
+        margin-bottom: 0;
+      }
     }
+    
     .site-contact, .site-footer {
       border-top: 1px solid $color-grey-dark;
     }
@@ -593,6 +612,7 @@
         }
       }
     }
+
   // About Timeline
     .about-timeline-block {
       border-bottom: 1px dashed $color-coal;
@@ -607,12 +627,18 @@
       color: $color-grey;
       @extend .t-18;
       line-height: 1.1;
-      padding: $space-3 0 0 0;
+      padding: $space-3 0 $space-2 0;
+      @media (min-width: $mq-tablet) {
+        padding: $space-3 0 0 0;
+      }
 
       .about-timeline-year, .about-timeline-qtr {
         display: block;
-        text-align: right;
+        text-align: left;
         width: 100%;
+        @media (min-width: $mq-tablet) {
+          text-align: right;
+        }
       }
       .about-timeline-year {
         font-weight: 700;
@@ -624,8 +650,9 @@
       }
     }
     .about-timeline-content {
+      padding: $space-1 0 $space-3;
       position: relative;
-      @media (min-width: $mq-laptop) {
+      @media (min-width: $mq-tablet) {
         border-left: 1px solid $color-grey-dark;
         padding: $space-3 0 $space-3 $space-3;
       }
@@ -642,12 +669,16 @@
       content: "";
       background: $color-grey-light;
       border-radius: 10px;
+      display: none;
       height: 10px;
       left: -5px;
       top: 0;
       position: absolute;
       width: 10px;
       @include vertical-center;
+      @media (min-width: $mq-tablet) {
+        display: block;
+      }
     }
     .about-timeline-content-img {
       width: 100%;
@@ -673,7 +704,15 @@
         width: 100%;
       }
       .about-timeline-year-select-link {
-        color: $color-grey;
+        color: $color-grey-light;
         font-weight: 300;
+      }
+    }
+  
+  // Mission Content
+    .mission-content {
+      margin: 0 0 $space-4 0;
+      .mission-set {
+        margin: 0 0 $space-3 0;
       }
     }

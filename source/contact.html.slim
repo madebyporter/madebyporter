@@ -3,31 +3,36 @@ title: Get in Contact
 description: Contact Made by Porter for Inquries and what not.
 ---
 
-nav.site-nav
-  ul.site-nav--list
-    li.site-nav--element
-      == link_to 'Back Home', '/', class: "site-nav--link"
-
-section#hero.site-block.site-block--sixteenth-height.site-block--max-width
+section#hero.site-block
   .container-fluid
     .row
       .col-12.col-lg-10
-        h1
-          | Get in Contact
-        p.paragraph-large
-          | To make things easy, I've broken out the contact page into reasons for contact. I've supplied some info on how to contact me for each situation.
+        header.site-block-header
+          h1.headline Get in Contact
+          p.large
+            | If you're ready to work on building something, or say hi, use the form below to get in touch.
 section#contact.site-block.site-stories.site-block--max-width.site-block--sixteenth-height
   .container-fluid
     .row
-      .col-12.col-lg-4
-        h4 Design & Code Projects
-        p.small Need a new website or app designed? We help individuals, startups & small businesses with that at <a href="https://www.ssfn.io">SSFN</a>.
-        == link_to 'Email Us', 'mailto:connect@ssfn.io', class: "comp-btn comp-btn-red"
-      .col-12.col-lg-4
-        h4 Music Production
-        p.small If you're looking to work with me for a music project, you can check out my music collective, <a href="https://www.thebeatboxclub.com">The Beatbox Club</a>.
-        == link_to 'Email Us', 'mailto:connectbbx@gmail.com', class: "comp-btn comp-btn-red"
-      .col-12.col-lg-4
-        h4 General Inquiries
-        p.small Looking to just say what's up? Need some answers to questions about anything? You can just send me a normal email.
-        == link_to 'Email Us', 'mailto:general@madebyporter.com', class: "comp-btn comp-btn-red"
+      .col-12.col-xl-6
+        form.form name="contact" method="POST" data-netlify="true"
+          fieldset.form-fieldset for="Name"
+            label.form-label Name
+            input.form-input type="text" placeholder="Type your name"
+          fieldset.form-fieldset for="Email"
+            label.form-label Email
+            input.form-input type="email" placeholder="Type your email address"
+          fieldset.form-fieldset.form-fieldset-select for="Budget"
+            label.form-label Budget
+            select.form-select
+              option selected="selected" value="" Select a Budget
+              option value="< $10,000" < $10,000
+              option value="$11,000 - $50,000" $11,000 - $50,000
+              option value="$51,000 - $100,000" $51,000 - $100,000
+              option value="$101,000 - $150,000" $101,000 - $150,000
+              option value="$151,000+" $150,000+
+          fieldset.form-fieldset for="Message"
+            label.form-label Message
+            textarea.form-textarea placeholder="Type your message"
+          fieldset.form-fieldset.form-fieldset-btn for="Submit"
+            input.form-btn.comp-btn.comp-btn-red.comp-btn-large type="submit" value="Send"

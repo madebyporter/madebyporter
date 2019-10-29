@@ -53,17 +53,17 @@ html lang="en"
               h2 Let's Connect
               p.large Ready to make a move?
           .col-12.col-xl-8
-            .row
-              .col-12.col-xl-6
+            .row.site-contact-ele
+              .col-12.col-sm-6
                 header.site-block-header
                   h3
                     | Start a project?
-                == link_to 'Lets Talk', '/contact', class: "comp-btn comp-btn-red"
-              .col-12.col-xl-6
+                  == link_to 'Lets Talk', '/contact', class: "comp-btn comp-btn-red"
+              .col-12.col-sm-6
                 header.site-block-header
                   h3
                     | Say Hi?
-                == link_to 'Email Me', 'mailto: general@madebyporter.com', class: "comp-btn comp-btn-grey"
+                  == link_to 'Email Me', 'mailto: general@madebyporter.com', class: "comp-btn comp-btn-grey"
     footer.site-footer.site-block
       .container-fluid
         .row
@@ -79,3 +79,5 @@ html lang="en"
 
 		  ga('create', 'UA-54767153-1', 'auto');
 		  ga('send', 'pageview');
+      
+    script src="https://kit.fontawesome.com/d7eb4403da.js" crossorigin="anonymous"

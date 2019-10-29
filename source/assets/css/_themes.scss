@@ -52,7 +52,7 @@
     h1, h2, h3, h4, h5, h6 {
       color: $color-white;
     }
-    p, li {
+    p, li, span {
       color: $color-grey-light;
     }
     a {
@@ -61,6 +61,9 @@
       &:hover {
         color: lighten($color-red,10%);
       }
+    }
+    .highlight {
+      color: $color-white;
     }
     .crumbs {
       color: $color-white;

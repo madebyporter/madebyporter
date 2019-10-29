@@ -99,20 +99,18 @@ section#projects.site-block
             h4
               | For the potential clients
             ul.list-bordered
-              li Build a new website
-              li Optimize your website
+              li MVP Site Build
+              li Website Optimization
               li Design an MVP for your app
               li Upgrade your existing app design
-              li Optimize your business system
+              li Optimize your digital systems
           .col-12.col-md-6
             h4
               | For personal endevours
             ul.list-bordered
               li To create sustainable systems
               li To help people recognize their potential
-              li To help people leave their 9-5
-              li To move people with audio/visual storytelling
-              li To optimize your productivity system
+              li To help people monetize their passions
         .row
           .col-12
             header.site-block-header
@@ -135,14 +133,4 @@ section#stories.site-block.style-stories
           == link_to 'Read the Journal', '/journal', class: "large"
           
       .col-12.col-xl-8.offset-xl-1
-        .blog-list
-          .row.no-gutters
-            - blog.articles[0...5].each do |article|
-              .col-12.col-lg-6
-                .blog-list-ele class="#{article.data.type}"
-                  = link_to article.url, class: "blog-list-link" do
-                    .blog-list-content
-                      .blog-list-tag
-                        = article.data.tags
-                      h3.blog-list-title
-                        = article.title
+        = partial '/partials/blog_index'
