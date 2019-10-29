@@ -10,15 +10,21 @@
 
   // Type System
     .t-120 {
-      @include font-size(64);
+      @include font-size(96);
       @media (min-width: $mq-tablet) {
         @include font-size(120);
       }
     }
     .t-96 {
-      @include font-size(64);
+      @include font-size(81);
       @media (min-width: $mq-tablet) {
         @include font-size(96);
+      }
+    }
+    .t-81 {
+      @include font-size(72);
+      @media (min-width: $mq-tablet) {
+        @include font-size(81);
       }
     }
     .t-72 {
@@ -28,142 +34,76 @@
       }
     }
     .t-64 {
-      @include font-size(48);
+      @include font-size(56);
       @media (min-width: $mq-tablet) {
         @include font-size(64);
       }
-      // @media (min-width: $mq-laptop) {
-      //   @include font-size(64);
-      // }
-      // @media (min-width: $mq-desktop) {
-      //   @include font-size(72);
-      // }
-      // @media (min-width: $mq-wide) {
-      //   @include font-size(96);
-      // }
+    }
+    .t-56 {
+      @include font-size(48);
+      @media (min-width: $mq-tablet) {
+        @include font-size(56);
+      }
     }
     .t-48 {
       @include font-size(36);
       @media (min-width: $mq-tablet) {
         @include font-size(48);
       }
-      // @media (min-width: $mq-laptop) {
-      //   @include font-size(56);
-      // }
-      // @media (min-width: $mq-desktop) {
-      //   @include font-size(64);
-      // }
-      // @media (min-width: $mq-wide) {
-      //   @include font-size(72);
-      // }
     }
     .t-36 {
       @include font-size(32);
       @media (min-width: $mq-tablet) {
         @include font-size(36);
       }
-      // @media (min-width: $mq-laptop) {
-      //   @include font-size(48);
-      // }
-      // @media (min-width: $mq-wide) {
-      //   @include font-size(56);
-      // }
     }
     .t-32 {
       @include font-size(28);
       @media (min-width: $mq-tablet) {
         @include font-size(32);
       }
-      // @media (min-width: $mq-laptop) {
-      //   @include font-size(36);
-      // }
-      // @media (min-width: $mq-wide) {
-      //   @include font-size(48);
-      // }
     }
     .t-28 {
       @include font-size(24);
       @media (min-width: $mq-tablet) {
         @include font-size(28);
       }
-      // @media (min-width: $mq-laptop) {
-      //   @include font-size(36);
-      // }
-      // @media (min-width: $mq-wide) {
-      //   @include font-size(48);
-      // }
     }
     .t-24 {
       @include font-size(18);
       @media (min-width: $mq-tablet) {
         @include font-size(24);
       }
-      // @media (min-width: $mq-laptop) {
-      //   @include font-size(28);
-      // }
-      // @media (min-width: $mq-wide) {
-      //   @include font-size(36);
-      // }
     }
     .t-18 {
       @include font-size(16);
       @media (min-width: $mq-tablet) {
         @include font-size(18);
       }
-      // @media (min-width: $mq-laptop) {
-      //   @include font-size(24);
-      // }
-      // @media (min-width: $mq-wide) {
-      //   @include font-size(28);
-      // }
     }
     .t-16 {
       @include font-size(14);
       @media (min-width: $mq-tablet) {
         @include font-size(16);
       }
-      // @media (min-width: $mq-laptop) {
-      //   @include font-size(18);
-      // }
-      // @media (min-width: $mq-wide) {
-      //   @include font-size(24);
-      // }
     }
     .t-14 {
       @include font-size(14);
       @media (min-width: $mq-tablet) {
         @include font-size(14);
       }
-      // @media (min-width: $mq-laptop) {
-      //   @include font-size(16);
-      // }
-      // @media (min-width: $mq-wide) {
-      //   @include font-size(18);
-      // }
     }
     .t-12 {
       @include font-size(10);
       @media (min-width: $mq-tablet) {
         @include font-size(12);
       }
-      // @media (min-width: $mq-laptop) {
-      //   @include font-size(14);
-      // }
-      // @media (min-width: $mq-wide) {
-      //   @include font-size(16);
-      // }
     }
     .t-10 {
       @include font-size(8);
       @media (min-width: $mq-tablet) {
         @include font-size(10);
       }
-      // @media (min-width: $mq-laptop) {
-      //   @include font-size(12);
-      // }
-      // @media (min-width: $mq-wide) {
-      //   @include font-size(14);
-      // }
     }
     .t-light {
       font-weight: 300;
@@ -226,6 +166,12 @@
 
     .headline {
       @extend .t-96;
+    }
+    .hero-headline {
+      @extend .t-56;
+      @media (min-width: $mq-tablet) {
+        @include font-size(96);  
+      }
     }
     
     h1 {
