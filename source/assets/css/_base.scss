@@ -133,9 +133,27 @@
         @media (min-width: $mq-laptop) {
           font-weight: 500;
           height: auto;
-          margin-right: $space-2;
+          margin-left: $space-2;
           @include font-size(18);
           width: auto;
+        }
+      }
+    }
+    .site-nav-social {
+      @include flexbox;
+      @include flex-wrap(wrap);
+      justify-content: center;
+      align-items: center;
+      margin: $space-2 0;
+      @media (min-width: $mq-tablet) {
+        margin: 0;
+        justify-content: flex-end;
+      }
+      .site-nav-link {
+        @include font-size(18);
+        margin-left: $space-3;
+        &:first-child {
+          margin-left: 0;
         }
       }
     }
@@ -523,6 +541,14 @@
     
     .site-contact, .site-footer {
       border-top: 1px solid $color-grey-dark;
+    }
+
+    .site-footer-content {
+      margin: 0;
+      text-align: center;
+      @media (min-width: $mq-tablet) {
+        text-align: left;
+      }
     }
 
     .site-clients-list {

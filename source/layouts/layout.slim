@@ -67,8 +67,19 @@ html lang="en"
     footer.site-footer.site-block
       .container-fluid
         .row
-          .col-12
-            p &copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> Made by Porter. All rights reserved.
+          .col-12.col-md-6
+            p.site-footer-content &copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> Made by Porter. All rights reserved.
+          .col-12.col-md-6
+            nav.site-nav-social
+              == link_to 'https://www.dribbble.com/madebyporter', class: "site-nav-link" do
+                i class="fab fa-dribbble"
+              == link_to 'https://www.twitter.com/madebyporter', class: "site-nav-link" do
+                i class="fab fa-twitter"
+              == link_to 'https://www.instagram.com/madebyporter', class: "site-nav-link" do
+                i class="fab fa-instagram"
+              == link_to 'https://www.linkedin.com/in/madebyporter/', class: "site-nav-link" do
+                i class="fab fa-linkedin"
+
 
 		// Google Analytics
 		javascript:
