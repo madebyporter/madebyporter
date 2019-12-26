@@ -24,6 +24,9 @@
     .index, .projects, .mission, .about, .journal, .blog, .contact {
       @extend .theme-black;
     }
+    .now {
+      @extend .theme-black;
+    }
 
   // Site
     .no-margin {
