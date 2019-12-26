@@ -39,6 +39,10 @@
       margin-top: $space-2;
       margin-bottom: $space-3;
     }
+    .list-sub {
+      margin-top: $space-2;
+      margin-bottom: 0;
+    }
 
     ol.list-default {
       list-style-type: decimal;
@@ -50,8 +54,8 @@
       margin: $space-2 0;
       & > * {
         border-bottom: 1px solid $color-grey-dark;
-        margin: 0 0 $space-1;
-        padding: 0 0 $space-1;
+        margin: 0 0 $space-2;
+        padding: 0 0 $space-2;
         p {
           margin: 0;
         }
