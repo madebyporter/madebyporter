@@ -21,10 +21,10 @@
 
   // Theme
     // Home
-    .index, .projects, .mission, .about, .journal, .blog, .contact {
+    .index, .projects, .mission, .about, .journal, .blog, .contact, .now {
       @extend .theme-black;
     }
-    .now {
+    .cases {
       @extend .theme-black;
     }
 
@@ -743,5 +743,12 @@
       margin: 0 0 $space-4 0;
       .mission-set {
         margin: 0 0 $space-3 0;
+      }
+    }
+
+  // Cases
+    .case-header {
+      @media (max-width: $mq-tablet) {
+        @include font-size(36);
       }
     }

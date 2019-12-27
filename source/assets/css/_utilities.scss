@@ -1,0 +1,21 @@
+// Utilities
+  .img-frame {
+    @include flexbox;
+    align-items: center;
+    justify-content: center;
+    padding: $space-1 0;
+    width: 100%;
+    @media (min-width: $mq-tablet) {
+      padding: $space-2 0;
+    }
+    @media (min-width: $mq-laptop) {
+      padding: $space-3 $space-4;
+    }
+  }
+  .img-frame-image {
+    width: 100%;
+  }
+  .img-frame--slate {
+    background: $color-slate;
+    box-shadow: -$space-4 0 0 $color-slate, $space-4 0 0 $color-slate;
+  }
