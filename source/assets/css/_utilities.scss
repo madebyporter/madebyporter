@@ -1,0 +1,29 @@
+// Utilities
+  .img-frame {
+    @include flexbox;
+    align-items: center;
+    justify-content: center;
+    padding: $space-2 0;
+    width: 100%;
+    @media (min-width: $mq-tablet) {
+      padding: $space-2 0;
+    }
+    @media (min-width: $mq-laptop) {
+      padding: $space-4 $space-4;
+    }
+  }
+  .img-frame-image {
+    width: 100%;
+  }
+  .img-frame--black {
+    background: $color-black;
+    box-shadow: -$space-4 0 0 $color-black, $space-4 0 0 $color-black;
+  }
+  .img-frame--coal {
+    background: $color-coal;
+    box-shadow: -$space-4 0 0 $color-coal, $space-4 0 0 $color-coal;
+  }
+  .img-frame--slate {
+    background: $color-slate;
+    box-shadow: -$space-4 0 0 $color-slate, $space-4 0 0 $color-slate;
+  }

@@ -21,10 +21,10 @@
 
   // Theme
     // Home
-    .index, .projects, .mission, .about, .journal, .blog, .contact {
+    .index, .projects, .mission, .about, .journal, .blog, .contact, .now {
       @extend .theme-black;
     }
-    .now {
+    .cases {
       @extend .theme-black;
     }
 
@@ -75,6 +75,25 @@
       }
     }
     
+    .site-block-case-cta {
+      padding: 0;
+      @extend .t-bold;
+      @extend .t-16;
+      border-top: 1px solid $color-slate;
+      @media (min-width: $mq-tablet) {
+        min-height: 200px;
+      }
+    }
+    .site-block-case-cta-col {
+      border-bottom: 1px solid $color-coal;
+      min-height: $space-5;
+      @media (min-width: $mq-tablet) {
+        border-right: 1px solid $color-coal;
+        border-bottom: 0;
+        min-height: 0;
+      }
+    }
+
     .container-wrap {
       padding: 0 $space-2;
     }
@@ -147,7 +166,7 @@
       @include flex-wrap(wrap);
       justify-content: center;
       align-items: center;
-      margin: $space-2 0;
+      margin: $space-2 0 0;
       @media (min-width: $mq-tablet) {
         margin: 0;
         justify-content: flex-end;
@@ -529,8 +548,12 @@
     }
 
     .site-contact {
-      padding-top: $space-5;
-      padding-bottom: $space-5;
+      padding-top: $space-3;
+      padding-bottom: $space-3;
+      @media (min-width: $mq-tablet) {
+        padding-top: $space-5;
+        padding-bottom: $space-5;
+      }
       .site-block-header {
         margin: 0 0 $space-4 0;
         @media (min-width: $mq-desktop) {
@@ -743,5 +766,12 @@
       margin: 0 0 $space-4 0;
       .mission-set {
         margin: 0 0 $space-3 0;
+      }
+    }
+
+  // Cases
+    .case-header {
+      @media (max-width: $mq-tablet) {
+        @include font-size(36);
       }
     }
