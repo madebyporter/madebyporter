@@ -1,8 +1,8 @@
 // Utilities
   .img-frame {
-    @include flexbox;
-    align-items: center;
-    justify-content: center;
+    // @include flexbox;
+    // align-items: flex-end;
+    // justify-content: center;
     padding: $space-2 0;
     width: 100%;
     @media (min-width: $mq-tablet) {
@@ -14,6 +14,26 @@
   }
   .img-frame-image {
     width: 100%;
+  }
+  .img-frame-flex-end {
+    @include flexbox;
+    height: 100%;
+    align-items: flex-end;
+  }
+  .img-frame-flex-right {
+    @include flexbox;
+    height: 100%;
+    justify-content: flex-end;
+  }
+  .img-frame-flex-img-125 {
+    img {
+      width: 125%;
+    }
+  }
+  .img-frame-caption {
+    color: $color-white;
+    @extend .t-bold;
+    @extend .t-18;
   }
   .img-frame--black {
     background: $color-black;
