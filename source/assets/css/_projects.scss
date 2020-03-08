@@ -58,6 +58,9 @@
       margin: 0;
       padding: 0 $space-1;
       white-space: nowrap;
+      .disabled {
+        @extend .t-bold;
+      }
     }
     .card-project-action--link {
       border-bottom: 2px solid rgba(0,0,0,0.6);
@@ -111,6 +114,24 @@
   .card-project--myfdtps {
     $c: #6FB3EB;
     background: #222A36;
+    .card-project-info--desc {
+      color: $c;
+    }
+    .card-project-action--ele {
+      color: $c;
+    }
+    .card-project-action--link {
+      border-color: $c;
+      color: $c;
+      &:hover {
+        color: darken($c,10%);
+        border-color: darken($c,10%);
+      }
+    }
+  }
+  .card-project--ifyb {
+    $c: #FFCE01;
+    background: #234F6A;
     .card-project-info--desc {
       color: $c;
     }
