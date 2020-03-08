@@ -17,13 +17,13 @@
       .row
         .col-12
           .site-blog-article-pagination
-            - previous_article = current_article.previous_article
-            - if previous_article
+            - article_previous = current_article.article_previous
+            - if article_previous
               .pagination-container
                 h3
                   | Next up
-                = link_to previous_article.url do
-                  = previous_article.title
+                = link_to article_previous.url do
+                  = article_previous.title
             - else
               .newsletter-container
                 h2
