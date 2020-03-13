@@ -54,7 +54,7 @@
       align-items: flex-end;
     }
     .card-project-action--ele {
-      @extend .t-14;
+      @extend .t-16;
       margin: 0;
       padding: 0 $space-1;
       white-space: nowrap;
@@ -63,12 +63,13 @@
       }
     }
     .card-project-action--link {
-      border-bottom: 2px solid rgba(0,0,0,0.6);
-      color: rgba(0,0,0,0.6);
+      border-bottom: 2px solid rgba(255,255,255,0.8);
+      color: rgba(255,255,255,0.8);
       font-weight: 700;
+      padding: 0 0 2px 0;
       &:hover {
-        border-bottom: 2px solid rgba(0,0,0,1);
-        color: rgba(0,0,0,1);
+        border-bottom: 2px solid rgba(255,255,255,1);
+        color: rgba(255,255,255,1);
       }
     }
   }
@@ -86,7 +87,15 @@
     .card-project-info--desc {
       color: darken(#BF891D, 10%);
     }
-
+    .card-project-action--link {
+      $c: #E73800;
+      color: $c;
+      border-color: $c;
+      &:hover {
+        color: lighten($c,10%);
+        border-color: lighten($c,10%);
+      }
+    }
   }
   .card-project--forcesunite {
     background: #fff;
@@ -95,6 +104,15 @@
     }
     .card-project-info--desc {
       color: rgba(0,0,0,0.4);
+    }
+    .card-project-action--link {
+      $c: #000000;
+      color: $c;
+      border-color: $c;
+      &:hover {
+        color: lighten($c,10%);
+        border-color: lighten($c,10%);
+      }
     }
   }
   .card-project--versa {
