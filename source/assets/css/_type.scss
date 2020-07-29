@@ -159,6 +159,11 @@
     h1, h2, h3, h4, h5, h6 {
       display: block;
       font-family: $font-reg;
+
+      font-family: "HelveticaNeueLTStd-Ex", "HelveticaNeueExtended", "HelveticaNeue-Extended", "Helvetica Neue Extended", "HelveticaNeue", "HelveticaNeue", "Helvetica Neue", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; 
+      font-weight: 400; 
+      font-stretch: expanded;
+
       font-weight: 500;
       margin: 0 0 $space-1;
       line-height: 1.1;
@@ -168,9 +173,12 @@
       @extend .t-96;
     }
     .hero-headline {
-      @extend .t-56;
-      @media (min-width: $mq-tablet) {
-        @include font-size(96);  
+      font-family: "HelveticaNeueLTStd-LtEx", "HelveticaNeueLightExtended", "HelveticaNeue-Light-Extended", "Helvetica Neue Light Extended", "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; 
+      font-weight: 300; 
+      font-stretch: expanded;
+      @extend .t-120;
+      @media (max-width: $mq-tablet) {
+        @include font-size(48);  
       }
     }
     
@@ -183,7 +191,7 @@
     }
 
     h3 {
-      @extend .t-36;
+      @extend .t-28;
     }
 
     h4 {

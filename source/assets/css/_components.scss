@@ -64,6 +64,12 @@
         }
       }
     }
+    .list-bordered-large {
+      & > * {
+        margin: 0 0 $space-3;
+        padding: 0 0 $space-3;
+      }
+    }
   
   // Forms
     .form {
@@ -164,6 +170,7 @@
         background: transparent;
         border: 0;
         color: $color-white;
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
         @extend .t-18;
         @extend .t-bold;
         min-height: 200px;

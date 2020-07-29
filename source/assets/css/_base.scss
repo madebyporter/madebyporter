@@ -59,8 +59,9 @@
         padding: $space-3 $space-3;
       }
       @media (min-width: $mq-laptop) {
-        margin: 0;
+        margin: 0 auto;
         padding: $space-3 $space-4;
+        max-width: 1600px;
       }
     }
 
@@ -91,6 +92,9 @@
         border-bottom: 0;
         min-height: 0;
       }
+    }
+    .site-header {
+      max-width: 100%;
     }
 
     .container-wrap {
@@ -510,6 +514,9 @@
       @include animations(fadeInOut,$delay:800ms,$duration:800ms,$iteration:infinite,$timing:$timing,$direction:normal);
     }
 
+    .blog-list-tag {
+      margin-bottom: $space-1;
+    }
     .site-blog-article-pagination {
       padding: 0 0 $space-4 0;
       a {
