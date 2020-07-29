@@ -604,6 +604,7 @@
       max-width: 100px;
       @media (min-width: $mq-laptop) {
         width: auto;
+        max-width: 200px;
       }
     }
 

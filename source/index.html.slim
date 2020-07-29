@@ -9,7 +9,7 @@ section#hero.site-block
       .col-12
         header.site-block-header
           h1.headline.hero-headline
-            | Building systems for entrepreneurs &amp; startups.
+            | I help design scalable systems for founders.
     .row
       .col-12.col-lg-10
         p.large
@@ -21,7 +21,7 @@ section#projects.site-block
     .row
       .col-12.col-xl-3
         header.site-block-header
-          h2 Current Projects
+          h2 Featured Projects
           p.large Dig into the current client projects &amp; independent ventures.
           == link_to 'View All Projects', '/projects', class: "large"
       .col-12.col-xl-8.offset-xl-1
@@ -41,50 +41,48 @@ section#projects.site-block
                     == link_to 'Visit Site', 'https://www.myfdtps.com', class: "card-project-action--link"
                   li.card-project-action--ele
                     == link_to 'View Story', '/cases/myfdtps-website-2018', class: "card-project-action--link"
-            .col-12.col-md-6
-              .card-project.card-project--bbx
+            .col-12.col-sm-6
+              .card-project.card-project--sbt
                 .card-project-info
                   h3.card-project-info--title 
-                    | The Beatbox Club
+                    | Silicon Beach Talent
                   p.card-project-info--desc 
-                    | Design, Code & Music Production
+                    | Website Redesign
                 .card-project-logo
-                  = image_tag "cases/logos-beatbox.png", :alt => "The Beatbox Club", :class => "card-project-logo--img"
+                  = image_tag "cases/logos-sbt.png", :alt => "Silicon Beach Talent", :class => "card-project-logo--img"
                 ul.card-project-action
                   li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.thebeatboxclub.com', class: "card-project-action--link"
+                    == link_to 'Visit Site', 'https://www.siliconbeachtalent.com', class: "card-project-action--link"
                   li.card-project-action--ele
-                    span.disabled Chapter Coming Soon
-            .col-12.col-md-6
-              .card-project.card-project--forcesunite
+                    == link_to 'Request Case Study', 'mailto:general@madebyporter.com', class: "card-project-action--link"
+            .col-12.col-sm-6
+              .card-project.card-project--ronfinley
                 .card-project-info
                   h3.card-project-info--title 
-                    | Forces Unite
+                    | Ron Finley
                   p.card-project-info--desc 
-                    | Mentorship, Design & Code
+                    | Website Redesign
                 .card-project-logo
-                  = image_tag "cases/logos-forcesunite.png", :alt => "Forces Unite", :class => "card-project-logo--img"
+                  = image_tag "cases/logos-ronfinley.png", :alt => "Ron Finley", :class => "card-project-logo--img"
                 ul.card-project-action
                   li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.forcesunite.us', class: "card-project-action--link"
+                    == link_to 'Visit Site', 'http://ronfinley.com', class: "card-project-action--link"
                   li.card-project-action--ele
-                    span.disabled Chapter Coming Soon
-            .col-12.col-md-6
-              .card-project.card-project--versa
+                    == link_to 'Request Case Study', 'mailto:general@madebyporter.com', class: "card-project-action--link"
+            .col-12.col-sm-6
+              .card-project.card-project--ifyb
                 .card-project-info
                   h3.card-project-info--title 
-                    | Think Versa
+                    | I Fly You Buy
                   p.card-project-info--desc 
-                    | Design &amp; Code
+                    | MVP App Design
                 .card-project-logo
-                  = image_tag "cases/logos-versa.png", :alt => "Think Versa", :class => "card-project-logo--img"
+                  = image_tag "cases/logos-ifyb.svg", :alt => "MyFDTPS", :class => "card-project-logo--img"
                 ul.card-project-action
                   li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.thinkversa.com', class: "card-project-action--link"
-                  li.card-project-action--ele
-                    span.disabled Chapter Coming Soon
+                    == link_to 'View Story', '/cases/ifyb-app-2018', class: "card-project-action--link"
     
-section#projects.site-block
+section#mission.site-block
   .container-fluid
     .row
       .col-12.col-xl-3
@@ -97,20 +95,22 @@ section#projects.site-block
         .row
           .col-12.col-md-6
             h4
-              | For the potential clients
+              | For startup founders
             ul.list-bordered
-              li MVP Site Build
-              li Website Optimization
-              li Design an MVP for your app
-              li Upgrade your existing app design
-              li Optimize your digital systems
+              li Design your app idea
+              li Systemize your app design
+              li Design website to promote app
+              li Digitize your business process
           .col-12.col-md-6
             h4
-              | For personal endevours
+              | For lifestyle business founders
             ul.list-bordered
-              li To create sustainable systems
-              li To help people recognize their potential
-              li To help people monetize their passions
+              li Design your MVP site to test your idea
+              li Automate and organize your data
+              li Optimize and scale up your website
+              li Digitize your business process
+
+      .col-12
         .row
           .col-12
             header.site-block-header
@@ -119,7 +119,7 @@ section#projects.site-block
             .site-clients-list
               .row.no-gutters
                 - data.clients.list.each do |client|
-                  .col-6.col-md-4.col-lg-3
+                  .col-6.col-md-4.col-lg-4
                     .site-clients-ele
                       img.site-clients-img src="assets/img/clients/logo-proof-#{client.shortname}.png" alt="#{client.client}"
 

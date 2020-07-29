@@ -1,7 +1,5 @@
 ---
 list:
-- client: Buzzhoney
-  shortname: buzzhoney
 - client: Foundation Transportation
   shortname: fdtps
 - client: Gigmor.com
