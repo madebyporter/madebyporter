@@ -228,9 +228,10 @@
       margin-right: 1px;
       margin-bottom: 1px;
       overflow: hidden;
+      padding: $space-3;
       position: relative;
       width: auto;
-      @include transition;
+      @include transition(translate);
       &:before {
         background: $color-red;
         content: "";
@@ -252,7 +253,6 @@
     .blog-list-link {
       display: block;
       height: 100%;
-      padding: $space-3;
       width: 100%;
     }
     .blog-list-content {
