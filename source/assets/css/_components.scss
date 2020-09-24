@@ -96,18 +96,29 @@
       .form-fieldset-combo {
         @include flexbox;
         @include flex-wrap(wrap);
+        .form-fieldset-header {
+          background: $color-black-20;
+          color: $color-gray-light;
+          margin: -2rem -2rem 2rem -2rem;
+          padding: $space-3 $space-2 $space-2 $space-2;
+        }
         .form-label {
           width: 100%;
         }
         .form-input {
+          background: $color-white;
+          color: $color-black;
+          padding: $space-1;
           width: 100%;
         }
         .form-btn {
+          @include transition(all, 0);
+          margin: $space-2 0 0 0;
           width: 100%;
         }
         @media (min-width: $mq-tablet) {
           .form-input {
-            width: 80%;
+            width: 100%;
           }
           .form-btn {
             width: 20%;

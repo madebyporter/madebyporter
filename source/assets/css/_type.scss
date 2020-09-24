@@ -11,18 +11,33 @@
   // Type System
     .t-120 {
       @include font-size(96);
+      @media (min-width: $mq-phonexl) {
+
+      }
       @media (min-width: $mq-tablet) {
         @include font-size(120);
       }
     }
     .t-96 {
-      @include font-size(81);
+      @include font-size(64);
+      @media (min-width: $mq-ip6p) {
+        @include font-size(72);
+      }
+      @media (min-width: $mq-phonexl) {
+        @include font-size(81);
+      }
       @media (min-width: $mq-tablet) {
         @include font-size(96);
       }
     }
     .t-81 {
-      @include font-size(72);
+      @include font-size(56);
+      @media (min-width: $mq-ip6p) {
+        @include font-size(64);
+      }
+      @media (min-width: $mq-phonexl) {
+        @include font-size(72);
+      }
       @media (min-width: $mq-tablet) {
         @include font-size(81);
       }
@@ -137,7 +152,7 @@
       margin-bottom: $space-2;
 
       & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {
-        margin-top: $space-1;
+        padding-top: $space-2;
       }
 
     }
@@ -160,17 +175,24 @@
       display: block;
       font-family: $font-reg;
       font-weight: 500;
-      margin: 0 0 $space-1;
+      margin: 0 0 $space-2;
       line-height: 1.1;
     }
 
     .headline {
-      @extend .t-96;
+      @extend .t-81;
     }
     .hero-headline {
       @extend .t-56;
       @media (min-width: $mq-tablet) {
         @include font-size(96);  
+      }
+    }
+    .blog-headline {
+      text-align: center;
+      @extend .t-56;
+      @media (min-width: $mq-tablet) {
+        @include font-size(120);  
       }
     }
     
@@ -180,6 +202,9 @@
 
     h2 {
       @extend .t-48;
+      & + h3 {
+        padding-top: $space-2;
+      }
     }
 
     h3 {

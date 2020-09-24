@@ -152,11 +152,13 @@
         height: 14vh;
         width: 100%;
         @media (min-width: $mq-laptop) {
-          font-weight: 500;
+          font-weight: 800;
           height: auto;
           margin-left: $space-2;
-          @include font-size(18);
+          @include font-size(14);
           width: auto;
+          text-transform: uppercase;
+          letter-spacing: 0.1rem;
         }
       }
     }
@@ -512,6 +514,7 @@
 
     .site-blog-article-pagination {
       padding: 0 0 $space-4 0;
+      text-align: center;
       a {
         @include font-size(24);
       }
