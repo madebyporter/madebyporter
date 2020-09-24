@@ -83,4 +83,12 @@ If you care about security, then Jamstack is your jam. You can make your Wordpre
 
 Both ways of getting your website up and running has their pros and cons. It depends on your approach: the short-term or long-term. If you're looking to quickly prove a business model, then use Wordpress (or even Squarespace or Shopify). If you've proven that your business model works and you're ready to set your website up for growth, then Jamstack is the way to go.
 
-If you have any questions on which way to go about building your website, you can reach me via Twitter for help. In need of in-depth consulting, you can schedule time to talk 1x1 with me to figure out whats the best route for you.
+There's even ways to marry the Jamstack model with Wordpress. Wordpress has a API plugin If you have any questions on which way to go about building your website, you can reach me via Twitter for help. In need of in-depth consulting, you can schedule time to talk 1x1 with me to figure out whats the best route for you.
+
+### References & Resources
+- [Jamstack](https://jamstack.org/)
+- [Wordpress](https://wordpress.org/)
+- [Netlify](https://www.netlify.com/)
+- [Jamstack.wtf](https://jamstack.wtf/)
+- [How To Create A Headless WordPress Site On The JAMstack](https://www.smashingmagazine.com/2020/02/headless-wordpress-site-jamstack/)
+- [Wordpress REST API Handbook](https://developer.wordpress.org/rest-api/)
