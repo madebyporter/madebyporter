@@ -24,12 +24,16 @@
                 
                 .row
                   .col-12.col-md-6
-                    label.form-label Email
-                    input.form-input type="email" value="" name="EMAIL" class="required email newsletter-email" id="mce-EMAIL" placeholder="[email here]"
+                    fieldset.form-fieldset
+                      label.form-label Email
+                      input.form-input type="email" value="" name="EMAIL" class="required email newsletter-email" id="mce-EMAIL" placeholder="[email here]"
                   .col-12.col-md-6
-                    label.form-label Name
-                    input.form-input type="text" value="" name="FNAME" class="required email newsletter-text" id="mce-FNAME" placeholder="[name here]"
-                input.form-btn.comp-btn-red type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-submit"
+                    fieldset.form-fieldset
+                      label.form-label Name
+                      input.form-input type="text" value="" name="FNAME" class="required email newsletter-text" id="mce-FNAME" placeholder="[name here]"
+                .row
+                  .col-12
+                    input.form-btn.comp-btn-red type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-submit"
               #mce-responses.clear
                 div class="response" id="mce-error-response" style="display:none"
                 div class="response" id="mce-success-response" style="display:none"

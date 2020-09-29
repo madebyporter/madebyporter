@@ -104,6 +104,11 @@
           margin: -2rem -2rem 2rem -2rem;
           padding: $space-3 $space-2 $space-2 $space-2;
         }
+        .form-fieldset {
+          padding: 0;
+          margin: 0 0 $space-2 0;
+          background: transparent;
+        }
         .form-label {
           width: 100%;
         }
@@ -115,16 +120,7 @@
         }
         .form-btn {
           @include transition(all, 0);
-          margin: $space-2 0 0 0;
           width: 100%;
-        }
-        @media (min-width: $mq-tablet) {
-          .form-input {
-            width: 100%;
-          }
-          .form-btn {
-            width: 20%;
-          }
         }
       }
       .form-fieldset-btn {
@@ -179,6 +175,8 @@
         color: $color-white;
         @extend .t-18;
         @extend .t-bold;
+        font-family: $font-secondary;
+        padding: $space-2 0;
         min-height: 200px;
         outline: none;
         width: 100%;
