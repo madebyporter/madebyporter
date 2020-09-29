@@ -1,7 +1,7 @@
 // _type.scss
   body {
     @include font-size(12);
-    font-family: $font-reg;
+    font-family: $font-secondary;
     line-height: 1.5;
     @media (min-width: $mq-tablet) {
       @include font-size(12);
@@ -9,17 +9,26 @@
   }
 
   // Type System
+    .t-160 {
+      @include font-size(64);
+      @media (min-width: $mq-ip6p) {
+        @include font-size(72);
+      }
+      @media (min-width: $mq-phonexl) {
+        @include font-size(120);
+      }
+      @media (min-width: $mq-tablet) {
+        @include font-size(160);
+      }
+    }
     .t-120 {
       @include font-size(96);
-      @media (min-width: $mq-phonexl) {
-
-      }
       @media (min-width: $mq-tablet) {
         @include font-size(120);
       }
     }
     .t-96 {
-      @include font-size(64);
+      @include font-size(48);
       @media (min-width: $mq-ip6p) {
         @include font-size(72);
       }
@@ -61,37 +70,46 @@
       }
     }
     .t-48 {
-      @include font-size(36);
+      @include font-size(24);
+      @media (min-width: $mq-ip6p) {
+        @include font-size(28);
+      }
+      @media (min-width: $mq-phonexl) {
+        @include font-size(36);
+      }
       @media (min-width: $mq-tablet) {
         @include font-size(48);
       }
     }
     .t-36 {
-      @include font-size(32);
+      @include font-size(28);
       @media (min-width: $mq-tablet) {
         @include font-size(36);
       }
     }
     .t-32 {
-      @include font-size(28);
+      @include font-size(24);
       @media (min-width: $mq-tablet) {
         @include font-size(32);
       }
     }
     .t-28 {
-      @include font-size(24);
+      @include font-size(18);
       @media (min-width: $mq-tablet) {
         @include font-size(28);
       }
     }
     .t-24 {
-      @include font-size(18);
+      @include font-size(16);
       @media (min-width: $mq-tablet) {
         @include font-size(24);
       }
     }
     .t-18 {
-      @include font-size(16);
+      @include font-size(14);
+      @media (min-width: $mq-phonexl) {
+        @include font-size(16);
+      }
       @media (min-width: $mq-tablet) {
         @include font-size(18);
       }
@@ -138,6 +156,7 @@
       color: $color-red;
       font-weight: 700;
       text-decoration: none;
+      @extend .t-16;
       &:hover {
         color: $color-red-light;
         text-decoration: none;
@@ -146,7 +165,7 @@
 
   // Paragraphs
     p, ul, li {
-      font-family: $font-reg;
+      font-family: $font-secondary;
       @extend .t-16;
       line-height: 180%;
       margin-bottom: $space-2;
@@ -158,7 +177,8 @@
     }
 
     .small {
-      @extend .t-12;
+      @extend .t-14;
+      letter-spacing: .02rem;
     }
     .normal {
       @extend .t-16;
@@ -180,25 +200,8 @@
       line-height: 1.1;
     }
 
-    .headline {
-      @extend .t-81;
-    }
-    .hero-headline {
-      @extend .t-56;
-      @media (min-width: $mq-tablet) {
-        @include font-size(96);  
-      }
-    }
-    .blog-headline {
-      text-align: center;
-      @extend .t-56;
-      @media (min-width: $mq-tablet) {
-        @include font-size(120);  
-      }
-    }
-    
     h1 {
-      @extend .t-64;
+      @extend .t-81;
     }
 
     h2 {
@@ -235,9 +238,33 @@
         }
       }
     }
+    .headline, .headline a {
+      font-size: 3vw;
+    }
+    .medium-headline, .medium-headline a {
+      @extend .t-64;
+    }
+    .hero-headline, .hero-headline a {
+      font-size: 12vw;
+    }
+    .site-block-index-journal {
+      .blog-headline {
+        margin: 0 0 $space-1 0;
+        width: 100%;
+      }
+    }
+    .blog-headline {
+      text-align: center;
+      font-size: 9vw;
+      line-height: 1.1;
+      font-family: $font-reg;
+      font-weight: 400;
+    }
+    .case-header {
+      @extend .t-64;
+    }
     .sub-title {
       color: $color-white;
-      font-weight: 700;
     }
 
   // Type Sets

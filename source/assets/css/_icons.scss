@@ -4,14 +4,16 @@
     background: transparent;
     cursor: pointer;
     display: flex;
-    height: 20px;
-    overflow: hidden;
+    height: 24px;
+    // overflow: hidden;
     position: relative;
     width: 30px;
+    @include transition();
     span {
       background: $color-white;
       height: 4px;
       width: 30px;
+      visibility: visible;
     }
     &:before {
       background: $color-white;
@@ -20,6 +22,8 @@
       width: 30px;
       position: absolute;
       top: 0;
+      transform: rotate(0deg);
+      @include transition();
     }
     &:after {
       background: $color-white;
@@ -28,13 +32,24 @@
       width: 30px;
       position: absolute;
       bottom: 0px;
+      transform: rotate(0deg);
+      @include transition();
     }
-    &:hover {
+  }
+  .menuOpen {
+    .icon-bars {
       &:before {
-        opacity: 0.5;
+        transform: rotate(45deg);
+        top: 9px;
+        left: 0px;
+      }
+      span {
+        visibility: hidden;
       }
       &:after {
-        opacity: 0.5;
+        transform: rotate(-45deg);
+        top: 9px;
+        left: 0px;
       }
     }
   }

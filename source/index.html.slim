@@ -3,32 +3,31 @@ title: American Creative & Entrepreneur
 description: Made by Porter, a designer specializing in digital products and the web.
 ---
 
-section#hero.site-block
+section#hero.site-block.theme-red
   .container-fluid
     .row
-      .col-12.col-lg-10
+      .col-12
         header.site-block-header
-          h1.headline.hero-headline
-            | Building websites that brings results.
+          h1.hero-headline
+            | Websites that bring results.
     .row
       .col-12.col-lg-10
-        p.large
+        p.headline
           | Chris Porter is an independent creative with a background in User Experience Design, Front-end Development, Music Production & Photography. 
-          == link_to 'Dig deeper.', '/about', class: ""
+          == link_to 'About Me.', '/about', class: ""
         
-section#projects.site-block
+section#projects.site-block.site-block-large-top.theme-black
   .container-fluid
     .row
       .col-12.col-xl-3
         header.site-block-header
-          h2 Current Projects
-          p.large Dig into the current client projects &amp; independent ventures.
-          == link_to 'View All Projects', '/projects', class: "large"
+          h2 Featured Project
+          == link_to 'View All Projects', '/projects', class: ""
       .col-12.col-xl-8.offset-xl-1
         .card-system
           .row
-            .col-12.col-md-6
-              .card-project.card-project--myfdtps
+            .col-12
+              .card-project.card-project-solo.card-project--myfdtps
                 .card-project-info
                   h3.card-project-info--title 
                     | Foundation Transportation
@@ -40,100 +39,41 @@ section#projects.site-block
                   li.card-project-action--ele
                     == link_to 'Visit Site', 'https://www.myfdtps.com', class: "card-project-action--link"
                   li.card-project-action--ele
-                    == link_to 'View Story', '/cases/myfdtps-website-2018', class: "card-project-action--link"
-            .col-12.col-sm-6
-              .card-project.card-project--sbt
-                .card-project-info
-                  h3.card-project-info--title 
-                    | Silicon Beach Talent
-                  p.card-project-info--desc 
-                    | Website Redesign
-                .card-project-logo
-                  = image_tag "cases/logos-sbt.png", :alt => "Silicon Beach Talent", :class => "card-project-logo--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.siliconbeachtalent.com', class: "card-project-action--link"
-                  li.card-project-action--ele
-                    == link_to 'Request Case Study', 'mailto:general@madebyporter.com', class: "card-project-action--link"
-            .col-12.col-sm-6
-              .card-project.card-project--ifyb
-                .card-project-info
-                  h3.card-project-info--title 
-                    | I Fly You Buy
-                  p.card-project-info--desc 
-                    | MVP App Design
-                .card-project-logo
-                  = image_tag "cases/logos-ifyb.svg", :alt => "MyFDTPS", :class => "card-project-logo--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'View Story', '/cases/ifyb-app-2018', class: "card-project-action--link"
-            .col-12.col-sm-6
-              .card-project.card-project--ronfinley
-                .card-project-info
-                  h3.card-project-info--title 
-                    | Ron Finley
-                  p.card-project-info--desc 
-                    | Website Redesign
-                .card-project-logo
-                  = image_tag "cases/logos-ronfinley.png", :alt => "Ron Finley", :class => "card-project-logo--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'Visit Site', 'http://ronfinley.com', class: "card-project-action--link"
-                  li.card-project-action--ele
-                    == link_to 'Request Case Study', 'mailto:general@madebyporter.com', class: "card-project-action--link"
-    
-section#projects.site-block
+                    == link_to 'View Story', '/cases/myfdtps-website-2018', class: "card-project-action--link"    
+section#services.site-block.theme-black
   .container-fluid
     .row
       .col-12.col-xl-3
         header.site-block-header
           h2 Services
-          p.large How I can help you build a website that brings results?
-          == link_to 'View the Services', '/services', class: "large"
-          
+          == link_to 'View my Services', '/services', class: ""
       .col-12.col-xl-8.offset-xl-1
         .row
-          .col-12.col-md-4
-            h4
-              | Custom Website
-            ul.list-bordered
-              li How can you make your website sustainable &amp; improve results?
-              li Focused on speed &amp; growth.
-              li A website that's build to last.
-          .col-12.col-md-4
-            h4
-              | Starter Website
-            ul.list-bordered
-              li How can you get your website up fast so you can generate revenue?
-              li Let's test your business model.
-              li Build fast and launch fast.
-          .col-12.col-md-4
-            h4
-              | Website Teardown
-            ul.list-bordered
-              li How can you improve your current website & process?
-              li Gain knowledge &amp; insights.
-              li Take with you a plan for success.
-        .row
-          .col-12
-            header.site-block-header
-              h4
-                | Who I've Worked With
-            .site-clients-list
-              .row.no-gutters
-                - data.clients.list.each do |client|
-                  .col-6.col-md-4.col-lg-3
-                    .site-clients-ele
-                      img.site-clients-img src="assets/img/clients/logo-proof-#{client.shortname}.png" alt="#{client.client}"
+          .col-12.col-xl-8
+            h3
+              | Get started with a Website Teardown
+            p.large How can you improve your current website & process? Gain insights. Take with you a plan for success.
+            == link_to 'Learn more', '/services#teardown', class: "large"
 
-section#stories.site-block.style-stories
+section#proof.site-block.theme-black
   .container-fluid
     .row
       .col-12.col-xl-3
         header.site-block-header
-          h2 Journal
-          p.large Celebrating the W's. Learning from the L's.
-          == link_to 'Read the Journal', '/journal', class: "large"
-          
+          h2
+            | Who I've Worked With
       .col-12.col-xl-8.offset-xl-1
-        = partial '/partials/blog_index'
+        .site-clients-list
+          .row.no-gutters
+            - data.clients.list.each do |client|
+              .col-6.col-md-4.col-lg-3
+                .site-clients-ele
+                  img.site-clients-img src="assets/img/clients/logo-proof-#{client.shortname}.png" alt="#{client.client}"
+
+section#stories.site-block.site-block-height-full.site-block-text-center.site-block-index-journal.theme-red
+  .container-fluid
+    .row
+      .col-12
+        - blog.articles[0...1].each do |article|
+          = link_to article.title, article.url, class: "blog-headline"
+          = link_to 'Read More...', article.url, class: "large"

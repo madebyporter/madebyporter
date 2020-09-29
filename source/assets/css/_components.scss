@@ -11,7 +11,9 @@
       padding: $space-1 $space-2;
       text-align: center;
       text-decoration: none;
-      @include transition;
+      @include transition(background-color);
+      line-height: 1;
+      padding-top: 13px;
     }
     .comp-btn-large {
       @extend .t-36;

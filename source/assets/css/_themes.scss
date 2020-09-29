@@ -55,6 +55,9 @@
     p, li, span {
       color: $color-grey-light;
     }
+    .sub-title {
+      color: $color-white;
+    }
     a {
       color: $color-red;
       font-weight: 700;
@@ -87,18 +90,27 @@
 
 // Theme Red
   .theme-red {
-    background: $color-red;
+    background: $color-red-dark;
     .masthead-logo {
       -webkit-filter: brightness(3);
       filter: brightness(3);
     }
     a {
       color: $color-white;
-      font-weight: 700;
       &:hover {
         color: darken($color-white,10%);
       }
     }
+    .site-nav {
+      background: $color-red;
+      .site-nav-link {
+        color: $color-black-50;
+        &:hover {
+          color: $color-black;
+        }
+      }
+    }
+
     .comp-btn-red {
       background: $color-red-dark;
       color: $color-red-light;
@@ -108,8 +120,7 @@
       }
     }
     .headline, h1, h2, h3, h4, h5, h6, .large {
-      color: $color-red-dark;
-      font-weight: 700;
+      color: $color-black;
     }
     .site-footer, .ordered-list li {
       color: darken($color-red-dark,15%);
