@@ -21,7 +21,7 @@
 
   // Theme
     // Home
-    .index, .projects, .mission, .about, .journal, .blog, .contact, .now {
+    .index, .projects, .services, .about, .journal, .blog, .contact, .now {
       @extend .theme-black;
     }
     .cases {
@@ -763,10 +763,10 @@
       }
     }
   
-  // Mission Content
-    .mission-content {
+  // Block Content
+    .block-content {
       margin: 0 0 $space-4 0;
-      .mission-set {
+      .block-set {
         margin: 0 0 $space-3 0;
       }
     }
@@ -775,5 +775,13 @@
     .case-header {
       @media (max-width: $mq-tablet) {
         @include font-size(36);
+      }
+    }
+
+  // Subnav
+    .site-nav-subnav-container {
+      &.stuck {
+        position: fixed;
+        top: $space-2;
       }
     }

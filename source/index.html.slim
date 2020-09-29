@@ -6,10 +6,10 @@ description: Made by Porter, a designer specializing in digital products and the
 section#hero.site-block
   .container-fluid
     .row
-      .col-12
+      .col-12.col-lg-10
         header.site-block-header
           h1.headline.hero-headline
-            | Building systems for entrepreneurs &amp; startups.
+            | Building websites that brings results.
     .row
       .col-12.col-lg-10
         p.large
@@ -41,81 +41,84 @@ section#projects.site-block
                     == link_to 'Visit Site', 'https://www.myfdtps.com', class: "card-project-action--link"
                   li.card-project-action--ele
                     == link_to 'View Story', '/cases/myfdtps-website-2018', class: "card-project-action--link"
-            .col-12.col-md-6
-              .card-project.card-project--bbx
+            .col-12.col-sm-6
+              .card-project.card-project--sbt
                 .card-project-info
                   h3.card-project-info--title 
-                    | The Beatbox Club
+                    | Silicon Beach Talent
                   p.card-project-info--desc 
-                    | Design, Code & Music Production
+                    | Website Redesign
                 .card-project-logo
-                  = image_tag "cases/logos-beatbox.png", :alt => "The Beatbox Club", :class => "card-project-logo--img"
+                  = image_tag "cases/logos-sbt.png", :alt => "Silicon Beach Talent", :class => "card-project-logo--img"
                 ul.card-project-action
                   li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.thebeatboxclub.com', class: "card-project-action--link"
+                    == link_to 'Visit Site', 'https://www.siliconbeachtalent.com', class: "card-project-action--link"
                   li.card-project-action--ele
-                    span.disabled Chapter Coming Soon
-            .col-12.col-md-6
-              .card-project.card-project--forcesunite
+                    == link_to 'Request Case Study', 'mailto:general@madebyporter.com', class: "card-project-action--link"
+            .col-12.col-sm-6
+              .card-project.card-project--ifyb
                 .card-project-info
                   h3.card-project-info--title 
-                    | Forces Unite
+                    | I Fly You Buy
                   p.card-project-info--desc 
-                    | Mentorship, Design & Code
+                    | MVP App Design
                 .card-project-logo
-                  = image_tag "cases/logos-forcesunite.png", :alt => "Forces Unite", :class => "card-project-logo--img"
+                  = image_tag "cases/logos-ifyb.svg", :alt => "MyFDTPS", :class => "card-project-logo--img"
                 ul.card-project-action
                   li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.forcesunite.us', class: "card-project-action--link"
-                  li.card-project-action--ele
-                    span.disabled Chapter Coming Soon
-            .col-12.col-md-6
-              .card-project.card-project--versa
+                    == link_to 'View Story', '/cases/ifyb-app-2018', class: "card-project-action--link"
+            .col-12.col-sm-6
+              .card-project.card-project--ronfinley
                 .card-project-info
                   h3.card-project-info--title 
-                    | Think Versa
+                    | Ron Finley
                   p.card-project-info--desc 
-                    | Design &amp; Code
+                    | Website Redesign
                 .card-project-logo
-                  = image_tag "cases/logos-versa.png", :alt => "Think Versa", :class => "card-project-logo--img"
+                  = image_tag "cases/logos-ronfinley.png", :alt => "Ron Finley", :class => "card-project-logo--img"
                 ul.card-project-action
                   li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.thinkversa.com', class: "card-project-action--link"
+                    == link_to 'Visit Site', 'http://ronfinley.com', class: "card-project-action--link"
                   li.card-project-action--ele
-                    span.disabled Chapter Coming Soon
+                    == link_to 'Request Case Study', 'mailto:general@madebyporter.com', class: "card-project-action--link"
     
 section#projects.site-block
   .container-fluid
     .row
       .col-12.col-xl-3
         header.site-block-header
-          h2 Mission
-          p.large Striving to be useful, to improve systems &amp; provide value to the world.
-          == link_to 'Digest the Mission', '/mission', class: "large"
+          h2 Services
+          p.large How I can help you build a website that brings results?
+          == link_to 'View the Services', '/services', class: "large"
           
       .col-12.col-xl-8.offset-xl-1
         .row
-          .col-12.col-md-6
+          .col-12.col-md-4
             h4
-              | For the potential clients
+              | Custom Website
             ul.list-bordered
-              li MVP Site Build
-              li Website Optimization
-              li Design an MVP for your app
-              li Upgrade your existing app design
-              li Optimize your digital systems
-          .col-12.col-md-6
+              li How can you make your website sustainable &amp; improve results?
+              li Focused on speed &amp; growth.
+              li A website that's build to last.
+          .col-12.col-md-4
             h4
-              | For personal endevours
+              | Starter Website
             ul.list-bordered
-              li To create sustainable systems
-              li To help people recognize their potential
-              li To help people monetize their passions
+              li How can you get your website up fast so you can generate revenue?
+              li Let's test your business model.
+              li Build fast and launch fast.
+          .col-12.col-md-4
+            h4
+              | Website Teardown
+            ul.list-bordered
+              li How can you improve your current website & process?
+              li Gain knowledge &amp; insights.
+              li Take with you a plan for success.
         .row
           .col-12
             header.site-block-header
               h4
-                | Current &amp; Past Clients
+                | Who I've Worked With
             .site-clients-list
               .row.no-gutters
                 - data.clients.list.each do |client|

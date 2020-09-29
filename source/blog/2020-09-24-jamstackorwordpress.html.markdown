@@ -1,6 +1,6 @@
 ---
 
-title: "Jamstack vs Wordpress?"
+title: "Jamstack or Wordpress?"
 date: 2020-09-24 02:13 UTC
 tags: What Should I Use
 type: lead
@@ -13,11 +13,11 @@ Its 2020, and website are still one of the best ways to market your business. It
 
 ## Wordpress
 
-<a href="https://en.wikipedia.org/wiki/WordPress">Wordpress</a> is a content management system built on PHP that started out for blogs. PHP is a coding language that handles the templates, logic and data for your website. The server generates the pages when you load the website. Styling and functionality such as e-Commerce can be custom built, but driven by themes and plugins developed by third parties. With this in mind, Wordpress sites tend to suffer from heavy bloat, security issues and back user experience on the front-end and back-end.
+[Wordpress](https://en.wikipedia.org/wiki/WordPress) is a content management system built on PHP that started out for blogs. PHP is a coding language that handles the templates, logic and data for your website. The server generates the pages when you load the website. Styling and functionality such as e-Commerce can be custom built, but driven by themes and plugins developed by third parties. With this in mind, Wordpress sites tend to suffer from heavy bloat, security issues and back user experience on the front-end and back-end.
 
 ## Jamstack
 
-<a href="https://jamstack.wtf/">Jamstack</a>, which stands for Javascript, API, Markdown Stack, is a new way of building websites and apps. The focus here is a faster, more secure, cost efficient website. Instead of generating webpages on the server like Wordpress, the pages are pre-built and uploaded to a CDN after an update. Great for marketing websites and blogs. Still getting there for content driven sites like Yelp and task driven apps like Gmail.
+[Jamstack](https://jamstack.org/), which stands for Javascript, API, Markdown Stack, is a new way of building websites and apps. The focus here is a faster, more secure, cost efficient website. Instead of generating webpages on the server like Wordpress, the pages are pre-built and uploaded to a CDN after an update. Great for marketing websites and blogs. Still getting there for content driven sites like Yelp and task driven apps like Gmail.
 
 Both Jamstack and Wordpress can be useful for certain needs. Lets look at how both methods stack up based on speed, cost, development and security when it comes to your business needs.
 
