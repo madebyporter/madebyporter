@@ -183,7 +183,7 @@
     .normal {
       @extend .t-16;
     }
-    .large {
+    .large, .large a {
       @extend .t-24;
       line-height: 150%;
     }
@@ -213,14 +213,17 @@
 
     h3 {
       @extend .t-36;
+      letter-spacing: .02rem;
     }
 
     h4 {
       @extend .t-24;
+      letter-spacing: .02rem;
     }
 
     h5 {
       @extend .t-18;
+      letter-spacing: .02rem;
     }
 
     

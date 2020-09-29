@@ -63,6 +63,19 @@
         }
         &:last-child {
           border-bottom: 0;
+          margin: 0;
+          padding: 0;
+        }
+      }
+      &.spacing-large {
+        & > * {
+          margin: 0 0 $space-4;
+          padding: 0 0 $space-4;
+          &:last-child {
+            border-bottom: 0;
+            margin: 0;
+            padding: 0;
+          }
         }
       }
     }
