@@ -91,6 +91,7 @@
 // Theme Red
   .theme-red {
     background: $color-red-dark;
+
     .masthead-logo {
       -webkit-filter: brightness(3);
       filter: brightness(3);
@@ -103,6 +104,9 @@
     }
     .site-nav {
       background: $color-red;
+      @media (min-width: $mq-laptop) {
+        background: transparent;
+      }
       .site-nav-link {
         color: $color-black-50;
         &:hover {

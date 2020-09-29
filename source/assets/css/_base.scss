@@ -35,14 +35,6 @@
       margin: 0;
     }
 
-    .menuOpen {
-      overflow: hidden;
-      .site-nav {
-        @media (max-width: $mq-laptop) {
-          @include translate(-100%,0);
-        }
-      }
-    }
     .pull-right {
       float: right;
     }
@@ -153,8 +145,10 @@
       width: 100%;
       z-index: 100000;
       @include translate(0,0);
-      @include transition;
+      @include transition($type:transform);
       @media (min-width: $mq-laptop) {  
+        background: transparent;
+        height: 100%;
         justify-content: flex-end;
         left: auto;
         padding: 0;
@@ -180,6 +174,14 @@
           width: auto;
           text-transform: uppercase;
           letter-spacing: 0.1rem;
+        }
+      }
+    }
+    .menuOpen {
+      overflow: hidden;
+      .site-nav {
+        @media (max-width: $mq-laptop) {
+          @include translate(-100%,0);
         }
       }
     }
