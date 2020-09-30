@@ -11,8 +11,8 @@ gem 'wdm', '~> 0.1.0', platforms: [:mswin, :mingw]
 gem 'tzinfo-data', platforms: [:mswin, :mingw]
 
 # Middleman Gems
-gem "middleman", git: "https://github.com/middleman/middleman.git", ref: "8e6aba9"
+gem "middleman"
 gem 'middleman-livereload'
 gem "middleman-blog"
-gem "middleman-imageoptim", :git => "https://github.com/plasticine/middleman-imageoptim", :branch => "master"
+gem "middleman-imageoptim"
 gem 'middleman-minify-html'

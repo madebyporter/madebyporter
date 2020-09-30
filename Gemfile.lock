@@ -1,56 +1,7 @@
-GIT
-  remote: https://github.com/middleman/middleman.git
-  revision: 8e6aba9d44f40d47352b41e89475c2ed92b93807
-  ref: 8e6aba9
-  specs:
-    middleman (4.2.1)
-      coffee-script (~> 2.2)
-      haml (>= 4.0.5)
-      kramdown (~> 1.2)
-      middleman-cli (= 4.2.1)
-      middleman-core (= 4.2.1)
-      sass (>= 3.4.0, < 4.0)
-    middleman-cli (4.2.1)
-      thor (>= 0.17.0, < 2.0)
-    middleman-core (4.2.1)
-      activesupport (>= 4.2, < 5.1)
-      addressable (~> 2.3)
-      backports (~> 3.6)
-      bundler (~> 1.1)
-      contracts (~> 0.13.0)
-      dotenv
-      erubis
-      execjs (~> 2.0)
-      fast_blank
-      fastimage (~> 2.0)
-      hamster (~> 3.0)
-      hashie (~> 3.4)
-      i18n (~> 0.7.0)
-      listen (~> 3.0.0)
-      memoist (~> 0.14)
-      padrino-helpers (~> 0.13.0)
-      parallel
-      rack (>= 1.4.5, < 3)
-      sass (>= 3.4)
-      servolux
-      tilt (~> 2.0)
-      uglifier (~> 3.0)
-
-GIT
-  remote: https://github.com/plasticine/middleman-imageoptim
-  revision: 774e886ebcd7ec558e9b268655b068a4b93dc4e2
-  branch: master
-  specs:
-    middleman-imageoptim (0.3.0)
-      image_optim (~> 0.25.0)
-      image_optim_pack (~> 0.2.1)
-      middleman-cli
-      middleman-core (>= 3.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.0.7.2)
+    activesupport (5.2.4.4)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -84,7 +35,8 @@ GEM
     hashie (3.6.0)
     htmlcompressor (0.2.0)
     http_parser.rb (0.6.0)
-    i18n (0.7.0)
+    i18n (0.9.5)
+      concurrent-ruby (~> 1.0)
     image_optim (0.25.0)
       exifr (~> 1.2, >= 1.2.2)
       fspath (~> 3.0)
@@ -96,15 +48,52 @@ GEM
       image_optim (~> 0.19)
     image_size (1.5.0)
     in_threads (1.5.4)
-    kramdown (1.17.0)
+    kramdown (2.3.0)
+      rexml
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     memoist (0.16.2)
+    middleman (4.3.11)
+      coffee-script (~> 2.2)
+      haml (>= 4.0.5)
+      kramdown (>= 2.3.0)
+      middleman-cli (= 4.3.11)
+      middleman-core (= 4.3.11)
     middleman-blog (4.0.3)
       addressable (~> 2.3)
       middleman-core (>= 4.0.0)
       tzinfo (>= 0.3.0)
+    middleman-cli (4.3.11)
+      thor (>= 0.17.0, < 2.0)
+    middleman-core (4.3.11)
+      activesupport (>= 4.2, < 6.0)
+      addressable (~> 2.3)
+      backports (~> 3.6)
+      bundler
+      contracts (~> 0.13.0)
+      dotenv
+      erubis
+      execjs (~> 2.0)
+      fast_blank
+      fastimage (~> 2.0)
+      hamster (~> 3.0)
+      hashie (~> 3.4)
+      i18n (~> 0.9.0)
+      listen (~> 3.0.0)
+      memoist (~> 0.14)
+      padrino-helpers (~> 0.13.0)
+      parallel
+      rack (>= 1.4.5, < 3)
+      sassc (~> 2.0)
+      servolux
+      tilt (~> 2.0.9)
+      uglifier (~> 3.0)
+    middleman-imageoptim (0.3.0)
+      image_optim (~> 0.25.0)
+      image_optim_pack (~> 0.2.1)
+      middleman-cli
+      middleman-core (>= 3.1)
     middleman-livereload (3.4.6)
       em-websocket (~> 0.5.1)
       middleman-core (>= 3.3)
@@ -128,11 +117,9 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    sass (3.7.4)
-      sass-listen (~> 4.0.0)
-    sass-listen (4.0.0)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
+    rexml (3.2.4)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     servolux (0.13.0)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
@@ -150,9 +137,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  middleman!
+  middleman
   middleman-blog
-  middleman-imageoptim!
+  middleman-imageoptim
   middleman-livereload
   middleman-minify-html
   slim (>= 3.0)
@@ -160,4 +147,4 @@ DEPENDENCIES
   wdm (~> 0.1.0)
 
 BUNDLED WITH
-   1.17.2
+   2.1.4
