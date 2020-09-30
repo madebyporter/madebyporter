@@ -3,32 +3,31 @@ title: American Creative & Entrepreneur
 description: Made by Porter, a designer specializing in digital products and the web.
 ---
 
-section#hero.site-block
+section#hero.site-block.theme-red
   .container-fluid
     .row
       .col-12
         header.site-block-header
-          h1.headline.hero-headline
-            | Building systems for entrepreneurs &amp; startups.
+          h1.hero-headline
+            | Websites that bring results.
     .row
       .col-12.col-lg-10
-        p.large
+        p.headline
           | Chris Porter is an independent creative with a background in User Experience Design, Front-end Development, Music Production & Photography. 
-          == link_to 'Dig deeper.', '/about', class: ""
+          == link_to 'About Me.', '/about', class: ""
         
-section#projects.site-block
+section#projects.site-block.site-block-large-top.theme-black
   .container-fluid
     .row
       .col-12.col-xl-3
         header.site-block-header
-          h2 Current Projects
-          p.large Dig into the current client projects &amp; independent ventures.
-          == link_to 'View All Projects', '/projects', class: "large"
+          h2 Featured Project
+          == link_to 'View All Projects', '/projects', class: ""
       .col-12.col-xl-8.offset-xl-1
         .card-system
           .row
-            .col-12.col-md-6
-              .card-project.card-project--myfdtps
+            .col-12
+              .card-project.card-project-solo.card-project--myfdtps
                 .card-project-info
                   h3.card-project-info--title 
                     | Foundation Transportation
@@ -38,99 +37,43 @@ section#projects.site-block
                   = image_tag "cases/logos-myfdtps.svg", :alt => "MyFDTPS", :class => "card-project-logo--img"
                 ul.card-project-action
                   li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.myfdtps.com', class: "card-project-action--link"
+                    == link_to 'Visit Site', 'https://myfdtps.netlify.app', class: "card-project-action--link"
                   li.card-project-action--ele
-                    == link_to 'View Story', '/cases/myfdtps-website-2018', class: "card-project-action--link"
-            .col-12.col-md-6
-              .card-project.card-project--bbx
-                .card-project-info
-                  h3.card-project-info--title 
-                    | The Beatbox Club
-                  p.card-project-info--desc 
-                    | Design, Code & Music Production
-                .card-project-logo
-                  = image_tag "cases/logos-beatbox.png", :alt => "The Beatbox Club", :class => "card-project-logo--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.thebeatboxclub.com', class: "card-project-action--link"
-                  li.card-project-action--ele
-                    span.disabled Chapter Coming Soon
-            .col-12.col-md-6
-              .card-project.card-project--forcesunite
-                .card-project-info
-                  h3.card-project-info--title 
-                    | Forces Unite
-                  p.card-project-info--desc 
-                    | Mentorship, Design & Code
-                .card-project-logo
-                  = image_tag "cases/logos-forcesunite.png", :alt => "Forces Unite", :class => "card-project-logo--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.forcesunite.us', class: "card-project-action--link"
-                  li.card-project-action--ele
-                    span.disabled Chapter Coming Soon
-            .col-12.col-md-6
-              .card-project.card-project--versa
-                .card-project-info
-                  h3.card-project-info--title 
-                    | Think Versa
-                  p.card-project-info--desc 
-                    | Design &amp; Code
-                .card-project-logo
-                  = image_tag "cases/logos-versa.png", :alt => "Think Versa", :class => "card-project-logo--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.thinkversa.com', class: "card-project-action--link"
-                  li.card-project-action--ele
-                    span.disabled Chapter Coming Soon
-    
-section#projects.site-block
+                    == link_to 'View Story', '/cases/myfdtps-website-2018', class: "card-project-action--link"    
+section#services.site-block.theme-black
   .container-fluid
     .row
       .col-12.col-xl-3
         header.site-block-header
-          h2 Mission
-          p.large Striving to be useful, to improve systems &amp; provide value to the world.
-          == link_to 'Digest the Mission', '/mission', class: "large"
-          
+          h2 Services
+          == link_to 'View my Services', '/services', class: ""
       .col-12.col-xl-8.offset-xl-1
         .row
-          .col-12.col-md-6
-            h4
-              | For the potential clients
-            ul.list-bordered
-              li MVP Site Build
-              li Website Optimization
-              li Design an MVP for your app
-              li Upgrade your existing app design
-              li Optimize your digital systems
-          .col-12.col-md-6
-            h4
-              | For personal endevours
-            ul.list-bordered
-              li To create sustainable systems
-              li To help people recognize their potential
-              li To help people monetize their passions
-        .row
-          .col-12
-            header.site-block-header
-              h4
-                | Current &amp; Past Clients
-            .site-clients-list
-              .row.no-gutters
-                - data.clients.list.each do |client|
-                  .col-6.col-md-4.col-lg-3
-                    .site-clients-ele
-                      img.site-clients-img src="assets/img/clients/logo-proof-#{client.shortname}.png" alt="#{client.client}"
+          .col-12.col-xl-8
+            h3
+              | Get started with a Website Teardown
+            p.large How can you improve your current website & process? Gain insights. Take with you a plan for success.
+            == link_to 'Learn more', '/services#teardown', class: "large"
 
-section#stories.site-block.style-stories
+section#proof.site-block.theme-black
   .container-fluid
     .row
       .col-12.col-xl-3
         header.site-block-header
-          h2 Journal
-          p.large Celebrating the W's. Learning from the L's.
-          == link_to 'Read the Journal', '/journal', class: "large"
-          
+          h2
+            | Who I've Worked With
       .col-12.col-xl-8.offset-xl-1
-        = partial '/partials/blog_index'
+        .site-clients-list
+          .row.no-gutters
+            - data.clients.list.each do |client|
+              .col-6.col-md-4.col-lg-3
+                .site-clients-ele
+                  img.site-clients-img src="assets/img/clients/logo-proof-#{client.shortname}.png" alt="#{client.client}"
+
+section#stories.site-block.site-block-height-full.site-block-text-center.site-block-index-journal.theme-red
+  .container-fluid
+    .row
+      .col-12
+        - blog.articles[0...1].each do |article|
+          = link_to article.title, article.url, class: "blog-headline"
+          = link_to 'Read More...', article.url, class: "large"

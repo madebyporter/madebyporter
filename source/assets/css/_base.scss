@@ -20,8 +20,10 @@
   }
 
   // Theme
-    // Home
-    .index, .projects, .mission, .about, .journal, .blog, .contact, .now {
+    .index .site-header {
+      @extend .theme-red;
+    }
+    .projects, .services, .about, .journal, .blog, .contact, .now {
       @extend .theme-black;
     }
     .cases {
@@ -33,14 +35,6 @@
       margin: 0;
     }
 
-    .menuOpen {
-      overflow: hidden;
-      .site-nav {
-        @media (max-width: $mq-laptop) {
-          @include translate(-100%,0);
-        }
-      }
-    }
     .pull-right {
       float: right;
     }
@@ -53,17 +47,36 @@
     
     .site-block {
       margin: 0;
-      padding: $space-2;
+      padding: $space-4 $space-2;
       @media (min-width: $mq-tablet) {
         margin: 0;
-        padding: $space-3 $space-3;
+        padding: $space-4 $space-2;
       }
       @media (min-width: $mq-laptop) {
         margin: 0;
-        padding: $space-3 $space-4;
+        padding: $space-4 $space-4;
       }
     }
-
+    .site-block-large-top {
+      @media (min-width: $mq-laptop) {
+        margin: 0;
+        padding: $space-5 $space-4 $space-4;
+      }
+    }
+    .site-block-height-full {
+      height: 90vh;
+      .container-fluid, .row, div[class^="col-"] {
+        height: 100%;
+      }
+    }
+    .site-block-text-center, .site-block-text-center div[class^="col-"] {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
     .site-block-header {
       margin: 0 0 $space-2;
       @media (min-width: $mq-tablet) {
@@ -124,16 +137,18 @@
       @include flex-wrap(wrap);
       align-items: center;
       background: $color-black;
-      height: 100%;
+      height: 100vh;
       left: 100%;
-      padding: $space-3;
+      padding: $space-5 $space-3;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 100000;
       @include translate(0,0);
-      @include transition;
+      @include transition($type:transform);
       @media (min-width: $mq-laptop) {  
+        background: transparent;
+        height: 100%;
         justify-content: flex-end;
         left: auto;
         padding: 0;
@@ -144,19 +159,29 @@
         @include translate(0,0);
       }
       .site-nav-link {
-        @include font-size(36);
+        @include font-size(24);
         align-items: center;
         @include flexbox;
         color: $color-grey-light;
         font-weight: 700;
-        height: 14vh;
+        // height: 14vh;
         width: 100%;
         @media (min-width: $mq-laptop) {
-          font-weight: 500;
+          font-weight: 800;
           height: auto;
           margin-left: $space-2;
-          @include font-size(18);
+          @include font-size(14);
           width: auto;
+          text-transform: uppercase;
+          letter-spacing: 0.1rem;
+        }
+      }
+    }
+    .menuOpen {
+      overflow: hidden;
+      .site-nav {
+        @media (max-width: $mq-laptop) {
+          @include translate(-100%,0);
         }
       }
     }
@@ -512,6 +537,7 @@
 
     .site-blog-article-pagination {
       padding: 0 0 $space-4 0;
+      text-align: center;
       a {
         @include font-size(24);
       }
@@ -547,8 +573,8 @@
     }
 
     .site-contact {
-      padding-top: $space-3;
-      padding-bottom: $space-3;
+      // padding-top: $space-3;
+      // padding-bottom: $space-3;
       @media (min-width: $mq-tablet) {
         padding-top: $space-5;
         padding-bottom: $space-5;
@@ -693,6 +719,9 @@
       }
       .about-timeline-year {
         font-weight: 700;
+        padding-right: 5px;
+        margin-bottom: 5px;
+        font-size: 14px;
       }
       .about-timeline-qtr {
         @extend .t-48;
@@ -756,14 +785,14 @@
       }
       .about-timeline-year-select-link {
         color: $color-grey-light;
-        font-weight: 300;
+        font-weight: 400;
       }
     }
   
-  // Mission Content
-    .mission-content {
+  // Block Content
+    .block-content {
       margin: 0 0 $space-4 0;
-      .mission-set {
+      .block-set {
         margin: 0 0 $space-3 0;
       }
     }
@@ -772,5 +801,14 @@
     .case-header {
       @media (max-width: $mq-tablet) {
         @include font-size(36);
+      }
+    }
+
+  // Subnav
+    .site-nav-subnav-container {
+      margin: 0 0 $space-4 0;
+      &.stuck {
+        position: fixed;
+        top: $space-2;
       }
     }

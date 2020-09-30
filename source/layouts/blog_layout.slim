@@ -2,20 +2,47 @@
   section.site-block
     .container-fluid
       .row
-        .col-12.col-xl-8
+        .col-12
           header.site-block-header
-            h1.headline
+            h1.headline.blog-headline
               = current_article.title
   section.site-blog.site-block
     .container-fluid
       .row
-        .col-12.col-xl-8
+        .col-12.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
           article.site-blog-post
             = current_article.body
+  section.site-block
+    .container-fluid
+      .row
+        .col-12.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
+          #mc_embed_signup
+            form.form action="https://madebyporter.us9.list-manage.com/subscribe/post?u=43c534416e476fa3af50b3e65&amp;id=c59e5e058e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate"
+              #mc_embed_signup_scroll
+              fieldset.form-fieldset.form-fieldset-combo
+                h4.form-fieldset-header Get quick #{current_article.data.topic} insights in your inbox
+                
+                .row
+                  .col-12.col-md-6
+                    fieldset.form-fieldset
+                      label.form-label Email
+                      input.form-input type="email" value="" name="EMAIL" class="required email newsletter-email" id="mce-EMAIL" placeholder="[email here]"
+                  .col-12.col-md-6
+                    fieldset.form-fieldset
+                      label.form-label Name
+                      input.form-input type="text" value="" name="FNAME" class="required email newsletter-text" id="mce-FNAME" placeholder="[name here]"
+                .row
+                  .col-12
+                    input.form-btn.comp-btn-red type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-submit"
+              #mce-responses.clear
+                div class="response" id="mce-error-response" style="display:none"
+                div class="response" id="mce-success-response" style="display:none"
+              div style="position: absolute; left: -5000px;" aria-hidden="true"
+                input type="text" name="b_43c534416e476fa3af50b3e65_2a32fa7a33" tabindex="-1" value=""
   section.site-blog-pagination.site-block
     .container-fluid
       .row
-        .col-12
+        .col-12.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
           .site-blog-article-pagination
             - previous_article = current_article.previous_article
             - if previous_article
@@ -28,17 +55,3 @@
               .newsletter-container
                 h2
                   | That's all of it.
-                p.large
-                  | Get notified when I finally put something up.
-                #mc_embed_signup
-                  form.form action="//madebyporter.us9.list-manage.com/subscribe/post?u=43c534416e476fa3af50b3e65&amp;id=2a32fa7a33" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate"
-                    #mc_embed_signup_scroll
-                    fieldset.form-fieldset.form-fieldset-combo
-                      label.form-label Email
-                      input.form-input type="email" value="" name="EMAIL" class="required email newsletter-email" id="mce-EMAIL" placeholder="Email Address"
-                      input.form-btn.comp-btn-red type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-submit"
-                    #mce-responses.clear
-                      div class="response" id="mce-error-response" style="display:none"
-                      div class="response" id="mce-success-response" style="display:none"
-                    div style="position: absolute; left: -5000px;" aria-hidden="true"
-                      input type="text" name="b_43c534416e476fa3af50b3e65_2a32fa7a33" tabindex="-1" value=""

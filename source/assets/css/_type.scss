@@ -1,7 +1,7 @@
 // _type.scss
   body {
     @include font-size(12);
-    font-family: $font-reg;
+    font-family: $font-secondary;
     line-height: 1.5;
     @media (min-width: $mq-tablet) {
       @include font-size(12);
@@ -9,6 +9,18 @@
   }
 
   // Type System
+    .t-160 {
+      @include font-size(64);
+      @media (min-width: $mq-ip6p) {
+        @include font-size(72);
+      }
+      @media (min-width: $mq-phonexl) {
+        @include font-size(120);
+      }
+      @media (min-width: $mq-tablet) {
+        @include font-size(160);
+      }
+    }
     .t-120 {
       @include font-size(96);
       @media (min-width: $mq-tablet) {
@@ -16,13 +28,25 @@
       }
     }
     .t-96 {
-      @include font-size(81);
+      @include font-size(48);
+      @media (min-width: $mq-ip6p) {
+        @include font-size(72);
+      }
+      @media (min-width: $mq-phonexl) {
+        @include font-size(81);
+      }
       @media (min-width: $mq-tablet) {
         @include font-size(96);
       }
     }
     .t-81 {
-      @include font-size(72);
+      @include font-size(56);
+      @media (min-width: $mq-ip6p) {
+        @include font-size(64);
+      }
+      @media (min-width: $mq-phonexl) {
+        @include font-size(72);
+      }
       @media (min-width: $mq-tablet) {
         @include font-size(81);
       }
@@ -46,37 +70,46 @@
       }
     }
     .t-48 {
-      @include font-size(36);
+      @include font-size(24);
+      @media (min-width: $mq-ip6p) {
+        @include font-size(28);
+      }
+      @media (min-width: $mq-phonexl) {
+        @include font-size(36);
+      }
       @media (min-width: $mq-tablet) {
         @include font-size(48);
       }
     }
     .t-36 {
-      @include font-size(32);
+      @include font-size(28);
       @media (min-width: $mq-tablet) {
         @include font-size(36);
       }
     }
     .t-32 {
-      @include font-size(28);
+      @include font-size(24);
       @media (min-width: $mq-tablet) {
         @include font-size(32);
       }
     }
     .t-28 {
-      @include font-size(24);
+      @include font-size(18);
       @media (min-width: $mq-tablet) {
         @include font-size(28);
       }
     }
     .t-24 {
-      @include font-size(18);
+      @include font-size(16);
       @media (min-width: $mq-tablet) {
         @include font-size(24);
       }
     }
     .t-18 {
-      @include font-size(16);
+      @include font-size(14);
+      @media (min-width: $mq-phonexl) {
+        @include font-size(16);
+      }
       @media (min-width: $mq-tablet) {
         @include font-size(18);
       }
@@ -123,6 +156,7 @@
       color: $color-red;
       font-weight: 700;
       text-decoration: none;
+      @extend .t-16;
       &:hover {
         color: $color-red-light;
         text-decoration: none;
@@ -131,25 +165,27 @@
 
   // Paragraphs
     p, ul, li {
-      font-family: $font-reg;
+      font-family: $font-secondary;
       @extend .t-16;
-      line-height: 1.5;
+      line-height: 180%;
       margin-bottom: $space-2;
 
       & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {
-        margin-top: $space-1;
+        padding-top: $space-2;
       }
 
     }
 
     .small {
-      @extend .t-12;
+      @extend .t-14;
+      letter-spacing: .02rem;
     }
     .normal {
       @extend .t-16;
     }
-    .large {
+    .large, .large a {
       @extend .t-24;
+      line-height: 150%;
     }
     .mixed-size {
       line-height: 1.2;
@@ -160,38 +196,34 @@
       display: block;
       font-family: $font-reg;
       font-weight: 500;
-      margin: 0 0 $space-1;
+      margin: 0 0 $space-2;
       line-height: 1.1;
     }
 
-    .headline {
-      @extend .t-96;
-    }
-    .hero-headline {
-      @extend .t-56;
-      @media (min-width: $mq-tablet) {
-        @include font-size(96);  
-      }
-    }
-    
     h1 {
-      @extend .t-64;
+      @extend .t-81;
     }
 
     h2 {
       @extend .t-48;
+      & + h3 {
+        padding-top: $space-2;
+      }
     }
 
     h3 {
       @extend .t-36;
+      letter-spacing: .02rem;
     }
 
     h4 {
       @extend .t-24;
+      letter-spacing: .02rem;
     }
 
     h5 {
       @extend .t-18;
+      letter-spacing: .02rem;
     }
 
     
@@ -209,9 +241,36 @@
         }
       }
     }
+    .headline, .headline a {
+      font-size: 5vw;
+      @media (min-width: $mq-tablet) {
+        font-size: 3vw;
+      }
+    }
+    .medium-headline, .medium-headline a {
+      @extend .t-64;
+    }
+    .hero-headline, .hero-headline a {
+      font-size: 12vw;
+    }
+    .site-block-index-journal {
+      .blog-headline {
+        margin: 0 0 $space-1 0;
+        width: 100%;
+      }
+    }
+    .blog-headline {
+      text-align: center;
+      font-size: 9vw;
+      line-height: 1.1;
+      font-family: $font-reg;
+      font-weight: 400;
+    }
+    .case-header {
+      @extend .t-64;
+    }
     .sub-title {
       color: $color-white;
-      font-weight: 700;
     }
 
   // Type Sets
