@@ -3,17 +3,21 @@
   // Buttons
     .comp-btn {
       border: 0;
+      border-radius: 0;
       cursor: pointer;
       display: inline-block;
       @extend .t-16;
       font-weight: 700;
+      height: 40px;
       outline: none;
       padding: $space-1 $space-2;
       text-align: center;
       text-decoration: none;
       @include transition(background-color);
       line-height: 1;
-      padding-top: 13px;
+      padding-top: 14px;
+      -webkit-appearance: none;
+      width: auto;
     }
     .comp-btn-large {
       @extend .t-36;
@@ -134,6 +138,7 @@
         .form-btn {
           @include transition(all, 0);
           width: 100%;
+          -webkit-appearance: none;
         }
       }
       .form-fieldset-btn {
