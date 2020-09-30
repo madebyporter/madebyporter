@@ -1,7 +1,4 @@
-<<<<<<< HEAD
+# Local Netlify folder
 build/*
 !build/build.xml
-=======
-# Local Netlify folder
 .netlify
->>>>>>> dev
