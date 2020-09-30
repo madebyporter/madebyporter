@@ -7,7 +7,7 @@ section.site-block
     .row
       .col-12
         header.site-block-header
-          h1.headline
+          h1
             | Projects
     .row
       .col-12.col-lg-10
@@ -37,7 +37,7 @@ section.site-block
                   = image_tag "cases/logos-myfdtps.svg", :alt => "MyFDTPS", :class => "card-project-logo--img"
                 ul.card-project-action
                   li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.myfdtps.com', class: "card-project-action--link"
+                    == link_to 'Visit Site', 'https://myfdtps.netlify.app', class: "card-project-action--link"
                   li.card-project-action--ele
                     == link_to 'View Story', '/cases/myfdtps-website-2018', class: "card-project-action--link"
             .col-12.col-sm-6
@@ -95,18 +95,6 @@ section.site-block
                   li.card-project-action--ele
                     == link_to 'Request Case Study', 'mailto:general@madebyporter.com', class: "card-project-action--link"
             .col-12.col-sm-6
-              .card-project.card-project--newscrack
-                .card-project-info
-                  h3.card-project-info--title 
-                    | Newscrack
-                  p.card-project-info--desc 
-                    | MVP App Design
-                .card-project-logo
-                  = image_tag "cases/logos-newscrack.png", :alt => "Newscrack", :class => "card-project-logo--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'Request Case Study', 'mailto:general@madebyporter.com', class: "card-project-action--link"
-            .col-12.col-sm-6
               .card-project.card-project--ronfinley
                 .card-project-info
                   h3.card-project-info--title 
@@ -118,20 +106,6 @@ section.site-block
                 ul.card-project-action
                   li.card-project-action--ele
                     == link_to 'Visit Site', 'http://ronfinley.com', class: "card-project-action--link"
-                  li.card-project-action--ele
-                    == link_to 'Request Case Study', 'mailto:general@madebyporter.com', class: "card-project-action--link"
-            .col-12.col-sm-6
-              .card-project.card-project--buzzhoney
-                .card-project-info
-                  h3.card-project-info--title 
-                    | Working at Buzzhoney
-                  p.card-project-info--desc 
-                    | Designer, Pittsburgh Marketing Agency
-                .card-project-logo
-                  = image_tag "cases/logos-buzzhoney.png", :alt => "Buzzhoney", :class => "card-project-logo--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.buzzhoney.com', class: "card-project-action--link"
                   li.card-project-action--ele
                     == link_to 'Request Case Study', 'mailto:general@madebyporter.com', class: "card-project-action--link"
     .row

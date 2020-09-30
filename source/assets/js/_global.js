@@ -4,6 +4,7 @@ js.main = {
   init: function () {
     this.linksExternal();
     this.mobileMenu();
+    // this.waypointsNav();
   },
 
   // Keep this shit in ABC Order
@@ -42,6 +43,13 @@ js.main = {
         $('body').addClass('menuOpen');
       }
     });
+  },
+  waypointsNav: function() {
+    var sticky = new Waypoint.Sticky({
+      element: $('.site-nav-subnav-container')[0]
+    }, {
+      offset: '2rem'
+    })
   }
 };
 

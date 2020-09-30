@@ -3,8 +3,13 @@
   $retina: "only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)";
 
 // Type
+<<<<<<< HEAD
   $font-reg: -apple-system, BlinkMacSystemFont, "Helvetica Neue LT Std", "Helvetica Neue", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   $font-secondary: 'Vollkorn', serif;
+=======
+  $font-reg: "HelveticaNeueLTStd-LtEx", "HelveticaNeueLightExtended", "HelveticaNeue-Light-Extended", "Helvetica Neue Light Extended", "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  $font-secondary: "Helvetica Neue LT Std", "Helvetica Neue", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+>>>>>>> dev
 
 // Colors
   $color-black:       #1D1D21;
@@ -13,8 +18,11 @@
   $color-white:       #fff;
 
   $color-grey:        #6F6F80;
+  $color-gray:        $color-grey;
   $color-grey-light:  #A4A4B3;
+  $color-gray-light:  $color-grey-light;
   $color-grey-dark:   #3F3F4D;
+  $color-gray-dark:   $color-grey-dark;
 
   $color-red:         #E84C5C;
   $color-red-light:   #FF6E7C;

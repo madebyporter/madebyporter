@@ -57,9 +57,15 @@ html lang="en"
     header.site-header.site-block
       .container-fluid
         .row
+<<<<<<< HEAD
           .col-4
             == link_to 'Made by Porter', '/', class: "masthead-logo"
           .col-8
+=======
+          .col-3
+            == link_to 'Made by Porter', '/', class: "masthead-logo"
+          .col-9
+>>>>>>> dev
             .site-nav-trigger.d-lg-none.d-xl-none
               i#functionMenuTrigger.icon-bars
                 span
@@ -67,12 +73,12 @@ html lang="en"
               == link_to 'Now', '/now', class: "site-nav-link"
               == link_to 'Projects', '/projects', class: "site-nav-link"
               == link_to 'About', '/about', class: "site-nav-link"
-              == link_to 'Mission', '/mission', class: "site-nav-link"
+              == link_to 'Services', '/services', class: "site-nav-link"
               == link_to 'Journal', '/journal', class: "site-nav-link"
               == link_to 'Contact', '/contact', class: "site-nav-link"
     main.site-main
       == yield
-    section#contact.site-contact.site-block
+    section#contact.site-contact.site-block.theme-black
       .container-fluid
         .row
           .col-12.col-xl-4
@@ -91,7 +97,7 @@ html lang="en"
                   h3
                     | Join my email list?
                   == link_to 'Sign Up', 'https://madebyporter.us9.list-manage.com/subscribe?u=43c534416e476fa3af50b3e65&id=c59e5e058e&utm_source=newsletter&utm_medium=email&utm_campaign=profit_first_0220&utm_content=referral', class: "comp-btn comp-btn-grey"
-    footer.site-footer.site-block
+    footer.site-footer.site-block.theme-black
       .container-fluid
         .row
           .col-12.col-md-6
