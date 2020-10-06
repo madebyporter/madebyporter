@@ -6,12 +6,28 @@
     }
 
     .card-project {
+      background: $color-white;
       @include flexbox;
       @include flex-wrap(wrap);
       margin: 0 0 $space-3 0;
       padding: $space-2;
-      height: 420px;
+      position: relative;
+      height: 350px;
+      justify-content: center;
+      overflow: hidden;
       width: 100%;
+      &:hover {
+        .card-project-comp {
+          box-shadow: 0 -4px 40px rgba(0,0,0,0.2);
+          @include scale(1.01);
+        }
+        .card-project-comp--mobile {
+          box-shadow: 0 0 0;
+        }
+      }
+      @media (min-width: $mq-tablet) {
+        height: 500px;
+      }
     }
     .card-project-solo {
       margin-bottom: 0;
@@ -21,20 +37,68 @@
       width: 100%;
     }
     .card-project-info--title {
-      @extend .t-18;
-      margin: 0;
+      color: $color-black;
+      @extend .t-24;
+      margin: 0 0 5px;
     }
     .card-project-info--desc {
-      color: rgba(255,255,255,0.6);
+      color: $color-gray;
       @extend .t-16;
       margin: 0;
+      line-height: 1.2;
     }
+    .card-project-comp {
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+      left: 20px;
+      position: absolute;
+      top: 90px;
+      width: 700px;
+      z-index: 1;
+      @include scale(1);
+      @include transition();
+      @media (min-width: $mq-tablet) {
+        position: relative;
+        width: auto;
+        left: 40px;
+        top: auto;
+        z-index: 1;
+      }
+      .card-project-case--img {
+        width: 100%;
+      }
+    }
+    .card-project-comp--half {
+      @extend .card-project-comp;
+      min-width: 350px;
+      width: auto;
+      @media (min-width: $mq-tablet) {
+        width: auto;
+      }
+    }
+
+    .card-project-comp--mobile {
+      @extend .card-project-comp;
+      box-shadow: 0 0 0;
+      left: auto;
+      width: 280px;
+      @media (min-width: $mq-tablet) {
+        max-width: 360px;
+        width: auto;
+      }
+    }
+
     .card-project-logo {
-      height: 60%;
-      width: 100%;
-      @include flexbox;
       align-items: center;
+      @include flexbox;
+      height: 60%;
       justify-content: center;
+      position: absolute;
+      @include absolute-center;
+      width: 100%;
+      @media (min-width: $mq-tablet) {
+        height: 60%;
+        width: 40%;
+      }
     }
     .card-project-logo--img {
       max-width: 150px;
@@ -49,215 +113,295 @@
       }
     }
     .card-project-action {
-      height: 20%;
-      width: 100%;
-      @include flexbox;
-      @include nolist;
-      justify-content: center;
       align-items: flex-end;
+      bottom: 0;
+      @include flexbox;
+      justify-content: flex-start;
+      @include nolist;
+      right: 0;
+      position: absolute;
+      z-index: 10;
     }
     .card-project-action--ele {
-      @extend .t-16;
+      background: $color-red;
+      @extend .t-18;
+      @include flexbox;
+      align-items: center;
       margin: 0;
-      padding: 0 $space-1;
       white-space: nowrap;
       .disabled {
         @extend .t-bold;
       }
     }
     .card-project-action--link {
-      border-bottom: 2px solid rgba(255,255,255,0.8);
-      color: rgba(255,255,255,0.8);
-      font-weight: 700;
-      padding: 0 0 2px 0;
+      color: $color-white;
+      display: inline;
+      @extend .t-14;
+      font-weight: 800;
+      line-height: 1;
+      @include transition($type:padding);
+      padding: $space-2;
+      padding-top: $space-2+0.8;
+      text-transform: uppercase;
+      letter-spacing: .01rem;
       &:hover {
-        border-bottom: 2px solid rgba(255,255,255,1);
-        color: rgba(255,255,255,1);
+        color: $color-white;
+        padding: $space-2+1;
+        padding-top: $space-2+1.8;
       }
     }
   }
 
 
 // Project Stylings
-  .card-project--ssfn {
-    background: #F64256;
-  }
-  .card-project--bbx {
-    background: #EFCB83;
-    .card-project-info--title, .card-project-action--ele {
-      color: darken(#BF891D, 20%);
+  .card-system {
+    .card-project--ssfn {
+      $c1: #F64256;
+      $c2: rgba(0,0,0,0.4);
+      $c3: rgba(0,0,0,0.7);
+      background: $c1;
+      .card-project-info--desc {
+        color: $c2;
+      }
+      .card-project-action--ele {
+        background: $c3;
+      }
+      .card-project-action--link {
+        color: $c1;
+        &:hover {
+          color: $c1;
+        }
+      }
     }
-    .card-project-info--desc {
-      color: darken(#BF891D, 10%);
+    .card-project--bbx {
+      $c1: #BF891D;
+      $c2: #EFCB83;
+      background: #EFCB83;
+      .card-project-info--title, .card-project-action--ele {
+        color: darken($c1, 20%);
+      }
+      .card-project-info--desc {
+        color: darken($c1, 10%);
+      }
+      .card-project-action--ele {
+        background: $c1;
+      }
+      .card-project-action--link {
+        color: $c2;
+        &:hover {
+          color: $c2;
+        }
+      }
     }
-    .card-project-action--link {
-      $c: #E73800;
-      color: $c;
-      border-color: $c;
-      &:hover {
-        color: lighten($c,10%);
-        border-color: lighten($c,10%);
+    .card-project--forcesunite {
+      $c1: $color-black;
+      $c2: rgba(0,0,0,0.4);
+      $c3: $color-white;
+      background: #fff;
+      .card-project-info--title, .card-project-action--link {
+        color: $c1;
+      }
+      .card-project-info--desc {
+        color: $c2;
+      }
+      .card-project-action--ele {
+        background: $c1;
+      }
+      .card-project-action--link {
+        color: $c3;
+        &:hover {
+          color: $c3;
+        }
+      }
+    }
+    .card-project--versa {
+      $c1: rgba(255,255,255,0.8);
+      $c2: rgba(255,255,255,0.5);
+      $c3: #007BFF;
+      background: $c3;
+      .card-project-info--desc, .card-project-action--ele {
+        color: $c1;
+      }
+      .card-project-action--ele {
+        background: $c1;
+      }
+      .card-project-action--link {
+        color: $c3;
+        &:hover {
+          color: $c3;
+        }
+      }
+    }
+    .card-project--myfdtps {
+      $c1: #6FB3EB;
+      $c2: #1766A9;
+      $c3: #222A36;
+      background: $c2;
+      .card-project-info--title {
+        color: $color-white;
+      }
+      .card-project-info--desc {
+        color: $c1;
+      }
+      .card-project-action--ele {
+        background: $c2;
+      }
+      .card-project-action--link {
+        color: $color-white;
+      }
+    }
+    .card-project--ifyb {
+      $c1: #FFCE01;
+      $c2: #234F6A;
+      background: $c2;
+      .card-project-info--title {
+        color: $color-white;
+      }
+      .card-project-info--desc {
+        color: $c1;
+      }
+      .card-project-action--ele {
+        background: $c1;
+      }
+      .card-project-action--link {
+        color: $c2;
+        &:hover {
+          color: $c2;
+        }
+      }
+    }
+    .card-project--sensory {
+      $c: #BF891D;
+      background: url('../img/projects/bg-sensory.jpg') no-repeat center;
+      .card-project-info--desc {
+        color: $c;
+      }
+      .card-project-action--ele {
+        color: $c;
+      }
+      .card-project-action--link {
+        border-color: $c;
+        color: $c;
+        &:hover {
+          color: lighten($c,10%);
+          border-color: lighten($c,10%);
+        }
+      }
+    }
+    .card-project--hyrecar {
+      $c1: $color-white;
+      $c2: #FC6349;
+      background: $c2;
+      .card-project-info--title {
+        color: $c1;
+      }
+      .card-project-info--desc {
+        color: $c1;
+      }
+      .card-project-action--ele {
+        background: $c2;
+      }
+      .card-project-action--link {
+        color: $c1;
+        &:hover {
+          color: $c1;
+        }
+      }
+    }
+    .card-project--gigmor {
+      $c1: #FDD8D2;
+      $c2: #E34B2A;
+      background: $c2;
+      .card-project-info--title {
+        color: $color-white;
+      }
+      .card-project-info--desc {
+        color: $c1;
+      }
+      .card-project-action--ele {
+        background: $c1;
+      }
+      .card-project-action--link {
+        color: $c2;
+        &:hover {
+          color: $c2;
+        }
+      }
+    }
+    .card-project--sbt {
+      $c1: #D7E5FD;
+      $c2: #2D5BA7;
+      background: $c2;
+      .card-project-info--title {
+        color: $color-white;
+      }
+      .card-project-info--desc {
+        color: $c1;
+      }
+      .card-project-action--ele {
+        background: $c1;
+      }
+      .card-project-action--link {
+        color: $c2;
+        &:hover {
+          color: $c2;
+        }
+      }
+    }
+    .card-project--ronfinley {
+      $c1: #5C5B19;
+      $c2: #DBD83C;
+      $c3: #ffaa01;
+      $c4: $color-white;
+      background: $c2;
+      .card-project-info--desc {
+        color: $c1;
+      }
+      .card-project-action--ele {
+        background: $c3;
+      }
+      .card-project-action--link {
+        color: $c4;
+        &:hover {
+          color: $c4;
+        }
+      }
+    }
+    .card-project--newscrack {
+      $c: #FFF;
+      background: #475C7A;
+      .card-project-info--desc {
+        color: #A4A4B3;
+      }
+      .card-project-action--ele {
+        color: $c;
+      }
+      .card-project-action--link {
+        border-color: $c;
+        color: $c;
+        &:hover {
+          color: darken($c,10%);
+          border-color: darken($c,10%);
+        }
+      }
+    }
+    .card-project--buzzhoney {
+      $c: #FFF;
+      background: #1A1204;
+      .card-project-info--desc {
+        color: #A4A4B3;
+      }
+      .card-project-action--ele {
+        color: $c;
+      }
+      .card-project-action--link {
+        border-color: $c;
+        color: $c;
+        &:hover {
+          color: darken($c,10%);
+          border-color: darken($c,10%);
+        }
       }
     }
   }
-  .card-project--forcesunite {
-    background: #fff;
-    .card-project-info--title, .card-project-action--link {
-      color: #000;
-    }
-    .card-project-info--desc {
-      color: rgba(0,0,0,0.4);
-    }
-    .card-project-action--link {
-      $c: #000000;
-      color: $c;
-      border-color: $c;
-      &:hover {
-        color: lighten($c,10%);
-        border-color: lighten($c,10%);
-      }
-    }
-  }
-  .card-project--versa {
-    background: #007BFF;
-    .card-project-info--desc, .card-project-action--ele {
-      color: rgba(255,255,255,0.8);
-    }
-    .card-project-action--link {
-      color: $color-white;
-      border-color: $color-white;
-      &:hover {
-        color: #B2D7FF;
-        border-color: #B2D7FF;
-      }
-    }
-  }
-  .card-project--myfdtps {
-    $c: #6FB3EB;
-    background: #222A36;
-    .card-project-info--desc {
-      color: $c;
-    }
-    .card-project-action--ele {
-      color: $c;
-    }
-    .card-project-action--link {
-      border-color: $c;
-      color: $c;
-      &:hover {
-        color: darken($c,10%);
-        border-color: darken($c,10%);
-      }
-    }
-  }
-  .card-project--ifyb {
-    $c: #FFCE01;
-    background: #234F6A;
-    .card-project-info--desc {
-      color: $c;
-    }
-    .card-project-action--ele {
-      color: $c;
-    }
-    .card-project-action--link {
-      border-color: $c;
-      color: $c;
-      &:hover {
-        color: darken($c,10%);
-        border-color: darken($c,10%);
-      }
-    }
-  }
-  .card-project--sensory {
-    $c: #BF891D;
-    background: url('../img/projects/bg-sensory.jpg') no-repeat center;
-    .card-project-info--desc {
-      color: $c;
-    }
-    .card-project-action--ele {
-      color: $c;
-    }
-    .card-project-action--link {
-      border-color: $c;
-      color: $c;
-      &:hover {
-        color: lighten($c,10%);
-        border-color: lighten($c,10%);
-      }
-    }
-  }
-  .card-project--hyrecar {
-    background: #FC6349;
-  }
-  .card-project--gigmor {
-    background: #E34B2A;
-  }
-  .card-project--sbt {
-    $c: #FFF;
-    background: #2D5BA7;
-    .card-project-action--ele {
-      color: $c;
-    }
-    .card-project-action--link {
-      border-color: $c;
-      color: $c;
-      &:hover {
-        color: lighten($c,10%);
-        border-color: lighten($c,10%);
-      }
-    }
-  }
-  .card-project--ronfinley {
-    $c: #5C5B19;
-    background: #DBD83C;
-    .card-project-info--desc {
-      color: $c;
-    }
-    .card-project-action--ele {
-      color: $c;
-    }
-    .card-project-action--link {
-      border-color: $c;
-      color: $c;
-      &:hover {
-        color: darken($c,10%);
-        border-color: darken($c,10%);
-      }
-    }
-  }
-  .card-project--newscrack {
-    $c: #FFF;
-    background: #475C7A;
-    .card-project-info--desc {
-      color: #A4A4B3;
-    }
-    .card-project-action--ele {
-      color: $c;
-    }
-    .card-project-action--link {
-      border-color: $c;
-      color: $c;
-      &:hover {
-        color: darken($c,10%);
-        border-color: darken($c,10%);
-      }
-    }
-  }
-  .card-project--buzzhoney {
-    $c: #FFF;
-    background: #1A1204;
-    .card-project-info--desc {
-      color: #A4A4B3;
-    }
-    .card-project-action--ele {
-      color: $c;
-    }
-    .card-project-action--link {
-      border-color: $c;
-      color: $c;
-      &:hover {
-        color: darken($c,10%);
-        border-color: darken($c,10%);
-      }
-    }
-  }
+  
