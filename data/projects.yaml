@@ -1,139 +1,74 @@
 ---
 proj:
-- name: Versa
+- name: 'Execute'
+  shortname: execute
+  type: web
+  date: 2018
+  service: 'Business Process'
+  desc: 'Notion Productivity Template'
+  role: 'Process Designer'
+  url: https://www.notion.so/executebyporter/Execute-6f84033c55df4dcea7c05726fd81a564
+  cta: 'Download'
+- name: 'Think Versa'
   shortname: versa
+  type: web
   date: 2018
-  desc: A knowledge base organized semantically to allow for people to learn using first principles.
-  role: '<strong>Designers - </strong>Chris Porter / <strong>Developers - </strong>Chris Porter'
-  url: http://www.thinkversa.com
-  cta: Launch Site
-  work:
-  - item:
-      img: versa-001
-      alt: Versa Homepage
-  - item:
-      img: versa-002
-      alt: Versa Twig Layout
-  - item:
-      img: versa-003
-      alt: Versa Logo
-  - item:
-      img: versa-004
-      alt: Versa Card System
-
-- name: Gigmor.com
-  shortname: gigmor
+  service: 'Web Design & Jamstack Development'
+  desc: My knowledge base of specialized learning links
+  role: 'Founder, Design &amp; Code'
+  url: https://www.thinkversa.com
+  cta: 'Launch Site'
+- name: 'Foundation Transportation'
+  shortname: myfdtps
+  type: web
   date: 2018
-  desc: A place for musicians to find gigs and venues to find musicians. Our goal
-    was to redesign the product to improve user experience and some fresh paint.
-  role: '<strong>Designers - </strong>Chris Porter feat. <a href="http://www.maryy.co">Mary Cho</a>'
-  url: http://www.gigmor.com
-  cta: Launch Site
-  work:
-  - item:
-      img: gigmor-001
-      alt: Gigmor Homepage Desktop &amp; Mobile
-  - item:
-      img: gigmor-002
-      alt: Gigmor Homepage Desktop &amp; Mobile
-  - item:
-      img: gigmor-003
-      alt: Gigmor Homepage Desktop &amp; Mobile
-  - item:
-      img: gigmor-004
-      alt: Gigmor Homepage Desktop &amp; Mobile
-
-- name: I Fly You Buy
-  shortname: ifyb
-  date: 2018
-  desc: A mobile solution to simplify the group purchasing experience. With the help of SSFN Collective, we’ve help build the brand and experience for the app.
-  role: '<strong>Designers - </strong>Chris Porter feat. <a href="http://www.itsmejose.com">Jose Espinoza</a> with Branding &amp; UI Design'
-  url:
-  cta:
-  work:
-  - item:
-      img: ifyb-001
-      alt: IFYB Mobile Screens
-  - item:
-      img: ifyb-002
-      alt: IFYB Logo by Jose Espinoza
-  - item:
-      img: ifyb-003
-      alt: IFYB Mobile Login Components
-  - item:
-      img: ifyb-004
-      alt: IFYB New Flyer Wireframes
-
-- name: Hyrecar.com
+  service: 'Web Design & Jamstack Development'
+  desc: Black Car Service for VIP People
+  role: 'Web Designer &amp; Developer'
+  url: '/cases/myfdtps-website-2018'
+  cta: 'View Case Study'
+- name: 'Hyrecar'
   shortname: hyrecar
-  date: 2017
-  desc: People renting cars to other people to generate income through Uber and Lyft. The goal here was to improve the user experience.
-  role: '<strong>Designers - </strong>Chris Porter feat. Vanessa Ganaden &amp; <a href="http://www.maryy.co">Mary Cho</a>'
-  url: http://www.hyrecar.com
-  cta: Launch Site
-  work:
-  - item:
-      img: hyrecar-001
-      alt: Hyrecar Mobile Screens
-  - item:
-      img: hyrecar-002
-      alt: Hyrecar Car Detail &amp; Booking
-  - item:
-      img: hyrecar-003
-      alt: Hyrecar Mobile Screens
-
-- name: LiveRaise
-  shortname: liveraise
-  date: 2017
-  desc: A live video platform for influencers, LiveRaise needed to improve their user interface. Together, the client and I worked together to make it easier for people to share their life. We also updated their logo to reflect those updates.
-  role: '<strong>Designers - </strong>Chris Porter'
-  url: http://www.liveraise.com
-  cta: Launch Site
-  work:
-  - item:
-      img: liveraise-001
-      alt: LiveRaise
-  - item:
-      img: liveraise-002
-      alt: LiveRaise
-  - item:
-      img: liveraise-003
-      alt: LiveRaise
-  - item:
-      img: liveraise-004
-      alt: LiveRaise
-- name: Silicon Beach Talent
+  type: web
+  date: 2018
+  service: 'Product Design'
+  desc: 'Rent cars for Uber &amp; Lyft'
+  role: 'UX &amp; UI Design'
+  url: '/cases/hyrecar-app-2018'
+  cta: 'View Case Study'
+- name: 'Silicon Beach Talent'
   shortname: sbt
+  type: web
+  date: 2018
+  service: 'Web Design &amp; Wordpress Development'
+  desc: 'Talent Agency for Silicon Beach LA'
+  role: 'Web Designer &amp; Developer'
+  url: 'https://www.siliconbeachtalent.com'
+  cta: 'Launch Site'
+- name: 'Ron Finley'
+  shortname: ronfinley
+  type: web
   date: 2016
-  desc: Silicon Beach Talent is a boutique tech recruitment agency based in Santa Monica, California. For this project, I was tasked with rebuilding their website to improve branding and business automation.
-  role: '<strong>Designers - </strong> Chris Porter; <strong>Development:</strong> Chris Porter feat. <a href="https://pixelswithin.com/">Diana Lopez</a>'
-  url: http://www.siliconbeachtalent.com
-  cta: Launch Site
-  work:
-  - item:
-      img: sbt-001
-      alt: LiveRaise
-  - item:
-      img: sbt-002
-      alt: LiveRaise
-- name: Steele Hungry
-  shortname: steelehungry
-  date: 2017
-  desc: Steele Hungry is the food related personal brand for Ashley Steele. She needed a new logo to help aid her branding efforts that will appear on web, print and screen media.
-  role: '<strong>Designers - </strong> Chris Porter'
-  work:
-  - item:
-      img: steelehungry-001
-      alt: Steele Hungry Full Logo
-  - item:
-      img: steelehungry-002
-      alt: Steele type
-  - item:
-      img: steelehungry-003
-      alt: Hungry type
-  - item:
-      img: steelehungry-004
-      alt: Steele Hungry Colors
-  - item:
-      img: steelehungry-005
-      alt: Steele Hungry Typography
+  service: 'Web Design &amp; Wordpress Development'
+  desc: 'The Gangsta Gardener'
+  role: 'Web Designer &amp; Developer'
+  url: 'https://www.ronfinley.com'
+  cta: 'Launch Site'
+- name: 'The Beatbox Club'
+  shortname: bbx
+  type: web
+  date: 2012
+  service: 'Web Design &amp; Jamstack Development'
+  desc: 'Hustle Beats for Work'
+  role: 'Web Designer, Developer, Music Producer &amp; Mixing Engineer'
+  url: 'https://www.thebeatboxclub.com'
+  cta: 'Launch Site'
+- name: 'Forces Unite'
+  shortname: forcesunite
+  type: web
+  date: 2012
+  service: 'Web Design &amp; Jamstack Development'
+  desc: 'Connecting Entrepreneurs &amp; Freelancers'
+  role: 'Web Designer &amp; Developer'
+  url: 'https://www.forcesunite.us'
+  cta: 'Launch Site'
