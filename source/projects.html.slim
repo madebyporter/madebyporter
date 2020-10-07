@@ -24,123 +24,14 @@ section.site-block
       .col-12.col-xl-8.offset-xl-1
         .card-system   
           .row
-            .col-12
-              .card-project.card-project--execute
-                .card-project-info
-                  h3.card-project-info--title 
-                    | Execute
-                  p.card-project-info--desc 
-                    | Notion Productivity Template
-                .card-project-comp
-                  = image_tag "cases/case-execute-tasks.jpg", :alt => "Execute", :class => "card-project-case--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'Download', 'https://www.notion.so/executebyporter/Execute-6f84033c55df4dcea7c05726fd81a564', class: "card-project-action--link"
-            .col-12
-              .card-project.card-project--versa
-                .card-project-info
-                  h3.card-project-info--title 
-                    | Think Versa
-                  p.card-project-info--desc 
-                    | Founder, Design &amp; Code
-                .card-project-logo
-                  = image_tag "cases/logos-versa.png", :alt => "Think Versa", :class => "card-project-logo--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.thinkversa.com', class: "card-project-action--link"
-            .col-12
-              .card-project.card-project--myfdtps
-                .card-project-info
-                  h3.card-project-info--title 
-                    | Foundation Transportation
-                  p.card-project-info--desc 
-                    | Website Redesign
-                .card-project-comp--half
-                  = image_tag "cases/case-myfdtps-home.jpg", :alt => "Foundation Transportation", :class => "card-project-case--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'View Story', '/cases/myfdtps-website-2018', class: "card-project-action--link"
-            .col-12
-              .card-project.card-project--hyrecar
-                .card-project-info
-                  h3.card-project-info--title 
-                    | HyreCar
-                  p.card-project-info--desc 
-                    | Web App Redesign
-                .card-project-comp--half
-                  = image_tag "cases/case-hyrecar-marketplace.jpg", :alt => "Hyrecar", :class => "card-project-case--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'View Story', '/cases/hyrecar-app-2018', class: "card-project-action--link"
-            .col-12
-              .card-project.card-project--ifyb
-                .card-project-info
-                  h3.card-project-info--title 
-                    | I Fly You Buy
-                  p.card-project-info--desc 
-                    | MVP App Design
-                .card-project-comp--mobile
-                  = image_tag "cases/case-ifyb-app.png", :alt => "I Fly You Buy", :class => "card-project-case--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'View Story', '/cases/ifyb-app-2018', class: "card-project-action--link"
-            .col-12
-              .card-project.card-project--sbt
-                .card-project-info
-                  h3.card-project-info--title 
-                    | Silicon Beach Talent
-                  p.card-project-info--desc 
-                    | Website Redesign
-                .card-project-comp--half
-                  = image_tag "cases/case-sbt-home.jpg", :alt => "Silicon Beach Talent", :class => "card-project-case--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.siliconbeachtalent.com', class: "card-project-action--link"
-            .col-12
-              .card-project.card-project--ronfinley
-                .card-project-info
-                  h3.card-project-info--title 
-                    | Ron Finley
-                  p.card-project-info--desc 
-                    | Website Redesign
-                .card-project-comp--half
-                  = image_tag "cases/case-ronfinley-home.jpg", :alt => "Ron Finley", :class => "card-project-case--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'Visit Site', 'http://ronfinley.com', class: "card-project-action--link"
-            .col-12
-              .card-project.card-project--ssfn
-                .card-project-info
-                  h3.card-project-info--title 
-                    | SSFN
-                  p.card-project-info--desc 
-                    | Co-Founder
-                .card-project-logo
-                  = image_tag "cases/logos-ssfn.png", :alt => "SSFN", :class => "card-project-logo--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.ssfn.io', class: "card-project-action--link"
-            .col-12
-              .card-project.card-project--bbx
-                .card-project-info
-                  h3.card-project-info--title 
-                    | The Beatbox Club
-                  p.card-project-info--desc 
-                    | Founder, Design, Code &amp; Music Production
-                .card-project-logo
-                  = image_tag "cases/logos-beatbox.png", :alt => "The Beatbox Club", :class => "card-project-logo--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.thebeatboxclub.com', class: "card-project-action--link"
-            .col-12
-              .card-project.card-project--forcesunite
-                .card-project-info
-                  h3.card-project-info--title 
-                    | Forces Unite
-                  p.card-project-info--desc 
-                    | Co-Founder, Mentor, Design & Code
-                .card-project-logo
-                  = image_tag "cases/logos-forcesunite.png", :alt => "Forces Unite", :class => "card-project-logo--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'Visit Site', 'https://www.forcesunite.us', class: "card-project-action--link"
+            - data.projects.proj.each do |p|
+              .col-12
+                .card-project class="card-project--#{p.shortname}"
+                  .card-project-info
+                    h3.card-project-info--title #{p.name}
+                    p.card-project-info--desc #{p.desc}
+                  .card-project-comp class="card-project-comp--#{p.type}"
+                    = image_tag "cases/case-teaser-#{p.shortname}.jpg", :alt => "#{p.name}", :class => "card-project-case--img"
+                  ul.card-project-action
+                    li.card-project-action--ele
+                      == link_to p.cta, p.url, class: "card-project-action--link"

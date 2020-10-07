@@ -26,18 +26,17 @@ section#projects.site-block.site-block-large-top.theme-black
       .col-12.col-xl-8.offset-xl-1
         .card-system
           .row
-            .col-12
-              .card-project.card-project--myfdtps
-                .card-project-info
-                  h3.card-project-info--title 
-                    | Foundation Transportation
-                  p.card-project-info--desc 
-                    | Website Redesign
-                .card-project-comp--half
-                  = image_tag "cases/case-myfdtps-home.jpg", :alt => "Foundation Transportation", :class => "card-project-case--img"
-                ul.card-project-action
-                  li.card-project-action--ele
-                    == link_to 'View Story', '/cases/myfdtps-website-2018', class: "card-project-action--link"   
+            - data.projects.proj[0...1].each do |p|
+              .col-12
+                .card-project class="card-project--#{p.shortname}"
+                  .card-project-info
+                    h3.card-project-info--title #{p.name}
+                    p.card-project-info--desc #{p.desc}
+                  .card-project-comp class="card-project-comp--#{p.type}"
+                    = image_tag "cases/case-teaser-#{p.shortname}.jpg", :alt => "#{p.name}", :class => "card-project-case--img"
+                  ul.card-project-action
+                    li.card-project-action--ele
+                      == link_to p.cta, p.url, class: "card-project-action--link"  
 section#services.site-block.theme-black
   .container-fluid
     .row
