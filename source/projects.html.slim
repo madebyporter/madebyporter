@@ -34,4 +34,4 @@ section.site-block
                     = image_tag "cases/case-teaser-#{p.shortname}.jpg", :alt => "#{p.name}", :class => "card-project-case--img"
                   ul.card-project-action
                     li.card-project-action--ele
-                      == link_to p.cta, p.url, class: "card-project-action--link"
+                      == link_to p.cta, p.url, class: "card-project-action--link", onclick: "gtag('event', 'click', {'event_category' : 'portfolio_links', 'event_label' : #{p.name}, 'value' : 0});"

@@ -153,6 +153,71 @@
 
 // Project Stylings
   .card-system {
+    .card-project--organicsalive {
+      $c1: #c4d600;
+      $c2: #222;
+      $c3: $color-white;
+      background: $c3;
+      .card-project-info--title {
+        color: $c1;
+      }
+      .card-project-info--desc {
+        color: $c2;
+      }
+      .card-project-action--ele {
+        background: $c1;
+      }
+      .card-project-action--link {
+        color: $c2;
+        &:hover {
+          color: $c2;
+        }
+      }
+    }
+    .card-project--zelmins {
+      $c1: #EBF9FB;
+      $c2: #7BA3A8;
+      $c3: #64D8E3;
+      $c4: #222;
+      background: $c1;
+      .card-project-info--title {
+        color: $c4;
+      }
+      .card-project-info--desc {
+        color: $c2;
+      }
+      .card-project-action--ele {
+        background: $c3;
+      }
+      .card-project-action--link {
+        color: $c4;
+        &:hover {
+          color: $c4;
+        }
+      }
+    }
+    .card-project--lakinaturals {
+      $c1: $color-white;
+      $c2: #5DD2B5;
+      $c3: #FE9DC5;
+      $c4: #86576b;
+      background: $c1;
+      .card-project-info--title {
+        color: $c2;
+      }
+      .card-project-info--desc {
+        color: $c4;
+      }
+      .card-project-action--ele {
+        background: $c3;
+      }
+      .card-project-action--link {
+        color: $c4;
+        &:hover {
+          color: $c4;
+        }
+      }
+    }
     .card-project--ssfn {
       $c1: #F64256;
       $c2: rgba(0,0,0,0.4);

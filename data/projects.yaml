@@ -9,6 +9,15 @@ proj:
   role: 'Process Designer'
   url: https://www.notion.so/executebyporter/Execute-6f84033c55df4dcea7c05726fd81a564
   cta: 'Download'
+- name: 'Organics Alive Garden'
+  shortname: organicsalive
+  type: web
+  date: 2020
+  service: 'Shopify Development'
+  desc: 'Organic Home Gardening Solutions'
+  role: 'Shopify Developer'
+  url: https://organicsalivegarden.com/
+  cta: 'Launch Site'
 - name: 'Think Versa'
   shortname: versa
   type: web
@@ -22,11 +31,20 @@ proj:
   shortname: myfdtps
   type: web
   date: 2018
-  service: 'Web Design & Jamstack Development'
+  service: 'Website Redesign'
   desc: Black Car Service for VIP People
-  role: 'Web Designer &amp; Developer'
+  role: 'Jamstack Design & Development'
   url: '/cases/myfdtps-website-2018'
   cta: 'View Case Study'
+- name: 'Zelmins'
+  shortname: zelmins
+  type: web
+  date: 2019
+  service: 'New Shopify Website'
+  desc: 'A Harder Working Mint'
+  role: 'Shopify Developer'
+  url: https://zelmins.com/
+  cta: 'Launch Site'
 - name: 'Hyrecar'
   shortname: hyrecar
   type: web
@@ -40,19 +58,37 @@ proj:
   shortname: sbt
   type: web
   date: 2018
-  service: 'Web Design &amp; Wordpress Development'
+  service: 'Wordpress Redesign'
   desc: 'Talent Agency for Silicon Beach LA'
   role: 'Web Designer &amp; Developer'
   url: 'https://www.siliconbeachtalent.com'
+  cta: 'Launch Site'
+- name: 'Leslie Stefanson'
+  shortname: lesliestefanson
+  type: web
+  date: 2019
+  service: 'Wordpress Site Redesign'
+  desc: 'Sculptor &amp; Actress'
+  role: 'Wordpress Developer'
+  url: https://lesliestefanson.com/
   cta: 'Launch Site'
 - name: 'Ron Finley'
   shortname: ronfinley
   type: web
   date: 2016
-  service: 'Web Design &amp; Wordpress Development'
+  service: 'Wordpress Redesign'
   desc: 'The Gangsta Gardener'
   role: 'Web Designer &amp; Developer'
   url: 'https://www.ronfinley.com'
+  cta: 'Launch Site'
+- name: 'Santa Monica Center for Oral Surgery'
+  shortname: smcos
+  type: web
+  date: 2019
+  service: 'Wordpress Redesign'
+  desc: 'Oral Surgery Office'
+  role: 'Wordpress Developer'
+  url: https://santamonicaoms.com/
   cta: 'Launch Site'
 - name: 'The Beatbox Club'
   shortname: bbx
@@ -71,4 +107,13 @@ proj:
   desc: 'Connecting Entrepreneurs &amp; Freelancers'
   role: 'Web Designer &amp; Developer'
   url: 'https://www.forcesunite.us'
+  cta: 'Launch Site'
+- name: 'Laki Naturals'
+  shortname: lakinaturals
+  type: web
+  date: 2018
+  service: 'Shopify Site Redesign'
+  desc: 'Natural Bath Products for Women'
+  role: 'Shopify Developer'
+  url: https://lakinaturals.com/
   cta: 'Launch Site'
