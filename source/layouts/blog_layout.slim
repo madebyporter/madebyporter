@@ -1,5 +1,6 @@
 == wrap_layout :layout do
-  section.site-block
+
+  section.site-block.theme-red
     .container-fluid
       .row
         .col-12
@@ -7,11 +8,8 @@
             h1.headline.blog-headline
               = current_article.title
   section.site-blog.site-block
-    .container-fluid
-      .row
-        .col-12.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
-          article.site-blog-post
-            = current_article.body
+    article.site-blog-post
+      = current_article.body
   section.site-block
     .container-fluid
       .row
