@@ -297,9 +297,9 @@
     }
     .site-blog-post {
       display: grid;
-      grid-template-columns: 1fr #{"min(80vw, 100%)"} 1fr;
+      grid-template-columns: 1fr unquote('min(80vw, 100vw)') 1fr;
       @media (min-width: $mq-laptop) {
-        grid-template-columns: 1fr #{"min(50vw, 100%)"} 1fr;
+        grid-template-columns: 1fr unquote('min(50vw, 100vw)') 1fr;
       }
       & > * {
         grid-column: 2;
