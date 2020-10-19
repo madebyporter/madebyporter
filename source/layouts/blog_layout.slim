@@ -1,5 +1,6 @@
 == wrap_layout :layout do
-  section.site-block
+
+  section.site-block.theme-red
     .container-fluid
       .row
         .col-12
@@ -7,50 +8,20 @@
             h1.headline.blog-headline
               = current_article.title
   section.site-blog.site-block
+    article.site-blog-post
+      = current_article.body
+  section.site-block.site-block-color-coal.site-blog-pagination
     .container-fluid
       .row
         .col-12.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
-          article.site-blog-post
-            = current_article.body
-  section.site-block
-    .container-fluid
-      .row
-        .col-12.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
-          #mc_embed_signup
-            form.form action="https://madebyporter.us9.list-manage.com/subscribe/post?u=43c534416e476fa3af50b3e65&amp;id=c59e5e058e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate"
-              #mc_embed_signup_scroll
-              fieldset.form-fieldset.form-fieldset-combo
-                h4.form-fieldset-header Get quick #{current_article.data.topic} insights in your inbox
-                
-                .row
-                  .col-12.col-md-6
-                    fieldset.form-fieldset
-                      label.form-label Email
-                      input.form-input type="email" value="" name="EMAIL" class="required email newsletter-email" id="mce-EMAIL" placeholder="[email here]"
-                  .col-12.col-md-6
-                    fieldset.form-fieldset
-                      label.form-label Name
-                      input.form-input type="text" value="" name="FNAME" class="required email newsletter-text" id="mce-FNAME" placeholder="[name here]"
-                .row
-                  .col-12
-                    input.form-btn.comp-btn-red type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-submit"
-              #mce-responses.clear
-                div class="response" id="mce-error-response" style="display:none"
-                div class="response" id="mce-success-response" style="display:none"
-              div style="position: absolute; left: -5000px;" aria-hidden="true"
-                input type="text" name="b_43c534416e476fa3af50b3e65_2a32fa7a33" tabindex="-1" value=""
-  section.site-blog-pagination.site-block
-    .container-fluid
-      .row
-        .col-12.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
-          .site-blog-article-pagination
+          .site-blog-article-pagination.justify-center
             - article_previous = current_article.article_previous
             - if article_previous
               .pagination-container
-                h3
-                  | Next up
+                h5 Next up
                 = link_to article_previous.url do
-                  = article_previous.title
+                  h2
+                    = article_previous.title
             - else
               .newsletter-container
                 h2

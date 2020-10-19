@@ -11,33 +11,22 @@ section#hero.site-block
           h1 Get in Contact
           p.large
             | If you're ready to work on building something, or say hi, use the form below to get in touch.
-section#contact.site-block.site-stories.site-block--max-width.site-block--sixteenth-height
+section#contact.site-block
   .container-fluid
     .row
-      .col-12.col-xl-6
-        form.form name="contact" method="POST" data-netlify="true"
-          fieldset.form-fieldset for="Name"
-            label.form-label Name
-            input.form-input type="text" placeholder="Type your name" name="Name"
-          fieldset.form-fieldset for="Email"
-            label.form-label Email
-            input.form-input type="email" placeholder="Type your email address" name="Email"
-          fieldset.form-fieldset.form-fieldset-select for="Budget"
-            label.form-label Start Date
-            select.form-select name="Start Date"
-              option selected="selected" value="" I want to start...
-              option value="In two weeks" In two weeks
-              option value="Next month" Next month
-              option value="In three months" In three months
-          fieldset.form-fieldset.form-fieldset-select for="Budget"
-            label.form-label Budget
-            select.form-select name="Budget"
-              option selected="selected" value="" In a year, I can spend...
-              option value="$5,000 - $10,000" $5,000 - $10,000
-              option value="$11,000 - $50,000" $11,000 - $50,000
-              option value="$51,000 - $120,000" $51,000 - $120,000
-          fieldset.form-fieldset for="Message"
-            label.form-label How Can I Help?
-            textarea.form-textarea placeholder="Type your message" name="Message"
-          fieldset.form-fieldset.form-fieldset-btn for="Submit"
-            input#contact_submit.form-btn.comp-btn.comp-btn-red.comp-btn-large type="submit" value="Send" onclick="fbq('track', 'Contact');"
+      .col-12.col-xl-9
+        .card-set
+          .card
+            header.card-header
+              h4 Email
+            .card-content
+              .card-content-cta
+                p.card-content-desc For questions and inquiries on design &amp; productivity consulting, please send a message using the email below.
+                == link_to "general@madebyporter.com", "mailto: general@madebyporter.com", class: "card-cta-link"
+          .card
+            header.card-header
+              h4 Twitter
+            .card-content
+              .card-content-cta
+                p.card-content-desc Rather say hi and connect with me on a casual level? Let's start the conversation on Twitter.
+                == link_to "@madebyporter", "https://www.twitter.com/madebyporter", class: "card-cta-link"

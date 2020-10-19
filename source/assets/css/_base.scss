@@ -20,7 +20,7 @@
   }
 
   // Theme
-    .index .site-header {
+    .index .site-header, .blog .site-header {
       @extend .theme-red;
     }
     .projects, .services, .about, .journal, .blog, .contact, .now {
@@ -64,9 +64,9 @@
       }
     }
     .site-block-height-full {
-      height: 90vh;
+      min-height: 90vh;
       .container-fluid, .row, div[class^="col-"] {
-        height: 100%;
+        min-height: 100%;
       }
     }
     .site-block-text-center, .site-block-text-center div[class^="col-"] {
@@ -80,7 +80,7 @@
     .site-block-header {
       margin: 0 0 $space-2;
       @media (min-width: $mq-tablet) {
-        margin: 0 0 $space-2;
+        margin: 0 0 $space-3;
       }
       p {
         margin-bottom: $space-1;
@@ -89,7 +89,7 @@
     
     .site-block-case-cta {
       padding: 0;
-      @extend .t-bold;
+      font-weight: $font-weight-bold;
       @extend .t-16;
       border-top: 1px solid $color-slate;
       @media (min-width: $mq-tablet) {
@@ -105,6 +105,15 @@
         min-height: 0;
       }
     }
+
+    // Block Colors
+    .site-block-color-coal {
+      @extend .theme-coal;
+    }
+    .site-block-color-red {
+      @extend .theme-red;
+    }
+
     .site-header {
       max-width: 100%;
     }
@@ -170,7 +179,7 @@
         // height: 14vh;
         width: 100%;
         @media (min-width: $mq-laptop) {
-          font-weight: 800;
+          font-weight: $font-weight-bold;
           height: auto;
           margin-left: $space-2;
           @include font-size(14);
@@ -533,35 +542,6 @@
       @include animations(fadeInOut,$delay:800ms,$duration:800ms,$iteration:infinite,$timing:$timing,$direction:normal);
     }
 
-    .blog-list-tag {
-      margin-bottom: $space-1;
-    }
-    .site-blog-article-pagination {
-      padding: 0 0 $space-4 0;
-      text-align: center;
-      a {
-        @include font-size(24);
-      }
-    }
-    .site-blog-title {
-      text-align: center;
-      width: 100%;
-    }
-    .site-blog-post {
-      ul {
-        color: $color-grey-light;
-      }
-      img {
-        width: 100%;
-      }
-      p {
-        @extend .large;
-      }
-      p + h2, ul + h2, blockquote + h2 {
-        margin-top: $space-4;
-      }
-    }
-
     pre {
       background: $color-grey-dark;
       box-shadow: inset 10px 0 0 $color-grey-dark;
@@ -589,10 +569,6 @@
       .site-contact-ele .col-12:last-child .site-block-header {
         margin-bottom: 0;
       }
-    }
-    
-    .site-contact, .site-footer {
-      border-top: 1px solid $color-grey-dark;
     }
 
     .site-footer-content {
