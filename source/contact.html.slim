@@ -15,29 +15,10 @@ section#contact.site-block.site-stories.site-block--max-width.site-block--sixtee
   .container-fluid
     .row
       .col-12.col-xl-6
-        form.form name="contact" method="POST" data-netlify="true"
-          fieldset.form-fieldset for="Name"
-            label.form-label Name
-            input.form-input type="text" placeholder="Type your name" name="Name"
-          fieldset.form-fieldset for="Email"
-            label.form-label Email
-            input.form-input type="email" placeholder="Type your email address" name="Email"
-          fieldset.form-fieldset.form-fieldset-select for="Budget"
-            label.form-label Start Date
-            select.form-select name="Start Date"
-              option selected="selected" value="" I want to start...
-              option value="In two weeks" In two weeks
-              option value="Next month" Next month
-              option value="In three months" In three months
-          fieldset.form-fieldset.form-fieldset-select for="Budget"
-            label.form-label Budget
-            select.form-select name="Budget"
-              option selected="selected" value="" In a year, I can spend...
-              option value="$5,000 - $10,000" $5,000 - $10,000
-              option value="$11,000 - $50,000" $11,000 - $50,000
-              option value="$51,000 - $120,000" $51,000 - $120,000
-          fieldset.form-fieldset for="Message"
-            label.form-label How Can I Help?
-            textarea.form-textarea placeholder="Type your message" name="Message"
-          fieldset.form-fieldset.form-fieldset-btn for="Submit"
-            input#contact_submit.form-btn.comp-btn.comp-btn-red.comp-btn-large type="submit" value="Send" onclick="fbq('track', 'Contact');"
+        header.site-block-header
+          h3 Email me
+        = link_to "general@madebyporter.com", "mailto: general@madebyporter.com", class: "large"
+      .col-12.col-xl-6
+        header.site-block-header
+          h3 Hit me on Twitter
+        = link_to "@madebyporter", "https://www.twitter.com/madebyporter", class: "large"

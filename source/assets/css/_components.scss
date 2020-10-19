@@ -93,16 +93,10 @@
   // Forms
     .form {
       .form-fieldset {
-        background: $color-coal;
         margin: 0 0 $space-2;
-        padding: $space-2 $space-2;
-        width: auto;
-        &:hover {
-          background: $color-grey-dark;
-          ::placeholder {
-            color: $color-grey;
-          }
-        }
+      }
+      .form-fieldset-combo {
+        @include flexbox;
       }
       .form-fieldset-select {
         position: relative;
@@ -118,35 +112,6 @@
           z-index: 10000;
         }
       }
-      .form-fieldset-combo {
-        @include flexbox;
-        @include flex-wrap(wrap);
-        .form-fieldset-header {
-          background: $color-black-20;
-          color: $color-gray-light;
-          margin: -2rem -2rem 2rem -2rem;
-          padding: $space-3 $space-2 $space-2 $space-2;
-        }
-        .form-fieldset {
-          padding: 0;
-          margin: 0 0 $space-2 0;
-          background: transparent;
-        }
-        .form-label {
-          width: 100%;
-        }
-        .form-input {
-          background: $color-white;
-          color: $color-black;
-          padding: $space-1;
-          width: 100%;
-        }
-        .form-btn {
-          @include transition(all, 0);
-          width: 100%;
-          -webkit-appearance: none;
-        }
-      }
       .form-fieldset-btn {
         background: transparent;
         padding: 0;
@@ -155,8 +120,19 @@
         }
       }
       ::placeholder {
-        color: $color-coal;
+        color: $color-grey;
         opacity: 1;
+      }
+      .form-style {
+        background: $color-white;
+        border: 0;
+        border-radius: 0;
+        color: $color-black;
+        outline: none;
+        font-family: $font-secondary;
+        @extend .t-18;
+        padding: $space-1;
+        -webkit-appearance: none;
       }
       .form-label {
         @extend .t-14;
@@ -168,43 +144,14 @@
         text-transform: uppercase;
         width: 100%;
       }
-      .form-input {
-        background: transparent;
-        border: 0;
-        color: $color-white;
-        @extend .t-24;
-        @extend .t-bold;
-        outline: none;
-        padding: $space-1;
-        padding-left: 0;
-        width: 100%;
+      .form-input, .form-select, .form-textarea {
+        @extend .form-style;
       }
       .form-select {
-        background: transparent;
-        border-radius: 0;
-        border: 0;
-        color: $color-white;
         cursor: pointer;
-        @extend .t-24;
-        @extend .t-bold;
-        outline: none;
-        padding: $space-1;
-        padding-left: 0;
-        -webkit-appearance: none;
-        width: 100%;
       }
       .form-textarea {
-        background: transparent;
-        border: 0;
-        color: $color-white;
-        font-family: "Helvetica Neue", Helvetica, sans-serif;
-        @extend .t-18;
-        @extend .t-bold;
-        font-family: $font-secondary;
-        padding: $space-2 0;
         min-height: 200px;
-        outline: none;
-        width: 100%;
       }
       .input::-webkit-contacts-auto-fill-button {
         background-color: $color-white !important;
