@@ -284,8 +284,11 @@
     }
     .site-blog-article-pagination {
       padding: 0;
-      a {
-        @include font-size(24);
+      a h2 {
+        color: $color-red;
+        &:hover {
+          color: $color-red-dark;
+        }
       }
     }
     .site-blog-title {
@@ -294,7 +297,10 @@
     }
     .site-blog-post {
       display: grid;
-      grid-template-columns: 1fr #{"min(120ch, 100%)"} 1fr;
+      grid-template-columns: 1fr #{"min(80vw, 100%)"} 1fr;
+      @media (min-width: $mq-laptop) {
+        grid-template-columns: 1fr #{"min(50vw, 100%)"} 1fr;
+      }
       & > * {
         grid-column: 2;
       }
@@ -308,7 +314,7 @@
       img {
         width: 100%;
       }
-      p {
+      p, li {
         @extend .large;
       }
       p + h2, ul + h2, blockquote + h2 {
@@ -392,5 +398,8 @@
         p {
           @extend .normal;
         }
+      }
+      a.card-cta-link {
+        @extend .t-16;
       }
     }

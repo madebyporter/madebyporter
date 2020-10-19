@@ -92,6 +92,9 @@
   .theme-red {
     background: $color-red-dark;
 
+    p {
+      color: $color-black;
+    }
     .masthead-logo {
       -webkit-filter: brightness(3);
       filter: brightness(3);

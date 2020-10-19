@@ -41,7 +41,7 @@ set :debug_assets, true
 
 activate :blog do |blog|
   # set options on blog
-  blog.prefix = "blog"
+  blog.prefix = "journal"
   blog.layout = "blog_layout"
   blog.permalink = "{year}/{title}.html"
 end

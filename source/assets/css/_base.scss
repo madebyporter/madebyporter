@@ -20,13 +20,16 @@
   }
 
   // Theme
-    .index .site-header, .blog .site-header {
-      @extend .theme-red;
+
+    // Red Headers
+    .index, .now, .projects, .cases, .about, .services, .journal {
+      .site-header, .site-block-hero {
+        @extend .theme-red;
+      }
     }
-    .projects, .services, .about, .journal, .blog, .contact, .now {
-      @extend .theme-black;
-    }
-    .cases {
+
+    // Black Theme
+    .projects, .services, .about, .journal, .contact, .now, .cases {
       @extend .theme-black;
     }
 
@@ -56,6 +59,14 @@
         margin: 0;
         padding: $space-4 $space-4;
       }
+    }
+    .site-header, .site-footer {
+      z-index: 10;
+    }
+    .site-block-hero, .site-block-cta {
+      position: relative;
+      max-width: 100%;
+      z-index: 0;
     }
     .site-block-large-top {
       @media (min-width: $mq-laptop) {
@@ -114,9 +125,7 @@
       @extend .theme-red;
     }
 
-    .site-header {
-      max-width: 100%;
-    }
+  
 
     .container-wrap {
       padding: 0 $space-2;
@@ -155,7 +164,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 100000;
+      z-index: 10;
       @include translate(0,0);
       @include transition($type:transform);
       @media (min-width: $mq-laptop) {  
@@ -191,6 +200,7 @@
     }
     .menuOpen {
       overflow: hidden;
+      // .site-header, .site-footer, .site-block-hero, .site-block-cta {z-index: unset;}
       .site-nav {
         @media (max-width: $mq-laptop) {
           @include translate(-100%,0);
@@ -748,13 +758,14 @@
       @include flexbox;
       align-items: center;
       align-content: center;
-      vertical-align: center;
+      // vertical-align: center;
       @include flex-wrap(wrap);
       padding: 0 $space-2 0 0;
       position: fixed;
       right: 0;
       text-align: right;
       width: 80px;
+      z-index: -1;
       .about-timeline-year-select-ele {
         @extend .t-12;
         line-height: 1;
