@@ -38,7 +38,7 @@
   }
   .img-frame-caption {
     color: $color-white;
-    @extend .t-bold;
+    font-weight: $font-weight-bold;
     @extend .t-18;
   }
   .img-frame--black {

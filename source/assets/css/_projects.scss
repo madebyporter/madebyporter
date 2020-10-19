@@ -128,20 +128,15 @@
       margin: 0;
       white-space: nowrap;
       .disabled {
-        @extend .t-bold;
+        font-weight: $font-weight-bold;
       }
     }
     .card-project-action--link {
+      @extend .text-ui;
       color: $color-white;
       display: inline;
-      @extend .t-14;
-      font-weight: 800;
-      line-height: 1;
       @include transition($type:padding);
       padding: $space-2;
-      padding-top: $space-2+0.8;
-      text-transform: uppercase;
-      letter-spacing: .01rem;
       &:hover {
         color: $color-white;
         padding: $space-2+1;

@@ -11,14 +11,22 @@ section#hero.site-block
           h1 Get in Contact
           p.large
             | If you're ready to work on building something, or say hi, use the form below to get in touch.
-section#contact.site-block.site-stories.site-block--max-width.site-block--sixteenth-height
+section#contact.site-block
   .container-fluid
     .row
-      .col-12.col-xl-6
-        header.site-block-header
-          h3 Email me
-        = link_to "general@madebyporter.com", "mailto: general@madebyporter.com", class: "large"
-      .col-12.col-xl-6
-        header.site-block-header
-          h3 Hit me on Twitter
-        = link_to "@madebyporter", "https://www.twitter.com/madebyporter", class: "large"
+      .col-12.col-xl-9
+        .card-set
+          .card
+            header.card-header
+              h4 Email
+            .card-content
+              .card-content-cta
+                p.card-content-desc For questions and inquiries on design &amp; productivity consulting, please send a message using the email below.
+                == link_to "general@madebyporter.com", "mailto: general@madebyporter.com", class: "card-cta-link"
+          .card
+            header.card-header
+              h4 Twitter
+            .card-content
+              .card-content-cta
+                p.card-content-desc Rather say hi and connect with me on a casual level? Let's start the conversation on Twitter.
+                == link_to "@madebyporter", "https://www.twitter.com/madebyporter", class: "card-cta-link"

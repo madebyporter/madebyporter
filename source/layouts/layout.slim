@@ -72,26 +72,8 @@ html lang="en"
               == link_to 'Contact', '/contact', class: "site-nav-link"
     main.site-main
       == yield
-    section#contact.site-contact.site-block.theme-black
-      .container-fluid
-        .row
-          .col-12.col-xl-4
-            header.site-block-header
-              h2 Let's Connect
-              p.large Ready to make a move?
-          .col-12.col-xl-8
-            .row.site-contact-ele
-              .col-12.col-md-6
-                header.site-block-header
-                  h3
-                    | Start a project?
-                  == link_to 'Lets Talk', '/contact', class: "comp-btn comp-btn-red"
-              .col-12.col-md-6
-                header.site-block-header
-                  h3
-                    | Join my email list?
-                  == link_to 'Sign Up', 'https://madebyporter.us9.list-manage.com/subscribe?u=43c534416e476fa3af50b3e65&id=c59e5e058e&utm_source=newsletter&utm_medium=email&utm_campaign=profit_first_0220&utm_content=referral', class: "comp-btn comp-btn-grey"
-    footer.site-footer.site-block.theme-black
+    = partial '/partials/_cta-email.slim'
+    footer.site-footer.site-block.site-block-color-coal
       .container-fluid
         .row
           .col-12.col-md-6

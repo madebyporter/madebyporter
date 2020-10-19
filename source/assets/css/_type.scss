@@ -138,18 +138,6 @@
         @include font-size(10);
       }
     }
-    .t-light {
-      font-weight: 300;
-    }
-    .t-normal {
-      font-weight: 400;
-    }
-    .t-book {
-      font-weight: 500;
-    }
-    .t-bold {
-      font-weight: 700;
-    }
 
   // Links
     a {
@@ -165,6 +153,7 @@
 
   // Paragraphs
     p, ul, li {
+      color: $color-grey-light;
       font-family: $font-secondary;
       @extend .t-16;
       line-height: 180%;
@@ -189,6 +178,21 @@
     }
     .mixed-size {
       line-height: 1.2;
+    }
+    .caps-light {
+      font-weight: $font-weight-light;
+      letter-spacing: .2rem;
+      text-transform: uppercase;
+    }
+    .caps-reg {
+      font-weight: $font-weight-normal;
+      letter-spacing: .2rem;
+      text-transform: uppercase;
+    }
+    .caps-bold {
+      font-weight: $font-weight-bold;
+      letter-spacing: .2rem;
+      text-transform: uppercase;
     }
 
   // Headers
@@ -228,8 +232,16 @@
       @extend .t-18;
       letter-spacing: .02rem;
     }
-
-    
+  
+  // User Interface Text
+    // Buttons & Nav
+    .text-ui {
+      font-weight: $font-weight-bold;
+      line-height: 1;
+      @include font-size(14);
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+    }
 
   // Site Headers
     .site-header {
@@ -276,22 +288,7 @@
       color: $color-white;
     }
 
-  // Type Sets
-    .caps-light {
-      font-weight: 300;
-      letter-spacing: .2rem;
-      text-transform: uppercase;
-    }
-    .caps-reg {
-      font-weight: 400;
-      letter-spacing: .2rem;
-      text-transform: uppercase;
-    }
-    .caps-bold {
-      font-weight: 700;
-      letter-spacing: .2rem;
-      text-transform: uppercase;
-    }
+ 
 
   // Blockquotes
     blockquote {
@@ -303,63 +300,13 @@
       }
     }
 
-  // Lists
-    ul {
-      list-style: disc;
-      margin: 0 0 20px 20px;
-      li {
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-    }
-    .no-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      li {
-        margin-bottom: 0;
-      }
-      ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-    }
-
-    strong {
-      font-weight: 700;
-    }
-
-  // Nav Links
-    .site-header-nav-link a {
-      @include font-size(16);
-      font-weight: bold;
-      @media (min-width: $mq-tablet) {
-        font-size: 1.8rem;
-      }
-    }
-
-  // Forms
-    .form-field-label {
-      @include font-size(16);
-      font-weight: 300;
-    }
-
-    .sub-text {
-      @include font-size(14);
-      font-weight: 300;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
   // Disabled
     .disabled {
       color: rgba(0,0,0,0.3) !important;
       cursor: not-allowed;
     }
     .link-disabled  {
-      @extend .t-bold;
+      font-weight: $font-weight-bold;
       margin: 0;
       cursor: not-allowed;
       opacity: 0.3;

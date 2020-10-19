@@ -3,8 +3,12 @@
   $retina: "only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)";
 
 // Type
-  $font-reg: "HelveticaNeueLTStd-LtEx", "HelveticaNeueLightExtended", "HelveticaNeue-Light-Extended", "Helvetica Neue Light Extended", "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-  $font-secondary: "Helvetica Neue LT Std", "Helvetica Neue", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  $font-reg: "HelveticaNeueLTStd-LtEx", "HelveticaNeueLightExtended", "HelveticaNeue-Light-Extended", "Helvetica Neue Light Extended", "Helvetica Neue Light", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Arial", sans-serif;
+  $font-secondary: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  
+  $font-weight-light: 300;
+  $font-weight-normal: 400;
+  $font-weight-bold: 700;
 
 // Colors
   $color-black:       #1D1D21;
@@ -42,7 +46,7 @@
   $mq-tablet:         768px;
   $mq-laptop:         992px;
   $mq-desktop:        1200px;
-  $mq-wide:           1600px;
+  $mq-wide:           1400px;
 
 // Animations & Transitions
   $timing:            cubic-bezier(.14, .62, .39, 1);

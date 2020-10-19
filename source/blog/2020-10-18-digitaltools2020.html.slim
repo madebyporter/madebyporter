@@ -175,23 +175,24 @@ toolset:
 
 .site-blog-post-content.full-bleed
   - current_article.data.toolset.each do |tls|
-    header.site-block-header
-      h2.justify-center #{tls.section}
-    ul.card-set
-      - tls.tool.each do |tl|
-        li.card
-          header.card-header
-            h4 #{tl.name}
-          .card-meta
-            .card-meta-left
-              span.card-meta-label Cost&nbsp;
-              span.card-meta-value #{tl.cost}
-            .cost-meta-right
-              span.card-meta-label Platform&nbsp;
-              span.cost-meta-value #{tl.platform}
-          .card-content
-            p.card-content-desc #{tl.desc}
-            .card-content-cta
-              == link_to 'Visit Website', tl.cta, class: "card-cta-link"
+    .site-blog-post-content-sub
+      header.site-block-header.justify-center
+        h2 #{tls.section}
+      ul.card-set
+        - tls.tool.each do |tl|
+          li.card
+            header.card-header
+              h4 #{tl.name}
+            .card-meta
+              .card-meta-left
+                span.card-meta-label Cost&nbsp;
+                span.card-meta-value #{tl.cost}
+              .cost-meta-right
+                span.card-meta-label Platform&nbsp;
+                span.cost-meta-value #{tl.platform}
+            .card-content
+              p.card-content-desc #{tl.desc}
+              .card-content-cta
+                == link_to 'Visit Website', tl.cta, class: "card-cta-link"
     
 
