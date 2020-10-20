@@ -28,6 +28,14 @@ html lang="en"
     == stylesheet_link_tag "helveticaneueex"
     == javascript_include_tag "output", :cache => true, :async => true
 
+    // Google Tag Manager
+    javascript:
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-T5L9DHS');
+
     // Google Analytics
     script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-54767153-1"
     javascript:
@@ -56,6 +64,11 @@ html lang="en"
       img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2713418892249092&ev=PageView&noscript=1"
 
   body class="#{page_classes}"
+  
+    // Google Tag Manager (noscript) 
+    noscript
+      iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5L9DHS" height="0" width="0" style="display:none;visibility:hidden"
+
     header.site-header.site-block
       .container-fluid
         .row
