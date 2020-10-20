@@ -198,7 +198,7 @@
   // Headers
     h1, h2, h3, h4, h5, h6 {
       display: block;
-      font-family: $font-reg;
+      font-family: $font-primary;
       font-weight: 400; 
       font-stretch: expanded;
 
@@ -261,12 +261,18 @@
       @media (min-width: $mq-tablet) {
         font-size: 3vw;
       }
+      @media (min-width: $mq-wide) {
+        font-size: 2vw;
+      }
     }
     .medium-headline, .medium-headline a {
       @extend .t-64;
     }
     .hero-headline, .hero-headline a {
-      font-size: 12vw;
+      font-size: 11vw;
+      @media (min-width: $mq-wide) {
+        font-size: 10vw;
+      }
     }
     .site-block-index-journal {
       .blog-headline {
@@ -278,8 +284,11 @@
       text-align: center;
       font-size: 9vw;
       line-height: 1.1;
-      font-family: $font-reg;
+      font-family: $font-primary;
       font-weight: 400;
+      @media (min-width: $mq-wide) {
+        font-size: 7vw;
+      }
     }
     .case-header {
       @extend .t-64;

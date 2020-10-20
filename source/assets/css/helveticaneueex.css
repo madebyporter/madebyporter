@@ -1,0 +1,28 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3962717, 2020-10-20T11:50:52-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: HelveticaNeueLTPro-Ex by Linotype
+ * URL: https://www.myfonts.com/fonts/linotype/neue-helvetica/pro-53-extended/
+ * Copyright: Copyright &amp;#x00A9; 2014 Monotype Imaging Inc. All rights reserved.
+ * 
+ * 
+ * 
+ * © 2020 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3c775d");
+  
+@font-face {
+  font-family: 'HelveticaNeueLTPro-Ex';
+  src: url('../webfonts/HelveticaNeueLTPro-Ex/font.woff2') format('woff2'), url('../webfonts/HelveticaNeueLTPro-Ex/font.woff') format('woff');
+}
+
