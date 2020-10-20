@@ -6,24 +6,24 @@ description: Made by Porter, a designer specializing in digital products and the
 section#hero.site-block.theme-red
   .container-fluid
     .row
-      .col-12
+      .col-12.col-xl-12
         header.site-block-header
           h1.hero-headline
             | Websites that bring results.
     .row
-      .col-12.col-lg-10
+      .col-12.col-xl-11
         p.headline
-          | Chris Porter is an independent creative with a background in User Experience Design, Front-end Development, Music Production & Photography. 
+          | Chris Porter is an independent creative with a background in User Experience Design, Front-end Development, Music Production & Photography.<br />
           == link_to 'About Me.', '/about', class: ""
         
 section#projects.site-block.site-block-large-top.theme-black
   .container-fluid
     .row
-      .col-12.col-xl-3
+      .col-12.col-lg-3
         header.site-block-header
           h2 Featured Project
           == link_to 'View All Projects', '/projects', class: ""
-      .col-12.col-xl-8.offset-xl-1
+      .col-12.col-lg-8.offset-lg-1
         .card-system
           .row
             - data.projects.proj[0...1].each do |p|
@@ -40,11 +40,11 @@ section#projects.site-block.site-block-large-top.theme-black
 section#services.site-block.theme-black
   .container-fluid
     .row
-      .col-12.col-xl-3
+      .col-12.col-lg-3
         header.site-block-header style="margin-bottom: 40px;"
           h2 Services
           == link_to 'View my Services', '/services', class: ""
-      .col-12.col-xl-8.offset-xl-1
+      .col-12.col-lg-8.offset-lg-1
         .row
           .col-12.col-xl-8
             h3
@@ -70,7 +70,7 @@ section#proof.site-block.theme-black
 section#stories.site-block.site-block-height-full.site-block-text-center.site-block-index-journal.theme-red
   .container-fluid
     .row
-      .col-12
+      .col-12.col-xl-10.offset-xl-1
         - blog.articles[0...1].each do |article|
           = link_to article.title, article.url, class: "blog-headline"
           = link_to 'Read More...', article.url, class: "large"
