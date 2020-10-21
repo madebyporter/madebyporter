@@ -292,6 +292,6 @@ toolset:
             .card-content
               p.card-content-desc #{tl.desc}
               .card-content-cta
-                == link_to 'Visit Website', tl.cta, class: "card-cta-link"
+                == link_to 'Visit Website', tl.cta, class: "card-cta-link", onclick: "gtag('event', 'click', {'event_category' : #{tls.section}, 'event_label' : #{tl.name}, 'value' : 0});"
     
 
