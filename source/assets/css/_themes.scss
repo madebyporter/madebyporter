@@ -90,8 +90,7 @@
 
 // Theme Red
   .theme-red {
-    background: $color-red-dark;
-
+    background: $color-red;
     p {
       color: $color-black;
     }
@@ -161,6 +160,9 @@
         background: $color-black;
       }
     }
+    ul.card, div.card {
+      border: 1px solid $color-red-dark;
+    }
   }
 
 // Theme White
@@ -229,5 +231,8 @@
     background: $color-coal;
     h1, h2, h3, h4, h5, h6 {
       color: $color-white;
+    }
+    p {
+      color: $color-grey-light;
     }
   }

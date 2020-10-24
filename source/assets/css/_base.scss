@@ -22,14 +22,14 @@
   // Theme
 
     // Red Headers
-    .index, .now, .projects, .cases, .about, .services, .journal {
+    .index, .now, .projects, .cases, .about, .services, .journal, .contact {
       .site-header, .site-block-hero {
         @extend .theme-red;
       }
     }
 
     // Black Theme
-    .projects, .services, .about, .journal, .contact, .now, .cases {
+    .projects, .services, .about, .journal, .now, .cases {
       @extend .theme-black;
     }
 
@@ -135,14 +135,9 @@
     }
 
     // Block Colors
-    .site-block-color-coal {
-      @extend .theme-coal;
-    }
     .site-block-color-red {
       @extend .theme-red;
     }
-
-  
 
     .container-wrap {
       padding: 0 $space-2;

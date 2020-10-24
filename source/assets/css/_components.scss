@@ -343,7 +343,7 @@
     }
 
   // Cards
-    ul.card-set {
+    ul.card-set, div.card-set {
       $card-border-color: $color-grey-dark;
       @include nolist;
       display: grid;
