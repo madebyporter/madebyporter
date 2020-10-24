@@ -343,7 +343,7 @@
     }
 
   // Cards
-    .card-set {
+    ul.card-set {
       $card-border-color: $color-grey-dark;
       @include nolist;
       display: grid;
@@ -378,11 +378,15 @@
           margin-bottom: 0;
         }
       }
-      .card-meta {
+      div.card-meta {
         border-bottom: 1px solid $card-border-color;
         @include flexbox;
         justify-content: space-between;
-        & > * {
+        div {
+          @include flexbox;
+          align-items: center;
+        }
+        span {
           @extend .t-12;
           font-weight: 700;
           letter-spacing: .02em;
@@ -390,7 +394,7 @@
           text-transform: uppercase;
         }
       }
-      .card-meta-label {
+      span.card-meta-label {
         color: $color-grey;
       }
       .card-content {
