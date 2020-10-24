@@ -24,19 +24,19 @@ section#projects.site-block.site-block-large-top.theme-black
           h2 Featured Project
           == link_to 'View All Projects', '/projects', class: ""
       .col-12.col-lg-8.offset-lg-1
-        .card-system
+        .project-system
           .row
             - data.projects.proj[0...1].each do |p|
               .col-12
-                .card-project class="card-project--#{p.shortname}"
-                  .card-project-info
-                    h3.card-project-info--title #{p.name}
-                    p.card-project-info--desc #{p.desc}
-                  .card-project-comp class="card-project-comp--#{p.type}"
-                    = image_tag "cases/case-teaser-#{p.shortname}.jpg", :alt => "#{p.name}", :class => "card-project-case--img"
-                  ul.card-project-action
-                    li.card-project-action--ele
-                      == link_to p.cta, p.url, class: "card-project-action--link"  
+                .project-box class="project-box--#{p.shortname}"
+                  .project-box-info
+                    h3.project-box-info--title #{p.name}
+                    p.project-box-info--desc #{p.desc}
+                  .project-box-comp class="project-box-comp--#{p.type}"
+                    = image_tag "cases/case-teaser-#{p.shortname}.jpg", :alt => "#{p.name}", :class => "project-box-case--img"
+                  ul.project-box-action
+                    li.project-box-action--ele
+                      == link_to p.cta, p.url, class: "project-box-action--link", onclick: "gtag('event', 'click', {'event_category' : 'portfolio_links', 'event_label' : #{p.name}, 'value' : 0});"
 section#services.site-block.theme-black
   .container-fluid
     .row

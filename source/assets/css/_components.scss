@@ -60,9 +60,12 @@
           list-style: none;
         }
       }
+    .list-compact {
+      
+    }
     .list-default {
       margin-top: $space-2;
-      margin-bottom: $space-3;
+      margin-bottom: $space-2;
     }
     .list-sub {
       margin-top: $space-2;
@@ -76,7 +79,7 @@
 
     .list-bordered {
       list-style: none;
-      margin: $space-2 0;
+      margin: $space-2 0 $space-3;
       & > * {
         border-bottom: 1px solid $color-grey-dark;
         margin: 0 0 $space-2;
@@ -403,3 +406,463 @@
         @extend .t-16;
       }
     }
+
+  // Projects System
+  .project-system {
+    margin: $space-2 0 $space-3;
+
+    .list-bordered {
+      margin-bottom: 0;
+    }
+
+    .project-box {
+      background: $color-white;
+      @include flexbox;
+      @include flex-wrap(wrap);
+      margin: 0 0 $space-3 0;
+      padding: $space-2;
+      position: relative;
+      height: 350px;
+      justify-content: center;
+      overflow: hidden;
+      width: 100%;
+      &:hover {
+        .project-box-comp {
+          box-shadow: 0 -4px 40px rgba(0,0,0,0.2);
+          @include scale(1.01);
+        }
+        .project-box-comp--mobile {
+          box-shadow: 0 0 0;
+        }
+      }
+      @media (min-width: $mq-tablet) {
+        height: 500px;
+      }
+    }
+    .project-box-solo {
+      margin-bottom: 0;
+    }
+    .project-box-info {
+      height: 20%;
+      width: 100%;
+    }
+    .project-box-info--title {
+      color: $color-black;
+      @extend .t-24;
+      margin: 0 0 5px;
+    }
+    .project-box-info--desc {
+      color: $color-gray;
+      @extend .t-16;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .project-box-comp {
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+      left: 20px;
+      position: absolute;
+      top: 90px;
+      width: 700px;
+      z-index: 1;
+      @include scale(1);
+      @include transition();
+      @media (min-width: $mq-tablet) {
+        position: relative;
+        width: auto;
+        left: 40px;
+        top: auto;
+        z-index: 1;
+      }
+      .project-box-case--img {
+        width: 100%;
+      }
+    }
+    .project-box-comp--web {
+      min-width: 350px;
+      width: auto;
+      @media (min-width: $mq-tablet) {
+        width: auto;
+      }
+    }
+    .project-box-comp--mobile {
+      box-shadow: 0 0 0;
+      left: auto;
+      width: 280px;
+      @media (min-width: $mq-tablet) {
+        max-width: 360px;
+        width: auto;
+      }
+    }
+    .project-box-logo {
+      align-items: center;
+      @include flexbox;
+      height: 60%;
+      justify-content: center;
+      position: absolute;
+      @include absolute-center;
+      width: 100%;
+      @media (min-width: $mq-tablet) {
+        height: 60%;
+        width: 40%;
+      }
+    }
+    .project-box-logo--img {
+      max-width: 150px;
+      width: 50%;
+      @media (min-width: $mq-tablet) {
+        min-width: 150px;
+        max-width: 200px;
+      }
+      @media (min-width: $mq-laptop) {
+        min-width: 150px;
+        max-width: none;
+      }
+    }
+    .project-box-action {
+      align-items: flex-end;
+      bottom: 0;
+      @include flexbox;
+      justify-content: flex-start;
+      @include nolist;
+      right: 0;
+      position: absolute;
+      z-index: 10;
+    }
+    .project-box-action--ele {
+      background: $color-red;
+      @extend .t-18;
+      @include flexbox;
+      align-items: center;
+      margin: 0;
+      white-space: nowrap;
+      .disabled {
+        font-weight: $font-weight-bold;
+      }
+    }
+    .project-box-action--link {
+      @extend .text-ui;
+      color: $color-white;
+      display: inline;
+      @include transition($type:padding);
+      padding: $space-2;
+      &:hover {
+        color: $color-white;
+        padding: $space-2+1;
+      }
+    }
+
+    // Project Styles
+    .project-box--organicsalive {
+      $c1: #c4d600;
+      $c2: #222;
+      $c3: $color-white;
+      background: $c3;
+      .project-box-info--title {
+        color: $c1;
+      }
+      .project-box-info--desc {
+        color: $c2;
+      }
+      .project-box-action--ele {
+        background: $c1;
+      }
+      .project-box-action--link {
+        color: $c2;
+        &:hover {
+          color: $c2;
+        }
+      }
+    }
+    .project-box--zelmins {
+      $c1: #EBF9FB;
+      $c2: #7BA3A8;
+      $c3: #64D8E3;
+      $c4: #222;
+      background: $c1;
+      .project-box-info--title {
+        color: $c4;
+      }
+      .project-box-info--desc {
+        color: $c2;
+      }
+      .project-box-action--ele {
+        background: $c3;
+      }
+      .project-box-action--link {
+        color: $c4;
+        &:hover {
+          color: $c4;
+        }
+      }
+    }
+    .project-box--lakinaturals {
+      $c1: $color-white;
+      $c2: #5DD2B5;
+      $c3: #FE9DC5;
+      $c4: #86576b;
+      background: $c1;
+      .project-box-info--title {
+        color: $c2;
+      }
+      .project-box-info--desc {
+        color: $c4;
+      }
+      .project-box-action--ele {
+        background: $c3;
+      }
+      .project-box-action--link {
+        color: $c4;
+        &:hover {
+          color: $c4;
+        }
+      }
+    }
+    .project-box--ssfn {
+      $c1: #F64256;
+      $c2: rgba(0,0,0,0.4);
+      $c3: rgba(0,0,0,0.7);
+      background: $c1;
+      .project-box-info--desc {
+        color: $c2;
+      }
+      .project-box-action--ele {
+        background: $c3;
+      }
+      .project-box-action--link {
+        color: $c1;
+        &:hover {
+          color: $c1;
+        }
+      }
+    }
+    .project-box--bbx {
+      $c1: #BF891D;
+      $c2: #EFCB83;
+      background: #EFCB83;
+      .project-box-info--title, .project-box-action--ele {
+        color: darken($c1, 20%);
+      }
+      .project-box-info--desc {
+        color: darken($c1, 10%);
+      }
+      .project-box-action--ele {
+        background: $c1;
+      }
+      .project-box-action--link {
+        color: $c2;
+        &:hover {
+          color: $c2;
+        }
+      }
+    }
+    .project-box--forcesunite {
+      $c1: $color-black;
+      $c2: rgba(0,0,0,0.4);
+      $c3: $color-white;
+      background: #fff;
+      .project-box-info--title, .project-box-action--link {
+        color: $c1;
+      }
+      .project-box-info--desc {
+        color: $c2;
+      }
+      .project-box-action--ele {
+        background: $c1;
+      }
+      .project-box-action--link {
+        color: $c3;
+        &:hover {
+          color: $c3;
+        }
+      }
+    }
+    .project-box--versa {
+      $c1: $color-white;
+      $c2: rgba(255,255,255,0.5);
+      $c3: #007BFF;
+      background: $c3;
+      .project-box-info--desc, .project-box-action--ele {
+        color: $c1;
+      }
+      .project-box-action--ele {
+        background: $c3;
+      }
+      .project-box-action--link {
+        color: $c1;
+        &:hover {
+          color: $c1;
+        }
+      }
+    }
+    .project-box--myfdtps {
+      $c1: #6FB3EB;
+      $c2: #1766A9;
+      $c3: #222A36;
+      background: $c2;
+      .project-box-info--title {
+        color: $color-white;
+      }
+      .project-box-info--desc {
+        color: $c1;
+      }
+      .project-box-action--ele {
+        background: $c2;
+      }
+      .project-box-action--link {
+        color: $color-white;
+      }
+    }
+    .project-box--ifyb {
+      $c1: #FFCE01;
+      $c2: #234F6A;
+      background: $c2;
+      .project-box-info--title {
+        color: $color-white;
+      }
+      .project-box-info--desc {
+        color: $c1;
+      }
+      .project-box-action--ele {
+        background: $c1;
+      }
+      .project-box-action--link {
+        color: $c2;
+        &:hover {
+          color: $c2;
+        }
+      }
+    }
+    .project-box--sensory {
+      $c: #BF891D;
+      background: url('../img/projects/bg-sensory.jpg') no-repeat center;
+      .project-box-info--desc {
+        color: $c;
+      }
+      .project-box-action--ele {
+        color: $c;
+      }
+      .project-box-action--link {
+        border-color: $c;
+        color: $c;
+        &:hover {
+          color: lighten($c,10%);
+          border-color: lighten($c,10%);
+        }
+      }
+    }
+    .project-box--hyrecar {
+      $c1: $color-white;
+      $c2: #FC6349;
+      background: $c2;
+      .project-box-info--title {
+        color: $c1;
+      }
+      .project-box-info--desc {
+        color: $c1;
+      }
+      .project-box-action--ele {
+        background: $c2;
+      }
+      .project-box-action--link {
+        color: $c1;
+        &:hover {
+          color: $c1;
+        }
+      }
+    }
+    .project-box--gigmor {
+      $c1: #FDD8D2;
+      $c2: #E34B2A;
+      background: $c2;
+      .project-box-info--title {
+        color: $color-white;
+      }
+      .project-box-info--desc {
+        color: $c1;
+      }
+      .project-box-action--ele {
+        background: $c1;
+      }
+      .project-box-action--link {
+        color: $c2;
+        &:hover {
+          color: $c2;
+        }
+      }
+    }
+    .project-box--sbt {
+      $c1: #D7E5FD;
+      $c2: #2D5BA7;
+      background: $c2;
+      .project-box-info--title {
+        color: $color-white;
+      }
+      .project-box-info--desc {
+        color: $c1;
+      }
+      .project-box-action--ele {
+        background: $c1;
+      }
+      .project-box-action--link {
+        color: $c2;
+        &:hover {
+          color: $c2;
+        }
+      }
+    }
+    .project-box--ronfinley {
+      $c1: #5C5B19;
+      $c2: #DBD83C;
+      $c3: #ffaa01;
+      $c4: $color-white;
+      background: $c2;
+      .project-box-info--desc {
+        color: $c1;
+      }
+      .project-box-action--ele {
+        background: $c3;
+      }
+      .project-box-action--link {
+        color: $c4;
+        &:hover {
+          color: $c4;
+        }
+      }
+    }
+    .project-box--newscrack {
+      $c: #FFF;
+      background: #475C7A;
+      .project-box-info--desc {
+        color: #A4A4B3;
+      }
+      .project-box-action--ele {
+        color: $c;
+      }
+      .project-box-action--link {
+        border-color: $c;
+        color: $c;
+        &:hover {
+          color: darken($c,10%);
+          border-color: darken($c,10%);
+        }
+      }
+    }
+    .project-box--buzzhoney {
+      $c: #FFF;
+      background: #1A1204;
+      .project-box-info--desc {
+        color: #A4A4B3;
+      }
+      .project-box-action--ele {
+        color: $c;
+      }
+      .project-box-action--link {
+        border-color: $c;
+        color: $c;
+        &:hover {
+          color: darken($c,10%);
+          border-color: darken($c,10%);
+        }
+      }
+    }
+  }
