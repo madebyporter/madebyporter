@@ -13,21 +13,47 @@ section.site-block.site-block-color-red
 section.site-block
   .container-fluid
     .row
-      .col-12.col-xl-3
-        header.site-block-header
-          h2
-            | Latest Endevours
-      .col-12.col-xl-8.offset-xl-1
-        .card-system   
-          .row
-            - data.projects.proj.each do |p|
-              .col-12
-                .card-project class="card-project--#{p.shortname}"
-                  .card-project-info
-                    h3.card-project-info--title #{p.name}
-                    p.card-project-info--desc #{p.desc}
-                  .card-project-comp class="card-project-comp--#{p.type}"
-                    = image_tag "cases/case-teaser-#{p.shortname}.jpg", :alt => "#{p.name}", :class => "card-project-case--img"
-                  ul.card-project-action
-                    li.card-project-action--ele
-                      == link_to p.cta, p.url, class: "card-project-action--link", onclick: "gtag('event', 'click', {'event_category' : 'portfolio_links', 'event_label' : #{p.name}, 'value' : 0});"
+      .col-12
+        - data.projects.proj.each do |p|
+          .project-system   
+            .row
+            
+              .col-12.col-lg-4.col-xl-3.order-2.order-lg-1
+                h4 #{p.name}
+                ul.list-bordered
+                  li
+                    .row
+                      .col-xl-3
+                        label Date
+                      .col-xl-9
+                        span #{p.date}
+                  li
+                    .row
+                      .col-xl-3
+                        label Service
+                      .col-xl-9
+                        span #{p.service}
+                  li
+                    .row
+                      .col-xl-3
+                        label Role
+                      .col-xl-9
+                        span #{p.role}
+                  li
+                    .row
+                      .col-12
+                        - if p.highlights
+                          label Highlights
+                          ul.list-default
+                            - p.highlights.each do |be|
+                                li #{be.highlight}
+              .col-12.col-lg-8.offset-xl-1.order-1.order-lg-2
+                .project-box class="project-box--#{p.shortname}"
+                  .project-box-info
+                    h3.project-box-info--title #{p.name}
+                    p.project-box-info--desc #{p.desc}
+                  .project-box-comp class="project-box-comp--#{p.type}"
+                    = image_tag "cases/case-teaser-#{p.shortname}.jpg", :alt => "#{p.name}", :class => "project-box-case--img"
+                  ul.project-box-action
+                    li.project-box-action--ele
+                      == link_to p.cta, p.url, class: "project-box-action--link", onclick: "gtag('event', 'click', {'event_category' : 'portfolio_links', 'event_label' : #{p.name}, 'value' : 0});"

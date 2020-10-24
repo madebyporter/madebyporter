@@ -152,19 +152,32 @@
     }
 
   // Paragraphs
-    p, ul, li {
+    .text-global {
       color: $color-grey-light;
       font-family: $font-secondary;
       @extend .t-16;
       line-height: 180%;
+    }
+    p, ul, li {
+      @extend .text-global;
       margin-bottom: $space-2;
 
       & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {
         padding-top: $space-2;
       }
-
+    }
+    span {
+      @extend .text-global;
     }
 
+  
+  // Label
+    label {
+      color: $color-white;
+      @extend .t-16;
+      line-height: 180%;
+      font-weight: $font-weight-bold;
+    }
     .small {
       @extend .t-14;
       letter-spacing: .02rem;

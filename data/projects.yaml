@@ -3,37 +3,52 @@ proj:
 - name: 'Execute'
   shortname: execute
   type: web
-  date: 2018
+  date: Aug 2020 to Now
   service: 'Business Process'
   desc: 'Notion Productivity Template'
   role: 'Process Designer'
+  highlights:
+    - highlight: 'Get more work done by organizing your projects'
+    - highlight: 'Organize your tasks, projects &amp; goals'
   url: https://www.notion.so/executebyporter/Execute-6f84033c55df4dcea7c05726fd81a564
   cta: 'Download'
 - name: 'Organics Alive Garden'
   shortname: organicsalive
   type: web
-  date: 2020
+  date: Oct 2019 to Now
   service: 'Shopify Development'
   desc: 'Organic Home Gardening Solutions'
-  role: 'Shopify Developer'
+  role: 'Web Engineer'
+  highlights:
+    - highlight: '2.05% Conversion Rate'
+    - highlight: '0.74% Bounce Rate'
+    - highlight: '8.31 Pages/Session'
   url: https://organicsalivegarden.com/
   cta: 'Launch Site'
 - name: 'Think Versa'
   shortname: versa
   type: web
-  date: 2018
-  service: 'Web Design & Jamstack Development'
+  date: 'Aug 2018 to Now'
+  service: 'Jamstack Website'
   desc: My knowledge base of specialized learning links
-  role: 'Founder, Design &amp; Code'
+  role: 'Founder &amp; Design Engineer'
+  highlights:
+    - highlight: '65 Email Subscribers'
+    - highlight: '2.06 Pages/Session'
+    - highlight: '15 Posts to date'
   url: https://www.thinkversa.com
   cta: 'Launch Site'
 - name: 'Foundation Transportation'
   shortname: myfdtps
   type: web
-  date: 2018
-  service: 'Website Redesign'
-  desc: Black Car Service for VIP People
-  role: 'Jamstack Design & Development'
+  date: 'Dec 2018 to Aug 2020'
+  service: 'Jamstack Website'
+  desc: 'Black Car Service for VIP People'
+  role: 'Design Engineer'
+  highlights:
+    - highlight: '9.6% Conversation Rate for online ride bookings'
+    - highlight: '2.04 second site load time'
+    - highlight: '33.78% Bounce Rate from search'
   url: '/cases/myfdtps-website-2018'
   cta: 'View Case Study'
 - name: 'Zelmins'
@@ -42,7 +57,11 @@ proj:
   date: 2019
   service: 'New Shopify Website'
   desc: 'A Harder Working Mint'
-  role: 'Shopify Developer'
+  role: 'Web Engineer'
+  highlights:
+    - highlight: '1.29% Conversion Rate'
+    - highlight: '4.2% CVR from search'
+    - highlight: '3.36 sec site speed'
   url: https://zelmins.com/
   cta: 'Launch Site'
 - name: 'Hyrecar'
@@ -52,68 +71,81 @@ proj:
   service: 'Product Design'
   desc: 'Rent cars for Uber &amp; Lyft'
   role: 'UX &amp; UI Design'
+  highlights:
+    - highlight: 'Helped design wireframes and UI'
+    - highlight: 'Worked with a team of 8+ people'
+    - highlight: 'The design helped with Hyrecar IPO'
   url: '/cases/hyrecar-app-2018'
   cta: 'View Case Study'
 - name: 'Silicon Beach Talent'
   shortname: sbt
   type: web
-  date: 2018
-  service: 'Wordpress Redesign'
+  date: 'Jan 2017 to Now'
+  service: 'Wordpress Website Build with <a href="https://www.pixelswithin.com/">Diana Lopez</a>'
   desc: 'Talent Agency for Silicon Beach LA'
-  role: 'Web Designer &amp; Developer'
+  role: 'Website Designer'
+  highlights:
   url: 'https://www.siliconbeachtalent.com'
   cta: 'Launch Site'
 - name: 'Leslie Stefanson'
   shortname: lesliestefanson
   type: web
   date: 2019
-  service: 'Wordpress Site Redesign'
+  service: 'Wordpress Website'
   desc: 'Sculptor &amp; Actress'
-  role: 'Wordpress Developer'
+  role: 'Web Engineer'
+  highlights:
   url: https://lesliestefanson.com/
   cta: 'Launch Site'
 - name: 'Ron Finley'
   shortname: ronfinley
   type: web
   date: 2016
-  service: 'Wordpress Redesign'
+  service: 'Wordpress Website'
   desc: 'The Gangsta Gardener'
-  role: 'Web Designer &amp; Developer'
+  role: 'Design Engineer'
+  highlights:
+    - highlight: '2.05% Conversion Rate'
+    - highlight: '51.69% Bounce Rate'
   url: 'https://www.ronfinley.com'
   cta: 'Launch Site'
 - name: 'Santa Monica Center for Oral Surgery'
   shortname: smcos
   type: web
   date: 2019
-  service: 'Wordpress Redesign'
+  service: 'Wordpress Website'
   desc: 'Oral Surgery Office'
-  role: 'Wordpress Developer'
+  role: 'Web Engineer'
+  highlights:
   url: https://santamonicaoms.com/
   cta: 'Launch Site'
 - name: 'The Beatbox Club'
   shortname: bbx
   type: web
   date: 2012
-  service: 'Web Design &amp; Jamstack Development'
+  service: 'Jamstack Website'
   desc: 'Hustle Beats for Work'
-  role: 'Web Designer, Developer, Music Producer &amp; Mixing Engineer'
+  role: 'Founder, Design Engineer &amp; Music Producer'
+  highlights:
   url: 'https://www.thebeatboxclub.com'
   cta: 'Launch Site'
 - name: 'Forces Unite'
   shortname: forcesunite
   type: web
   date: 2012
-  service: 'Web Design &amp; Jamstack Development'
+  service: 'Jamstack Website'
   desc: 'Connecting Entrepreneurs &amp; Freelancers'
-  role: 'Web Designer &amp; Developer'
+  role: 'Design Engineer'
+  highlights:
   url: 'https://www.forcesunite.us'
   cta: 'Launch Site'
 - name: 'Laki Naturals'
   shortname: lakinaturals
   type: web
   date: 2018
-  service: 'Shopify Site Redesign'
+  service: 'Shopify Website'
   desc: 'Natural Bath Products for Women'
-  role: 'Shopify Developer'
+  role: 'Web Engineer'
+  highlights:
   url: https://lakinaturals.com/
   cta: 'Launch Site'
