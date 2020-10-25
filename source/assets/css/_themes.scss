@@ -91,7 +91,7 @@
 // Theme Red
   .theme-red {
     background: $color-red;
-    p {
+    p, li {
       color: $color-black;
     }
     .masthead-logo {

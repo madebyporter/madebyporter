@@ -3,74 +3,102 @@ title: American Creative & Entrepreneur
 description: Made by Porter, a designer specializing in digital products and the web.
 ---
 
-section#hero.site-block.theme-red
-  .container-fluid
+section.site-block-hero.site-block.theme-red
+  .site-content
+    .container-fluid
+      .row
+        .col-12.col-xl-12
+          header.site-block-header
+            h1.hero-headline
+              | I help progressive businesses build fast &amp; responsive websites.
+      .row
+        .col-12.col-xl-11
+          p.headline
+            | I'm Chris Porter, an entrepreneurial design engineer and I believe that websites should bring more value than just brand awareness. 
+            == link_to 'Ask about it', '/contact', class: ""
+  .site-content
+    .container-fluid
+      .row
+        .col-12.col-lg-6
+          h2 For an online business to thrive, your website should provide a great user experience. 
+          p.large With a great user experience (along with messaging and providing value), comes the results: more revenue, more subscribers, more positive feeedback.
+  .site-content
     .row
-      .col-12.col-xl-12
-        header.site-block-header
-          h1.hero-headline
-            | I help progressive businesses build fast &amp; responsive websites.
-    .row
-      .col-12.col-xl-11
-        p.headline
-          | I'm Chris Porter, an entrepreneurial design engineer and I believe that websites should bring more value than just brand awareness. 
-          == link_to 'Ask about it', '/contact', class: ""
-        
-section#projects.site-block.site-block-large-top.theme-black
-  .container-fluid
-    .row
-      .col-12.col-lg-3
-        header.site-block-header
-          h2 Featured Project
-          == link_to 'View All Projects', '/projects', class: ""
-      .col-12.col-lg-8.offset-lg-1
-        .project-system
-          .row
-            - data.projects.proj[0...1].each do |p|
-              .col-12
-                .project-box class="project-box--#{p.shortname}"
-                  .project-box-info
-                    h3.project-box-info--title #{p.name}
-                    p.project-box-info--desc #{p.desc}
-                  .project-box-comp class="project-box-comp--#{p.type}"
-                    = image_tag "cases/case-teaser-#{p.shortname}.jpg", :alt => "#{p.name}", :class => "project-box-case--img"
-                  ul.project-box-action
-                    li.project-box-action--ele
-                      == link_to p.cta, p.url, class: "project-box-action--link", onclick: "gtag('event', 'click', {'event_category' : 'portfolio_links', 'event_label' : #{p.name}, 'value' : 0});"
-section#services.site-block.theme-black
-  .container-fluid
-    .row
-      .col-12.col-lg-3
-        header.site-block-header style="margin-bottom: 40px;"
-          h2 Services
-          == link_to 'View my Services', '/services', class: ""
-      .col-12.col-lg-8.offset-lg-1
-        .row
-          .col-12.col-xl-8
-            h3
-              | Get started with a Website Teardown
-            p.xl How can you improve your current website & process? Gain insights. Take with you a plan for success.
-            == link_to 'Learn more', '/services#teardown', class: "large"
+      .col-12.col-lg-6.offset-lg-6
+        h3 What if your site is not performing well? What if its hard to grow your website? Symptoms could include:
+        ul.large
+          li Your website looks messed up on your phone
+          li Your website takes a million years to load
+          li There's enough walls of text to make a free world leader jealous
+          li There's six different fonts with many colors
+          li It takes 12 steps to do one thing
 
-section#proof.site-block.theme-black
+section.site-block.theme-white.padding-top-xl
+  .site-content.justify-center
+    .container-fluid
+      .row
+        .col-12.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
+          h2 Let's work together to reset the foundation of your website. 
+          p.large We'll work together to make it scalable, load fast and to look consistent on all screen sizes. Here's how we're going to get that done:
+  .site-content.justify-center
+    .container-fluid
+      .row
+        .col-12.col-lg-4
+          .site-content.justify-center.padding-medium
+            h3 Understand
+            p Learning why we need to improve your website is key. We'll audit your website and finding how we can improve it based on your business goals.
+        .col-12.col-lg-4
+          .site-content.justify-center.padding-medium
+            h3 Strategize
+            p Planning head for the years ahead will make sure the website we're building can scale. We'll put together a plan that will highlight how we'll get that done.
+        .col-12.col-lg-4
+          .site-content.justify-center.padding-medium
+            h3 Build
+            p Creating a website from scratch will help you grow faster. We will together launch a website that fires up out the gate and keeps people coming back.
+section.site-block.theme-white
+  .site-content.justify-center
+    .container-fluid
+      .row
+        .col-12.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
+          h2 When you have a fast, automated &amp; scalable website
+          p.large You have more time to work on your business, talk to your customers &amp; have time for your personal life.
+  .site-content.justify-center
+    .container-fluid
+      .row
+        .col-12.col-lg-4.offset-lg-2
+          .site-content.padding-medium
+            h3 Easier to Grow &amp; Maintain
+            p Pass off to your own team to build upon and get things done faster.
+        .col-12.col-lg-4
+          .site-content.padding-medium
+            h3 A website driven by results
+            p All your marketing efforts finally pay off with conversions &amp; returning customers.
+section.site-block.theme-black.padding-top-xl
+  .site-content
+    .container-fluid
+      .row
+        .col-12.col-xl-3
+          header.site-block-header
+            h2
+              | Who I've Worked With
+        .col-12.col-xl-8.offset-xl-1
+          .site-clients-list
+            .row.no-gutters
+              - data.clients.list.each do |client|
+                .col-6.col-md-4.col-lg-3
+                  .site-clients-ele
+                    img.site-clients-img src="assets/img/clients/logo-proof-#{client.shortname}.png" alt="#{client.client}"
+  .site-content.site-block-height-full.justify-center-center.site-block-index-journal
+    .container-fluid
+      .row
+        .col-12.col-xl-10.offset-xl-1
+          - blog.articles[0...1].each do |article|
+            = link_to article.title, article.url, class: "blog-headline"
+            = link_to 'Read More...', article.url, class: "large"
+section.site-block.theme-red.site-block-height-full.justify-center-center
   .container-fluid
     .row
-      .col-12.col-xl-3
-        header.site-block-header
-          h2
-            | Who I've Worked With
-      .col-12.col-xl-8.offset-xl-1
-        .site-clients-list
-          .row.no-gutters
-            - data.clients.list.each do |client|
-              .col-6.col-md-4.col-lg-3
-                .site-clients-ele
-                  img.site-clients-img src="assets/img/clients/logo-proof-#{client.shortname}.png" alt="#{client.client}"
-
-section#stories.site-block.site-block-height-full.site-block-text-center.site-block-index-journal.theme-red
-  .container-fluid
-    .row
-      .col-12.col-xl-10.offset-xl-1
-        - blog.articles[0...1].each do |article|
-          = link_to article.title, article.url, class: "blog-headline"
-          = link_to 'Read More...', article.url, class: "large"
+      .col-12.col-xl-8.offset-xl-2
+        h2 Get Started Today
+        p.large Ready to build a website that can stand the test of time? Let's schedule a call to learn how we can build a website that lasts.
+        = link_to 'Schedule a call', 'contact', class: "large"

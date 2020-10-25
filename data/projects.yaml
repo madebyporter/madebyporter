@@ -68,7 +68,7 @@ proj:
   shortname: hyrecar
   type: web
   date: 2018
-  service: 'Product Design'
+  service: 'Product Design with <a href="https://www.novvum.io">Novvum</a>'
   desc: 'Rent cars for Uber &amp; Lyft'
   role: 'UX &amp; UI Design'
   highlights:

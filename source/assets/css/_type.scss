@@ -150,7 +150,7 @@
         text-decoration: none;
       }
       &:not(.comp-btn):not(.blog-headline):not(.project-box-action--link):not(.site-nav-link):not(.masthead-logo):not(.blog-list-link):not(.about-timeline-year-select-link):not(.site-nav-subnav-link){
-        border-bottom: 2px solid $color-red;
+        border-bottom: 4px solid $color-red;
         padding-bottom: 4px;
         &:hover {
           border-bottom: 4px solid $color-red-light;

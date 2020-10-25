@@ -661,15 +661,6 @@
       .project-box-info--desc {
         color: $c2;
       }
-      .project-box-action--ele {
-        background: $c1;
-      }
-      .project-box-action--link {
-        color: $c3;
-        &:hover {
-          color: $c3;
-        }
-      }
     }
     .project-box--versa {
       $c1: $color-white;

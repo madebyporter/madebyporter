@@ -46,12 +46,12 @@
       position: relative;
       max-width: 100%;
       z-index: 0;
-      &:nth-child(2){
-        padding-top: $space-4;
-        @media (min-width: $mq-tablet) {
-          padding-top: $space-5;
-        }
-      }
+      // &:nth-child(2){
+      //   padding-top: $space-4;
+      //   @media (min-width: $mq-tablet) {
+      //     padding-top: $space-5;
+      //   }
+      // }
       @media (min-width: $mq-tablet) {
         margin: 0;
         padding: $space-4 $space-2;
@@ -59,6 +59,12 @@
       @media (min-width: $mq-laptop) {
         margin: 0;
         padding: $space-4 $space-4;
+      }
+    }
+    .site-content {
+      margin: 0 0 $space-4;
+      &:last-child {
+        margin-bottom: 0;
       }
     }
     .site-header, .site-footer {
@@ -79,26 +85,13 @@
         }
       }
     }
-    .site-block-large-top {
-      @media (min-width: $mq-laptop) {
-        margin: 0;
-        padding: $space-5 $space-4 $space-4;
-      }
-    }
     .site-block-height-full {
       min-height: 90vh;
       .container-fluid, .row, div[class^="col-"] {
         min-height: 100%;
       }
     }
-    .site-block-text-center, .site-block-text-center div[class^="col-"] {
-      display: flex;
-      flex-wrap: wrap;
-      text-align: center;
-      justify-content: center;
-      align-content: center;
-      align-items: center;
-    }
+
     .site-block-header {
       margin: 0 0 $space-2;
       @media (min-width: $mq-tablet) {
@@ -108,7 +101,6 @@
         margin-bottom: $space-1;
       }
     }
-    
     .site-block-case-cta {
       padding: 0;
       font-weight: $font-weight-bold;
@@ -126,6 +118,9 @@
         border-bottom: 0;
         min-height: 0;
       }
+    }
+    .site-block-index-journal {
+      .blog-headline {font-weight: 400;}
     }
 
     // Block Colors
