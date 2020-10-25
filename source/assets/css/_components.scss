@@ -26,7 +26,7 @@
       background: $color-red;
       color: $color-black;
       &:hover {
-        background: $color-red-dark;
+        background: $color-red-light;
       }
     }
     .comp-btn-grey {
@@ -317,9 +317,6 @@
       img {
         width: 100%;
       }
-      p, li {
-        @extend .large;
-      }
       p + h2, ul + h2, blockquote + h2 {
         margin-top: $space-4;
       }
@@ -343,7 +340,7 @@
     }
 
   // Cards
-    .card-set {
+    ul.card-set, div.card-set {
       $card-border-color: $color-grey-dark;
       @include nolist;
       display: grid;
@@ -378,11 +375,15 @@
           margin-bottom: 0;
         }
       }
-      .card-meta {
+      div.card-meta {
         border-bottom: 1px solid $card-border-color;
         @include flexbox;
         justify-content: space-between;
-        & > * {
+        div {
+          @include flexbox;
+          align-items: center;
+        }
+        span {
           @extend .t-12;
           font-weight: 700;
           letter-spacing: .02em;
@@ -390,7 +391,7 @@
           text-transform: uppercase;
         }
       }
-      .card-meta-label {
+      span.card-meta-label {
         color: $color-grey;
       }
       .card-content {
@@ -398,12 +399,6 @@
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
-        p {
-          @extend .normal;
-        }
-      }
-      a.card-cta-link {
-        @extend .t-16;
       }
     }
 

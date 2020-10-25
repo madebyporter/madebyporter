@@ -22,42 +22,36 @@
   // Theme
 
     // Red Headers
-    .index, .now, .projects, .cases, .about, .services, .journal {
+    .index, .now, .projects, .cases, .about, .services, .journal, .contact {
       .site-header, .site-block-hero {
         @extend .theme-red;
       }
     }
 
     // Black Theme
-    .projects, .services, .about, .journal, .contact, .now, .cases {
+    .projects, .services, .about, .journal, .now, .cases {
       @extend .theme-black;
     }
 
   // Site
-    .no-margin {
-      margin: 0;
-    }
-
-    .pull-right {
-      float: right;
-    }
     .site-wrap {
       height: 100%;
       margin: 0 auto;
       position: relative;
       width: 100%;
     }
-    .site-main {
-      .site-block:nth-child(2){
+    .site-block {
+      margin: 0;
+      padding: $space-4 $space-2;
+      position: relative;
+      max-width: 100%;
+      z-index: 0;
+      &:nth-child(2){
         padding-top: $space-4;
         @media (min-width: $mq-tablet) {
           padding-top: $space-5;
         }
       }
-    }
-    .site-block {
-      margin: 0;
-      padding: $space-4 $space-2;
       @media (min-width: $mq-tablet) {
         margin: 0;
         padding: $space-4 $space-2;
@@ -71,12 +65,12 @@
       position: relative;
       z-index: 10;
     }
-    .site-block-hero, .site-block-cta, .site-main {
-      position: relative;
-      max-width: 100%;
-      z-index: 0;
+    .site-block-hero {
+      z-index: 2;
     }
-
+    .site-block-cta {
+      z-index: 2;
+    }
     .site-main {
       .container-fluid {
         @media (min-width: $mq-wide) {
@@ -135,14 +129,9 @@
     }
 
     // Block Colors
-    .site-block-color-coal {
-      @extend .theme-coal;
-    }
     .site-block-color-red {
       @extend .theme-red;
     }
-
-  
 
     .container-wrap {
       padding: 0 $space-2;
@@ -766,6 +755,7 @@
       }
     }
     .about-timeline-content-img {
+      margin: 0 0 $space-2;
       width: 100%;
     }
     .about-timeline-year-select {
@@ -782,7 +772,7 @@
       right: 0;
       text-align: right;
       width: 80px;
-      z-index: -1;
+      z-index: 1;
       .about-timeline-year-select-ele {
         @extend .t-12;
         line-height: 1;

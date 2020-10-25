@@ -149,14 +149,21 @@
         color: $color-red-light;
         text-decoration: none;
       }
+      &:not(.comp-btn):not(.blog-headline):not(.project-box-action--link):not(.site-nav-link):not(.masthead-logo):not(.blog-list-link):not(.about-timeline-year-select-link):not(.site-nav-subnav-link){
+        border-bottom: 2px solid $color-red;
+        padding-bottom: 4px;
+        &:hover {
+          border-bottom: 4px solid $color-red-light;
+        }
+      }
     }
 
   // Paragraphs
     .text-global {
       color: $color-grey-light;
       font-family: $font-secondary;
-      @extend .t-16;
-      line-height: 180%;
+      @extend .t-18;
+      line-height: 150%;
     }
     p, ul, li {
       @extend .text-global;
@@ -178,15 +185,17 @@
       line-height: 180%;
       font-weight: $font-weight-bold;
     }
-    .small {
+
+  // Text Utility
+    .small, p.small, li.small, a.small, span.small, .small p, .small li, .small a, .small span {
       @extend .t-14;
       letter-spacing: .02rem;
     }
-    .normal {
-      @extend .t-16;
-    }
-    .large, .large a {
+    .large, p.large, li.large, a.large, span.large, .large p, .large li, .large a, .large span {
       @extend .t-24;
+    }
+    .xl, p.xl, li.xl, a.xl, span.xl, .xl p, .xl li, .xl a, .xl span {
+      @extend .t-28;
       line-height: 150%;
     }
     .mixed-size {
@@ -282,9 +291,13 @@
       @extend .t-64;
     }
     .hero-headline, .hero-headline a {
-      font-size: 11vw;
-      @media (min-width: $mq-wide) {
-        font-size: 10vw;
+      font-size: 12vw;
+      margin: 0;
+      @media (min-width: $mq-tablet) {
+        font-size: 8vw;
+      }
+      @media (min-width: $mq-laptop) {
+        font-size: 7vw;
       }
     }
     .site-block-index-journal {

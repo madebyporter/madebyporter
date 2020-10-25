@@ -90,8 +90,7 @@
 
 // Theme Red
   .theme-red {
-    background: $color-red-dark;
-
+    background: $color-red;
     p {
       color: $color-black;
     }
@@ -103,6 +102,12 @@
       color: $color-white;
       &:hover {
         color: darken($color-white,10%);
+      }
+      &:not(.btn):not(.blog-headline):not(.project-box-action--link):not(.site-nav-link):not(.masthead-logo){
+        border-color: $color-white;
+        &:hover {
+          border-color: $color-white-dark;
+        }
       }
     }
     .site-nav {
@@ -126,7 +131,7 @@
         color: $color-red-light;
       }
     }
-    .headline, h1, h2, h3, h4, h5, h6, .large {
+    .headline, h1, h2, h3, h4, h5, h6 {
       color: $color-black;
     }
     .site-footer, .ordered-list li {
@@ -159,6 +164,12 @@
       color: $color-red-light;
       &:hover {
         background: $color-black;
+      }
+    }
+    ul.card, div.card {
+      border: 1px solid $color-red-dark;
+      .card-header {
+        border-color: $color-red-dark;
       }
     }
   }
@@ -229,5 +240,8 @@
     background: $color-coal;
     h1, h2, h3, h4, h5, h6 {
       color: $color-white;
+    }
+    p {
+      color: $color-grey-light;
     }
   }
