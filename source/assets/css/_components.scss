@@ -26,7 +26,7 @@
       background: $color-red;
       color: $color-black;
       &:hover {
-        background: $color-red-dark;
+        background: $color-red-light;
       }
     }
     .comp-btn-grey {
@@ -317,9 +317,6 @@
       img {
         width: 100%;
       }
-      p, li {
-        @extend .large;
-      }
       p + h2, ul + h2, blockquote + h2 {
         margin-top: $space-4;
       }
@@ -402,12 +399,6 @@
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
-        p {
-          @extend .normal;
-        }
-      }
-      a.card-cta-link {
-        @extend .t-16;
       }
     }
 

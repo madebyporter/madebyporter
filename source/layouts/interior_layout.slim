@@ -3,4 +3,7 @@
     .container-fluid
       .row
         .col-12.col-lg-10
-          h1.hero-headline #{current_page.data.}
+          h1.hero-headline #{current_page.data.title}
+          - if current_page.data.description
+            p.xl #{current_page.data.description}
+  = yield
