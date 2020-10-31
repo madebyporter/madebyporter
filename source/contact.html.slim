@@ -3,23 +3,48 @@ layout: interior_layout
 title: Contact
 description:
 ---
-
-section.site-block.theme-red.padding-top-none
+section.site-block.theme-white
   .container-fluid
     .row
-      .col-12.col-xl-9
+      .col-12.col-lg-5
+        header.site-block-header
+          h2 Book a Session
+    .row
+      .col-12.col-lg-5.order-2.order-lg-1
+        ul.list-bordered.spacing-medium
+          li
+            h4 1. Get scheduled in
+            p Choose a time that works best for you
+          li
+            h4 2. Get prepared with these questions
+            ul.list-default
+              li What problem are you looking to solve?
+              li When will you need to get things done by?
+              li What's your design budget for the next 6-12 months?
+          li
+            h4 3. Show Up
+            p Set a reminder in your calendar. Give yourself a half an hour to prepare.
+      .col-12.col-lg-6.offset-lg-1.order-1.order-lg-2
+        .comp-calendly
+          div class="calendly-inline-widget" data-url="https://calendly.com/madebyporter/45min" style="min-width:320px;height:800px;"
+          script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
+section.site-block.theme-red
+  .container-fluid
+    .row
+      .col-12
         .card-set
           .card
             header.card-header
               h3 Email
             .card-content
-              p.large For questions and inquiries on design &amp; productivity consulting, please send a message using the email below.
+              p.large Need to get in contact with me? You can find my email address below.
               .card-content-cta
-                == link_to "general@madebyporter.com", "mailto: general@madebyporter.com", class: "card-cta-link large"
+                == link_to "general@madebyporter.com", "mailto: general@madebyporter.com", class: "card-cta-link link-white"
+
           .card
             header.card-header
               h3 Twitter
             .card-content
               p.large Rather have a casual chat about everything in life? Let's start the conversation on Twitter.
               .card-content-cta
-                == link_to "@madebyporter", "https://www.twitter.com/madebyporter", class: "card-cta-link large"
+                == link_to "@madebyporter", "https://www.twitter.com/madebyporter", class: "card-cta-link link-white"

@@ -21,6 +21,23 @@
       @extend .t-36;
       padding: $space-2 $space-3
     }
+    .comp-btn-black {
+      @extend .comp-btn;
+      background: $color-black;
+      color: $color-white;
+      &:hover {
+        background: $color-white-dark;
+      }
+    }
+    .comp-btn-gold {
+      @extend .comp-btn;
+      background: $color-gold;
+      color: $color-white;
+      &:hover {
+        background: $color-gold-light;
+        color: $color-white;
+      }
+    }
     .comp-btn-red {
       @extend .comp-btn;
       background: $color-red;
@@ -29,11 +46,20 @@
         background: $color-red-light;
       }
     }
-    .comp-btn-grey {
-      background: $color-grey-dark;
+    .comp-btn-white {
+      @extend .comp-btn;
+      background: $color-white;
       color: $color-black;
       &:hover {
-        background: $color-grey;
+        background: $color-white-dark;
+      }
+    }
+    .comp-btn-grey {
+      @extend .comp-btn;
+      background: $color-grey;
+      color: $color-white;
+      &:hover {
+        background: $color-grey-light;
       }
     }
     
@@ -91,6 +117,17 @@
           border-bottom: 0;
           margin: 0;
           padding: 0;
+        }
+      }
+      &.spacing-medium {
+        & > * {
+          margin: 0 0 $space-3;
+          padding: 0 0 $space-3;
+          &:last-child {
+            border-bottom: 0;
+            margin: 0;
+            padding: 0;
+          }
         }
       }
       &.spacing-large {
@@ -851,4 +888,11 @@
         }
       }
     }
+  }
+
+  // Calendly
+  .comp-calendly {
+    border: 1px solid lighten($color-gray-light,25%);
+    margin: 0 0 $space-3 0;
+    overflow: hidden;
   }

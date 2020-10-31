@@ -7,80 +7,61 @@ section.site-block-hero.site-block.theme-red
   .site-content
     .container-fluid
       .row
-        .col-12.col-xl-12
-          header.site-block-header
+        .col-12.col-xl-10
+          header.site-block-header.margin-bottom-small
             h1.hero-headline
-              | I help progressive businesses build fast &amp; responsive websites.
-      .row
-        .col-12.col-xl-11
-          p.headline
-            | I'm Chris Porter, an entrepreneurial design engineer and I believe that websites should bring more value than just brand awareness. 
-            == link_to 'Ask about it', '/contact', class: ""
-  .site-content
-    .container-fluid
-      .row
-        .col-12.col-lg-6
-          h2 For an online business to thrive, your website should provide a great user experience. 
-          p.large With a great user experience (along with messaging and providing value), comes the results: more revenue, more subscribers, more positive feeedback.
-  .site-content
-    .row
-      .col-12.col-lg-6.offset-lg-6
-        h3 What if your site is not performing well? What if its hard to grow your website? Symptoms could include:
-        ul.large
-          li Your website looks messed up on your phone
-          li Your website takes a million years to load
-          li There's enough walls of text to make a free world leader jealous
-          li There's six different fonts with many colors
-          li It takes 12 steps to do one thing
+              | I help software agencies create design systems.
+          p.headline.margin-bottom-large
+            | Do you need to improve the design of apps you're building for products or clients?
+          .row
+            .col-12.col-sm-6.col-md-4.col-lg-3
+                == link_to 'schedule a call', '/contact', class: "comp-btn-gold"
 
-section.site-block.theme-white.padding-top-xl
-  .site-content.justify-center
-    .container-fluid
-      .row
-        .col-12.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
-          h2 Let's work together to reset the foundation of your website. 
-          p.large We'll work together to make it scalable, load fast and to look consistent on all screen sizes. Here's how we're going to get that done:
-  .site-content.justify-center
-    .container-fluid
-      .row
-        .col-12.col-lg-4
-          .site-content.justify-center.padding-medium
-            h3 Understand
-            p Learning why we need to improve your website is key. We'll audit your website and finding how we can improve it based on your business goals.
-        .col-12.col-lg-4
-          .site-content.justify-center.padding-medium
-            h3 Strategize
-            p Planning head for the years ahead will make sure the website we're building can scale. We'll put together a plan that will highlight how we'll get that done.
-        .col-12.col-lg-4
-          .site-content.justify-center.padding-medium
-            h3 Build
-            p Creating a website from scratch will help you grow faster. We will together launch a website that fires up out the gate and keeps people coming back.
 section.site-block.theme-white
-  .site-content.justify-center
+  .site-content
     .container-fluid
       .row
-        .col-12.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
-          h2 When you have a fast, automated &amp; scalable website
-          p.large You have more time to work on your business, talk to your customers &amp; have time for your personal life.
-  .site-content.justify-center
-    .container-fluid
-      .row
-        .col-12.col-lg-4.offset-lg-2
-          .site-content.padding-medium
-            h3 Easier to Grow &amp; Maintain
-            p Pass off to your own team to build upon and get things done faster.
         .col-12.col-lg-4
-          .site-content.padding-medium
-            h3 A website driven by results
-            p All your marketing efforts finally pay off with conversions &amp; returning customers.
+          h2 Ask Yourself
+        .col-12.col-lg-6
+          ul.list-bordered.margin-top-none.padding-top-none
+            li Do you have the front-end developer on your team designing, when they should be coding?
+            li Does your products have great functionality yet you have high bounce rates or low usage rates?
+            li Does the experience for your app look complicated to your customers?
+            li Does your coded design look nothing like the design comps?
+            li Your design system has 4 different fonts and 10 different buttons?
+            li Scaling back on design because your resources are thin?
+            li Do you need to flesh out an app's design and turn it into a system?
+          
+section.site-block.theme-white.padding-top-small
+  .site-content.margin-bottom-medium
+    .container-fluid
+      .row
+        .col-12.col-md-8.col-lg-8.col-xl-6
+          h2 With a design partner
+  .site-content
+    .container-fluid
+      .row
+        .col-12.col-md-7.col-lg-4
+          .site-content.padding-bottom-medium
+            h3 Focus on what you're great at
+            p Save time &amp; focus on development while I handle the design.
+        .col-12.col-md-7.col-lg-4
+          .site-content.padding-bottom-medium
+            h3 A design system that scales
+            p Keep your app's design system simple, so its easy to scale your app.
+        .col-12.col-md-7.col-lg-4
+          .site-content.padding-bottom-medium
+            h3 Grow your customer base
+            p A well designed app brings people in &amp; keeps people coming back.
 section.site-block.theme-black.padding-top-xl
   .site-content
     .container-fluid
       .row
         .col-12.col-xl-3
           header.site-block-header
-            h2
-              | Who I've Worked With
+            h2 The proof
+            p.large Development teams &amp; startups I've worked with
         .col-12.col-xl-8.offset-xl-1
           .site-clients-list
             .row.no-gutters
@@ -95,10 +76,3 @@ section.site-block.theme-black.padding-top-xl
           - blog.articles[0...1].each do |article|
             = link_to article.title, article.url, class: "blog-headline"
             = link_to 'Read More...', article.url, class: "large"
-section.site-block.theme-red.site-block-height-full.justify-center-center
-  .container-fluid
-    .row
-      .col-12.col-xl-8.offset-xl-2
-        h2 Get Started Today
-        p.large Ready to build a website that can stand the test of time? Let's schedule a call to learn how we can build a website that lasts.
-        = link_to 'Schedule a call', 'contact', class: "large"

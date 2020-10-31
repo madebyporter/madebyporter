@@ -66,7 +66,6 @@ html lang="en"
               i#functionMenuTrigger.icon-bars
                 span
             nav.site-nav
-              == link_to 'Now', '/now', class: "site-nav-link"
               == link_to 'Projects', '/projects', class: "site-nav-link"
               == link_to 'About', '/about', class: "site-nav-link"
               == link_to 'Services', '/services', class: "site-nav-link"
@@ -74,6 +73,7 @@ html lang="en"
               == link_to 'Contact', '/contact', class: "site-nav-link"
     main.site-main
       == yield
+    = partial '/partials/_cta-schedule.slim'
     = partial '/partials/_cta-email.slim'
     footer.site-footer.site-block.theme-coal
       .container-fluid
