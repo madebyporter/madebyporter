@@ -6,13 +6,13 @@ list:
   shortname: gigmor
 - client: Hyrecar
   shortname: hyrecar
-- client: Jaye Neutron
-  shortname: jayeneutron
-- client: LiveRaise
-  shortname: liveraise
+- client: Organics Alive
+  shortname: organicsalive
+- client: Novvum
+  shortname: novvum
 - client: Ron Finley
   shortname: ronfinley
 - client: Silicon Beach Talent
   shortname: sbt
-- client: Squrl Fitness
-  shortname: squrl
+- client: Spark6
+  shortname: spark6

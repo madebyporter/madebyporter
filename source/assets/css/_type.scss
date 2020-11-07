@@ -70,9 +70,9 @@
       }
     }
     .t-48 {
-      @include font-size(24);
+      @include font-size(28);
       @media (min-width: $mq-ip6p) {
-        @include font-size(28);
+        @include font-size(32);
       }
       @media (min-width: $mq-phonexl) {
         @include font-size(36);
@@ -82,13 +82,25 @@
       }
     }
     .t-36 {
-      @include font-size(28);
+      @include font-size(24);
+      @media (min-width: $mq-ip6p) {
+        @include font-size(28);
+      }
+      @media (min-width: $mq-phonexl) {
+        @include font-size(32);
+      }
       @media (min-width: $mq-tablet) {
         @include font-size(36);
       }
     }
     .t-32 {
       @include font-size(24);
+      @media (min-width: $mq-ip6p) {
+        @include font-size(24);
+      }
+      @media (min-width: $mq-phonexl) {
+        @include font-size(28);
+      }
       @media (min-width: $mq-tablet) {
         @include font-size(32);
       }
@@ -150,12 +162,20 @@
         text-decoration: none;
       }
       &:not(.comp-btn):not(.blog-headline):not(.project-box-action--link):not(.site-nav-link):not(.masthead-logo):not(.blog-list-link):not(.about-timeline-year-select-link):not(.site-nav-subnav-link){
-        border-bottom: 4px solid $color-red;
-        padding-bottom: 4px;
+        border-bottom: 3px solid $color-red;
+        padding-bottom: 3px;
         &:hover {
-          border-bottom: 4px solid $color-red-light;
+          border-bottom: 3px solid $color-red-light;
         }
-      }
+        &.link-white {
+          color: $color-white;
+          border-color: $color-white;
+          &:hover {
+            border-color: $color-white-dark;
+            color: $color-white-dark;
+          }
+        }
+      } 
     }
 
   // Paragraphs
@@ -180,10 +200,10 @@
   
   // Label
     label {
-      color: $color-white;
-      @extend .t-16;
-      line-height: 180%;
-      font-weight: $font-weight-bold;
+      color: $color-grey-light;
+      @extend .text-ui;
+      margin: 0 0 $space-1 0;
+      display: block;
     }
 
   // Text Utility
@@ -279,19 +299,20 @@
       }
     }
     .headline, .headline a {
-      font-size: 5vw;
+      font-size: 4vw;
       @media (min-width: $mq-tablet) {
         font-size: 3vw;
       }
       @media (min-width: $mq-wide) {
-        font-size: 2vw;
+        font-size: 3vw;
       }
     }
     .medium-headline, .medium-headline a {
       @extend .t-64;
     }
     .hero-headline, .hero-headline a {
-      font-size: 12vw;
+      font-family: $font-primary;
+      font-size: 9vw;
       margin: 0;
       @media (min-width: $mq-tablet) {
         font-size: 8vw;

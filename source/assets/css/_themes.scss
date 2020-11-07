@@ -49,7 +49,7 @@
       color: $color-white;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5, h6, .hero-headline {
       color: $color-white;
     }
     p, li, span {
@@ -57,13 +57,6 @@
     }
     .sub-title {
       color: $color-white;
-    }
-    a {
-      color: $color-red;
-      font-weight: 700;
-      &:hover {
-        color: lighten($color-red,10%);
-      }
     }
     .highlight {
       color: $color-white;
@@ -99,11 +92,7 @@
       filter: brightness(3);
     }
     a {
-      color: $color-white;
-      &:hover {
-        color: darken($color-white,10%);
-      }
-      &:not(.btn):not(.blog-headline):not(.project-box-action--link):not(.site-nav-link):not(.masthead-logo){
+      &:not(.comp-btn):not(.blog-headline):not(.project-box-action--link):not(.site-nav-link):not(.masthead-logo){
         border-color: $color-white;
         &:hover {
           border-color: $color-white-dark;
@@ -120,15 +109,6 @@
         &:hover {
           color: $color-black;
         }
-      }
-    }
-
-    .comp-btn-red {
-      background: $color-red-dark;
-      color: $color-red-light;
-      &:hover {
-        background: $color-black;
-        color: $color-red-light;
       }
     }
     .headline, h1, h2, h3, h4, h5, h6 {
@@ -231,6 +211,14 @@
         -webkit-filter: invert(0);
         -moz-filter: invert(0);
         filter: invert(0);
+      }
+    }
+    .list-bordered {
+      & > * {
+        border-bottom: 1px solid lighten($color-grey-light,20%);
+        &:last-child {
+          border-bottom: 0;
+        }
       }
     }
   }
