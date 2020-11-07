@@ -22,7 +22,7 @@
   // Theme
 
     // Red Headers
-    .index, .now, .projects, .cases, .about, .services, .journal, .contact {
+    .index, .now, .projects, .cases, .about, .services, .journal, .contact, .system {
       .site-header, .site-block-hero {
         @extend .theme-red;
       }

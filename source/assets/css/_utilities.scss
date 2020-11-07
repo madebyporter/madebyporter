@@ -1,4 +1,26 @@
-// Utilities
+// Colors
+  .color-bg-red {background-color: $color-red}
+  .color-bg-red-light {background-color: $color-red-light}
+  .color-bg-red-dark {background-color: $color-red-dark}
+  .color-bg-red-darker {background-color: $color-red-darker}
+  .color-bg-gold {background-color: $color-gold}
+  .color-bg-white {background-color: $color-white}
+  .color-bg-coal {background-color: $color-coal}
+  .color-bg-slate {background-color: $color-slate}
+  .color-bg-black {background-color: $color-black}
+  .color-bg-gold {background-color: $color-gold}
+  .color-bg-gold-light {background-color: $color-gold-light}
+  .color-bg-gold-dark {background-color: $color-gold-dark}
+
+  .color-text-red > * {color: $color-red !important}
+  .color-text-red-light > * {color: $color-red-light !important}
+  .color-text-red-dark > * {color: $color-red-dark !important}
+  .color-text-red-darker > * {color: $color-red-darker !important}
+  .color-text-black > * {color: $color-black !important}
+  .color-text-slate > * {color: $color-slate !important}
+  .color-text-coal > * {color: $color-coal !important}
+
+// Spacing
   .margin-none {margin: 0 !important}
   .margin-small {margin: $space-1 !important}
   .margin-medium {margin: $space-2 !important}

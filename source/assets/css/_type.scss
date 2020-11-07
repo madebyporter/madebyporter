@@ -200,10 +200,10 @@
   
   // Label
     label {
-      color: $color-white;
-      @extend .t-16;
-      line-height: 180%;
-      font-weight: $font-weight-bold;
+      color: $color-grey-light;
+      @extend .text-ui;
+      margin: 0 0 $space-1 0;
+      display: block;
     }
 
   // Text Utility
@@ -311,6 +311,7 @@
       @extend .t-64;
     }
     .hero-headline, .hero-headline a {
+      font-family: $font-primary;
       font-size: 9vw;
       margin: 0;
       @media (min-width: $mq-tablet) {

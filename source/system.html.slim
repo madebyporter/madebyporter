@@ -1,0 +1,220 @@
+---
+layout: interior_layout
+title: System
+description:
+---
+section.site-block.theme-black
+  .container-fluid
+    .row
+      .col-12.col-lg-3
+        .site-content.margin-bottom-xl
+          h4 Tokens
+          ul.list-bordered
+            li
+              a href="#color" Color
+            li
+              a href="#type" Typography
+            li
+              a href="#layout" Layout
+            
+          h4 Components
+          ul.list-bordered
+            li
+              a href="#buttons" Buttons
+            li
+              a href="#cards" Cards
+            li
+              a href="#forms" Forms
+            li
+              a href="#lists" Lists
+      .col-12.col-lg-8.offset-lg-1
+        .site-content
+          h2 Tokens
+        #color.site-content
+          h3 Color
+          .row
+            .col-12.col-sm-6.col-xl-3
+              .system-color.color-bg-red.color-text-black
+                span Red #CF303F
+            .col-12.col-sm-6.col-xl-3
+              .system-color.color-bg-red-light.color-text-black
+                span Red - Light #E84C5C
+            .col-12.col-sm-6.col-xl-3
+              .system-color.color-bg-red-dark.color-text-black
+                span Red - Dark #99323E
+            .col-12.col-sm-6.col-xl-3
+              .system-color.color-bg-red-darker.color-text-black
+                span Red - Darker #73262F
+            .col-12.col-sm-6.col-xl-3
+              .system-color.color-bg-black.color-text-white
+                span Black #1D1D21
+            .col-12.col-sm-6.col-xl-3
+              .system-color.color-bg-coal.color-text-white
+                span Coal #28282e
+            .col-12.col-sm-6.col-xl-3
+              .system-color.color-bg-slate.color-text-white
+                span Slate #403E47
+            .col-12.col-sm-6.col-xl-3
+              .system-color.color-bg-white.color-text-black
+                span White #FFFFFF
+            .col-12.col-sm-6.col-xl-3
+              .system-color.color-bg-gold.color-text-black
+                span Gold #BF891D
+            .col-12.col-sm-6.col-xl-3
+              .system-color.color-bg-gold-light.color-text-black
+                span Gold - Light #E2AC40
+            .col-12.col-sm-6.col-xl-3
+              .system-color.color-bg-gold-dark.color-text-black
+                span Gold - Dark #A67719
+        #type.site-content
+          h3 Typography
+          .row
+            .col-12.col-md-7.col-lg-8
+              .site-content.margin-top-medium.margin-bottom-large
+                h1.margin-bottom-none Aa Bb Cc
+                label Heading 1
+              .site-content.margin-top-medium.margin-bottom-large
+                h2.margin-bottom-none Aa Bb Cc Dd
+                label Heading 2
+              .site-content.margin-top-medium.margin-bottom-large
+                h3.margin-bottom-none Aa Bb Cc Dd Ee
+                label Heading 3
+              .site-content.margin-top-medium.margin-bottom-large
+                h4.margin-bottom-small Aa Bb Cc Dd Ee Ff
+                label Heading 4
+              .site-content.margin-top-medium.margin-bottom-large
+                h5.margin-bottom-small Aa Bb Cc Dd Ee Ff Gg
+                label Heading 5
+            .col-12.col-md-5.col-lg-4
+              .site-content.margin-top-medium.margin-bottom-large
+                p.margin-bottom-medium Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget imperdiet odio, non porttitor diam. Cras luctus pellentesque nibh, a porta odio pulvinar quis.
+                label Paragraph
+        #layout.site-content
+          h3 Layout
+          .row
+            .col-12
+              .site-content
+                .system-layout
+                  .system-layout-space-small
+                    span Space Small - 1rem
+                  .system-layout-space-medium
+                    span Space Medium - 2rem
+                  .system-layout-space-large
+                    span Space Large - 4rem
+                  .system-layout-space-xl
+                    span Space Xl - 8rem
+                  .system-layout-space-xxl
+                    span Space XXL - 16rem
+            
+        .site-content
+          h2 Components
+        #buttons.site-content
+          h3 Buttons
+          .row
+            .col-12.col-sm-6.col-xl-3
+              .site-content.margin-bottom-small
+                button.comp-btn-red Button Red
+            .col-12.col-sm-6.col-xl-3
+              .site-content.margin-bottom-small
+                button.comp-btn-grey Button Grey
+            .col-12.col-sm-6.col-xl-3
+              .site-content.margin-bottom-small
+                button.comp-btn-white Button White
+            .col-12.col-sm-6.col-xl-3
+              .site-content.margin-bottom-small
+                button.comp-btn-black Button Black
+        #cards.site-content
+          h3 Cards
+          .row
+            .col-12.col-sm-12
+              .site-content.margin-bottom-small
+                .card-set
+                  .card
+                    header.card-header
+                      h3 Large Card
+                    .card-content
+                      p.large Some very large copy
+                      .card-content-cta
+                        == link_to "Large Link", "#", class: "card-cta-link large link-white"
+                  .card
+                    header.card-header
+                      h4 Normal Card
+                    .card-content
+                      p Some very normal copy
+                      .card-content-cta
+                        == link_to "Normal Link", "#", class: "card-cta-link link-white"
+        #forms.site-content
+          h3 Forms
+          .row
+            .col-12.col-sm-6
+              .site-content.margin-bottom-large
+                .form
+                  .form-fieldset
+                    label.form-label Input Label
+                    input.form-input type="text" placeholder="Input Text"
+            .col-12.col-sm-6
+              .site-content.margin-bottom-large
+                .form
+                  .form-fieldset
+                    label.form-label Select
+                    .form-fieldset-select
+                      select.form-select
+                        option First Option
+                        option Second Option
+                        option Third Option
+            .col-12.col-sm-6
+              .site-content.margin-bottom-large
+                .form.form-error
+                  .form-fieldset
+                    label.form-label Input Label - Error
+                    input.form-input type="text" placeholder="Input Text"
+            .col-12.col-sm-6
+              .site-content.margin-bottom-large
+                .form.form-error
+                  .form-fieldset
+                    label.form-label Select - Error
+                    .form-fieldset-select
+                      select.form-select
+                        option First Option
+                        option Second Option
+                        option Third Option
+            .col-12
+              .site-content.margin-bottom-small
+                .form
+                  .form-fieldset
+                    label.form-label Combo
+                    .form-fieldset-combo
+                      input.form-input type="text" placeholder="Name"
+                      input.form-input type="email" placeholder="Email"
+                      input.form-btn.comp-btn-grey.newsletter-submit type="submit" value="Submit"
+        #lists.site-content
+          h3 Lists
+          .row
+            .col-12.col-sm-6
+              .site-content.margin-bottom-large
+                h4 Unordered List
+                ul
+                  li Item One
+                  li Item Two
+                  li Item Three
+            .col-12.col-sm-6
+              .site-content.margin-bottom-large
+                h4 Ordered List
+                ol
+                  li Item One
+                  li Item Two
+                  li Item Three
+            .col-12.col-sm-5
+              .site-content.margin-bottom-large
+                h4 Bordered List
+                ul.list-bordered
+                  li Item One
+                  li Item Two
+                  li Item Three
+            .col-12.col-sm-6.offset-sm-1
+              .site-content.margin-bottom-large
+                h4 Debulleted List
+                ul.no-list
+                  li Item One
+                  li Item Two
+                  li Item Three

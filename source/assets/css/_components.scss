@@ -15,6 +15,9 @@
       text-decoration: none;
       @include transition(background-color);
       -webkit-appearance: none;
+      width: 100%;
+    }
+    .comp-btn-width-auto {
       width: auto;
     }
     .comp-btn-large {
@@ -26,7 +29,7 @@
       background: $color-black;
       color: $color-white;
       &:hover {
-        background: $color-white-dark;
+        background: $color-coal;
       }
     }
     .comp-btn-gold {
@@ -66,6 +69,15 @@
   // Lists
       ul {
         list-style: disc;
+        margin: 0 0 20px 20px;
+        li {
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      ol {
+        list-style: decimal;
         margin: 0 0 20px 20px;
         li {
           &:last-child {
@@ -168,7 +180,7 @@
           & > * {
             margin-bottom: 0;
             margin-right: 1px;
-            width: auto;
+            width: auto !important;
             &:last-child {
               margin-right: 0;
             }
@@ -181,11 +193,13 @@
           color: $color-grey-light;
           content: "\f0d7";
           font-family: "Font Awesome 5 Pro";
-          @extend .t-18;
+          @include font-size(18);
           font-weight: 900;
-          right: 30px;
+          height: 15px;
+          right: 10px;
+          line-height: 1;
           position: absolute;
-          top: 55px;
+          @include vertical-center;
           z-index: 10000;
         }
       }
@@ -211,28 +225,44 @@
         outline: none;
         padding: $space-1;
         -webkit-appearance: none;
+        width: 100%;
       }
       .form-label {
-        @extend .t-14;
-        color: $color-grey-light;
-        display: block;
-        font-weight: 700;
-        letter-spacing: .04em;
-        margin: 0;
-        text-transform: uppercase;
-        width: 100%;
+        margin: 0 0 3px 0;
       }
       .form-input, .form-select, .form-textarea {
         @extend .form-style;
       }
       .form-select {
         cursor: pointer;
+        position: relative;
       }
       .form-textarea {
         min-height: 200px;
       }
       .input::-webkit-contacts-auto-fill-button {
         background-color: $color-white !important;
+      }
+      &.form-error {
+        .form-fieldset {
+          position: relative;
+          &:after {
+            color: $color-red;
+            content: "\f06a";
+            font-family: "Font Awesome 5 Pro";
+            @include font-size(12);
+            font-weight: 900;
+            height: 10px;
+            right: 0;
+            line-height: 1;
+            position: absolute;
+            top: 1px;
+            z-index: 10000;
+          }
+          .form-input, .form-select {
+            box-shadow: inset 4px 4px 0 $color-red, inset -4px -4px 0 $color-red;
+          }
+        }
       }
     }
 
@@ -896,3 +926,49 @@
     margin: 0 0 $space-3 0;
     overflow: hidden;
   }
+
+  // System
+    .system-color {
+      align-items: center;
+      border-radius: 60px;
+      display: flex;
+      height: 60px;
+      margin: 0 0 $space-2;
+      padding: $space-2;
+      width: 100%;
+
+      span {
+        @extend .text-ui;
+      }
+    }
+    .system-layout {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      & > * {
+        background: $color-slate;
+        margin-bottom: $space-4;
+        position: relative;
+        width: 100%;
+      } 
+      span {
+        bottom: -25px;
+        @extend .text-ui;
+        position: absolute;
+      }
+      .system-layout-space-small {
+        height: $space-1;
+      }
+      .system-layout-space-medium {
+        height: $space-2;
+      }
+      .system-layout-space-large {
+        height: $space-3;
+      }
+      .system-layout-space-xl {
+        height: $space-4;
+      }
+      .system-layout-space-xxl {
+        height: $space-5;
+      }
+    }
