@@ -92,7 +92,7 @@
       filter: brightness(3);
     }
     a {
-      &:not(.comp-btn):not(.blog-headline):not(.project-box-action--link):not(.site-nav-link):not(.masthead-logo){
+      &:not(.btn):not(.blog-headline):not(.project-box-action--link):not(.site-nav-link):not(.masthead-logo){
         border-color: $color-white;
         &:hover {
           border-color: $color-white-dark;
@@ -158,6 +158,34 @@
   .theme-white {
     background: $color-white;
     color: $color-black;
+
+    .icon-bars {
+      span {
+        background: $color-gray;
+      }
+      &:before {
+        background: $color-gray;
+      }
+      &:after {
+        background: $color-gray;
+      }
+      &:hover {
+        &:before, &:after {
+          background: $color-black;
+        }
+        span {
+          background: $color-black;
+        }
+      }
+    }
+    &.menuOpen .icon-bars:hover {
+      &:before, &:after {
+        background: $color-white;
+      }
+      span {
+        background: $color-white;
+      }
+    }
 
     .site-masthead, .site-hero, .site-section {
       background: $color-white;

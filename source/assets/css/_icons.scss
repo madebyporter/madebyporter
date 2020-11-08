@@ -13,7 +13,8 @@
       background: $color-white;
       height: 4px;
       width: 30px;
-      visibility: visible;
+      opacity: 1;
+      @include transition();
     }
     &:before {
       background: $color-white;
@@ -44,7 +45,7 @@
         left: 0px;
       }
       span {
-        visibility: hidden;
+        opacity: 0;
       }
       &:after {
         transform: rotate(-45deg);

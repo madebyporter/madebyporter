@@ -10,8 +10,8 @@ proj:
   highlights:
     - highlight: 'Get more work done by organizing your projects'
     - highlight: 'Organize your tasks, projects &amp; goals'
-  url: https://www.notion.so/executebyporter/Execute-6f84033c55df4dcea7c05726fd81a564
-  cta: 'Download'
+  url: '/execute'
+  cta: 'Learn More'
 - name: 'Organics Alive Garden'
   shortname: organicsalive
   type: web
