@@ -158,7 +158,11 @@
   .theme-white {
     background: $color-white;
     color: $color-black;
-
+    .site-nav-link {
+      &:hover {
+        color: $color-coal;
+      }
+    }
     .icon-bars {
       span {
         background: $color-gray;
