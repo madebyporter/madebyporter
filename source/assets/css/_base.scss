@@ -32,11 +32,18 @@
     .projects, .services, .about, .journal, .now, .cases {
       @extend .theme-black;
     }
+
+    // White Theme
+    .execute {
+      @extend .theme-white;
+    }
   
   // Page Classes
-    .contact {
+    // Hide Site Partial Schedule
+    .contact, .execute {
       .site-partial-schedule {display: none;}
     }
+
   // Site
     .site-wrap {
       height: 100%;
@@ -67,9 +74,6 @@
     }
     .site-content {
       margin: 0 0 $space-4;
-      &:last-child {
-        margin-bottom: 0;
-      }
     }
     .site-header, .site-footer {
       position: relative;
@@ -663,7 +667,7 @@
     .sub-box-submit {
       border: 0;
       cursor: pointer;
-      @extend .comp-btn;
+      @extend .btn;
       @include font-size(24);
       height: 72px;
       outline: none;

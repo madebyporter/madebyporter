@@ -21,11 +21,20 @@ js.main = {
   init: function () {
     this.linksExternal();
     this.mobileMenu();
+    this.jsFeatures();
     // this.waypointsNav();
   },
 
   // Keep this shit in ABC Order
-
+  jsFeatures: function () {
+    var target = $('.js-features img');
+    $('.js-features-list li').on('click', function(){
+      var c = $(this).attr('class');
+      console.log(c);
+      target.removeClass('js-features-show');
+      $('img.'+c).addClass('js-features-show');
+    });
+  },
   linksExternal: function () {
     $.expr[':'].external = function (a) {
         var PATTERN_FOR_EXTERNAL_URLS = /^(\w+:)?\/\//;
