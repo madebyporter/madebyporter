@@ -485,6 +485,15 @@
       margin-bottom: 0;
     }
 
+    .project-label {
+      margin: 0 0 $space-1;
+      @media (min-width: $mq-tablet) {
+        margin: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+    }
     .project-box {
       background: $color-white;
       @include flexbox;
@@ -985,7 +994,7 @@
       position: relative;
       width: 100%;
       min-height: 172px;
-      height: 100%;
+      padding-bottom: 56%;
       & > * {
         left: 0;
         opacity: 0;

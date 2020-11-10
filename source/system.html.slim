@@ -9,24 +9,17 @@ section.site-block.theme-black
       .col-12.col-lg-3
         .site-content.margin-bottom-xl
           h4 Tokens
-          ul.list-bordered
-            li
-              a href="#color" Color
-            li
-              a href="#type" Typography
-            li
-              a href="#layout" Layout
+          .site-nav-subnav.list-bordered
+              a.site-nav-subnav-link href="#color" Color
+              a.site-nav-subnav-link href="#type" Typography
+              a.site-nav-subnav-link href="#layout" Layout
             
           h4 Components
-          ul.list-bordered
-            li
-              a href="#buttons" Buttons
-            li
-              a href="#cards" Cards
-            li
-              a href="#forms" Forms
-            li
-              a href="#lists" Lists
+          .site-nav-subnav.list-bordered
+              a.site-nav-subnav-link href="#buttons" Buttons
+              a.site-nav-subnav-link href="#cards" Cards
+              a.site-nav-subnav-link href="#forms" Forms
+              a.site-nav-subnav-link href="#lists" Lists
       .col-12.col-lg-8.offset-lg-1
         .site-content
           h2 Tokens
@@ -89,6 +82,12 @@ section.site-block.theme-black
               .site-content.margin-top-medium.margin-bottom-large
                 p.margin-bottom-medium Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget imperdiet odio, non porttitor diam. Cras luctus pellentesque nibh, a porta odio pulvinar quis.
                 label Paragraph
+              .site-content.margin-top-medium.margin-bottom-large
+                p.margin-bottom-none
+                  a.border-none style="display: inline-block" href="#" Default Link
+                p.margin-bottom-medium
+                  a style="display: inline-block" href="#" Underlined Link
+                label Links
         #layout.site-content
           h3 Layout
           .row
