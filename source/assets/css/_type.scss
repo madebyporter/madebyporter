@@ -1,8 +1,13 @@
 // _type.scss
+  html {
+    font-size: 62.5%;
+  }
   body {
     @include font-size(12);
     font-family: $font-secondary;
     line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     @media (min-width: $mq-tablet) {
       @include font-size(12);
     }
