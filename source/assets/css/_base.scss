@@ -14,6 +14,12 @@
     &.overflow {
       overflow: hidden;
     }
+    ::selection {
+      background: $color-red-light; /* WebKit/Blink Browsers */
+    }
+    ::-moz-selection {
+      background: $color-red-light; /* Gecko Browsers */
+    }
   }
 
   // Theme

@@ -1,0 +1,662 @@
+---
+
+title: "Design System: Typography"
+date: 2020-11-19 02:13 UTC
+tags: Systems
+type: lead
+topic: systems
+thumbnail_image:
+---
+
+.site-blog-post-content.justify-center
+  p.xl 2020 has been a crazy year so far. What has been great, are the set of tools available for people to manage their design, code and business assets. Here's a feature set of tools I use on a weekly basis.
+.site-blog-post-content.full-bleed
+  .container-fluid
+    .row
+      .col-12.col-lg-3
+        .site-content.margin-bottom-xl
+          h4 System
+          .site-nav-subnav.list-bordered
+            a.site-nav-subnav-link href="#variables" Variables
+            a.site-nav-subnav-link href="#mixins" Mixins
+            a.site-nav-subnav-link href="#size-system" Size System
+            a.site-nav-subnav-link href="#global" Global
+            a.site-nav-subnav-link href="#classes" Classes
+            a.site-nav-subnav-link href="#html-tags" HTML Tags
+            a.site-nav-subnav-link href="#full-system" Full System
+      .col-12.col-lg-8.offset-lg-1
+        #variables.site-content
+          .row
+            .col-12
+              .site-content.margin-bottom-small
+                h3 Variables
+            .col-12
+              pre data-src="../assets/vendor/js/j03-toolbar.js"
+                code.language-scss
+                  |
+                    // Variables
+                      // Font Family
+                        $font-family-header: Helvetica;
+                        $font-family-body: Times New Roman;
+
+                      // Line Height
+                        $font-lineheight-small: 1.1;
+                        $font-lineheight-normal: 1.3;
+                        $font-lineheight-large: 1.5;
+                      
+                      // Font Weight
+                        $font-weight-light: 300;
+                        $font-weight-normal: 400;
+                        $font-weight-bold: 700;
+
+                      // Media Queries @media (min-width: $mq-tablet) {}
+                        $mq-ip5: 321px;
+                        $mq-ip6: 375px;
+                        $mq-ip6p: 414px;
+                        $mq-phonexl: 576px;
+                        $mq-tablet: 768px;
+                        $mq-laptop: 992px;
+                        $mq-desktop: 1200px;
+                        $mq-wide: 1400px;
+        
+        #mixins.site-content
+          .row
+            .col-12
+              .site-content.margin-bottom-small
+                h3 Mixins
+            .col-12
+              pre data-src="../assets/vendor/js/j03-toolbar.js"
+                code.language-scss
+                  |
+                    // Mixins
+                      @mixin font-size($sizeValue: 16) {
+                        font-size: $sizeValue + px;
+                        font-size: ($sizeValue / 10) + rem;
+                      }
+
+        #size-system.site-content
+          .row
+            .col-12
+              .site-content.margin-bottom-small
+                h3 Size System
+            .col-12
+              pre data-src="../assets/vendor/js/j03-toolbar.js"
+                code.language-scss
+                  |
+                    // Size System
+                      .t-96 {
+                        @include font-size(81);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(96);
+                        }
+                      }
+                      .t-81 {
+                        @include font-size(72);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(81);
+                        }
+                      }
+                      .t-72 {
+                        @include font-size(64);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(72);
+                        }
+                      }
+                      .t-64 {
+                        @include font-size(56);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(64);
+                        }
+                      }
+                      .t-56 {
+                        @include font-size(48);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(56);
+                        }
+                      }
+                      .t-48 {
+                        @include font-size(36);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(48);
+                        }
+                      }
+                      .t-36 {
+                        @include font-size(32);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(36);
+                        }
+                      }
+                      .t-32 {
+                        @include font-size(28);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(32);
+                        }
+                      }
+                      .t-28 {
+                        @include font-size(24);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(28);
+                        }
+                      }
+                      .t-24 {
+                        @include font-size(18);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(24);
+                        }
+                      }
+                      .t-18 {
+                        @include font-size(16);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(18);
+                        }
+                      }
+                      .t-16 {
+                        @include font-size(14);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(16);
+                        }
+                      }
+                      .t-14 {
+                        @include font-size(12);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(14);
+                        }
+                      }
+                      .t-12 {
+                        @include font-size(10);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(12);
+                        }
+                      }
+                      .t-10 {
+                        @include font-size(8);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(10);
+                        }
+                      }
+
+        #global.site-content
+          .row
+            .col-12
+              .site-content.margin-bottom-small
+                h3 Global
+            .col-12
+              pre data-src="../assets/vendor/js/j03-toolbar.js"
+                code.language-scss
+                  |
+                    // Global
+                      html {
+                        font-size: 62.5%;
+                      }
+                      body {
+                        font-family: $font-secondary;
+                        @extend .t-18;
+                        line-height: $font-lineheight-normal;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                      }
+
+        #classes.site-content
+          .row
+            .col-12
+              .site-content.margin-bottom-small
+                h3 Classes
+            .col-12
+              pre data-src="../assets/vendor/js/j03-toolbar.js"
+                code.language-scss
+                  |
+                    // Classes
+                      // Headers
+                        .header {
+                          line-height: $font-lineheight-small;
+                        }
+                        .h1 {
+                          @extend .header;
+                          @extend .t-56;
+                        }
+                        .h2 {
+                          @extend .header;
+                          @extend .t-48;
+                        }
+                        .h3 {
+                          @extend .header;
+                          @extend .t-36;
+                        }
+                        .h4 {
+                          @extend .header;
+                          @extend .t-24;
+                        }
+                        .h5 {
+                          @extend .header;
+                          @extend .t-21;
+                        }
+                        .h6 {
+                          @extend .header;
+                          @extend .t-18;
+                        }
+
+                      // Displays
+                        .display {
+                          line-height: $font-lineheight-small;
+                        }
+                        .d1 {
+                          @extend .display;
+                          @extend .t-96;
+                        }
+                        .d2 {
+                          @extend .display;
+                          @extend .t-81;
+                        }
+                        .d3 {
+                          @extend .display;
+                          @extend .t-72;
+                        }
+                        .d4 {
+                          @extend .display;
+                          @extend .t-64;
+                        }
+                        .d5 {
+                          @extend .display;
+                          @extend .t-56;
+                        }
+                        .d6 {
+                          @extend .display;
+                          @extend .t-48;
+                        }
+
+                      // Paragraphs
+                        .paragraph {
+                          @extend .t-18;
+                        }
+                        .p-small {
+                          @extend .paragraph;
+                          @extend .t-14;
+                        }
+                        .p-large {
+                          @extend .paragraph;
+                          @extend .t-24;
+                        }
+                      
+                      // User Interface
+                        .ui {
+                          @extend .t-14;
+                          letter-spacing: .005em;
+                          line-height: $font-lineheight-small;
+                          text-transform: uppercase;
+                        }
+                      
+                      // Nav
+                        .nav a {
+                          @extend .ui;
+                        }
+
+        #html-tags.site-content
+          .row
+            .col-12
+              .site-content.margin-bottom-small
+                h3 HTML Tags
+            .col-12
+              pre data-src="../assets/vendor/js/j03-toolbar.js"
+                code.language-scss
+                  |
+                    // HTML Tags
+                      // HTML Headers
+                        h1 {
+                          @extend .h1
+                        }
+                        h2 {
+                          @extend .h2
+                        }
+                        h3 {
+                          @extend .h3
+                        }
+                        h4 {
+                          @extend .h4
+                        }
+                        h5 {
+                          @extend .h5
+                        }
+                        h6 {
+                          @extend .h6
+                        }
+                      
+                      // HTML Paragraphs
+                        p {
+                          @extend .paragraph
+                        }
+                        p.small {
+                          @extend .p-small
+                        }
+                        p.large {
+                          @extend .p-large
+                        }
+                      
+                      // HTML Inline
+                        strong {
+                          font-weight: $font-weight-bold
+                        }
+                        em {
+                          font-style: oblique
+                        }
+                        s {
+                          text-decoration: line-through
+                        }
+                      
+                      // HTML Links
+                        a {
+                          text-decoration: none;
+                          &:hover {}
+                        }
+                      
+                      // HTML Lists
+                        ul, ol {
+                          li {
+                            @extend .paragraph;
+                          }
+                        }
+                      
+                      // HTML Labels
+                        label {
+                          @extend .ui;
+                        }
+                      
+                      // HTML Blockquote
+                        blockquote {
+                          @extend .p-large;
+                        }
+
+        #full-system.site-content
+          .row
+            .col-12
+              .site-content.margin-bottom-small
+                h3 Full System
+            .col-12
+              pre data-src="../assets/vendor/js/j03-toolbar.js"
+                code.language-scss
+                  |
+                    // Variables
+                      // Font Family
+                        $font-family-header: Helvetica;
+                        $font-family-body: Times New Roman;
+
+                      // Line Height
+                        $font-lineheight-small: 1.1;
+                        $font-lineheight-normal: 1.3;
+                        $font-lineheight-large: 1.5;
+                      
+                      // Font Weight
+                        $font-weight-light: 300;
+                        $font-weight-normal: 400;
+                        $font-weight-bold: 700;
+
+                      // Media Queries @media (min-width: $mq-tablet) {}
+                        $mq-ip5: 321px;
+                        $mq-ip6: 375px;
+                        $mq-ip6p: 414px;
+                        $mq-phonexl: 576px;
+                        $mq-tablet: 768px;
+                        $mq-laptop: 992px;
+                        $mq-desktop: 1200px;
+                        $mq-wide: 1400px;
+                    
+                    // Mixins
+                      @mixin font-size($sizeValue: 16) {
+                        font-size: $sizeValue + px;
+                        font-size: ($sizeValue / 10) + rem;
+                      }
+
+                    // Size System
+                      .t-96 {
+                        @include font-size(81);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(96);
+                        }
+                      }
+                      .t-81 {
+                        @include font-size(72);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(81);
+                        }
+                      }
+                      .t-72 {
+                        @include font-size(64);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(72);
+                        }
+                      }
+                      .t-64 {
+                        @include font-size(56);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(64);
+                        }
+                      }
+                      .t-56 {
+                        @include font-size(48);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(56);
+                        }
+                      }
+                      .t-48 {
+                        @include font-size(36);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(48);
+                        }
+                      }
+                      .t-36 {
+                        @include font-size(32);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(36);
+                        }
+                      }
+                      .t-32 {
+                        @include font-size(28);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(32);
+                        }
+                      }
+                      .t-28 {
+                        @include font-size(24);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(28);
+                        }
+                      }
+                      .t-24 {
+                        @include font-size(18);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(24);
+                        }
+                      }
+                      .t-18 {
+                        @include font-size(16);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(18);
+                        }
+                      }
+                      .t-16 {
+                        @include font-size(14);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(16);
+                        }
+                      }
+                      .t-14 {
+                        @include font-size(12);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(14);
+                        }
+                      }
+                      .t-12 {
+                        @include font-size(10);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(12);
+                        }
+                      }
+                      .t-10 {
+                        @include font-size(8);
+                        @media (min-width: $mq-tablet) {
+                          @include font-size(10);
+                        }
+                      }
+
+                    // Global
+                      html {
+                        font-size: 62.5%;
+                      }
+                      body {
+                        font-family: $font-secondary;
+                        @extend .t-18;
+                        line-height: $font-lineheight-normal;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                      }
+
+                    // Classes
+                      // Headers
+                        .header {
+                          line-height: $font-lineheight-small;
+                        }
+                        .h1 {
+                          @extend .header;
+                          @extend .t-56;
+                        }
+                        .h2 {
+                          @extend .header;
+                          @extend .t-48;
+                        }
+                        .h3 {
+                          @extend .header;
+                          @extend .t-36;
+                        }
+                        .h4 {
+                          @extend .header;
+                          @extend .t-24;
+                        }
+                        .h5 {
+                          @extend .header;
+                          @extend .t-21;
+                        }
+                        .h6 {
+                          @extend .header;
+                          @extend .t-18;
+                        }
+
+                      // Displays
+                        .display {
+                          line-height: $font-lineheight-small;
+                        }
+                        .d1 {
+                          @extend .display;
+                          @extend .t-96;
+                        }
+                        .d2 {
+                          @extend .display;
+                          @extend .t-81;
+                        }
+                        .d3 {
+                          @extend .display;
+                          @extend .t-72;
+                        }
+                        .d4 {
+                          @extend .display;
+                          @extend .t-64;
+                        }
+                        .d5 {
+                          @extend .display;
+                          @extend .t-56;
+                        }
+                        .d6 {
+                          @extend .display;
+                          @extend .t-48;
+                        }
+
+                      // Paragraphs
+                        .paragraph {
+                          @extend .t-18;
+                        }
+                        .p-small {
+                          @extend .paragraph;
+                          @extend .t-14;
+                        }
+                        .p-large {
+                          @extend .paragraph;
+                          @extend .t-24;
+                        }
+                      
+                      // User Interface
+                        .ui {
+                          @extend .t-14;
+                          letter-spacing: .005em;
+                          line-height: $font-lineheight-small;
+                          text-transform: uppercase;
+                        }
+                      
+                      // Nav
+                        .nav a {
+                          @extend .ui;
+                        }
+
+                    // HTML Tags
+                      // HTML Headers
+                        h1 {
+                          @extend .h1
+                        }
+                        h2 {
+                          @extend .h2
+                        }
+                        h3 {
+                          @extend .h3
+                        }
+                        h4 {
+                          @extend .h4
+                        }
+                        h5 {
+                          @extend .h5
+                        }
+                        h6 {
+                          @extend .h6
+                        }
+                      
+                      // HTML Paragraphs
+                        p {
+                          @extend .paragraph
+                        }
+                        p.small {
+                          @extend .p-small
+                        }
+                        p.large {
+                          @extend .p-large
+                        }
+                      
+                      // HTML Inline
+                        strong {
+                          font-weight: $font-weight-bold
+                        }
+                        em {
+                          font-style: oblique
+                        }
+                        s {
+                          text-decoration: line-through
+                        }
+                      
+                      // HTML Links
+                        a {
+                          text-decoration: none;
+                          &:hover {}
+                        }
+                      
+                      // HTML Lists
+                        ul, ol {
+                          li {
+                            @extend .paragraph;
+                          }
+                        }
+                      
+                      // HTML Labels
+                        label {
+                          @extend .ui;
+                        }
+                      
+                      // HTML Blockquote
+                        blockquote {
+                          @extend .p-large;
+                        }
+
