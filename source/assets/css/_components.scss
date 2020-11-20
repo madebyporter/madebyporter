@@ -1015,3 +1015,63 @@
         }
       }
     }
+  // Pre Code Component
+    :not(pre) > code[class*="language-"], pre[class*="language-"] {
+      background: $color-coal;
+      padding-left: $space-3;
+    }
+    code[class*="language-"], pre[class*="language-"] { 
+      color: $color-gray;
+      & * {
+        @extend .t-16;
+        font-family: $font-code;
+        text-shadow: 0 0;
+      }
+      ::selection {
+        background: $color-red-light; /* WebKit/Blink Browsers */
+      }
+      ::-moz-selection {
+        background: $color-red-light; /* Gecko Browsers */
+      }
+    }
+    .token.comment, .token.prolog, .token.doctype, .token.cdata {
+      color: $color-gray-dark;
+    }
+    .token.regex, .token.important, .token.variable, .token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string {
+      background: none;
+      color: $color-gold;
+    }
+    .token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
+      background: none;
+      color: $color-gold;
+    }
+    .token.property, .token.tag, .token.boolean, .token.number, .token.constant, .token.symbol, .token.deleted, .token.function, .token.class-name {
+      background: none;
+      color: $color-gray-light;
+    }
+    .token.atrule, .token.attr-value, .token.keyword, .token.rule {
+      color: #07a;
+    }
+    .code-toolbar {
+      position: relative;
+      .toolbar {
+        position: absolute;
+        top: $space-1;
+        right: $space-1;
+        button {
+          background: transparent;
+          border: 1px solid $color-gray-dark;
+          border-radius: 20px;
+          color: $color-gray-dark;
+          cursor: pointer;
+          font-family: $font-secondary;
+          outline: none;
+          @extend .text-ui;
+          padding: $space-1 $space-2;
+          &:hover {
+            border: 1px solid $color-gray;
+            color: $color-gray;
+          }
+        }
+      }
+    }

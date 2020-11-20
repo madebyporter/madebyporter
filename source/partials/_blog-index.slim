@@ -1,6 +1,6 @@
 .blog-list
   .row.no-gutters
-    - blog.articles[0...5].each do |article|
+    - blog.articles.each do |article|
       .col-12.col-lg-6
         = link_to article.url, class: "blog-list-link" do
           .blog-list-ele class="#{article.data.type}"
