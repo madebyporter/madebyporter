@@ -1022,6 +1022,10 @@
     }
     code[class*="language-"], pre[class*="language-"] { 
       color: $color-gray;
+      white-space: pre-wrap;
+      padding-top: $space-3;
+      overflow-y: auto;
+      overflow-x: hidden;
       & * {
         @extend .t-16;
         font-family: $font-code;
