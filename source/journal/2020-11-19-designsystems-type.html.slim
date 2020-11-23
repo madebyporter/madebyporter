@@ -8,8 +8,16 @@ topic: systems
 thumbnail_image:
 ---
 
-.site-blog-post-content.justify-center
-  p.xl 2020 has been a crazy year so far. What has been great, are the set of tools available for people to manage their design, code and business assets. Here's a feature set of tools I use on a weekly basis.
+.site-blog-post-content.full-bleed
+  .container-fluid
+    .row
+      .col-12.col-lg-3
+        .site-content.margin-bottom-medium
+          = image_tag "blog/guides/typography.jpg", :alt => "Typography Guide", :class => ""
+      .col-12.col-lg-8.offset-lg-1
+        p.large Welcome to the first of my design system series: Typography. Type is important when it comes to usability and getting your message across. You will need to keep your typography consistent across all platforms: web, mobile, video &amp; print. 
+        
+        p.large For this guide, I want to cover web &amp; mobile type systems. This guide is for front-end and back-end developers or engineers, so you don't have to create it yourself.
 .site-blog-post-content.full-bleed
   .container-fluid
     .row
@@ -30,13 +38,16 @@ thumbnail_image:
             .col-12
               .site-content.margin-bottom-small
                 h3 Variables
+                p To setup the system, I've created variables for elements that will be re-used. This includes font families, line height &amp; font weight. I will add more to this system when needed. 
+                
+                p Also included from my layout variables are media queries. I use them in the type system to change the type size based on screen size. I use this in place of flexible font sizes tools, such as vw and % because its easier to control.
             .col-12
               pre data-src="../assets/vendor/js/j03-toolbar.js"
                 code.language-scss
                   |
                     // Variables
                       // Font Family
-                        $font-family-header: Helvetica;
+                        $font-family-heading: Helvetica;
                         $font-family-body: Times New Roman;
 
                       // Line Height
@@ -49,7 +60,8 @@ thumbnail_image:
                         $font-weight-normal: 400;
                         $font-weight-bold: 700;
 
-                      // Media Queries @media (min-width: $mq-tablet) {}
+                      // Media Queries
+                        // Usage: @media (min-width: $mq-tablet) {code};
                         $mq-ip5: 321px;
                         $mq-ip6: 375px;
                         $mq-ip6p: 414px;
@@ -64,26 +76,33 @@ thumbnail_image:
             .col-12
               .site-content.margin-bottom-small
                 h3 Mixins
+                p My lone mixin for my type system. This mixin allows me to use REM font sizing when it can be supported. For unsupported browsers, it switches to pixels (PX).
             .col-12
               pre data-src="../assets/vendor/js/j03-toolbar.js"
                 code.language-scss
                   |
-                    // Mixins
+                    // Mixins 
+                      // Usage: @include font-size(16);
                       @mixin font-size($sizeValue: 16) {
                         font-size: $sizeValue + px;
                         font-size: ($sizeValue / 10) + rem;
                       }
+
 
         #size-system.site-content
           .row
             .col-12
               .site-content.margin-bottom-small
                 h3 Size System
+                p Here's where the mixin and the media queries are put to work. For my type system, I wanted to simplify how I handle font sizes across screen sizes. It's not perfect and you can add more media queries to handle specific sizes. I wanted to cover the main type sizes you usually see in Photoshop or Figma.
+
+                p To use this system, just add @extend .t-xx; to your line of code. The downside to this that you cannot use @extend inside a media query. So this will keep you constrained to simple font sizes for your elements, which is a good thing in the long run.
             .col-12
               pre data-src="../assets/vendor/js/j03-toolbar.js"
                 code.language-scss
                   |
                     // Size System
+                      // Usage: @extend .t-96;
                       .t-96 {
                         @include font-size(81);
                         @media (min-width: $mq-tablet) {
@@ -180,6 +199,7 @@ thumbnail_image:
             .col-12
               .site-content.margin-bottom-small
                 h3 Global
+                p The settings within the HTML and BODY tags set the precident for the rest of the type settings. The font-size of 62.5% in the HTML tag helps tell the browser to use "font-size:10px", but using percentages. This allows people who have vision impairments to bump the font size up. Then you do another reset at the body level, which for me, I use 18px font sizes.
             .col-12
               pre data-src="../assets/vendor/js/j03-toolbar.js"
                 code.language-scss
@@ -201,6 +221,7 @@ thumbnail_image:
             .col-12
               .site-content.margin-bottom-small
                 h3 Classes
+                p For setting up my type features, I put everything in classes. It allows for me to reuse different settings outside the HTML tags. For example, if I want to use an H2 size setting outside the H2 HTML tag, then I can use @extend .h2; or add the .h2 class within my HTML.
             .col-12
               pre data-src="../assets/vendor/js/j03-toolbar.js"
                 code.language-scss
@@ -208,7 +229,7 @@ thumbnail_image:
                     // Classes
                       // Headers
                         .header {
-                          font-family: $font-family-header;
+                          font-family: $font-family-heading;
                           line-height: $font-lineheight-small;
                         }
                         .h1 {
@@ -238,7 +259,7 @@ thumbnail_image:
 
                       // Displays
                         .display {
-                          font-family: $font-family-header;
+                          font-family: $font-family-heading;
                           line-height: $font-lineheight-small;
                         }
                         .d1 {
@@ -256,14 +277,6 @@ thumbnail_image:
                         .d4 {
                           @extend .display;
                           @extend .t-64;
-                        }
-                        .d5 {
-                          @extend .display;
-                          @extend .t-56;
-                        }
-                        .d6 {
-                          @extend .display;
-                          @extend .t-48;
                         }
 
                       // Paragraphs
@@ -297,6 +310,7 @@ thumbnail_image:
             .col-12
               .site-content.margin-bottom-small
                 h3 HTML Tags
+                p For my actual HTML tag styles, I extend the matching classes for each tag. If needed, I can add extra styles, such as margins and paddings, which I will cover in a later guide. For user interface elements, I have a class set of .text-ui for things like labels, navigation or any non-copy text elements.
             .col-12
               pre data-src="../assets/vendor/js/j03-toolbar.js"
                 code.language-scss
@@ -378,7 +392,7 @@ thumbnail_image:
                   |
                     // Variables
                       // Font Family
-                        $font-family-header: Helvetica;
+                        $font-family-heading: Helvetica;
                         $font-family-body: Times New Roman;
 
                       // Line Height
@@ -391,7 +405,8 @@ thumbnail_image:
                         $font-weight-normal: 400;
                         $font-weight-bold: 700;
 
-                      // Media Queries @media (min-width: $mq-tablet) {}
+                      // Media Queries 
+                        // Usage: @media (min-width: $mq-tablet) {code};
                         $mq-ip5: 321px;
                         $mq-ip6: 375px;
                         $mq-ip6p: 414px;
@@ -402,12 +417,14 @@ thumbnail_image:
                         $mq-wide: 1400px;
                     
                     // Mixins
+                      // Usage: @include font-size(16);
                       @mixin font-size($sizeValue: 16) {
                         font-size: $sizeValue + px;
                         font-size: ($sizeValue / 10) + rem;
                       }
 
                     // Size System
+                      // Usage: @extend .t-96;
                       .t-96 {
                         @include font-size(81);
                         @media (min-width: $mq-tablet) {
@@ -514,7 +531,7 @@ thumbnail_image:
                     // Classes
                       // Headers
                         .header {
-                          font-family: $font-family-header;
+                          font-family: $font-family-heading;
                           line-height: $font-lineheight-small;
                         }
                         .h1 {
@@ -544,7 +561,7 @@ thumbnail_image:
 
                       // Displays
                         .display {
-                          font-family: $font-family-header;
+                          font-family: $font-family-heading;
                           line-height: $font-lineheight-small;
                         }
                         .d1 {
@@ -562,14 +579,6 @@ thumbnail_image:
                         .d4 {
                           @extend .display;
                           @extend .t-64;
-                        }
-                        .d5 {
-                          @extend .display;
-                          @extend .t-56;
-                        }
-                        .d6 {
-                          @extend .display;
-                          @extend .t-48;
                         }
 
                       // Paragraphs
