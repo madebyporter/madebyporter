@@ -1,83 +1,83 @@
 // Classes
-    // Headers
-      .header {
-        font-family: $font-family-heading;
-        line-height: $font-lineheight-small;
-      }
-      .h1 {
-        @extend .header;
-        @extend .t-56;
-      }
-      .h2 {
-        @extend .header;
-        @extend .t-48;
-      }
-      .h3 {
-        @extend .header;
-        @extend .t-36;
-      }
-      .h4 {
-        @extend .header;
-        @extend .t-24;
-      }
-      .h5 {
-        @extend .header;
-        @extend .t-21;
-      }
-      .h6 {
-        @extend .header;
-        @extend .t-16;
-      }
+  // Headers
+  .header {
+    font-family: $font-family-heading;
+    line-height: $font-lineheight-small;
+  }
+  .h1 {
+    @extend .header;
+    @extend .t-56;
+  }
+  .h2 {
+    @extend .header;
+    @extend .t-48;
+  }
+  .h3 {
+    @extend .header;
+    @extend .t-36;
+  }
+  .h4 {
+    @extend .header;
+    @extend .t-24;
+  }
+  .h5 {
+    @extend .header;
+    @extend .t-21;
+  }
+  .h6 {
+    @extend .header;
+    @extend .t-16;
+  }
 
-    // Displays
-      .display {
-        font-family: $font-family-heading;
-        line-height: $font-lineheight-small;
-      }
-      .d1 {
-        @extend .display;
-        @extend .t-96;
-      }
-      .d2 {
-        @extend .display;
-        @extend .t-81;
-      }
-      .d3 {
-        @extend .display;
-        @extend .t-72;
-      }
-      .d4 {
-        @extend .display;
-        @extend .t-64;
-      }
+  // Displays
+  .display {
+    font-family: $font-family-heading;
+    line-height: $font-lineheight-small;
+  }
+  .d1 {
+    @extend .display;
+    @extend .t-96;
+  }
+  .d2 {
+    @extend .display;
+    @extend .t-81;
+  }
+  .d3 {
+    @extend .display;
+    @extend .t-72;
+  }
+  .d4 {
+    @extend .display;
+    @extend .t-64;
+  }
 
-    // Paragraphs
-      .paragraph {
-        font-family: $font-family-body;
-      }
-      .p-normal {
-        @extend .paragraph;
-        @extend .t-18;
-      }
-      .p-small {
-        @extend .paragraph;
-        @extend .t-14;
-      }
-      .p-large {
-        @extend .paragraph;
-        @extend .t-24;
-      }
-    
-    // User Interface
-      .ui {
-        @extend .t-14;
-        letter-spacing: .005em;
-        line-height: $font-lineheight-small;
-        text-transform: uppercase;
-      }
-    
-    // Nav
-      .nav a {
-        @extend .ui;
-      }
+  // Paragraphs
+  .paragraph {
+    font-family: $font-family-body;
+  }
+  .p-normal {
+    @extend .paragraph;
+    @extend .t-18;
+  }
+  .p-small {
+    @extend .paragraph;
+    @extend .t-14;
+  }
+  .p-large {
+    @extend .paragraph;
+    @extend .t-24;
+  }
+  
+  // User Interface
+  .ui {
+    @extend .t-14;
+    letter-spacing: .005em;
+    line-height: $font-lineheight-small;
+    text-transform: uppercase;
+  }
+  
+  // Nav
+  .nav a {
+    @extend .ui;
+  }
 

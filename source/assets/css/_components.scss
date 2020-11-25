@@ -1083,9 +1083,11 @@
   // Blog Design System
     .blog-design-system {
       opacity: 0.1;
+      padding-left: $space-1;
       position: relative;
       @include transition;
       &:hover {
+        padding-left: 0;
         opacity: 0.6;
       }
       &:after {
