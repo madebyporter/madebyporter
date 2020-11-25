@@ -1,0 +1,12 @@
+// Global
+  html {
+    font-size: 62.5%;
+  }
+  body {
+    font-family: $font-family-body;
+    @extend .t-18;
+    line-height: $font-lineheight-normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+

@@ -1,0 +1,7 @@
+// Mixins
+  // Usage: @include font-size(16);
+  @mixin font-size($sizeValue: 16) {
+    font-size: $sizeValue + px;
+    font-size: ($sizeValue / 10) + rem;
+  }
+

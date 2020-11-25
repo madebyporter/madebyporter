@@ -1,0 +1,26 @@
+// Variables
+  // Font Family
+    $font-family-heading: Helvetica;
+    $font-family-body: Times New Roman;
+
+  // Line Height
+    $font-lineheight-small: 1.1;
+    $font-lineheight-normal: 1.3;
+    $font-lineheight-large: 1.5;
+
+  // Font Weight
+    $font-weight-light: 300;
+    $font-weight-normal: 400;
+    $font-weight-bold: 700;
+
+  // Media Queries
+    // Usage: @media (min-width: $mq-tablet) {code};
+    $mq-ip5: 321px;
+    $mq-ip6: 375px;
+    $mq-ip6p: 414px;
+    $mq-phonexl: 576px;
+    $mq-tablet: 768px;
+    $mq-laptop: 992px;
+    $mq-desktop: 1200px;
+    $mq-wide: 1400px;
+

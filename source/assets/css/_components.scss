@@ -1079,3 +1079,306 @@
         }
       }
     }
+
+  // Blog Design System
+    .blog-design-system {
+      opacity: 0.1;
+      position: relative;
+      @include transition;
+      &:hover {
+        opacity: 0.6;
+      }
+      &:after {
+        background: linear-gradient(90deg, rgba(29,29,33,0) 0%, rgba(29,29,33,1) 100%);
+        content:"";
+        right: 0;
+        top: 0;
+        height: 100%;
+        position: absolute;
+        width: 60%;
+        z-index: 100;
+      }
+      // Variables
+        // Font Family
+          $font-family-heading: Helvetica, sans-serif;
+          $font-family-body: "Times New Roman", serif;
+
+        // Line Height
+          $font-lineheight-small: 1.1;
+          $font-lineheight-normal: 1.3;
+          $font-lineheight-large: 1.5;
+
+        // Font Weight
+          $font-weight-light: 300;
+          $font-weight-normal: 400;
+          $font-weight-bold: 700;
+
+        // Media Queries 
+          // Usage: @media (min-width: $mq-tablet) {code};
+          $mq-ip5: 321px;
+          $mq-ip6: 375px;
+          $mq-ip6p: 414px;
+          $mq-phonexl: 576px;
+          $mq-tablet: 768px;
+          $mq-laptop: 992px;
+          $mq-desktop: 1200px;
+          $mq-wide: 1400px;
+
+      // Mixins
+        // Usage: @include font-size(16);
+        @mixin font-size($sizeValue: 16) {
+          font-size: $sizeValue + px;
+          font-size: ($sizeValue / 10) + rem;
+        }
+
+      // Size System
+        // Usage: @extend .t-96;
+        .t-96 {
+          @include font-size(81);
+          @media (min-width: $mq-tablet) {
+            @include font-size(96);
+          }
+        }
+        .t-81 {
+          @include font-size(72);
+          @media (min-width: $mq-tablet) {
+            @include font-size(81);
+          }
+        }
+        .t-72 {
+          @include font-size(64);
+          @media (min-width: $mq-tablet) {
+            @include font-size(72);
+          }
+        }
+        .t-64 {
+          @include font-size(56);
+          @media (min-width: $mq-tablet) {
+            @include font-size(64);
+          }
+        }
+        .t-56 {
+          @include font-size(48);
+          @media (min-width: $mq-tablet) {
+            @include font-size(56);
+          }
+        }
+        .t-48 {
+          @include font-size(36);
+          @media (min-width: $mq-tablet) {
+            @include font-size(48);
+          }
+        }
+        .t-36 {
+          @include font-size(32);
+          @media (min-width: $mq-tablet) {
+            @include font-size(36);
+          }
+        }
+        .t-32 {
+          @include font-size(28);
+          @media (min-width: $mq-tablet) {
+            @include font-size(32);
+          }
+        }
+        .t-28 {
+          @include font-size(24);
+          @media (min-width: $mq-tablet) {
+            @include font-size(28);
+          }
+        }
+        .t-24 {
+          @include font-size(21);
+          @media (min-width: $mq-tablet) {
+            @include font-size(24);
+          }
+        }
+        .t-21 {
+          @include font-size(18);
+          @media (min-width: $mq-tablet) {
+            @include font-size(21);
+          }
+        }
+        .t-18 {
+          @include font-size(16);
+          @media (min-width: $mq-tablet) {
+            @include font-size(18);
+          }
+        }
+        .t-16 {
+          @include font-size(14);
+          @media (min-width: $mq-tablet) {
+            @include font-size(16);
+          }
+        }
+        .t-14 {
+          @include font-size(12);
+          @media (min-width: $mq-tablet) {
+            @include font-size(14);
+          }
+        }
+        .t-12 {
+          @include font-size(10);
+          @media (min-width: $mq-tablet) {
+            @include font-size(12);
+          }
+        }
+        .t-10 {
+          @include font-size(8);
+          @media (min-width: $mq-tablet) {
+            @include font-size(10);
+          }
+        }
+
+      // Classes
+        // Headers
+          .header {
+            font-family: $font-family-heading;
+            line-height: $font-lineheight-small;
+          }
+          .h1 {
+            @extend .header;
+            @extend .t-56;
+          }
+          .h2 {
+            @extend .header;
+            @extend .t-48;
+          }
+          .h3 {
+            @extend .header;
+            @extend .t-36;
+          }
+          .h4 {
+            @extend .header;
+            @extend .t-24;
+          }
+          .h5 {
+            @extend .header;
+            @extend .t-21;
+          }
+          .h6 {
+            @extend .header;
+            @extend .t-16;
+          }
+
+        // Displays
+          .display {
+            font-family: $font-family-heading;
+            line-height: $font-lineheight-small;
+          }
+          .d1 {
+            @extend .display;
+            @extend .t-96;
+          }
+          .d2 {
+            @extend .display;
+            @extend .t-81;
+          }
+          .d3 {
+            @extend .display;
+            @extend .t-72;
+          }
+          .d4 {
+            @extend .display;
+            @extend .t-64;
+          }
+
+        // Paragraphs
+          .paragraph {
+            font-family: $font-family-body;
+          }
+          .p-normal {
+            @extend .paragraph;
+            @extend .t-18;
+          }
+          .p-small {
+            @extend .paragraph;
+            @extend .t-14;
+          }
+          .p-large {
+            @extend .paragraph;
+            @extend .t-24;
+          }
+
+        // User Interface
+          .ui {
+            @extend .t-14;
+            letter-spacing: .005em;
+            line-height: $font-lineheight-small;
+            text-transform: uppercase;
+          }
+
+        // Nav
+          .nav a {
+            @extend .ui;
+          }
+
+      // HTML Tags
+        // HTML Headers
+          h1 {
+            @extend .h1;
+          }
+          h2 {
+            @extend .h2;
+          }
+          h3 {
+            @extend .h3;
+          }
+          h4 {
+            @extend .h4;
+          }
+          h5 {
+            @extend .h5;
+          }
+          h6 {
+            @extend .h6;
+          }
+          h2 + h3 {
+            padding-top: 0;
+          }
+
+        // HTML Paragraphs
+          p {
+            @extend .p-normal;
+          }
+          p.small {
+            @extend .p-small;
+          }
+          p.large {
+            @extend .p-large;
+          }
+
+        // HTML Inline
+          strong {
+            font-weight: $font-weight-bold
+          }
+          em {
+            font-style: oblique
+          }
+          s {
+            text-decoration: line-through
+          }
+
+        // HTML Links
+          a {
+            text-decoration: none;
+            &:hover {}
+          }
+
+        // HTML Lists
+          ul, ol {
+            li {
+              @extend .p-normal;
+            }
+          }
+
+        // HTML Labels
+          label {
+            @extend .ui;
+          }
+
+        // HTML Blockquote
+          blockquote {
+            @extend .p-large;
+          }
+    }

@@ -6,6 +6,7 @@ tags: Systems
 type: lead
 topic: systems
 thumbnail_image:
+
 ---
 
 .site-blog-post-content.full-bleed
@@ -18,7 +19,7 @@ thumbnail_image:
         p.large Welcome to the first of my design system series: Typography. Type is important when it comes to usability and getting your message across. You will need to keep your typography consistent across all platforms: web, mobile, video &amp; print. 
         
         p.large For this guide, I want to cover web &amp; mobile type systems. This guide is for front-end and back-end developers or engineers, so you don't have to create it yourself.
-.site-blog-post-content.full-bleed
+.site-blog-post-content.full-bleed.margin-bottom-none
   .container-fluid
     .row
       .col-12.col-lg-3
@@ -44,32 +45,7 @@ thumbnail_image:
             .col-12
               pre data-src="../assets/vendor/js/j03-toolbar.js"
                 code.language-scss
-                  |
-                    // Variables
-                      // Font Family
-                        $font-family-heading: Helvetica;
-                        $font-family-body: Times New Roman;
-
-                      // Line Height
-                        $font-lineheight-small: 1.1;
-                        $font-lineheight-normal: 1.3;
-                        $font-lineheight-large: 1.5;
-                      
-                      // Font Weight
-                        $font-weight-light: 300;
-                        $font-weight-normal: 400;
-                        $font-weight-bold: 700;
-
-                      // Media Queries
-                        // Usage: @media (min-width: $mq-tablet) {code};
-                        $mq-ip5: 321px;
-                        $mq-ip6: 375px;
-                        $mq-ip6p: 414px;
-                        $mq-phonexl: 576px;
-                        $mq-tablet: 768px;
-                        $mq-laptop: 992px;
-                        $mq-desktop: 1200px;
-                        $mq-wide: 1400px;
+                  = partial '/partials/blog-design-system/_type-variables.txt'
         
         #mixins.site-content
           .row
@@ -80,14 +56,7 @@ thumbnail_image:
             .col-12
               pre data-src="../assets/vendor/js/j03-toolbar.js"
                 code.language-scss
-                  |
-                    // Mixins 
-                      // Usage: @include font-size(16);
-                      @mixin font-size($sizeValue: 16) {
-                        font-size: $sizeValue + px;
-                        font-size: ($sizeValue / 10) + rem;
-                      }
-
+                  = partial '/partials/blog-design-system/_type-mixins.txt'
 
         #size-system.site-content
           .row
@@ -99,100 +68,8 @@ thumbnail_image:
                 p To use this system, just add @extend .t-xx; to your line of code. The downside to this that you cannot use @extend inside a media query. So this will keep you constrained to simple font sizes for your elements, which is a good thing in the long run.
             .col-12
               pre data-src="../assets/vendor/js/j03-toolbar.js"
-                code.language-scss
-                  |
-                    // Size System
-                      // Usage: @extend .t-96;
-                      .t-96 {
-                        @include font-size(81);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(96);
-                        }
-                      }
-                      .t-81 {
-                        @include font-size(72);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(81);
-                        }
-                      }
-                      .t-72 {
-                        @include font-size(64);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(72);
-                        }
-                      }
-                      .t-64 {
-                        @include font-size(56);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(64);
-                        }
-                      }
-                      .t-56 {
-                        @include font-size(48);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(56);
-                        }
-                      }
-                      .t-48 {
-                        @include font-size(36);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(48);
-                        }
-                      }
-                      .t-36 {
-                        @include font-size(32);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(36);
-                        }
-                      }
-                      .t-32 {
-                        @include font-size(28);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(32);
-                        }
-                      }
-                      .t-28 {
-                        @include font-size(24);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(28);
-                        }
-                      }
-                      .t-24 {
-                        @include font-size(18);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(24);
-                        }
-                      }
-                      .t-18 {
-                        @include font-size(16);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(18);
-                        }
-                      }
-                      .t-16 {
-                        @include font-size(14);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(16);
-                        }
-                      }
-                      .t-14 {
-                        @include font-size(12);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(14);
-                        }
-                      }
-                      .t-12 {
-                        @include font-size(10);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(12);
-                        }
-                      }
-                      .t-10 {
-                        @include font-size(8);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(10);
-                        }
-                      }
+                code.language-scss 
+                  = partial '/partials/blog-design-system/_type-sizesystem.txt'
 
         #global.site-content
           .row
@@ -203,18 +80,8 @@ thumbnail_image:
             .col-12
               pre data-src="../assets/vendor/js/j03-toolbar.js"
                 code.language-scss
-                  |
-                    // Global
-                      html {
-                        font-size: 62.5%;
-                      }
-                      body {
-                        font-family: $font-family-body;
-                        @extend .t-18;
-                        line-height: $font-lineheight-normal;
-                        -webkit-font-smoothing: antialiased;
-                        -moz-osx-font-smoothing: grayscale;
-                      }
+                  = partial '/partials/blog-design-system/_type-global.txt'
+
 
         #classes.site-content
           .row
@@ -225,451 +92,66 @@ thumbnail_image:
             .col-12
               pre data-src="../assets/vendor/js/j03-toolbar.js"
                 code.language-scss
-                  |
-                    // Classes
-                      // Headers
-                        .header {
-                          font-family: $font-family-heading;
-                          line-height: $font-lineheight-small;
-                        }
-                        .h1 {
-                          @extend .header;
-                          @extend .t-56;
-                        }
-                        .h2 {
-                          @extend .header;
-                          @extend .t-48;
-                        }
-                        .h3 {
-                          @extend .header;
-                          @extend .t-36;
-                        }
-                        .h4 {
-                          @extend .header;
-                          @extend .t-24;
-                        }
-                        .h5 {
-                          @extend .header;
-                          @extend .t-21;
-                        }
-                        .h6 {
-                          @extend .header;
-                          @extend .t-18;
-                        }
+                  = partial '/partials/blog-design-system/_type-classes.txt'
 
-                      // Displays
-                        .display {
-                          font-family: $font-family-heading;
-                          line-height: $font-lineheight-small;
-                        }
-                        .d1 {
-                          @extend .display;
-                          @extend .t-96;
-                        }
-                        .d2 {
-                          @extend .display;
-                          @extend .t-81;
-                        }
-                        .d3 {
-                          @extend .display;
-                          @extend .t-72;
-                        }
-                        .d4 {
-                          @extend .display;
-                          @extend .t-64;
-                        }
-
-                      // Paragraphs
-                        .paragraph {
-                          @extend .t-18;
-                        }
-                        .p-small {
-                          @extend .paragraph;
-                          @extend .t-14;
-                        }
-                        .p-large {
-                          @extend .paragraph;
-                          @extend .t-24;
-                        }
-                      
-                      // User Interface
-                        .ui {
-                          @extend .t-14;
-                          letter-spacing: .005em;
-                          line-height: $font-lineheight-small;
-                          text-transform: uppercase;
-                        }
-                      
-                      // Nav
-                        .nav a {
-                          @extend .ui;
-                        }
-
-        #html-tags.site-content
+#html-tags.site-blog-post-content.full-bleed.margin-bottom-none
+  .container-fluid
+    .row
+      .col-12.col-lg-8.offset-lg-4
+        .site-content.margin-bottom-small
+          h3 HTML Tags
+          p For my actual HTML tag styles, I extend the matching classes for each tag. If needed, I can add extra styles, such as margins and paddings, which I will cover in a later guide. For user interface elements, I have a class set of .text-ui for things like labels, navigation or any non-copy text elements.
+    .row
+      .col-12.col-lg-4
+        h4 Samples
+        .site-content.blog-design-system style="overflow: hidden;"
+          h1 Header 1
+          h2 Header 2
+          h3 Header 3
+          h4 Header 4
+          h5 Header 5
+          h6 Header 6
+          h1.d1 style="white-space: nowrap;" Display 1
+          h2.d2 style="white-space: nowrap;" Display 2
+          h3.d3 style="white-space: nowrap;" Display 3
+          h4.d4 style="white-space: nowrap;" Display 4
+          p.p-normal Paragraph Normal is a normal paragraph. It can be used for paragraphs that need to be a normal paragraph size. What a well sized paragraph.
+          p.p-small Paragraph Small is small paragraph. It can be used for paragraphs that need to be smaller than the normal paragraph. What a small paragraph.
+          p.p-large Paragraph Large is a large paragraph. It can be used for paragraphs that need to be larger than the normal paragraph. What a great paragraph it is.
+          p 
+            strong Strong Text
+          p
+            em Italic Text
+          p
+            s Strikethru Text
+          p
+            a href="#" Link
+          ul
+            li List Item 1
+            li List Item 2
+            li List Item 3
+          label Label
+          p
+            blockquote Blockquote
+      .col-12.col-lg-8
+        .site-content
           .row
             .col-12
-              .site-content.margin-bottom-small
-                h3 HTML Tags
-                p For my actual HTML tag styles, I extend the matching classes for each tag. If needed, I can add extra styles, such as margins and paddings, which I will cover in a later guide. For user interface elements, I have a class set of .text-ui for things like labels, navigation or any non-copy text elements.
-            .col-12
-              pre data-src="../assets/vendor/js/j03-toolbar.js"
-                code.language-scss
-                  |
-                    // HTML Tags
-                      // HTML Headers
-                        h1 {
-                          @extend .h1
-                        }
-                        h2 {
-                          @extend .h2
-                        }
-                        h3 {
-                          @extend .h3
-                        }
-                        h4 {
-                          @extend .h4
-                        }
-                        h5 {
-                          @extend .h5
-                        }
-                        h6 {
-                          @extend .h6
-                        }
-                      
-                      // HTML Paragraphs
-                        p {
-                          @extend .paragraph
-                        }
-                        p.small {
-                          @extend .p-small
-                        }
-                        p.large {
-                          @extend .p-large
-                        }
-                      
-                      // HTML Inline
-                        strong {
-                          font-weight: $font-weight-bold
-                        }
-                        em {
-                          font-style: oblique
-                        }
-                        s {
-                          text-decoration: line-through
-                        }
-                      
-                      // HTML Links
-                        a {
-                          text-decoration: none;
-                          &:hover {}
-                        }
-                      
-                      // HTML Lists
-                        ul, ol {
-                          li {
-                            @extend .paragraph;
-                          }
-                        }
-                      
-                      // HTML Labels
-                        label {
-                          @extend .ui;
-                        }
-                      
-                      // HTML Blockquote
-                        blockquote {
-                          @extend .p-large;
-                        }
-
-        #full-system.site-content.margin-bottom-none
-          .row
-            .col-12
-              .site-content.margin-bottom-small
-                h3 Full System
-            .col-12
-              pre data-src="../assets/vendor/js/j03-toolbar.js"
-                code.language-scss
-                  |
-                    // Variables
-                      // Font Family
-                        $font-family-heading: Helvetica;
-                        $font-family-body: Times New Roman;
-
-                      // Line Height
-                        $font-lineheight-small: 1.1;
-                        $font-lineheight-normal: 1.3;
-                        $font-lineheight-large: 1.5;
-                      
-                      // Font Weight
-                        $font-weight-light: 300;
-                        $font-weight-normal: 400;
-                        $font-weight-bold: 700;
-
-                      // Media Queries 
-                        // Usage: @media (min-width: $mq-tablet) {code};
-                        $mq-ip5: 321px;
-                        $mq-ip6: 375px;
-                        $mq-ip6p: 414px;
-                        $mq-phonexl: 576px;
-                        $mq-tablet: 768px;
-                        $mq-laptop: 992px;
-                        $mq-desktop: 1200px;
-                        $mq-wide: 1400px;
-                    
-                    // Mixins
-                      // Usage: @include font-size(16);
-                      @mixin font-size($sizeValue: 16) {
-                        font-size: $sizeValue + px;
-                        font-size: ($sizeValue / 10) + rem;
-                      }
-
-                    // Size System
-                      // Usage: @extend .t-96;
-                      .t-96 {
-                        @include font-size(81);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(96);
-                        }
-                      }
-                      .t-81 {
-                        @include font-size(72);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(81);
-                        }
-                      }
-                      .t-72 {
-                        @include font-size(64);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(72);
-                        }
-                      }
-                      .t-64 {
-                        @include font-size(56);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(64);
-                        }
-                      }
-                      .t-56 {
-                        @include font-size(48);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(56);
-                        }
-                      }
-                      .t-48 {
-                        @include font-size(36);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(48);
-                        }
-                      }
-                      .t-36 {
-                        @include font-size(32);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(36);
-                        }
-                      }
-                      .t-32 {
-                        @include font-size(28);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(32);
-                        }
-                      }
-                      .t-28 {
-                        @include font-size(24);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(28);
-                        }
-                      }
-                      .t-24 {
-                        @include font-size(18);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(24);
-                        }
-                      }
-                      .t-18 {
-                        @include font-size(16);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(18);
-                        }
-                      }
-                      .t-16 {
-                        @include font-size(14);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(16);
-                        }
-                      }
-                      .t-14 {
-                        @include font-size(12);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(14);
-                        }
-                      }
-                      .t-12 {
-                        @include font-size(10);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(12);
-                        }
-                      }
-                      .t-10 {
-                        @include font-size(8);
-                        @media (min-width: $mq-tablet) {
-                          @include font-size(10);
-                        }
-                      }
-
-                    // Global
-                      html {
-                        font-size: 62.5%;
-                      }
-                      body {
-                        font-family: $font-family-body;
-                        @extend .t-18;
-                        line-height: $font-lineheight-normal;
-                        -webkit-font-smoothing: antialiased;
-                        -moz-osx-font-smoothing: grayscale;
-                      }
-
-                    // Classes
-                      // Headers
-                        .header {
-                          font-family: $font-family-heading;
-                          line-height: $font-lineheight-small;
-                        }
-                        .h1 {
-                          @extend .header;
-                          @extend .t-56;
-                        }
-                        .h2 {
-                          @extend .header;
-                          @extend .t-48;
-                        }
-                        .h3 {
-                          @extend .header;
-                          @extend .t-36;
-                        }
-                        .h4 {
-                          @extend .header;
-                          @extend .t-24;
-                        }
-                        .h5 {
-                          @extend .header;
-                          @extend .t-21;
-                        }
-                        .h6 {
-                          @extend .header;
-                          @extend .t-18;
-                        }
-
-                      // Displays
-                        .display {
-                          font-family: $font-family-heading;
-                          line-height: $font-lineheight-small;
-                        }
-                        .d1 {
-                          @extend .display;
-                          @extend .t-96;
-                        }
-                        .d2 {
-                          @extend .display;
-                          @extend .t-81;
-                        }
-                        .d3 {
-                          @extend .display;
-                          @extend .t-72;
-                        }
-                        .d4 {
-                          @extend .display;
-                          @extend .t-64;
-                        }
-
-                      // Paragraphs
-                        .paragraph {
-                          @extend .t-18;
-                        }
-                        .p-small {
-                          @extend .paragraph;
-                          @extend .t-14;
-                        }
-                        .p-large {
-                          @extend .paragraph;
-                          @extend .t-24;
-                        }
-                      
-                      // User Interface
-                        .ui {
-                          @extend .t-14;
-                          letter-spacing: .005em;
-                          line-height: $font-lineheight-small;
-                          text-transform: uppercase;
-                        }
-                      
-                      // Nav
-                        .nav a {
-                          @extend .ui;
-                        }
-
-                    // HTML Tags
-                      // HTML Headers
-                        h1 {
-                          @extend .h1
-                        }
-                        h2 {
-                          @extend .h2
-                        }
-                        h3 {
-                          @extend .h3
-                        }
-                        h4 {
-                          @extend .h4
-                        }
-                        h5 {
-                          @extend .h5
-                        }
-                        h6 {
-                          @extend .h6
-                        }
-                      
-                      // HTML Paragraphs
-                        p {
-                          @extend .paragraph
-                        }
-                        p.small {
-                          @extend .p-small
-                        }
-                        p.large {
-                          @extend .p-large
-                        }
-                      
-                      // HTML Inline
-                        strong {
-                          font-weight: $font-weight-bold
-                        }
-                        em {
-                          font-style: oblique
-                        }
-                        s {
-                          text-decoration: line-through
-                        }
-                      
-                      // HTML Links
-                        a {
-                          text-decoration: none;
-                          &:hover {}
-                        }
-                      
-                      // HTML Lists
-                        ul, ol {
-                          li {
-                            @extend .paragraph;
-                          }
-                        }
-                      
-                      // HTML Labels
-                        label {
-                          @extend .ui;
-                        }
-                      
-                      // HTML Blockquote
-                        blockquote {
-                          @extend .p-large;
-                        }
-
+              .site-content
+                pre data-src="../assets/vendor/js/j03-toolbar.js"
+                  code.language-scss  
+                    = partial '/partials/blog-design-system/_type-htmltags.txt'
+#full-system.site-blog-post-content.full-bleed
+  .container-fluid
+    .row
+      .col-12.col-lg-10.offset-lg-1
+        .site-content.margin-bottom-small
+          h3 Full System
+          pre data-src="../assets/vendor/js/j03-toolbar.js"
+            code.language-scss
+              = partial '/partials/blog-design-system/_type-variables.txt'
+              = partial '/partials/blog-design-system/_type-mixins.txt'
+              = partial '/partials/blog-design-system/_type-sizesystem.txt'
+              = partial '/partials/blog-design-system/_type-global.txt'
+              = partial '/partials/blog-design-system/_type-classes.txt'
+              = partial '/partials/blog-design-system/_type-htmltags.txt'
