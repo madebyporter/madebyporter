@@ -22,7 +22,7 @@ section.site-block.theme-white
     .container-fluid
       .row
         .col-12.col-lg-4
-          h2 Ask Yourself
+          h3 Ask Yourself
         .col-12.col-lg-6
           ul.list-bordered.margin-top-none.padding-top-none
             li Do you have the front-end developer on your team designing, when they should be coding?
@@ -37,37 +37,31 @@ section.site-block.theme-white.padding-top-small
   .site-content.margin-bottom-medium
     .container-fluid
       .row
-        .col-12.col-md-8.col-lg-8.col-xl-6
-          h2 With a design partner
-      .row
-        .col-12.col-md-7.col-lg-4
-          .site-content.padding-bottom-medium
+        .col-12.col-lg-3
+          h3 With a design partner
+        .col-12.col-lg-4.offset-lg-1
+          .site-content
             h3 Focus on what you're great at
             p Save time &amp; focus on development while I handle the design.
-        .col-12.col-md-7.col-lg-4
-          .site-content.padding-bottom-medium
+          .site-content
             h3 A design system that scales
             p Keep your app's design system simple, so its easy to scale your app.
-        .col-12.col-md-7.col-lg-4
-          .site-content.padding-bottom-medium
+          .site-content
             h3 Grow your customer base
             p A well designed app brings people in &amp; keeps people coming back.
   .site-content.margin-bottom-medium
     .container-fluid
       .row
-        .col-12.col-md-8.col-lg-8.col-xl-6
-          h2 How we will work
-      .row
-        .col-12.col-md-7.col-lg-4
-          .site-content.padding-bottom-medium
+        .col-12.col-lg-3
+          h3 How we will work
+        .col-12.col-lg-4.offset-lg-1
+          .site-content
             h3 Listen
             p You talk, I listen. I want to hear your story, your problems &amp; your goals.
-        .col-12.col-md-7.col-lg-4
-          .site-content.padding-bottom-medium
+          .site-content
             h3 Strategize
             p If we're a good fit, the next step is to audit your current situation to create a game plan.
-        .col-12.col-md-7.col-lg-4
-          .site-content.padding-bottom-medium
+          .site-content
             h3 Execute
             p A well designed app brings people in &amp; keeps people coming back.
 
@@ -89,7 +83,7 @@ section.site-block.theme-black.padding-top-xl
   .site-content.site-block-height-full.justify-center-center.site-block-index-journal
     .container-fluid
       .row
-        .col-12.col-xl-10.offset-xl-1
+        .col-12
           - blog.articles[0...1].each do |article|
             = link_to article.title, article.url, class: "blog-headline"
             = link_to 'Read More...', article.url, class: "large"

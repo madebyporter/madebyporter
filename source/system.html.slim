@@ -2,61 +2,92 @@
 layout: interior_layout
 title: System
 description:
+
+system_overview:
+- label: Front-End Tool
+  value: Middleman
+- label: CSS Grid
+  value: Bootstrap
+- label: JS Tools
+  value: jQuery, Prism, Waypoints, 
+- label: Development Stack
+  value: SLIM, SCSS, JS, Ruby on Rails
+- label: Published Stack
+  value: HTML5, CSS, JS
+- label: Site Hosting
+  value: Netlify
+- label: Form Handling
+  value: Netlify
+- label: Email Marketing
+  value: Mailchimp
 ---
 section.site-block.theme-black
   .container-fluid
     .row
       .col-12.col-lg-3
         .site-content.margin-bottom-xl
+          .site-content.margin-bottom-large
+            a.site-nav-subnav-link.large href="#overview" Overview
           h4 Tokens
           .site-nav-subnav.list-bordered
-              a.site-nav-subnav-link href="#color" Color
-              a.site-nav-subnav-link href="#type" Typography
-              a.site-nav-subnav-link href="#layout" Layout
+            a.site-nav-subnav-link href="#color" Color
+            a.site-nav-subnav-link href="#type" Typography
+            a.site-nav-subnav-link href="#layout" Layout
             
           h4 Components
           .site-nav-subnav.list-bordered
-              a.site-nav-subnav-link href="#buttons" Buttons
-              a.site-nav-subnav-link href="#cards" Cards
-              a.site-nav-subnav-link href="#forms" Forms
-              a.site-nav-subnav-link href="#lists" Lists
+            a.site-nav-subnav-link href="#buttons" Buttons
+            a.site-nav-subnav-link href="#cards" Cards
+            a.site-nav-subnav-link href="#forms" Forms
+            a.site-nav-subnav-link href="#lists" Lists
       .col-12.col-lg-8.offset-lg-1
+        #overview.site-content
+          h2.margin-bottom-large Overview
+          ul.list-bordered
+            - current_page.data.system_overview.each do |x|
+              li
+                .row
+                  .col-12.col-md-3.d-flex.align-items-center
+                    label.margin-bottom-none = x.label
+                  .col-12.col-md-6.d-flex.align-items-center
+                    span = x.value
+           
         .site-content
           h2 Tokens
         #color.site-content
           h3 Color
           .row
-            .col-12.col-sm-6.col-xl-3
+            .col-12.col-sm-6
               .system-color.color-bg-red.color-text-black
                 span Red #CF303F
-            .col-12.col-sm-6.col-xl-3
+            .col-12.col-sm-6
               .system-color.color-bg-red-light.color-text-black
                 span Red - Light #E84C5C
-            .col-12.col-sm-6.col-xl-3
+            .col-12.col-sm-6
               .system-color.color-bg-red-dark.color-text-black
                 span Red - Dark #99323E
-            .col-12.col-sm-6.col-xl-3
+            .col-12.col-sm-6
               .system-color.color-bg-red-darker.color-text-black
                 span Red - Darker #73262F
-            .col-12.col-sm-6.col-xl-3
+            .col-12.col-sm-6
               .system-color.color-bg-black.color-text-white
                 span Black #1D1D21
-            .col-12.col-sm-6.col-xl-3
+            .col-12.col-sm-6
               .system-color.color-bg-coal.color-text-white
                 span Coal #28282e
-            .col-12.col-sm-6.col-xl-3
+            .col-12.col-sm-6
               .system-color.color-bg-slate.color-text-white
                 span Slate #403E47
-            .col-12.col-sm-6.col-xl-3
+            .col-12.col-sm-6
               .system-color.color-bg-white.color-text-black
                 span White #FFFFFF
-            .col-12.col-sm-6.col-xl-3
+            .col-12.col-sm-6
               .system-color.color-bg-gold.color-text-black
                 span Gold #BF891D
-            .col-12.col-sm-6.col-xl-3
+            .col-12.col-sm-6
               .system-color.color-bg-gold-light.color-text-black
                 span Gold - Light #E2AC40
-            .col-12.col-sm-6.col-xl-3
+            .col-12.col-sm-6
               .system-color.color-bg-gold-dark.color-text-black
                 span Gold - Dark #A67719
         #type.site-content
