@@ -11,7 +11,7 @@ gem 'wdm', '~> 0.1.0', platforms: [:mswin, :mingw]
 gem 'tzinfo-data', platforms: [:mswin, :mingw]
 
 # Middleman Gems
-gem "middleman"
+gem "middleman", ">= 4.3.11"
 gem 'middleman-livereload'
 gem "middleman-blog"
 gem "middleman-imageoptim"
