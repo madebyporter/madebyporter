@@ -18,7 +18,7 @@
     "ansi-styles": "^3.2.1",
     "aos": "^2.3.0",
     "dropbox": "^4.0.7",
-    "imagemin": "^5.3.1",
+    "imagemin": "^8.0.1",
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-svgo": "^4.2.1",
     "livereload": "^0.7.0",
