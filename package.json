@@ -23,6 +23,6 @@
     "imagemin-svgo": "^4.2.1",
     "livereload": "^0.7.0",
     "npm-install-que": "0.0.4",
-    "preact-cli": "^2.2.1"
+    "preact-cli": "^3.2.0"
   }
 }
