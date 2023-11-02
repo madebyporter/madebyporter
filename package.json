@@ -21,7 +21,7 @@
     "imagemin": "^5.3.1",
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-svgo": "^4.2.1",
-    "livereload": "^0.7.0",
+    "livereload": "^0.9.1",
     "npm-install-que": "0.0.4",
     "preact-cli": "^2.2.1"
   }
