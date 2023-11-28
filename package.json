@@ -19,10 +19,10 @@
     "aos": "^2.3.0",
     "dropbox": "^4.0.7",
     "imagemin": "^5.3.1",
-    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
     "imagemin-svgo": "^4.2.1",
-    "livereload": "^0.7.0",
+    "livereload": "^0.8.0",
     "npm-install-que": "0.0.4",
-    "preact-cli": "^2.2.1"
+    "preact-cli": "^3.3.4"
   }
 }
