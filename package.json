@@ -19,7 +19,7 @@
     "aos": "^2.3.0",
     "dropbox": "^4.0.7",
     "imagemin": "^5.3.1",
-    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-mozjpeg": "^8.0.0",
     "imagemin-svgo": "^4.2.1",
     "livereload": "^0.7.0",
     "npm-install-que": "0.0.4",
